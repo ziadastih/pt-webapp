@@ -37,6 +37,10 @@ server.use(cors());
 server.use(xss());
 
 // ================routes ==========
+server.get("/", (req, res) => {
+  res.send("jels");
+});
+server.use(express.static("./public"));
 server.use(express.json());
 server.use("/api/v1/auth", authRoute);
 server.use("/api/v1/client", authCoach, ptClientRoute);
