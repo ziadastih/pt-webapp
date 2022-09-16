@@ -10,6 +10,7 @@ const rateLimiter = require("express-rate-limit");
 
 // ================== express ================
 const express = require("express");
+
 const server = express();
 // ==============importing routes ====================
 const authRoute = require("./routes/pTrouteAuth");
@@ -32,14 +33,19 @@ server.use(
 );
 
 // ==============security ===========================
-server.use(helmet());
+
 server.use(cors());
 server.use(xss());
-
+server.use(helmet());
+server.use(
+  helmet.contentSecurityPolicy({
+    directives: {
+      defaultSrc: ["'self'"],
+      scriptSrc: ["'self'", "cdn.jsdelivr.net/npm/axios/dist/axios.min.js "],
+    },
+  })
+);
 // ================routes ==========
-server.get("/", (req, res) => {
-  res.send("jels");
-});
 server.use(express.static("./public"));
 server.use(express.json());
 server.use("/api/v1/auth", authRoute);
@@ -53,7 +59,7 @@ server.use(errorHandlerMiddleware);
 const start = async () => {
   try {
     await connectDB(process.env.PT_URI);
-    await server.listen(3000, () => {
+    server.listen(3000, () => {
       console.log("server is listening");
     });
   } catch (error) {

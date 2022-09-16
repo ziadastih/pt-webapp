@@ -27,16 +27,14 @@ const login = async (req, res) => {
 
   // =========if everything is true we want to create a token for this session and get the coach id and coach name and send token to the frontend
   const token = coach.createJWT();
-  res
-    .status(StatusCodes.OK)
-    .json({
-      coach: {
-        coachId: coach._id,
-        coachName: coach.firstName,
-        role: coach.role,
-      },
-      token,
-    });
+  res.status(StatusCodes.OK).json({
+    coach: {
+      coachId: coach._id,
+      coachName: coach.firstName,
+      role: coach.role,
+    },
+    token,
+  });
 };
 
 module.exports = { register, login };
