@@ -11,6 +11,16 @@
   /* =========main color ============ */
   --mainColor: #1d4147;
 }
+
+/* ===========global ================ */
+input {
+  border-radius: 3px;
+  height: 40px;
+  outline-style: none;
+  border: none;
+  padding-left: 10px;
+}
+
 body {
   overflow-x: hidden;
 }
@@ -136,6 +146,7 @@ body {
 
 /* ============== start register -section =========== */
 .register-section {
+  display: none;
   transform: translateX(-100%);
   position: absolute;
   top: 0;
@@ -193,12 +204,8 @@ body {
 
 .register-form-container input {
   margin-bottom: 35px;
-  border-radius: 3px;
-  height: 40px;
-  outline-style: none;
-  border: none;
-  padding-left: 10px;
 }
+
 /* ==============small input container ====== */
 
 .small-input-container {
@@ -242,6 +249,101 @@ body {
   background-color: var(--mainColor);
   color: white;
 }
+/* =================END OF REGISTER SECTION ====== */
+
+/* =============== START LOGIN SECTION=========== */
+
+.login-section {
+  position: absolute;
+  display: flex;
+  align-self: flex-end;
+  justify-content: center;
+  z-index: 5;
+  top: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: var(--mainColor);
+  color: white;
+  overflow-x: hidden;
+}
+
+.login-section h1 {
+  position: absolute;
+  top: 90px;
+  right: -80px;
+  font-family: var(--fontSansSerif);
+  font-weight: 700;
+  font-size: 96px;
+
+  transform: rotate(90deg);
+
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+
+  color: #ffffff;
+}
+.login-header p {
+  position: absolute;
+  font-family: var(--fontSansSerif);
+  top: 240px;
+  right: 105px;
+  font-weight: 700;
+  font-size: 23px;
+  text-align: center;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+
+  color: #ffffff;
+
+  opacity: 0.8;
+  transform: rotate(90deg);
+}
+
+.login-top-line {
+  position: absolute;
+  right: 130px;
+}
+
+.login-bottom-line {
+  position: absolute;
+  right: 0;
+  top: 300px;
+}
+
+.login-form-container {
+  width: 100vw;
+  margin-top: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-direction: column;
+}
+
+.login-form-container .email {
+  margin-bottom: 35px;
+}
+.login-form-container .password {
+  margin-bottom: 5px;
+}
+.forgot-password {
+  font-family: var(--fontSansSerif);
+  display: flex;
+  justify-content: flex-end;
+  width: 57vw;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0.02em;
+  color: white;
+  margin-bottom: 45px;
+  opacity: 0.8;
+}
+
+.btn {
+  margin-bottom: 40px;
+}
+/* =================end of Login section ======== */
 
 /* =================js class ===============*/
 .js-nav-bar {
