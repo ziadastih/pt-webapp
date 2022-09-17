@@ -4,74 +4,255 @@
   box-sizing: border-box;
 }
 
+:root {
+  --fontSansSerif: "PT Sans", sans-serif;
+  --fontSerif: "Playfair Display", serif;
+
+  /* =========main color ============ */
+  --mainColor: #1d4147;
+}
 body {
-  min-height: 100vh;
+  overflow-x: hidden;
 }
 
-.hero-section {
+.main-app-container {
   min-height: 100vh;
-  background-image: url(./Men-Fitness-Wallpaper-4.jpg);
+  width: 100vw;
+  position: relative;
+}
+
+/* ===============homepageSection ================= */
+.homepage-section {
+  height: 100vh;
+  width: 100vw;
+  background-image: url(./images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg);
   background-repeat: no-repeat;
+  background-size: cover;
   background-position: center;
-  width: 100vw;
-  overflow: hidden;
-}
-
-.nav-bar {
-  display: flex;
-  width: 100vw;
-  height: 10vh;
-  align-items: center;
-  justify-content: space-between;
-}
-.logo-toggle {
-  width: 90vw;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.logo {
-  margin-left: 20px;
-}
-#toggle-menu {
-  font-size: 20px;
-  color: white;
-  cursor: pointer;
-}
-
-.nav-links-container {
-  position: absolute;
-  top: 100px;
-
-  height: 300px;
-  background-color: white;
-  width: 100vw;
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction: row;
-}
-
-.nav-link {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  margin-bottom: 20px;
-}
-.nav-link a {
-  text-decoration: none;
-  color: black;
-  font-size: 24px;
-  text-transform: capitalize;
-}
-
-.hero-section-content {
-  display: flex;
-  width: 80vw;
-  align-items: center;
-  justify-content: center;
-  gap: 2rem;
-
   flex-direction: column;
+}
+.overlay {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(29, 65, 71, 0.3);
+}
+
+/* ==================Logo ================== */
+.logo {
+  font-family: var(--fontSansSerif);
+  font-size: 24px;
+  text-transform: uppercase;
+  position: absolute;
+  top: 25px;
+  left: 30px;
+  color: white;
+  z-index: 10;
+}
+/* ============SLOGOAN AND TEXT ========================= */
+.homepage-content {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  width: 80vw;
+  z-index: 1;
+}
+
+.homepage-content h1 {
+  font-family: var(--fontSerif);
+  font-size: 34px;
+  font-weight: 700;
+  text-align: start;
+  text-transform: capitalize;
+  color: white;
+  line-height: 34px;
+  margin-bottom: 45px;
+}
+
+.homepage-content p {
+  font-family: var(--fontSansSerif);
+  font-weight: 400;
+  opacity: 0.9;
+  font-size: 15px;
+  text-align: start;
+  color: white;
+  line-height: 27px;
+  letter-spacing: 2px;
+  margin-bottom: 45px;
+}
+
+/* ===================get started Btn ============== */
+.get-started-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 260px;
+  height: 65px;
+  font-family: var(--fontSansSerif);
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 35px;
+  letter-spacing: 1.2px;
+  background-color: var(--mainColor);
+  border: none;
+  border-radius: 7px;
+  color: #ffffff;
+  cursor: pointer;
+  transition: 300ms ease-in;
+}
+
+/* ============Navigation bar postion absolute bottom 0 === */
+.nav-bar {
+  position: fixed;
+  width: 100vw;
+  height: 80px;
+  background-color: var(--mainColor);
+
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 45px;
+  z-index: 10;
+  color: white;
+}
+.nav-bar i {
+  font-size: 30px;
+  cursor: pointer;
+  transition: 300ms ease-in;
+}
+
+/* ===========hover effect for clickable btns ============== */
+.get-started-btn:hover,
+.nav-bar i:hover {
+  opacity: 0.8;
+}
+
+/* ===========================end of homepage Section =========== */
+
+/* ============== start register -section =========== */
+.register-section {
+  transform: translateX(-100%);
+  position: absolute;
+  top: 0;
+  z-index: 4;
+  height: 100vh;
+  width: 100vw;
+  overflow-y: scroll;
+  background-color: var(--mainColor);
+}
+
+.register-bottom-line {
+  width: 100vw;
+  margin-top: 20px;
+  margin-bottom: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.register-top-line {
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.register-section h1 {
+  position: absolute;
+
+  width: 100vw;
+  margin-top: 20px;
+  text-transform: uppercase;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  font-family: var(--fontSansSerif);
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 52px;
+  text-align: center;
+  letter-spacing: 0.05em;
+  position: relative;
+  color: white;
+}
+
+/* =========register form container  ==========*/
+.register-form-container {
+  width: 100vw;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.register-form-container input {
+  margin-bottom: 35px;
+  border-radius: 3px;
+  height: 40px;
+  outline-style: none;
+  border: none;
+  padding-left: 10px;
+}
+/* ==============small input container ====== */
+
+.small-input-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 36px;
+}
+
+::placeholder {
+  font-family: var(--fontSansSerif);
+  color: var(--mainColor);
+  opacity: 0.8;
+  font-size: 12px;
+  font-weight: 400;
+}
+.small-input-container input {
+  width: 25vw;
+}
+
+.email,
+.password {
+  width: 57vw;
+}
+
+.btn {
+  width: 150px;
+  height: 40px;
+  font-family: var(--fontSansSerif);
+  font-weight: 700;
+  font-size: 20px;
+  cursor: pointer;
+  border-radius: 3px;
+  background-color: white;
+  border: none;
+  color: var(--mainColor);
+  transition: 300ms ease-in;
+}
+
+.btn:hover {
+  background-color: var(--mainColor);
+  color: white;
+}
+
+/* =================js class ===============*/
+.js-nav-bar {
+  background-color: white;
+  color: var(--mainColor);
+}
+
+.register-translate {
+  transform: translateX(0);
+}
+
+.login-translate {
+  transform: translateY(0);
 }
