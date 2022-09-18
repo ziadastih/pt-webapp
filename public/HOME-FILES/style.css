@@ -347,6 +347,73 @@ body {
 }
 /* =================end of Login section ======== */
 
+/* =============coach homepage section ============ */
+.coach-homepage-section {
+  position: absolute;
+  top: 0;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  z-index: 5;
+  background-color: white;
+}
+
+.profile-section {
+  height: 50vh;
+  width: 100vw;
+  background-color: var(--mainColor);
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  color: white;
+}
+.profile-section img {
+  width: 50px;
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+.profile-section h3 {
+  font-family: var(--fontSansSerif);
+  text-transform: capitalize;
+  margin-bottom: 30px;
+}
+.stats-info-container {
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.stats-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.stats-container p {
+  margin-bottom: 20px;
+}
+.buttons-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100vw;
+}
+.body-section {
+  display: flex;
+  height: 100px;
+  cursor: pointer;
+  font-family: var(--fontSansSerif);
+  text-transform: capitalize;
+  align-items: center;
+  justify-content: space-around;
+  width: 100vw;
+  border-bottom: 1px solid var(--mainColor);
+}
 /* =================js class ===============*/
 .js-nav-bar {
   background-color: white;
