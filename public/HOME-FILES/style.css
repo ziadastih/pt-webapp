@@ -146,15 +146,15 @@ body {
 
 /* ============== start register -section =========== */
 .register-section {
-  display: none;
   transform: translateX(-100%);
   position: absolute;
   top: 0;
   z-index: 4;
   height: 100vh;
   width: 100vw;
-  overflow-y: scroll;
+
   background-color: var(--mainColor);
+  transition: 300ms ease-in;
 }
 
 .register-bottom-line {
@@ -254,6 +254,8 @@ body {
 /* =============== START LOGIN SECTION=========== */
 
 .login-section {
+  transform: translateY(-100%);
+  transition: 300ms ease-in;
   position: absolute;
   display: flex;
   align-self: flex-end;

@@ -46,7 +46,7 @@ server.use(
   })
 );
 // ================routes ==========
-server.use(express.static("./public"));
+server.use(express.static("./public/HOME-FILES"));
 server.use(express.json());
 server.use("/api/v1/auth", authRoute);
 server.use("/api/v1/client", authCoach, ptClientRoute);
