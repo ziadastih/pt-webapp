@@ -56,3 +56,20 @@ registerBtn.addEventListener("click", async (e) => {
     console.log(error);
   }
 });
+
+// ==============login ================
+loginBtn.addEventListener("click", async (e) => {
+  const email = loginEmail.value;
+  const password = loginPassword.value;
+
+  try {
+    const data = await axios.post("/api/v1/auth/login", {
+      email,
+      password,
+    });
+    const coach = data.data;
+    console.log(coach);
+  } catch (error) {
+    console.log(error);
+  }
+});
