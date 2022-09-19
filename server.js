@@ -15,6 +15,7 @@ const server = express();
 // ==============importing routes ====================
 const authRoute = require("./routes/pTrouteAuth");
 const ptClientRoute = require("./routes/ptClientRoute");
+const workoutRoute = require("./routes/workoutRoute");
 // ===============import connectdb ===========
 const connectDB = require("./connectDb/connect");
 
@@ -50,6 +51,7 @@ server.use(express.static("./public/HOME-FILES"));
 server.use(express.json());
 server.use("/api/v1/auth", authRoute);
 server.use("/api/v1/client", authCoach, ptClientRoute);
+server.use("/api/v1/workout", authCoach, workoutRoute);
 
 // ================= error handler =================== ================
 server.use(notFoundMiddleware);
