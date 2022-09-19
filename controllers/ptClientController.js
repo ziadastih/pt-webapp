@@ -57,7 +57,16 @@ const updateClient = async (req, res) => {
 
 // ================ delete client ==============
 const deleteClient = async (req, res) => {
-  res.send("delete client");
+  const {
+    coach: { coachId },
+    params: { id: clientId },
+  } = req;
+
+  const client = await Client.findOneAndRemove({
+    _id: clientId,
+    createdBy: coachId,
+  });
+  res.status(StatusCodes.OK).send("client was deleted");
 };
 
 module.exports = {
