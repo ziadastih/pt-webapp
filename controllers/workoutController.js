@@ -9,7 +9,17 @@ const getAllWorkouts = async (req, res) => {
 
 // ============get one specific workout ==================
 const getOneWorkout = async (req, res) => {
-  res.send("get one workout");
+  const {
+    coach: { coachId },
+    params: { id: workoutId },
+  } = req;
+
+  const workout = await Workout.findOne({
+    createdBy: coachId,
+    _id: workoutId,
+  });
+
+  res.status(StatusCodes.OK).json({ workout });
 };
 
 // ===============create workout ========================
@@ -21,12 +31,33 @@ const createWorkout = async (req, res) => {
 
 // =============update workout =======================
 const updateWorkout = async (req, res) => {
-  res.send("update workout ");
+  const {
+    coach: { coachId },
+    params: { id: workoutId },
+  } = req;
+  const workout = await Workout.findOneAndUpdate(
+    {
+      createdBy: coachId,
+      _id: workoutId,
+    },
+    req.body,
+    { new: true, runValidators: true }
+  );
+  res.status(StatusCodes.OK).json({ workout });
 };
 
 // ===============delete workout ===================
 const deleteWorkout = async (req, res) => {
-  res.send("delete workout ");
+  const {
+    coach: { coachId },
+    params: { id: workoutId },
+  } = req;
+
+  const workout = await Workout.findOneAndRemove({
+    _id: workoutId,
+    createdBy: coachId,
+  });
+  res.status(StatusCodes.OK).send("workout was deleted");
 };
 
 module.exports = {
