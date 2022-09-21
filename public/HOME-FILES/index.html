@@ -55,104 +55,56 @@
      
     </section>
 
-    <!-- =============register section ============ -->
-    <section class="register-section">
-   
-    <div class="register-top-line">
-      <img src="./images/Line 2.svg" alt="">
+<!-- ========== register container============= -->
+<div class="register-container">
+  <div class="register-header">
+    <p>logo</p>
+    <i class="fa-solid fa-xmark" id="close-btn" data-close = "register-container"></i>
+  </div>
+  <h3>let's get started!</h3>
+  <span class="line"></span>
+  <div class="register-form-container">
+    <div class="input-container">
+      <div class="name-alert">
+      <p>first name:</p>
+      <p class="alert alert-first-name">please provide first name!</p>
+      </div>
+      <input type="text" id="register-first-name" placeholder="first name">
     </div>
-    <h1 >Create your account</h1>
-    <div class="register-bottom-line">
-      <img src="./images/Line 1.svg" alt="">
-    </div>
-    <div class="register-form-container">
-      <!-- ============small input container for first name and last name -->
-     <div class="small-input-container">
-      <input type="text" id="register-first-name" placeholder="First name">
+    <div class="input-container">
+      <div class="name-alert">
+      <p>Last name:</p>
+      <p class="alert">please provide Last Name!</p>
+      </div>
       <input type="text" id="register-last-name" placeholder="Last name">
-
-     </div>
-     <input type="text" class="email" id="register-email" placeholder="Email address">
-    <input type="password" class="password" id="register-password" placeholder="Password">
-    <button class="sign-up-btn btn">Sign up</button>
     </div>
-    </section>
-
-
-<!-- =================section login =========== -->
-<section class="login-section">
-  <div class="login-header">
-  <h1>Login</h1>
-  <p >here</p>
+    <div class="input-container">
+      <div class="name-alert">
+      <p>email:</p>
+      <p class="alert">please provide an email!</p>
+      </div>
+      <input type="text" id="register-email" placeholder="email address">
+    </div>
+    <div class="input-container">
+      <div class="name-alert">
+      <p>password:</p>
+      <p class="alert">please provide a password!</p>
+      </div>
+      <input type="text" id="register-password" placeholder="password">
+    </div>
+    <button class="sign-up-btn btn">sign up</button>
   </div>
-  <div class="login-top-line">
-  <img src="./images/Line 22login.svg" alt="">
-  </div>
-  <div class="login-bottom-line">
-  <img src="./images/Line 11login.svg" alt="">
-  </div>
-<div class="login-form-container">
-  <input type="text" class="email" id="login-email" placeholder="Email address">
-  <input type="password" class="password" id="login-password" placeholder="Password">
-  <p class="forgot-password">forgot your password?</p>
-  <button class="login-btn btn">Login</button>
 </div>
 
-</section>
 
-<!-- =================coach homepage section ========================= -->
-<section class="coach-homepage-section">
-  <div class="profile-section">
-    <img src="./images/coach pp.svg" alt="">
-    <h3 class="profile-name">ziad astih</h3>
-    <div class="stats-info-container">
-    <div class="stats-container">
-      <img src="./images/client icon.svg" alt="">
-      <p>10</p>
-      <p>client</p>
-      
-    </div>
-    <div class="stats-container">
-      <img src="./images/workout icon.svg" alt="">
-      <p>190</p>
-      <p>workout</p>
-    </div>
-    <div class="stats-container">
-      <img src="./images/diet icon.svg" alt="">
-      <p>100</p>
-     <p>diet</p>
-    </div>
-  </div>
-  </div>
-  <div class="buttons-section">
-    <div class="my-clients-section body-section">
-      <img src="./images/myClientSection.svg" alt="">
-      <h2>my clients</h2>
-      <img src="./images/coacharrow.svg" alt="">
-    </div>
-    <div class="my-workouts-section body-section">
-      <img src="./images/myClientSection.svg" alt="">
-      <h2>my workout</h2>
-      <img src="./images/coacharrow.svg" alt="">
-    </div>
-    <div class="my-nutrition-section body-section">
-      <img src="./images/myClientSection.svg" alt="">
-      <h2>my Nutrition</h2>
-      <img src="./images/coacharrow.svg" alt="">
-    </div>
-  </div>
-</section>
+
 
     <!-- ==================nav-bar position absolute and always fixed ======  -->
     <nav class="nav-bar">
-      <i class="fa-sharp fa-solid fa-house" id="homepage-btn"></i>
-      <i class="fa-solid fa-list" id="features-btn"></i>
-      <i class="fa-sharp fa-solid fa-info" id="pricing-plan-btn"></i>
-      <i class="fa-solid fa-envelope" id="contact-mail-btn"></i>
-      <i
-        class="fa-sharp fa-solid fa-arrow-right-to-bracket"
-        id="login-nav-btn"
-      ></i>
+     <p class="home-nav-btn">home</p>
+     <p class="features-nav-btn">features</p>
+     <p class="contact-us-nav-btn">contact us</p>
+     <p class="login-nav-btn">login</p>
     </nav>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>

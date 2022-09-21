@@ -1,24 +1,27 @@
 // ==============navigation btns selection =================
 const getStartedBtn = document.querySelector(".get-started-btn");
 const loginNavBtn = document.getElementById("login-nav-btn");
-
+const closeBtn = document.getElementById("close-btn");
 // ==========sections selection ==============
-const registerSection = document.querySelector(".register-section");
-const loginSection = document.querySelector(".login-section");
-const navBar = document.querySelector(".nav-bar");
+const registerContainer = document.querySelector(".register-container");
+const loginSection = document.querySelector(".login-container");
 
 // ===========navigation event listener ==========
 
 // ===============get started btn  ==================
 getStartedBtn.addEventListener("click", () => {
-  navBar.classList.add("js-nav-bar");
-  registerSection.classList.add("register-translate");
-  loginSection.classList.remove("login-translate");
+  registerContainer.classList.add("open-container");
+});
+
+closeBtn.addEventListener("click", (e) => {
+  let id = e.target.dataset.close;
+  let container = document.querySelector(`.${id}`);
+  container.classList.remove("open-container");
 });
 // ===============login-nav-btn  ==================
 loginNavBtn.addEventListener("click", () => {
   navBar.classList.add("js-nav-bar");
-  registerSection.classList.remove("register-translate");
+  registerContainer.classList.remove("open-container");
   loginSection.classList.add("login-translate");
 });
 

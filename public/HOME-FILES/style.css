@@ -9,7 +9,8 @@
   --fontSerif: "Playfair Display", serif;
 
   /* =========main color ============ */
-  --mainColor: #1d4147;
+  --mainColor: #0e535f;
+  --SecondaryColor: #1d4147;
 }
 
 /* ===========global ================ */
@@ -20,11 +21,36 @@ input {
   border: none;
   padding-left: 10px;
 }
+/* ===========general btn layout ============= */
+.btn {
+  font-family: var(--fontSansSerif);
+  font-weight: 700;
+  font-size: 20px;
+  background-color: white;
+  color: var(--mainColor);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 150px;
+  height: 40px;
+  border-radius: 3px;
+  border: none;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  cursor: pointer;
+}
 
+::placeholder {
+  text-transform: capitalize;
+  font-size: 10px;
+  font-family: var(--fontSansSerif);
+  color: var(--SecondaryColor);
+}
 body {
   overflow-x: hidden;
 }
 
+/* ==========main container ==================== */
 .main-app-container {
   min-height: 100vh;
   width: 100vw;
@@ -121,309 +147,124 @@ body {
   width: 100vw;
   height: 80px;
   background-color: var(--mainColor);
-
+  font-family: var(--fontSansSerif);
+  font-size: 18px;
+  text-transform: capitalize;
+  letter-spacing: 0.02em;
   bottom: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 45px;
+  gap: 30px;
   z-index: 10;
   color: white;
 }
-.nav-bar i {
-  font-size: 30px;
+.nav-bar p {
   cursor: pointer;
   transition: 300ms ease-in;
 }
 
 /* ===========hover effect for clickable btns ============== */
 .get-started-btn:hover,
-.nav-bar i:hover {
+.nav-bar p:hover {
   opacity: 0.8;
 }
 
 /* ===========================end of homepage Section =========== */
 
-/* ============== start register -section =========== */
-.register-section {
-  transform: translateX(-100%);
-  position: absolute;
-  top: 0;
-  z-index: 4;
-  height: 100vh;
-  width: 100vw;
+/* ==============register container =================== */
 
+.register-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -60%);
   background-color: var(--mainColor);
-  transition: 300ms ease-in;
-}
-
-.register-bottom-line {
-  width: 100vw;
-  margin-top: 20px;
-  margin-bottom: 50px;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-}
-
-.register-top-line {
-  width: 100vw;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.register-section h1 {
-  position: absolute;
-
-  width: 100vw;
-  margin-top: 20px;
-  text-transform: uppercase;
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  font-family: var(--fontSansSerif);
-  font-weight: 700;
-  font-size: 40px;
-  line-height: 52px;
-  text-align: center;
-  letter-spacing: 0.05em;
-  position: relative;
-  color: white;
-}
-
-/* =========register form container  ==========*/
-.register-form-container {
-  width: 100vw;
-
-  display: flex;
+  width: 80vw;
+  z-index: 999;
+  display: none;
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  border-radius: 5px;
+  transition: 300ms ease-in;
 }
 
-.register-form-container input {
-  margin-bottom: 35px;
-}
-
-/* ==============small input container ====== */
-
-.small-input-container {
+/* ===========register header logo and close btn === */
+.register-header {
   display: flex;
+  width: 80vw;
   align-items: center;
-  justify-content: center;
-  gap: 36px;
+  justify-content: space-between;
+  color: white;
+  margin-top: 20px;
 }
-
-::placeholder {
+.register-header p {
+  margin-left: 20px;
+  text-transform: uppercase;
   font-family: var(--fontSansSerif);
-  color: var(--mainColor);
-  opacity: 0.8;
-  font-size: 12px;
   font-weight: 400;
+  font-size: 14px;
 }
-.small-input-container input {
-  width: 25vw;
-}
-
-.email,
-.password {
-  width: 57vw;
-}
-
-.btn {
-  width: 150px;
-  height: 40px;
-  font-family: var(--fontSansSerif);
-  font-weight: 700;
-  font-size: 20px;
+#close-btn {
+  margin-right: 20px;
   cursor: pointer;
-  border-radius: 3px;
-  background-color: white;
-  border: none;
-  color: var(--mainColor);
-  transition: 300ms ease-in;
 }
-
-.btn:hover {
-  background-color: var(--mainColor);
+/* ============register h3 and line ========= */
+.register-container h3 {
   color: white;
-}
-/* =================END OF REGISTER SECTION ====== */
-
-/* =============== START LOGIN SECTION=========== */
-
-.login-section {
-  transform: translateY(-100%);
-  transition: 300ms ease-in;
-  position: absolute;
-  display: flex;
-  align-self: flex-end;
-  justify-content: center;
-  z-index: 5;
-  top: 0;
-  height: 100vh;
-  width: 100vw;
-  background-color: var(--mainColor);
-  color: white;
-  overflow-x: hidden;
-}
-
-.login-section h1 {
-  position: absolute;
-  top: 90px;
-  right: -80px;
   font-family: var(--fontSansSerif);
-  font-weight: 700;
-  font-size: 96px;
-
-  transform: rotate(90deg);
-
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-
-  color: #ffffff;
-}
-.login-header p {
-  position: absolute;
-  font-family: var(--fontSansSerif);
-  top: 240px;
-  right: 105px;
-  font-weight: 700;
-  font-size: 23px;
-  text-align: center;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-
-  color: #ffffff;
-
-  opacity: 0.8;
-  transform: rotate(90deg);
-}
-
-.login-top-line {
-  position: absolute;
-  right: 130px;
-}
-
-.login-bottom-line {
-  position: absolute;
-  right: 0;
-  top: 300px;
-}
-
-.login-form-container {
-  width: 100vw;
-  margin-top: 150px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  flex-direction: column;
-}
-
-.login-form-container .email {
-  margin-bottom: 35px;
-}
-.login-form-container .password {
-  margin-bottom: 5px;
-}
-.forgot-password {
-  font-family: var(--fontSansSerif);
-  display: flex;
-  justify-content: flex-end;
-  width: 57vw;
   font-weight: 400;
-  font-size: 12px;
-  line-height: 16px;
-  letter-spacing: 0.02em;
-  color: white;
-  margin-bottom: 45px;
-  opacity: 0.8;
-}
-
-.btn {
-  margin-bottom: 40px;
-}
-/* =================end of Login section ======== */
-
-/* =============coach homepage section ============ */
-.coach-homepage-section {
-  position: absolute;
-  top: 0;
-  height: 100vh;
-  width: 100vw;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  flex-direction: column;
-  z-index: 5;
-  background-color: white;
-}
-
-.profile-section {
-  height: 50vh;
-  width: 100vw;
-  background-color: var(--mainColor);
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  flex-direction: column;
-  color: white;
-}
-.profile-section img {
-  width: 50px;
-  margin-top: 30px;
-  margin-bottom: 20px;
-}
-.profile-section h3 {
-  font-family: var(--fontSansSerif);
+  font-size: 32px;
   text-transform: capitalize;
+  margin-bottom: 10px;
+  margin-top: 30px;
+}
+.register-container span {
+  width: 100px;
+  height: 1px;
+  background-color: white;
+  opacity: 0.5;
   margin-bottom: 30px;
 }
-.stats-info-container {
-  width: 100vw;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-}
-.stats-container {
+
+/* ==========register form  ============ */
+.register-form-container {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
 }
-.stats-container p {
+/* ==========input name and alert ============ */
+.name-alert {
+  width: 60vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+.name-alert p {
+  font-family: var(--fontSansSerif);
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: capitalize;
+  color: white;
+  letter-spacing: 1.2px;
+}
+/* ============alerts for every input ============ */
+.name-alert .alert {
+  display: none;
+  color: #fc8f3a;
+  font-size: 8px;
+  font-weight: 400;
+}
+
+.input-container input {
+  width: 60vw;
   margin-bottom: 20px;
 }
-.buttons-section {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  width: 100vw;
-}
-.body-section {
-  display: flex;
-  height: 100px;
-  cursor: pointer;
-  font-family: var(--fontSansSerif);
-  text-transform: capitalize;
-  align-items: center;
-  justify-content: space-around;
-  width: 100vw;
-  border-bottom: 1px solid var(--mainColor);
-}
-/* =================js class ===============*/
-.js-nav-bar {
-  background-color: white;
-  color: var(--mainColor);
-}
 
-.register-translate {
-  transform: translateX(0);
-}
-
-.login-translate {
-  transform: translateY(0);
+/* ===============js classes ====================== */
+.open-container {
+  display: flex;
 }
