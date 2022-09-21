@@ -56,55 +56,85 @@
     </section>
 
 <!-- ========== register container============= -->
-<div class="register-container">
-  <div class="register-header">
+<div class="register-container block-container">
+  <div class="box-header">
     <p>logo</p>
     <i class="fa-solid fa-xmark" id="close-btn" data-close = "register-container"></i>
   </div>
   <h3>let's get started!</h3>
   <span class="line"></span>
-  <div class="register-form-container">
+  <div class="form-container">
     <div class="input-container">
       <div class="name-alert">
       <p>first name:</p>
-      <p class="alert alert-first-name">please provide first name!</p>
+      <p class="alert register-first-alert">please provide first name!</p>
       </div>
       <input type="text" id="register-first-name" placeholder="first name">
     </div>
     <div class="input-container">
       <div class="name-alert">
       <p>Last name:</p>
-      <p class="alert">please provide Last Name!</p>
+      <p class="alert register-last-alert">please provide Last Name!</p>
       </div>
       <input type="text" id="register-last-name" placeholder="Last name">
     </div>
     <div class="input-container">
-      <div class="name-alert">
+      <div class="name-alert ">
       <p>email:</p>
-      <p class="alert">please provide an email!</p>
+      <p class="alert register-email-alert">please provide an email!</p>
       </div>
       <input type="text" id="register-email" placeholder="email address">
     </div>
     <div class="input-container">
       <div class="name-alert">
       <p>password:</p>
-      <p class="alert">please provide a password!</p>
+      <p class="alert register-password-alert">please provide a password!</p>
       </div>
-      <input type="text" id="register-password" placeholder="password">
+      <input type="password" class="password" id="register-password" placeholder="password">
+      <i class="far fa-eye" id="toggle-password"></i>
     </div>
     <button class="sign-up-btn btn">sign up</button>
   </div>
 </div>
 
+<!-- ================== login container ========== -->
+<div class="login-container block-container">
+  <div class="box-header">
+    <p>logo</p>
+    <i class="fa-solid fa-xmark" id="close-btn" data-close="login-container"></i>
+  </div>
+  <h3>login here</h3>
+  <span class="line"></span>
+  <div class="form-container">
+    <div class="input-container">
+      <div class="name-alert">
+      <p>email:</p>
+      <p class="alert login-email-alert">please provide an email!</p>
+      </div>
+      <input type="text" id="login-email" placeholder="email address">
+    </div>
+    <div class="input-container">
+      <div class="name-alert">
+      <p>password:</p>
+      <p class="alert login-password-alert">please provide a password!</p>
+      </div>
+      <input type="password" class="password" id="login-password" placeholder="password">
+      <i class="far fa-eye" id="toggle-password"></i>
+      <p class="forgot-password">forgot your password?</p>
+
+    </div>
+    <button class="login-btn btn">login</button>
+  </div>
+</div>
 
 
 
     <!-- ==================nav-bar position absolute and always fixed ======  -->
     <nav class="nav-bar">
-     <p class="home-nav-btn">home</p>
-     <p class="features-nav-btn">features</p>
-     <p class="contact-us-nav-btn">contact us</p>
-     <p class="login-nav-btn">login</p>
+     <p id="home-nav-btn">home</p>
+     <p id="features-nav-btn">features</p>
+     <p id="contact-us-nav-btn">contact us</p>
+     <p id="login-nav-btn">login</p>
     </nav>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>

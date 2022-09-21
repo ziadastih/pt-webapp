@@ -46,6 +46,17 @@ input {
   font-family: var(--fontSansSerif);
   color: var(--SecondaryColor);
 }
+#toggle-password {
+  position: absolute;
+  margin-top: 15px;
+  font-size: 10px;
+  color: var(--SecondaryColor);
+  margin-left: -20px;
+  cursor: pointer;
+}
+/* ==================END OF GLOBAL CLASSES ========================  */
+/* ============================BODY START =========================== */
+
 body {
   overflow-x: hidden;
 }
@@ -172,13 +183,14 @@ body {
 
 /* ===========================end of homepage Section =========== */
 
-/* ==============register container =================== */
+/* ==============Block container global classes for register and login =================== */
 
-.register-container {
+/* ============register-login general container =========== */
+.block-container {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -60%);
+
   background-color: var(--mainColor);
   width: 80vw;
   z-index: 999;
@@ -190,8 +202,19 @@ body {
   transition: 300ms ease-in;
 }
 
+.form-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.input-container input {
+  width: 60vw;
+  margin-bottom: 20px;
+}
+
 /* ===========register header logo and close btn === */
-.register-header {
+.box-header {
   display: flex;
   width: 80vw;
   align-items: center;
@@ -199,7 +222,7 @@ body {
   color: white;
   margin-top: 20px;
 }
-.register-header p {
+.box-header p {
   margin-left: 20px;
   text-transform: uppercase;
   font-family: var(--fontSansSerif);
@@ -211,7 +234,7 @@ body {
   cursor: pointer;
 }
 /* ============register h3 and line ========= */
-.register-container h3 {
+.block-container h3 {
   color: white;
   font-family: var(--fontSansSerif);
   font-weight: 400;
@@ -220,7 +243,7 @@ body {
   margin-bottom: 10px;
   margin-top: 30px;
 }
-.register-container span {
+.block-container span {
   width: 100px;
   height: 1px;
   background-color: white;
@@ -228,13 +251,6 @@ body {
   margin-bottom: 30px;
 }
 
-/* ==========register form  ============ */
-.register-form-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-}
 /* ==========input name and alert ============ */
 .name-alert {
   width: 60vw;
@@ -259,12 +275,36 @@ body {
   font-weight: 400;
 }
 
-.input-container input {
-  width: 60vw;
-  margin-bottom: 20px;
+.register-container {
+  transform: translate(-50%, -60%);
+}
+/* ==============login container ================= */
+.login-container {
+  transform: translate(-50%, -50%);
 }
 
+#login-password {
+  margin-bottom: 10px;
+}
+.forgot-password {
+  width: 60vw;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  color: white;
+  opacity: 0.8;
+  font-family: var(--fontSansSerif);
+  font-size: 10px;
+  font-weight: 400;
+  cursor: pointer;
+  letter-spacing: 1.5px;
+}
 /* ===============js classes ====================== */
 .open-container {
   display: flex;
+}
+
+.name-alert .show-alert {
+  display: block;
 }
