@@ -105,18 +105,36 @@ registerBtn.addEventListener("click", async (e) => {
   }
 });
 
+const roleBtn = document.querySelectorAll(".role-btn");
+
+roleBtn.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    roleBtn.forEach((subbtn) => {
+      subbtn.classList.remove("selected-role");
+      btn.classList.remove("role-alert");
+      loginBtn.removeAttribute("data-login");
+    });
+    const role = btn.textContent.toLocaleLowerCase();
+    loginBtn.setAttribute("data-login", role);
+
+    btn.classList.add("selected-role");
+  });
+});
+
 // ==============login ================
 loginBtn.addEventListener("click", async (e) => {
   const email = loginEmail.value;
   const password = loginPassword.value;
-
+  const role = await e.target.dataset.login;
+  console.log(role);
   try {
     const data = await axios.post("/api/v1/auth/login", {
       email,
       password,
+      role,
     });
-    const coach = data.data;
-    console.log(coach);
+    const user = data.data;
+    console.log(user);
   } catch (error) {
     showAlert(loginEmailAlert);
     showAlert(loginPasswordAlert);

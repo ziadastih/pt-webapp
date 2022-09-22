@@ -40,15 +40,16 @@ const login = async (req, res) => {
     res.status(StatusCodes.OK).json({
       coach: {
         coachId: coach._id,
-        coachName: coach.firstName,
+        coachFirstName: coach.firstName,
+        coachLastName: coach.lastName,
         role: coach.role,
       },
     });
   } else if (role === "client") {
-    // ============now searching in database for email
+    // ============now searching in database for email of the client
     const client = await Client.findOne({ email });
     const isPasswordCorrect = await client.comparePassword(password);
-    // if coach not found means invalid credentials
+    // if client not found means invalid credentials
     // =compare password / if password doesnt match throw error invalid credentials==========
     if (!client || !isPasswordCorrect) {
       throw new UnauthenticatedError("invalid credential");
@@ -68,6 +69,7 @@ const login = async (req, res) => {
       client: {
         clientId: client._id,
         clientName: client.firstName,
+        clientLastName: client.lastName,
         role: client.role,
       },
     });

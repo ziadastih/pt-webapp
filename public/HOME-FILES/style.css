@@ -11,6 +11,7 @@
   /* =========main color ============ */
   --mainColor: #0e535f;
   --SecondaryColor: #1d4147;
+  --alert: #fc8f3a;
 }
 
 /* ===========global ================ */
@@ -270,7 +271,7 @@ body {
 /* ============alerts for every input ============ */
 .name-alert .alert {
   display: none;
-  color: #fc8f3a;
+  color: var(--alert);
   font-size: 8px;
   font-weight: 400;
 }
@@ -282,7 +283,28 @@ body {
 .login-container {
   transform: translate(-50%, -50%);
 }
+.role-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 30px;
+  width: 60vw;
+}
 
+.title {
+  color: white;
+  font-family: var(--fontSansSerif);
+  font-size: 14px;
+}
+.role-btn {
+  font-size: 10px;
+  color: white;
+  border: 1px solid white;
+  background-color: transparent;
+  padding: 5px;
+  border-radius: 3px;
+  cursor: pointer;
+}
 #login-password {
   margin-bottom: 10px;
 }
@@ -307,4 +329,13 @@ body {
 
 .name-alert .show-alert {
   display: block;
+}
+
+.selected-role {
+  background-color: white;
+  color: var(--mainColor);
+}
+
+.role-alert {
+  border: 1px solid var(--alert);
 }
