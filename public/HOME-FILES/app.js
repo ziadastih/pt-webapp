@@ -137,3 +137,27 @@ function validateEmail(emailValue) {
   let res = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
   return res.test(emailValue);
 }
+
+// ================logout test ===================
+
+const logoutBtn = document.getElementById("contact-us-nav-btn");
+
+logoutBtn.addEventListener("click", async () => {
+  try {
+    await axios.post("/api/v1/auth/logout");
+  } catch (error) {
+    console.log(error);
+  }
+});
+
+// ==============get clients test ===========================
+const getClientsBtn = document.getElementById("features-nav-btn");
+
+getClientsBtn.addEventListener("click", async () => {
+  try {
+    const { data } = await axios.get("/api/v1/client");
+    console.log({ data });
+  } catch (error) {
+    console.log(error);
+  }
+});

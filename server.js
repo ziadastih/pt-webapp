@@ -10,7 +10,7 @@ const rateLimiter = require("express-rate-limit");
 
 // ================== express ================
 const express = require("express");
-
+const cookieParser = require("cookie-parser");
 const server = express();
 // ==============importing routes ====================
 const authRoute = require("./routes/pTrouteAuth");
@@ -48,8 +48,10 @@ server.use(
   })
 );
 // ================routes ==========
+server.use(cookieParser());
 server.use(express.static("./public/HOME-FILES"));
 server.use(express.json());
+
 server.use("/api/v1/auth", authRoute);
 server.use("/api/v1/client", authCoach, ptClientRoute);
 server.use("/api/v1/workout", authCoach, workoutRoute);
