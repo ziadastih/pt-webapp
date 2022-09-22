@@ -77,7 +77,7 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  display: flex;
+  display: none;
   align-items: center;
   justify-content: center;
   flex-direction: column;
@@ -157,7 +157,7 @@ body {
 .nav-bar {
   position: fixed;
   width: 100vw;
-  height: 80px;
+  height: 9vh;
   background-color: var(--mainColor);
   font-family: var(--fontSansSerif);
   font-size: 18px;
@@ -194,7 +194,7 @@ body {
 
   background-color: var(--mainColor);
   width: 80vw;
-  z-index: 999;
+  z-index: 20;
   display: none;
   align-items: center;
   justify-content: center;
@@ -338,4 +338,163 @@ body {
 
 .role-alert {
   border: 1px solid var(--alert);
+}
+
+/* ==============coach section =================== */
+.coach-section {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+
+  justify-content: flex-start;
+  flex-direction: column;
+}
+.coach-general-stats-container {
+  height: 45vh;
+  width: 100vw;
+  background-color: var(--mainColor);
+}
+
+.logo-notification {
+  width: 90vw;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  color: white;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.logo-notification p {
+  font-family: var(--fontSansSerif);
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  margin-left: 20px;
+}
+
+.profile-picture-container {
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+#profile-picture-file {
+  display: none;
+}
+
+.default-profile-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 1px solid white;
+  position: relative;
+}
+
+#upload-profile-picture {
+  position: absolute;
+  top: 0;
+  right: 0px;
+  z-index: 10;
+  cursor: pointer;
+}
+
+.coach-name {
+  margin-top: 10px;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--fontSansSerif);
+  color: white;
+  font-size: 24px;
+
+  font-weight: 400;
+  text-transform: capitalize;
+}
+
+.triple-stats-container {
+  margin-top: 35px;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+}
+
+.stats {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.number {
+  font-family: var(--fontSansSerif);
+  color: white;
+  font-size: 20px;
+  font-weight: 400;
+}
+.stat-title {
+  font-family: var(--fontSansSerif);
+
+  text-transform: capitalize;
+  letter-spacing: 1.2px;
+  color: #120101;
+  opacity: 0.5;
+}
+.pentagon-div {
+  position: relative;
+}
+.pentagon-div .fa-dumbbell {
+  color: white;
+  position: absolute;
+  top: 20px;
+  left: 18px;
+}
+.pentagon-diet-div {
+  position: relative;
+}
+.pentagon-diet-div .fa-bowl-food {
+  color: white;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+
+.coach-access-section {
+  height: 45vh;
+  width: 100vw;
+}
+
+.access-box {
+  height: 11.75vh;
+  width: 100vw;
+  border-bottom: 1px solid var(--mainColor);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  color: var(--mainColor);
+}
+.access-box i {
+  font-size: 24px;
+  margin-left: 40px;
+}
+.access-box img {
+  margin-right: 40px;
+}
+.access-box p {
+  font-family: var(--fontSansSerif);
+  font-size: 24px;
+  text-transform: capitalize;
+  letter-spacing: 1.2px;
+  font-weight: 400;
+}
+.my-wallet {
+  border-bottom: none;
 }
