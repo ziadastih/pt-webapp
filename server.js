@@ -26,13 +26,13 @@ const notFoundMiddleware = require("./middleware/not-found");
 const errorHandlerMiddleware = require("./middleware/error-handler");
 
 // =================trust proxy and rate limter function ============
-server.set("trust proxy", 1);
-server.use(
-  rateLimiter({
-    windowMs: 15 * 60 * 1000, // 15 minutes
-    max: 100, // limit each IP to 100 requests per windowMs
-  })
-);
+// server.set("trust proxy", 1);
+// server.use(
+//   rateLimiter({
+//     windowMs: 15 * 60 * 1000, // 15 minutes
+//     max: 100, // limit each IP to 100 requests per windowMs
+//   })
+// );
 
 // ==============security ===========================
 

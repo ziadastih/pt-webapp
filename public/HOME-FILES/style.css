@@ -90,6 +90,7 @@ body {
   min-height: 100vh;
   width: 100vw;
   position: relative;
+  overflow-x: hidden;
 }
 
 /* ==============GLOBAL USER  SECTION  ===========================================*/
@@ -102,7 +103,7 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  display: none;
+  display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
@@ -180,7 +181,7 @@ body {
 
 /* ============Navigation bar postion absolute bottom 0 === */
 .nav-bar {
-  display: none;
+  display: flex;
 }
 
 /* ===========hover effect for clickable btns ============== */
@@ -329,17 +330,24 @@ body {
   cursor: pointer;
   letter-spacing: 1.5px;
 }
-
+.btn a {
+  text-decoration: none;
+  color: var(--mainColor);
+}
 /* ====================USER SECTION STYLE ===================================================== */
 
 /* ==============coach section =================== */
 .coach-section {
+  position: absolute;
+  top: 0;
   width: 100vw;
   height: 100vh;
+
   display: flex;
 
   justify-content: flex-start;
   flex-direction: column;
+  transition: 300ms ease-in;
 }
 
 /* =============COACH PROFILE SECTION STYLE =================== */
@@ -503,8 +511,8 @@ body {
   border-bottom: none;
 }
 /* ============user nav bar ======================== */
-.user-nav-bar {
-  display: flex;
+.coach-nav-bar {
+  transition: 300ms ease-in;
 }
 
 /* ===============js classes ====================== */
@@ -528,6 +536,7 @@ body {
 .display-none {
   display: none;
 }
+
 .translate-page {
   transform: translateX(0);
 }

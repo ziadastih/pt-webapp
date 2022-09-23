@@ -3,10 +3,10 @@ const jwt = require("jsonwebtoken");
 const { UnauthenticatedError } = require("../errors");
 
 const CoachAuth = async (req, res, next) => {
-  const { token, refreshToken } = req.cookies;
+  const { token } = req.cookies;
 
   // ============make sure both tokens are present ============
-  if (!token && !refreshToken) {
+  if (!token) {
     throw new UnauthenticatedError("AUTHENTICATION INVALID");
   }
 

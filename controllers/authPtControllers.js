@@ -32,7 +32,7 @@ const login = async (req, res) => {
 
     // ========set token inside our http cookie to make it safe =============
     res.cookie("token", token, {
-      maxAge: "300000",
+      maxAge: "3600000",
       httpOnly: true,
     });
 
