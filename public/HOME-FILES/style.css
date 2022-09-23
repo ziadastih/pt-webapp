@@ -55,6 +55,29 @@ input {
   margin-left: -20px;
   cursor: pointer;
 }
+
+.global-nav {
+  position: fixed;
+  width: 100vw;
+  height: 9vh;
+  background-color: var(--mainColor);
+  font-family: var(--fontSansSerif);
+  font-size: 18px;
+  text-transform: capitalize;
+  letter-spacing: 0.02em;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  z-index: 10;
+  color: white;
+}
+
+.global-nav p {
+  cursor: pointer;
+  transition: 300ms ease-in;
+}
 /* ==================END OF GLOBAL CLASSES ========================  */
 /* ============================BODY START =========================== */
 
@@ -68,6 +91,8 @@ body {
   width: 100vw;
   position: relative;
 }
+
+/* ==============GLOBAL USER  SECTION  ===========================================*/
 
 /* ===============homepageSection ================= */
 .homepage-section {
@@ -155,30 +180,12 @@ body {
 
 /* ============Navigation bar postion absolute bottom 0 === */
 .nav-bar {
-  position: fixed;
-  width: 100vw;
-  height: 9vh;
-  background-color: var(--mainColor);
-  font-family: var(--fontSansSerif);
-  font-size: 18px;
-  text-transform: capitalize;
-  letter-spacing: 0.02em;
-  bottom: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 30px;
-  z-index: 10;
-  color: white;
-}
-.nav-bar p {
-  cursor: pointer;
-  transition: 300ms ease-in;
+  display: none;
 }
 
 /* ===========hover effect for clickable btns ============== */
 .get-started-btn:hover,
-.nav-bar p:hover {
+.global-nav p:hover {
   opacity: 0.8;
 }
 
@@ -322,23 +329,8 @@ body {
   cursor: pointer;
   letter-spacing: 1.5px;
 }
-/* ===============js classes ====================== */
-.open-container {
-  display: flex;
-}
 
-.name-alert .show-alert {
-  display: block;
-}
-
-.selected-role {
-  background-color: white;
-  color: var(--mainColor);
-}
-
-.role-alert {
-  border: 1px solid var(--alert);
-}
+/* ====================USER SECTION STYLE ===================================================== */
 
 /* ==============coach section =================== */
 .coach-section {
@@ -349,12 +341,14 @@ body {
   justify-content: flex-start;
   flex-direction: column;
 }
+
+/* =============COACH PROFILE SECTION STYLE =================== */
 .coach-general-stats-container {
   height: 45vh;
   width: 100vw;
   background-color: var(--mainColor);
 }
-
+/* ==================LOGO AND NOTIFICATION DISPLAY FLX, ALIGN AND SPACE BETWEEN */
 .logo-notification {
   width: 90vw;
   display: flex;
@@ -373,6 +367,7 @@ body {
   margin-left: 20px;
 }
 
+/* ===================PROFILE PICTURE CONTAINER  ALIGN CENTER  =================================== */
 .profile-picture-container {
   width: 100vw;
   display: flex;
@@ -380,10 +375,12 @@ body {
   justify-content: center;
   position: relative;
 }
+/* ==============THE INPUT BTN DISPLAY NONE SO WE USE THE LABEL WHICH IS THE PEN ======== */
 #profile-picture-file {
   display: none;
 }
 
+/* ============THE CONTAINER THAT WILL BT HOLDING OUR PICTURE ==================== */
 .default-profile-container {
   display: flex;
   align-items: center;
@@ -395,14 +392,15 @@ body {
   position: relative;
 }
 
-#upload-profile-picture {
+/* ============the edit pan to insert the image we want ============== */
+#upload-profile-picture-btn {
   position: absolute;
   top: 0;
   right: 0px;
   z-index: 10;
   cursor: pointer;
 }
-
+/* ==============coach name ============================= */
 .coach-name {
   margin-top: 10px;
   width: 100vw;
@@ -416,7 +414,7 @@ body {
   font-weight: 400;
   text-transform: capitalize;
 }
-
+/* ==============THE PENTAGON SHAPE AND ICONS CONTAINER DISPLAY FLEX ALIGN CENTER AND SPECIFIC GAP */
 .triple-stats-container {
   margin-top: 35px;
   width: 100vw;
@@ -426,6 +424,7 @@ body {
   gap: 50px;
 }
 
+/* ============THE STATS CONTAINER  FLEX ,COLUMN ALIGNED CENTER ================ */
 .stats {
   display: flex;
   flex-direction: column;
@@ -433,9 +432,10 @@ body {
   justify-content: center;
   gap: 10px;
 }
+/* ============NUMBER AND STAT TITLE FONT FAMILY AND CORRESPONDING COLORS ================ */
 .number {
   font-family: var(--fontSansSerif);
-  color: white;
+  color: whitesmoke;
   font-size: 20px;
   font-weight: 400;
 }
@@ -444,33 +444,36 @@ body {
 
   text-transform: capitalize;
   letter-spacing: 1.2px;
-  color: #120101;
+  color: white;
   opacity: 0.5;
 }
+/* ===========THE PENTAGON DIV WHERE WE WANT TO ADD AN ICON =========== */
 .pentagon-div {
   position: relative;
 }
-.pentagon-div .fa-dumbbell {
-  color: white;
+.pentagon-div i {
+  color: var(--mainColor);
   position: absolute;
   top: 20px;
   left: 18px;
 }
+
 .pentagon-diet-div {
   position: relative;
 }
 .pentagon-diet-div .fa-bowl-food {
-  color: white;
+  color: var(--mainColor);
   position: absolute;
   top: 20px;
   left: 20px;
 }
 
+/* ================COACH ACCESS SECTION WHERE HE CAN GO TO CLIENTS/WORKOUTS/NUTRITION/WALLET ======== */
 .coach-access-section {
   height: 45vh;
   width: 100vw;
 }
-
+/* ================= GIVEN SPECIFIC HEIGHT WAS CALCULATED DEPEND THE NAV HEIGHT AND OUR PROFILE PICTURE CONTAINER  */
 .access-box {
   height: 11.75vh;
   width: 100vw;
@@ -495,6 +498,36 @@ body {
   letter-spacing: 1.2px;
   font-weight: 400;
 }
+/* =========REMOVING BORDER FOR THE LAST SECTION======================= */
 .my-wallet {
   border-bottom: none;
+}
+/* ============user nav bar ======================== */
+.user-nav-bar {
+  display: flex;
+}
+
+/* ===============js classes ====================== */
+.open-container {
+  display: flex;
+}
+
+.name-alert .show-alert {
+  display: block;
+}
+
+.selected-role {
+  background-color: white;
+  color: var(--mainColor);
+}
+
+.role-alert {
+  border: 1px solid var(--alert);
+}
+
+.display-none {
+  display: none;
+}
+.translate-page {
+  transform: translateX(0);
 }
