@@ -17,6 +17,7 @@ const authRoute = require("./routes/pTrouteAuth");
 const ptClientRoute = require("./routes/ptClientRoute");
 const workoutRoute = require("./routes/workoutRoute");
 const dietRoute = require("./routes/dietRoute");
+const coachRouter = require("./routes/coachRoute");
 // ===============import connectdb ===========
 const connectDB = require("./connectDb/connect");
 
@@ -53,6 +54,7 @@ server.use(express.static("./public/HOME-FILES"));
 server.use(express.json());
 
 server.use("/api/v1/auth", authRoute);
+server.use("/api/v1/coach", authCoach, coachRouter);
 server.use("/api/v1/client", authCoach, ptClientRoute);
 server.use("/api/v1/workout", authCoach, workoutRoute);
 server.use("/api/v1/diet", authCoach, dietRoute);

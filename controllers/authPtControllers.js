@@ -76,6 +76,21 @@ const login = async (req, res) => {
   }
 };
 
+const getCoach = async (req, res) => {
+  const { id: coachId } = req.params;
+  const coach = await Coach.findOne({
+    _id: coachId,
+  });
+  if (!coach) {
+    throw new NotFoundError(`no client with id ${coachId}`);
+  }
+  res.status(StatusCodes.OK).json({
+    coach: {
+      coachFirstName: coach.firstName,
+      coachLastName: coach.lastName,
+    },
+  });
+};
 // ===========logout function setting the token age to 0 ==============
 
 const logout = async (req, res) => {
@@ -86,4 +101,4 @@ const logout = async (req, res) => {
 
   res.status(StatusCodes.OK).send("session is invalid");
 };
-module.exports = { register, login, logout };
+module.exports = { register, login, logout, getCoach };

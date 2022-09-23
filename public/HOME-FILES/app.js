@@ -136,13 +136,16 @@ loginBtn.addEventListener("click", async (e) => {
       role,
     });
     window.location = "http://localhost:3000/coachHomepage.html";
-    // ============removing homesection and getting the coach homapage =================
+    const ref = data.data.coach.coachId;
 
-    const user = data.data;
-    console.log(user);
+    localStorage.setItem("ref", ref);
+    // ============removing homesection and getting the coach homapage =================
   } catch (error) {
     showAlert(loginEmailAlert);
     showAlert(loginPasswordAlert);
+    roleBtn.forEach((btn) => {
+      btn.classList.add("role-alert");
+    });
   }
 });
 
