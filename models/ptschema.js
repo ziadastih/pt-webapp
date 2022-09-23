@@ -33,6 +33,9 @@ const coachSchema = new mongoose.Schema({
     type: String,
     default: "coach",
   },
+  coachImg: {
+    type: String,
+  },
 });
 
 coachSchema.pre("save", async function () {

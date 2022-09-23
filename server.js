@@ -12,6 +12,7 @@ const rateLimiter = require("express-rate-limit");
 const express = require("express");
 const cookieParser = require("cookie-parser");
 const server = express();
+const bodyParser = require("body-parser");
 // ==============importing routes ====================
 const authRoute = require("./routes/pTrouteAuth");
 const ptClientRoute = require("./routes/ptClientRoute");
@@ -49,6 +50,9 @@ server.use(
   })
 );
 // ================routes ==========
+server.use(bodyParser.json({ limit: "50mb" }));
+server.use(bodyParser.urlencoded({ limit: "50mb", extended: true }));
+
 server.use(cookieParser());
 server.use(express.static("./public/HOME-FILES"));
 server.use(express.json());

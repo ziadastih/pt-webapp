@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
-const { getCoach } = require("../controllers/authPtControllers");
+const { getCoach, updateCoach } = require("../controllers/authPtControllers");
 
-router.route("/:id").get(getCoach);
+router.route("/:id").get(getCoach).patch(updateCoach);
 
 module.exports = router;

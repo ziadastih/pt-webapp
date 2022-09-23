@@ -88,7 +88,27 @@ const getCoach = async (req, res) => {
     coach: {
       coachFirstName: coach.firstName,
       coachLastName: coach.lastName,
+      coachImg: coach.img,
     },
+  });
+};
+const updateCoach = async (req, res) => {
+  const { id: coachId } = req.params;
+  const coach = await Coach.findOneAndUpdate(
+    {
+      _id: coachId,
+    },
+    req.body,
+    {
+      new: true,
+      runValidators: true,
+    }
+  );
+  if (!coach) {
+    throw new NotFoundError(`no coach with id ${coachId}`);
+  }
+  res.status(StatusCodes.OK).json({
+    coachImg: coach.coachImg,
   });
 };
 // ===========logout function setting the token age to 0 ==============
@@ -101,4 +121,4 @@ const logout = async (req, res) => {
 
   res.status(StatusCodes.OK).send("session is invalid");
 };
-module.exports = { register, login, logout, getCoach };
+module.exports = { register, login, logout, getCoach, updateCoach };

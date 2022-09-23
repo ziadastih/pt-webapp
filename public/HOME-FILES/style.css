@@ -387,7 +387,15 @@ body {
 #profile-picture-file {
   display: none;
 }
+#profile-picture {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
 
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
 /* ============THE CONTAINER THAT WILL BT HOLDING OUR PICTURE ==================== */
 .default-profile-container {
   display: flex;
@@ -539,4 +547,8 @@ body {
 
 .translate-page {
   transform: translateX(0);
+}
+
+.remove-border {
+  border: none;
 }

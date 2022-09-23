@@ -38,6 +38,10 @@ const clientSchema = new mongoose.Schema(
       ref: "Coach",
       required: [true, "please provide coach"],
     },
+
+    img: {
+      type: String,
+    },
   },
   { timestamps: true }
 );
