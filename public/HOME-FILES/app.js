@@ -135,7 +135,7 @@ loginBtn.addEventListener("click", async (e) => {
       password,
       role,
     });
-    window.location = "http://localhost:3000/coachHomepage.html";
+    window.location = "http://localhost:3000/coachHomepage/coachHomepage.html";
     const ref = data.data.coach.coachId;
 
     localStorage.setItem("ref", ref);

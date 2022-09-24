@@ -1,10 +1,17 @@
 const Client = require("../models/clientsModel");
 const { StatusCodes } = require("http-status-codes");
 const { BadRequestError, NotFoundError } = require("../errors");
+
 // =================get all clients ============
 const getallClients = async (req, res) => {
   const clients = await Client.find({ createdBy: req.coach.coachId });
-  res.status(StatusCodes.OK).json({ clients });
+  const clientsInfo = clients.map((obj) => {
+    return { clientFirstName: obj.firstName, clientLastName: obj.lastName };
+  });
+
+  res.status(StatusCodes.OK).json({
+    clientsInfo,
+  });
 };
 
 // ===============get one client ============
