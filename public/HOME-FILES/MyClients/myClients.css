@@ -218,6 +218,100 @@ body {
   margin-right: 10px;
   cursor: pointer;
 }
+
+.block-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  background-color: var(--mainColor);
+  width: 80vw;
+  z-index: 20;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border-radius: 5px;
+  transition: 300ms ease-in;
+}
+
+.form-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.input-container input {
+  width: 60vw;
+  margin-bottom: 20px;
+}
+
+/* ===========register header logo and close btn === */
+.box-header {
+  display: flex;
+  width: 80vw;
+  align-items: center;
+  justify-content: space-between;
+  color: white;
+  margin-top: 20px;
+}
+.box-header p {
+  margin-left: 20px;
+  text-transform: uppercase;
+  font-family: var(--fontSansSerif);
+  font-weight: 400;
+  font-size: 14px;
+}
+#close-btn {
+  margin-right: 20px;
+  cursor: pointer;
+}
+/* ============register h3 and line ========= */
+.block-container h3 {
+  color: white;
+  font-family: var(--fontSansSerif);
+  font-weight: 400;
+  font-size: 32px;
+  text-transform: capitalize;
+  margin-bottom: 10px;
+  margin-top: 30px;
+}
+.block-container span {
+  width: 100px;
+  height: 1px;
+  background-color: white;
+  opacity: 0.5;
+  margin-bottom: 30px;
+}
+
+/* ==========input name and alert ============ */
+.name-alert {
+  width: 60vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+.name-alert p {
+  font-family: var(--fontSansSerif);
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: capitalize;
+  color: white;
+  letter-spacing: 1.2px;
+}
+/* ============alerts for every input ============ */
+.name-alert .alert {
+  display: none;
+  color: var(--alert);
+  font-size: 8px;
+  font-weight: 400;
+}
+
+.register-container {
+  transform: translate(-50%, -50%);
+}
+
 /* ============user nav bar ======================== */
 .coach-nav-bar {
   transition: 300ms ease-in;
@@ -226,4 +320,34 @@ body {
 /* =================hover ================ */
 .global-nav p:hover {
   opacity: 0.8;
+}
+
+/* ===============js classes ====================== */
+.open-container {
+  display: flex;
+}
+
+.name-alert .show-alert {
+  display: block;
+}
+
+.selected-role {
+  background-color: white;
+  color: var(--mainColor);
+}
+
+.role-alert {
+  border: 1px solid var(--alert);
+}
+
+.display-none {
+  display: none;
+}
+
+.translate-page {
+  transform: translateX(0);
+}
+
+.remove-border {
+  border: none;
 }
