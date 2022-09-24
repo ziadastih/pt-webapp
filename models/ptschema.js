@@ -34,7 +34,7 @@ const coachSchema = new mongoose.Schema({
     default: "coach",
   },
   coachImg: {
-    type: String,
+    type: Array,
   },
 });
 

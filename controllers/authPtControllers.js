@@ -88,7 +88,7 @@ const getCoach = async (req, res) => {
     coach: {
       coachFirstName: coach.firstName,
       coachLastName: coach.lastName,
-      coachImg: coach.img,
+      coachImg: coach.coachImg,
     },
   });
 };
@@ -107,9 +107,7 @@ const updateCoach = async (req, res) => {
   if (!coach) {
     throw new NotFoundError(`no coach with id ${coachId}`);
   }
-  res.status(StatusCodes.OK).json({
-    coachImg: coach.coachImg,
-  });
+  res.status(StatusCodes.OK).json({ coach });
 };
 // ===========logout function setting the token age to 0 ==============
 
