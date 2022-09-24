@@ -1,7 +1,37 @@
-const openClientForm = document.querySelector(".open-client-form-btn");
+const btnContainer = document.querySelector(".btn-container");
+const clientsGridContainer = document.querySelector(".clients-grid-container");
+// ===============getClients when page open and display them =======
 
-openClientForm.addEventListener("click", () => {
-  registerContainer.classList.add("open-container");
+const getClients = async () => {
+  try {
+    const { data } = await axios.get("/api/v1/client");
+    console.log(data.clientsInfo.length);
+    const length = data.clientsInfo.length;
+    if (length === 0) {
+      btnContainer.classList.add("open-container");
+    }
+    let client = data.clientsInfo;
+    console.log(client);
+    for (let i = 0; i < length; i++) {
+      clientsGridContainer.innerHTML += ` <div class="client" data-id = ${client[i].clientId}}>
+        <p>${client[i].clientFirstName} ${client[i].clientLastName}</p>
+        <div class="tools">
+          <i class="fa-solid fa-trash" data-delete = ${client[i].clientId}></i>
+          <i class="fa-solid fa-user-pen" data-manage= ${client[i].clientId}></i>
+        </div>
+      </div> `;
+    }
+  } catch (error) {
+    console.log(error);
+  }
+};
+getClients();
+
+const openClientForms = document.querySelectorAll(".open-client-form-btn");
+openClientForms.forEach((openClientForm) => {
+  openClientForm.addEventListener("click", () => {
+    registerContainer.classList.add("open-container");
+  });
 });
 
 // ========================== register BTN ==================
@@ -49,6 +79,7 @@ registerBtn.addEventListener("click", async (e) => {
       email,
       password,
     });
+    getClients();
     registerFirstName.value = "";
     registerLastName.value = "";
     registerEmail.value = "";
@@ -76,6 +107,20 @@ togglePassword.addEventListener("click", () => {
 
 closeBtn.addEventListener("click", () => {
   registerContainer.classList.remove("open-container");
+});
+
+// ================logout user ===================
+
+const logoutBtn = document.getElementById("user-logout-nav-btn");
+
+logoutBtn.addEventListener("click", async () => {
+  try {
+    await axios.post("/api/v1/auth/logout");
+    localStorage.removeItem("ref");
+    window.location = "http://localhost:3000/";
+  } catch (error) {
+    console.log(error);
+  }
 });
 
 // ====================GLOBAL FUNCTIONS ==========================

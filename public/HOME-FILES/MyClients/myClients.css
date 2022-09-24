@@ -151,12 +151,13 @@ body {
 }
 /* ============THE HEADER AND THE BTN WHEN THERE IS NO CLIENTS ==== */
 .btn-container {
-  display: flex;
+  display: none;
   height: 40vh;
 
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  transition: 300ms ease-in;
 }
 .btn-container h3 {
   font-family: var(--fontSansSerif);

@@ -6,7 +6,11 @@ const { BadRequestError, NotFoundError } = require("../errors");
 const getallClients = async (req, res) => {
   const clients = await Client.find({ createdBy: req.coach.coachId });
   const clientsInfo = clients.map((obj) => {
-    return { clientFirstName: obj.firstName, clientLastName: obj.lastName };
+    return {
+      clientFirstName: obj.firstName,
+      clientLastName: obj.lastName,
+      clientId: obj._id,
+    };
   });
 
   res.status(StatusCodes.OK).json({

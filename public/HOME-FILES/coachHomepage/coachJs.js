@@ -59,6 +59,13 @@ const getDiets = async () => {
 };
 getDiets();
 
+// ====MY CLIENTS EVENT LISTENER ===============
+const myClientsBtn = document.querySelector(".access-clients");
+
+myClientsBtn.addEventListener("click", () => {
+  window.location = "http://localhost:3000/MyClients/myClients.html";
+});
+
 // ================logout user ===================
 
 const logoutBtn = document.getElementById("user-logout-nav-btn");
