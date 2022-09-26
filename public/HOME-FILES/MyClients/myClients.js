@@ -12,21 +12,31 @@ const getClients = async () => {
     }
     let client = data.clientsInfo;
     console.log(client);
+    clientsGridContainer.innerHTML = "";
     for (let i = 0; i < length; i++) {
       clientsGridContainer.innerHTML += ` <div class="client" data-id = ${client[i].clientId}}>
-        <p>${client[i].clientFirstName} ${client[i].clientLastName}</p>
+        <p class="client-full-name">${client[i].clientFirstName} ${client[i].clientLastName}</p>
         <div class="tools">
           <i class="fa-solid fa-trash" data-delete = ${client[i].clientId}></i>
           <i class="fa-solid fa-user-pen" data-manage= ${client[i].clientId}></i>
         </div>
       </div> `;
     }
+    const clientFullName = document.querySelectorAll(".client-full-name");
+    clientFullName.forEach((fullName) => {
+      const OriginalName = fullName.textContent;
+      if (OriginalName.length > 12) {
+        const restrictedFullName = `${OriginalName.slice(0, 12)}...`;
+        fullName.textContent = restrictedFullName;
+      }
+    });
   } catch (error) {
     console.log(error);
   }
 };
 getClients();
 
+// ================open form function ======================
 const openClientForms = document.querySelectorAll(".open-client-form-btn");
 openClientForms.forEach((openClientForm) => {
   openClientForm.addEventListener("click", () => {
@@ -34,9 +44,22 @@ openClientForms.forEach((openClientForm) => {
   });
 });
 
+// ===============close  form function ================ ========================
+const closeBtn = document.querySelector("#close-btn");
+closeBtn.addEventListener("click", () => {
+  registerContainer.classList.remove("open-container");
+});
+
+// ==============back btn ============================
+const backBtn = document.querySelector(".back-btn");
+
+backBtn.addEventListener("click", () => {
+  window.location = "http://localhost:3000/coachHomepage/coachHomepage.html";
+});
+
 // ========================== register BTN ==================
 const registerBtn = document.querySelector(".sign-up-btn");
-const closeBtn = document.querySelector("#close-btn");
+
 // ===========-register info selections ========
 const registerContainer = document.querySelector(".register-container");
 const registerFirstName = document.getElementById("register-first-name");
@@ -103,10 +126,6 @@ togglePassword.addEventListener("click", () => {
   } else {
     password.setAttribute("type", "password");
   }
-});
-
-closeBtn.addEventListener("click", () => {
-  registerContainer.classList.remove("open-container");
 });
 
 // ================logout user ===================
