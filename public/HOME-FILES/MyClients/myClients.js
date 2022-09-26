@@ -1,5 +1,8 @@
 const btnContainer = document.querySelector(".btn-container");
 const clientsGridContainer = document.querySelector(".clients-grid-container");
+const deleteVerificationContainer = document.querySelector(
+  ".delete-verification-section"
+);
 const searchCLientInput = document.getElementById("search-client-input");
 // ===============getClients when page open and display them =======
 
@@ -19,19 +22,54 @@ const getClients = async () => {
       clientsGridContainer.innerHTML += ` <div class="client" data-id = ${client[i].clientId}}>
         <p class="client-full-name">${client[i].clientFirstName} ${client[i].clientLastName}</p>
         <div class="tools">
-          <i class="fa-solid fa-trash" data-delete = ${client[i].clientId}></i>
-          <i class="fa-solid fa-user-pen" data-manage= ${client[i].clientId}></i>
+          <i class="fa-solid fa-trash" id="delete-client" data-delete = ${client[i].clientId}></i>
+          <i class="fa-solid fa-user-pen" id="manage-client" data-manage= ${client[i].clientId}></i>
         </div>
       </div> `;
     }
+
     // =================client full name adjustement========
     const clientFullName = document.querySelectorAll(".client-full-name");
     clientFullName.forEach((fullName) => {
       const OriginalName = fullName.textContent;
-      if (OriginalName.length > 12) {
-        const restrictedFullName = `${OriginalName.slice(0, 12)}...`;
+      if (OriginalName.length > 14) {
+        const restrictedFullName = `${OriginalName.slice(0, 14)}...`;
         fullName.textContent = restrictedFullName;
       }
+    });
+
+    // =============delete client ====================
+    const deleteClient = document.querySelectorAll("#delete-client");
+
+    deleteClient.forEach((deleteBtn) => {
+      deleteBtn.addEventListener("click", (e) => {
+        let clientId = e.target.dataset.delete;
+        let clientName =
+          e.target.parentElement.previousElementSibling.textContent;
+
+        deleteVerificationContainer.classList.add("open-container");
+        deleteVerificationContainer.innerHTML = ` 
+        <div class="delete-verification-box">
+        <h3>Are you sure you want to delete <span>${clientName}</span> ?</h3>
+        <div class="yes-no-container">
+          <button class="yes-btn" data-delete =${clientId}>yes</button>
+          <button class="no-btn"> no </button>
+        </div>
+        </div>`;
+
+        const noBtn = document.querySelector(".no-btn");
+        noBtn.addEventListener("click", () => {
+          deleteVerificationContainer.classList.remove("open-container");
+        });
+        const yesBtn = document.querySelector(".yes-btn");
+        yesBtn.addEventListener("click", async (e) => {
+          let id = e.target.dataset.delete;
+          await axios.delete(`/api/v1/client/${id}`);
+          deleteVerificationContainer.classList.remove("open-container");
+
+          getClients();
+        });
+      });
     });
 
     // =========================live search =======================
@@ -69,11 +107,18 @@ openClientForms.forEach((openClientForm) => {
   });
 });
 
-// ===============close  form function ================ ========================
-const closeBtn = document.querySelector("#close-btn");
-closeBtn.addEventListener("click", () => {
-  registerContainer.classList.remove("open-container");
-});
+// =============close btns for each container so we save lines of code
+const closeBtns = document.querySelectorAll("#close-btn");
+const closeContainer = () => {
+  closeBtns.forEach((closeBtn) => {
+    closeBtn.addEventListener("click", (e) => {
+      let id = e.target.dataset.close;
+      let container = document.querySelector(`.${id}`);
+      container.classList.remove("open-container");
+    });
+  });
+};
+closeContainer();
 
 // ==============back btn ============================
 const backBtn = document.querySelector(".back-btn");
