@@ -1,17 +1,19 @@
 const btnContainer = document.querySelector(".btn-container");
 const clientsGridContainer = document.querySelector(".clients-grid-container");
+const searchCLientInput = document.getElementById("search-client-input");
 // ===============getClients when page open and display them =======
 
 const getClients = async () => {
   try {
+    // ============getting the data ===============
     const { data } = await axios.get("/api/v1/client");
-    console.log(data.clientsInfo.length);
+    //  =========if length is === 0 means no clients we want to display the create item =============
     const length = data.clientsInfo.length;
     if (length === 0) {
       btnContainer.classList.add("open-container");
     }
+    //getting the array which is client =================
     let client = data.clientsInfo;
-    console.log(client);
     clientsGridContainer.innerHTML = "";
     for (let i = 0; i < length; i++) {
       clientsGridContainer.innerHTML += ` <div class="client" data-id = ${client[i].clientId}}>
@@ -22,6 +24,7 @@ const getClients = async () => {
         </div>
       </div> `;
     }
+    // =================client full name adjustement========
     const clientFullName = document.querySelectorAll(".client-full-name");
     clientFullName.forEach((fullName) => {
       const OriginalName = fullName.textContent;
@@ -29,6 +32,28 @@ const getClients = async () => {
         const restrictedFullName = `${OriginalName.slice(0, 12)}...`;
         fullName.textContent = restrictedFullName;
       }
+    });
+
+    // =========================live search =======================
+    const clientContainers = document.querySelectorAll(".client");
+    const liveSearch = () => {
+      let inputCharacter = searchCLientInput.value.toUpperCase();
+
+      clientContainers.forEach((client) => {
+        // ============show all item when input is empty again
+        if (searchCLientInput === "") {
+          client.classList.remove("display-none");
+        }
+        // ==========search by charachter, display the ones that match,remove the ones that doesnt match================
+        if (client.textContent.toUpperCase().includes(inputCharacter)) {
+          client.classList.remove("display-none");
+        } else if (!client.textContent.toUpperCase().includes(inputCharacter)) {
+          client.classList.add("display-none");
+        }
+      });
+    };
+    searchCLientInput.addEventListener("input", () => {
+      liveSearch();
     });
   } catch (error) {
     console.log(error);
