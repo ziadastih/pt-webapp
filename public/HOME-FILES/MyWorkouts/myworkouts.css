@@ -79,6 +79,7 @@ input[type="search"]::-webkit-search-results-decoration {
 
 .global-nav {
   position: fixed;
+
   width: 100vw;
   height: 9vh;
   background-color: var(--mainColor);
@@ -126,7 +127,7 @@ body {
   cursor: pointer;
 }
 /* ==================MY CLIENTS HEADER WITH THE SPAN LINE ======= */
-.my-clients-title {
+.my-workouts-title {
   width: 100vw;
   margin-top: 20px;
   display: flex;
@@ -135,14 +136,14 @@ body {
 
   flex-direction: column;
 }
-.my-clients-title h3 {
+.my-workouts-title h3 {
   font-family: var(--fontSansSerif);
   font-size: 32px;
   font-weight: 400;
   color: var(--mainColor);
   text-transform: capitalize;
 }
-.my-clients-title span {
+.my-workouts-title span {
   margin-top: 5px;
   width: 100px;
   height: 1px;
@@ -150,20 +151,20 @@ body {
   opacity: 0.5;
 }
 /* ==============THE SEARCH INPUT WITH THE SEARCH ICON ======== */
-.search-client-container {
+.search-workout-container {
   width: 100vw;
   display: flex;
   align-items: center;
   justify-content: center;
   margin-top: 30px;
 }
-#search-client-input {
+#search-workout-input {
   width: 50vw;
   background-color: transparent;
   border: 1px solid var(--mainColor);
 }
 
-.search-client-container i {
+.search-workout-container i {
   position: absolute;
   margin-left: 140px;
   color: var(--mainColor);
@@ -199,139 +200,129 @@ body {
   letter-spacing: 1.2px;
 }
 
-/* ==========CLIENTS GERID CONTAINER AND IT COMPONENTS ======= */
-
-.clients-grid-container {
+/* ====================workouts grid container ============= */
+.workouts-programs-grid-container {
   margin-top: 60px;
   display: grid;
-  grid-template-columns: repeat(2, auto);
-  align-items: center;
+  grid-template-columns: repeat(1, auto);
+  align-items: flex-start;
   justify-content: center;
   gap: 30px;
-
   width: 100vw;
-  margin-bottom: 20px;
+  margin-bottom: 10vh;
 }
-.client {
-  width: 150px;
-  min-height: 40px;
+.program-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 80vw;
+}
+/* =========workout styling that will be dealt with in js ========== */
+.program {
+  width: 80vw;
+  height: 50px;
   background-color: var(--mainColor);
   border-radius: 3px;
-  color: whitesmoke;
-  font-weight: 500;
+  color: white;
+  font-family: var(--fontSansSerif);
+  font-weight: 400;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-family: var(--fontSansSerif);
-  font-size: 12px;
   text-transform: capitalize;
 }
 
-.client p {
-  margin-left: 10px;
+.program p {
   text-align: center;
+  color: white;
+  font-weight: 700;
 }
+.program img {
+  width: 15px;
+  margin-left: 20px;
+  color: var(--eyeComfort);
+  cursor: pointer;
+  transition: 300ms ease-in;
+}
+
 .tools {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
   color: var(--eyeComfort);
-  margin-right: 10px;
+  width: 100px;
+  gap: 10px;
   cursor: pointer;
 }
 
-.block-container {
-  position: absolute;
-  top: 50%;
-  left: 50%;
+/* ===================overview container ==================== */
 
-  background-color: var(--mainColor);
-  width: 80vw;
-  z-index: 20;
+.overview-container {
   display: none;
-  align-items: center;
+  border: none;
+
+  margin-top: 20px;
+
+  align-items: flex-end;
   justify-content: center;
   flex-direction: column;
-  border-radius: 5px;
+  background-color: transparent;
+
+  width: 80vw;
+
+  z-index: 1;
   transition: 300ms ease-in;
 }
 
-.form-container {
+/* ============date inside the overview container ========== */
+.date-stats {
+  width: 80vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: white;
+  height: 50px;
+}
+.date-stats p {
+  color: var(--mainColor);
+  font-family: var(--fontSansSerif);
+  font-size: 10px;
+}
+.created-at {
+  margin-left: 20px;
+}
+.updated-at {
+  margin-right: 20px;
+}
+
+/* ========overall day container means have title and all exercises ====== */
+.workout-container {
+  margin-bottom: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  background-color: var(--mainColor);
 }
-.input-container input {
-  width: 60vw;
-  margin-bottom: 20px;
-}
-
-/* ===========register header logo and close btn === */
-.box-header {
+/* =============day title and tools container ======= */
+.workout {
   display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid var(--mainColor);
   width: 80vw;
-  align-items: center;
-  justify-content: space-between;
-  color: white;
-  margin-top: 20px;
-}
-.box-header p {
-  margin-left: 20px;
-  text-transform: uppercase;
-  font-family: var(--fontSansSerif);
-  font-weight: 400;
-  font-size: 14px;
-}
-#close-btn {
-  margin-right: 20px;
-  cursor: pointer;
-}
-/* ============register h3 and line ========= */
-.block-container h3 {
-  color: white;
-  font-family: var(--fontSansSerif);
-  font-weight: 400;
-  font-size: 32px;
+  height: 50px;
   text-transform: capitalize;
-  margin-bottom: 10px;
-  margin-top: 30px;
-}
-.block-container span {
-  width: 100px;
-  height: 1px;
-  background-color: white;
-  opacity: 0.5;
-  margin-bottom: 30px;
-}
-
-/* ==========input name and alert ============ */
-.name-alert {
-  width: 60vw;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 10px;
-}
-.name-alert p {
   font-family: var(--fontSansSerif);
-  font-size: 12px;
+
+  color: white;
   font-weight: 700;
-  text-transform: capitalize;
-  color: white;
-  letter-spacing: 1.2px;
 }
-/* ============alerts for every input ============ */
-.name-alert .alert {
-  display: none;
-  color: var(--alert);
-  font-size: 8px;
-  font-weight: 400;
-}
-
-.register-container {
-  transform: translate(-50%, -50%);
+/* ==========the arrow up ================= */
+.workout img {
+  width: 15px;
+  margin-left: 20px;
 }
 
 /* ==============delete verification box =========== */
@@ -417,7 +408,12 @@ body {
 .open-container {
   display: flex;
 }
-
+.rotate-arrow {
+  transform: rotate(180deg);
+}
+.open-container .overview-container {
+  display: flex;
+}
 .name-alert .show-alert {
   display: block;
 }

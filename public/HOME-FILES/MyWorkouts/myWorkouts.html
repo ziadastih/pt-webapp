@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="myworkouts.css" />
+    <title>My Clients</title>
+  </head>
+  <body>
+    <!-- ============class header the back btn and the add btn ===== -->
+    <div class="header-container">
+      <img src="../images/previousPageArrow.svg" class="back-btn" alt="" />
+      <i class="fa-light fa-plus open-workout-form-btn"></i>
+    </div>
+    <!-- ===============program title ==================== -->
+    <div class="my-workouts-title">
+      <h3>my workouts</h3>
+      <span></span>
+    </div>
+    <!-- ==============search input ===================== -->
+    <div class="search-workout-container">
+      <input
+        type="search"
+        placeholder="search for Workout"
+        id="search-workout-input"
+      />
+      <i class="fa-solid fa-magnifying-glass" id="search-icon-btn"></i>
+    </div>
+
+    <!-- ===============create btn contianer with it header  -->
+    <div class="btn-container">
+      <h3>create new Workout</h3>
+      <button class="create-workout-btn btn">create</button>
+    </div>
+    <!-- ==============the grid program container where we display our workouts  -->
+    <div class="workouts-programs-grid-container">
+      <!-- =========program container and overview inside it ===== -->
+      <div class="program-container">
+        <!-- ========program title and general btns ========= -->
+        <div class="program">
+          <img
+            src="../images/Arrow up.svg"
+            id="show-program"
+            alt=""
+            data-overview="programId"
+          />
+          <p>push/pull</p>
+          <!-- ========workout tools =================== -->
+          <div class="tools">
+            <i class="fa-solid fa-trash" data-manage="programId"></i>
+            <i class="fa-regular fa-pen-to-square" data-delete="programId"></i>
+          </div>
+        </div>
+        <!-- ===========overview container ==== -->
+        <div class="overview-container">
+          <!-- ==========date stats ============= -->
+          <div class="date-stats">
+            <p class="created-at">created at: 22/10/2022</p>
+            <p class="updated-at">updated at: 22/11/2022</p>
+          </div>
+          <!-- =======days of workouts and name and tools ===== -->
+
+          <!-- ============day container ,container the title of workout such as push or legs , and inside it it haas the last container which container all the exercises  -->
+          <div class="workout-container">
+            <div class="workout">
+              <img src="../images/Arrow up.svg" id="show-exercices" alt="" />
+              <p class="workout-name">legs (quads)</p>
+              <div class="tools">
+                <i class="fa-solid fa-trash"></i>
+                <i class="fa-regular fa-pen-to-square"></i>
+              </div>
+            </div>
+          </div>
+          <div class="workout-container">
+            <div class="workout">
+              <img src="../images/Arrow up.svg" id="show-exercices" alt="" />
+              <p class="workout-name">push</p>
+              <div class="tools">
+                <i class="fa-solid fa-trash"></i>
+                <i class="fa-regular fa-pen-to-square"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- =================end of first program ============== -->
+
+      <!-- =================second program displayed ================== -->
+
+      <div class="program-container">
+        <!-- ========workout title and general btns ========= -->
+        <div class="program">
+          <img
+            src="../images/Arrow up.svg"
+            id="show-program"
+            alt=""
+            data-overview="programId"
+          />
+          <p>push/pull</p>
+          <!-- ========workout tools =================== -->
+          <div class="tools">
+            <i class="fa-solid fa-trash" data-manage="workoutId"></i>
+            <i class="fa-regular fa-pen-to-square" data-delete="workoutId"></i>
+          </div>
+        </div>
+        <!-- ===========overview container ==== -->
+        <div class="overview-container">
+          <!-- ==========date stats ============= -->
+          <div class="date-stats">
+            <p class="created-at">created at: 22/10/2022</p>
+            <p class="updated-at">updated at: 22/11/2022</p>
+          </div>
+          <!-- =======days of workouts and name and tools ===== -->
+
+          <!-- ============day container ,container the title of workout such as push or legs , and inside it it haas the last container which container all the exercises  -->
+          <div class="workout-container">
+            <div class="workout">
+              <img src="../images/Arrow up.svg" id="show-exercices" alt="" />
+              <p class="workout-name">legs (quads)</p>
+              <div class="tools">
+                <i class="fa-solid fa-trash"></i>
+                <i class="fa-regular fa-pen-to-square"></i>
+              </div>
+            </div>
+          </div>
+          <div class="workout-container">
+            <div class="workout">
+              <img src="../images/Arrow up.svg" id="show-exercices" alt="" />
+              <p class="workout-name">push</p>
+              <div class="tools">
+                <i class="fa-solid fa-trash"></i>
+                <i class="fa-regular fa-pen-to-square"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- ================end of second program ================ -->
+
+    <!-- =============delete verification box ======== -->
+    <div class="delete-verification-section">
+      <div class="overlay"></div>
+    </div>
+    <!-- ================nav bar ========================= -->
+    <nav class="global-nav coach-nav-bar">
+      <p id="user-home-nav-btn">home</p>
+      <p id="user-settings-nav-btn">settings</p>
+      <p id="contact-us-nav-btn">contact us</p>
+      <p id="user-logout-nav-btn">logout</p>
+    </nav>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="myworkouts.js"></script>
+  </body>
+</html>
