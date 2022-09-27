@@ -27,6 +27,18 @@ const clientNumberStat = document.querySelector(".client-number");
 const workoutNumberStat = document.querySelector(".workout-number");
 const dietNumberStat = document.querySelector(".diet-number");
 
+const getWorkouts = async () => {
+  try {
+    const { data } = await axios.get("/api/v1/workout");
+    console.log(data.workouts);
+    workoutNumberStat.textContent = data.workouts.length;
+    console.log(data.workouts.length);
+  } catch (error) {
+    console.log(error);
+  }
+};
+getWorkouts();
+
 const getClients = async () => {
   try {
     const { data } = await axios.get("/api/v1/client");
@@ -38,20 +50,10 @@ const getClients = async () => {
 };
 getClients();
 
-const getWorkouts = async () => {
-  try {
-    const { data } = await axios.get("/api/v1/workout");
-    workoutNumberStat.textContent = data.workouts.length;
-    console.log(data.workouts.length);
-  } catch (error) {
-    console.log(error);
-  }
-};
-getWorkouts();
 const getDiets = async () => {
   try {
     const { data } = await axios.get("/api/v1/diet");
-    workoutNumberStat.textContent = data.diets.length;
+    dietNumberStat.textContent = data.diets.length;
     console.log(data.diets.length);
   } catch (error) {
     console.log(error);
@@ -64,6 +66,13 @@ const myClientsBtn = document.querySelector(".access-clients");
 
 myClientsBtn.addEventListener("click", () => {
   window.location = "http://localhost:3000/MyClients/myClients.html";
+});
+
+// =================== my workouts event listener ==========
+const myWorkoutsBtn = document.querySelector(".access-workouts");
+
+myWorkoutsBtn.addEventListener("click", () => {
+  window.location = "http://localhost:3000/MyWorkouts/myWorkouts.html";
 });
 
 // ================logout user ===================
