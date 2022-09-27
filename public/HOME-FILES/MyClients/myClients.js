@@ -177,6 +177,7 @@ registerBtn.addEventListener("click", async (e) => {
     registerLastName.value = "";
     registerEmail.value = "";
     registerPassword.value = "";
+    btnContainer.classList.add("display-none");
     setTimeout(() => {
       registerContainer.classList.remove("open-container");
     }, 500);

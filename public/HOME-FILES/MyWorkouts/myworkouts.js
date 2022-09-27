@@ -1,22 +1,87 @@
+// ===============select btn container ======================
+// =====================select grid container ===========
+// ==============select verification container and input container =========================
 const btnContainer = document.querySelector(".btn-container");
 const programGridContainer = document.querySelector(
   ".workouts-programs-grid-container"
 );
+const deleteVerificationContainer = document.querySelector(
+  ".delete-verification-section"
+);
+const searchWorkoutInput = document.getElementById("search-workout-input");
+
+// ================GET WORKOUT FUNCTION , INCLUDE DISPLAYING ALL, LIVE SEARCH , DELETE FUNCTION =============================
 
 const getWorkouts = async () => {
   try {
     // ============getting the data ===============
     const { data } = await axios.get("/api/v1/workout");
-    //  =========if length is === 0 means no clients we want to display the create item =============
+    //  =========if length is === 0 means no workouts we want to display the create item =============
     const length = data.workouts.length;
 
     if (length === 0) {
       btnContainer.classList.add("open-container");
     }
     let workoutPrograms = data.workouts;
-    console.log(data);
-    console.log(workoutPrograms);
+
     displayProgram(workoutPrograms);
+    // =============delete client ====================
+    const deleteWorkout = document.querySelectorAll("#delete-workout");
+
+    deleteWorkout.forEach((deleteBtn) => {
+      deleteBtn.addEventListener("click", (e) => {
+        let workoutId = e.target.dataset.delete;
+        let workoutName =
+          e.target.parentElement.previousElementSibling.textContent;
+
+        deleteVerificationContainer.classList.add("open-container");
+        deleteVerificationContainer.innerHTML = ` 
+        <div class="delete-verification-box">
+        <h3>Are you sure you want to delete <span>${workoutName}</span> ?</h3>
+        <div class="yes-no-container">
+          <button class="yes-btn" data-delete =${workoutId}>yes</button>
+          <button class="no-btn"> no </button>
+        </div>
+        </div>`;
+
+        const noBtn = document.querySelector(".no-btn");
+        noBtn.addEventListener("click", () => {
+          deleteVerificationContainer.classList.remove("open-container");
+        });
+        const yesBtn = document.querySelector(".yes-btn");
+        yesBtn.addEventListener("click", async (e) => {
+          let id = e.target.dataset.delete;
+
+          await axios.delete(`/api/v1/workout/${id}`);
+          deleteVerificationContainer.classList.remove("open-container");
+
+          getWorkouts();
+        });
+      });
+    });
+    // ===========================live search =======================
+    const programContainers = document.querySelectorAll(".program");
+    const liveSearch = () => {
+      let inputCharacter = searchWorkoutInput.value.toUpperCase();
+
+      programContainers.forEach((program) => {
+        // ============show all item when input is empty again
+        if (searchWorkoutInput === "") {
+          program.classList.remove("display-none");
+        }
+        // ==========search by charachter, display the ones that match,remove the ones that doesnt match================
+        if (program.textContent.toUpperCase().includes(inputCharacter)) {
+          program.classList.remove("display-none");
+        } else if (
+          !program.textContent.toUpperCase().includes(inputCharacter)
+        ) {
+          program.classList.add("display-none");
+        }
+      });
+    };
+    searchWorkoutInput.addEventListener("input", () => {
+      liveSearch();
+    });
   } catch (error) {
     console.log(error);
   }
@@ -42,8 +107,8 @@ const displayProgram = (programPlan) => {
     <p>${programPlan[i].name}</p>
     
     <div class="tools">
-      <i class="fa-solid fa-trash" data-manage="programId"></i>
-      <i class="fa-regular fa-pen-to-square" data-delete="programId"></i>
+      <i class="fa-solid fa-trash" data-manage=${programPlan[i]._id}></i>
+      <i class="fa-regular fa-pen-to-square" id="delete-workout" data-delete=${programPlan[i]._id}></i>
     </div>
   </div>
   
@@ -69,8 +134,12 @@ const displayProgram = (programPlan) => {
         // =====opening container and displaying the workouts on click
         if (item === program) {
           overviewContainer.innerHTML = `<div class="date-stats">
-          <p class="created-at">created at: ${programPlan[index].createdAt}</p>
-          <p class="updated-at">updated at: ${programPlan[index].updatedAt}</p>
+          <p class="created-at">created at: ${programPlan[
+            index
+          ].createdAt.slice(0, 10)}</p>
+          <p class="updated-at">updated at: ${programPlan[
+            index
+          ].updatedAt.slice(0, 10)}</p>
         </div>`;
           ``;
           item.classList.toggle("open-container");
@@ -142,6 +211,7 @@ const displayProgram = (programPlan) => {
     });
   });
 };
+
 // ==============back btn ============================
 const backBtn = document.querySelector(".back-btn");
 

@@ -1,0 +1,6272 @@
+[
+  {
+    "createdBy": "632c945f1ba5f0bcfc9be699",
+    "name": "push/pull",
+    "workouts": [
+      {
+        "name": "legs",
+        "exercises": [
+          {
+            "name": "squats",
+            "reps": "15-12-10-8",
+            "sets": "4",
+            "tempo": "-",
+            "rest": "120s"
+          },
+          {
+            "name": "leg press",
+            "reps": "8-10",
+            "sets": "2",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "sumo leg press",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "rp on 2nd",
+            "rest": "120s"
+          },
+          {
+            "name": "bulgarian lunges",
+            "reps": "8",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          },
+          {
+            "name": "leg extension",
+            "reps": "8-10",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          },
+          {
+            "name": "leg curls",
+            "reps": "15-30",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          },
+          {
+            "name": "standing calf raises",
+            "reps": "100",
+            "sets": "1",
+            "tempo": "-",
+            "rest": "120s"
+          }
+        ]
+      },
+      {
+        "name": "push",
+        "exercises": [
+          {
+            "name": "incline dumble press",
+            "reps": "8-12",
+            "sets": "4",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "low to high cable fly",
+            "reps": "12",
+            "sets": "3",
+            "tempo": "-",
+            "rest": "60-90s"
+          },
+          {
+            "name": "bench press",
+            "reps": "8",
+            "sets": "3",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "pec dec fly",
+            "reps": "12",
+            "sets": "3",
+            "tempo": "-",
+            "rest": "120s"
+          },
+          {
+            "name": "lateral raises",
+            "reps": "20",
+            "sets": "5",
+            "tempo": "-",
+            "rest": "30s"
+          },
+          {
+            "name": "one arm overhead triceps cable extention",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          },
+          {
+            "name": "straight bar triceps pushdown",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          }
+        ]
+      },
+      {
+        "name": "pull",
+        "exercises": [
+          {
+            "name": "incline dumble press",
+            "reps": "8-12",
+            "sets": "4",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "low to high cable fly",
+            "reps": "12",
+            "sets": "3",
+            "tempo": "-",
+            "rest": "60-90s"
+          },
+          {
+            "name": "bench press",
+            "reps": "8",
+            "sets": "3",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "pec dec fly",
+            "reps": "12",
+            "sets": "3",
+            "tempo": "-",
+            "rest": "120s"
+          },
+          {
+            "name": "lateral raises",
+            "reps": "20",
+            "sets": "5",
+            "tempo": "-",
+            "rest": "30s"
+          },
+          {
+            "name": "one arm overhead triceps cable extention",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          },
+          {
+            "name": "straight bar triceps pushdown",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          }
+        ]
+      },
+      {
+        "name": "legs",
+        "exercises": [
+          {
+            "name": "incline dumble press",
+            "reps": "8-12",
+            "sets": "4",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "low to high cable fly",
+            "reps": "12",
+            "sets": "3",
+            "tempo": "-",
+            "rest": "60-90s"
+          },
+          {
+            "name": "bench press",
+            "reps": "8",
+            "sets": "3",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "pec dec fly",
+            "reps": "12",
+            "sets": "3",
+            "tempo": "-",
+            "rest": "120s"
+          },
+          {
+            "name": "lateral raises",
+            "reps": "20",
+            "sets": "5",
+            "tempo": "-",
+            "rest": "30s"
+          },
+          {
+            "name": "one arm overhead triceps cable extention",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          },
+          {
+            "name": "straight bar triceps pushdown",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          }
+        ]
+      },
+      {
+        "name": "shoulder press",
+        "exercises": [
+          {
+            "name": "incline dumble press",
+            "reps": "8-12",
+            "sets": "4",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "low to high cable fly",
+            "reps": "12",
+            "sets": "3",
+            "tempo": "-",
+            "rest": "60-90s"
+          },
+          {
+            "name": "bench press",
+            "reps": "8",
+            "sets": "3",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "pec dec fly",
+            "reps": "12",
+            "sets": "3",
+            "tempo": "-",
+            "rest": "120s"
+          },
+          {
+            "name": "lateral raises",
+            "reps": "20",
+            "sets": "5",
+            "tempo": "-",
+            "rest": "30s"
+          },
+          {
+            "name": "one arm overhead triceps cable extention",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          },
+          {
+            "name": "straight bar triceps pushdown",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          }
+        ]
+      },
+      {
+        "name": "biceps/triceps",
+        "exercises": [
+          {
+            "name": "incline dumble press",
+            "reps": "8-12",
+            "sets": "4",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "low to high cable fly",
+            "reps": "12",
+            "sets": "3",
+            "tempo": "-",
+            "rest": "60-90s"
+          },
+          {
+            "name": "bench press",
+            "reps": "8",
+            "sets": "3",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "pec dec fly",
+            "reps": "12",
+            "sets": "3",
+            "tempo": "-",
+            "rest": "120s"
+          },
+          {
+            "name": "lateral raises",
+            "reps": "20",
+            "sets": "5",
+            "tempo": "-",
+            "rest": "30s"
+          },
+          {
+            "name": "one arm overhead triceps cable extention",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          },
+          {
+            "name": "straight bar triceps pushdown",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "createdBy": "632c945f1ba5f0bcfc9be699",
+    "name": "split",
+    "workouts": [
+      {
+        "name": "legs",
+        "exercises": [
+          {
+            "name": "squats",
+            "reps": "15-12-10-8",
+            "sets": "4",
+            "tempo": "-",
+            "rest": "120s"
+          },
+          {
+            "name": "leg press",
+            "reps": "8-10",
+            "sets": "2",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "sumo leg press",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "rp on 2nd",
+            "rest": "120s"
+          },
+          {
+            "name": "bulgarian lunges",
+            "reps": "8",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          },
+          {
+            "name": "leg extension",
+            "reps": "8-10",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          },
+          {
+            "name": "leg curls",
+            "reps": "15-30",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          },
+          {
+            "name": "standing calf raises",
+            "reps": "100",
+            "sets": "1",
+            "tempo": "-",
+            "rest": "120s"
+          }
+        ]
+      },
+      {
+        "name": "push",
+        "exercises": [
+          {
+            "name": "incline dumble press",
+            "reps": "8-12",
+            "sets": "4",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "low to high cable fly",
+            "reps": "12",
+            "sets": "3",
+            "tempo": "-",
+            "rest": "60-90s"
+          },
+          {
+            "name": "bench press",
+            "reps": "8",
+            "sets": "3",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "pec dec fly",
+            "reps": "12",
+            "sets": "3",
+            "tempo": "-",
+            "rest": "120s"
+          },
+          {
+            "name": "lateral raises",
+            "reps": "20",
+            "sets": "5",
+            "tempo": "-",
+            "rest": "30s"
+          },
+          {
+            "name": "one arm overhead triceps cable extention",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          },
+          {
+            "name": "straight bar triceps pushdown",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          }
+        ]
+      },
+      {
+        "name": "pull",
+        "exercises": [
+          {
+            "name": "incline dumble press",
+            "reps": "8-12",
+            "sets": "4",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "low to high cable fly",
+            "reps": "12",
+            "sets": "3",
+            "tempo": "-",
+            "rest": "60-90s"
+          },
+          {
+            "name": "bench press",
+            "reps": "8",
+            "sets": "3",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "pec dec fly",
+            "reps": "12",
+            "sets": "3",
+            "tempo": "-",
+            "rest": "120s"
+          },
+          {
+            "name": "lateral raises",
+            "reps": "20",
+            "sets": "5",
+            "tempo": "-",
+            "rest": "30s"
+          },
+          {
+            "name": "one arm overhead triceps cable extention",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          },
+          {
+            "name": "straight bar triceps pushdown",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          }
+        ]
+      },
+      {
+        "name": "legs",
+        "exercises": [
+          {
+            "name": "incline dumble press",
+            "reps": "8-12",
+            "sets": "4",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "low to high cable fly",
+            "reps": "12",
+            "sets": "3",
+            "tempo": "-",
+            "rest": "60-90s"
+          },
+          {
+            "name": "bench press",
+            "reps": "8",
+            "sets": "3",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "pec dec fly",
+            "reps": "12",
+            "sets": "3",
+            "tempo": "-",
+            "rest": "120s"
+          },
+          {
+            "name": "lateral raises",
+            "reps": "20",
+            "sets": "5",
+            "tempo": "-",
+            "rest": "30s"
+          },
+          {
+            "name": "one arm overhead triceps cable extention",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          },
+          {
+            "name": "straight bar triceps pushdown",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          }
+        ]
+      },
+      {
+        "name": "shoulder press",
+        "exercises": [
+          {
+            "name": "incline dumble press",
+            "reps": "8-12",
+            "sets": "4",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "low to high cable fly",
+            "reps": "12",
+            "sets": "3",
+            "tempo": "-",
+            "rest": "60-90s"
+          },
+          {
+            "name": "bench press",
+            "reps": "8",
+            "sets": "3",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "pec dec fly",
+            "reps": "12",
+            "sets": "3",
+            "tempo": "-",
+            "rest": "120s"
+          },
+          {
+            "name": "lateral raises",
+            "reps": "20",
+            "sets": "5",
+            "tempo": "-",
+            "rest": "30s"
+          },
+          {
+            "name": "one arm overhead triceps cable extention",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          },
+          {
+            "name": "straight bar triceps pushdown",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          }
+        ]
+      },
+      {
+        "name": "biceps/triceps",
+        "exercises": [
+          {
+            "name": "incline dumble press",
+            "reps": "8-12",
+            "sets": "4",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "low to high cable fly",
+            "reps": "12",
+            "sets": "3",
+            "tempo": "-",
+            "rest": "60-90s"
+          },
+          {
+            "name": "bench press",
+            "reps": "8",
+            "sets": "3",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "pec dec fly",
+            "reps": "12",
+            "sets": "3",
+            "tempo": "-",
+            "rest": "120s"
+          },
+          {
+            "name": "lateral raises",
+            "reps": "20",
+            "sets": "5",
+            "tempo": "-",
+            "rest": "30s"
+          },
+          {
+            "name": "one arm overhead triceps cable extention",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          },
+          {
+            "name": "straight bar triceps pushdown",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "createdBy": "632c945f1ba5f0bcfc9be699",
+    "name": "powerlifting",
+    "workouts": [
+      {
+        "name": "legs",
+        "exercises": [
+          {
+            "name": "squats",
+            "reps": "15-12-10-8",
+            "sets": "4",
+            "tempo": "-",
+            "rest": "120s"
+          },
+          {
+            "name": "leg press",
+            "reps": "8-10",
+            "sets": "2",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "sumo leg press",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "rp on 2nd",
+            "rest": "120s"
+          },
+          {
+            "name": "bulgarian lunges",
+            "reps": "8",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          },
+          {
+            "name": "leg extension",
+            "reps": "8-10",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          },
+          {
+            "name": "leg curls",
+            "reps": "15-30",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          },
+          {
+            "name": "standing calf raises",
+            "reps": "100",
+            "sets": "1",
+            "tempo": "-",
+            "rest": "120s"
+          }
+        ]
+      },
+      {
+        "name": "push",
+        "exercises": [
+          {
+            "name": "incline dumble press",
+            "reps": "8-12",
+            "sets": "4",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "low to high cable fly",
+            "reps": "12",
+            "sets": "3",
+            "tempo": "-",
+            "rest": "60-90s"
+          },
+          {
+            "name": "bench press",
+            "reps": "8",
+            "sets": "3",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "pec dec fly",
+            "reps": "12",
+            "sets": "3",
+            "tempo": "-",
+            "rest": "120s"
+          },
+          {
+            "name": "lateral raises",
+            "reps": "20",
+            "sets": "5",
+            "tempo": "-",
+            "rest": "30s"
+          },
+          {
+            "name": "one arm overhead triceps cable extention",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          },
+          {
+            "name": "straight bar triceps pushdown",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          }
+        ]
+      },
+      {
+        "name": "pull",
+        "exercises": [
+          {
+            "name": "incline dumble press",
+            "reps": "8-12",
+            "sets": "4",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "low to high cable fly",
+            "reps": "12",
+            "sets": "3",
+            "tempo": "-",
+            "rest": "60-90s"
+          },
+          {
+            "name": "bench press",
+            "reps": "8",
+            "sets": "3",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "pec dec fly",
+            "reps": "12",
+            "sets": "3",
+            "tempo": "-",
+            "rest": "120s"
+          },
+          {
+            "name": "lateral raises",
+            "reps": "20",
+            "sets": "5",
+            "tempo": "-",
+            "rest": "30s"
+          },
+          {
+            "name": "one arm overhead triceps cable extention",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          },
+          {
+            "name": "straight bar triceps pushdown",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          }
+        ]
+      },
+      {
+        "name": "legs",
+        "exercises": [
+          {
+            "name": "incline dumble press",
+            "reps": "8-12",
+            "sets": "4",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "low to high cable fly",
+            "reps": "12",
+            "sets": "3",
+            "tempo": "-",
+            "rest": "60-90s"
+          },
+          {
+            "name": "bench press",
+            "reps": "8",
+            "sets": "3",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "pec dec fly",
+            "reps": "12",
+            "sets": "3",
+            "tempo": "-",
+            "rest": "120s"
+          },
+          {
+            "name": "lateral raises",
+            "reps": "20",
+            "sets": "5",
+            "tempo": "-",
+            "rest": "30s"
+          },
+          {
+            "name": "one arm overhead triceps cable extention",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          },
+          {
+            "name": "straight bar triceps pushdown",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          }
+        ]
+      },
+      {
+        "name": "shoulder press",
+        "exercises": [
+          {
+            "name": "incline dumble press",
+            "reps": "8-12",
+            "sets": "4",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "low to high cable fly",
+            "reps": "12",
+            "sets": "3",
+            "tempo": "-",
+            "rest": "60-90s"
+          },
+          {
+            "name": "bench press",
+            "reps": "8",
+            "sets": "3",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "pec dec fly",
+            "reps": "12",
+            "sets": "3",
+            "tempo": "-",
+            "rest": "120s"
+          },
+          {
+            "name": "lateral raises",
+            "reps": "20",
+            "sets": "5",
+            "tempo": "-",
+            "rest": "30s"
+          },
+          {
+            "name": "one arm overhead triceps cable extention",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          },
+          {
+            "name": "straight bar triceps pushdown",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          }
+        ]
+      },
+      {
+        "name": "biceps/triceps",
+        "exercises": [
+          {
+            "name": "incline dumble press",
+            "reps": "8-12",
+            "sets": "4",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "low to high cable fly",
+            "reps": "12",
+            "sets": "3",
+            "tempo": "-",
+            "rest": "60-90s"
+          },
+          {
+            "name": "bench press",
+            "reps": "8",
+            "sets": "3",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "pec dec fly",
+            "reps": "12",
+            "sets": "3",
+            "tempo": "-",
+            "rest": "120s"
+          },
+          {
+            "name": "lateral raises",
+            "reps": "20",
+            "sets": "5",
+            "tempo": "-",
+            "rest": "30s"
+          },
+          {
+            "name": "one arm overhead triceps cable extention",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          },
+          {
+            "name": "straight bar triceps pushdown",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "createdBy": "632c945f1ba5f0bcfc9be699",
+    "name": "powerlifting",
+    "workouts": [
+      {
+        "name": "legs",
+        "exercises": [
+          {
+            "name": "squats",
+            "reps": "15-12-10-8",
+            "sets": "4",
+            "tempo": "-",
+            "rest": "120s"
+          },
+          {
+            "name": "leg press",
+            "reps": "8-10",
+            "sets": "2",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "sumo leg press",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "rp on 2nd",
+            "rest": "120s"
+          },
+          {
+            "name": "bulgarian lunges",
+            "reps": "8",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          },
+          {
+            "name": "leg extension",
+            "reps": "8-10",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          },
+          {
+            "name": "leg curls",
+            "reps": "15-30",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          },
+          {
+            "name": "standing calf raises",
+            "reps": "100",
+            "sets": "1",
+            "tempo": "-",
+            "rest": "120s"
+          }
+        ]
+      },
+      {
+        "name": "push",
+        "exercises": [
+          {
+            "name": "incline dumble press",
+            "reps": "8-12",
+            "sets": "4",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "low to high cable fly",
+            "reps": "12",
+            "sets": "3",
+            "tempo": "-",
+            "rest": "60-90s"
+          },
+          {
+            "name": "bench press",
+            "reps": "8",
+            "sets": "3",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "pec dec fly",
+            "reps": "12",
+            "sets": "3",
+            "tempo": "-",
+            "rest": "120s"
+          },
+          {
+            "name": "lateral raises",
+            "reps": "20",
+            "sets": "5",
+            "tempo": "-",
+            "rest": "30s"
+          },
+          {
+            "name": "one arm overhead triceps cable extention",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          },
+          {
+            "name": "straight bar triceps pushdown",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          }
+        ]
+      },
+      {
+        "name": "pull",
+        "exercises": [
+          {
+            "name": "incline dumble press",
+            "reps": "8-12",
+            "sets": "4",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "low to high cable fly",
+            "reps": "12",
+            "sets": "3",
+            "tempo": "-",
+            "rest": "60-90s"
+          },
+          {
+            "name": "bench press",
+            "reps": "8",
+            "sets": "3",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "pec dec fly",
+            "reps": "12",
+            "sets": "3",
+            "tempo": "-",
+            "rest": "120s"
+          },
+          {
+            "name": "lateral raises",
+            "reps": "20",
+            "sets": "5",
+            "tempo": "-",
+            "rest": "30s"
+          },
+          {
+            "name": "one arm overhead triceps cable extention",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          },
+          {
+            "name": "straight bar triceps pushdown",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          }
+        ]
+      },
+      {
+        "name": "legs",
+        "exercises": [
+          {
+            "name": "incline dumble press",
+            "reps": "8-12",
+            "sets": "4",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "low to high cable fly",
+            "reps": "12",
+            "sets": "3",
+            "tempo": "-",
+            "rest": "60-90s"
+          },
+          {
+            "name": "bench press",
+            "reps": "8",
+            "sets": "3",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "pec dec fly",
+            "reps": "12",
+            "sets": "3",
+            "tempo": "-",
+            "rest": "120s"
+          },
+          {
+            "name": "lateral raises",
+            "reps": "20",
+            "sets": "5",
+            "tempo": "-",
+            "rest": "30s"
+          },
+          {
+            "name": "one arm overhead triceps cable extention",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          },
+          {
+            "name": "straight bar triceps pushdown",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          }
+        ]
+      },
+      {
+        "name": "shoulder press",
+        "exercises": [
+          {
+            "name": "incline dumble press",
+            "reps": "8-12",
+            "sets": "4",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "low to high cable fly",
+            "reps": "12",
+            "sets": "3",
+            "tempo": "-",
+            "rest": "60-90s"
+          },
+          {
+            "name": "bench press",
+            "reps": "8",
+            "sets": "3",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "pec dec fly",
+            "reps": "12",
+            "sets": "3",
+            "tempo": "-",
+            "rest": "120s"
+          },
+          {
+            "name": "lateral raises",
+            "reps": "20",
+            "sets": "5",
+            "tempo": "-",
+            "rest": "30s"
+          },
+          {
+            "name": "one arm overhead triceps cable extention",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          },
+          {
+            "name": "straight bar triceps pushdown",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          }
+        ]
+      },
+      {
+        "name": "biceps/triceps",
+        "exercises": [
+          {
+            "name": "incline dumble press",
+            "reps": "8-12",
+            "sets": "4",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "low to high cable fly",
+            "reps": "12",
+            "sets": "3",
+            "tempo": "-",
+            "rest": "60-90s"
+          },
+          {
+            "name": "bench press",
+            "reps": "8",
+            "sets": "3",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "pec dec fly",
+            "reps": "12",
+            "sets": "3",
+            "tempo": "-",
+            "rest": "120s"
+          },
+          {
+            "name": "lateral raises",
+            "reps": "20",
+            "sets": "5",
+            "tempo": "-",
+            "rest": "30s"
+          },
+          {
+            "name": "one arm overhead triceps cable extention",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          },
+          {
+            "name": "straight bar triceps pushdown",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "createdBy": "632c945f1ba5f0bcfc9be699",
+    "name": "powerlifting",
+    "workouts": [
+      {
+        "name": "legs",
+        "exercises": [
+          {
+            "name": "squats",
+            "reps": "15-12-10-8",
+            "sets": "4",
+            "tempo": "-",
+            "rest": "120s"
+          },
+          {
+            "name": "leg press",
+            "reps": "8-10",
+            "sets": "2",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "sumo leg press",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "rp on 2nd",
+            "rest": "120s"
+          },
+          {
+            "name": "bulgarian lunges",
+            "reps": "8",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          },
+          {
+            "name": "leg extension",
+            "reps": "8-10",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          },
+          {
+            "name": "leg curls",
+            "reps": "15-30",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          },
+          {
+            "name": "standing calf raises",
+            "reps": "100",
+            "sets": "1",
+            "tempo": "-",
+            "rest": "120s"
+          }
+        ]
+      },
+      {
+        "name": "push",
+        "exercises": [
+          {
+            "name": "incline dumble press",
+            "reps": "8-12",
+            "sets": "4",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "low to high cable fly",
+            "reps": "12",
+            "sets": "3",
+            "tempo": "-",
+            "rest": "60-90s"
+          },
+          {
+            "name": "bench press",
+            "reps": "8",
+            "sets": "3",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "pec dec fly",
+            "reps": "12",
+            "sets": "3",
+            "tempo": "-",
+            "rest": "120s"
+          },
+          {
+            "name": "lateral raises",
+            "reps": "20",
+            "sets": "5",
+            "tempo": "-",
+            "rest": "30s"
+          },
+          {
+            "name": "one arm overhead triceps cable extention",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          },
+          {
+            "name": "straight bar triceps pushdown",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          }
+        ]
+      },
+      {
+        "name": "pull",
+        "exercises": [
+          {
+            "name": "incline dumble press",
+            "reps": "8-12",
+            "sets": "4",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "low to high cable fly",
+            "reps": "12",
+            "sets": "3",
+            "tempo": "-",
+            "rest": "60-90s"
+          },
+          {
+            "name": "bench press",
+            "reps": "8",
+            "sets": "3",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "pec dec fly",
+            "reps": "12",
+            "sets": "3",
+            "tempo": "-",
+            "rest": "120s"
+          },
+          {
+            "name": "lateral raises",
+            "reps": "20",
+            "sets": "5",
+            "tempo": "-",
+            "rest": "30s"
+          },
+          {
+            "name": "one arm overhead triceps cable extention",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          },
+          {
+            "name": "straight bar triceps pushdown",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          }
+        ]
+      },
+      {
+        "name": "legs",
+        "exercises": [
+          {
+            "name": "incline dumble press",
+            "reps": "8-12",
+            "sets": "4",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "low to high cable fly",
+            "reps": "12",
+            "sets": "3",
+            "tempo": "-",
+            "rest": "60-90s"
+          },
+          {
+            "name": "bench press",
+            "reps": "8",
+            "sets": "3",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "pec dec fly",
+            "reps": "12",
+            "sets": "3",
+            "tempo": "-",
+            "rest": "120s"
+          },
+          {
+            "name": "lateral raises",
+            "reps": "20",
+            "sets": "5",
+            "tempo": "-",
+            "rest": "30s"
+          },
+          {
+            "name": "one arm overhead triceps cable extention",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          },
+          {
+            "name": "straight bar triceps pushdown",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          }
+        ]
+      },
+      {
+        "name": "shoulder press",
+        "exercises": [
+          {
+            "name": "incline dumble press",
+            "reps": "8-12",
+            "sets": "4",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "low to high cable fly",
+            "reps": "12",
+            "sets": "3",
+            "tempo": "-",
+            "rest": "60-90s"
+          },
+          {
+            "name": "bench press",
+            "reps": "8",
+            "sets": "3",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "pec dec fly",
+            "reps": "12",
+            "sets": "3",
+            "tempo": "-",
+            "rest": "120s"
+          },
+          {
+            "name": "lateral raises",
+            "reps": "20",
+            "sets": "5",
+            "tempo": "-",
+            "rest": "30s"
+          },
+          {
+            "name": "one arm overhead triceps cable extention",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          },
+          {
+            "name": "straight bar triceps pushdown",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          }
+        ]
+      },
+      {
+        "name": "biceps/triceps",
+        "exercises": [
+          {
+            "name": "incline dumble press",
+            "reps": "8-12",
+            "sets": "4",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "low to high cable fly",
+            "reps": "12",
+            "sets": "3",
+            "tempo": "-",
+            "rest": "60-90s"
+          },
+          {
+            "name": "bench press",
+            "reps": "8",
+            "sets": "3",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "pec dec fly",
+            "reps": "12",
+            "sets": "3",
+            "tempo": "-",
+            "rest": "120s"
+          },
+          {
+            "name": "lateral raises",
+            "reps": "20",
+            "sets": "5",
+            "tempo": "-",
+            "rest": "30s"
+          },
+          {
+            "name": "one arm overhead triceps cable extention",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          },
+          {
+            "name": "straight bar triceps pushdown",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "createdBy": "632c945f1ba5f0bcfc9be699",
+    "name": "powerlifting",
+    "workouts": [
+      {
+        "name": "legs",
+        "exercises": [
+          {
+            "name": "squats",
+            "reps": "15-12-10-8",
+            "sets": "4",
+            "tempo": "-",
+            "rest": "120s"
+          },
+          {
+            "name": "leg press",
+            "reps": "8-10",
+            "sets": "2",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "sumo leg press",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "rp on 2nd",
+            "rest": "120s"
+          },
+          {
+            "name": "bulgarian lunges",
+            "reps": "8",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          },
+          {
+            "name": "leg extension",
+            "reps": "8-10",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          },
+          {
+            "name": "leg curls",
+            "reps": "15-30",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          },
+          {
+            "name": "standing calf raises",
+            "reps": "100",
+            "sets": "1",
+            "tempo": "-",
+            "rest": "120s"
+          }
+        ]
+      },
+      {
+        "name": "push",
+        "exercises": [
+          {
+            "name": "incline dumble press",
+            "reps": "8-12",
+            "sets": "4",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "low to high cable fly",
+            "reps": "12",
+            "sets": "3",
+            "tempo": "-",
+            "rest": "60-90s"
+          },
+          {
+            "name": "bench press",
+            "reps": "8",
+            "sets": "3",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "pec dec fly",
+            "reps": "12",
+            "sets": "3",
+            "tempo": "-",
+            "rest": "120s"
+          },
+          {
+            "name": "lateral raises",
+            "reps": "20",
+            "sets": "5",
+            "tempo": "-",
+            "rest": "30s"
+          },
+          {
+            "name": "one arm overhead triceps cable extention",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          },
+          {
+            "name": "straight bar triceps pushdown",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          }
+        ]
+      },
+      {
+        "name": "pull",
+        "exercises": [
+          {
+            "name": "incline dumble press",
+            "reps": "8-12",
+            "sets": "4",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "low to high cable fly",
+            "reps": "12",
+            "sets": "3",
+            "tempo": "-",
+            "rest": "60-90s"
+          },
+          {
+            "name": "bench press",
+            "reps": "8",
+            "sets": "3",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "pec dec fly",
+            "reps": "12",
+            "sets": "3",
+            "tempo": "-",
+            "rest": "120s"
+          },
+          {
+            "name": "lateral raises",
+            "reps": "20",
+            "sets": "5",
+            "tempo": "-",
+            "rest": "30s"
+          },
+          {
+            "name": "one arm overhead triceps cable extention",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          },
+          {
+            "name": "straight bar triceps pushdown",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          }
+        ]
+      },
+      {
+        "name": "legs",
+        "exercises": [
+          {
+            "name": "incline dumble press",
+            "reps": "8-12",
+            "sets": "4",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "low to high cable fly",
+            "reps": "12",
+            "sets": "3",
+            "tempo": "-",
+            "rest": "60-90s"
+          },
+          {
+            "name": "bench press",
+            "reps": "8",
+            "sets": "3",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "pec dec fly",
+            "reps": "12",
+            "sets": "3",
+            "tempo": "-",
+            "rest": "120s"
+          },
+          {
+            "name": "lateral raises",
+            "reps": "20",
+            "sets": "5",
+            "tempo": "-",
+            "rest": "30s"
+          },
+          {
+            "name": "one arm overhead triceps cable extention",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          },
+          {
+            "name": "straight bar triceps pushdown",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          }
+        ]
+      },
+      {
+        "name": "shoulder press",
+        "exercises": [
+          {
+            "name": "incline dumble press",
+            "reps": "8-12",
+            "sets": "4",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "low to high cable fly",
+            "reps": "12",
+            "sets": "3",
+            "tempo": "-",
+            "rest": "60-90s"
+          },
+          {
+            "name": "bench press",
+            "reps": "8",
+            "sets": "3",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "pec dec fly",
+            "reps": "12",
+            "sets": "3",
+            "tempo": "-",
+            "rest": "120s"
+          },
+          {
+            "name": "lateral raises",
+            "reps": "20",
+            "sets": "5",
+            "tempo": "-",
+            "rest": "30s"
+          },
+          {
+            "name": "one arm overhead triceps cable extention",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          },
+          {
+            "name": "straight bar triceps pushdown",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          }
+        ]
+      },
+      {
+        "name": "biceps/triceps",
+        "exercises": [
+          {
+            "name": "incline dumble press",
+            "reps": "8-12",
+            "sets": "4",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "low to high cable fly",
+            "reps": "12",
+            "sets": "3",
+            "tempo": "-",
+            "rest": "60-90s"
+          },
+          {
+            "name": "bench press",
+            "reps": "8",
+            "sets": "3",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "pec dec fly",
+            "reps": "12",
+            "sets": "3",
+            "tempo": "-",
+            "rest": "120s"
+          },
+          {
+            "name": "lateral raises",
+            "reps": "20",
+            "sets": "5",
+            "tempo": "-",
+            "rest": "30s"
+          },
+          {
+            "name": "one arm overhead triceps cable extention",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          },
+          {
+            "name": "straight bar triceps pushdown",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "createdBy": "632c945f1ba5f0bcfc9be699",
+    "name": "powerlifting",
+    "workouts": [
+      {
+        "name": "legs",
+        "exercises": [
+          {
+            "name": "squats",
+            "reps": "15-12-10-8",
+            "sets": "4",
+            "tempo": "-",
+            "rest": "120s"
+          },
+          {
+            "name": "leg press",
+            "reps": "8-10",
+            "sets": "2",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "sumo leg press",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "rp on 2nd",
+            "rest": "120s"
+          },
+          {
+            "name": "bulgarian lunges",
+            "reps": "8",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          },
+          {
+            "name": "leg extension",
+            "reps": "8-10",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          },
+          {
+            "name": "leg curls",
+            "reps": "15-30",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          },
+          {
+            "name": "standing calf raises",
+            "reps": "100",
+            "sets": "1",
+            "tempo": "-",
+            "rest": "120s"
+          }
+        ]
+      },
+      {
+        "name": "push",
+        "exercises": [
+          {
+            "name": "incline dumble press",
+            "reps": "8-12",
+            "sets": "4",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "low to high cable fly",
+            "reps": "12",
+            "sets": "3",
+            "tempo": "-",
+            "rest": "60-90s"
+          },
+          {
+            "name": "bench press",
+            "reps": "8",
+            "sets": "3",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "pec dec fly",
+            "reps": "12",
+            "sets": "3",
+            "tempo": "-",
+            "rest": "120s"
+          },
+          {
+            "name": "lateral raises",
+            "reps": "20",
+            "sets": "5",
+            "tempo": "-",
+            "rest": "30s"
+          },
+          {
+            "name": "one arm overhead triceps cable extention",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          },
+          {
+            "name": "straight bar triceps pushdown",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          }
+        ]
+      },
+      {
+        "name": "pull",
+        "exercises": [
+          {
+            "name": "incline dumble press",
+            "reps": "8-12",
+            "sets": "4",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "low to high cable fly",
+            "reps": "12",
+            "sets": "3",
+            "tempo": "-",
+            "rest": "60-90s"
+          },
+          {
+            "name": "bench press",
+            "reps": "8",
+            "sets": "3",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "pec dec fly",
+            "reps": "12",
+            "sets": "3",
+            "tempo": "-",
+            "rest": "120s"
+          },
+          {
+            "name": "lateral raises",
+            "reps": "20",
+            "sets": "5",
+            "tempo": "-",
+            "rest": "30s"
+          },
+          {
+            "name": "one arm overhead triceps cable extention",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          },
+          {
+            "name": "straight bar triceps pushdown",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          }
+        ]
+      },
+      {
+        "name": "legs",
+        "exercises": [
+          {
+            "name": "incline dumble press",
+            "reps": "8-12",
+            "sets": "4",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "low to high cable fly",
+            "reps": "12",
+            "sets": "3",
+            "tempo": "-",
+            "rest": "60-90s"
+          },
+          {
+            "name": "bench press",
+            "reps": "8",
+            "sets": "3",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "pec dec fly",
+            "reps": "12",
+            "sets": "3",
+            "tempo": "-",
+            "rest": "120s"
+          },
+          {
+            "name": "lateral raises",
+            "reps": "20",
+            "sets": "5",
+            "tempo": "-",
+            "rest": "30s"
+          },
+          {
+            "name": "one arm overhead triceps cable extention",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          },
+          {
+            "name": "straight bar triceps pushdown",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          }
+        ]
+      },
+      {
+        "name": "shoulder press",
+        "exercises": [
+          {
+            "name": "incline dumble press",
+            "reps": "8-12",
+            "sets": "4",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "low to high cable fly",
+            "reps": "12",
+            "sets": "3",
+            "tempo": "-",
+            "rest": "60-90s"
+          },
+          {
+            "name": "bench press",
+            "reps": "8",
+            "sets": "3",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "pec dec fly",
+            "reps": "12",
+            "sets": "3",
+            "tempo": "-",
+            "rest": "120s"
+          },
+          {
+            "name": "lateral raises",
+            "reps": "20",
+            "sets": "5",
+            "tempo": "-",
+            "rest": "30s"
+          },
+          {
+            "name": "one arm overhead triceps cable extention",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          },
+          {
+            "name": "straight bar triceps pushdown",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          }
+        ]
+      },
+      {
+        "name": "biceps/triceps",
+        "exercises": [
+          {
+            "name": "incline dumble press",
+            "reps": "8-12",
+            "sets": "4",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "low to high cable fly",
+            "reps": "12",
+            "sets": "3",
+            "tempo": "-",
+            "rest": "60-90s"
+          },
+          {
+            "name": "bench press",
+            "reps": "8",
+            "sets": "3",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "pec dec fly",
+            "reps": "12",
+            "sets": "3",
+            "tempo": "-",
+            "rest": "120s"
+          },
+          {
+            "name": "lateral raises",
+            "reps": "20",
+            "sets": "5",
+            "tempo": "-",
+            "rest": "30s"
+          },
+          {
+            "name": "one arm overhead triceps cable extention",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          },
+          {
+            "name": "straight bar triceps pushdown",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "createdBy": "632c945f1ba5f0bcfc9be699",
+    "name": "powerlifting",
+    "workouts": [
+      {
+        "name": "legs",
+        "exercises": [
+          {
+            "name": "squats",
+            "reps": "15-12-10-8",
+            "sets": "4",
+            "tempo": "-",
+            "rest": "120s"
+          },
+          {
+            "name": "leg press",
+            "reps": "8-10",
+            "sets": "2",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "sumo leg press",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "rp on 2nd",
+            "rest": "120s"
+          },
+          {
+            "name": "bulgarian lunges",
+            "reps": "8",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          },
+          {
+            "name": "leg extension",
+            "reps": "8-10",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          },
+          {
+            "name": "leg curls",
+            "reps": "15-30",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          },
+          {
+            "name": "standing calf raises",
+            "reps": "100",
+            "sets": "1",
+            "tempo": "-",
+            "rest": "120s"
+          }
+        ]
+      },
+      {
+        "name": "push",
+        "exercises": [
+          {
+            "name": "incline dumble press",
+            "reps": "8-12",
+            "sets": "4",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "low to high cable fly",
+            "reps": "12",
+            "sets": "3",
+            "tempo": "-",
+            "rest": "60-90s"
+          },
+          {
+            "name": "bench press",
+            "reps": "8",
+            "sets": "3",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "pec dec fly",
+            "reps": "12",
+            "sets": "3",
+            "tempo": "-",
+            "rest": "120s"
+          },
+          {
+            "name": "lateral raises",
+            "reps": "20",
+            "sets": "5",
+            "tempo": "-",
+            "rest": "30s"
+          },
+          {
+            "name": "one arm overhead triceps cable extention",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          },
+          {
+            "name": "straight bar triceps pushdown",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          }
+        ]
+      },
+      {
+        "name": "pull",
+        "exercises": [
+          {
+            "name": "incline dumble press",
+            "reps": "8-12",
+            "sets": "4",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "low to high cable fly",
+            "reps": "12",
+            "sets": "3",
+            "tempo": "-",
+            "rest": "60-90s"
+          },
+          {
+            "name": "bench press",
+            "reps": "8",
+            "sets": "3",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "pec dec fly",
+            "reps": "12",
+            "sets": "3",
+            "tempo": "-",
+            "rest": "120s"
+          },
+          {
+            "name": "lateral raises",
+            "reps": "20",
+            "sets": "5",
+            "tempo": "-",
+            "rest": "30s"
+          },
+          {
+            "name": "one arm overhead triceps cable extention",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          },
+          {
+            "name": "straight bar triceps pushdown",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          }
+        ]
+      },
+      {
+        "name": "legs",
+        "exercises": [
+          {
+            "name": "incline dumble press",
+            "reps": "8-12",
+            "sets": "4",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "low to high cable fly",
+            "reps": "12",
+            "sets": "3",
+            "tempo": "-",
+            "rest": "60-90s"
+          },
+          {
+            "name": "bench press",
+            "reps": "8",
+            "sets": "3",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "pec dec fly",
+            "reps": "12",
+            "sets": "3",
+            "tempo": "-",
+            "rest": "120s"
+          },
+          {
+            "name": "lateral raises",
+            "reps": "20",
+            "sets": "5",
+            "tempo": "-",
+            "rest": "30s"
+          },
+          {
+            "name": "one arm overhead triceps cable extention",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          },
+          {
+            "name": "straight bar triceps pushdown",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          }
+        ]
+      },
+      {
+        "name": "shoulder press",
+        "exercises": [
+          {
+            "name": "incline dumble press",
+            "reps": "8-12",
+            "sets": "4",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "low to high cable fly",
+            "reps": "12",
+            "sets": "3",
+            "tempo": "-",
+            "rest": "60-90s"
+          },
+          {
+            "name": "bench press",
+            "reps": "8",
+            "sets": "3",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "pec dec fly",
+            "reps": "12",
+            "sets": "3",
+            "tempo": "-",
+            "rest": "120s"
+          },
+          {
+            "name": "lateral raises",
+            "reps": "20",
+            "sets": "5",
+            "tempo": "-",
+            "rest": "30s"
+          },
+          {
+            "name": "one arm overhead triceps cable extention",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          },
+          {
+            "name": "straight bar triceps pushdown",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          }
+        ]
+      },
+      {
+        "name": "biceps/triceps",
+        "exercises": [
+          {
+            "name": "incline dumble press",
+            "reps": "8-12",
+            "sets": "4",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "low to high cable fly",
+            "reps": "12",
+            "sets": "3",
+            "tempo": "-",
+            "rest": "60-90s"
+          },
+          {
+            "name": "bench press",
+            "reps": "8",
+            "sets": "3",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "pec dec fly",
+            "reps": "12",
+            "sets": "3",
+            "tempo": "-",
+            "rest": "120s"
+          },
+          {
+            "name": "lateral raises",
+            "reps": "20",
+            "sets": "5",
+            "tempo": "-",
+            "rest": "30s"
+          },
+          {
+            "name": "one arm overhead triceps cable extention",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          },
+          {
+            "name": "straight bar triceps pushdown",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "createdBy": "632c945f1ba5f0bcfc9be699",
+    "name": "powerlifting",
+    "workouts": [
+      {
+        "name": "legs",
+        "exercises": [
+          {
+            "name": "squats",
+            "reps": "15-12-10-8",
+            "sets": "4",
+            "tempo": "-",
+            "rest": "120s"
+          },
+          {
+            "name": "leg press",
+            "reps": "8-10",
+            "sets": "2",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "sumo leg press",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "rp on 2nd",
+            "rest": "120s"
+          },
+          {
+            "name": "bulgarian lunges",
+            "reps": "8",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          },
+          {
+            "name": "leg extension",
+            "reps": "8-10",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          },
+          {
+            "name": "leg curls",
+            "reps": "15-30",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          },
+          {
+            "name": "standing calf raises",
+            "reps": "100",
+            "sets": "1",
+            "tempo": "-",
+            "rest": "120s"
+          }
+        ]
+      },
+      {
+        "name": "push",
+        "exercises": [
+          {
+            "name": "incline dumble press",
+            "reps": "8-12",
+            "sets": "4",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "low to high cable fly",
+            "reps": "12",
+            "sets": "3",
+            "tempo": "-",
+            "rest": "60-90s"
+          },
+          {
+            "name": "bench press",
+            "reps": "8",
+            "sets": "3",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "pec dec fly",
+            "reps": "12",
+            "sets": "3",
+            "tempo": "-",
+            "rest": "120s"
+          },
+          {
+            "name": "lateral raises",
+            "reps": "20",
+            "sets": "5",
+            "tempo": "-",
+            "rest": "30s"
+          },
+          {
+            "name": "one arm overhead triceps cable extention",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          },
+          {
+            "name": "straight bar triceps pushdown",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          }
+        ]
+      },
+      {
+        "name": "pull",
+        "exercises": [
+          {
+            "name": "incline dumble press",
+            "reps": "8-12",
+            "sets": "4",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "low to high cable fly",
+            "reps": "12",
+            "sets": "3",
+            "tempo": "-",
+            "rest": "60-90s"
+          },
+          {
+            "name": "bench press",
+            "reps": "8",
+            "sets": "3",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "pec dec fly",
+            "reps": "12",
+            "sets": "3",
+            "tempo": "-",
+            "rest": "120s"
+          },
+          {
+            "name": "lateral raises",
+            "reps": "20",
+            "sets": "5",
+            "tempo": "-",
+            "rest": "30s"
+          },
+          {
+            "name": "one arm overhead triceps cable extention",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          },
+          {
+            "name": "straight bar triceps pushdown",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          }
+        ]
+      },
+      {
+        "name": "legs",
+        "exercises": [
+          {
+            "name": "incline dumble press",
+            "reps": "8-12",
+            "sets": "4",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "low to high cable fly",
+            "reps": "12",
+            "sets": "3",
+            "tempo": "-",
+            "rest": "60-90s"
+          },
+          {
+            "name": "bench press",
+            "reps": "8",
+            "sets": "3",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "pec dec fly",
+            "reps": "12",
+            "sets": "3",
+            "tempo": "-",
+            "rest": "120s"
+          },
+          {
+            "name": "lateral raises",
+            "reps": "20",
+            "sets": "5",
+            "tempo": "-",
+            "rest": "30s"
+          },
+          {
+            "name": "one arm overhead triceps cable extention",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          },
+          {
+            "name": "straight bar triceps pushdown",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          }
+        ]
+      },
+      {
+        "name": "shoulder press",
+        "exercises": [
+          {
+            "name": "incline dumble press",
+            "reps": "8-12",
+            "sets": "4",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "low to high cable fly",
+            "reps": "12",
+            "sets": "3",
+            "tempo": "-",
+            "rest": "60-90s"
+          },
+          {
+            "name": "bench press",
+            "reps": "8",
+            "sets": "3",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "pec dec fly",
+            "reps": "12",
+            "sets": "3",
+            "tempo": "-",
+            "rest": "120s"
+          },
+          {
+            "name": "lateral raises",
+            "reps": "20",
+            "sets": "5",
+            "tempo": "-",
+            "rest": "30s"
+          },
+          {
+            "name": "one arm overhead triceps cable extention",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          },
+          {
+            "name": "straight bar triceps pushdown",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          }
+        ]
+      },
+      {
+        "name": "biceps/triceps",
+        "exercises": [
+          {
+            "name": "incline dumble press",
+            "reps": "8-12",
+            "sets": "4",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "low to high cable fly",
+            "reps": "12",
+            "sets": "3",
+            "tempo": "-",
+            "rest": "60-90s"
+          },
+          {
+            "name": "bench press",
+            "reps": "8",
+            "sets": "3",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "pec dec fly",
+            "reps": "12",
+            "sets": "3",
+            "tempo": "-",
+            "rest": "120s"
+          },
+          {
+            "name": "lateral raises",
+            "reps": "20",
+            "sets": "5",
+            "tempo": "-",
+            "rest": "30s"
+          },
+          {
+            "name": "one arm overhead triceps cable extention",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          },
+          {
+            "name": "straight bar triceps pushdown",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "createdBy": "632c945f1ba5f0bcfc9be699",
+    "name": "powerlifting",
+    "workouts": [
+      {
+        "name": "legs",
+        "exercises": [
+          {
+            "name": "squats",
+            "reps": "15-12-10-8",
+            "sets": "4",
+            "tempo": "-",
+            "rest": "120s"
+          },
+          {
+            "name": "leg press",
+            "reps": "8-10",
+            "sets": "2",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "sumo leg press",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "rp on 2nd",
+            "rest": "120s"
+          },
+          {
+            "name": "bulgarian lunges",
+            "reps": "8",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          },
+          {
+            "name": "leg extension",
+            "reps": "8-10",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          },
+          {
+            "name": "leg curls",
+            "reps": "15-30",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          },
+          {
+            "name": "standing calf raises",
+            "reps": "100",
+            "sets": "1",
+            "tempo": "-",
+            "rest": "120s"
+          }
+        ]
+      },
+      {
+        "name": "push",
+        "exercises": [
+          {
+            "name": "incline dumble press",
+            "reps": "8-12",
+            "sets": "4",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "low to high cable fly",
+            "reps": "12",
+            "sets": "3",
+            "tempo": "-",
+            "rest": "60-90s"
+          },
+          {
+            "name": "bench press",
+            "reps": "8",
+            "sets": "3",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "pec dec fly",
+            "reps": "12",
+            "sets": "3",
+            "tempo": "-",
+            "rest": "120s"
+          },
+          {
+            "name": "lateral raises",
+            "reps": "20",
+            "sets": "5",
+            "tempo": "-",
+            "rest": "30s"
+          },
+          {
+            "name": "one arm overhead triceps cable extention",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          },
+          {
+            "name": "straight bar triceps pushdown",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          }
+        ]
+      },
+      {
+        "name": "pull",
+        "exercises": [
+          {
+            "name": "incline dumble press",
+            "reps": "8-12",
+            "sets": "4",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "low to high cable fly",
+            "reps": "12",
+            "sets": "3",
+            "tempo": "-",
+            "rest": "60-90s"
+          },
+          {
+            "name": "bench press",
+            "reps": "8",
+            "sets": "3",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "pec dec fly",
+            "reps": "12",
+            "sets": "3",
+            "tempo": "-",
+            "rest": "120s"
+          },
+          {
+            "name": "lateral raises",
+            "reps": "20",
+            "sets": "5",
+            "tempo": "-",
+            "rest": "30s"
+          },
+          {
+            "name": "one arm overhead triceps cable extention",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          },
+          {
+            "name": "straight bar triceps pushdown",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          }
+        ]
+      },
+      {
+        "name": "legs",
+        "exercises": [
+          {
+            "name": "incline dumble press",
+            "reps": "8-12",
+            "sets": "4",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "low to high cable fly",
+            "reps": "12",
+            "sets": "3",
+            "tempo": "-",
+            "rest": "60-90s"
+          },
+          {
+            "name": "bench press",
+            "reps": "8",
+            "sets": "3",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "pec dec fly",
+            "reps": "12",
+            "sets": "3",
+            "tempo": "-",
+            "rest": "120s"
+          },
+          {
+            "name": "lateral raises",
+            "reps": "20",
+            "sets": "5",
+            "tempo": "-",
+            "rest": "30s"
+          },
+          {
+            "name": "one arm overhead triceps cable extention",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          },
+          {
+            "name": "straight bar triceps pushdown",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          }
+        ]
+      },
+      {
+        "name": "shoulder press",
+        "exercises": [
+          {
+            "name": "incline dumble press",
+            "reps": "8-12",
+            "sets": "4",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "low to high cable fly",
+            "reps": "12",
+            "sets": "3",
+            "tempo": "-",
+            "rest": "60-90s"
+          },
+          {
+            "name": "bench press",
+            "reps": "8",
+            "sets": "3",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "pec dec fly",
+            "reps": "12",
+            "sets": "3",
+            "tempo": "-",
+            "rest": "120s"
+          },
+          {
+            "name": "lateral raises",
+            "reps": "20",
+            "sets": "5",
+            "tempo": "-",
+            "rest": "30s"
+          },
+          {
+            "name": "one arm overhead triceps cable extention",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          },
+          {
+            "name": "straight bar triceps pushdown",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          }
+        ]
+      },
+      {
+        "name": "biceps/triceps",
+        "exercises": [
+          {
+            "name": "incline dumble press",
+            "reps": "8-12",
+            "sets": "4",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "low to high cable fly",
+            "reps": "12",
+            "sets": "3",
+            "tempo": "-",
+            "rest": "60-90s"
+          },
+          {
+            "name": "bench press",
+            "reps": "8",
+            "sets": "3",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "pec dec fly",
+            "reps": "12",
+            "sets": "3",
+            "tempo": "-",
+            "rest": "120s"
+          },
+          {
+            "name": "lateral raises",
+            "reps": "20",
+            "sets": "5",
+            "tempo": "-",
+            "rest": "30s"
+          },
+          {
+            "name": "one arm overhead triceps cable extention",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          },
+          {
+            "name": "straight bar triceps pushdown",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "createdBy": "632c945f1ba5f0bcfc9be699",
+    "name": "powerlifting",
+    "workouts": [
+      {
+        "name": "legs",
+        "exercises": [
+          {
+            "name": "squats",
+            "reps": "15-12-10-8",
+            "sets": "4",
+            "tempo": "-",
+            "rest": "120s"
+          },
+          {
+            "name": "leg press",
+            "reps": "8-10",
+            "sets": "2",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "sumo leg press",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "rp on 2nd",
+            "rest": "120s"
+          },
+          {
+            "name": "bulgarian lunges",
+            "reps": "8",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          },
+          {
+            "name": "leg extension",
+            "reps": "8-10",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          },
+          {
+            "name": "leg curls",
+            "reps": "15-30",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          },
+          {
+            "name": "standing calf raises",
+            "reps": "100",
+            "sets": "1",
+            "tempo": "-",
+            "rest": "120s"
+          }
+        ]
+      },
+      {
+        "name": "push",
+        "exercises": [
+          {
+            "name": "incline dumble press",
+            "reps": "8-12",
+            "sets": "4",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "low to high cable fly",
+            "reps": "12",
+            "sets": "3",
+            "tempo": "-",
+            "rest": "60-90s"
+          },
+          {
+            "name": "bench press",
+            "reps": "8",
+            "sets": "3",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "pec dec fly",
+            "reps": "12",
+            "sets": "3",
+            "tempo": "-",
+            "rest": "120s"
+          },
+          {
+            "name": "lateral raises",
+            "reps": "20",
+            "sets": "5",
+            "tempo": "-",
+            "rest": "30s"
+          },
+          {
+            "name": "one arm overhead triceps cable extention",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          },
+          {
+            "name": "straight bar triceps pushdown",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          }
+        ]
+      },
+      {
+        "name": "pull",
+        "exercises": [
+          {
+            "name": "incline dumble press",
+            "reps": "8-12",
+            "sets": "4",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "low to high cable fly",
+            "reps": "12",
+            "sets": "3",
+            "tempo": "-",
+            "rest": "60-90s"
+          },
+          {
+            "name": "bench press",
+            "reps": "8",
+            "sets": "3",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "pec dec fly",
+            "reps": "12",
+            "sets": "3",
+            "tempo": "-",
+            "rest": "120s"
+          },
+          {
+            "name": "lateral raises",
+            "reps": "20",
+            "sets": "5",
+            "tempo": "-",
+            "rest": "30s"
+          },
+          {
+            "name": "one arm overhead triceps cable extention",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          },
+          {
+            "name": "straight bar triceps pushdown",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          }
+        ]
+      },
+      {
+        "name": "legs",
+        "exercises": [
+          {
+            "name": "incline dumble press",
+            "reps": "8-12",
+            "sets": "4",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "low to high cable fly",
+            "reps": "12",
+            "sets": "3",
+            "tempo": "-",
+            "rest": "60-90s"
+          },
+          {
+            "name": "bench press",
+            "reps": "8",
+            "sets": "3",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "pec dec fly",
+            "reps": "12",
+            "sets": "3",
+            "tempo": "-",
+            "rest": "120s"
+          },
+          {
+            "name": "lateral raises",
+            "reps": "20",
+            "sets": "5",
+            "tempo": "-",
+            "rest": "30s"
+          },
+          {
+            "name": "one arm overhead triceps cable extention",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          },
+          {
+            "name": "straight bar triceps pushdown",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          }
+        ]
+      },
+      {
+        "name": "shoulder press",
+        "exercises": [
+          {
+            "name": "incline dumble press",
+            "reps": "8-12",
+            "sets": "4",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "low to high cable fly",
+            "reps": "12",
+            "sets": "3",
+            "tempo": "-",
+            "rest": "60-90s"
+          },
+          {
+            "name": "bench press",
+            "reps": "8",
+            "sets": "3",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "pec dec fly",
+            "reps": "12",
+            "sets": "3",
+            "tempo": "-",
+            "rest": "120s"
+          },
+          {
+            "name": "lateral raises",
+            "reps": "20",
+            "sets": "5",
+            "tempo": "-",
+            "rest": "30s"
+          },
+          {
+            "name": "one arm overhead triceps cable extention",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          },
+          {
+            "name": "straight bar triceps pushdown",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          }
+        ]
+      },
+      {
+        "name": "biceps/triceps",
+        "exercises": [
+          {
+            "name": "incline dumble press",
+            "reps": "8-12",
+            "sets": "4",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "low to high cable fly",
+            "reps": "12",
+            "sets": "3",
+            "tempo": "-",
+            "rest": "60-90s"
+          },
+          {
+            "name": "bench press",
+            "reps": "8",
+            "sets": "3",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "pec dec fly",
+            "reps": "12",
+            "sets": "3",
+            "tempo": "-",
+            "rest": "120s"
+          },
+          {
+            "name": "lateral raises",
+            "reps": "20",
+            "sets": "5",
+            "tempo": "-",
+            "rest": "30s"
+          },
+          {
+            "name": "one arm overhead triceps cable extention",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          },
+          {
+            "name": "straight bar triceps pushdown",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "createdBy": "632c945f1ba5f0bcfc9be699",
+    "name": "powerlifting",
+    "workouts": [
+      {
+        "name": "legs",
+        "exercises": [
+          {
+            "name": "squats",
+            "reps": "15-12-10-8",
+            "sets": "4",
+            "tempo": "-",
+            "rest": "120s"
+          },
+          {
+            "name": "leg press",
+            "reps": "8-10",
+            "sets": "2",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "sumo leg press",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "rp on 2nd",
+            "rest": "120s"
+          },
+          {
+            "name": "bulgarian lunges",
+            "reps": "8",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          },
+          {
+            "name": "leg extension",
+            "reps": "8-10",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          },
+          {
+            "name": "leg curls",
+            "reps": "15-30",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          },
+          {
+            "name": "standing calf raises",
+            "reps": "100",
+            "sets": "1",
+            "tempo": "-",
+            "rest": "120s"
+          }
+        ]
+      },
+      {
+        "name": "push",
+        "exercises": [
+          {
+            "name": "incline dumble press",
+            "reps": "8-12",
+            "sets": "4",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "low to high cable fly",
+            "reps": "12",
+            "sets": "3",
+            "tempo": "-",
+            "rest": "60-90s"
+          },
+          {
+            "name": "bench press",
+            "reps": "8",
+            "sets": "3",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "pec dec fly",
+            "reps": "12",
+            "sets": "3",
+            "tempo": "-",
+            "rest": "120s"
+          },
+          {
+            "name": "lateral raises",
+            "reps": "20",
+            "sets": "5",
+            "tempo": "-",
+            "rest": "30s"
+          },
+          {
+            "name": "one arm overhead triceps cable extention",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          },
+          {
+            "name": "straight bar triceps pushdown",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          }
+        ]
+      },
+      {
+        "name": "pull",
+        "exercises": [
+          {
+            "name": "incline dumble press",
+            "reps": "8-12",
+            "sets": "4",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "low to high cable fly",
+            "reps": "12",
+            "sets": "3",
+            "tempo": "-",
+            "rest": "60-90s"
+          },
+          {
+            "name": "bench press",
+            "reps": "8",
+            "sets": "3",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "pec dec fly",
+            "reps": "12",
+            "sets": "3",
+            "tempo": "-",
+            "rest": "120s"
+          },
+          {
+            "name": "lateral raises",
+            "reps": "20",
+            "sets": "5",
+            "tempo": "-",
+            "rest": "30s"
+          },
+          {
+            "name": "one arm overhead triceps cable extention",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          },
+          {
+            "name": "straight bar triceps pushdown",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          }
+        ]
+      },
+      {
+        "name": "legs",
+        "exercises": [
+          {
+            "name": "incline dumble press",
+            "reps": "8-12",
+            "sets": "4",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "low to high cable fly",
+            "reps": "12",
+            "sets": "3",
+            "tempo": "-",
+            "rest": "60-90s"
+          },
+          {
+            "name": "bench press",
+            "reps": "8",
+            "sets": "3",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "pec dec fly",
+            "reps": "12",
+            "sets": "3",
+            "tempo": "-",
+            "rest": "120s"
+          },
+          {
+            "name": "lateral raises",
+            "reps": "20",
+            "sets": "5",
+            "tempo": "-",
+            "rest": "30s"
+          },
+          {
+            "name": "one arm overhead triceps cable extention",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          },
+          {
+            "name": "straight bar triceps pushdown",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          }
+        ]
+      },
+      {
+        "name": "shoulder press",
+        "exercises": [
+          {
+            "name": "incline dumble press",
+            "reps": "8-12",
+            "sets": "4",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "low to high cable fly",
+            "reps": "12",
+            "sets": "3",
+            "tempo": "-",
+            "rest": "60-90s"
+          },
+          {
+            "name": "bench press",
+            "reps": "8",
+            "sets": "3",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "pec dec fly",
+            "reps": "12",
+            "sets": "3",
+            "tempo": "-",
+            "rest": "120s"
+          },
+          {
+            "name": "lateral raises",
+            "reps": "20",
+            "sets": "5",
+            "tempo": "-",
+            "rest": "30s"
+          },
+          {
+            "name": "one arm overhead triceps cable extention",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          },
+          {
+            "name": "straight bar triceps pushdown",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          }
+        ]
+      },
+      {
+        "name": "biceps/triceps",
+        "exercises": [
+          {
+            "name": "incline dumble press",
+            "reps": "8-12",
+            "sets": "4",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "low to high cable fly",
+            "reps": "12",
+            "sets": "3",
+            "tempo": "-",
+            "rest": "60-90s"
+          },
+          {
+            "name": "bench press",
+            "reps": "8",
+            "sets": "3",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "pec dec fly",
+            "reps": "12",
+            "sets": "3",
+            "tempo": "-",
+            "rest": "120s"
+          },
+          {
+            "name": "lateral raises",
+            "reps": "20",
+            "sets": "5",
+            "tempo": "-",
+            "rest": "30s"
+          },
+          {
+            "name": "one arm overhead triceps cable extention",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          },
+          {
+            "name": "straight bar triceps pushdown",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "createdBy": "632c945f1ba5f0bcfc9be699",
+    "name": "powerlifting",
+    "workouts": [
+      {
+        "name": "legs",
+        "exercises": [
+          {
+            "name": "squats",
+            "reps": "15-12-10-8",
+            "sets": "4",
+            "tempo": "-",
+            "rest": "120s"
+          },
+          {
+            "name": "leg press",
+            "reps": "8-10",
+            "sets": "2",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "sumo leg press",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "rp on 2nd",
+            "rest": "120s"
+          },
+          {
+            "name": "bulgarian lunges",
+            "reps": "8",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          },
+          {
+            "name": "leg extension",
+            "reps": "8-10",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          },
+          {
+            "name": "leg curls",
+            "reps": "15-30",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          },
+          {
+            "name": "standing calf raises",
+            "reps": "100",
+            "sets": "1",
+            "tempo": "-",
+            "rest": "120s"
+          }
+        ]
+      },
+      {
+        "name": "push",
+        "exercises": [
+          {
+            "name": "incline dumble press",
+            "reps": "8-12",
+            "sets": "4",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "low to high cable fly",
+            "reps": "12",
+            "sets": "3",
+            "tempo": "-",
+            "rest": "60-90s"
+          },
+          {
+            "name": "bench press",
+            "reps": "8",
+            "sets": "3",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "pec dec fly",
+            "reps": "12",
+            "sets": "3",
+            "tempo": "-",
+            "rest": "120s"
+          },
+          {
+            "name": "lateral raises",
+            "reps": "20",
+            "sets": "5",
+            "tempo": "-",
+            "rest": "30s"
+          },
+          {
+            "name": "one arm overhead triceps cable extention",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          },
+          {
+            "name": "straight bar triceps pushdown",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          }
+        ]
+      },
+      {
+        "name": "pull",
+        "exercises": [
+          {
+            "name": "incline dumble press",
+            "reps": "8-12",
+            "sets": "4",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "low to high cable fly",
+            "reps": "12",
+            "sets": "3",
+            "tempo": "-",
+            "rest": "60-90s"
+          },
+          {
+            "name": "bench press",
+            "reps": "8",
+            "sets": "3",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "pec dec fly",
+            "reps": "12",
+            "sets": "3",
+            "tempo": "-",
+            "rest": "120s"
+          },
+          {
+            "name": "lateral raises",
+            "reps": "20",
+            "sets": "5",
+            "tempo": "-",
+            "rest": "30s"
+          },
+          {
+            "name": "one arm overhead triceps cable extention",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          },
+          {
+            "name": "straight bar triceps pushdown",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          }
+        ]
+      },
+      {
+        "name": "legs",
+        "exercises": [
+          {
+            "name": "incline dumble press",
+            "reps": "8-12",
+            "sets": "4",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "low to high cable fly",
+            "reps": "12",
+            "sets": "3",
+            "tempo": "-",
+            "rest": "60-90s"
+          },
+          {
+            "name": "bench press",
+            "reps": "8",
+            "sets": "3",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "pec dec fly",
+            "reps": "12",
+            "sets": "3",
+            "tempo": "-",
+            "rest": "120s"
+          },
+          {
+            "name": "lateral raises",
+            "reps": "20",
+            "sets": "5",
+            "tempo": "-",
+            "rest": "30s"
+          },
+          {
+            "name": "one arm overhead triceps cable extention",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          },
+          {
+            "name": "straight bar triceps pushdown",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          }
+        ]
+      },
+      {
+        "name": "shoulder press",
+        "exercises": [
+          {
+            "name": "incline dumble press",
+            "reps": "8-12",
+            "sets": "4",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "low to high cable fly",
+            "reps": "12",
+            "sets": "3",
+            "tempo": "-",
+            "rest": "60-90s"
+          },
+          {
+            "name": "bench press",
+            "reps": "8",
+            "sets": "3",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "pec dec fly",
+            "reps": "12",
+            "sets": "3",
+            "tempo": "-",
+            "rest": "120s"
+          },
+          {
+            "name": "lateral raises",
+            "reps": "20",
+            "sets": "5",
+            "tempo": "-",
+            "rest": "30s"
+          },
+          {
+            "name": "one arm overhead triceps cable extention",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          },
+          {
+            "name": "straight bar triceps pushdown",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          }
+        ]
+      },
+      {
+        "name": "biceps/triceps",
+        "exercises": [
+          {
+            "name": "incline dumble press",
+            "reps": "8-12",
+            "sets": "4",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "low to high cable fly",
+            "reps": "12",
+            "sets": "3",
+            "tempo": "-",
+            "rest": "60-90s"
+          },
+          {
+            "name": "bench press",
+            "reps": "8",
+            "sets": "3",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "pec dec fly",
+            "reps": "12",
+            "sets": "3",
+            "tempo": "-",
+            "rest": "120s"
+          },
+          {
+            "name": "lateral raises",
+            "reps": "20",
+            "sets": "5",
+            "tempo": "-",
+            "rest": "30s"
+          },
+          {
+            "name": "one arm overhead triceps cable extention",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          },
+          {
+            "name": "straight bar triceps pushdown",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "createdBy": "632c945f1ba5f0bcfc9be699",
+    "name": "powerlifting",
+    "workouts": [
+      {
+        "name": "legs",
+        "exercises": [
+          {
+            "name": "squats",
+            "reps": "15-12-10-8",
+            "sets": "4",
+            "tempo": "-",
+            "rest": "120s"
+          },
+          {
+            "name": "leg press",
+            "reps": "8-10",
+            "sets": "2",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "sumo leg press",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "rp on 2nd",
+            "rest": "120s"
+          },
+          {
+            "name": "bulgarian lunges",
+            "reps": "8",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          },
+          {
+            "name": "leg extension",
+            "reps": "8-10",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          },
+          {
+            "name": "leg curls",
+            "reps": "15-30",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          },
+          {
+            "name": "standing calf raises",
+            "reps": "100",
+            "sets": "1",
+            "tempo": "-",
+            "rest": "120s"
+          }
+        ]
+      },
+      {
+        "name": "push",
+        "exercises": [
+          {
+            "name": "incline dumble press",
+            "reps": "8-12",
+            "sets": "4",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "low to high cable fly",
+            "reps": "12",
+            "sets": "3",
+            "tempo": "-",
+            "rest": "60-90s"
+          },
+          {
+            "name": "bench press",
+            "reps": "8",
+            "sets": "3",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "pec dec fly",
+            "reps": "12",
+            "sets": "3",
+            "tempo": "-",
+            "rest": "120s"
+          },
+          {
+            "name": "lateral raises",
+            "reps": "20",
+            "sets": "5",
+            "tempo": "-",
+            "rest": "30s"
+          },
+          {
+            "name": "one arm overhead triceps cable extention",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          },
+          {
+            "name": "straight bar triceps pushdown",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          }
+        ]
+      },
+      {
+        "name": "pull",
+        "exercises": [
+          {
+            "name": "incline dumble press",
+            "reps": "8-12",
+            "sets": "4",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "low to high cable fly",
+            "reps": "12",
+            "sets": "3",
+            "tempo": "-",
+            "rest": "60-90s"
+          },
+          {
+            "name": "bench press",
+            "reps": "8",
+            "sets": "3",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "pec dec fly",
+            "reps": "12",
+            "sets": "3",
+            "tempo": "-",
+            "rest": "120s"
+          },
+          {
+            "name": "lateral raises",
+            "reps": "20",
+            "sets": "5",
+            "tempo": "-",
+            "rest": "30s"
+          },
+          {
+            "name": "one arm overhead triceps cable extention",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          },
+          {
+            "name": "straight bar triceps pushdown",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          }
+        ]
+      },
+      {
+        "name": "legs",
+        "exercises": [
+          {
+            "name": "incline dumble press",
+            "reps": "8-12",
+            "sets": "4",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "low to high cable fly",
+            "reps": "12",
+            "sets": "3",
+            "tempo": "-",
+            "rest": "60-90s"
+          },
+          {
+            "name": "bench press",
+            "reps": "8",
+            "sets": "3",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "pec dec fly",
+            "reps": "12",
+            "sets": "3",
+            "tempo": "-",
+            "rest": "120s"
+          },
+          {
+            "name": "lateral raises",
+            "reps": "20",
+            "sets": "5",
+            "tempo": "-",
+            "rest": "30s"
+          },
+          {
+            "name": "one arm overhead triceps cable extention",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          },
+          {
+            "name": "straight bar triceps pushdown",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          }
+        ]
+      },
+      {
+        "name": "shoulder press",
+        "exercises": [
+          {
+            "name": "incline dumble press",
+            "reps": "8-12",
+            "sets": "4",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "low to high cable fly",
+            "reps": "12",
+            "sets": "3",
+            "tempo": "-",
+            "rest": "60-90s"
+          },
+          {
+            "name": "bench press",
+            "reps": "8",
+            "sets": "3",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "pec dec fly",
+            "reps": "12",
+            "sets": "3",
+            "tempo": "-",
+            "rest": "120s"
+          },
+          {
+            "name": "lateral raises",
+            "reps": "20",
+            "sets": "5",
+            "tempo": "-",
+            "rest": "30s"
+          },
+          {
+            "name": "one arm overhead triceps cable extention",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          },
+          {
+            "name": "straight bar triceps pushdown",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          }
+        ]
+      },
+      {
+        "name": "biceps/triceps",
+        "exercises": [
+          {
+            "name": "incline dumble press",
+            "reps": "8-12",
+            "sets": "4",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "low to high cable fly",
+            "reps": "12",
+            "sets": "3",
+            "tempo": "-",
+            "rest": "60-90s"
+          },
+          {
+            "name": "bench press",
+            "reps": "8",
+            "sets": "3",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "pec dec fly",
+            "reps": "12",
+            "sets": "3",
+            "tempo": "-",
+            "rest": "120s"
+          },
+          {
+            "name": "lateral raises",
+            "reps": "20",
+            "sets": "5",
+            "tempo": "-",
+            "rest": "30s"
+          },
+          {
+            "name": "one arm overhead triceps cable extention",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          },
+          {
+            "name": "straight bar triceps pushdown",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "createdBy": "632c945f1ba5f0bcfc9be699",
+    "name": "powerlifting",
+    "workouts": [
+      {
+        "name": "legs",
+        "exercises": [
+          {
+            "name": "squats",
+            "reps": "15-12-10-8",
+            "sets": "4",
+            "tempo": "-",
+            "rest": "120s"
+          },
+          {
+            "name": "leg press",
+            "reps": "8-10",
+            "sets": "2",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "sumo leg press",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "rp on 2nd",
+            "rest": "120s"
+          },
+          {
+            "name": "bulgarian lunges",
+            "reps": "8",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          },
+          {
+            "name": "leg extension",
+            "reps": "8-10",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          },
+          {
+            "name": "leg curls",
+            "reps": "15-30",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          },
+          {
+            "name": "standing calf raises",
+            "reps": "100",
+            "sets": "1",
+            "tempo": "-",
+            "rest": "120s"
+          }
+        ]
+      },
+      {
+        "name": "push",
+        "exercises": [
+          {
+            "name": "incline dumble press",
+            "reps": "8-12",
+            "sets": "4",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "low to high cable fly",
+            "reps": "12",
+            "sets": "3",
+            "tempo": "-",
+            "rest": "60-90s"
+          },
+          {
+            "name": "bench press",
+            "reps": "8",
+            "sets": "3",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "pec dec fly",
+            "reps": "12",
+            "sets": "3",
+            "tempo": "-",
+            "rest": "120s"
+          },
+          {
+            "name": "lateral raises",
+            "reps": "20",
+            "sets": "5",
+            "tempo": "-",
+            "rest": "30s"
+          },
+          {
+            "name": "one arm overhead triceps cable extention",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          },
+          {
+            "name": "straight bar triceps pushdown",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          }
+        ]
+      },
+      {
+        "name": "pull",
+        "exercises": [
+          {
+            "name": "incline dumble press",
+            "reps": "8-12",
+            "sets": "4",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "low to high cable fly",
+            "reps": "12",
+            "sets": "3",
+            "tempo": "-",
+            "rest": "60-90s"
+          },
+          {
+            "name": "bench press",
+            "reps": "8",
+            "sets": "3",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "pec dec fly",
+            "reps": "12",
+            "sets": "3",
+            "tempo": "-",
+            "rest": "120s"
+          },
+          {
+            "name": "lateral raises",
+            "reps": "20",
+            "sets": "5",
+            "tempo": "-",
+            "rest": "30s"
+          },
+          {
+            "name": "one arm overhead triceps cable extention",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          },
+          {
+            "name": "straight bar triceps pushdown",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          }
+        ]
+      },
+      {
+        "name": "legs",
+        "exercises": [
+          {
+            "name": "incline dumble press",
+            "reps": "8-12",
+            "sets": "4",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "low to high cable fly",
+            "reps": "12",
+            "sets": "3",
+            "tempo": "-",
+            "rest": "60-90s"
+          },
+          {
+            "name": "bench press",
+            "reps": "8",
+            "sets": "3",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "pec dec fly",
+            "reps": "12",
+            "sets": "3",
+            "tempo": "-",
+            "rest": "120s"
+          },
+          {
+            "name": "lateral raises",
+            "reps": "20",
+            "sets": "5",
+            "tempo": "-",
+            "rest": "30s"
+          },
+          {
+            "name": "one arm overhead triceps cable extention",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          },
+          {
+            "name": "straight bar triceps pushdown",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          }
+        ]
+      },
+      {
+        "name": "shoulder press",
+        "exercises": [
+          {
+            "name": "incline dumble press",
+            "reps": "8-12",
+            "sets": "4",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "low to high cable fly",
+            "reps": "12",
+            "sets": "3",
+            "tempo": "-",
+            "rest": "60-90s"
+          },
+          {
+            "name": "bench press",
+            "reps": "8",
+            "sets": "3",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "pec dec fly",
+            "reps": "12",
+            "sets": "3",
+            "tempo": "-",
+            "rest": "120s"
+          },
+          {
+            "name": "lateral raises",
+            "reps": "20",
+            "sets": "5",
+            "tempo": "-",
+            "rest": "30s"
+          },
+          {
+            "name": "one arm overhead triceps cable extention",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          },
+          {
+            "name": "straight bar triceps pushdown",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          }
+        ]
+      },
+      {
+        "name": "biceps/triceps",
+        "exercises": [
+          {
+            "name": "incline dumble press",
+            "reps": "8-12",
+            "sets": "4",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "low to high cable fly",
+            "reps": "12",
+            "sets": "3",
+            "tempo": "-",
+            "rest": "60-90s"
+          },
+          {
+            "name": "bench press",
+            "reps": "8",
+            "sets": "3",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "pec dec fly",
+            "reps": "12",
+            "sets": "3",
+            "tempo": "-",
+            "rest": "120s"
+          },
+          {
+            "name": "lateral raises",
+            "reps": "20",
+            "sets": "5",
+            "tempo": "-",
+            "rest": "30s"
+          },
+          {
+            "name": "one arm overhead triceps cable extention",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          },
+          {
+            "name": "straight bar triceps pushdown",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "createdBy": "632c945f1ba5f0bcfc9be699",
+    "name": "powerlifting",
+    "workouts": [
+      {
+        "name": "legs",
+        "exercises": [
+          {
+            "name": "squats",
+            "reps": "15-12-10-8",
+            "sets": "4",
+            "tempo": "-",
+            "rest": "120s"
+          },
+          {
+            "name": "leg press",
+            "reps": "8-10",
+            "sets": "2",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "sumo leg press",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "rp on 2nd",
+            "rest": "120s"
+          },
+          {
+            "name": "bulgarian lunges",
+            "reps": "8",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          },
+          {
+            "name": "leg extension",
+            "reps": "8-10",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          },
+          {
+            "name": "leg curls",
+            "reps": "15-30",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          },
+          {
+            "name": "standing calf raises",
+            "reps": "100",
+            "sets": "1",
+            "tempo": "-",
+            "rest": "120s"
+          }
+        ]
+      },
+      {
+        "name": "push",
+        "exercises": [
+          {
+            "name": "incline dumble press",
+            "reps": "8-12",
+            "sets": "4",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "low to high cable fly",
+            "reps": "12",
+            "sets": "3",
+            "tempo": "-",
+            "rest": "60-90s"
+          },
+          {
+            "name": "bench press",
+            "reps": "8",
+            "sets": "3",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "pec dec fly",
+            "reps": "12",
+            "sets": "3",
+            "tempo": "-",
+            "rest": "120s"
+          },
+          {
+            "name": "lateral raises",
+            "reps": "20",
+            "sets": "5",
+            "tempo": "-",
+            "rest": "30s"
+          },
+          {
+            "name": "one arm overhead triceps cable extention",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          },
+          {
+            "name": "straight bar triceps pushdown",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          }
+        ]
+      },
+      {
+        "name": "pull",
+        "exercises": [
+          {
+            "name": "incline dumble press",
+            "reps": "8-12",
+            "sets": "4",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "low to high cable fly",
+            "reps": "12",
+            "sets": "3",
+            "tempo": "-",
+            "rest": "60-90s"
+          },
+          {
+            "name": "bench press",
+            "reps": "8",
+            "sets": "3",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "pec dec fly",
+            "reps": "12",
+            "sets": "3",
+            "tempo": "-",
+            "rest": "120s"
+          },
+          {
+            "name": "lateral raises",
+            "reps": "20",
+            "sets": "5",
+            "tempo": "-",
+            "rest": "30s"
+          },
+          {
+            "name": "one arm overhead triceps cable extention",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          },
+          {
+            "name": "straight bar triceps pushdown",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          }
+        ]
+      },
+      {
+        "name": "legs",
+        "exercises": [
+          {
+            "name": "incline dumble press",
+            "reps": "8-12",
+            "sets": "4",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "low to high cable fly",
+            "reps": "12",
+            "sets": "3",
+            "tempo": "-",
+            "rest": "60-90s"
+          },
+          {
+            "name": "bench press",
+            "reps": "8",
+            "sets": "3",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "pec dec fly",
+            "reps": "12",
+            "sets": "3",
+            "tempo": "-",
+            "rest": "120s"
+          },
+          {
+            "name": "lateral raises",
+            "reps": "20",
+            "sets": "5",
+            "tempo": "-",
+            "rest": "30s"
+          },
+          {
+            "name": "one arm overhead triceps cable extention",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          },
+          {
+            "name": "straight bar triceps pushdown",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          }
+        ]
+      },
+      {
+        "name": "shoulder press",
+        "exercises": [
+          {
+            "name": "incline dumble press",
+            "reps": "8-12",
+            "sets": "4",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "low to high cable fly",
+            "reps": "12",
+            "sets": "3",
+            "tempo": "-",
+            "rest": "60-90s"
+          },
+          {
+            "name": "bench press",
+            "reps": "8",
+            "sets": "3",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "pec dec fly",
+            "reps": "12",
+            "sets": "3",
+            "tempo": "-",
+            "rest": "120s"
+          },
+          {
+            "name": "lateral raises",
+            "reps": "20",
+            "sets": "5",
+            "tempo": "-",
+            "rest": "30s"
+          },
+          {
+            "name": "one arm overhead triceps cable extention",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          },
+          {
+            "name": "straight bar triceps pushdown",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          }
+        ]
+      },
+      {
+        "name": "biceps/triceps",
+        "exercises": [
+          {
+            "name": "incline dumble press",
+            "reps": "8-12",
+            "sets": "4",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "low to high cable fly",
+            "reps": "12",
+            "sets": "3",
+            "tempo": "-",
+            "rest": "60-90s"
+          },
+          {
+            "name": "bench press",
+            "reps": "8",
+            "sets": "3",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "pec dec fly",
+            "reps": "12",
+            "sets": "3",
+            "tempo": "-",
+            "rest": "120s"
+          },
+          {
+            "name": "lateral raises",
+            "reps": "20",
+            "sets": "5",
+            "tempo": "-",
+            "rest": "30s"
+          },
+          {
+            "name": "one arm overhead triceps cable extention",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          },
+          {
+            "name": "straight bar triceps pushdown",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "createdBy": "632c945f1ba5f0bcfc9be699",
+    "name": "powerlifting",
+    "workouts": [
+      {
+        "name": "legs",
+        "exercises": [
+          {
+            "name": "squats",
+            "reps": "15-12-10-8",
+            "sets": "4",
+            "tempo": "-",
+            "rest": "120s"
+          },
+          {
+            "name": "leg press",
+            "reps": "8-10",
+            "sets": "2",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "sumo leg press",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "rp on 2nd",
+            "rest": "120s"
+          },
+          {
+            "name": "bulgarian lunges",
+            "reps": "8",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          },
+          {
+            "name": "leg extension",
+            "reps": "8-10",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          },
+          {
+            "name": "leg curls",
+            "reps": "15-30",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          },
+          {
+            "name": "standing calf raises",
+            "reps": "100",
+            "sets": "1",
+            "tempo": "-",
+            "rest": "120s"
+          }
+        ]
+      },
+      {
+        "name": "push",
+        "exercises": [
+          {
+            "name": "incline dumble press",
+            "reps": "8-12",
+            "sets": "4",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "low to high cable fly",
+            "reps": "12",
+            "sets": "3",
+            "tempo": "-",
+            "rest": "60-90s"
+          },
+          {
+            "name": "bench press",
+            "reps": "8",
+            "sets": "3",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "pec dec fly",
+            "reps": "12",
+            "sets": "3",
+            "tempo": "-",
+            "rest": "120s"
+          },
+          {
+            "name": "lateral raises",
+            "reps": "20",
+            "sets": "5",
+            "tempo": "-",
+            "rest": "30s"
+          },
+          {
+            "name": "one arm overhead triceps cable extention",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          },
+          {
+            "name": "straight bar triceps pushdown",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          }
+        ]
+      },
+      {
+        "name": "pull",
+        "exercises": [
+          {
+            "name": "incline dumble press",
+            "reps": "8-12",
+            "sets": "4",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "low to high cable fly",
+            "reps": "12",
+            "sets": "3",
+            "tempo": "-",
+            "rest": "60-90s"
+          },
+          {
+            "name": "bench press",
+            "reps": "8",
+            "sets": "3",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "pec dec fly",
+            "reps": "12",
+            "sets": "3",
+            "tempo": "-",
+            "rest": "120s"
+          },
+          {
+            "name": "lateral raises",
+            "reps": "20",
+            "sets": "5",
+            "tempo": "-",
+            "rest": "30s"
+          },
+          {
+            "name": "one arm overhead triceps cable extention",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          },
+          {
+            "name": "straight bar triceps pushdown",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          }
+        ]
+      },
+      {
+        "name": "legs",
+        "exercises": [
+          {
+            "name": "incline dumble press",
+            "reps": "8-12",
+            "sets": "4",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "low to high cable fly",
+            "reps": "12",
+            "sets": "3",
+            "tempo": "-",
+            "rest": "60-90s"
+          },
+          {
+            "name": "bench press",
+            "reps": "8",
+            "sets": "3",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "pec dec fly",
+            "reps": "12",
+            "sets": "3",
+            "tempo": "-",
+            "rest": "120s"
+          },
+          {
+            "name": "lateral raises",
+            "reps": "20",
+            "sets": "5",
+            "tempo": "-",
+            "rest": "30s"
+          },
+          {
+            "name": "one arm overhead triceps cable extention",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          },
+          {
+            "name": "straight bar triceps pushdown",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          }
+        ]
+      },
+      {
+        "name": "shoulder press",
+        "exercises": [
+          {
+            "name": "incline dumble press",
+            "reps": "8-12",
+            "sets": "4",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "low to high cable fly",
+            "reps": "12",
+            "sets": "3",
+            "tempo": "-",
+            "rest": "60-90s"
+          },
+          {
+            "name": "bench press",
+            "reps": "8",
+            "sets": "3",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "pec dec fly",
+            "reps": "12",
+            "sets": "3",
+            "tempo": "-",
+            "rest": "120s"
+          },
+          {
+            "name": "lateral raises",
+            "reps": "20",
+            "sets": "5",
+            "tempo": "-",
+            "rest": "30s"
+          },
+          {
+            "name": "one arm overhead triceps cable extention",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          },
+          {
+            "name": "straight bar triceps pushdown",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          }
+        ]
+      },
+      {
+        "name": "biceps/triceps",
+        "exercises": [
+          {
+            "name": "incline dumble press",
+            "reps": "8-12",
+            "sets": "4",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "low to high cable fly",
+            "reps": "12",
+            "sets": "3",
+            "tempo": "-",
+            "rest": "60-90s"
+          },
+          {
+            "name": "bench press",
+            "reps": "8",
+            "sets": "3",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "pec dec fly",
+            "reps": "12",
+            "sets": "3",
+            "tempo": "-",
+            "rest": "120s"
+          },
+          {
+            "name": "lateral raises",
+            "reps": "20",
+            "sets": "5",
+            "tempo": "-",
+            "rest": "30s"
+          },
+          {
+            "name": "one arm overhead triceps cable extention",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          },
+          {
+            "name": "straight bar triceps pushdown",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "createdBy": "632c945f1ba5f0bcfc9be699",
+    "name": "powerlifting",
+    "workouts": [
+      {
+        "name": "legs",
+        "exercises": [
+          {
+            "name": "squats",
+            "reps": "15-12-10-8",
+            "sets": "4",
+            "tempo": "-",
+            "rest": "120s"
+          },
+          {
+            "name": "leg press",
+            "reps": "8-10",
+            "sets": "2",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "sumo leg press",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "rp on 2nd",
+            "rest": "120s"
+          },
+          {
+            "name": "bulgarian lunges",
+            "reps": "8",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          },
+          {
+            "name": "leg extension",
+            "reps": "8-10",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          },
+          {
+            "name": "leg curls",
+            "reps": "15-30",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          },
+          {
+            "name": "standing calf raises",
+            "reps": "100",
+            "sets": "1",
+            "tempo": "-",
+            "rest": "120s"
+          }
+        ]
+      },
+      {
+        "name": "push",
+        "exercises": [
+          {
+            "name": "incline dumble press",
+            "reps": "8-12",
+            "sets": "4",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "low to high cable fly",
+            "reps": "12",
+            "sets": "3",
+            "tempo": "-",
+            "rest": "60-90s"
+          },
+          {
+            "name": "bench press",
+            "reps": "8",
+            "sets": "3",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "pec dec fly",
+            "reps": "12",
+            "sets": "3",
+            "tempo": "-",
+            "rest": "120s"
+          },
+          {
+            "name": "lateral raises",
+            "reps": "20",
+            "sets": "5",
+            "tempo": "-",
+            "rest": "30s"
+          },
+          {
+            "name": "one arm overhead triceps cable extention",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          },
+          {
+            "name": "straight bar triceps pushdown",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          }
+        ]
+      },
+      {
+        "name": "pull",
+        "exercises": [
+          {
+            "name": "incline dumble press",
+            "reps": "8-12",
+            "sets": "4",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "low to high cable fly",
+            "reps": "12",
+            "sets": "3",
+            "tempo": "-",
+            "rest": "60-90s"
+          },
+          {
+            "name": "bench press",
+            "reps": "8",
+            "sets": "3",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "pec dec fly",
+            "reps": "12",
+            "sets": "3",
+            "tempo": "-",
+            "rest": "120s"
+          },
+          {
+            "name": "lateral raises",
+            "reps": "20",
+            "sets": "5",
+            "tempo": "-",
+            "rest": "30s"
+          },
+          {
+            "name": "one arm overhead triceps cable extention",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          },
+          {
+            "name": "straight bar triceps pushdown",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          }
+        ]
+      },
+      {
+        "name": "legs",
+        "exercises": [
+          {
+            "name": "incline dumble press",
+            "reps": "8-12",
+            "sets": "4",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "low to high cable fly",
+            "reps": "12",
+            "sets": "3",
+            "tempo": "-",
+            "rest": "60-90s"
+          },
+          {
+            "name": "bench press",
+            "reps": "8",
+            "sets": "3",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "pec dec fly",
+            "reps": "12",
+            "sets": "3",
+            "tempo": "-",
+            "rest": "120s"
+          },
+          {
+            "name": "lateral raises",
+            "reps": "20",
+            "sets": "5",
+            "tempo": "-",
+            "rest": "30s"
+          },
+          {
+            "name": "one arm overhead triceps cable extention",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          },
+          {
+            "name": "straight bar triceps pushdown",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          }
+        ]
+      },
+      {
+        "name": "shoulder press",
+        "exercises": [
+          {
+            "name": "incline dumble press",
+            "reps": "8-12",
+            "sets": "4",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "low to high cable fly",
+            "reps": "12",
+            "sets": "3",
+            "tempo": "-",
+            "rest": "60-90s"
+          },
+          {
+            "name": "bench press",
+            "reps": "8",
+            "sets": "3",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "pec dec fly",
+            "reps": "12",
+            "sets": "3",
+            "tempo": "-",
+            "rest": "120s"
+          },
+          {
+            "name": "lateral raises",
+            "reps": "20",
+            "sets": "5",
+            "tempo": "-",
+            "rest": "30s"
+          },
+          {
+            "name": "one arm overhead triceps cable extention",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          },
+          {
+            "name": "straight bar triceps pushdown",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          }
+        ]
+      },
+      {
+        "name": "biceps/triceps",
+        "exercises": [
+          {
+            "name": "incline dumble press",
+            "reps": "8-12",
+            "sets": "4",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "low to high cable fly",
+            "reps": "12",
+            "sets": "3",
+            "tempo": "-",
+            "rest": "60-90s"
+          },
+          {
+            "name": "bench press",
+            "reps": "8",
+            "sets": "3",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "pec dec fly",
+            "reps": "12",
+            "sets": "3",
+            "tempo": "-",
+            "rest": "120s"
+          },
+          {
+            "name": "lateral raises",
+            "reps": "20",
+            "sets": "5",
+            "tempo": "-",
+            "rest": "30s"
+          },
+          {
+            "name": "one arm overhead triceps cable extention",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          },
+          {
+            "name": "straight bar triceps pushdown",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "createdBy": "632c945f1ba5f0bcfc9be699",
+    "name": "powerlifting",
+    "workouts": [
+      {
+        "name": "legs",
+        "exercises": [
+          {
+            "name": "squats",
+            "reps": "15-12-10-8",
+            "sets": "4",
+            "tempo": "-",
+            "rest": "120s"
+          },
+          {
+            "name": "leg press",
+            "reps": "8-10",
+            "sets": "2",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "sumo leg press",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "rp on 2nd",
+            "rest": "120s"
+          },
+          {
+            "name": "bulgarian lunges",
+            "reps": "8",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          },
+          {
+            "name": "leg extension",
+            "reps": "8-10",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          },
+          {
+            "name": "leg curls",
+            "reps": "15-30",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          },
+          {
+            "name": "standing calf raises",
+            "reps": "100",
+            "sets": "1",
+            "tempo": "-",
+            "rest": "120s"
+          }
+        ]
+      },
+      {
+        "name": "push",
+        "exercises": [
+          {
+            "name": "incline dumble press",
+            "reps": "8-12",
+            "sets": "4",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "low to high cable fly",
+            "reps": "12",
+            "sets": "3",
+            "tempo": "-",
+            "rest": "60-90s"
+          },
+          {
+            "name": "bench press",
+            "reps": "8",
+            "sets": "3",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "pec dec fly",
+            "reps": "12",
+            "sets": "3",
+            "tempo": "-",
+            "rest": "120s"
+          },
+          {
+            "name": "lateral raises",
+            "reps": "20",
+            "sets": "5",
+            "tempo": "-",
+            "rest": "30s"
+          },
+          {
+            "name": "one arm overhead triceps cable extention",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          },
+          {
+            "name": "straight bar triceps pushdown",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          }
+        ]
+      },
+      {
+        "name": "pull",
+        "exercises": [
+          {
+            "name": "incline dumble press",
+            "reps": "8-12",
+            "sets": "4",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "low to high cable fly",
+            "reps": "12",
+            "sets": "3",
+            "tempo": "-",
+            "rest": "60-90s"
+          },
+          {
+            "name": "bench press",
+            "reps": "8",
+            "sets": "3",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "pec dec fly",
+            "reps": "12",
+            "sets": "3",
+            "tempo": "-",
+            "rest": "120s"
+          },
+          {
+            "name": "lateral raises",
+            "reps": "20",
+            "sets": "5",
+            "tempo": "-",
+            "rest": "30s"
+          },
+          {
+            "name": "one arm overhead triceps cable extention",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          },
+          {
+            "name": "straight bar triceps pushdown",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          }
+        ]
+      },
+      {
+        "name": "legs",
+        "exercises": [
+          {
+            "name": "incline dumble press",
+            "reps": "8-12",
+            "sets": "4",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "low to high cable fly",
+            "reps": "12",
+            "sets": "3",
+            "tempo": "-",
+            "rest": "60-90s"
+          },
+          {
+            "name": "bench press",
+            "reps": "8",
+            "sets": "3",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "pec dec fly",
+            "reps": "12",
+            "sets": "3",
+            "tempo": "-",
+            "rest": "120s"
+          },
+          {
+            "name": "lateral raises",
+            "reps": "20",
+            "sets": "5",
+            "tempo": "-",
+            "rest": "30s"
+          },
+          {
+            "name": "one arm overhead triceps cable extention",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          },
+          {
+            "name": "straight bar triceps pushdown",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          }
+        ]
+      },
+      {
+        "name": "shoulder press",
+        "exercises": [
+          {
+            "name": "incline dumble press",
+            "reps": "8-12",
+            "sets": "4",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "low to high cable fly",
+            "reps": "12",
+            "sets": "3",
+            "tempo": "-",
+            "rest": "60-90s"
+          },
+          {
+            "name": "bench press",
+            "reps": "8",
+            "sets": "3",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "pec dec fly",
+            "reps": "12",
+            "sets": "3",
+            "tempo": "-",
+            "rest": "120s"
+          },
+          {
+            "name": "lateral raises",
+            "reps": "20",
+            "sets": "5",
+            "tempo": "-",
+            "rest": "30s"
+          },
+          {
+            "name": "one arm overhead triceps cable extention",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          },
+          {
+            "name": "straight bar triceps pushdown",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          }
+        ]
+      },
+      {
+        "name": "biceps/triceps",
+        "exercises": [
+          {
+            "name": "incline dumble press",
+            "reps": "8-12",
+            "sets": "4",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "low to high cable fly",
+            "reps": "12",
+            "sets": "3",
+            "tempo": "-",
+            "rest": "60-90s"
+          },
+          {
+            "name": "bench press",
+            "reps": "8",
+            "sets": "3",
+            "tempo": "2-1-1-0",
+            "rest": "120s"
+          },
+          {
+            "name": "pec dec fly",
+            "reps": "12",
+            "sets": "3",
+            "tempo": "-",
+            "rest": "120s"
+          },
+          {
+            "name": "lateral raises",
+            "reps": "20",
+            "sets": "5",
+            "tempo": "-",
+            "rest": "30s"
+          },
+          {
+            "name": "one arm overhead triceps cable extention",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          },
+          {
+            "name": "straight bar triceps pushdown",
+            "reps": "10-15",
+            "sets": "2",
+            "tempo": "-",
+            "rest": "60s"
+          }
+        ]
+      }
+    ]
+  }
+]
