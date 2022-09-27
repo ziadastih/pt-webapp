@@ -325,6 +325,83 @@ body {
   margin-left: 20px;
 }
 
+/* ==============exercice ============== */
+
+.exercise-container {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 80vw;
+}
+
+.exercise {
+  border-top: 1px solid var(--eyeComfort);
+  color: var(--eyeComfort);
+
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  width: 80vw;
+  font-family: var(--fontSansSerif);
+}
+/* ==========exercise name and span ========== */
+.exercise-name {
+  font-size: 18px;
+  font-family: var(--fontSansSerif);
+  color: white;
+  text-transform: capitalize;
+  font-weight: 500;
+  margin-top: 10px;
+  margin-left: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.exercise-name span {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--eyeComfort);
+}
+/* ========exercise info divide in 2 sections and display flex === */
+.exercise-info {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  text-transform: capitalize;
+  width: 80vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+}
+/* ========exercise stats which refer to each section display flex with gap to space the vertically  */
+.exercise-stats {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  gap: 20px;
+}
+.stat-dot {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+.stat-dot span {
+  height: 5px;
+  width: 5px;
+  border-radius: 50%;
+  background-color: white;
+}
+
+/* ============end OF exercies =============== */
+
+/* END OF PROGRAM CONTAINER ==================== */
+
 /* ==============delete verification box =========== */
 .delete-verification-section {
   position: absolute;
@@ -412,6 +489,9 @@ body {
   transform: rotate(180deg);
 }
 .open-container .overview-container {
+  display: flex;
+}
+.show-info .exercise-container {
   display: flex;
 }
 .name-alert .show-alert {
