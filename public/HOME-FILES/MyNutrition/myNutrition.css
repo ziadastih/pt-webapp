@@ -1,0 +1,320 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --fontSansSerif: "PT Sans", sans-serif;
+  --fontSerif: "Playfair Display", serif;
+
+  /* =========main color ============ */
+  --mainColor: #0e535f;
+  --SecondaryColor: #1d4147;
+  --alert: #fc8f3a;
+  --eyeComfort: #81bcc9;
+
+  --secondEyeOption: #5d97a4;
+}
+
+/* ===========global ================ */
+input {
+  border-radius: 3px;
+  height: 40px;
+  outline-style: none;
+  border: none;
+  padding-left: 10px;
+}
+/* clears the ‘X’ from Internet Explorer */
+input[type="search"]::-ms-clear {
+  display: none;
+  width: 0;
+  height: 0;
+}
+input[type="search"]::-ms-reveal {
+  display: none;
+  width: 0;
+  height: 0;
+}
+/* clears the ‘X’ from Chrome */
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+  display: none;
+}
+/* ===========general btn layout ============= */
+.btn {
+  font-family: var(--fontSansSerif);
+  font-weight: 700;
+  font-size: 20px;
+  background-color: white;
+  color: var(--mainColor);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 150px;
+  height: 40px;
+  border-radius: 3px;
+  border: none;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  cursor: pointer;
+}
+
+::placeholder {
+  text-transform: capitalize;
+  font-size: 10px;
+  font-family: var(--fontSansSerif);
+  color: var(--SecondaryColor);
+}
+#toggle-password {
+  position: absolute;
+  margin-top: 15px;
+  font-size: 10px;
+  color: var(--SecondaryColor);
+  margin-left: -20px;
+  cursor: pointer;
+}
+
+.global-nav {
+  position: fixed;
+
+  width: 100vw;
+  height: 9vh;
+  background-color: var(--mainColor);
+  font-family: var(--fontSansSerif);
+  font-size: 18px;
+  text-transform: capitalize;
+  letter-spacing: 0.02em;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  z-index: 10;
+  color: white;
+}
+
+.global-nav p {
+  cursor: pointer;
+  transition: 300ms ease-in;
+}
+/* ==================END OF GLOBAL CLASSES ========================  */
+
+body {
+  background-color: var(--eyeComfort);
+  overflow-x: hidden;
+}
+
+/* ==============header CONTAINER CONTAINS THE BACK BTN AND THE PLUS BTN */
+.header-container {
+  width: 100vw;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--mainColor);
+}
+.header-container img {
+  margin-left: 30px;
+  cursor: pointer;
+}
+.header-container i {
+  margin-right: 30px;
+  color: white;
+  font-size: 30px;
+  cursor: pointer;
+}
+/* ==================MY CLIENTS HEADER WITH THE SPAN LINE ======= */
+.my-nutrition-title {
+  width: 100vw;
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-direction: column;
+}
+.my-nutrition-title h3 {
+  font-family: var(--fontSansSerif);
+  font-size: 32px;
+  font-weight: 400;
+  color: var(--mainColor);
+  text-transform: capitalize;
+}
+.my-nutrtion-title span {
+  margin-top: 5px;
+  width: 100px;
+  height: 1px;
+  background-color: var(--mainColor);
+  opacity: 0.5;
+}
+/* ==============THE SEARCH INPUT WITH THE SEARCH ICON ======== */
+.search-nutrition-container {
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px;
+}
+#search-nutrition-input {
+  width: 50vw;
+  background-color: transparent;
+  border: 1px solid var(--mainColor);
+}
+
+.search-nutrition-container i {
+  position: absolute;
+  margin-left: 140px;
+  color: var(--mainColor);
+  cursor: pointer;
+}
+/* ============THE HEADER AND THE BTN WHEN THERE IS NO CLIENTS ==== */
+.btn-container {
+  display: flex;
+  height: 40vh;
+
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  transition: 300ms ease-in;
+}
+.btn-container h3 {
+  font-family: var(--fontSansSerif);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 41px;
+  letter-spacing: 0.02em;
+  color: var(--mainColor);
+  margin-bottom: 20px;
+  text-transform: capitalize;
+}
+.btn-container button {
+  font-weight: 400;
+  text-transform: capitalize;
+  margin-top: 0;
+  color: white;
+  background-color: var(--mainColor);
+  letter-spacing: 1.2px;
+}
+
+/* END OF PROGRAM CONTAINER ==================== */
+
+/* ==============delete verification box =========== */
+.delete-verification-section {
+  position: fixed;
+  top: 0;
+  height: 100vh;
+  width: 100vw;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  z-index: 100;
+}
+.overlay {
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  background-color: var(--mainColor);
+  opacity: 0.4;
+}
+.delete-verification-box {
+  background-color: whitesmoke;
+  height: 200px;
+  width: 80vw;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  z-index: 200;
+  z-index: 102;
+}
+.delete-verification-box h3 {
+  font-family: var(--fontSansSerif);
+  font-weight: 400;
+  font-size: 15px;
+  color: var(--mainColor);
+  margin-bottom: 30px;
+  width: 60vw;
+  text-align: center;
+}
+.delete-verification-box span {
+  text-transform: capitalize;
+
+  color: var(--alert);
+}
+.yes-no-container {
+  display: flex;
+  width: 100vw;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+.yes-no-container button {
+  width: 100px;
+  height: 40px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--fontSansSerif);
+  font-size: 15px;
+  background-color: var(--mainColor);
+  color: whitesmoke;
+  font-weight: 400;
+  border: none;
+  cursor: pointer;
+  text-transform: capitalize;
+}
+/* ============user nav bar ======================== */
+.coach-nav-bar {
+  transition: 300ms ease-in;
+}
+
+/* =================hover ================ */
+.global-nav p:hover {
+  opacity: 0.8;
+}
+
+/* ===============js classes ====================== */
+.open-container {
+  display: flex;
+}
+.rotate-arrow {
+  transform: rotate(180deg);
+}
+.open-container .overview-container {
+  display: flex;
+}
+.show-info .exercise-container {
+  display: flex;
+}
+.name-alert .show-alert {
+  display: block;
+}
+
+.selected-role {
+  background-color: white;
+  color: var(--mainColor);
+}
+
+.role-alert {
+  border: 1px solid var(--alert);
+}
+
+.display-none {
+  display: none;
+}
+
+.translate-page {
+  transform: translateX(0);
+}
+
+.remove-border {
+  border: none;
+}

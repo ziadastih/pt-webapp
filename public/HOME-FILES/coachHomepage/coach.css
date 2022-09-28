@@ -12,6 +12,7 @@
   --mainColor: #0e535f;
   --SecondaryColor: #1d4147;
   --alert: #fc8f3a;
+  --eyeComfort: #81bcc9;
 }
 
 /* ===========global ================ */
@@ -132,20 +133,8 @@ body {
   justify-content: center;
   position: relative;
 }
-/* ==============THE INPUT BTN DISPLAY NONE SO WE USE THE LABEL WHICH IS THE PEN ======== */
-#profile-picture-file {
-  display: none;
-}
-#profile-picture {
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
 
-  background-position: center;
-  background-size: contain;
-  background-repeat: no-repeat;
-}
-/* ============THE CONTAINER THAT WILL BT HOLDING OUR PICTURE ==================== */
+/*=======THE CONTAINER THAT WILL BT HOLDING OUR PICTURE ==================== */
 .default-profile-container {
   display: flex;
   align-items: center;
@@ -153,17 +142,13 @@ body {
   width: 80px;
   height: 80px;
   border-radius: 50%;
-  border: 1px solid white;
-  position: relative;
+  background-color: var(--eyeComfort);
 }
-
-/* ============the edit pan to insert the image we want ============== */
-#upload-profile-picture-btn {
-  position: absolute;
-  top: 0;
-  right: 0px;
-  z-index: 10;
-  cursor: pointer;
+.default-profile-container h2 {
+  color: var(--mainColor);
+  font-family: var(--fontSansSerif);
+  font-weight: 400;
+  font-size: 40px;
 }
 /* ==============coach name ============================= */
 .coach-name {
@@ -208,7 +193,6 @@ body {
 }
 .stat-title {
   font-family: var(--fontSansSerif);
-
   text-transform: capitalize;
   letter-spacing: 1.2px;
   color: white;

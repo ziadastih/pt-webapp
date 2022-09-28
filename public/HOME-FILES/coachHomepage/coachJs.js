@@ -3,7 +3,7 @@ const coachId = localStorage.getItem("ref");
 
 // ===============coach name and displaying the general coach info ========
 const coachName = document.querySelector(".coach-name");
-
+const coachProfile = document.querySelector(".profile-pic");
 const getCoach = async () => {
   try {
     const {
@@ -11,7 +11,7 @@ const getCoach = async () => {
     } = await axios.get(`/api/v1/coach/${coachId}`);
     const firstName = coach.coachFirstName;
     const lastName = coach.coachLastName;
-
+    coachProfile.textContent = `${firstName.slice(0, 1).toUpperCase()}`;
     coachName.innerHTML = `${firstName} ${lastName}`;
     coachName.classList.add("opacity-one");
   } catch (error) {
@@ -84,28 +84,5 @@ logoutBtn.addEventListener("click", async () => {
     window.location = "http://localhost:3000/";
   } catch (error) {
     console.log(error);
-  }
-});
-
-// ====================== profile picture demo for later to work on the function ==========
-
-const profilePic = document.getElementById("profile-picture");
-
-const fileInputBtn = document.getElementById("profile-picture-file");
-const imgContainer = document.querySelector(".default-profile-container");
-
-// ===========function to upload picture without interfering with dataBase now =============
-fileInputBtn.addEventListener("change", async () => {
-  const chooseFile = await fileInputBtn.files[0];
-  console.log(chooseFile);
-
-  if (chooseFile) {
-    const reader = new FileReader();
-    reader.addEventListener("load", () => {
-      profilePic.src = reader.result;
-
-      imgContainer.classList.add("remove-border");
-    });
-    reader.readAsDataURL(chooseFile);
   }
 });
