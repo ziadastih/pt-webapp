@@ -73,6 +73,19 @@ myWorkoutsBtn.addEventListener("click", () => {
   window.location = "http://localhost:3000/MyWorkouts/myWorkouts.html";
 });
 
+// =======================nutrition event listener =======
+const myNutritionBtn = document.querySelector(".access-diet");
+
+myNutritionBtn.addEventListener("click", () => {
+  window.location = "http://localhost:3000/MyNutrition/myNutrition.html";
+});
+// =======================Wallet event listener =======
+const myWalletBtn = document.querySelector(".access-wallet");
+
+myWalletBtn.addEventListener("click", () => {
+  window.location = "http://localhost:3000/MyWallet/wallet.html";
+});
+
 // ================logout user ===================
 
 const logoutBtn = document.getElementById("user-logout-nav-btn");

@@ -99,6 +99,10 @@ input[type="search"]::-webkit-search-results-decoration {
   cursor: pointer;
   transition: 300ms ease-in;
 }
+.global-nav p a {
+  text-decoration: none;
+  color: white;
+}
 /* ==================END OF GLOBAL CLASSES ========================  */
 
 body {

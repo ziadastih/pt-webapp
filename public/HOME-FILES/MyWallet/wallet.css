@@ -101,8 +101,8 @@ input[type="search"]::-webkit-search-results-decoration {
   transition: 300ms ease-in;
 }
 .global-nav p a {
-  color: white;
   text-decoration: none;
+  color: white;
 }
 /* ==================END OF GLOBAL CLASSES ========================  */
 
@@ -131,7 +131,7 @@ body {
   cursor: pointer;
 }
 /* ==================MY CLIENTS HEADER WITH THE SPAN LINE ======= */
-.my-nutrition-title {
+.my-wallet-title {
   width: 100vw;
   margin-top: 20px;
   display: flex;
@@ -140,141 +140,21 @@ body {
 
   flex-direction: column;
 }
-.my-nutrition-title h3 {
+.my-wallet-title h3 {
   font-family: var(--fontSansSerif);
   font-size: 32px;
   font-weight: 400;
   color: var(--mainColor);
   text-transform: capitalize;
 }
-.my-nutrtion-title span {
+.my-wallet-title span {
   margin-top: 5px;
   width: 100px;
   height: 1px;
   background-color: var(--mainColor);
   opacity: 0.5;
 }
-/* ==============THE SEARCH INPUT WITH THE SEARCH ICON ======== */
-.search-nutrition-container {
-  width: 100vw;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 30px;
-}
-#search-nutrition-input {
-  width: 50vw;
-  background-color: transparent;
-  border: 1px solid var(--mainColor);
-}
 
-.search-nutrition-container i {
-  position: absolute;
-  margin-left: 140px;
-  color: var(--mainColor);
-  cursor: pointer;
-}
-/* ============THE HEADER AND THE BTN WHEN THERE IS NO CLIENTS ==== */
-.btn-container {
-  display: flex;
-  height: 40vh;
-
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  transition: 300ms ease-in;
-}
-.btn-container h3 {
-  font-family: var(--fontSansSerif);
-  font-style: normal;
-  font-weight: 400;
-  font-size: 32px;
-  line-height: 41px;
-  letter-spacing: 0.02em;
-  color: var(--mainColor);
-  margin-bottom: 20px;
-  text-transform: capitalize;
-}
-.btn-container button {
-  font-weight: 400;
-  text-transform: capitalize;
-  margin-top: 0;
-  color: white;
-  background-color: var(--mainColor);
-  letter-spacing: 1.2px;
-}
-
-/* END OF PROGRAM CONTAINER ==================== */
-
-/* ==============delete verification box =========== */
-.delete-verification-section {
-  position: fixed;
-  top: 0;
-  height: 100vh;
-  width: 100vw;
-  display: none;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-
-  z-index: 100;
-}
-.overlay {
-  position: absolute;
-  height: 100vh;
-  width: 100vw;
-  background-color: var(--mainColor);
-  opacity: 0.4;
-}
-.delete-verification-box {
-  background-color: whitesmoke;
-  height: 200px;
-  width: 80vw;
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  z-index: 200;
-  z-index: 102;
-}
-.delete-verification-box h3 {
-  font-family: var(--fontSansSerif);
-  font-weight: 400;
-  font-size: 15px;
-  color: var(--mainColor);
-  margin-bottom: 30px;
-  width: 60vw;
-  text-align: center;
-}
-.delete-verification-box span {
-  text-transform: capitalize;
-
-  color: var(--alert);
-}
-.yes-no-container {
-  display: flex;
-  width: 100vw;
-  align-items: center;
-  justify-content: center;
-  gap: 20px;
-}
-.yes-no-container button {
-  width: 100px;
-  height: 40px;
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: var(--fontSansSerif);
-  font-size: 15px;
-  background-color: var(--mainColor);
-  color: whitesmoke;
-  font-weight: 400;
-  border: none;
-  cursor: pointer;
-  text-transform: capitalize;
-}
 /* ============user nav bar ======================== */
 .coach-nav-bar {
   transition: 300ms ease-in;
