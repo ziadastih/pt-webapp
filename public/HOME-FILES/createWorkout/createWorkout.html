@@ -5,9 +5,52 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./createWorkout.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
     <title>logo</title>
   </head>
   <body>
+    <!-- ============class header the back btn and the add btn ===== -->
+    <div class="header-container">
+      <img src="../images/previousPageArrow.svg" class="back-btn" alt="" />
+      <p class="program-name-header"></p>
+    </div>
+    <div class="create-program-name">
+      <i
+        class="fa-solid fa-xmark"
+        id="close-btn"
+        data-close="create-program-name"
+      ></i>
+      <h2>create program</h2>
+      <div class="input-container">
+        <div class="name-alert">
+          <p>program name:</p>
+          <p class="alert register-last-alert">please provide a Name!</p>
+        </div>
+        <input type="text" id="program-input-name" placeholder="program name" />
+      </div>
+      <button class="add-program-name btn">create</button>
+      <button class="edit-program-name btn">Edit</button>
+    </div>
+
     <script src="./createWorkout.js"></script>
   </body>
 </html>

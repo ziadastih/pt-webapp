@@ -107,8 +107,8 @@ const displayProgram = (programPlan) => {
     <p>${programPlan[i].name}</p>
     
     <div class="tools">
-      <i class="fa-solid fa-trash" data-manage=${programPlan[i]._id}></i>
-      <i class="fa-regular fa-pen-to-square" id="delete-workout" data-delete=${programPlan[i]._id}></i>
+      <i class="fa-regular fa-pen-to-square" data-manage=${programPlan[i]._id}></i>
+      <i class=" fa-solid fa-trash" id="delete-workout" data-delete=${programPlan[i]._id}></i>
     </div>
   </div>
   
@@ -150,10 +150,7 @@ const displayProgram = (programPlan) => {
             <div class="workout">
               <img src="../images/Arrow up.svg" id="show-exercise" alt="" data-exercise = '${i}'  />
               <p class="workout-name">${workout[i].name}</p>
-              <div class="tools">
-                <i class="fa-solid fa-trash"></i>
-                <i class="fa-regular fa-pen-to-square"></i>
-              </div>
+             <span></span>
             </div>
             
             <div class="exercise-container">

@@ -328,7 +328,9 @@ body {
   width: 15px;
   margin-left: 20px;
 }
-
+.workout-name {
+  margin-right: 30px;
+}
 /* ==============exercice ============== */
 
 .exercise-container {

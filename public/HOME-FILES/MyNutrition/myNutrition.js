@@ -9,8 +9,9 @@ const getDiet = async () => {
   try {
     // ============getting the data ===============
     const { data } = await axios.get("/api/v1/diet");
+    console.log(data);
     //  =========if length is === 0 means no workouts we want to display the create item =============
-    const length = data.diet.length;
+    const length = data.diets.length;
 
     if (length === 0) {
       btnContainer.classList.add("open-container");
