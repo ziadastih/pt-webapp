@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const workoutSchema = new mongoose.Schema(
+const workoutProgramSchema = new mongoose.Schema(
   {
     name: {
       type: String,
@@ -13,12 +13,12 @@ const workoutSchema = new mongoose.Schema(
       required: [true, "please provide coach"],
     },
 
-    workouts: {
+    weeks: {
       type: Array,
-      required: [true, "please provide an exercise"],
+      required: [true, "please provide a plan"],
     },
   },
   { timestamps: true }
 );
 
-module.exports = mongoose.model("workout", workoutSchema);
+module.exports = mongoose.model("workoutProgram", workoutProgramSchema);

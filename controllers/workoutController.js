@@ -1,69 +1,71 @@
-const Workout = require("../models/workoutSchema");
+const WorkoutProgram = require("../models/workoutProgramSchema");
 const { StatusCodes } = require("http-status-codes");
 
 // ===============get all workouts =================
-const getAllWorkouts = async (req, res) => {
-  const workouts = await Workout.find({ createdBy: req.coach.coachId });
-  res.status(StatusCodes.OK).json({ workouts });
+const getAllWorkoutPrograms = async (req, res) => {
+  const workoutprograms = await WorkoutProgram.find({
+    createdBy: req.coach.coachId,
+  });
+  res.status(StatusCodes.OK).json({ workoutprograms });
 };
 
 // ============get one specific workout ==================
-const getOneWorkout = async (req, res) => {
+const getOneWorkoutProgram = async (req, res) => {
   const {
     coach: { coachId },
-    params: { id: workoutId },
+    params: { id: workoutProgramId },
   } = req;
 
-  const workout = await Workout.findOne({
+  const workoutProgram = await WorkoutProgram.findOne({
     createdBy: coachId,
-    _id: workoutId,
+    _id: workoutProgramId,
   });
 
-  res.status(StatusCodes.OK).json({ workout });
+  res.status(StatusCodes.OK).json({ workoutProgram });
 };
 
 // ===============create workout ========================
-const createWorkout = async (req, res) => {
+const createWorkoutProgram = async (req, res) => {
   req.body.createdBy = req.coach.coachId;
-  const workout = await Workout.create({ ...req.body });
-  res.status(StatusCodes.CREATED).json({ workout });
+  const workoutProgram = await WorkoutProgram.create({ ...req.body });
+  res.status(StatusCodes.CREATED).json({ workoutProgram });
 };
 
 // =============update workout =======================
-const updateWorkout = async (req, res) => {
+const updateWorkoutProgram = async (req, res) => {
   const {
     coach: { coachId },
-    params: { id: workoutId },
+    params: { id: workoutProgramId },
   } = req;
-  const workout = await Workout.findOneAndUpdate(
+  const workoutProgram = await WorkoutProgram.findOneAndUpdate(
     {
       createdBy: coachId,
-      _id: workoutId,
+      _id: workoutProgramId,
     },
     req.body,
     { new: true, runValidators: true }
   );
-  res.status(StatusCodes.OK).json({ workout });
+  res.status(StatusCodes.OK).json({ workoutProgram });
 };
 
 // ===============delete workout ===================
-const deleteWorkout = async (req, res) => {
+const deleteWorkoutProgram = async (req, res) => {
   const {
     coach: { coachId },
-    params: { id: workoutId },
+    params: { id: workoutProgramId },
   } = req;
 
-  const workout = await Workout.findOneAndRemove({
-    _id: workoutId,
+  const workoutProgram = await WorkoutProgram.findOneAndRemove({
+    _id: workoutProgramId,
     createdBy: coachId,
   });
   res.status(StatusCodes.OK).send("workout was deleted");
 };
 
 module.exports = {
-  createWorkout,
-  getAllWorkouts,
-  getOneWorkout,
-  updateWorkout,
-  deleteWorkout,
+  createWorkoutProgram,
+  getAllWorkoutPrograms,
+  getOneWorkoutProgram,
+  updateWorkoutProgram,
+  deleteWorkoutProgram,
 };

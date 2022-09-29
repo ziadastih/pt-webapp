@@ -15,14 +15,14 @@ const searchWorkoutInput = document.getElementById("search-workout-input");
 const getWorkouts = async () => {
   try {
     // ============getting the data ===============
-    const { data } = await axios.get("/api/v1/workout");
+    const { data } = await axios.get("/api/v1/workoutProgram");
     //  =========if length is === 0 means no workouts we want to display the create item =============
-    const length = data.workouts.length;
+    const length = data.workoutprograms.length;
 
     if (length === 0) {
       btnContainer.classList.add("open-container");
     }
-    let workoutPrograms = data.workouts;
+    let workoutPrograms = data.workoutprograms;
 
     displayProgram(workoutPrograms);
     // =============delete client ====================
@@ -143,64 +143,36 @@ const displayProgram = (programPlan) => {
         </div>`;
           ``;
           item.classList.toggle("open-container");
-
-          let workout = programPlan[index].workouts;
-          for (let i = 0; i < workout.length; i++) {
-            overviewContainer.innerHTML += `<div class="workout-container">
-            <div class="workout">
-              <img src="../images/Arrow up.svg" id="show-exercise" alt="" data-exercise = '${i}'  />
-              <p class="workout-name">${workout[i].name}</p>
-             <span></span>
-            </div>
-            
-            <div class="exercise-container">
-              </div>
-          </div>`;
-          }
-
-          // ========displaying th exercise on click ========
-          const workoutContainer =
-            document.querySelectorAll(".workout-container");
-
-          // =====workouts for each
-
-          workoutContainer.forEach((workout) => {
-            const showExerciseBtn = workout.querySelector("#show-exercise");
-            const exerciseContainer = workout.querySelector(
-              ".exercise-container"
-            );
-
-            showExerciseBtn.addEventListener("click", function (e) {
-              let workoutIndex = e.target.dataset.exercise;
-              console.log(workoutIndex);
-              workoutContainer.forEach((subWorkout) => {
-                if (subWorkout === workout) {
-                  subWorkout.classList.toggle("show-info");
-                  exerciseContainer.innerHTML = "";
-                  let exercise =
-                    programPlan[index].workouts[workoutIndex].exercises;
-
-                  for (let i = 0; i < exercise.length; i++) {
-                    exerciseContainer.innerHTML += `<div class="exercise">
-  <p class="exercise-name"><span></span> ${exercise[i].name}</p>
-  <div class="exercise-info">
-    <div class="exercise-stats">
-      <p class="sets stat-dot"><span></span> set: ${exercise[i].sets}</p>
-      <p class="reps stat-dot"><span></span> reps: ${exercise[i].reps}</p>
-    </div>
-    <div class="exercise-stats">
-      <p class="tempo stat-dot"><span></span> tempo: ${exercise[i].tempo}</p>
-      <p class="rest-time stat-dot"><span></span> rest: ${exercise[i].rest}</p>
-    </div>
+          let weeks = programPlan[index].weeks;
+          for (let i = 0; i < weeks.length; i++) {
+            overviewContainer.innerHTML += `<div class="box-container week-container">
+  <div class="box week">
+    <img src="../images/Arrow up.svg" id="show-workouts" alt="" data-week = '${i}'  />
+    <p class="box-name">week ${i + 1}</p>
+   <span></span>
   </div>
+  
 </div>`;
+
+            const weekContainer = document.querySelectorAll(".week-container");
+
+            weekContainer.forEach((container) => {
+              const weekArrow = container.querySelector("#show-workouts");
+              weekContainer.forEach((week) => {
+                weekArrow.addEventListener("click", (e) => {
+                  let weekIndex = e.target.dataset.week;
+                  if (week === container) {
+                    container.classList.toggle("open-container");
+
+                    let workouts = programPlan[index].weeks[weekIndex].days;
+                    console.log(workouts);
+                  } else {
+                    container.classList.remove("open-container");
                   }
-                } else {
-                  subWorkout.classList.remove("show-info");
-                }
+                });
               });
             });
-          });
+          }
         } else {
           item.classList.remove("open-container");
         }
@@ -228,3 +200,61 @@ logoutBtn.addEventListener("click", async () => {
     console.log(error);
   }
 });
+
+// let workout = programPlan[index].workouts;
+// for (let i = 0; i < workout.length; i++) {
+//   overviewContainer.innerHTML += `<div class="workout-container">
+//   <div class="workout">
+//     <img src="../images/Arrow up.svg" id="show-exercise" alt="" data-exercise = '${i}'  />
+//     <p class="workout-name">${workout[i].name}</p>
+//    <span></span>
+//   </div>
+
+//   <div class="exercise-container">
+//     </div>
+// </div>`;
+// }
+
+// // ========displaying th exercise on click ========
+// const workoutContainer =
+//   document.querySelectorAll(".workout-container");
+
+// // =====workouts for each
+
+// workoutContainer.forEach((workout) => {
+//   const showExerciseBtn = workout.querySelector("#show-exercise");
+//   const exerciseContainer = workout.querySelector(
+//     ".exercise-container"
+//   );
+
+//   showExerciseBtn.addEventListener("click", function (e) {
+//     let workoutIndex = e.target.dataset.exercise;
+//     console.log(workoutIndex);
+//     workoutContainer.forEach((subWorkout) => {
+//       if (subWorkout === workout) {
+//         subWorkout.classList.toggle("show-info");
+//         exerciseContainer.innerHTML = "";
+//         let exercise =
+//           programPlan[index].workouts[workoutIndex].exercises;
+
+//         for (let i = 0; i < exercise.length; i++) {
+//           exerciseContainer.innerHTML += `<div class="exercise">
+// <p class="exercise-name"><span></span> ${exercise[i].name}</p>
+// <div class="exercise-info">
+// <div class="exercise-stats">
+// <p class="sets stat-dot"><span></span> set: ${exercise[i].sets}</p>
+// <p class="reps stat-dot"><span></span> reps: ${exercise[i].reps}</p>
+// </div>
+// <div class="exercise-stats">
+// <p class="tempo stat-dot"><span></span> tempo: ${exercise[i].tempo}</p>
+// <p class="rest-time stat-dot"><span></span> rest: ${exercise[i].rest}</p>
+// </div>
+// </div>
+// </div>`;
+//         }
+//       } else {
+//         subWorkout.classList.remove("show-info");
+//       }
+//     });
+//   });
+// });

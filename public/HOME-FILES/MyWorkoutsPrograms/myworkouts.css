@@ -301,7 +301,7 @@ body {
 }
 
 /* ========overall day container means have title and all exercises ====== */
-.workout-container {
+.box-container {
   margin-bottom: 10px;
   display: flex;
   align-items: center;
@@ -310,7 +310,7 @@ body {
   background-color: var(--mainColor);
 }
 /* =============day title and tools container ======= */
-.workout {
+.box {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -324,11 +324,11 @@ body {
   font-weight: 700;
 }
 /* ==========the arrow up ================= */
-.workout img {
+.box img {
   width: 15px;
   margin-left: 20px;
 }
-.workout-name {
+.box-name {
   margin-right: 30px;
 }
 /* ==============exercice ============== */

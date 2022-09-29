@@ -24,19 +24,19 @@ getCoach();
 // ==============get overall stats to put the numbers ==============================
 
 const clientNumberStat = document.querySelector(".client-number");
-const workoutNumberStat = document.querySelector(".workout-number");
+const workoutProgramNumberStat = document.querySelector(".workout-number");
 const dietNumberStat = document.querySelector(".diet-number");
 
-const getWorkouts = async () => {
+const getWorkoutPrograms = async () => {
   try {
-    const { data } = await axios.get("/api/v1/workout");
-
-    workoutNumberStat.textContent = data.workouts.length;
+    const { data } = await axios.get("/api/v1/workoutProgram");
+    console.log(data);
+    workoutProgramNumberStat.textContent = data.workoutprograms.length;
   } catch (error) {
     console.log(error);
   }
 };
-getWorkouts();
+getWorkoutPrograms();
 
 const getClients = async () => {
   try {
@@ -70,7 +70,7 @@ myClientsBtn.addEventListener("click", () => {
 const myWorkoutsBtn = document.querySelector(".access-workouts");
 
 myWorkoutsBtn.addEventListener("click", () => {
-  window.location = "http://localhost:3000/MyWorkouts/myWorkouts.html";
+  window.location = "http://localhost:3000/MyWorkoutsPrograms/myWorkouts.html";
 });
 
 // =======================nutrition event listener =======

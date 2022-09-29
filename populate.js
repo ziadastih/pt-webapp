@@ -1,7 +1,7 @@
 require("dotenv").config();
 
 const connectDB = require("./connectDb/connect");
-const workouts = require("./models/workoutSchema");
+const workouts = require("./models/workoutProgramSchema");
 
 const wokroutplans = require("./workouts.json");
 

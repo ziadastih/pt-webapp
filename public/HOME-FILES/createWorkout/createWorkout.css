@@ -146,13 +146,7 @@ body {
   border-radius: 5px;
   transition: 300ms ease-in;
 }
-#close-btn {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  color: white;
-  cursor: pointer;
-}
+
 .create-program-name h2 {
   color: white;
   font-family: var(--fontSansSerif);
