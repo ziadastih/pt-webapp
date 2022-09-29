@@ -227,6 +227,7 @@ body {
   width: 80vw;
   height: 50px;
   background-color: var(--mainColor);
+
   border-radius: 3px;
   color: white;
   font-family: var(--fontSansSerif);
@@ -240,7 +241,8 @@ body {
 .program p {
   text-align: center;
   color: white;
-  font-weight: 700;
+  font-weight: 500;
+  letter-spacing: 1.2px;
 }
 .program img {
   width: 15px;
@@ -300,21 +302,98 @@ body {
   margin-right: 20px;
 }
 
-/* ========overall day container means have title and all exercises ====== */
-.box-container {
-  margin-bottom: 10px;
+.box-arrow {
+  cursor: pointer;
+}
+/* =====================week container =========================== */
+.week-container {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  background-color: var(--mainColor);
 }
-/* =============day title and tools container ======= */
-.box {
+.week {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-top: 1px solid var(--mainColor);
+  background-color: var(--mainColor);
+  width: 80vw;
+  height: 50px;
+  text-transform: capitalize;
+  font-family: var(--fontSansSerif);
+
+  color: var(--eyeComfort);
+  font-weight: 400;
+}
+.week img {
+  width: 15px;
+  margin-left: 20px;
+}
+.number-of-days {
+  margin-right: 30px;
+  font-size: 10px;
+  color: white;
+  opacity: 0.5;
+}
+
+/* ==============================days container ========== */
+.days-container {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 80vw;
+}
+.day-container {
+  width: 80vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+.day {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: transparent;
+  background-color: var(--mainColor);
+  margin-bottom: 10px;
+
+  width: 80vw;
+  height: 50px;
+  text-transform: capitalize;
+  font-family: var(--fontSansSerif);
+
+  color: white;
+  font-weight: 400;
+}
+.day img {
+  width: 15px;
+  margin-left: 20px;
+}
+.number-of-workouts {
+  margin-right: 30px;
+  font-size: 10px;
+  color: white;
+  opacity: 0.5;
+}
+
+/* ====================workouts  =========================
+
+.workout-container {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-left: 20px;
+}
+.workout {
+  display: none;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--mainColor);
+  margin-bottom: 10px;
+  border-radius: 5px;
   width: 80vw;
   height: 50px;
   text-transform: capitalize;
@@ -323,14 +402,14 @@ body {
   color: white;
   font-weight: 700;
 }
-/* ==========the arrow up ================= */
-.box img {
+.workout img {
   width: 15px;
   margin-left: 20px;
 }
-.box-name {
+.workout-name {
   margin-right: 30px;
-}
+} */
+
 /* ==============exercice ============== */
 
 .exercise-container {
@@ -497,6 +576,10 @@ body {
 .open-container .overview-container {
   display: flex;
 }
+.show-days .days-container {
+  display: flex;
+}
+
 .show-info .exercise-container {
   display: flex;
 }

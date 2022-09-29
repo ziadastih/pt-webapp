@@ -1,5 +1,3 @@
-// ===============select btn container ======================
-// =====================select grid container ===========
 // ==============select verification container and input container =========================
 const btnContainer = document.querySelector(".btn-container");
 const programGridContainer = document.querySelector(
@@ -24,7 +22,7 @@ const getWorkouts = async () => {
     }
     let workoutPrograms = data.workoutprograms;
 
-    displayProgram(workoutPrograms);
+    displayProgramInfo(workoutPrograms);
     // =============delete client ====================
     const deleteWorkout = document.querySelectorAll("#delete-workout");
 
@@ -90,36 +88,11 @@ getWorkouts();
 
 // ===============display Programs  function =================
 
-const displayProgram = (programPlan) => {
+const displayProgramInfo = (programPlan) => {
   // =========displayin the program name and the tools and the arrow ,on click we show the program workouts then on other click an overview for the exercises
 
   programGridContainer.innerHTML = "";
-  for (let i = 0; i < programPlan.length; i++) {
-    programGridContainer.innerHTML += `<div class="program-container">
- 
-  <div class="program">
-    <img
-      src="../images/Arrow up.svg"
-      id="show-program"
-      alt=""
-      data-overview= ${i}
-    />
-    <p>${programPlan[i].name}</p>
-    
-    <div class="tools">
-      <i class="fa-regular fa-pen-to-square" data-manage=${programPlan[i]._id}></i>
-      <i class=" fa-solid fa-trash" id="delete-workout" data-delete=${programPlan[i]._id}></i>
-    </div>
-  </div>
-  
-  <div class="overview-container">
-  <div class="date-stats">
-  <p class="created-at">created at: 22/10/2022</p>
-  <p class="updated-at">updated at: 22/11/2022</p>
-</div>
-</div>
-</div>`;
-  }
+  displayAllPrograms(programPlan);
   // ===============toggle the program to get all the workouts =============
   const programContainer = document.querySelectorAll(".program-container");
 
@@ -131,49 +104,40 @@ const displayProgram = (programPlan) => {
       let index = e.target.dataset.overview;
 
       programContainer.forEach(function (item) {
-        // =====opening container and displaying the workouts on click
+        // =====opening container and displaying the timestamps and week  on click
         if (item === program) {
-          overviewContainer.innerHTML = `<div class="date-stats">
-          <p class="created-at">created at: ${programPlan[
-            index
-          ].createdAt.slice(0, 10)}</p>
-          <p class="updated-at">updated at: ${programPlan[
-            index
-          ].updatedAt.slice(0, 10)}</p>
-        </div>`;
-          ``;
+          // =========show timestamps =====================================
+          displayTimeStamps(programPlan, program, index);
+
           item.classList.toggle("open-container");
           let weeks = programPlan[index].weeks;
-          for (let i = 0; i < weeks.length; i++) {
-            overviewContainer.innerHTML += `<div class="box-container week-container">
-  <div class="box week">
-    <img src="../images/Arrow up.svg" id="show-workouts" alt="" data-week = '${i}'  />
-    <p class="box-name">week ${i + 1}</p>
-   <span></span>
-  </div>
-  
-</div>`;
+          displayWeek(weeks, program);
 
-            const weekContainer = document.querySelectorAll(".week-container");
+          // ===========displaying the days =======================
+          const weeksContainer = document.querySelectorAll(".week-container");
 
-            weekContainer.forEach((container) => {
-              const weekArrow = container.querySelector("#show-workouts");
-              weekContainer.forEach((week) => {
-                weekArrow.addEventListener("click", (e) => {
-                  let weekIndex = e.target.dataset.week;
-                  if (week === container) {
-                    container.classList.toggle("open-container");
+          weeksContainer.forEach((week) => {
+            const weekArrow = week.querySelector("#show-days");
+            const daysContainer = week.querySelector(".days-container");
 
-                    let workouts = programPlan[index].weeks[weekIndex].days;
-                    console.log(workouts);
-                  } else {
-                    container.classList.remove("open-container");
-                  }
-                });
+            weekArrow.addEventListener("click", (v) => {
+              console.log(daysContainer);
+              let weekIndex = v.target.dataset.week;
+              console.log(weekIndex);
+              weeksContainer.forEach((subweek) => {
+                if (subweek === week) {
+                  subweek.classList.toggle("show-days");
+                  let days = programPlan[index].weeks[weekIndex].days;
+                  displayDays(days, week);
+                } else {
+                  subweek.classList.remove("show-days");
+                }
               });
             });
-          }
-        } else {
+          });
+        }
+        // ====================the initial else that close all the overview container =============
+        else {
           item.classList.remove("open-container");
         }
       });
@@ -200,6 +164,84 @@ logoutBtn.addEventListener("click", async () => {
     console.log(error);
   }
 });
+
+// ==============display all programs
+const displayAllPrograms = (programPlan) => {
+  for (let i = 0; i < programPlan.length; i++) {
+    programGridContainer.innerHTML += `<div class="program-container">
+ 
+  <div class="program">
+    <img
+      src="../images/Arrow up.svg"
+      class ="box-arrow"
+      id="show-program"
+      alt=""
+      data-overview= ${i}
+    />
+    <p>${programPlan[i].name}</p>
+    
+    <div class="tools">
+      <i class="fa-regular fa-pen-to-square" data-manage=${programPlan[i]._id}></i>
+      <i class=" fa-solid fa-trash" id="delete-workout" data-delete=${programPlan[i]._id}></i>
+    </div>
+  </div>
+  
+  <div class="overview-container">
+  <div class="date-stats">
+  <p class="created-at">created at: 22/10/2022</p>
+  <p class="updated-at">updated at: 22/11/2022</p>
+</div>
+</div>
+</div>`;
+  }
+};
+
+// =======================display time stamps =========================
+const displayTimeStamps = (programPlan, program, index) => {
+  const overviewContainer = program.querySelector(".overview-container");
+  overviewContainer.innerHTML = `<div class="date-stats">
+  <p class="created-at">created at: ${programPlan[index].createdAt.slice(
+    0,
+    10
+  )}</p>
+  <p class="updated-at">updated at: ${programPlan[index].updatedAt.slice(
+    0,
+    10
+  )}</p>
+</div>`;
+};
+
+const displayWeek = (weeks, program) => {
+  const overviewContainer = program.querySelector(".overview-container");
+  for (let i = 0; i < weeks.length; i++) {
+    overviewContainer.innerHTML += `<div class="week-container">
+<div class="week">
+<img src="../images/Arrow up.svg" class="box-arrow" id="show-days" alt="" data-week = '${i}'  />
+<p class="week-number">week ${i + 1}</p>
+<p class= "number-of-days">${weeks[i].days.length} days</p>
+
+</div>
+<div class="days-container"></div>
+</div>
+`;
+    // =========================week container function ===================================================
+  }
+};
+
+const displayDays = (days, week) => {
+  const daysContainer = week.querySelector(".days-container");
+  daysContainer.innerHTML = "";
+  for (let i = 0; i < days.length; i++) {
+    daysContainer.innerHTML += `<div class="day-container">
+<div class="day">
+<img src="../images/Arrow up.svg" id="show-workouts" alt="" data-days = '${i}'  />
+<p class="days-name">day ${i + 1}</p>
+<p class="number-of-workouts">${days[i].workouts.length}w</p>
+</div>
+
+</div>`;
+  }
+};
 
 // let workout = programPlan[index].workouts;
 // for (let i = 0; i < workout.length; i++) {
