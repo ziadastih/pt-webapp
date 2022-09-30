@@ -354,18 +354,19 @@ body {
 }
 
 /* ==============================days container ========== */
-.days-container {
+.all-days-container {
   display: none;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   width: 80vw;
 }
-.day-container {
+.one-day-container {
   width: 80vw;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-direction: column;
   margin-bottom: 10px;
 }
 .day {
@@ -394,10 +395,8 @@ body {
   font-size: 10px;
   color: var(--eyeComfort);
 }
-
-/* ====================workouts  =========================
-
-.workout-container {
+/* ========================wokrouts overview container ================ */
+.all-workouts-container {
   display: none;
   align-items: center;
   justify-content: center;
@@ -405,10 +404,10 @@ body {
   margin-left: 20px;
 }
 .workout {
-  display: none;
+  display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: var(--mainColor);
+  background-color: var(--whiteSmoke);
   margin-bottom: 10px;
   border-radius: 5px;
   width: 80vw;
@@ -416,20 +415,24 @@ body {
   text-transform: capitalize;
   font-family: var(--fontSansSerif);
 
-  color: white;
+  color: var(--mainColor);
   font-weight: 700;
 }
-.workout img {
-  width: 15px;
+.workout i {
+  font-size: 12px;
+  color: var(--eyeComfort);
   margin-left: 20px;
 }
-.workout-name {
-  margin-right: 30px;
-} */
+.workout span {
+  margin-right: 20px;
+  font-size: 10px;
+  color: var(--eyeComfort);
+  font-weight: 400;
+}
 
 /* ==============exercice ============== */
 
-.exercise-container {
+.all-exercises-container {
   display: none;
   align-items: center;
   justify-content: center;
@@ -440,7 +443,7 @@ body {
 .exercise {
   border-top: 1px solid var(--eyeComfort);
   color: var(--eyeComfort);
-
+  background-color: var(--mainColor);
   display: flex;
   align-items: flex-start;
   justify-content: center;
@@ -593,13 +596,18 @@ body {
 .open-container .overview-container {
   display: flex;
 }
-.show-days .days-container {
+.show-days .all-days-container {
   display: flex;
 }
 
-.show-info .exercise-container {
+.show-info .all-exercises-container {
   display: flex;
 }
+
+.show-workouts .all-workouts-container {
+  display: flex;
+}
+
 .name-alert .show-alert {
   display: block;
 }
