@@ -10,9 +10,14 @@
 
   /* =========main color ============ */
   --mainColor: #0e535f;
-  --SecondaryColor: #1d4147;
+
   --alert: #fc8f3a;
   --eyeComfort: #81bcc9;
+
+  --bodyBackgroud: #e5eaef;
+  --mainOrange: #fead47;
+
+  --whiteSmoke: whitesmoke;
 }
 
 /* ===========global ================ */

@@ -10,11 +10,14 @@
 
   /* =========main color ============ */
   --mainColor: #0e535f;
-  --SecondaryColor: #1d4147;
+
   --alert: #fc8f3a;
   --eyeComfort: #81bcc9;
 
-  --secondEyeOption: #5d97a4;
+  --bodyBackgroud: #e5eaef;
+  --mainOrange: #fead47;
+
+  --whiteSmoke: whitesmoke;
 }
 
 /* ===========global ================ */
@@ -107,7 +110,7 @@ input[type="search"]::-webkit-search-results-decoration {
 /* ==================END OF GLOBAL CLASSES ========================  */
 
 body {
-  background-color: var(--eyeComfort);
+  background-color: var(--bodyBackgroud);
   overflow-x: hidden;
 }
 
@@ -226,10 +229,10 @@ body {
 .program {
   width: 80vw;
   height: 50px;
-  background-color: var(--mainColor);
+  background-color: var(--whiteSmoke);
 
   border-radius: 3px;
-  color: white;
+
   font-family: var(--fontSansSerif);
   font-weight: 400;
   display: flex;
@@ -240,12 +243,12 @@ body {
 
 .program p {
   text-align: center;
-  color: white;
-  font-weight: 500;
+  color: var(--mainColor);
+  font-weight: 700;
   letter-spacing: 1.2px;
 }
-.program img {
-  width: 15px;
+.program i {
+  font-size: 15px;
   margin-left: 20px;
   color: var(--eyeComfort);
   cursor: pointer;
@@ -256,10 +259,14 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--eyeComfort);
+  color: var(--mainOrange);
   width: 100px;
   gap: 10px;
   cursor: pointer;
+  margin-right: 20px;
+}
+.tools i {
+  color: var(--mainOrange);
 }
 
 /* ===================overview container ==================== */
@@ -287,13 +294,23 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: white;
+  background-color: var(--mainColor);
   height: 50px;
 }
 .date-stats p {
-  color: var(--mainColor);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--eyeComfort);
   font-family: var(--fontSansSerif);
   font-size: 10px;
+  text-transform: capitalize;
+  gap: 5px;
+}
+.date-stats p span {
+  color: var(--whiteSmoke);
+  font-weight: 400;
+  font-size: 12px;
 }
 .created-at {
   margin-left: 20px;
@@ -316,24 +333,24 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: var(--mainColor);
+  background-color: var(--whiteSmoke);
   width: 80vw;
   height: 50px;
   text-transform: capitalize;
   font-family: var(--fontSansSerif);
-
-  color: var(--eyeComfort);
+  border-top: 1px solid var(--bodyBackgroud);
+  color: var(--mainColor);
   font-weight: 400;
 }
-.week img {
+.week i {
   width: 15px;
   margin-left: 20px;
+  color: var(--eyeComfort);
 }
 .number-of-days {
-  margin-right: 30px;
+  margin-right: 20px;
   font-size: 10px;
-  color: white;
-  opacity: 0.5;
+  color: var(--eyeComfort);
 }
 
 /* ==============================days container ========== */
@@ -364,18 +381,18 @@ body {
   text-transform: capitalize;
   font-family: var(--fontSansSerif);
 
-  color: white;
+  color: whitesmoke;
   font-weight: 400;
 }
-.day img {
+.day i {
   width: 15px;
   margin-left: 20px;
+  color: var(--eyeComfort);
 }
 .number-of-workouts {
-  margin-right: 30px;
+  margin-right: 20px;
   font-size: 10px;
-  color: white;
-  opacity: 0.5;
+  color: var(--eyeComfort);
 }
 
 /* ====================workouts  =========================

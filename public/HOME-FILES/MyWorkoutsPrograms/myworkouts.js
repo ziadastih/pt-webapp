@@ -106,8 +106,10 @@ const displayProgramInfo = (programPlan) => {
       programContainer.forEach(function (item) {
         // =====opening container and displaying the timestamps and week  on click
         if (item === program) {
+          const createdAt = programPlan[index].createdAt.slice(0, 10);
+          const updatedAt = programPlan[index].updatedAt.slice(0, 10);
           // =========show timestamps =====================================
-          displayTimeStamps(programPlan, program, index);
+          displayTimeStamps(program, createdAt, updatedAt);
 
           item.classList.toggle("open-container");
           let weeks = programPlan[index].weeks;
@@ -171,15 +173,8 @@ const displayAllPrograms = (programPlan) => {
     programGridContainer.innerHTML += `<div class="program-container">
  
   <div class="program">
-    <img
-      src="../images/Arrow up.svg"
-      class ="box-arrow"
-      id="show-program"
-      alt=""
-      data-overview= ${i}
-    />
-    <p>${programPlan[i].name}</p>
-    
+  <i class="fa-solid fa-list" id="show-program" data-overview=${i}></i>
+ <p>${programPlan[i].name}</p>
     <div class="tools">
       <i class="fa-regular fa-pen-to-square" data-manage=${programPlan[i]._id}></i>
       <i class=" fa-solid fa-trash" id="delete-workout" data-delete=${programPlan[i]._id}></i>
@@ -197,17 +192,11 @@ const displayAllPrograms = (programPlan) => {
 };
 
 // =======================display time stamps =========================
-const displayTimeStamps = (programPlan, program, index) => {
+const displayTimeStamps = (program, createdAt, updatedAt) => {
   const overviewContainer = program.querySelector(".overview-container");
   overviewContainer.innerHTML = `<div class="date-stats">
-  <p class="created-at">created at: ${programPlan[index].createdAt.slice(
-    0,
-    10
-  )}</p>
-  <p class="updated-at">updated at: ${programPlan[index].updatedAt.slice(
-    0,
-    10
-  )}</p>
+  <p class="created-at">created at: <span> ${createdAt}</span></p>
+  <p class="updated-at">updated at: <span> ${updatedAt}</span></p>
 </div>`;
 };
 
@@ -216,7 +205,7 @@ const displayWeek = (weeks, program) => {
   for (let i = 0; i < weeks.length; i++) {
     overviewContainer.innerHTML += `<div class="week-container">
 <div class="week">
-<img src="../images/Arrow up.svg" class="box-arrow" id="show-days" alt="" data-week = '${i}'  />
+<i class="fa-solid fa-list" id="show-days" data-week=${i}></i>
 <p class="week-number">week ${i + 1}</p>
 <p class= "number-of-days">${weeks[i].days.length} days</p>
 
@@ -234,7 +223,7 @@ const displayDays = (days, week) => {
   for (let i = 0; i < days.length; i++) {
     daysContainer.innerHTML += `<div class="day-container">
 <div class="day">
-<img src="../images/Arrow up.svg" id="show-workouts" alt="" data-days = '${i}'  />
+<i class="fa-solid fa-list" id="show-workouts" data-days=${i}></i>
 <p class="days-name">day ${i + 1}</p>
 <p class="number-of-workouts">${days[i].workouts.length}w</p>
 </div>

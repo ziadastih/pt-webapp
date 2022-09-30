@@ -10,11 +10,14 @@
 
   /* =========main color ============ */
   --mainColor: #0e535f;
-  --SecondaryColor: #1d4147;
+
   --alert: #fc8f3a;
   --eyeComfort: #81bcc9;
 
-  --secondEyeOption: #5d97a4;
+  --bodyBackgroud: #e5eaef;
+  --mainOrange: #fead47;
+
+  --whiteSmoke: whitesmoke;
 }
 
 /* ===========global ================ */
@@ -106,7 +109,7 @@ input[type="search"]::-webkit-search-results-decoration {
 /* ==================END OF GLOBAL CLASSES ========================  */
 
 body {
-  background-color: var(--eyeComfort);
+  background-color: var(--bodyBackgroud);
   overflow-x: hidden;
 }
 
@@ -198,7 +201,7 @@ body {
   font-weight: 400;
   text-transform: capitalize;
   margin-top: 0;
-  color: white;
+  color: whitesmoke;
   background-color: var(--mainColor);
   letter-spacing: 1.2px;
 }
@@ -219,9 +222,9 @@ body {
 .client {
   width: 150px;
   min-height: 40px;
-  background-color: var(--mainColor);
+  background-color: var(--whiteSmoke);
   border-radius: 3px;
-  color: whitesmoke;
+  color: var(--mainColor);
   font-weight: 500;
   display: flex;
   align-items: center;
