@@ -31,7 +31,7 @@
     <!-- ============class header the back btn and the program name and the edit program name icon ===== -->
     <div class="header-container">
       <img src="../images/previousPageArrow.svg" class="back-btn" alt="" />
-      <p class="program-name-header"></p>
+      <p class="program-name-header">jad's plan</p>
       <i class="fa-regular fa-pen-to-square" id="edit-program-name"></i>
     </div>
     <!-- =========program name input and create/edit btn for it ==== -->
@@ -57,9 +57,11 @@
       <p class="day" data-day="5">sat</p>
       <p class="day" data-day="6">sun</p>
     </div>
-    <!-- ========== exercices search input ================= -->
+    <!-- ========== exercices overall container input ================= -->
     <div class="add-exercises-container">
+      <!-- =-==============the container content which have the search input and the exercices img checkbox and last the btn add ======== -->
       <div class="add-exercices-content">
+        <!-- ============ the header container the title and the close btn for the whole container  -->
         <div class="add-exercises-header">
           <h2>add exercises</h2>
           <i
@@ -68,19 +70,20 @@
             data-close="exercises-search-container"
           ></i>
         </div>
-
-        <input
-          type="search"
-          placeholder="search for exercise"
-          class="search-input"
-        />
-
-        <div class="exercises-container">
-          <div class="exercise">
-            <span class="check-box"></span>
-            <img src="./" class="exercise-img" alt="" />
-          </div>
+        <!-- ==================the search input inside the add exercise    container -->
+        <div class="exercises-input-container">
+          <input
+            type="search"
+            placeholder="search for exercise"
+            class="search-input"
+          />
+          <i class="fa-solid fa-magnifying-glass" id="search-icon-btn"></i>
         </div>
+        <span class="exercise-split-line"></span>
+        <!-- ==================the exercise container ============================ -->
+        <div class="exercises-list-container"></div>
+        <span class="exercise-split-line"></span>
+        <button class="add-exercises">add exercises</button>
       </div>
     </div>
 

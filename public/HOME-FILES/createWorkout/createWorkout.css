@@ -91,6 +91,13 @@ body {
   margin-left: 30px;
   cursor: pointer;
 }
+.program-name-header {
+  font-family: var(--fontSerif);
+  color: var(--whiteSmoke);
+  text-transform: capitalize;
+  font-size: 20px;
+}
+
 .header-container i {
   margin-right: 30px;
   color: white;
@@ -175,16 +182,6 @@ body {
   font-weight: 700;
 }
 
-/* ============= js ========================== */
-.edit-program-name {
-  display: none;
-}
-
-.chosen-day {
-  background-color: var(--whiteSmoke);
-  color: var(--eyeComfort);
-}
-
 /* ===================overall container of the exercises , width 100vw so we center all in center but same time flex start from top  */
 .add-exercises-container {
   width: 100vw;
@@ -222,8 +219,114 @@ body {
   margin-top: 20px;
 }
 
+.exercises-input-container i {
+  position: absolute;
+  font-size: 10px;
+  margin-left: -30px;
+  margin-top: 15px;
+  color: var(--mainColor);
+}
+
 .search-input {
   width: 70vw;
   background-color: transparent;
   border: 1px solid var(--mainColor);
+}
+
+.exercise-split-line {
+  width: 70vw;
+  background-color: var(--bodyBackgroud);
+  height: 1px;
+  margin-top: 20px;
+}
+
+/* ===============exercise container ================= */
+
+.exercises-list-container {
+  display: flex;
+  align-items: center;
+  width: 100vw;
+  height: 300px;
+  justify-content: flex-start;
+  flex-direction: column;
+  margin-top: 20px;
+  overflow-y: scroll;
+  position: relative;
+  gap: 20px;
+}
+
+.exercise {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+  width: 70vw;
+  height: 40px;
+  font-family: var(--fontSansSerif);
+  color: var(--mainColor);
+  font-size: 12px;
+  margin-bottom: 20px;
+  gap: 10px;
+}
+.exercise-name {
+  display: flex;
+  align-items: center;
+  text-transform: capitalize;
+  width: 50vw;
+  text-align: start;
+  /* word-break: break-all; */
+  word-wrap: break-word;
+
+  height: 40px;
+}
+.check-box {
+  width: 10px;
+  height: 10px;
+  border: 1px solid var(--mainColor);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 8px;
+  color: var(--whiteSmoke);
+  transition: 200ms ease-in;
+}
+.check-icon {
+  opacity: 0;
+  transition: 200ms ease-in;
+}
+
+.exercise-img {
+  width: 50px;
+  height: 50px;
+}
+
+/* ===============add exercises btn ============= */
+
+.add-exercises {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 10px;
+  background-color: var(--mainColor);
+  color: whitesmoke;
+  border-radius: 5px;
+  border: none;
+  text-transform: capitalize;
+}
+
+/* ============= js ========================== */
+.edit-program-name {
+  display: none;
+}
+
+.chosen-day {
+  background-color: var(--whiteSmoke);
+  color: var(--eyeComfort);
+}
+
+.show-check-icon {
+  opacity: 1;
+}
+.change-check-box-background {
+  background-color: var(--mainColor);
 }

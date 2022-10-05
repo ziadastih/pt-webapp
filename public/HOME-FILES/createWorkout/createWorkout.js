@@ -51,3 +51,24 @@ const exercices = [
     name: "Car Drivers",
   },
 ];
+
+const exercicesListContainer = document.querySelector(
+  ".exercises-list-container"
+);
+const displayExercicesArray = () => {
+  for (let i = 0; i < exercices.length; i++) {
+    exercicesListContainer.innerHTML += `<div class="exercise">
+    <span class="check-box" data-exercise =${i}
+      ><i class="fa-solid fa-check" id="check-icon"></i
+    ></span>
+    <img
+      src="../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg"
+      class="exercise-img"
+      alt=""
+    />
+    <p class="exercise-name">${exercices[i].name}</p>
+  </div>`;
+  }
+};
+
+displayExercicesArray();
