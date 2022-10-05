@@ -10,11 +10,14 @@
 
   /* =========main color ============ */
   --mainColor: #0e535f;
-  --SecondaryColor: #1d4147;
+
   --alert: #fc8f3a;
   --eyeComfort: #81bcc9;
 
-  --secondEyeOption: #5d97a4;
+  --bodyBackgroud: #e5eaef;
+  --mainOrange: #fead47;
+
+  --whiteSmoke: whitesmoke;
 }
 
 /* ===========global ================ */
@@ -66,48 +69,13 @@ input[type="search"]::-webkit-search-results-decoration {
   text-transform: capitalize;
   font-size: 10px;
   font-family: var(--fontSansSerif);
-  color: var(--SecondaryColor);
-}
-#toggle-password {
-  position: absolute;
-  margin-top: 15px;
-  font-size: 10px;
-  color: var(--SecondaryColor);
-  margin-left: -20px;
-  cursor: pointer;
+  color: var(--mainColor);
 }
 
-.global-nav {
-  position: fixed;
-
-  width: 100vw;
-  height: 9vh;
-  background-color: var(--mainColor);
-  font-family: var(--fontSansSerif);
-  font-size: 18px;
-  text-transform: capitalize;
-  letter-spacing: 0.02em;
-  bottom: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 30px;
-  z-index: 10;
-  color: white;
-}
-
-.global-nav p {
-  cursor: pointer;
-  transition: 300ms ease-in;
-}
-.global-nav p a {
-  text-decoration: none;
-  color: white;
-}
 /* ==================END OF GLOBAL CLASSES ========================  */
 
 body {
-  background-color: var(--eyeComfort);
+  background-color: var(--bodyBackgroud);
   overflow-x: hidden;
 }
 /* ==============header CONTAINER CONTAINS THE BACK BTN AND THE PLUS BTN */
@@ -126,7 +94,7 @@ body {
 .header-container i {
   margin-right: 30px;
   color: white;
-  font-size: 30px;
+  font-size: 20px;
   cursor: pointer;
 }
 
@@ -139,7 +107,7 @@ body {
   background-color: var(--mainColor);
   width: 80vw;
   z-index: 20;
-  display: flex;
+  display: none;
   align-items: center;
   justify-content: center;
   flex-direction: column;
@@ -184,7 +152,78 @@ body {
   font-weight: 400;
 }
 
-/* =============edit btn display none when page open =============== */
+/* ================ days container  ============== */
+
+.days-container {
+  display: grid;
+  grid-template-columns: repeat(7, auto);
+  margin-top: 30px;
+  place-content: center;
+  gap: 10px;
+  width: 100vw;
+}
+
+.day {
+  background-color: var(--mainColor);
+  color: var(--whiteSmoke);
+  padding: 10px;
+  font-size: 10px;
+  font-family: var(--fontSansSerif);
+  text-transform: capitalize;
+  cursor: pointer;
+  border-radius: 5px;
+  font-weight: 700;
+}
+
+/* ============= js ========================== */
 .edit-program-name {
   display: none;
+}
+
+.chosen-day {
+  background-color: var(--whiteSmoke);
+  color: var(--eyeComfort);
+}
+
+/* ===================overall container of the exercises , width 100vw so we center all in center but same time flex start from top  */
+.add-exercises-container {
+  width: 100vw;
+  height: 60vh;
+
+  margin-top: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+/* ==============the sub container which has all the content */
+.add-exercices-content {
+  width: 80vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: var(--whiteSmoke);
+  border-radius: 5px;
+}
+/* ===================add exercises header , has the title of the container and the close btn  */
+.add-exercises-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 70vw;
+  color: var(--mainColor);
+  font-family: var(--fontSansSerif);
+  font-weight: 500;
+  text-transform: capitalize;
+  font-size: 15px;
+
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+.search-input {
+  width: 70vw;
+  background-color: transparent;
+  border: 1px solid var(--mainColor);
 }
