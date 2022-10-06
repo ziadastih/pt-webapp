@@ -50,6 +50,11 @@
     </div>
     <!-- ================create workout name ========================= -->
     <div class="create-workout-name create-name-container">
+      <i
+        class="fa-solid fa-xmark close-workout-name-container"
+        id="close-btn"
+        data-close="create-workout-name"
+      ></i>
       <h2>create workout</h2>
       <div class="input-container">
         <div class="name-alert">
@@ -75,14 +80,14 @@
 
     <div class="add-exercises-container">
       <!-- =-==============the container content which have the search input and the exercices img checkbox and last the btn add ======== -->
-      <div class="add-exercices-content">
+      <div class="add-exercises-content">
         <!-- ============ the header container the title and the close btn for the whole container  -->
         <div class="add-exercises-header">
           <h2>add exercises</h2>
           <i
             class="fa-solid fa-xmark"
             id="close-btn"
-            data-close="exercises-search-container"
+            data-close="add-exercises-container"
           ></i>
         </div>
         <!-- ==================the search input inside the add exercise    container -->
@@ -107,23 +112,16 @@
       </div>
     </div>
     <main class="main-container">
-      <!-- <div class="one-workout">
-          <i class="fa-solid fa-list" id="show-program" data-execises="s"></i>
-          <p class="workout-name">split bros</p>
-          <div class="tools">
-            <i
-              class="fa-solid fa-trash"
-              id="delete-client"
-              data-delete="workout-index"
-            ></i>
-            <i
-              class="fa-solid fa-user-pen"
-              id="manage-client"
-              data-manage="workout-index"
-            ></i>
-          </div>
-        </div> -->
-      <!-- <button class="outline-btn" id="submit-workou">submit workout</button> -->
+      <div class="workout-header">
+        <span></span>
+        <p class="workout-name-header">push</p>
+        <i class="fa-regular fa-pen-to-square edit-workout-name-icon"></i>
+      </div>
+
+      <div class="main-container-btns">
+        <button class="full-btn toggle-exercises-list">add exercises</button>
+        <button class="outline-btn submit-workout">submit workout</button>
+      </div>
     </main>
 
     <div class="create-workout-btn-container">

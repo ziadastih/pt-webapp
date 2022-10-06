@@ -176,7 +176,12 @@ body {
 .input-container input {
   width: 60vw;
 }
-
+.close-workout-name-container {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  color: var(--whiteSmoke);
+}
 .name-alert {
   width: 60vw;
   display: flex;
@@ -228,18 +233,42 @@ body {
   font-weight: 700;
 }
 
-/* =============on day container  ==================== */
-
-.one-day-container {
+/* =================main container  ==================== */
+.main-container {
   width: 100vw;
-  min-height: 70vh;
-  margin-top: 20px;
+  overflow-x: hidden;
   display: flex;
   align-items: center;
   justify-content: flex-start;
   flex-direction: column;
+  margin-top: 50px;
 }
 
+.main-container-btns {
+  margin-top: 50px;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+}
+
+/* ===============workout header =================== */
+.workout-header {
+  width: 70vw;
+  display: none;
+  align-items: center;
+  justify-content: space-between;
+  font-family: var(--fontSansSerif);
+  color: var(--mainColor);
+
+  text-transform: capitalize;
+  font-weight: 400;
+}
+.workout-header p {
+  font-size: 20px;
+  letter-spacing: 1.1px;
+}
 .created-workouts {
   display: flex;
   align-items: center;
@@ -301,7 +330,7 @@ body {
   flex-direction: column;
 }
 /* ==============the sub container which has all the content */
-.add-exercices-content {
+.add-exercises-content {
   width: 80vw;
   display: flex;
   align-items: center;

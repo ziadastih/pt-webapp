@@ -1,0 +1,20 @@
+   display workouts styling still need to add exercise container for the overview
+   
+   <div class="created-workouts">
+   <div class="one-workout">
+      <i class="fa-solid fa-list" id="show-program" data-execises="s"></i>
+      <p class="workout-name">split bros</p>
+      <div class="tools">
+        <i
+          class="fa-solid fa-trash"
+          id="delete-workout"
+          data-delete="workout-index"
+        ></i>
+        <i
+          class="fa-solid fa-user-pen"
+          id="manage-workout"
+          data-manage="workout-index"
+        ></i>
+      </div>
+    </div>  
+    </div>

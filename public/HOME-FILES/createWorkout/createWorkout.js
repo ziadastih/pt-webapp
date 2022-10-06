@@ -92,7 +92,7 @@ const program = [
   },
 ];
 
-// ==============creating the program name and editing it =====
+// ============== program selectors and the overlay ================================================
 const overlay = document.querySelector(".overlay");
 const createProgramNameContainer = document.querySelector(
   ".create-program-name"
@@ -103,6 +103,39 @@ const createProgramNameBtn = document.querySelector(".add-program-name");
 const programName = document.querySelector(".program-name-header");
 const editProgramNameIcon = document.querySelector(".edit-program-name-icon");
 const nameInputAlert = document.querySelector(".create-program-name-alert");
+
+// ================workout selectors =========================
+
+const workoutNameInput = document.getElementById("workout-input-name");
+const workoutCreateBtn = document.querySelector(".add-workout-name");
+const workoutEditBtn = document.querySelector(".edit-workout-name");
+const workoutNameAlert = document.querySelector(".workout-name-alert");
+const workoutNameHeader = document.querySelector(".workout-name-header");
+const workoutHeader = document.querySelector(".workout-header");
+const workoutNameContainer = document.querySelector(".create-workout-name");
+const closeBtn = document.querySelectorAll("#close-btn");
+
+// ==============create workout / or set as rest day selectors ================
+const createWorkoutBtnContainer = document.querySelector(
+  ".create-workout-btn-container"
+);
+const toggleWorkoutNameContainer = document.getElementById(
+  "toggle-workout-name-container"
+);
+
+// ===================exercices container that hold our data names and images and checkbox ===========
+const mainContainer = document.querySelector(".main-container");
+const addExercicesContainer = document.querySelector(
+  ".add-exercises-container"
+);
+const exercicesListContainer = document.querySelector(
+  ".exercises-list-container"
+);
+
+// ===============main container btns  selectors ======================
+const mainContainerBtns = document.querySelector(".main-container-btns");
+const toggleExercisesList = document.querySelector(".toggle-exercises-list");
+const submitWorkout = document.querySelector(".submit-workout");
 
 // ===============event listener for adding program/ edit icon / and edit program name =============
 createProgramNameBtn.addEventListener("click", () => {
@@ -124,39 +157,27 @@ editProgramNameBtn.addEventListener("click", () => {
 
 // toggle the create workout name container =========
 
-const mainContainer = document.querySelector(".main-container");
-
-const toggleWorkoutNameContainer = document.getElementById(
-  "toggle-workout-name-container"
-);
-const workoutNameContainer = document.querySelector(".create-workout-name");
-
 toggleWorkoutNameContainer.addEventListener("click", () => {
   workoutNameContainer.classList.add("display-flex");
   overlay.classList.remove("display-none");
 });
 
+closeBtn.forEach((btn) => {
+  btn.addEventListener("click", (e) => {
+    let id = e.target.dataset.close;
+    let container = document.querySelector(`.${id}`);
+    container.classList.remove("display-flex");
+    overlay.classList.add("display-none");
+  });
+});
 // ============ add name and display different setup in main container , show exercises list and workout name with edit btn for it ==
-const days = document.querySelectorAll(".day");
-
-const workoutNameInput = document.getElementById("workout-input-name");
-const workoutCreateBtn = document.querySelector(".add-workout-name");
-const workoutEditBtn = document.querySelector(".edit-workout-name");
-const workoutNameAlert = document.querySelector(".workout-name-alert");
 
 workoutCreateBtn.addEventListener("click", () => {
-  if (workoutNameInput.value.length === 0) {
-    showAlert(workoutNameAlert);
-  } else {
-    console.log("hello");
-  }
+  setupWorkoutName();
 });
 
 // ========displaying the exercices we have inside the exercises list container
 
-const exercicesListContainer = document.querySelector(
-  ".exercises-list-container"
-);
 const displayExercicesArray = () => {
   for (let i = 0; i < exercices.length; i++) {
     exercicesListContainer.innerHTML += `<div class="exercise">
@@ -183,6 +204,7 @@ const showAlert = async (alert) => {
   }, 3000);
 };
 
+// ================ adding the program name input value to the top of the page and the showing the edit icon
 const addProgramName = () => {
   if (programNameInput.value.length === 0) {
     showAlert(nameInputAlert);
@@ -196,23 +218,18 @@ const addProgramName = () => {
   }
 };
 
-// ========== display workouts =====================
+// ======================= adding the workout name to the main container , opening the exercise multi choices and closing the rest and showing the overlay as well
 
-{
-  /* <div class="one-workout">
-      <i class="fa-solid fa-list" id="show-program" data-execises="s"></i>
-      <p class="workout-name">split bros</p>
-      <div class="tools">
-        <i
-          class="fa-solid fa-trash"
-          id="delete-workout"
-          data-delete="workout-index"
-        ></i>
-        <i
-          class="fa-solid fa-user-pen"
-          id="manage-workout"
-          data-manage="workout-index"
-        ></i>
-      </div>
-    </div>  */
-}
+const setupWorkoutName = () => {
+  if (workoutNameInput.value.length === 0) {
+    showAlert(workoutNameAlert);
+  } else {
+    createWorkoutBtnContainer.classList.add("display-none");
+    workoutNameHeader.textContent = workoutNameInput.value;
+    workoutHeader.classList.add("display-flex");
+    addExercicesContainer.classList.add("display-flex");
+    overlay.classList.remove("display-none");
+    workoutNameContainer.classList.remove("display-flex");
+    mainContainerBtns.classList.add("display-flex");
+  }
+};
