@@ -31,25 +31,40 @@
     <!-- ============class header the back btn and the program name and the edit program name icon ===== -->
     <div class="header-container">
       <img src="../images/previousPageArrow.svg" class="back-btn" alt="" />
-      <p class="program-name-header">jad's plan</p>
-      <i class="fa-regular fa-pen-to-square" id="edit-program-name"></i>
+      <p class="program-name-header"></p>
+      <i class="fa-regular fa-pen-to-square edit-program-name-icon"></i>
     </div>
     <!-- =========program name input and create/edit btn for it ==== -->
-    <div class="create-program-name">
+    <div class="overlay"></div>
+    <div class="create-program-name create-name-container">
       <h2>create program</h2>
       <div class="input-container">
         <div class="name-alert">
           <p>program name:</p>
-          <p class="alert register-last-alert">please provide a Name!</p>
+          <p class="alert create-program-name-alert">please provide a Name!</p>
         </div>
         <input type="text" id="program-input-name" placeholder="program name" />
       </div>
       <button class="add-program-name btn">create</button>
       <button class="edit-program-name btn">Edit</button>
     </div>
+    <!-- ================create workout name ========================= -->
+    <div class="create-workout-name create-name-container">
+      <h2>create workout</h2>
+      <div class="input-container">
+        <div class="name-alert">
+          <p>workout name:</p>
+          <p class="alert workout-name-alert">please provide a Name!</p>
+        </div>
+        <input type="text" id="workout-input-name" placeholder="workout name" />
+      </div>
+      <button class="add-workout-name btn">create</button>
+      <button class="edit-workout-name btn">Edit</button>
+    </div>
     <!-- ============days container for selection ==== -->
     <div class="days-container">
       <p class="day chosen-day" data-day="0">mon</p>
+
       <p class="day" data-day="1">tue</p>
       <p class="day" data-day="2">wed</p>
       <p class="day" data-day="3">thu</p>
@@ -57,7 +72,7 @@
       <p class="day" data-day="5">sat</p>
       <p class="day" data-day="6">sun</p>
     </div>
-    <!-- ========== exercices overall container input ================= -->
+
     <div class="add-exercises-container">
       <!-- =-==============the container content which have the search input and the exercices img checkbox and last the btn add ======== -->
       <div class="add-exercices-content">
@@ -80,11 +95,42 @@
           <i class="fa-solid fa-magnifying-glass" id="search-icon-btn"></i>
         </div>
         <span class="exercise-split-line"></span>
-        <!-- ==================the exercise container ============================ -->
+        <!-- ==================the exercise container , include the btn container which has the add exercises and create new name  ============================ -->
         <div class="exercises-list-container"></div>
         <span class="exercise-split-line"></span>
-        <button class="add-exercises">add exercises</button>
+        <div class="exercises-btn-container">
+          <button class="full-btn" id="add-exercises">add exercises</button>
+          <button class="outline-btn" id="create-new-exercise-name">
+            create new
+          </button>
+        </div>
       </div>
+    </div>
+    <main class="main-container">
+      <!-- <div class="one-workout">
+          <i class="fa-solid fa-list" id="show-program" data-execises="s"></i>
+          <p class="workout-name">split bros</p>
+          <div class="tools">
+            <i
+              class="fa-solid fa-trash"
+              id="delete-client"
+              data-delete="workout-index"
+            ></i>
+            <i
+              class="fa-solid fa-user-pen"
+              id="manage-client"
+              data-manage="workout-index"
+            ></i>
+          </div>
+        </div> -->
+      <!-- <button class="outline-btn" id="submit-workou">submit workout</button> -->
+    </main>
+
+    <div class="create-workout-btn-container">
+      <button class="full-btn" id="toggle-workout-name-container">
+        create workout
+      </button>
+      <button class="outline-btn" id="set-as-rest-day">set as rest day</button>
     </div>
 
     <script src="./createWorkout.js"></script>
