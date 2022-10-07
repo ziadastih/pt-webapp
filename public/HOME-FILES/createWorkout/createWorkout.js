@@ -113,6 +113,7 @@ const workoutNameAlert = document.querySelector(".workout-name-alert");
 const workoutNameHeader = document.querySelector(".workout-name-header");
 const workoutHeader = document.querySelector(".workout-header");
 const workoutNameContainer = document.querySelector(".create-workout-name");
+const workoutEditIcon = document.querySelector(".edit-workout-name-icon");
 const closeBtn = document.querySelectorAll("#close-btn");
 
 // ==============create workout / or set as rest day selectors ================
@@ -131,12 +132,13 @@ const addExercicesContainer = document.querySelector(
 const exercicesListContainer = document.querySelector(
   ".exercises-list-container"
 );
+const searchInput = document.querySelector(".search-input");
 
 // ===============main container btns  selectors ======================
 const mainContainerBtns = document.querySelector(".main-container-btns");
 const toggleExercisesList = document.querySelector(".toggle-exercises-list");
 const submitWorkout = document.querySelector(".submit-workout");
-
+const submitProgram = document.querySelector(".submit-Program");
 // ===============event listener for adding program/ edit icon / and edit program name =============
 createProgramNameBtn.addEventListener("click", () => {
   addProgramName();
@@ -170,12 +172,32 @@ closeBtn.forEach((btn) => {
     overlay.classList.add("display-none");
   });
 });
+
+workoutEditIcon.addEventListener("click", () => {
+  workoutNameContainer.classList.add("display-flex");
+  workoutCreateBtn.classList.add("display-none");
+  workoutEditBtn.classList.add("display-flex");
+  workoutNameInput.value = workoutNameHeader.textContent;
+  overlay.classList.remove("display-none");
+});
+
+workoutEditBtn.addEventListener("click", () => {
+  setupWorkoutName();
+});
 // ============ add name and display different setup in main container , show exercises list and workout name with edit btn for it ==
 
 workoutCreateBtn.addEventListener("click", () => {
   setupWorkoutName();
 });
 
+// =================toggle the exercises list  ======================================
+
+toggleExercisesList.addEventListener("click", () => {
+  addExercicesContainer.classList.add("display-flex");
+});
+searchInput.addEventListener("input", () => {
+  liveSearch();
+});
 // ========displaying the exercices we have inside the exercises list container
 
 const displayExercicesArray = () => {
@@ -214,7 +236,6 @@ const addProgramName = () => {
     overlay.classList.add("display-none");
     createProgramNameContainer.classList.add("display-none");
     program.name = programNameInput.value;
-    console.log(program.name);
   }
 };
 
@@ -232,4 +253,24 @@ const setupWorkoutName = () => {
     workoutNameContainer.classList.remove("display-flex");
     mainContainerBtns.classList.add("display-flex");
   }
+};
+
+// ===================live search for exercises  ====================
+
+const liveSearch = () => {
+  const exerciceContainer = document.querySelectorAll(".exercise");
+  let inputCharacter = searchInput.value.toUpperCase();
+
+  exerciceContainer.forEach((exercise) => {
+    // ============show all item when input is empty again
+    if (searchInput === "") {
+      exercise.classList.remove("display-none");
+    }
+    // ==========search by charachter, display the ones that match,remove the ones that doesnt match================
+    if (exercise.textContent.toUpperCase().includes(inputCharacter)) {
+      exercise.classList.remove("display-none");
+    } else if (!exercise.textContent.toUpperCase().includes(inputCharacter)) {
+      exercise.classList.add("display-none");
+    }
+  });
 };
