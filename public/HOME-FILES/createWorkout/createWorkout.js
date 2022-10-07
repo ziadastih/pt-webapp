@@ -202,7 +202,7 @@ searchInput.addEventListener("input", () => {
 
 const displayExercicesArray = () => {
   for (let i = 0; i < exercices.length; i++) {
-    exercicesListContainer.innerHTML += `<div class="exercise">
+    exercicesListContainer.innerHTML += `<div class="exercise-content">
     <span class="check-box" data-exercise =${i}
       ><i class="fa-solid fa-check" id="check-icon"></i
     ></span>
@@ -258,10 +258,10 @@ const setupWorkoutName = () => {
 // ===================live search for exercises  ====================
 
 const liveSearch = () => {
-  const exerciceContainer = document.querySelectorAll(".exercise");
+  const exerciceContent = document.querySelectorAll(".exercise-content");
   let inputCharacter = searchInput.value.toUpperCase();
 
-  exerciceContainer.forEach((exercise) => {
+  exerciceContent.forEach((exercise) => {
     // ============show all item when input is empty again
     if (searchInput === "") {
       exercise.classList.remove("display-none");
