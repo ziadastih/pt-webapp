@@ -1,4 +1,4 @@
-const exercises = [
+const exercisesArray = [
   {
     name: "Seated Alternating Hammer Curls",
     img: "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
@@ -102,6 +102,7 @@ const exercises = [
     selected: false,
   },
 ];
+const selectedExercisesArray = [];
 // =====program schema array , it has name, weeks,by default we will set one week , with 7 days
 const program = [
   {
@@ -255,18 +256,18 @@ searchInput.addEventListener("input", () => {
 // ========displaying the exercices we have inside the exercises list container
 
 const displayExercicesArray = () => {
-  for (let i = 0; i < exercises.length; i++) {
-    if (exercises[i].selected === false) {
+  for (let i = 0; i < exercisesArray.length; i++) {
+    if (exercisesArray[i].selected === false) {
       exercicesListContainer.innerHTML += `<div class="exercise-content">
     <span class="check-box" data-exercise =${i}
       ><i class="fa-solid fa-check" id="check-icon"></i
     ></span>
     <img
-      src=${exercises[i].img}
+      src=${exercisesArray[i].img}
       class="exercise-img"
       alt=""
     />
-    <p class="exercise-name">${exercises[i].name}</p>
+    <p class="exercise-name">${exercisesArray[i].name}</p>
   </div>`;
     } else {
       exercicesListContainer.innerHTML += `<div class="exercise-content">
@@ -274,26 +275,34 @@ const displayExercicesArray = () => {
     ><i class="fa-solid fa-check show-opacity " id="check-icon"></i
   ></span>
   <img
-    src=${exercises[i].img}
+    src=${exercisesArray[i].img}
     class="exercise-img"
     alt=""
   />
-  <p class="exercise-name">${exercises[i].name}</p>
+  <p class="exercise-name">${exercisesArray[i].name}</p>
 </div>`;
     }
   }
+  // ===================managing the checkbox and pushing or removing the exercises to selected exercises array
   const checkbox = document.querySelectorAll(".check-box");
   checkbox.forEach((box) => {
     box.addEventListener("click", (e) => {
       let exerciseIndex = box.dataset.exercise;
       console.log(exerciseIndex);
       box.classList.toggle("change-check-box-background");
-      if (exercises[exerciseIndex].selected === false) {
-        exercises[exerciseIndex].selected = true;
-        console.log(exercises[exerciseIndex]);
+      if (exercisesArray[exerciseIndex].selected === false) {
+        exercisesArray[exerciseIndex].selected = true;
+        selectedExercisesArray.push(exercisesArray[exerciseIndex]);
+        console.log(selectedExercisesArray);
       } else {
-        exercises[exerciseIndex].selected = false;
-        console.log(exercises[exerciseIndex]);
+        exercisesArray[exerciseIndex].selected = false;
+        const index = selectedExercisesArray.findIndex((Element) => {
+          return Element.name === exercisesArray[exerciseIndex].name;
+        });
+        if (index !== -1) {
+          selectedExercisesArray.splice(index, 1);
+          console.log(selectedExercisesArray);
+        }
       }
     });
   });
