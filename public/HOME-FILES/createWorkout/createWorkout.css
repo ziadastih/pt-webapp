@@ -377,8 +377,8 @@ body {
   height: 50px;
   border-radius: 5px;
 }
-.light-span {
-  background-color: var(--eyeComfort);
+.left-span {
+  background-color: var(--mainColor);
   opacity: 0;
   width: 3px;
   height: 20px;
@@ -386,6 +386,16 @@ body {
   bottom: -20px;
   z-index: 10;
   left: 0;
+}
+.right-span {
+  background-color: var(--mainColor);
+  opacity: 0;
+  width: 3px;
+  height: 20px;
+  position: absolute;
+  bottom: -20px;
+  z-index: 10;
+  right: 0;
 }
 .exercise-tools {
   display: flex;

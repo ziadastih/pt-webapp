@@ -555,7 +555,8 @@ const displayChosenExercises = () => {
 
 const standardChosen = (exercise, i) => {
   chosenExercisesContainer.innerHTML += `<div class="one-exercise-container">
-  <span class ='light-span'></span>
+  <span class ='left-span'></span>
+  <span class ='right-span'></span>
   <div class="container-top-section">
     <div class="exercise-general-info">
       <img
@@ -598,7 +599,8 @@ const standardChosen = (exercise, i) => {
 
 const chosenSuperset = (exercise, i) => {
   chosenExercisesContainer.innerHTML += `<div class="one-exercise-container">
-  <span class ='light-span show-opacity'></span>
+  <span class ='left-span show-opacity'></span>
+  <span class ='right-span show-opacity'></span>
   <div class="container-top-section">
     <div class="exercise-general-info">
       <img
@@ -641,7 +643,8 @@ const chosenSuperset = (exercise, i) => {
 
 const chosenTypeRestPause = (exercise, i) => {
   chosenExercisesContainer.innerHTML += `<div class="one-exercise-container">
-  <span class ='light-span'></span>
+  <span class ='left-span'></span>
+  <span class ='right-span'></span>
   <div class="container-top-section">
     <div class="exercise-general-info">
       <img
@@ -684,7 +687,8 @@ const chosenTypeRestPause = (exercise, i) => {
 
 const chosenTypeDropset = (exercise, i) => {
   chosenExercisesContainer.innerHTML += `<div class="one-exercise-container">
-  <span class ='light-span'></span>
+  <span class ='left-span'></span>
+  <span class ='right-span'></span>
   <div class="container-top-section">
     <div class="exercise-general-info">
       <img
@@ -727,7 +731,8 @@ const chosenTypeDropset = (exercise, i) => {
 
 const chosenRpSuperset = (exercise, i) => {
   chosenExercisesContainer.innerHTML += `<div class="one-exercise-container">
-  <span class ='light-span show-opacity'></span>
+  <span class ='left-span show-opacity'></span>
+  <span class ='right-span show-opacity'></span>
   <div class="container-top-section">
     <div class="exercise-general-info">
       <img
@@ -770,7 +775,8 @@ const chosenRpSuperset = (exercise, i) => {
 
 const chosenDsSuperset = (exercise, i) => {
   chosenExercisesContainer.innerHTML += `<div class="one-exercise-container">
-  <span class ='light-span show-opacity'></span>
+  <span class ='left-span show-opacity'></span>
+  <span class ='right-span show-opacity'></span>
   <div class="container-top-section">
     <div class="exercise-general-info">
       <img
