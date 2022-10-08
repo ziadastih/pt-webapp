@@ -163,6 +163,7 @@ body {
   opacity: 0.8;
   height: 100vh;
   width: 100vw;
+  z-index: 2;
 }
 .create-name-container h2 {
   color: white;
@@ -346,7 +347,7 @@ body {
 
   text-transform: capitalize;
   margin-bottom: 20px;
-  border-radius: 5px;
+  border-radius: 0px 5px 5px 5px;
 }
 
 .container-top-section {
@@ -374,7 +375,15 @@ body {
   height: 50px;
   border-radius: 5px;
 }
-
+.light-span {
+  background-color: var(--eyeComfort);
+  border-radius: 2px 0px 0px 2px;
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  top: 0;
+  left: -10px;
+}
 .exercise-tools {
   display: flex;
   align-items: center;
@@ -449,6 +458,7 @@ body {
   align-items: center;
   justify-content: flex-start;
   flex-direction: column;
+  z-index: 999;
 }
 /* ==============the sub container which has all the content */
 .add-exercises-content {

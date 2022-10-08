@@ -186,6 +186,10 @@ const exercicesListContainer = document.querySelector(
 );
 
 const searchInput = document.querySelector(".search-input");
+const addExercicesBtn = document.getElementById("add-exercises");
+const chosenExercisesContainer = document.querySelector(
+  ".chosen-exercises-container"
+);
 
 // ===============main container btns  selectors ======================
 const mainContainerBtns = document.querySelector(".main-container-btns");
@@ -252,7 +256,11 @@ toggleExercisesList.addEventListener("click", () => {
 searchInput.addEventListener("input", () => {
   liveSearch();
 });
-
+addExercicesBtn.addEventListener("click", () => {
+  overlay.classList.add("display-none");
+  addExercicesContainer.classList.remove("display-flex");
+  displayChosenExercises();
+});
 // ========displaying the exercices we have inside the exercises list container
 
 const displayExercicesArray = () => {
@@ -272,7 +280,7 @@ const displayExercicesArray = () => {
     } else {
       exercicesListContainer.innerHTML += `<div class="exercise-content">
   <span class="check-box change-check-box-background" data-exercise =${i}
-    ><i class="fa-solid fa-check show-opacity " id="check-icon"></i
+    ><i class="fa-solid fa-check" id="check-icon"></i
   ></span>
   <img
     src=${exercisesArray[i].img}
@@ -292,7 +300,19 @@ const displayExercicesArray = () => {
       box.classList.toggle("change-check-box-background");
       if (exercisesArray[exerciseIndex].selected === false) {
         exercisesArray[exerciseIndex].selected = true;
-        selectedExercisesArray.push(exercisesArray[exerciseIndex]);
+        let selectedExercise = exercisesArray[exerciseIndex];
+        selectedExercisesArray.push({
+          name: selectedExercise.name,
+          img: selectedExercise.img,
+          video: selectedExercise.video,
+          note: "",
+          rep: "",
+          set: "",
+          tempo: "",
+          chain: false,
+          type: "",
+          rest: "",
+        });
         console.log(selectedExercisesArray);
       } else {
         exercisesArray[exerciseIndex].selected = false;
@@ -364,5 +384,82 @@ const liveSearch = () => {
     } else if (!exercise.textContent.toUpperCase().includes(inputCharacter)) {
       exercise.classList.add("display-none");
     }
+  });
+};
+
+const displayChosenExercises = () => {
+  chosenExercisesContainer.innerHTML = "";
+  for (let i = 0; i < selectedExercisesArray.length; i++) {
+    let exercise = selectedExercisesArray[i];
+    chosenExercisesContainer.innerHTML += `<div class="one-exercise-container">
+    <span class ='light-span'></span>
+    <div class="container-top-section">
+      <div class="exercise-general-info">
+        <img
+          src=${exercise.img}
+          alt=""
+        />
+        <p class="chosen-exercise-name">${exercise.name}</p>
+      </div>
+      <div class="exercise-tools">
+        <i class="fa-solid fa-note-sticky" id="note"></i>
+        <i class="fa-regular fa-eye" data-video = ${exercise.video}></i>
+        <i class="fa-solid fa-trash" id="delete-exercise" data-delete = ${exercise.name}></i>
+      </div>
+    </div>
+    <div class="exercise-stats-container">
+      <div class="input-container">
+        <p>set:</p>
+        <input type="text" id="sets-input" data-input =${i} placeholder="0" value="${exercise.set}" />
+      </div>
+      <div class="input-container">
+        <p>rep:</p>
+        <input type="text" id="reps-input" data-input =${i} placeholder="0 - 0" value="${exercise.rep}" />
+      </div>
+      <div class="input-container">
+        <p>rest:</p>
+        <input type="text" id="rest-input" data-input =${i} placeholder="0" value="${exercise.rest}" />
+      </div>
+      <div class="input-container">
+        <p>tempo:</p>
+        <input type="text" id="tempo-input" data-input =${i} placeholder="0-0-0-0" value="${exercise.tempo}" />
+      </div>
+      <div class="button-type-container">
+        <button class="full-btn" id="chain" data-chain = ${i}>chain</button>
+        <button class="full-btn" id="rest-pause" data-type=${i}>rest-pause</button>
+        <button class="full-btn" id="dropset" data-type=${i}>dropset</button>
+      </div>
+    </div>
+  </div>`;
+  }
+  const setInputs = document.querySelectorAll("#sets-input");
+  setInputs.forEach((setInput) => {
+    setInput.addEventListener("input", (e) => {
+      let exerciseIndex = e.target.dataset.input;
+      selectedExercisesArray[exerciseIndex].set = setInput.value;
+    });
+  });
+  // ===================reps inputs live update ========================
+  const repInputs = document.querySelectorAll("#reps-input");
+  repInputs.forEach((repInput) => {
+    repInput.addEventListener("input", (e) => {
+      let exerciseIndex = e.target.dataset.input;
+      selectedExercisesArray[exerciseIndex].rep = repInput.value;
+    });
+  });
+
+  const restInputs = document.querySelectorAll("#rest-input");
+  restInputs.forEach((restInput) => {
+    restInput.addEventListener("input", (e) => {
+      let exerciseIndex = e.target.dataset.input;
+      selectedExercisesArray[exerciseIndex].rest = restInput.value;
+    });
+  });
+  const tempoInputs = document.querySelectorAll("#tempo-input");
+  tempoInputs.forEach((tempoInput) => {
+    tempoInput.addEventListener("input", (e) => {
+      let exerciseIndex = e.target.dataset.input;
+      selectedExercisesArray[exerciseIndex].tempo = tempoInput.value;
+    });
   });
 };
