@@ -1,54 +1,105 @@
-const exercices = [
+const exercises = [
   {
     name: "Seated Alternating Hammer Curls",
+    img: "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+    video: "video url",
+    selected: false,
   },
   {
     name: "Rotating Alternate Incline Bicep Curls",
+    img: "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+    video: "video url",
+    selected: false,
   },
   {
     name: "Alternating Deltoid Raise",
+    img: "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+    video: "video url",
+    selected: false,
   },
   {
     name: "Standing Alternate Rotating Bicep Curls ",
+    img: "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+    video: "video url",
+    selected: false,
   },
   {
     name: "Alternating Dumbbell Floor Press ",
+    img: "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+    video: "video url",
+    selected: false,
   },
   {
     name: "Alternating Dumbbell Floor Press ",
+    img: "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+    video: "video url",
+    selected: false,
   },
   {
     name: "Alternating Front Raise",
+    img: "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+    video: "video url",
+    selected: false,
   },
   {
     name: "Alternating Preacher Curl",
+    img: "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+    video: "video url",
+    selected: false,
   },
   {
     name: "Seated Arnold Press",
+    img: "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+    video: "video url",
+    selected: false,
   },
   {
     name: "Seated Arnold Press",
+    img: "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+    video: "video url",
+    selected: false,
   },
   {
     name: "Around The Worlds",
+    img: "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+    video: "video url",
+    selected: false,
   },
   {
     name: "Bent-Arm Dumbbell Pullover",
+    img: "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+    video: "video url",
+    selected: false,
   },
   {
     name: "Standing Rear Delt Flyes Head Against Bench",
+    img: "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+    video: "video url",
+    selected: false,
   },
   {
     name: "Dumbbell Bent Over Rows",
+    img: "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+    video: "video url",
+    selected: false,
   },
   {
     name: "Dumbbell Bent Over Rows",
+    img: "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+    video: "video url",
+    selected: false,
   },
   {
     name: "Dumbbell Bent Over Rows Neutral Grip",
+    img: "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+    video: "video url",
+    selected: false,
   },
   {
     name: "Car Drivers",
+    img: "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+    video: "video url",
+    selected: false,
   },
 ];
 // =====program schema array , it has name, weeks,by default we will set one week , with 7 days
@@ -132,6 +183,7 @@ const addExercicesContainer = document.querySelector(
 const exercicesListContainer = document.querySelector(
   ".exercises-list-container"
 );
+
 const searchInput = document.querySelector(".search-input");
 
 // ===============main container btns  selectors ======================
@@ -194,26 +246,57 @@ workoutCreateBtn.addEventListener("click", () => {
 
 toggleExercisesList.addEventListener("click", () => {
   addExercicesContainer.classList.add("display-flex");
+  overlay.classList.remove("display-none");
 });
 searchInput.addEventListener("input", () => {
   liveSearch();
 });
+
 // ========displaying the exercices we have inside the exercises list container
 
 const displayExercicesArray = () => {
-  for (let i = 0; i < exercices.length; i++) {
-    exercicesListContainer.innerHTML += `<div class="exercise-content">
+  for (let i = 0; i < exercises.length; i++) {
+    if (exercises[i].selected === false) {
+      exercicesListContainer.innerHTML += `<div class="exercise-content">
     <span class="check-box" data-exercise =${i}
       ><i class="fa-solid fa-check" id="check-icon"></i
     ></span>
     <img
-      src="../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg"
+      src=${exercises[i].img}
       class="exercise-img"
       alt=""
     />
-    <p class="exercise-name">${exercices[i].name}</p>
+    <p class="exercise-name">${exercises[i].name}</p>
   </div>`;
+    } else {
+      exercicesListContainer.innerHTML += `<div class="exercise-content">
+  <span class="check-box change-check-box-background" data-exercise =${i}
+    ><i class="fa-solid fa-check show-opacity " id="check-icon"></i
+  ></span>
+  <img
+    src=${exercises[i].img}
+    class="exercise-img"
+    alt=""
+  />
+  <p class="exercise-name">${exercises[i].name}</p>
+</div>`;
+    }
   }
+  const checkbox = document.querySelectorAll(".check-box");
+  checkbox.forEach((box) => {
+    box.addEventListener("click", (e) => {
+      let exerciseIndex = box.dataset.exercise;
+      console.log(exerciseIndex);
+      box.classList.toggle("change-check-box-background");
+      if (exercises[exerciseIndex].selected === false) {
+        exercises[exerciseIndex].selected = true;
+        console.log(exercises[exerciseIndex]);
+      } else {
+        exercises[exerciseIndex].selected = false;
+        console.log(exercises[exerciseIndex]);
+      }
+    });
+  });
 };
 
 displayExercicesArray();

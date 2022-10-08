@@ -149,9 +149,9 @@ body {
   transition: 300ms ease-in;
   overflow: hidden;
 }
-/* .create-program-name {
+.create-program-name {
   display: flex;
-} */
+}
 .overlay {
   top: 0;
   left: 0;
@@ -159,7 +159,7 @@ body {
   position: fixed;
 
   background-color: var(--bodyBackgroud);
-  display: none;
+
   opacity: 0.8;
   height: 100vh;
   width: 100vw;
@@ -259,7 +259,7 @@ body {
   width: 100vw;
   height: 40px;
   background-color: var(--eyeComfort);
-  display: flex;
+  display: none;
   align-items: center;
   justify-content: center;
   font-family: var(--fontSansSerif);
