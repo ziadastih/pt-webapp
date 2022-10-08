@@ -190,6 +190,13 @@ const addExercicesBtn = document.getElementById("add-exercises");
 const chosenExercisesContainer = document.querySelector(
   ".chosen-exercises-container"
 );
+const toggleCreateNewName = document.getElementById("toggle-new-exercise-name");
+const newExerciseNameContainer = document.querySelector(
+  ".create-new-exercise-container"
+);
+const exerciseNameInput = document.getElementById("exercise-input-name");
+const exerciseNameAlert = document.querySelector(".exercise-name-alert");
+const createExerciseNameBtn = document.querySelector(".create-exercise-name");
 
 // ===============main container btns  selectors ======================
 const mainContainerBtns = document.querySelector(".main-container-btns");
@@ -245,6 +252,7 @@ workoutEditBtn.addEventListener("click", () => {
 
 workoutCreateBtn.addEventListener("click", () => {
   setupWorkoutName();
+  displayExercicesArray(exercisesArray);
 });
 
 // =================toggle the exercises list  ======================================
@@ -252,6 +260,7 @@ workoutCreateBtn.addEventListener("click", () => {
 toggleExercisesList.addEventListener("click", () => {
   addExercicesContainer.classList.add("display-flex");
   overlay.classList.remove("display-none");
+  displayExercicesArray(exercisesArray);
 });
 searchInput.addEventListener("input", () => {
   liveSearch();
@@ -261,21 +270,49 @@ addExercicesBtn.addEventListener("click", () => {
   addExercicesContainer.classList.remove("display-flex");
   displayChosenExercises();
 });
+toggleCreateNewName.addEventListener("click", () => {
+  newExerciseNameContainer.classList.add("display-flex");
+  addExercicesContainer.classList.remove("display-flex");
+});
+
+createExerciseNameBtn.addEventListener("click", () => {
+  if (exerciseNameInput.value.length === 0) {
+    showAlert(exerciseNameAlert);
+  } else {
+    selectedExercisesArray.push({
+      name: exerciseNameInput.value,
+      img: "../images/black-img.jpg",
+      video: "none",
+      note: "",
+      rep: "",
+      set: "",
+      tempo: "",
+      chain: false,
+      type: "",
+      rest: "",
+    });
+    newExerciseNameContainer.classList.remove("display-flex");
+    addExercicesContainer.classList.add("display-flex");
+    console.log(selectedExercisesArray);
+  }
+});
+
 // ========displaying the exercices we have inside the exercises list container
 
-const displayExercicesArray = () => {
-  for (let i = 0; i < exercisesArray.length; i++) {
-    if (exercisesArray[i].selected === false) {
+const displayExercicesArray = (arr) => {
+  exercicesListContainer.innerHTML = "";
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i].selected === false) {
       exercicesListContainer.innerHTML += `<div class="exercise-content">
     <span class="check-box" data-exercise =${i}
       ><i class="fa-solid fa-check" id="check-icon"></i
     ></span>
     <img
-      src=${exercisesArray[i].img}
+      src=${arr[i].img}
       class="exercise-img"
       alt=""
     />
-    <p class="exercise-name">${exercisesArray[i].name}</p>
+    <p class="exercise-name">${arr[i].name}</p>
   </div>`;
     } else {
       exercicesListContainer.innerHTML += `<div class="exercise-content">
@@ -283,11 +320,11 @@ const displayExercicesArray = () => {
     ><i class="fa-solid fa-check" id="check-icon"></i
   ></span>
   <img
-    src=${exercisesArray[i].img}
+    src=${arr[i].img}
     class="exercise-img"
     alt=""
   />
-  <p class="exercise-name">${exercisesArray[i].name}</p>
+  <p class="exercise-name">${arr[i].name}</p>
 </div>`;
     }
   }
@@ -296,11 +333,11 @@ const displayExercicesArray = () => {
   checkbox.forEach((box) => {
     box.addEventListener("click", (e) => {
       let exerciseIndex = box.dataset.exercise;
-      console.log(exerciseIndex);
+
       box.classList.toggle("change-check-box-background");
-      if (exercisesArray[exerciseIndex].selected === false) {
-        exercisesArray[exerciseIndex].selected = true;
-        let selectedExercise = exercisesArray[exerciseIndex];
+      if (arr[exerciseIndex].selected === false) {
+        arr[exerciseIndex].selected = true;
+        let selectedExercise = arr[exerciseIndex];
         selectedExercisesArray.push({
           name: selectedExercise.name,
           img: selectedExercise.img,
@@ -313,22 +350,18 @@ const displayExercicesArray = () => {
           type: "",
           rest: "",
         });
-        console.log(selectedExercisesArray);
       } else {
-        exercisesArray[exerciseIndex].selected = false;
+        arr[exerciseIndex].selected = false;
         const index = selectedExercisesArray.findIndex((Element) => {
-          return Element.name === exercisesArray[exerciseIndex].name;
+          return Element.name === arr[exerciseIndex].name;
         });
         if (index !== -1) {
           selectedExercisesArray.splice(index, 1);
-          console.log(selectedExercisesArray);
         }
       }
     });
   });
 };
-
-displayExercicesArray();
 
 // =======================show alert function ===========================
 const showAlert = async (alert) => {
@@ -387,51 +420,29 @@ const liveSearch = () => {
   });
 };
 
+// ==================display chosen exercises set them into container and set the data ===========
+
 const displayChosenExercises = () => {
   chosenExercisesContainer.innerHTML = "";
+  // =================conditions for displaying items  ==================
   for (let i = 0; i < selectedExercisesArray.length; i++) {
     let exercise = selectedExercisesArray[i];
-    chosenExercisesContainer.innerHTML += `<div class="one-exercise-container">
-    <span class ='light-span'></span>
-    <div class="container-top-section">
-      <div class="exercise-general-info">
-        <img
-          src=${exercise.img}
-          alt=""
-        />
-        <p class="chosen-exercise-name">${exercise.name}</p>
-      </div>
-      <div class="exercise-tools">
-        <i class="fa-solid fa-note-sticky" id="note"></i>
-        <i class="fa-regular fa-eye" data-video = ${exercise.video}></i>
-        <i class="fa-solid fa-trash" id="delete-exercise" data-delete = ${exercise.name}></i>
-      </div>
-    </div>
-    <div class="exercise-stats-container">
-      <div class="input-container">
-        <p>set:</p>
-        <input type="text" id="sets-input" data-input =${i} placeholder="0" value="${exercise.set}" />
-      </div>
-      <div class="input-container">
-        <p>rep:</p>
-        <input type="text" id="reps-input" data-input =${i} placeholder="0 - 0" value="${exercise.rep}" />
-      </div>
-      <div class="input-container">
-        <p>rest:</p>
-        <input type="text" id="rest-input" data-input =${i} placeholder="0" value="${exercise.rest}" />
-      </div>
-      <div class="input-container">
-        <p>tempo:</p>
-        <input type="text" id="tempo-input" data-input =${i} placeholder="0-0-0-0" value="${exercise.tempo}" />
-      </div>
-      <div class="button-type-container">
-        <button class="full-btn" id="chain" data-chain = ${i}>chain</button>
-        <button class="full-btn" id="rest-pause" data-type=${i}>rest-pause</button>
-        <button class="full-btn" id="dropset" data-type=${i}>dropset</button>
-      </div>
-    </div>
-  </div>`;
+    if (exercise.type === "" && exercise.chain === false) {
+      standardChosen(exercise, i);
+    } else if (exercise.type === "rest-pause" && exercise.chain === true) {
+      chosenRpSuperset(exercise, i);
+    } else if (exercise.type === "dropset" && exercise.chain === true) {
+      chosenDsSuperset(exercise, i);
+    } else if (exercise.chain === true) {
+      chosenSuperset(exercise, i);
+    } else if (exercise.type === "rest-pause") {
+      chosenTypeRestPause(exercise, i);
+    } else if (exercise.type === "dropset") {
+      chosenTypeDropset(exercise, i);
+    }
   }
+
+  // =============================set inputs  ================
   const setInputs = document.querySelectorAll("#sets-input");
   setInputs.forEach((setInput) => {
     setInput.addEventListener("input", (e) => {
@@ -447,7 +458,7 @@ const displayChosenExercises = () => {
       selectedExercisesArray[exerciseIndex].rep = repInput.value;
     });
   });
-
+  // ========================rest inputs  ================
   const restInputs = document.querySelectorAll("#rest-input");
   restInputs.forEach((restInput) => {
     restInput.addEventListener("input", (e) => {
@@ -455,6 +466,7 @@ const displayChosenExercises = () => {
       selectedExercisesArray[exerciseIndex].rest = restInput.value;
     });
   });
+  // =================tempo inputs live update ==================
   const tempoInputs = document.querySelectorAll("#tempo-input");
   tempoInputs.forEach((tempoInput) => {
     tempoInput.addEventListener("input", (e) => {
@@ -462,4 +474,339 @@ const displayChosenExercises = () => {
       selectedExercisesArray[exerciseIndex].tempo = tempoInput.value;
     });
   });
+  // ===================chain btns =============================================
+  const chainBtns = document.querySelectorAll("#chain");
+  chainBtns.forEach((btn) => {
+    btn.addEventListener("click", (e) => {
+      let exerciseIndex = e.target.dataset.chain;
+
+      if (btn.classList.contains("selected-type")) {
+        btn.classList.remove("selected-type");
+        selectedExercisesArray[exerciseIndex].chain = false;
+        displayChosenExercises();
+      } else {
+        selectedExercisesArray[exerciseIndex].chain = true;
+        displayChosenExercises();
+      }
+    });
+  });
+
+  const restPauseBtn = document.querySelectorAll("#rest-pause");
+  restPauseBtn.forEach((btn) => {
+    btn.addEventListener("click", (e) => {
+      let exerciseIndex = e.target.dataset.type;
+      if (!btn.classList.contains("selected-type")) {
+        btn.classList.add("selected-type");
+        selectedExercisesArray[exerciseIndex].type = btn.textContent;
+        console.log(selectedExercisesArray[exerciseIndex]);
+        let dropset = e.target.nextElementSibling;
+        dropset.classList.remove("selected-type");
+      } else {
+        btn.classList.remove("selected-type");
+        selectedExercisesArray[exerciseIndex].type = "";
+        console.log(selectedExercisesArray[exerciseIndex]);
+      }
+    });
+  });
+  const dropsetBtn = document.querySelectorAll("#dropset");
+  dropsetBtn.forEach((btn) => {
+    btn.addEventListener("click", (e) => {
+      let exerciseIndex = e.target.dataset.type;
+      if (!btn.classList.contains("selected-type")) {
+        btn.classList.add("selected-type");
+        selectedExercisesArray[exerciseIndex].type = btn.textContent;
+        console.log(selectedExercisesArray[exerciseIndex]);
+        let dropset = e.target.previousElementSibling;
+        dropset.classList.remove("selected-type");
+      } else {
+        btn.classList.remove("selected-type");
+        selectedExercisesArray[exerciseIndex].type = "";
+        console.log(selectedExercisesArray[exerciseIndex]);
+      }
+    });
+  });
+
+  const deleteExerciseBtns = document.querySelectorAll("#delete-exercise");
+
+  deleteExerciseBtns.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      let name = btn.dataset.delete;
+      console.log(name);
+      const indexInSelectedArray = selectedExercisesArray.findIndex(
+        (Element) => {
+          return Element.name === name;
+        }
+      );
+      console.log(indexInSelectedArray);
+      if (indexInSelectedArray !== -1) {
+        selectedExercisesArray.splice(indexInSelectedArray, 1);
+        displayChosenExercises();
+        const indexInExercisesArray = exercisesArray.findIndex((Element) => {
+          return Element.name === name;
+        });
+        console.log(indexInExercisesArray);
+        if (indexInExercisesArray !== -1) {
+          exercisesArray[indexInExercisesArray].selected = false;
+        }
+      }
+    });
+  });
+};
+
+const standardChosen = (exercise, i) => {
+  chosenExercisesContainer.innerHTML += `<div class="one-exercise-container">
+  <span class ='light-span'></span>
+  <div class="container-top-section">
+    <div class="exercise-general-info">
+      <img
+        src=${exercise.img}
+        alt=""
+      />
+      <p class="chosen-exercise-name">${exercise.name}</p>
+    </div>
+    <div class="exercise-tools">
+      <i class="fa-solid fa-note-sticky" id="note"></i>
+      <i class="fa-regular fa-eye" data-video = ${exercise.video}></i>
+      <i class="fa-solid fa-trash" id="delete-exercise" data-delete = "${exercise.name}"></i>
+    </div>
+  </div>
+  <div class="exercise-stats-container">
+    <div class="input-container">
+      <p>set:</p>
+      <input type="text" id="sets-input" data-input =${i} placeholder="0" value="${exercise.set}" />
+    </div>
+    <div class="input-container">
+      <p>rep:</p>
+      <input type="text" id="reps-input" data-input =${i} placeholder="0 - 0" value="${exercise.rep}" />
+    </div>
+    <div class="input-container">
+      <p>rest:</p>
+      <input type="text" id="rest-input" data-input =${i} placeholder="0" value="${exercise.rest}" />
+    </div>
+    <div class="input-container">
+      <p>tempo:</p>
+      <input type="text" id="tempo-input" data-input =${i} placeholder="0-0-0-0" value="${exercise.tempo}" />
+    </div>
+    <div class="button-type-container">
+      <button class="full-btn" id="chain" data-chain = ${i}>chain</button>
+      <button class="full-btn" id="rest-pause" data-type=${i}>rest-pause</button>
+      <button class="full-btn" id="dropset" data-type=${i}>dropset</button>
+    </div>
+  </div>
+</div>`;
+};
+
+const chosenSuperset = (exercise, i) => {
+  chosenExercisesContainer.innerHTML += `<div class="one-exercise-container">
+  <span class ='light-span show-opacity'></span>
+  <div class="container-top-section">
+    <div class="exercise-general-info">
+      <img
+        src=${exercise.img}
+        alt=""
+      />
+      <p class="chosen-exercise-name">${exercise.name}</p>
+    </div>
+    <div class="exercise-tools">
+      <i class="fa-solid fa-note-sticky" id="note"></i>
+      <i class="fa-regular fa-eye" data-video = ${exercise.video}></i>
+      <i class="fa-solid fa-trash" id="delete-exercise" data-delete = "${exercise.name}"></i>
+    </div>
+  </div>
+  <div class="exercise-stats-container">
+    <div class="input-container">
+      <p>set:</p>
+      <input type="text" id="sets-input" data-input =${i} placeholder="0" value="${exercise.set}" />
+    </div>
+    <div class="input-container">
+      <p>rep:</p>
+      <input type="text" id="reps-input" data-input =${i} placeholder="0 - 0" value="${exercise.rep}" />
+    </div>
+    <div class="input-container">
+      <p>rest:</p>
+      <input type="text" id="rest-input" data-input =${i} placeholder="0" value="${exercise.rest}" />
+    </div>
+    <div class="input-container">
+      <p>tempo:</p>
+      <input type="text" id="tempo-input" data-input =${i} placeholder="0-0-0-0" value="${exercise.tempo}" />
+    </div>
+    <div class="button-type-container">
+      <button class="full-btn selected-type" id="chain" data-chain = ${i}>chain</button>
+      <button class="full-btn" id="rest-pause" data-type=${i}>rest-pause</button>
+      <button class="full-btn" id="dropset" data-type=${i}>dropset</button>
+    </div>
+  </div>
+</div>`;
+};
+
+const chosenTypeRestPause = (exercise, i) => {
+  chosenExercisesContainer.innerHTML += `<div class="one-exercise-container">
+  <span class ='light-span'></span>
+  <div class="container-top-section">
+    <div class="exercise-general-info">
+      <img
+        src=${exercise.img}
+        alt=""
+      />
+      <p class="chosen-exercise-name">${exercise.name}</p>
+    </div>
+    <div class="exercise-tools">
+      <i class="fa-solid fa-note-sticky" id="note"></i>
+      <i class="fa-regular fa-eye" data-video = ${exercise.video}></i>
+      <i class="fa-solid fa-trash" id="delete-exercise" data-delete = "${exercise.name}"></i>
+    </div>
+  </div>
+  <div class="exercise-stats-container">
+    <div class="input-container">
+      <p>set:</p>
+      <input type="text" id="sets-input" data-input =${i} placeholder="0" value="${exercise.set}" />
+    </div>
+    <div class="input-container">
+      <p>rep:</p>
+      <input type="text" id="reps-input" data-input =${i} placeholder="0 - 0" value="${exercise.rep}" />
+    </div>
+    <div class="input-container">
+      <p>rest:</p>
+      <input type="text" id="rest-input" data-input =${i} placeholder="0" value="${exercise.rest}" />
+    </div>
+    <div class="input-container">
+      <p>tempo:</p>
+      <input type="text" id="tempo-input" data-input =${i} placeholder="0-0-0-0" value="${exercise.tempo}" />
+    </div>
+    <div class="button-type-container">
+      <button class="full-btn" id="chain" data-chain = ${i}>chain</button>
+      <button class="full-btn selected-type" id="rest-pause" data-type=${i}>rest-pause</button>
+      <button class="full-btn" id="dropset" data-type=${i}>dropset</button>
+    </div>
+  </div>
+</div>`;
+};
+
+const chosenTypeDropset = (exercise, i) => {
+  chosenExercisesContainer.innerHTML += `<div class="one-exercise-container">
+  <span class ='light-span'></span>
+  <div class="container-top-section">
+    <div class="exercise-general-info">
+      <img
+        src=${exercise.img}
+        alt=""
+      />
+      <p class="chosen-exercise-name">${exercise.name}</p>
+    </div>
+    <div class="exercise-tools">
+      <i class="fa-solid fa-note-sticky" id="note"></i>
+      <i class="fa-regular fa-eye" data-video = ${exercise.video}></i>
+      <i class="fa-solid fa-trash" id="delete-exercise" data-delete = "${exercise.name}"></i>
+    </div>
+  </div>
+  <div class="exercise-stats-container">
+    <div class="input-container">
+      <p>set:</p>
+      <input type="text" id="sets-input" data-input =${i} placeholder="0" value="${exercise.set}" />
+    </div>
+    <div class="input-container">
+      <p>rep:</p>
+      <input type="text" id="reps-input" data-input =${i} placeholder="0 - 0" value="${exercise.rep}" />
+    </div>
+    <div class="input-container">
+      <p>rest:</p>
+      <input type="text" id="rest-input" data-input =${i} placeholder="0" value="${exercise.rest}" />
+    </div>
+    <div class="input-container">
+      <p>tempo:</p>
+      <input type="text" id="tempo-input" data-input =${i} placeholder="0-0-0-0" value="${exercise.tempo}" />
+    </div>
+    <div class="button-type-container">
+      <button class="full-btn" id="chain" data-chain = ${i}>chain</button>
+      <button class="full-btn" id="rest-pause" data-type=${i}>rest-pause</button>
+      <button class="full-btn selected-type" id="dropset" data-type=${i}>dropset</button>
+    </div>
+  </div>
+</div>`;
+};
+
+const chosenRpSuperset = (exercise, i) => {
+  chosenExercisesContainer.innerHTML += `<div class="one-exercise-container">
+  <span class ='light-span show-opacity'></span>
+  <div class="container-top-section">
+    <div class="exercise-general-info">
+      <img
+        src=${exercise.img}
+        alt=""
+      />
+      <p class="chosen-exercise-name">${exercise.name}</p>
+    </div>
+    <div class="exercise-tools">
+      <i class="fa-solid fa-note-sticky" id="note"></i>
+      <i class="fa-regular fa-eye" data-video = ${exercise.video}></i>
+      <i class="fa-solid fa-trash" id="delete-exercise" data-delete = "${exercise.name}"></i>
+    </div>
+  </div>
+  <div class="exercise-stats-container">
+    <div class="input-container">
+      <p>set:</p>
+      <input type="text" id="sets-input" data-input =${i} placeholder="0" value="${exercise.set}" />
+    </div>
+    <div class="input-container">
+      <p>rep:</p>
+      <input type="text" id="reps-input" data-input =${i} placeholder="0 - 0" value="${exercise.rep}" />
+    </div>
+    <div class="input-container">
+      <p>rest:</p>
+      <input type="text" id="rest-input" data-input =${i} placeholder="0" value="${exercise.rest}" />
+    </div>
+    <div class="input-container">
+      <p>tempo:</p>
+      <input type="text" id="tempo-input" data-input =${i} placeholder="0-0-0-0" value="${exercise.tempo}" />
+    </div>
+    <div class="button-type-container">
+      <button class="full-btn selected-type" id="chain" data-chain = ${i}>chain</button>
+      <button class="full-btn selected-type" id="rest-pause" data-type=${i}>rest-pause</button>
+      <button class="full-btn" id="dropset" data-type=${i}>dropset</button>
+    </div>
+  </div>
+</div>`;
+};
+
+const chosenDsSuperset = (exercise, i) => {
+  chosenExercisesContainer.innerHTML += `<div class="one-exercise-container">
+  <span class ='light-span show-opacity'></span>
+  <div class="container-top-section">
+    <div class="exercise-general-info">
+      <img
+        src=${exercise.img}
+        alt=""
+      />
+      <p class="chosen-exercise-name">${exercise.name}</p>
+    </div>
+    <div class="exercise-tools">
+      <i class="fa-solid fa-note-sticky" id="note"></i>
+      <i class="fa-regular fa-eye" data-video = ${exercise.video}></i>
+      <i class="fa-solid fa-trash" id="delete-exercise" data-delete = "${exercise.name}"></i>
+    </div>
+  </div>
+  <div class="exercise-stats-container">
+    <div class="input-container">
+      <p>set:</p>
+      <input type="text" id="sets-input" data-input =${i} placeholder="0" value="${exercise.set}" />
+    </div>
+    <div class="input-container">
+      <p>rep:</p>
+      <input type="text" id="reps-input" data-input =${i} placeholder="0 - 0" value="${exercise.rep}" />
+    </div>
+    <div class="input-container">
+      <p>rest:</p>
+      <input type="text" id="rest-input" data-input =${i} placeholder="0" value="${exercise.rest}" />
+    </div>
+    <div class="input-container">
+      <p>tempo:</p>
+      <input type="text" id="tempo-input" data-input =${i} placeholder="0-0-0-0" value="${exercise.tempo}" />
+    </div>
+    <div class="button-type-container">
+      <button class="full-btn selected-type" id="chain" data-chain = ${i}>chain</button>
+      <button class="full-btn" id="rest-pause" data-type=${i}>rest-pause</button>
+      <button class="full-btn selected-type" id="dropset" data-type=${i}>dropset</button>
+    </div>
+  </div>
+</div>`;
 };

@@ -234,7 +234,9 @@ body {
   border-radius: 5px;
   font-weight: 700;
 }
-
+.create-new-exercise-container {
+  z-index: 20;
+}
 /* =================main container  ==================== */
 .main-container {
   width: 100vw;
@@ -249,10 +251,10 @@ body {
 .main-container-btns {
   margin-top: 50px;
   display: none;
-  flex-direction: column;
+  /* flex-direction: column; */
   align-items: center;
-  justify-content: center;
-  width: 100vw;
+  justify-content: space-between;
+  width: 70vw;
 }
 
 /* ===============workout header =================== */
@@ -347,7 +349,7 @@ body {
 
   text-transform: capitalize;
   margin-bottom: 20px;
-  border-radius: 0px 5px 5px 5px;
+  border-radius: 0px 5px 5px 0px;
 }
 
 .container-top-section {
@@ -377,12 +379,13 @@ body {
 }
 .light-span {
   background-color: var(--eyeComfort);
-  border-radius: 2px 0px 0px 2px;
-  width: 10px;
-  height: 10px;
+  opacity: 0;
+  width: 3px;
+  height: 20px;
   position: absolute;
-  top: 0;
-  left: -10px;
+  bottom: -20px;
+  z-index: 10;
+  left: 0;
 }
 .exercise-tools {
   display: flex;
@@ -617,4 +620,8 @@ body {
 
 .border-radius-bottom {
   border-radius: 0px 0px 5px 5px;
+}
+
+.selected-type {
+  background-color: var(--eyeComfort);
 }

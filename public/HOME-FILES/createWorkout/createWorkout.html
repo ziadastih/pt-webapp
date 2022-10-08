@@ -77,7 +77,7 @@
       <p class="day" data-day="5">sat</p>
       <p class="day" data-day="6">sun</p>
     </div>
-
+    <!-- ============exercise container list ========================= -->
     <div class="add-exercises-container">
       <!-- =-==============the container content which have the search input and the exercices img checkbox and last the btn add ======== -->
       <div class="add-exercises-content">
@@ -105,12 +105,34 @@
         <span class="exercise-split-line"></span>
         <div class="exercises-btn-container">
           <button class="full-btn" id="add-exercises">add exercises</button>
-          <button class="outline-btn" id="create-new-exercise-name">
+          <button class="outline-btn" id="toggle-new-exercise-name">
             create new
           </button>
         </div>
       </div>
     </div>
+    <!-- ============create new exercise  container  ============= -->
+    <div class="create-new-exercise-container create-name-container">
+      <i
+        class="fa-solid fa-xmark close-workout-name-container"
+        id="close-btn"
+        data-close="create-new-exercise-container"
+      ></i>
+      <h2>create exercise</h2>
+      <div class="input-container">
+        <div class="name-alert">
+          <p>exercise name:</p>
+          <p class="alert exercise-name-alert">please provide a Name!</p>
+        </div>
+        <input
+          type="text"
+          id="exercise-input-name"
+          placeholder="exercise name"
+        />
+      </div>
+      <button class="create-exercise-name btn">create</button>
+    </div>
+    <!-- ====================main container  ==================== -->
     <main class="main-container">
       <div class="workout-header">
         <span></span>
@@ -123,7 +145,6 @@
       <div class="main-container-btns">
         <button class="full-btn toggle-exercises-list">add exercises</button>
         <button class="outline-btn submit-workout">submit workout</button>
-        <button class="outline-btn submit-Program">submit program</button>
       </div>
     </main>
 
