@@ -7,8 +7,12 @@ const deleteVerificationContainer = document.querySelector(
   ".delete-verification-section"
 );
 const searchWorkoutInput = document.getElementById("search-workout-input");
-
+const goToCreateProgram = document.getElementById("go-to-create-program");
 // ================GET WORKOUT FUNCTION , INCLUDE DISPLAYING ALL, LIVE SEARCH , DELETE FUNCTION =============================
+
+goToCreateProgram.addEventListener("click", () => {
+  window.location = "http://localhost:3000/createWorkout/createWorkout.html";
+});
 
 const getWorkouts = async () => {
   try {
@@ -50,7 +54,7 @@ const getWorkouts = async () => {
         yesBtn.addEventListener("click", async (e) => {
           let id = e.target.dataset.delete;
 
-          await axios.delete(`/api/v1/workout/${id}`);
+          await axios.delete(`/api/v1/workoutProgram/${id}`);
           deleteVerificationContainer.classList.remove("open-container");
 
           getWorkouts();

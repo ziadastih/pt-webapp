@@ -232,6 +232,15 @@ editProgramNameBtn.addEventListener("click", () => {
   addProgramName();
 });
 
+submitProgram.addEventListener("click", async () => {
+  console.log(program);
+  const Program = await axios.post("/api/v1/workoutProgram", {
+    name: program.name,
+    weeks: program.weeks,
+  });
+  window.location = "http://localhost:3000/MyWorkoutsPrograms/myWorkouts.html";
+});
+
 daysBtn.forEach((day) => {
   day.addEventListener("click", () => {
     let dayIndex = day.dataset.day;
@@ -440,7 +449,7 @@ const setupWorkoutName = () => {
     workoutNameContainer.classList.remove("display-flex");
     mainContainerBtns.classList.add("display-flex");
     displayExercicesArray(exercisesArray);
-    createdWorkoutsContainer.classList.remove("display-flex");
+    createdWorkoutsContainer.classList.add("display-none");
   }
 };
 
