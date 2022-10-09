@@ -2,13 +2,13 @@ const exercisesArray = [
   {
     name: "Seated Alternating Hammer Curls",
     img: "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
-    video: "video url",
+    video: "https://www.youtube.com/embed/AFWRIzDA5zI",
     selected: false,
   },
   {
     name: "Rotating Alternate Incline Bicep Curls",
     img: "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
-    video: "video url",
+    video: "https://www.youtube.com/embed/KM5Y9GBTcyU",
     selected: false,
   },
   {
@@ -208,6 +208,11 @@ const submitProgram = document.querySelector(".submit-Program");
 const noteContainer = document.querySelector(".note-box");
 const noteInput = document.querySelector(".note-input");
 const noteSubmit = document.querySelector(".note-submit");
+
+// ============================iframe  ==============================
+const iframeContainer = document.querySelector(".iframe-container");
+const iframe = document.querySelector(".iframe");
+
 // ===============event listener for adding program/ edit icon / and edit program name =============
 createProgramNameBtn.addEventListener("click", () => {
   addProgramName();
@@ -239,6 +244,7 @@ closeBtn.forEach((btn) => {
     let container = document.querySelector(`.${id}`);
     container.classList.remove("display-flex");
     overlay.classList.add("display-none");
+    iframe.src = "";
   });
 });
 
@@ -257,7 +263,6 @@ workoutEditBtn.addEventListener("click", () => {
 
 workoutCreateBtn.addEventListener("click", () => {
   setupWorkoutName();
-  displayExercicesArray(exercisesArray);
 });
 
 // =================toggle the exercises list  ======================================
@@ -402,6 +407,7 @@ const setupWorkoutName = () => {
     overlay.classList.remove("display-none");
     workoutNameContainer.classList.remove("display-flex");
     mainContainerBtns.classList.add("display-flex");
+    displayExercicesArray(exercisesArray);
   }
 };
 
@@ -485,17 +491,21 @@ const displayChosenExercises = () => {
     btn.addEventListener("click", (e) => {
       let exerciseIndex = e.target.dataset.chain;
 
-      if (btn.classList.contains("selected-type")) {
-        btn.classList.remove("selected-type");
-        selectedExercisesArray[exerciseIndex].chain = false;
-        displayChosenExercises();
+      if (exerciseIndex == selectedExercisesArray.length - 1) {
+        console.log("last element");
       } else {
-        selectedExercisesArray[exerciseIndex].chain = true;
-        displayChosenExercises();
+        if (btn.classList.contains("selected-type")) {
+          btn.classList.remove("selected-type");
+          selectedExercisesArray[exerciseIndex].chain = false;
+          displayChosenExercises();
+        } else {
+          selectedExercisesArray[exerciseIndex].chain = true;
+          displayChosenExercises();
+        }
       }
     });
   });
-
+  // =============rest pause btn ====================================
   const restPauseBtn = document.querySelectorAll("#rest-pause");
   restPauseBtn.forEach((btn) => {
     btn.addEventListener("click", (e) => {
@@ -513,6 +523,7 @@ const displayChosenExercises = () => {
       }
     });
   });
+  // ===================dropsetBtn =====================
   const dropsetBtn = document.querySelectorAll("#dropset");
   dropsetBtn.forEach((btn) => {
     btn.addEventListener("click", (e) => {
@@ -530,7 +541,7 @@ const displayChosenExercises = () => {
       }
     });
   });
-
+  // ===================delete chosen exercise  ===============
   const deleteExerciseBtns = document.querySelectorAll("#delete-exercise");
 
   deleteExerciseBtns.forEach((btn) => {
@@ -583,6 +594,20 @@ const displayChosenExercises = () => {
       });
     });
   });
+
+  // =============================eye icons =========================================
+
+  const toggleVideoBtns = document.querySelectorAll("#toggle-video");
+
+  toggleVideoBtns.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      let Url = btn.dataset.video;
+
+      overlay.classList.remove("display-none");
+      iframeContainer.classList.add("display-flex");
+      iframe.src = Url;
+    });
+  });
 };
 
 // ==============chosen exercises if conditions  =========
@@ -600,7 +625,7 @@ const standardChosen = (exercise, i) => {
     </div>
     <div class="exercise-tools">
       <i class="fa-solid fa-note-sticky" id="note" data-note=${i}></i>
-      <i class="fa-regular fa-eye" data-video = ${exercise.video}></i>
+      <i class="fa-regular fa-eye" id="toggle-video" data-video = ${exercise.video}></i>
       <i class="fa-solid fa-trash" id="delete-exercise" data-delete = "${exercise.name}"></i>
     </div>
   </div>
@@ -644,7 +669,7 @@ const chosenSuperset = (exercise, i) => {
     </div>
     <div class="exercise-tools">
       <i class="fa-solid fa-note-sticky" id="note" data-note=${i}></i>
-      <i class="fa-regular fa-eye" data-video = ${exercise.video}></i>
+      <i class="fa-regular fa-eye" id="toggle-video" data-video = ${exercise.video}></i>
       <i class="fa-solid fa-trash" id="delete-exercise" data-delete = "${exercise.name}"></i>
     </div>
   </div>
@@ -688,7 +713,7 @@ const chosenTypeRestPause = (exercise, i) => {
     </div>
     <div class="exercise-tools">
       <i class="fa-solid fa-note-sticky" id="note" data-note=${i}></i>
-      <i class="fa-regular fa-eye" data-video = ${exercise.video}></i>
+      <i class="fa-regular fa-eye" id="toggle-video" data-video = ${exercise.video}></i>
       <i class="fa-solid fa-trash" id="delete-exercise" data-delete = "${exercise.name}"></i>
     </div>
   </div>
@@ -732,7 +757,7 @@ const chosenTypeDropset = (exercise, i) => {
     </div>
     <div class="exercise-tools">
       <i class="fa-solid fa-note-sticky" id="note" data-note=${i}></i>
-      <i class="fa-regular fa-eye" data-video = ${exercise.video}></i>
+      <i class="fa-regular fa-eye" id="toggle-video" data-video = ${exercise.video}></i>
       <i class="fa-solid fa-trash" id="delete-exercise" data-delete = "${exercise.name}"></i>
     </div>
   </div>
@@ -776,7 +801,7 @@ const chosenRpSuperset = (exercise, i) => {
     </div>
     <div class="exercise-tools">
       <i class="fa-solid fa-note-sticky" id="note" data-note=${i}></i>
-      <i class="fa-regular fa-eye" data-video = ${exercise.video}></i>
+      <i class="fa-regular fa-eye" id="toggle-video" data-video = ${exercise.video}></i>
       <i class="fa-solid fa-trash" id="delete-exercise" data-delete = "${exercise.name}"></i>
     </div>
   </div>
@@ -820,7 +845,7 @@ const chosenDsSuperset = (exercise, i) => {
     </div>
     <div class="exercise-tools">
       <i class="fa-solid fa-note-sticky" id="note" data-note=${i}></i>
-      <i class="fa-regular fa-eye" data-video = ${exercise.video}></i>
+      <i class="fa-regular fa-eye" id="toggle-video" data-video = ${exercise.video}></i>
       <i class="fa-solid fa-trash" id="delete-exercise" data-delete = "${exercise.name}"></i>
     </div>
   </div>
