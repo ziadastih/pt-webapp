@@ -203,6 +203,11 @@ const mainContainerBtns = document.querySelector(".main-container-btns");
 const toggleExercisesList = document.querySelector(".toggle-exercises-list");
 const submitWorkout = document.querySelector(".submit-workout");
 const submitProgram = document.querySelector(".submit-Program");
+
+// ===============note container ==============
+const noteContainer = document.querySelector(".note-box");
+const noteInput = document.querySelector(".note-input");
+const noteSubmit = document.querySelector(".note-submit");
 // ===============event listener for adding program/ edit icon / and edit program name =============
 createProgramNameBtn.addEventListener("click", () => {
   addProgramName();
@@ -551,8 +556,36 @@ const displayChosenExercises = () => {
       }
     });
   });
+
+  // ==================================== noteIcons  for each ============================
+  const noteIcons = document.querySelectorAll("#note");
+
+  noteIcons.forEach((icon) => {
+    icon.addEventListener("click", (e) => {
+      // =============get note index and the set a new btn to give it the index we want to get the right note
+
+      const noteIndex = e.target.dataset.note;
+      overlay.classList.remove("display-none");
+      noteContainer.classList.add("display-flex");
+      noteInput.value = "";
+      noteInput.value = selectedExercisesArray[noteIndex].note;
+      noteSubmit.innerHTML = "";
+      noteSubmit.innerHTML = `<button class="submit-note btn" data-submit=${noteIndex}>submit</button>`;
+
+      // ==============submit btn note get the submit note on click ==========================
+      const submitNoteBtn = document.querySelector(".submit-note");
+      submitNoteBtn.addEventListener("click", (e) => {
+        let submitIndex = e.target.dataset.submit;
+        selectedExercisesArray[submitIndex].note = noteInput.value;
+        overlay.classList.add("display-none");
+        noteContainer.classList.remove("display-flex");
+        noteInput.value = "";
+      });
+    });
+  });
 };
 
+// ==============chosen exercises if conditions  =========
 const standardChosen = (exercise, i) => {
   chosenExercisesContainer.innerHTML += `<div class="one-exercise-container">
   <span class ='left-span'></span>
@@ -566,7 +599,7 @@ const standardChosen = (exercise, i) => {
       <p class="chosen-exercise-name">${exercise.name}</p>
     </div>
     <div class="exercise-tools">
-      <i class="fa-solid fa-note-sticky" id="note"></i>
+      <i class="fa-solid fa-note-sticky" id="note" data-note=${i}></i>
       <i class="fa-regular fa-eye" data-video = ${exercise.video}></i>
       <i class="fa-solid fa-trash" id="delete-exercise" data-delete = "${exercise.name}"></i>
     </div>
@@ -610,7 +643,7 @@ const chosenSuperset = (exercise, i) => {
       <p class="chosen-exercise-name">${exercise.name}</p>
     </div>
     <div class="exercise-tools">
-      <i class="fa-solid fa-note-sticky" id="note"></i>
+      <i class="fa-solid fa-note-sticky" id="note" data-note=${i}></i>
       <i class="fa-regular fa-eye" data-video = ${exercise.video}></i>
       <i class="fa-solid fa-trash" id="delete-exercise" data-delete = "${exercise.name}"></i>
     </div>
@@ -654,7 +687,7 @@ const chosenTypeRestPause = (exercise, i) => {
       <p class="chosen-exercise-name">${exercise.name}</p>
     </div>
     <div class="exercise-tools">
-      <i class="fa-solid fa-note-sticky" id="note"></i>
+      <i class="fa-solid fa-note-sticky" id="note" data-note=${i}></i>
       <i class="fa-regular fa-eye" data-video = ${exercise.video}></i>
       <i class="fa-solid fa-trash" id="delete-exercise" data-delete = "${exercise.name}"></i>
     </div>
@@ -698,7 +731,7 @@ const chosenTypeDropset = (exercise, i) => {
       <p class="chosen-exercise-name">${exercise.name}</p>
     </div>
     <div class="exercise-tools">
-      <i class="fa-solid fa-note-sticky" id="note"></i>
+      <i class="fa-solid fa-note-sticky" id="note" data-note=${i}></i>
       <i class="fa-regular fa-eye" data-video = ${exercise.video}></i>
       <i class="fa-solid fa-trash" id="delete-exercise" data-delete = "${exercise.name}"></i>
     </div>
@@ -742,7 +775,7 @@ const chosenRpSuperset = (exercise, i) => {
       <p class="chosen-exercise-name">${exercise.name}</p>
     </div>
     <div class="exercise-tools">
-      <i class="fa-solid fa-note-sticky" id="note"></i>
+      <i class="fa-solid fa-note-sticky" id="note" data-note=${i}></i>
       <i class="fa-regular fa-eye" data-video = ${exercise.video}></i>
       <i class="fa-solid fa-trash" id="delete-exercise" data-delete = "${exercise.name}"></i>
     </div>
@@ -786,7 +819,7 @@ const chosenDsSuperset = (exercise, i) => {
       <p class="chosen-exercise-name">${exercise.name}</p>
     </div>
     <div class="exercise-tools">
-      <i class="fa-solid fa-note-sticky" id="note"></i>
+      <i class="fa-solid fa-note-sticky" id="note" data-note=${i}></i>
       <i class="fa-regular fa-eye" data-video = ${exercise.video}></i>
       <i class="fa-solid fa-trash" id="delete-exercise" data-delete = "${exercise.name}"></i>
     </div>
@@ -816,3 +849,4 @@ const chosenDsSuperset = (exercise, i) => {
   </div>
 </div>`;
 };
+// ================end of chosen exercises ===============
