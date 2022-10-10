@@ -590,20 +590,20 @@ const displayChosenExercises = () => {
   deleteExerciseBtns.forEach((btn) => {
     btn.addEventListener("click", () => {
       let name = btn.dataset.delete;
-      console.log(name);
+
       const indexInSelectedArray = selectedExercisesArray.findIndex(
         (Element) => {
           return Element.name === name;
         }
       );
-      console.log(indexInSelectedArray);
+
       if (indexInSelectedArray !== -1) {
         selectedExercisesArray.splice(indexInSelectedArray, 1);
         displayChosenExercises();
         const indexInExercisesArray = exercisesArray.findIndex((Element) => {
           return Element.name === name;
         });
-        console.log(indexInExercisesArray);
+
         if (indexInExercisesArray !== -1) {
           exercisesArray[indexInExercisesArray].selected = false;
         }
@@ -977,30 +977,28 @@ const displayWorkouts = (index) => {
     editWorkoutBtns.forEach((editBtn) => {
       editBtn.addEventListener("click", () => {
         let workoutIndex = editBtn.dataset.edit;
+
         daysBtn.forEach((day) => {
           if (day.classList.contains("chosen-day")) {
             let dayIndex = day.dataset.day;
-            let workoutName =
-              program.weeks[0].days[dayIndex].workouts[workoutIndex].name;
-            let exercises =
+            selectedExercisesArray =
               program.weeks[0].days[dayIndex].workouts[workoutIndex].exercises;
-            console.log(dayIndex);
-            console.log(workoutIndex);
-            console.log(exercises);
-            selectedExercisesArray = exercises;
+            workoutNameHeader.textContent =
+              program.weeks[0].days[dayIndex].workouts[workoutIndex].name;
             console.log(selectedExercisesArray);
-            workoutHeader.classList.add("display-flex");
-            workoutNameHeader.textContent = workoutName;
-            changeSelectedToTrue();
             displayChosenExercises();
-            displayExercicesArray(exercisesArray);
+            workoutHeader.classList.add("display-flex");
             createWorkoutBtnContainer.classList.add("display-none");
             createdWorkoutsContainer.classList.add("display-none");
             mainContainerBtns.classList.add("display-flex");
             submitWorkout.classList.add("display-none");
             editWorkout.classList.remove("display-none");
             editWorkout.addEventListener("click", () => {
-              editWorkoutFunction(dayIndex, workoutIndex);
+              let Editedworkout =
+                program.weeks[0].days[dayIndex].workouts[workoutIndex];
+              Editedworkout.name = workoutNameHeader.textContent;
+              [Editedworkout.exercises] = [selectedExercisesArray];
+              console.log(Editedworkout);
             });
           }
         });
@@ -1043,7 +1041,7 @@ const changeSelectedToTrue = () => {
     const index = exercisesArray.findIndex((Element) => {
       return Element.name === selectedExercisesArray[i].name;
     });
-    console.log(index);
+
     if (index !== -1) {
       exercisesArray[index].selected = true;
     } else {
@@ -1053,12 +1051,6 @@ const changeSelectedToTrue = () => {
 };
 
 const editWorkoutFunction = (dayIndex, workoutIndex) => {
-  workout = program.weeks[0].days[dayIndex].workouts[workoutIndex];
-
-  workout.name = workoutNameHeader.textContent;
-  workout.exercises = "";
-  workout.exercise = [selectedExercisesArray];
-  console.log(workout);
   editWorkout.classList.add("display-none");
   submitWorkout.classList.remove("display-none");
   selectedExercisesArray = [];
