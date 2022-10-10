@@ -202,6 +202,7 @@ const toggleExercisesList = document.querySelector(".toggle-exercises-list");
 const submitWorkout = document.querySelector(".submit-workout");
 const submitProgram = document.querySelector("#submit-program");
 const setAsRestDayBtn = document.getElementById("set-as-rest-day");
+const editWorkout = document.querySelector(".edit-workout-btn");
 // ===============note container ==============
 const noteContainer = document.querySelector(".note-box");
 const noteInput = document.querySelector(".note-input");
@@ -247,7 +248,7 @@ daysBtn.forEach((day) => {
     createdWorkoutsContainer.innerHTML = "";
 
     if (selectedExercisesArray.length > 0) {
-      alert("please submit your previous workout before moving to next day");
+      alert("Please submit your workout before moving to a new day");
     } else {
       displayWorkouts(dayIndex);
       daysBtn.forEach((subDay) => {
@@ -305,6 +306,9 @@ submitWorkout.addEventListener("click", () => {
   submitWorkoutFunction();
 });
 
+setAsRestDayBtn.addEventListener("click", () => {
+  setAsRestDayFunction();
+});
 // =================toggle the exercises list  ======================================
 
 toggleExercisesList.addEventListener("click", () => {
@@ -343,7 +347,6 @@ createExerciseNameBtn.addEventListener("click", () => {
     });
     newExerciseNameContainer.classList.remove("display-flex");
     addExercicesContainer.classList.add("display-flex");
-    console.log(selectedExercisesArray);
   }
 });
 
@@ -534,7 +537,7 @@ const displayChosenExercises = () => {
       let exerciseIndex = e.target.dataset.chain;
 
       if (exerciseIndex == selectedExercisesArray.length - 1) {
-        console.log("last element");
+        alert("This is your last exercise you can't chain it");
       } else {
         if (btn.classList.contains("selected-type")) {
           btn.classList.remove("selected-type");
@@ -555,13 +558,12 @@ const displayChosenExercises = () => {
       if (!btn.classList.contains("selected-type")) {
         btn.classList.add("selected-type");
         selectedExercisesArray[exerciseIndex].type = btn.textContent;
-        console.log(selectedExercisesArray[exerciseIndex]);
+
         let dropset = e.target.nextElementSibling;
         dropset.classList.remove("selected-type");
       } else {
         btn.classList.remove("selected-type");
         selectedExercisesArray[exerciseIndex].type = "";
-        console.log(selectedExercisesArray[exerciseIndex]);
       }
     });
   });
@@ -573,13 +575,12 @@ const displayChosenExercises = () => {
       if (!btn.classList.contains("selected-type")) {
         btn.classList.add("selected-type");
         selectedExercisesArray[exerciseIndex].type = btn.textContent;
-        console.log(selectedExercisesArray[exerciseIndex]);
+
         let dropset = e.target.previousElementSibling;
         dropset.classList.remove("selected-type");
       } else {
         btn.classList.remove("selected-type");
         selectedExercisesArray[exerciseIndex].type = "";
-        console.log(selectedExercisesArray[exerciseIndex]);
       }
     });
   });
@@ -645,9 +646,13 @@ const displayChosenExercises = () => {
     btn.addEventListener("click", () => {
       let Url = btn.dataset.video;
 
-      overlay.classList.remove("display-none");
-      iframeContainer.classList.add("display-flex");
-      iframe.src = Url;
+      if (Url === "none") {
+        console.log("no video");
+      } else {
+        overlay.classList.remove("display-none");
+        iframeContainer.classList.add("display-flex");
+        iframe.src = Url;
+      }
     });
   });
 };
@@ -946,11 +951,61 @@ const displayWorkouts = (index) => {
       <i
         class="fa-solid fa-user-pen"
         id="edit-workout"
-        data-manage=${i}
+        data-edit=${i}
       ></i>
     </div>
   </div>  `;
     }
+    // ==============================delete workouts  =================
+    const deleteWorkoutBtns = document.querySelectorAll("#delete-workout");
+    deleteWorkoutBtns.forEach((btn) => {
+      let workoutIndex = btn.dataset.delete;
+      btn.addEventListener("click", () => {
+        daysBtn.forEach((day) => {
+          if (day.classList.contains("chosen-day")) {
+            let dayIndex = day.dataset.day;
+
+            let workout = program.weeks[0].days[dayIndex].workouts;
+            workout.splice(workoutIndex, 1);
+            displayWorkouts(dayIndex);
+          }
+        });
+      });
+    });
+    // =============================== edit workouts  ===============================
+    const editWorkoutBtns = document.querySelectorAll("#edit-workout");
+    editWorkoutBtns.forEach((editBtn) => {
+      editBtn.addEventListener("click", () => {
+        let workoutIndex = editBtn.dataset.edit;
+        daysBtn.forEach((day) => {
+          if (day.classList.contains("chosen-day")) {
+            let dayIndex = day.dataset.day;
+            let workoutName =
+              program.weeks[0].days[dayIndex].workouts[workoutIndex].name;
+            let exercises =
+              program.weeks[0].days[dayIndex].workouts[workoutIndex].exercises;
+            console.log(dayIndex);
+            console.log(workoutIndex);
+            console.log(exercises);
+            selectedExercisesArray = exercises;
+            console.log(selectedExercisesArray);
+            workoutHeader.classList.add("display-flex");
+            workoutNameHeader.textContent = workoutName;
+            changeSelectedToTrue();
+            displayChosenExercises();
+            displayExercicesArray(exercisesArray);
+            createWorkoutBtnContainer.classList.add("display-none");
+            createdWorkoutsContainer.classList.add("display-none");
+            mainContainerBtns.classList.add("display-flex");
+            submitWorkout.classList.add("display-none");
+            editWorkout.classList.remove("display-none");
+            editWorkout.addEventListener("click", () => {
+              editWorkoutFunction(dayIndex, workoutIndex);
+            });
+          }
+        });
+      });
+    });
   }
 };
 
@@ -979,4 +1034,41 @@ const submitWorkoutFunction = () => {
       displayWorkouts(dayIndex);
     }
   });
+};
+
+// ====================set conditions for displaying workouts if rest day is true then manage stuff======
+
+const changeSelectedToTrue = () => {
+  for (let i = 0; i < selectedExercisesArray.length; i++) {
+    const index = exercisesArray.findIndex((Element) => {
+      return Element.name === selectedExercisesArray[i].name;
+    });
+    console.log(index);
+    if (index !== -1) {
+      exercisesArray[index].selected = true;
+    } else {
+      console.log("false");
+    }
+  }
+};
+
+const editWorkoutFunction = (dayIndex, workoutIndex) => {
+  workout = program.weeks[0].days[dayIndex].workouts[workoutIndex];
+
+  workout.name = workoutNameHeader.textContent;
+  workout.exercises = "";
+  workout.exercise = [selectedExercisesArray];
+  console.log(workout);
+  editWorkout.classList.add("display-none");
+  submitWorkout.classList.remove("display-none");
+  selectedExercisesArray = [];
+
+  for (let i = 0; i < exercisesArray.length; i++) {
+    if (exercisesArray[i].selected === true) {
+      exercisesArray[i].selected = false;
+    }
+  }
+  displayChosenExercises();
+  displayExercicesArray(exercisesArray);
+  displayWorkouts(dayIndex);
 };
