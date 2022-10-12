@@ -220,7 +220,11 @@ const daysBtn = document.querySelectorAll(".day");
 window.onbeforeunload = () => {
   return "are you sure you want to leave page";
 };
+const backBtn = document.querySelector(".back-btn");
 
+backBtn.addEventListener("click", () => {
+  window.location = "http://localhost:3000/MyWorkoutsPrograms/myWorkouts.html";
+});
 // ===============event listener for adding program/ edit icon / and edit program name =============
 createProgramNameBtn.addEventListener("click", () => {
   addProgramName();
@@ -933,14 +937,16 @@ const chosenDsSuperset = (exercise, i) => {
 };
 // ================end of chosen exercises ===============
 
-// ==================display workout  ==================
+// ==================display workouts  ==================
 const displayWorkouts = (index) => {
   let workouts = program.weeks[0].days[index].workouts;
+
   submitProgram.classList.remove("display-none");
   createdWorkoutsContainer.innerHTML = "";
   if (workouts.length === 0) {
     setAsRestDayBtn.classList.remove("display-none");
     submitProgram.classList.add("display-none");
+    toggleWorkoutNameContainer.classList.remove("display-none");
   } else {
     setAsRestDayBtn.classList.add("display-none");
     workoutHeader.classList.remove("display-flex");
@@ -949,7 +955,24 @@ const displayWorkouts = (index) => {
     createdWorkoutsContainer.classList.remove("display-none");
 
     for (let i = 0; i < workouts.length; i++) {
-      createdWorkoutsContainer.innerHTML += ` <div class="one-workout">
+      if (workouts[i].name === "rest day") {
+        toggleWorkoutNameContainer.classList.add("display-none");
+        createdWorkoutsContainer.innerHTML = ` <div class="one-workout">
+  <i class="fa-solid fa-list" id="show-exercises" data-execises="0"></i>
+  <p class="workout-name">rest day</p>
+  <div class="tools">
+    <i
+      class="fa-solid fa-trash"
+      id="delete-workout"
+      data-delete=0
+    ></i>
+   
+  </div>
+  
+  </div>`;
+      } else {
+        toggleWorkoutNameContainer.classList.remove("display-none");
+        createdWorkoutsContainer.innerHTML += ` <div class="one-workout">
     <i class="fa-solid fa-list" id="show-exercises" data-execises=${i}></i>
     <p class="workout-name">${workouts[i].name}</p>
     <div class="tools">
@@ -964,55 +987,59 @@ const displayWorkouts = (index) => {
         data-edit=${i}
       ></i>
     </div>
+    
   </div>  `;
+      }
+      // ==============================delete workouts  =================
+      const deleteWorkoutBtns = document.querySelectorAll("#delete-workout");
+      deleteWorkoutBtns.forEach((btn) => {
+        let workoutIndex = btn.dataset.delete;
+        btn.addEventListener("click", () => {
+          daysBtn.forEach((day) => {
+            if (day.classList.contains("chosen-day")) {
+              let dayIndex = day.dataset.day;
+
+              let workout = program.weeks[0].days[dayIndex].workouts;
+              workout.splice(workoutIndex, 1);
+              displayWorkouts(dayIndex);
+            }
+          });
+        });
+      });
+      // =============================== edit workouts  ===============================
+      const editWorkoutBtns = document.querySelectorAll("#edit-workout");
+      editWorkoutBtns.forEach((editBtn) => {
+        editBtn.addEventListener("click", () => {
+          let workoutIndex = editBtn.dataset.edit;
+          localStorage.setItem("workoutIndex", JSON.stringify(workoutIndex));
+          daysBtn.forEach((day) => {
+            if (day.classList.contains("chosen-day")) {
+              let dayIndex = day.dataset.day;
+              selectedExercisesArray =
+                program.weeks[0].days[dayIndex].workouts[workoutIndex]
+                  .exercises;
+              workoutNameHeader.textContent =
+                program.weeks[0].days[dayIndex].workouts[workoutIndex].name;
+              console.log(selectedExercisesArray);
+
+              displayChosenExercises();
+              changeSelectedToTrue();
+              console.log(exercisesArray);
+              workoutHeader.classList.add("display-flex");
+              createWorkoutBtnContainer.classList.add("display-none");
+              createdWorkoutsContainer.classList.add("display-none");
+              mainContainerBtns.classList.add("display-flex");
+              submitWorkout.classList.add("display-none");
+              editWorkout.classList.remove("display-none");
+            }
+          });
+        });
+      });
     }
-    // ==============================delete workouts  =================
-    const deleteWorkoutBtns = document.querySelectorAll("#delete-workout");
-    deleteWorkoutBtns.forEach((btn) => {
-      let workoutIndex = btn.dataset.delete;
-      btn.addEventListener("click", () => {
-        daysBtn.forEach((day) => {
-          if (day.classList.contains("chosen-day")) {
-            let dayIndex = day.dataset.day;
-
-            let workout = program.weeks[0].days[dayIndex].workouts;
-            workout.splice(workoutIndex, 1);
-            displayWorkouts(dayIndex);
-          }
-        });
-      });
-    });
-    // =============================== edit workouts  ===============================
-    const editWorkoutBtns = document.querySelectorAll("#edit-workout");
-    editWorkoutBtns.forEach((editBtn) => {
-      editBtn.addEventListener("click", () => {
-        let workoutIndex = editBtn.dataset.edit;
-        localStorage.setItem("workoutIndex", JSON.stringify(workoutIndex));
-        daysBtn.forEach((day) => {
-          if (day.classList.contains("chosen-day")) {
-            let dayIndex = day.dataset.day;
-            selectedExercisesArray =
-              program.weeks[0].days[dayIndex].workouts[workoutIndex].exercises;
-            workoutNameHeader.textContent =
-              program.weeks[0].days[dayIndex].workouts[workoutIndex].name;
-            console.log(selectedExercisesArray);
-
-            displayChosenExercises();
-            changeSelectedToTrue();
-            console.log(exercisesArray);
-            workoutHeader.classList.add("display-flex");
-            createWorkoutBtnContainer.classList.add("display-none");
-            createdWorkoutsContainer.classList.add("display-none");
-            mainContainerBtns.classList.add("display-flex");
-            submitWorkout.classList.add("display-none");
-            editWorkout.classList.remove("display-none");
-          }
-        });
-      });
-    });
   }
 };
 
+// =============================submit workout ================================
 const submitWorkoutFunction = () => {
   daysBtn.forEach((day) => {
     if (day.classList.contains("chosen-day")) {
@@ -1055,7 +1082,7 @@ const changeSelectedToTrue = () => {
     }
   }
 };
-
+// ================================editing workout function ===================
 const editWorkoutFunction = () => {
   const workoutIndex = JSON.parse(localStorage.getItem("workoutIndex"));
   editWorkout.classList.add("display-none");
@@ -1081,6 +1108,49 @@ const editWorkoutFunction = () => {
       displayChosenExercises();
       displayExercicesArray(exercisesArray);
       displayWorkouts(dayIndex);
+    }
+  });
+};
+
+// ==================== set as rest day ====================
+const setAsRestDayFunction = () => {
+  daysBtn.forEach((day) => {
+    if (day.classList.contains("chosen-day")) {
+      let dayIndex = day.dataset.day;
+      let workouts = program.weeks[0].days[dayIndex].workouts;
+      workouts.push({ name: "rest day" });
+      setAsRestDayBtn.classList.add("display-none");
+      toggleWorkoutNameContainer.classList.add("display-none");
+      createdWorkoutsContainer.classList.remove("display-none");
+      submitProgram.classList.remove("display-none");
+      createdWorkoutsContainer.innerHTML = ` <div class="one-workout">
+      <i class="fa-solid fa-list" id="show-exercises" data-execises="0"></i>
+      <p class="workout-name">rest day</p>
+      <div class="tools">
+        <i
+          class="fa-solid fa-trash"
+          id="delete-workout"
+          data-delete=0
+        ></i>
+       
+      </div>
+      
+      </div>`;
+      const deleteWorkoutBtns = document.querySelectorAll("#delete-workout");
+      deleteWorkoutBtns.forEach((btn) => {
+        let workoutIndex = btn.dataset.delete;
+        btn.addEventListener("click", () => {
+          daysBtn.forEach((day) => {
+            if (day.classList.contains("chosen-day")) {
+              let dayIndex = day.dataset.day;
+
+              let workout = program.weeks[0].days[dayIndex].workouts;
+              workout.splice(workoutIndex, 1);
+              displayWorkouts(dayIndex);
+            }
+          });
+        });
+      });
     }
   });
 };
