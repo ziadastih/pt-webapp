@@ -215,6 +215,12 @@ const iframe = document.querySelector(".iframe");
 // ============================= days ==========================
 const daysBtn = document.querySelectorAll(".day");
 
+// ============================refreshing page alert =====================
+
+window.onbeforeunload = () => {
+  return "are you sure you want to leave page";
+};
+
 // ===============event listener for adding program/ edit icon / and edit program name =============
 createProgramNameBtn.addEventListener("click", () => {
   addProgramName();
@@ -239,6 +245,7 @@ submitProgram.addEventListener("click", async () => {
     name: program.name,
     weeks: program.weeks,
   });
+  window.onbeforeunload = null;
   window.location = "http://localhost:3000/MyWorkoutsPrograms/myWorkouts.html";
 });
 
@@ -304,6 +311,9 @@ workoutCreateBtn.addEventListener("click", () => {
 
 submitWorkout.addEventListener("click", () => {
   submitWorkoutFunction();
+});
+editWorkout.addEventListener("click", () => {
+  editWorkoutFunction();
 });
 
 setAsRestDayBtn.addEventListener("click", () => {
@@ -977,7 +987,7 @@ const displayWorkouts = (index) => {
     editWorkoutBtns.forEach((editBtn) => {
       editBtn.addEventListener("click", () => {
         let workoutIndex = editBtn.dataset.edit;
-
+        localStorage.setItem("workoutIndex", JSON.stringify(workoutIndex));
         daysBtn.forEach((day) => {
           if (day.classList.contains("chosen-day")) {
             let dayIndex = day.dataset.day;
@@ -986,20 +996,16 @@ const displayWorkouts = (index) => {
             workoutNameHeader.textContent =
               program.weeks[0].days[dayIndex].workouts[workoutIndex].name;
             console.log(selectedExercisesArray);
+
             displayChosenExercises();
+            changeSelectedToTrue();
+            console.log(exercisesArray);
             workoutHeader.classList.add("display-flex");
             createWorkoutBtnContainer.classList.add("display-none");
             createdWorkoutsContainer.classList.add("display-none");
             mainContainerBtns.classList.add("display-flex");
             submitWorkout.classList.add("display-none");
             editWorkout.classList.remove("display-none");
-            editWorkout.addEventListener("click", () => {
-              let Editedworkout =
-                program.weeks[0].days[dayIndex].workouts[workoutIndex];
-              Editedworkout.name = workoutNameHeader.textContent;
-              [Editedworkout.exercises] = [selectedExercisesArray];
-              console.log(Editedworkout);
-            });
           }
         });
       });
@@ -1017,7 +1023,7 @@ const submitWorkoutFunction = () => {
 
       workouts.push({
         name: workoutName,
-        exercises: [...selectedExercisesArray],
+        exercises: selectedExercisesArray,
       });
 
       selectedExercisesArray = [];
@@ -1050,17 +1056,31 @@ const changeSelectedToTrue = () => {
   }
 };
 
-const editWorkoutFunction = (dayIndex, workoutIndex) => {
+const editWorkoutFunction = () => {
+  const workoutIndex = JSON.parse(localStorage.getItem("workoutIndex"));
   editWorkout.classList.add("display-none");
   submitWorkout.classList.remove("display-none");
-  selectedExercisesArray = [];
+  daysBtn.forEach((day) => {
+    if (day.classList.contains("chosen-day")) {
+      let dayIndex = day.dataset.day;
+      let workout = program.weeks[0].days[dayIndex].workouts[workoutIndex];
 
-  for (let i = 0; i < exercisesArray.length; i++) {
-    if (exercisesArray[i].selected === true) {
-      exercisesArray[i].selected = false;
+      let workoutName = workoutNameHeader.textContent;
+
+      workout.name = workoutName;
+      [workout.exercises] = [selectedExercisesArray];
+      console.log(workout);
+      localStorage.removeItem("workoutIndex");
+      selectedExercisesArray = [];
+
+      for (let i = 0; i < exercisesArray.length; i++) {
+        if (exercisesArray[i].selected === true) {
+          exercisesArray[i].selected = false;
+        }
+      }
+      displayChosenExercises();
+      displayExercicesArray(exercisesArray);
+      displayWorkouts(dayIndex);
     }
-  }
-  displayChosenExercises();
-  displayExercicesArray(exercisesArray);
-  displayWorkouts(dayIndex);
+  });
 };
