@@ -8,12 +8,17 @@ const deleteVerificationContainer = document.querySelector(
 );
 const searchWorkoutInput = document.getElementById("search-workout-input");
 const goToCreateProgram = document.getElementById("go-to-create-program");
+const createNewProgramBtn = document.querySelector(".create-workout-btn");
 // ================GET WORKOUT FUNCTION , INCLUDE DISPLAYING ALL, LIVE SEARCH , DELETE FUNCTION =============================
 
 goToCreateProgram.addEventListener("click", () => {
   window.location = "http://localhost:3000/createWorkout/createWorkout.html";
 });
+createNewProgramBtn.addEventListener("click", () => {
+  window.location = "http://localhost:3000/createWorkout/createWorkout.html";
+});
 
+// ================fetch workouts ===================
 const getWorkouts = async () => {
   try {
     // ============getting the data ===============
@@ -101,7 +106,7 @@ const displayProgramInfo = (programPlan) => {
   programContainer.forEach(function (program) {
     const showProgramOverview = program.querySelector("#show-program");
     const overviewContainer = program.querySelector(".overview-container");
-
+    const createdWorkoutsContainer = program.querySelector(".created-workouts");
     showProgramOverview.addEventListener("click", function (e) {
       let index = e.target.dataset.overview;
 
@@ -114,88 +119,6 @@ const displayProgramInfo = (programPlan) => {
           displayTimeStamps(program, createdAt, updatedAt);
 
           subProgam.classList.toggle("open-container");
-
-          let weeksArray = programPlan[index].weeks;
-          displayWeek(weeksArray, program);
-
-          // =======all weeks container and function to display the days  ===================
-          const allWeeksContainer =
-            document.querySelectorAll(".week-container");
-
-          allWeeksContainer.forEach((week) => {
-            const showDaysBtn = week.querySelector("#show-days");
-            const allDaysContainer = week.querySelector(".all-days-container");
-
-            showDaysBtn.addEventListener("click", (v) => {
-              let weekIndex = v.target.dataset.week;
-
-              allWeeksContainer.forEach((subweek) => {
-                if (subweek === week) {
-                  subweek.classList.toggle("show-days");
-                  let daysArray = weeksArray[weekIndex].days;
-                  displayDays(daysArray, week);
-
-                  // ==================display workouts for every day we have ==================
-                  const oneDayContainer =
-                    document.querySelectorAll(".one-day-container");
-                  oneDayContainer.forEach((day) => {
-                    const showWorkoutsBtn = day.querySelector("#show-workouts");
-                    const allWorkoutsContainer = day.querySelector(
-                      ".all-workouts-container"
-                    );
-                    showWorkoutsBtn.addEventListener("click", (k) => {
-                      let dayIndex = k.target.dataset.days;
-                      let workoutsArray = daysArray[dayIndex].workouts;
-                      console.log(workoutsArray);
-                      oneDayContainer.forEach((subDay) => {
-                        if (subDay === day) {
-                          subDay.classList.toggle("show-workouts");
-                          displayWorkouts(workoutsArray, day);
-                          // ========================display the exercises =======================================
-
-                          const oneWorkoutContainer = document.querySelectorAll(
-                            ".one-workout-container"
-                          );
-                          oneWorkoutContainer.forEach((workout) => {
-                            const showExercisesBtn =
-                              workout.querySelector("#show-exercises");
-                            const allExercicesContainer = workout.querySelector(
-                              ".all-exercises-container"
-                            );
-
-                            showExercisesBtn.addEventListener("click", (m) => {
-                              let workoutIndex = m.target.dataset.exercise;
-
-                              let exercisesArray =
-                                workoutsArray[workoutIndex].exercises;
-
-                              oneWorkoutContainer.forEach((subworkout) => {
-                                if (subworkout === workout) {
-                                  subworkout.classList.toggle("show-info");
-                                  displayExercises(exercisesArray, workout);
-                                } else {
-                                  subworkout.classList.remove("show-info");
-                                }
-                              });
-                            });
-                          });
-                        }
-
-                        // ===============else to show or hide the workouts =============
-                        else {
-                          subDay.classList.remove("show-workouts");
-                        }
-                      });
-                    });
-                  });
-                }
-                // =============else to show and hide the days ==================
-                else {
-                  subweek.classList.remove("show-days");
-                }
-              });
-            });
-          });
         }
         // ====================the initial else that close all the overview container =============
         else {
@@ -244,8 +167,11 @@ const displayAllPrograms = (programPlan) => {
   <div class="date-stats">
   <p class="created-at">created at: 22/10/2022</p>
   <p class="updated-at">updated at: 22/11/2022</p>
+
 </div>
+
 </div>
+<div class="created-workouts"></div>
 </div>`;
   }
 };
@@ -253,79 +179,38 @@ const displayAllPrograms = (programPlan) => {
 // =======================display time stamps =========================
 const displayTimeStamps = (program, createdAt, updatedAt) => {
   const overviewContainer = program.querySelector(".overview-container");
+
   overviewContainer.innerHTML = `<div class="date-stats">
   <p class="created-at">created at: <span> ${createdAt}</span></p>
   <p class="updated-at">updated at: <span> ${updatedAt}</span></p>
-</div>`;
-};
-
-const displayWeek = (weeks, program) => {
-  const overviewContainer = program.querySelector(".overview-container");
-  for (let i = 0; i < weeks.length; i++) {
-    overviewContainer.innerHTML += `<div class="week-container">
-<div class="week">
-<i class="fa-solid fa-list" id="show-days" data-week=${i}></i>
-<p class="week-number">week ${i + 1}</p>
-<p class= "number-of-days">${weeks[i].days.length} days</p>
-
+  
 </div>
-<div class="all-days-container"></div>
+<div class="days-container">
+<p class="day chosen-day" data-day="0">mon</p>
+
+<p class="day" data-day="1">tue</p>
+<p class="day" data-day="2">wed</p>
+<p class="day" data-day="3">thu</p>
+<p class="day" data-day="4">fri</p>
+<p class="day" data-day="5">sat</p>
+<p class="day" data-day="6">sun</p>
 </div>
+
 `;
-    // =========================week container function ===================================================
-  }
-};
+  const daysBtn = document.querySelectorAll(".day");
+  const createdWorkoutsContainer = program.querySelector(".created-workouts");
 
-const displayDays = (days, week) => {
-  const allDaysContainer = week.querySelector(".all-days-container");
-  allDaysContainer.innerHTML = "";
-  for (let i = 0; i < days.length; i++) {
-    allDaysContainer.innerHTML += `<div class="one-day-container">
-<div class="day">
-<i class="fa-solid fa-list" id="show-workouts" data-days=${i}></i>
-<p class="days-name">day ${i + 1}</p>
-<p class="number-of-workouts">${days[i].workouts.length}w</p>
-</div>
-<div class="all-workouts-container"></div>
-</div>
-`;
-  }
-};
+  daysBtn.forEach((day) => {
+    day.addEventListener("click", () => {
+      let dayIndex = day.dataset.day;
 
-const displayWorkouts = (workouts, day) => {
-  const allWorkoutsContainer = day.querySelector(".all-workouts-container");
-  allWorkoutsContainer.innerHTML = "";
-  for (let n = 0; n < workouts.length; n++) {
-    allWorkoutsContainer.innerHTML += `<div class ='one-workout-container'>
-    <div class="workout">
-    <i class="fa-solid fa-list" id="show-exercises" data-exercise=${n}></i>
-        <p class="workout-name">${workouts[n].name}</p>
-       <span>${workouts[n].type}</span>
-      </div>
-    
-      <div class="all-exercises-container"></div>
-      </div>`;
-  }
-};
-
-const displayExercises = (exercises, workout) => {
-  const allExercisesContainer = workout.querySelector(
-    ".all-exercises-container"
-  );
-  allExercisesContainer.innerHTML = "";
-  for (let i = 0; i < exercises.length; i++) {
-    allExercisesContainer.innerHTML += `<div class="exercise">
-<p class="exercise-name"><span></span> ${exercises[i].name}</p>
-<div class="exercise-info">
-<div class="exercise-stats">
-<p class="sets stat-dot"><span></span> set: ${exercises[i].sets}</p>
-<p class="reps stat-dot"><span></span> reps: ${exercises[i].reps}</p>
-</div>
-<div class="exercise-stats">
-<p class="tempo stat-dot"><span></span> tempo: ${exercises[i].tempo}</p>
-<p class="rest-time stat-dot"><span></span> rest: ${exercises[i].rest}</p>
-</div>
-</div>
-</div>`;
-  }
+      daysBtn.forEach((subDay) => {
+        if (subDay === day) {
+          subDay.classList.add("chosen-day");
+        } else {
+          subDay.classList.remove("chosen-day");
+        }
+      });
+    });
+  });
 };

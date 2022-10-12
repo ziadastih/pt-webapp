@@ -277,12 +277,12 @@ body {
 
   margin-top: 20px;
 
-  align-items: flex-end;
+  align-items: center;
   justify-content: center;
   flex-direction: column;
   background-color: transparent;
 
-  width: 80vw;
+  width: 100vw;
 
   z-index: 1;
   transition: 300ms ease-in;
@@ -323,187 +323,59 @@ body {
   cursor: pointer;
 }
 /* =====================week container =========================== */
-.week-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-}
-.week {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background-color: var(--whiteSmoke);
-  width: 80vw;
-  height: 50px;
-  text-transform: capitalize;
-  font-family: var(--fontSansSerif);
-  border-top: 1px solid var(--bodyBackgroud);
-  color: var(--mainColor);
-  font-weight: 400;
-}
-.week i {
-  width: 15px;
-  margin-left: 20px;
-  color: var(--eyeComfort);
-}
-.number-of-days {
-  margin-right: 20px;
-  font-size: 10px;
-  color: var(--eyeComfort);
+.days-container {
+  display: grid;
+
+  grid-template-columns: repeat(7, auto);
+  margin-top: 30px;
+  place-content: center;
+  gap: 10px;
+  width: 100vw;
 }
 
-/* ==============================days container ========== */
-.all-days-container {
-  display: none;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  width: 80vw;
-}
-.one-day-container {
-  width: 80vw;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-direction: column;
-  margin-bottom: 10px;
-}
 .day {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background-color: transparent;
   background-color: var(--mainColor);
-  margin-bottom: 10px;
-
-  width: 80vw;
-  height: 50px;
-  text-transform: capitalize;
-  font-family: var(--fontSansSerif);
-
-  color: whitesmoke;
-  font-weight: 400;
-}
-.day i {
-  width: 15px;
-  margin-left: 20px;
-  color: var(--eyeComfort);
-}
-.number-of-workouts {
-  margin-right: 20px;
+  color: var(--whiteSmoke);
+  padding: 10px;
   font-size: 10px;
-  color: var(--eyeComfort);
-}
-/* ========================wokrouts overview container ================ */
-.all-workouts-container {
-  display: none;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  margin-left: 20px;
-}
-.workout {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background-color: var(--whiteSmoke);
-  margin-bottom: 10px;
-  border-radius: 5px;
-  width: 80vw;
-  height: 50px;
-  text-transform: capitalize;
   font-family: var(--fontSansSerif);
-
-  color: var(--mainColor);
+  text-transform: capitalize;
+  cursor: pointer;
+  border-radius: 5px;
   font-weight: 700;
 }
-.workout i {
-  font-size: 12px;
-  color: var(--eyeComfort);
-  margin-left: 20px;
-}
-.workout span {
-  margin-right: 20px;
-  font-size: 10px;
-  color: var(--eyeComfort);
-  font-weight: 400;
-}
-
-/* ==============exercice ============== */
-
-.all-exercises-container {
-  display: none;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  width: 80vw;
-}
-
-.exercise {
-  border-top: 1px solid var(--eyeComfort);
-  color: var(--eyeComfort);
-  background-color: var(--mainColor);
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  flex-direction: column;
-  width: 80vw;
-  font-family: var(--fontSansSerif);
-}
-/* ==========exercise name and span ========== */
-.exercise-name {
-  font-size: 18px;
-  font-family: var(--fontSansSerif);
-  color: white;
-  text-transform: capitalize;
-  font-weight: 500;
-  margin-top: 10px;
-  margin-left: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-}
-.exercise-name span {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background-color: var(--eyeComfort);
-}
-/* ========exercise info divide in 2 sections and display flex === */
-.exercise-info {
+/* =================== created workouts ============ */
+.created-workouts {
   margin-top: 20px;
-  margin-bottom: 20px;
-  text-transform: capitalize;
-  width: 80vw;
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 50px;
-}
-/* ========exercise stats which refer to each section display flex with gap to space the vertically  */
-.exercise-stats {
-  display: flex;
-  align-items: flex-start;
   justify-content: center;
   flex-direction: column;
-  gap: 20px;
+  width: 100vw;
 }
-.stat-dot {
+/* =========workout styling that will be dealt with in js ========== */
+.one-workout {
+  width: 80vw;
+  height: 50px;
+  background-color: var(--whiteSmoke);
+
+  border-radius: 3px;
+
+  font-family: var(--fontSansSerif);
+  font-weight: 400;
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 5px;
-}
-.stat-dot span {
-  height: 5px;
-  width: 5px;
-  border-radius: 50%;
-  background-color: white;
+  justify-content: space-between;
+  text-transform: capitalize;
+  margin-bottom: 20px;
 }
 
-/* ============end OF exercies =============== */
+.one-workout p {
+  text-align: center;
+  color: var(--mainColor);
+  font-weight: 700;
+  letter-spacing: 1.2px;
+}
 
 /* END OF PROGRAM CONTAINER ==================== */
 
@@ -631,4 +503,9 @@ body {
 
 .remove-border {
   border: none;
+}
+
+.chosen-day {
+  background-color: var(--whiteSmoke);
+  color: var(--eyeComfort);
 }
