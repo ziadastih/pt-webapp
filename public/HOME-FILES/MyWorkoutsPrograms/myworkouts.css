@@ -347,7 +347,7 @@ body {
 /* =================== created workouts ============ */
 .created-workouts {
   margin-top: 20px;
-  display: flex;
+  display: none;
   align-items: center;
   justify-content: center;
   flex-direction: column;
@@ -369,12 +369,26 @@ body {
   text-transform: capitalize;
   margin-bottom: 20px;
 }
-
+.one-workout i {
+  color: var(--eyeComfort);
+  margin-left: 20px;
+}
 .one-workout p {
   text-align: center;
   color: var(--mainColor);
   font-weight: 700;
   letter-spacing: 1.2px;
+}
+.one-workout span {
+  font-size: 10px;
+  color: var(--mainColor);
+  margin-right: 20px;
+}
+.created-workouts h2 {
+  font-size: 18px;
+  font-family: var(--fontSansSerif);
+  color: var(--mainColor);
+  font-weight: 400;
 }
 
 /* END OF PROGRAM CONTAINER ==================== */
@@ -466,6 +480,9 @@ body {
   transform: rotate(180deg);
 }
 .open-container .overview-container {
+  display: flex;
+}
+.open-container .created-workouts {
   display: flex;
 }
 .show-days .all-days-container {

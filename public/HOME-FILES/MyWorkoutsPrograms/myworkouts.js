@@ -115,8 +115,8 @@ const displayProgramInfo = (programPlan) => {
         if (subProgam === program) {
           const createdAt = programPlan[index].createdAt.slice(0, 10);
           const updatedAt = programPlan[index].updatedAt.slice(0, 10);
-
-          displayTimeStamps(program, createdAt, updatedAt);
+          const daysArr = programPlan[index].weeks[0].days;
+          displayOverview(program, createdAt, updatedAt, daysArr);
 
           subProgam.classList.toggle("open-container");
         }
@@ -177,9 +177,9 @@ const displayAllPrograms = (programPlan) => {
 };
 
 // =======================display time stamps =========================
-const displayTimeStamps = (program, createdAt, updatedAt) => {
+const displayOverview = (program, createdAt, updatedAt, daysArr) => {
   const overviewContainer = program.querySelector(".overview-container");
-
+  const createdWorkoutsContainer = program.querySelector(".created-workouts");
   overviewContainer.innerHTML = `<div class="date-stats">
   <p class="created-at">created at: <span> ${createdAt}</span></p>
   <p class="updated-at">updated at: <span> ${updatedAt}</span></p>
@@ -198,12 +198,12 @@ const displayTimeStamps = (program, createdAt, updatedAt) => {
 
 `;
   const daysBtn = document.querySelectorAll(".day");
-  const createdWorkoutsContainer = program.querySelector(".created-workouts");
+  chosenDay(program, daysArr);
 
   daysBtn.forEach((day) => {
     day.addEventListener("click", () => {
       let dayIndex = day.dataset.day;
-
+      displayWorkouts(program, daysArr, dayIndex);
       daysBtn.forEach((subDay) => {
         if (subDay === day) {
           subDay.classList.add("chosen-day");
@@ -212,5 +212,45 @@ const displayTimeStamps = (program, createdAt, updatedAt) => {
         }
       });
     });
+  });
+};
+
+const displayWorkouts = (program, daysArr, index) => {
+  const createdWorkoutsContainer = program.querySelector(".created-workouts");
+  const daysBtn = document.querySelectorAll(".day");
+
+  let workouts = daysArr[index].workouts;
+
+  createdWorkoutsContainer.innerHTML = "";
+  if (workouts.length === 0) {
+    createdWorkoutsContainer.innerHTML = `<h2>No workouts available</h2>`;
+  } else {
+    for (let i = 0; i < workouts.length; i++) {
+      if (workouts[i].name === "rest day") {
+        createdWorkoutsContainer.innerHTML = ` <div class="one-workout">
+      <i class="fa-solid fa-list" id="show-exercises" data-execises="0"></i>
+      <p class="workout-name">rest day</p>
+      <span class="workout-length">0 Ex</span>
+      
+      </div>`;
+      } else {
+        createdWorkoutsContainer.innerHTML += ` <div class="one-workout">
+        <i class="fa-solid fa-list" id="show-exercises" data-execises="0"></i>
+        <p class="workout-name">${workouts[i].name}</p>
+    <span class="workout-length">${workouts[i].exercises.length} ex</span>
+        
+        </div>`;
+      }
+    }
+  }
+};
+
+const chosenDay = (program, daysArr) => {
+  const daysBtn = document.querySelectorAll(".day");
+  daysBtn.forEach((day) => {
+    if (day.classList.contains("chosen-day")) {
+      let dayIndex = day.dataset.day;
+      displayWorkouts(program, daysArr, dayIndex);
+    }
   });
 };
