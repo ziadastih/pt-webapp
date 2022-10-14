@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./createDiet.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>logo</title>
+  </head>
+  <body>
+    <!-- ============class header the back btn and the program name and the edit program name icon ===== -->
+    <div class="header-container">
+      <img src="../images/previousPageArrow.svg" class="back-btn" alt="" />
+      <p class="diet-name-header"></p>
+      <i class="fa-regular fa-pen-to-square edit-diet-name-icon"></i>
+    </div>
+    <!-- =========program name input and create/edit btn for it ==== -->
+    <div class="overlay"></div>
+    <div class="create-diet-name create-name-container">
+      <h2>create diet</h2>
+      <div class="input-container">
+        <div class="name-alert">
+          <p>diet name:</p>
+          <p class="alert create-diet-name-alert">please provide a Name!</p>
+        </div>
+        <input type="text" id="diet-input-name" placeholder="diet name" />
+      </div>
+      <button class="add-diet-name btn">create</button>
+      <button class="edit-diet-name btn">Edit</button>
+    </div>
+    <!-- ================create workout name ========================= -->
+
+    <!-- ============days container for selection ==== -->
+
+    <!-- ============exercise container list ========================= -->
+    <div class="add-ingredients-container">
+      <!-- =-==============the container content which have the search input and the exercices img checkbox and last the btn add ======== -->
+      <div class="add-ingredients-content">
+        <!-- ============ the header container the title and the close btn for the whole container  -->
+        <div class="add-ingredients-header">
+          <h2>add ingredients</h2>
+          <i
+            class="fa-solid fa-xmark"
+            id="close-btn"
+            data-close="add-ingredients-container"
+          ></i>
+        </div>
+        <!-- ==================the search input inside the add exercise    container -->
+        <div class="ingredients-input-container">
+          <input
+            type="search"
+            placeholder="search for ingredient"
+            class="search-input"
+          />
+          <i class="fa-solid fa-magnifying-glass" id="search-icon-btn"></i>
+        </div>
+        <span class="ingredients-split-line"></span>
+        <!-- ==================the exercise container , include the btn container which has the add exercises and create new name  ============================ -->
+        <div class="ingredients-list-container"></div>
+        <span class="ingredients-split-line"></span>
+        <div class="ingredients-btn-container">
+          <button class="full-btn" id="add-ingredients">add ingredients</button>
+          <button class="outline-btn" id="toggle-new-ingredient-name">
+            create new
+          </button>
+        </div>
+      </div>
+    </div>
+    <!-- ============create new exercise  container  ============= -->
+    <div class="create-new-ingredient-container create-name-container">
+      <i
+        class="fa-solid fa-xmark close-workout-name-container"
+        id="close-btn"
+        data-close="create-new-ingredient-container"
+      ></i>
+      <h2>create exercise</h2>
+      <div class="input-container">
+        <div class="name-alert">
+          <p>ingredient name:</p>
+          <p class="alert ingredient-name-alert">please provide a Name!</p>
+        </div>
+        <input
+          type="text"
+          id="ingredient-input-name"
+          placeholder="ingredient name"
+        />
+      </div>
+      <button class="create-exercise-name btn">create</button>
+    </div>
+
+    <!-- ===========================iframe container  ================ -->
+
+    <!-- ====================main container  ==================== -->
+    <main class="main-container">
+      <div class="chosen-exercises-container"></div>
+    </main>
+
+    <!-- ==========create diet , submit diet  ========= -->
+    <div class="create-workout-btn-container">
+      <button class="full-btn" id="toggle-ingredients-container">
+        create meal
+      </button>
+
+      <button class="outline-btn" id="submit-diet">submit diet</button>
+    </div>
+
+    <!-- ====================end of html ============= -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="./createDiet.js"></script>
+  </body>
+</html>

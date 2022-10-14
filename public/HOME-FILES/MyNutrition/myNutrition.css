@@ -10,11 +10,14 @@
 
   /* =========main color ============ */
   --mainColor: #0e535f;
-  --SecondaryColor: #1d4147;
+
   --alert: #fc8f3a;
   --eyeComfort: #81bcc9;
 
-  --secondEyeOption: #5d97a4;
+  --bodyBackgroud: #e5eaef;
+  --mainOrange: #fead47;
+
+  --whiteSmoke: whitesmoke;
 }
 
 /* ===========global ================ */
@@ -107,7 +110,7 @@ input[type="search"]::-webkit-search-results-decoration {
 /* ==================END OF GLOBAL CLASSES ========================  */
 
 body {
-  background-color: var(--eyeComfort);
+  background-color: var(--bodyBackgroud);
   overflow-x: hidden;
 }
 

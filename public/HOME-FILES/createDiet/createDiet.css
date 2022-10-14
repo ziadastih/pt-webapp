@@ -1,0 +1,400 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --fontSansSerif: "PT Sans", sans-serif;
+  --fontSerif: "Playfair Display", serif;
+
+  /* =========main color ============ */
+  --mainColor: #0e535f;
+
+  --alert: #fc8f3a;
+  --eyeComfort: #81bcc9;
+
+  --bodyBackgroud: #e5eaef;
+  --mainOrange: #fead47;
+
+  --whiteSmoke: whitesmoke;
+}
+
+/* ===========global ================ */
+input {
+  border-radius: 3px;
+  height: 40px;
+  outline-style: none;
+  border: none;
+  padding-left: 10px;
+  color: var(--mainColor);
+}
+/* clears the ‘X’ from Internet Explorer */
+input[type="search"]::-ms-clear {
+  display: none;
+  width: 0;
+  height: 0;
+}
+input[type="search"]::-ms-reveal {
+  display: none;
+  width: 0;
+  height: 0;
+}
+/* clears the ‘X’ from Chrome */
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+  display: none;
+}
+/* ===========general btn layout ============= */
+.btn {
+  font-family: var(--fontSansSerif);
+  font-weight: 700;
+  font-size: 20px;
+  background-color: var(--whiteSmoke);
+  color: var(--mainColor);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 150px;
+  height: 40px;
+  border-radius: 3px;
+  border: none;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  cursor: pointer;
+  text-transform: capitalize;
+}
+
+.full-btn {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 10px;
+  background-color: var(--mainColor);
+  color: whitesmoke;
+  border-radius: 5px;
+  border: none;
+  text-transform: capitalize;
+  cursor: pointer;
+}
+.outline-btn {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 10px;
+  background-color: transparent;
+  color: var(--mainColor);
+  border-radius: 5px;
+  border: 1px solid var(--mainColor);
+  text-transform: capitalize;
+  cursor: pointer;
+}
+
+::placeholder {
+  text-transform: capitalize;
+  font-size: 10px;
+  font-family: var(--fontSansSerif);
+  color: var(--mainColor);
+}
+
+/* ==================END OF GLOBAL CLASSES ========================  */
+
+body {
+  background-color: var(--bodyBackgroud);
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+/* ==============header CONTAINER CONTAINS THE BACK BTN AND THE PLUS BTN */
+.header-container {
+  width: 100vw;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--mainColor);
+}
+.header-container img {
+  margin-left: 30px;
+  cursor: pointer;
+}
+.diet-name-header {
+  font-family: var(--fontSerif);
+  color: var(--whiteSmoke);
+  text-transform: capitalize;
+  font-size: 20px;
+}
+
+.edit-diet-name-icon {
+  margin-right: 30px;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  opacity: 0;
+}
+
+/* ===================create name container input ================ */
+.create-name-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--mainColor);
+  width: 80vw;
+  z-index: 20;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border-radius: 5px;
+  transition: 300ms ease-in;
+  overflow: hidden;
+}
+.create-diet-name {
+  display: flex;
+}
+.overlay {
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  position: fixed;
+
+  background-color: var(--bodyBackgroud);
+
+  opacity: 0.8;
+  height: 100vh;
+  width: 100vw;
+  z-index: 2;
+}
+.create-name-container h2 {
+  color: white;
+  font-family: var(--fontSansSerif);
+  font-weight: 400;
+  font-size: 32px;
+  text-transform: capitalize;
+  margin-bottom: 10px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+.input-container input {
+  width: 60vw;
+}
+
+.name-alert {
+  width: 60vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+.name-alert p {
+  font-family: var(--fontSansSerif);
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: capitalize;
+  color: white;
+  letter-spacing: 1.2px;
+}
+/* ============alerts for every input ============ */
+.name-alert .alert {
+  display: none;
+  color: var(--alert);
+  font-size: 8px;
+  font-weight: 400;
+}
+.edit-diet-name {
+  display: none;
+}
+/* ================ days container  ============== */
+
+.create-new-ingredient-container {
+  z-index: 20;
+}
+/* =================main container  ==================== */
+.main-container {
+  width: 100vw;
+  overflow-x: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  margin-top: 50px;
+}
+
+.main-container-btns {
+  margin-top: 50px;
+  display: none;
+  /* flex-direction: column; */
+  align-items: center;
+  justify-content: space-between;
+  width: 70vw;
+}
+
+/* =================end of workout styling  ==================== */
+
+/* ===================overall container of the exercises , width 100vw so we center all in center but same time flex start from top  */
+.add-ingredients-container {
+  width: 100vw;
+  height: 60vh;
+  position: fixed;
+  margin-top: 60px;
+  display: none;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  z-index: 999;
+}
+/* ==============the sub container which has all the content */
+.add-ingredients-content {
+  width: 80vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: var(--whiteSmoke);
+  border-radius: 5px;
+}
+/* ===================add exercises header , has the title of the container and the close btn  */
+.add-ingredients-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 70vw;
+  color: var(--mainColor);
+  font-family: var(--fontSansSerif);
+  font-weight: 500;
+  text-transform: capitalize;
+  font-size: 15px;
+
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+.ingredients-input-container i {
+  position: absolute;
+  font-size: 10px;
+  margin-left: -30px;
+  margin-top: 15px;
+  color: var(--mainColor);
+}
+
+.search-input {
+  width: 70vw;
+  background-color: transparent;
+  border: 1px solid var(--mainColor);
+}
+
+.ingredients-split-line {
+  width: 70vw;
+  background-color: var(--bodyBackgroud);
+  height: 1px;
+  margin-top: 20px;
+}
+
+/* ===============exercise container ================= */
+
+.ingredients-list-container {
+  display: flex;
+  align-items: center;
+  width: 100vw;
+  height: 300px;
+  justify-content: flex-start;
+  flex-direction: column;
+  margin-top: 20px;
+  overflow-y: scroll;
+  position: relative;
+  gap: 20px;
+}
+
+.ingredient-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  width: 70vw;
+  height: 40px;
+  font-family: var(--fontSansSerif);
+  color: var(--mainColor);
+
+  margin-bottom: 20px;
+}
+.ingredient-name {
+  display: flex;
+  align-items: center;
+  text-transform: capitalize;
+  width: 50vw;
+  text-align: start;
+  font-size: 15px;
+  word-wrap: break-word;
+
+  height: 40px;
+}
+.calories-stats {
+  font-size: 12px;
+}
+.check-box {
+  width: 10px;
+  height: 10px;
+  border: 1px solid var(--mainColor);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 8px;
+  color: var(--whiteSmoke);
+  transition: 200ms ease-in;
+}
+.check-icon {
+  opacity: 0;
+  transition: 200ms ease-in;
+}
+
+/* ----------exercises  btn container flex align center ===== */
+.ingredients-btn-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 70vw;
+}
+
+/* ============== create workout or set as rest day btn ==== */
+
+.create-workout-btn-container {
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-top: 50px;
+}
+
+/* ============= js ========================== */
+
+.display-flex {
+  display: flex;
+}
+.display-none {
+  display: none;
+}
+.chosen-day {
+  background-color: var(--whiteSmoke);
+  color: var(--eyeComfort);
+}
+
+.show-opacity {
+  opacity: 1;
+}
+.change-check-box-background {
+  background-color: var(--mainColor);
+}
+
+.name-alert .display-flex {
+  display: flex;
+}
+
+.border-radius-top {
+  border-radius: 5px 5px 0px 0px;
+  margin-bottom: 0px;
+}
+
+.selected-type {
+  background-color: var(--eyeComfort);
+}
