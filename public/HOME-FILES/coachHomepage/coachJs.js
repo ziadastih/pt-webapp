@@ -63,27 +63,28 @@ getDiets();
 const myClientsBtn = document.querySelector(".access-clients");
 
 myClientsBtn.addEventListener("click", () => {
-  window.location = "http://localhost:3000/MyClients/myClients.html";
+  window.location = "http://192.168.1.195:3000/MyClients/myClients.html";
 });
 
 // =================== my workouts event listener ==========
 const myWorkoutsBtn = document.querySelector(".access-workouts");
 
 myWorkoutsBtn.addEventListener("click", () => {
-  window.location = "http://localhost:3000/MyWorkoutsPrograms/myWorkouts.html";
+  window.location =
+    "http://192.168.1.195:3000/MyWorkoutsPrograms/myWorkouts.html";
 });
 
 // =======================nutrition event listener =======
 const myNutritionBtn = document.querySelector(".access-diet");
 
 myNutritionBtn.addEventListener("click", () => {
-  window.location = "http://localhost:3000/MyNutrition/myNutrition.html";
+  window.location = "http://192.168.1.195:3000/MyNutrition/myNutrition.html";
 });
 // =======================Wallet event listener =======
 const myWalletBtn = document.querySelector(".access-wallet");
 
 myWalletBtn.addEventListener("click", () => {
-  window.location = "http://localhost:3000/MyWallet/wallet.html";
+  window.location = "http://192.168.1.195:3000/MyWallet/wallet.html";
 });
 
 // ================logout user ===================
@@ -94,7 +95,7 @@ logoutBtn.addEventListener("click", async () => {
   try {
     await axios.post("/api/v1/auth/logout");
     localStorage.removeItem("ref");
-    window.location = "http://localhost:3000/";
+    window.location = "http://192.168.1.195:3000/";
   } catch (error) {
     console.log(error);
   }

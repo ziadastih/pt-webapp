@@ -12,10 +12,12 @@ const createNewProgramBtn = document.querySelector(".create-workout-btn");
 // ================GET WORKOUT FUNCTION , INCLUDE DISPLAYING ALL, LIVE SEARCH , DELETE FUNCTION =============================
 
 goToCreateProgram.addEventListener("click", () => {
-  window.location = "http://localhost:3000/createWorkout/createWorkout.html";
+  window.location =
+    "http://192.168.1.195:3000/createWorkout/createWorkout.html";
 });
 createNewProgramBtn.addEventListener("click", () => {
-  window.location = "http://localhost:3000/createWorkout/createWorkout.html";
+  window.location =
+    "http://192.168.1.195:3000/createWorkout/createWorkout.html";
 });
 
 // ================fetch workouts ===================
@@ -64,6 +66,16 @@ const getWorkouts = async () => {
 
           getWorkouts();
         });
+      });
+    });
+
+    const editWorkoutBtns = document.querySelectorAll("#edit-workout");
+    editWorkoutBtns.forEach((editBtn) => {
+      editBtn.addEventListener("click", () => {
+        let workoutId = editBtn.dataset.edit;
+        localStorage.setItem("wo", workoutId);
+        window.location =
+          "http://192.168.1.195:3000/editWorkout/editWorkout.html";
       });
     });
     // ===========================live search =======================
@@ -133,7 +145,8 @@ const displayProgramInfo = (programPlan) => {
 const backBtn = document.querySelector(".back-btn");
 
 backBtn.addEventListener("click", () => {
-  window.location = "http://localhost:3000/coachHomepage/coachHomepage.html";
+  window.location =
+    "http://192.168.1.195:3000/coachHomepage/coachHomepage.html";
 });
 // ================logout user ===================
 
@@ -143,7 +156,7 @@ logoutBtn.addEventListener("click", async () => {
   try {
     await axios.post("/api/v1/auth/logout");
     localStorage.removeItem("ref");
-    window.location = "http://localhost:3000/";
+    window.location = "http://192.168.1.195:3000/";
   } catch (error) {
     console.log(error);
   }
@@ -158,7 +171,7 @@ const displayAllPrograms = (programPlan) => {
   <i class="fa-solid fa-list" id="show-program" data-overview=${i}></i>
  <p>${programPlan[i].name}</p>
     <div class="tools">
-      <i class="fa-regular fa-pen-to-square" data-manage=${programPlan[i]._id}></i>
+      <i class="fa-regular fa-pen-to-square" id="edit-workout" data-edit=${programPlan[i]._id}></i>
       <i class=" fa-solid fa-trash" id="delete-workout" data-delete=${programPlan[i]._id}></i>
     </div>
   </div>
@@ -227,12 +240,7 @@ const displayWorkouts = (program, daysArr, index) => {
   } else {
     for (let i = 0; i < workouts.length; i++) {
       if (workouts[i].name === "rest day") {
-        createdWorkoutsContainer.innerHTML = ` <div class="one-workout">
-      <i class="fa-solid fa-list"  data-execises="0"></i>
-      <p class="workout-name">rest day</p>
-      <span class="workout-length">0 Ex</span>
-      
-      </div>`;
+        createdWorkoutsContainer.innerHTML = `<h2>Rest Day</h2>`;
       } else {
         createdWorkoutsContainer.innerHTML += `<div class='workout-info-container'> 
         <div class="one-workout">

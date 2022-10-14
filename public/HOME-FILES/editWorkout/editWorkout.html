@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./editWorkout.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>logo</title>
+  </head>
+  <body>
+    <!-- ============class header the back btn and the program name and the edit program name icon ===== -->
+    <div class="header-container">
+      <img src="../images/previousPageArrow.svg" class="back-btn" alt="" />
+      <p class="program-name-header"></p>
+      <i class="fa-regular fa-pen-to-square edit-program-name-icon"></i>
+    </div>
+    <!-- =========program name input and create/edit btn for it ==== -->
+    <div class="overlay"></div>
+    <div class="create-program-name create-name-container">
+      <h2>create program</h2>
+      <div class="input-container">
+        <div class="name-alert">
+          <p>program name:</p>
+          <p class="alert create-program-name-alert">please provide a Name!</p>
+        </div>
+        <input type="text" id="program-input-name" placeholder="program name" />
+      </div>
+
+      <button class="edit-program-name btn">Edit</button>
+    </div>
+    <!-- ================create workout name ========================= -->
+    <div class="create-workout-name create-name-container">
+      <i
+        class="fa-solid fa-xmark close-workout-name-container"
+        id="close-btn"
+        data-close="create-workout-name"
+      ></i>
+      <h2>create workout</h2>
+      <div class="input-container">
+        <div class="name-alert">
+          <p>workout name:</p>
+          <p class="alert workout-name-alert">please provide a Name!</p>
+        </div>
+        <input type="text" id="workout-input-name" placeholder="workout name" />
+      </div>
+      <button class="add-workout-name btn">create</button>
+      <button class="edit-workout-name btn">Edit</button>
+    </div>
+    <!-- ============days container for selection ==== -->
+    <div class="days-container">
+      <p class="day chosen-day" data-day="0">mon</p>
+
+      <p class="day" data-day="1">tue</p>
+      <p class="day" data-day="2">wed</p>
+      <p class="day" data-day="3">thu</p>
+      <p class="day" data-day="4">fri</p>
+      <p class="day" data-day="5">sat</p>
+      <p class="day" data-day="6">sun</p>
+    </div>
+    <!-- ============exercise container list ========================= -->
+    <div class="add-exercises-container">
+      <!-- =-==============the container content which have the search input and the exercices img checkbox and last the btn add ======== -->
+      <div class="add-exercises-content">
+        <!-- ============ the header container the title and the close btn for the whole container  -->
+        <div class="add-exercises-header">
+          <h2>add exercises</h2>
+          <i
+            class="fa-solid fa-xmark"
+            id="close-btn"
+            data-close="add-exercises-container"
+          ></i>
+        </div>
+        <!-- ==================the search input inside the add exercise    container -->
+        <div class="exercises-input-container">
+          <input
+            type="search"
+            placeholder="search for exercise"
+            class="search-input"
+          />
+          <i class="fa-solid fa-magnifying-glass" id="search-icon-btn"></i>
+        </div>
+        <span class="exercise-split-line"></span>
+        <!-- ==================the exercise container , include the btn container which has the add exercises and create new name  ============================ -->
+        <div class="exercises-list-container"></div>
+        <span class="exercise-split-line"></span>
+        <div class="exercises-btn-container">
+          <button class="full-btn" id="add-exercises">add exercises</button>
+          <button class="outline-btn" id="toggle-new-exercise-name">
+            create new
+          </button>
+        </div>
+      </div>
+    </div>
+    <!-- ============create new exercise  container  ============= -->
+    <div class="create-new-exercise-container create-name-container">
+      <i
+        class="fa-solid fa-xmark close-workout-name-container"
+        id="close-btn"
+        data-close="create-new-exercise-container"
+      ></i>
+      <h2>create exercise</h2>
+      <div class="input-container">
+        <div class="name-alert">
+          <p>exercise name:</p>
+          <p class="alert exercise-name-alert">please provide a Name!</p>
+        </div>
+        <input
+          type="text"
+          id="exercise-input-name"
+          placeholder="exercise name"
+        />
+      </div>
+      <button class="create-exercise-name btn">create</button>
+    </div>
+    <!-- ==================note box ============ -->
+    <div class="note-box create-name-container">
+      <i
+        class="fa-solid fa-xmark close-workout-name-container"
+        id="close-btn"
+        data-close="note-box"
+      ></i>
+      <h2>add note</h2>
+
+      <textarea
+        class="note-input"
+        name="message"
+        id=""
+        cols="30"
+        rows="5"
+        placeholder="note"
+      ></textarea>
+      <div class="note-submit"></div>
+    </div>
+    <!-- ===========================iframe container  ================ -->
+    <div class="iframe-container">
+      <iframe
+        src=""
+        class="iframe"
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+      ></iframe>
+      <button class="outline-btn" id="close-btn" data-close="iframe-container">
+        close
+      </button>
+    </div>
+    <div class="created-workouts"></div>
+    <!-- ====================main container  ==================== -->
+    <main class="main-container">
+      <div class="workout-header">
+        <span></span>
+        <p class="workout-name-header">push</p>
+        <i class="fa-regular fa-pen-to-square edit-workout-name-icon"></i>
+      </div>
+      <div class="chosen-exercises-container"></div>
+
+      <!-- =============main container btns ======================= -->
+      <div class="main-container-btns">
+        <button class="full-btn toggle-exercises-list">add exercises</button>
+        <button class="outline-btn submit-workout">submit workout</button>
+        <button class="outline-btn edit-workout-btn display-none">
+          edit workout
+        </button>
+      </div>
+    </main>
+
+    <!-- ==========create workout and set as rest container  ========= -->
+    <div class="create-workout-btn-container">
+      <button class="full-btn" id="toggle-workout-name-container">
+        create workout
+      </button>
+      <button class="outline-btn" id="set-as-rest-day">set as rest day</button>
+      <button class="outline-btn" id="edit-program">edit program</button>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="./editWorkout.js"></script>
+  </body>
+</html>

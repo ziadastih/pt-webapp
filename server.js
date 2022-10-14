@@ -38,17 +38,17 @@ const errorHandlerMiddleware = require("./middleware/error-handler");
 
 // ==============security ===========================
 
-server.use(cors());
-server.use(xss());
-server.use(helmet());
-server.use(
-  helmet.contentSecurityPolicy({
-    directives: {
-      defaultSrc: ["'self'"],
-      scriptSrc: ["'self'", "cdn.jsdelivr.net/npm/axios/dist/axios.min.js "],
-    },
-  })
-);
+// server.use(cors());
+// server.use(xss());
+// server.use(helmet());
+// server.use(
+//   helmet.contentSecurityPolicy({
+//     directives: {
+//       defaultSrc: ["'self'"],
+//       scriptSrc: ["'self'", "cdn.jsdelivr.net/npm/axios/dist/axios.min.js "],
+//     },
+//   })
+// );
 // ================routes ==========
 server.use(bodyParser.json({ limit: "50mb" }));
 server.use(bodyParser.urlencoded({ limit: "50mb", extended: true }));
@@ -70,7 +70,7 @@ server.use(errorHandlerMiddleware);
 const start = async () => {
   try {
     await connectDB(process.env.PT_URI);
-    server.listen(3000, () => {
+    server.listen(3000, "192.168.1.195", () => {
       console.log("server is listening");
     });
   } catch (error) {

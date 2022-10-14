@@ -2,7 +2,8 @@
 const backBtn = document.querySelector(".back-btn");
 
 backBtn.addEventListener("click", () => {
-  window.location = "http://localhost:3000/coachHomepage/coachHomepage.html";
+  window.location =
+    "http://192.168.1.195:3000/coachHomepage/coachHomepage.html";
 });
 // ================logout user ===================
 
@@ -12,7 +13,7 @@ logoutBtn.addEventListener("click", async () => {
   try {
     await axios.post("/api/v1/auth/logout");
     localStorage.removeItem("ref");
-    window.location = "http://localhost:3000/";
+    window.location = "http://192.168.1.195:3000/";
   } catch (error) {
     console.log(error);
   }
