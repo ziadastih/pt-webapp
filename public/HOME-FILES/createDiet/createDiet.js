@@ -1,11 +1,12 @@
 const Diet = {
   name: "",
-  meal: [],
+  meals: [],
 };
 
 const ingredientsArray = [
   {
     name: "almonds",
+    type: "pcs",
     calories: 100,
     proteine: 40,
     carbs: 40,
@@ -14,6 +15,7 @@ const ingredientsArray = [
   },
   {
     name: "apple",
+    type: "pcs",
     calories: 100,
     proteine: 0,
     carbs: 50,
@@ -22,6 +24,7 @@ const ingredientsArray = [
   },
   {
     name: "banana",
+    type: "pcs",
     calories: 100,
     proteine: 0,
     carbs: 25,
@@ -30,6 +33,7 @@ const ingredientsArray = [
   },
   {
     name: "rice",
+    type: "g",
     calories: 200,
     proteine: 0,
     carbs: 50,
@@ -38,6 +42,7 @@ const ingredientsArray = [
   },
   {
     name: "pasta",
+    type: "g",
     calories: 100,
     proteine: 0,
     carbs: 50,
@@ -46,6 +51,7 @@ const ingredientsArray = [
   },
   {
     name: "chicken breast",
+    type: "g",
     calories: 200,
     proteine: 33,
     carbs: 50,
@@ -54,6 +60,7 @@ const ingredientsArray = [
   },
   {
     name: "chicken wings",
+    type: "g",
     calories: 420,
     proteine: 0,
     carbs: 50,
@@ -62,6 +69,7 @@ const ingredientsArray = [
   },
   {
     name: "fish",
+    type: "g",
     calories: 300,
     proteine: 30,
     carbs: 50,
@@ -70,6 +78,7 @@ const ingredientsArray = [
   },
   {
     name: "meat",
+    type: "g",
     calories: 100,
     proteine: 0,
     carbs: 50,
@@ -78,6 +87,7 @@ const ingredientsArray = [
   },
   {
     name: "low fat yoghurt",
+    type: "g",
     calories: 180,
     proteine: 5.2,
     carbs: 50,
@@ -86,6 +96,7 @@ const ingredientsArray = [
   },
   {
     name: "rice cake",
+    type: "g",
     calories: 50,
     proteine: 0,
     carbs: 50,
@@ -94,6 +105,7 @@ const ingredientsArray = [
   },
   {
     name: "peanut butter",
+    type: "g",
     calories: 130,
     proteine: 0,
     carbs: 50,
@@ -101,6 +113,7 @@ const ingredientsArray = [
     selected: false,
   },
 ];
+let selectedIngredientsArray = [];
 // ============== program selectors and the overlay ================================================
 const overlay = document.querySelector(".overlay");
 const createDietNameContainer = document.querySelector(".create-diet-name");
@@ -121,12 +134,26 @@ const ingredientsContainer = document.querySelector(
   ".add-ingredients-container"
 );
 const ingredientsList = document.querySelector(".ingredients-list-container");
-const addIngredients = document.querySelector("#add-ingredients");
+const addIngredientsBtn = document.querySelector("#add-ingredients");
 const toggleNewIngredientContainer = document.querySelector(
   "#toggle-new-ingredient-name"
 );
 
 const searchInput = document.querySelector(".search-input");
+const chosenIngredientsContainer = document.querySelector(
+  ".chosen-ingredients-container"
+);
+
+// ===============total ingredients Container and macros selectors==============
+const totalIngredientsMacros = document.querySelector(
+  ".total-ingredients-macros"
+);
+const totalIngredientsCal = document.querySelector(".total-ingredients-cal");
+const totalIngredientsCarbs = document.querySelector(
+  ".total-ingredients-carbs"
+);
+const totalIngredientsProt = document.querySelector(".total-ingredients-prot");
+const totalIngredientsFat = document.querySelector(".total-ingredients-fat");
 
 // ============================refreshing page alert =====================
 
@@ -176,7 +203,11 @@ toggleIngredientsList.addEventListener("click", () => {
   overlay.classList.remove("display-none");
   displayIngredientsArray(ingredientsArray);
 });
-
+addIngredientsBtn.addEventListener("click", () => {
+  displayChosenIngredients();
+  ingredientsContainer.classList.remove("display-flex");
+  overlay.classList.add("display-none");
+});
 // ========displaying the exercices we have inside the exercises list container
 
 const displayIngredientsArray = (arr) => {
@@ -210,8 +241,24 @@ const displayIngredientsArray = (arr) => {
       box.classList.toggle("change-check-box-background");
       if (arr[ingredientIndex].selected === false) {
         arr[ingredientIndex].selected = true;
+        selectedIngredientsArray.push({
+          name: arr[ingredientIndex].name,
+          type: arr[ingredientIndex].type,
+          calories: arr[ingredientIndex].calories,
+          proteine: arr[ingredientIndex].proteine,
+          carbs: arr[ingredientIndex].carbs,
+          fat: arr[ingredientIndex].fat,
+          portion: "",
+        });
       } else {
         arr[ingredientIndex].selected = false;
+
+        const index = selectedIngredientsArray.findIndex((Element) => {
+          return Element.name === arr[ingredientIndex].name;
+        });
+        if (index !== -1) {
+          selectedIngredientsArray.splice(index, 1);
+        }
       }
     });
   });
@@ -256,5 +303,72 @@ const liveSearch = () => {
     } else if (!ingredient.textContent.toUpperCase().includes(inputCharacter)) {
       ingredient.classList.add("display-none");
     }
+  });
+};
+
+const displayChosenIngredients = () => {
+  chosenIngredientsContainer.innerHTML = "";
+  if (selectedIngredientsArray.length === 0) {
+    totalIngredientsMacros.classList.remove("display-flex");
+  } else {
+    totalIngredientsMacros.classList.add("display-flex");
+    for (let i = 0; i < selectedIngredientsArray.length; i++) {
+      let ingredient = selectedIngredientsArray[i];
+
+      chosenIngredientsContainer.innerHTML += `<div class="one-ingredient-container"> 
+    <div class="ingredient-info">
+<h2 class="name">${ingredient.name}</h2>
+<div class="info-input-container">
+  <input type="number" id="ingredient-portion" placeholder="0"/>
+  <p>${ingredient.type}</p>
+  <i class="fa-solid fa-trash" id="delete-ingredient" data-delete = "${ingredient.name}"></i>
+</div>
+</div>
+<div class="ingredient-macros">
+<div class="macros-info">
+  <span>cal.</span>
+  <p class="cal-value">${ingredient.calories}</p>
+</div>
+<div class="macros-info">
+  <span>carbs</span>
+  <p class="carbs-value">${ingredient.carbs} g</p>
+</div>
+<div class="macros-info">
+  <span>prot</span>
+  <p class="prot-value">${ingredient.proteine}g</p>
+</div>
+<div class="macros-info">
+  <span>fat</span>
+  <p class="cal-value">${ingredient.fat}g</p>
+</div>
+</div>
+</div>`;
+    }
+  }
+
+  const deleteIngredientBtns = document.querySelectorAll("#delete-ingredient");
+
+  deleteIngredientBtns.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      let name = btn.dataset.delete;
+
+      const indexInSelectedArray = selectedIngredientsArray.findIndex(
+        (Element) => {
+          return Element.name === name;
+        }
+      );
+
+      if (indexInSelectedArray !== -1) {
+        selectedIngredientsArray.splice(indexInSelectedArray, 1);
+        displayChosenIngredients();
+        const indexInExercisesArray = ingredientsArray.findIndex((Element) => {
+          return Element.name === name;
+        });
+
+        if (indexInExercisesArray !== -1) {
+          ingredientsArray[indexInExercisesArray].selected = false;
+        }
+      }
+    });
   });
 };

@@ -215,7 +215,7 @@ body {
   overflow-x: hidden;
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
   flex-direction: column;
   margin-top: 50px;
 }
@@ -229,7 +229,107 @@ body {
   width: 70vw;
 }
 
-/* =================end of workout styling  ==================== */
+.chosen-ingredients-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.one-ingredient-container {
+  width: 80vw;
+  background-color: var(--whiteSmoke);
+  margin-bottom: 10px;
+  padding: 5px;
+  border-radius: 5px 0px 5px 5px;
+  position: relative;
+}
+.ingredient-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 80vw;
+  margin-top: 10px;
+  font-family: var(--fontSansSerif);
+  color: var(--mainColor);
+  font-weight: 500;
+}
+.ingredient-info h2 {
+  font-size: 15px;
+  text-transform: capitalize;
+  margin-left: 20px;
+}
+.ingredient-info input {
+  background-color: transparent;
+  border: 1px solid var(--mainColor);
+  width: 50px;
+}
+
+.info-input-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-right: 30px;
+}
+.info-input-container p {
+  font-size: 10px;
+  opacity: 0.5;
+}
+
+#delete-ingredient {
+  font-size: 8px;
+  padding: 5px;
+  position: absolute;
+  right: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 0;
+  color: var(--whiteSmoke);
+  background-color: var(--mainColor);
+}
+
+.ingredient-macros {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: 20px;
+  width: 60vw;
+  font-family: var(--fontSansSerif);
+  color: var(--mainColor);
+}
+.macros-info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10px;
+}
+.macros-info span {
+  opacity: 0.5;
+  font-size: 10px;
+}
+.total-ingredients-macros {
+  display: none;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+
+  width: 80vw;
+  background-color: var(--mainColor);
+  border-radius: 5px;
+  height: 60px;
+  padding: 5px;
+  font-family: var(--fontSansSerif);
+  color: var(--whiteSmoke);
+}
+.submit-meal-btn {
+  display: none;
+}
+/* =================end of meal styling  ==================== */
 
 /* ===================overall container of the exercises , width 100vw so we center all in center but same time flex start from top  */
 .add-ingredients-container {
@@ -358,7 +458,7 @@ body {
 
 /* ============== create workout or set as rest day btn ==== */
 
-.create-workout-btn-container {
+.create-ingredients-btn-container {
   width: 100vw;
   display: flex;
   align-items: center;

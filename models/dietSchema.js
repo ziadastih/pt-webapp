@@ -15,9 +15,9 @@ const dietSchema = new mongoose.Schema({
     type: mongoose.Types.ObjectId,
     ref: "client",
   },
-  dietPlan: {
+  meals: {
     type: Array,
-    required: [true, "please provide plan"],
+    required: [true, "please provide meals"],
   },
 });
 
