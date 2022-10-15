@@ -321,7 +321,7 @@ body {
   width: 80vw;
   background-color: var(--mainColor);
   border-radius: 5px;
-  height: 60px;
+  height: 80px;
   padding: 5px;
   font-family: var(--fontSansSerif);
   color: var(--whiteSmoke);
