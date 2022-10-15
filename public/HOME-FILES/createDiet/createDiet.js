@@ -167,6 +167,16 @@ const totalIngredientsCarbs = document.querySelector(
 const totalIngredientsProt = document.querySelector(".total-ingredients-prot");
 const totalIngredientsFat = document.querySelector(".total-ingredients-fat");
 
+// ======================displaying created meals  -===================================
+const createdMealsContainer = document.querySelector(
+  ".created-meals-container"
+);
+const totalDietMacros = document.querySelector(".total-diet-macros");
+const totalDietCal = document.querySelector(".total-diet-cal");
+const totalDietCarbs = document.querySelector(".total-diet-carbs");
+const totalDietProt = document.querySelector(".total-diet-prot");
+const totalDietFat = document.querySelector(".total-diet-fat");
+
 // ============================refreshing page alert =====================
 
 window.onbeforeunload = () => {
@@ -213,14 +223,23 @@ searchInput.addEventListener("input", () => {
 toggleIngredientsList.addEventListener("click", () => {
   ingredientsContainer.classList.add("display-flex");
   overlay.classList.remove("display-none");
+
   displayIngredientsArray(ingredientsArray);
 });
 addIngredientsBtn.addEventListener("click", () => {
   displayChosenIngredients();
   ingredientsContainer.classList.remove("display-flex");
   overlay.classList.add("display-none");
+  createdMealsContainer.classList.remove("display-flex");
+  totalDietMacros.classList.remove("display-flex");
+  submitDietBtn.classList.add("display-none");
 });
-// ========displaying the exercices we have inside the exercises list container
+
+submitMealBtn.addEventListener("click", () => {
+  submitMealFunction();
+});
+
+// ========displaying the ingredients we have inside the ingredient list container
 
 const displayIngredientsArray = (arr) => {
   ingredientsList.innerHTML = "";
@@ -396,61 +415,73 @@ const displayChosenIngredients = () => {
   const oneIngredientContainer = document.querySelectorAll(
     ".one-ingredient-container"
   );
-
+  // ===============ingredient containers forEach ====================
   oneIngredientContainer.forEach((container) => {
     const portionInput = container.querySelector("#ingredient-portion");
     const calValue = container.querySelector(".cal-value");
     const protValue = container.querySelector(".prot-value");
     const fatValue = container.querySelector(".fat-value");
     const carbsValue = container.querySelector(".carbs-value");
-
+    // ================portion input =========================
     portionInput.addEventListener("input", () => {
       let inputIndex = portionInput.dataset.input;
-      let ingredient = selectedIngredientsArray[inputIndex];
-      if (portionInput.value === "") {
-        calValue.textContent = 0;
-        protValue.textContent = "0g";
-        fatValue.textContent = "0g";
-        carbsValue.textContent = "0g";
-        ingredient.calories = 0;
-        ingredient.carbs = 0;
-        ingredient.fat = 0;
-        ingredient.proteine = 0;
-        ingredient.portion = 0;
-        sumOfTotalIngredientsCal();
-        sumOfTotalIngredientsCarbs();
-        sumOfTotalIngredientsFat();
-        sumOfTotalIngredientsProt();
-      }
+      const ingredient = selectedIngredientsArray[inputIndex];
+      const originalIngredientIndex = ingredientsArray.findIndex((Element) => {
+        return (Element.name = ingredient.name);
+      });
+      if (originalIngredientIndex !== -1) {
+        const originalIngredient = ingredientsArray[originalIngredientIndex];
 
-      if (ingredient.type === "g") {
-        ingredient.calories = (portionInput.value * ingredient.calories) / 100;
-        ingredient.carbs = (portionInput.value * ingredient.carbs) / 100;
-        ingredient.fat = (portionInput.value * ingredient.fat) / 100;
-        ingredient.proteine = (portionInput.value * ingredient.proteine) / 100;
-        ingredient.portion = portionInput.value;
-        calValue.textContent = ingredient.calories;
-        protValue.textContent = `${ingredient.proteine}g`;
-        fatValue.textContent = `${ingredient.fat}g`;
-        carbsValue.textContent = `${ingredient.carbs}g`;
-        sumOfTotalIngredientsCal();
-        sumOfTotalIngredientsCarbs();
-        sumOfTotalIngredientsFat();
-        sumOfTotalIngredientsProt();
-      } else {
-        ingredient.calories = portionInput.value * ingredient.calories;
-        ingredient.carbs = portionInput.value * ingredient.carbs;
-        ingredient.fat = portionInput.value * ingredient.fat;
-        ingredient.proteine = portionInput.value * ingredient.proteine;
-        ingredient.portion = portionInput.value;
-        calValue.textContent = ingredient.calories;
-        protValue.textContent = `${ingredient.proteine}g`;
-        fatValue.textContent = `${ingredient.fat}g`;
-        carbsValue.textContent = `${ingredient.carbs}g`;
-        sumOfTotalIngredientsCal();
-        sumOfTotalIngredientsCarbs();
-        sumOfTotalIngredientsFat();
-        sumOfTotalIngredientsProt();
+        if (portionInput.value.length === 0) {
+          calValue.textContent = 0;
+          protValue.textContent = "0g";
+          fatValue.textContent = "0g";
+          carbsValue.textContent = "0g";
+          ingredient.calories = 0;
+          ingredient.carbs = 0;
+          ingredient.fat = 0;
+          ingredient.proteine = 0;
+          ingredient.portion = 0;
+          sumOfTotalIngredientsCal();
+          sumOfTotalIngredientsCarbs();
+          sumOfTotalIngredientsFat();
+          sumOfTotalIngredientsProt();
+        }
+
+        if (ingredient.type === "g") {
+          ingredient.calories =
+            (portionInput.value * originalIngredient.calories) / 100;
+          ingredient.carbs =
+            (portionInput.value * originalIngredient.carbs) / 100;
+          ingredient.fat = (portionInput.value * originalIngredient.fat) / 100;
+          ingredient.proteine =
+            (portionInput.value * originalIngredient.proteine) / 100;
+          ingredient.portion = portionInput.value;
+          calValue.textContent = ingredient.calories;
+          protValue.textContent = `${ingredient.proteine}g`;
+          fatValue.textContent = `${ingredient.fat}g`;
+          carbsValue.textContent = `${ingredient.carbs}g`;
+          sumOfTotalIngredientsCal();
+          sumOfTotalIngredientsCarbs();
+          sumOfTotalIngredientsFat();
+          sumOfTotalIngredientsProt();
+        } else {
+          ingredient.calories =
+            portionInput.value * originalIngredient.calories;
+          ingredient.carbs = portionInput.value * originalIngredient.carbs;
+          ingredient.fat = portionInput.value * originalIngredient.fat;
+          ingredient.proteine =
+            portionInput.value * originalIngredient.proteine;
+          ingredient.portion = portionInput.value;
+          calValue.textContent = ingredient.calories;
+          protValue.textContent = `${ingredient.proteine}g`;
+          fatValue.textContent = `${ingredient.fat}g`;
+          carbsValue.textContent = `${ingredient.carbs}g`;
+          sumOfTotalIngredientsCal();
+          sumOfTotalIngredientsCarbs();
+          sumOfTotalIngredientsFat();
+          sumOfTotalIngredientsProt();
+        }
       }
     });
   });
@@ -493,4 +524,117 @@ const sumOfTotalIngredientsFat = () => {
   }, 0);
 
   totalIngredientsFat.textContent = `${total}g`;
+};
+
+const submitMealFunction = () => {
+  Diet.meals.push({
+    calories: totalIngredientsCal.textContent,
+    carbs: totalIngredientsCarbs.textContent,
+    proteine: totalIngredientsProt.textContent,
+    fat: totalIngredientsFat.textContent,
+    ingredients: selectedIngredientsArray,
+  });
+  selectedIngredientsArray = [];
+  for (let i = 0; i < ingredientsArray.length; i++) {
+    ingredientsArray[i].selected = false;
+  }
+  createdMealsContainer.classList.add("display-flex");
+  submitMealBtn.classList.remove("display-flex");
+  displayChosenIngredients();
+  displayIngredientsArray(ingredientsArray);
+  displayMeals();
+};
+
+const displayMeals = () => {
+  createdMealsContainer.innerHTML = "";
+
+  if (Diet.meals.length === 0) {
+    totalDietMacros.classList.remove("display-flex");
+    submitDietBtn.classList.add("display-none");
+  } else {
+    for (let i = 0; i < Diet.meals.length; i++) {
+      let meal = Diet.meals[i];
+      createdMealsContainer.innerHTML += `<div class="one-meal-container">
+    <div class="one-meal">
+      <div class="meal-info">
+        <i
+          class="fa-solid fa-list"
+          id="show-ingredient"
+          data-ingredient=${i}
+        ></i>
+        <p class="meal-name">meal ${i + 1}</p>
+        <div class="tools">
+          <i class="fa-solid fa-trash" id="delete-meal" data-delete=${i}></i>
+          <i
+            class="fa-regular fa-pen-to-square"
+            id="edit-meal-icon"
+            data-edit=${i}
+          ></i>
+        </div>
+      </div>
+      <div class="meal-overview"></div>
+    </div>
+    <div class="total-meal-macros">
+      <div class="macros-info">
+        <span>cal.</span>
+        <p class="total-meal-cal">${meal.calories}</p>
+      </div>
+      <div class="macros-info">
+        <span>carbs</span>
+        <p class="total-meal-carbs">${meal.carbs}</p>
+      </div>
+      <div class="macros-info">
+        <span>prot</span>
+        <p class="total-meal-prot">${meal.proteine}</p>
+      </div>
+      <div class="macros-info">
+        <span>fat</span>
+        <p class="total-meal-fat">${meal.fat}</p>
+      </div>
+    </div>
+  </div>`;
+    }
+    totalDietMacros.classList.add("display-flex");
+    submitDietBtn.classList.remove("display-none");
+    totalDietCalFunction();
+    totalDietCarbsFunction();
+    totalDietFatFunction();
+    totalDietProtFunction();
+  }
+};
+
+const totalDietCarbsFunction = () => {
+  const meals = Diet.meals;
+  const total = meals.reduce((sum, meal) => {
+    let carbs = meal.carbs.slice(0, meal.carbs.length - 1);
+    let currentCarbs = parseInt(carbs);
+    return currentCarbs + sum;
+  }, 0);
+  totalDietCarbs.textContent = `${total}g`;
+};
+const totalDietProtFunction = () => {
+  const meals = Diet.meals;
+  const total = meals.reduce((sum, meal) => {
+    let prot = meal.proteine.slice(0, meal.proteine.length - 1);
+    let currentProt = parseInt(prot);
+    return currentProt + sum;
+  }, 0);
+  totalDietProt.textContent = `${total}g`;
+};
+const totalDietFatFunction = () => {
+  const meals = Diet.meals;
+  const total = meals.reduce((sum, meal) => {
+    let fat = meal.fat.slice(0, meal.fat.length - 1);
+    let currentFat = parseInt(fat);
+    return currentFat + sum;
+  }, 0);
+  totalDietFat.textContent = `${total}g`;
+};
+const totalDietCalFunction = () => {
+  const meals = Diet.meals;
+  const total = meals.reduce((sum, meal) => {
+    let currentCalories = parseInt(meal.calories);
+    return currentCalories + sum;
+  }, 0);
+  totalDietCal.textContent = total;
 };

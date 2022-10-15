@@ -204,7 +204,6 @@ body {
 .edit-diet-name {
   display: none;
 }
-/* ================ days container  ============== */
 
 .create-new-ingredient-container {
   z-index: 20;
@@ -228,7 +227,7 @@ body {
   justify-content: space-between;
   width: 70vw;
 }
-
+/* ===================chosen ingrediients container =========================== */
 .chosen-ingredients-container {
   display: flex;
   justify-content: center;
@@ -329,8 +328,109 @@ body {
 .submit-meal-btn {
   display: none;
 }
-/* =================end of meal styling  ==================== */
+/* =================end of chosen ingredient  styling  ==================== */
 
+/* =================== created ingredients container ======= */
+.created-meals-container {
+  margin-top: 20px;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100vw;
+}
+/* =========meal styling that will be dealt with in js ========== */
+.one-meal-container {
+  margin-bottom: 20px;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.one-meal {
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.meal-info {
+  width: 80vw;
+  height: 50px;
+  background-color: var(--whiteSmoke);
+
+  border-radius: 3px;
+
+  font-family: var(--fontSansSerif);
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-transform: capitalize;
+  margin-bottom: 10px;
+}
+.one-meal i {
+  color: var(--eyeComfort);
+  margin-left: 20px;
+}
+.one-meal p {
+  text-align: center;
+  color: var(--mainColor);
+  font-weight: 700;
+  letter-spacing: 1.2px;
+}
+
+.tools {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  color: var(--mainOrange);
+  width: 100px;
+  gap: 10px;
+  cursor: pointer;
+  margin-right: 20px;
+}
+.tools i {
+  color: var(--mainOrange);
+}
+
+/* ==============meal macros container ================ */
+.total-meal-macros {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 10px;
+
+  width: 80vw;
+  background-color: var(--mainColor);
+  border-radius: 5px;
+  height: 80px;
+  padding: 5px;
+  font-family: var(--fontSansSerif);
+  color: var(--whiteSmoke);
+}
+
+.total-diet-macros {
+  display: none;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 10px;
+
+  width: 100vw;
+  background-color: var(--whiteSmoke);
+  border-radius: 5px;
+  height: 80px;
+  padding: 5px;
+  font-family: var(--fontSansSerif);
+  color: var(--mainColor);
+}
+.total-macros span {
+  color: var(--mainColor);
+  opacity: 0.5;
+  font-size: 10px;
+}
 /* ===================overall container of the exercises , width 100vw so we center all in center but same time flex start from top  */
 .add-ingredients-container {
   width: 100vw;
