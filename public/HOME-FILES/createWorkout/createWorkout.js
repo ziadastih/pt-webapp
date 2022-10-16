@@ -1022,11 +1022,10 @@ const displayWorkouts = (index) => {
                   .exercises;
               workoutNameHeader.textContent =
                 program.weeks[0].days[dayIndex].workouts[workoutIndex].name;
-              console.log(selectedExercisesArray);
 
               displayChosenExercises();
               changeSelectedToTrue();
-              console.log(exercisesArray);
+
               workoutHeader.classList.add("display-flex");
               createWorkoutBtnContainer.classList.add("display-none");
               createdWorkoutsContainer.classList.add("display-none");

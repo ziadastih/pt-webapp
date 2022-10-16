@@ -156,6 +156,7 @@ const chosenIngredientsContainer = document.querySelector(
   ".chosen-ingredients-container"
 );
 const submitMealBtn = document.querySelector(".submit-meal-btn");
+const editMealBtn = document.querySelector(".edit-meal-btn");
 // ===============total ingredients Container and macros selectors==============
 const totalIngredientsMacros = document.querySelector(
   ".total-ingredients-macros"
@@ -185,6 +186,15 @@ window.onbeforeunload = () => {
 const backBtn = document.querySelector(".back-btn");
 
 backBtn.addEventListener("click", () => {
+  window.location = "http://192.168.1.195:3000/MyNutrition/myNutrition.html";
+});
+submitDietBtn.addEventListener("click", async () => {
+  const diet = await axios.post("/api/v1/diet", {
+    name: Diet.name,
+    meals: Diet.meals,
+  });
+
+  window.onbeforeunload = null;
   window.location = "http://192.168.1.195:3000/MyNutrition/myNutrition.html";
 });
 // ===============event listener for adding program/ edit icon / and edit program name =============
@@ -231,6 +241,9 @@ addIngredientsBtn.addEventListener("click", () => {
   ingredientsContainer.classList.remove("display-flex");
   overlay.classList.add("display-none");
   createdMealsContainer.classList.remove("display-flex");
+  if (!editMealBtn.classList.contains("display-flex")) {
+    submitMealBtn.classList.add("display-flex");
+  }
   totalDietMacros.classList.remove("display-flex");
   submitDietBtn.classList.add("display-none");
 });
@@ -238,7 +251,9 @@ addIngredientsBtn.addEventListener("click", () => {
 submitMealBtn.addEventListener("click", () => {
   submitMealFunction();
 });
-
+editMealBtn.addEventListener("click", () => {
+  editMealFunction();
+});
 // ========displaying the ingredients we have inside the ingredient list container
 
 const displayIngredientsArray = (arr) => {
@@ -343,8 +358,12 @@ const displayChosenIngredients = () => {
   if (selectedIngredientsArray.length === 0) {
     totalIngredientsMacros.classList.remove("display-flex");
     submitMealBtn.classList.remove("display-flex");
+    if (!editMealBtn.classList.contains("display-flex")) {
+      totalDietMacros.classList.add("display-flex");
+      submitDietBtn.classList.remove("display-none");
+      createdMealsContainer.classList.add("display-flex");
+    }
   } else {
-    submitMealBtn.classList.add("display-flex");
     totalIngredientsMacros.classList.add("display-flex");
     for (let i = 0; i < selectedIngredientsArray.length; i++) {
       let ingredient = selectedIngredientsArray[i];
@@ -399,12 +418,14 @@ const displayChosenIngredients = () => {
       if (indexInSelectedArray !== -1) {
         selectedIngredientsArray.splice(indexInSelectedArray, 1);
         displayChosenIngredients();
-        const indexInExercisesArray = ingredientsArray.findIndex((Element) => {
-          return Element.name === name;
-        });
+        const indexInIngredientsArray = ingredientsArray.findIndex(
+          (Element) => {
+            return Element.name === name;
+          }
+        );
 
-        if (indexInExercisesArray !== -1) {
-          ingredientsArray[indexInExercisesArray].selected = false;
+        if (indexInIngredientsArray !== -1) {
+          ingredientsArray[indexInIngredientsArray].selected = false;
         }
       }
     });
@@ -427,7 +448,7 @@ const displayChosenIngredients = () => {
       let inputIndex = portionInput.dataset.input;
       const ingredient = selectedIngredientsArray[inputIndex];
       const originalIngredientIndex = ingredientsArray.findIndex((Element) => {
-        return (Element.name = ingredient.name);
+        return Element.name === ingredient.name;
       });
       if (originalIngredientIndex !== -1) {
         const originalIngredient = ingredientsArray[originalIngredientIndex];
@@ -549,9 +570,11 @@ const displayMeals = () => {
   createdMealsContainer.innerHTML = "";
 
   if (Diet.meals.length === 0) {
+    createdMealsContainer.classList.remove("display-flex");
     totalDietMacros.classList.remove("display-flex");
     submitDietBtn.classList.add("display-none");
   } else {
+    createdMealsContainer.classList.add("display-flex");
     for (let i = 0; i < Diet.meals.length; i++) {
       let meal = Diet.meals[i];
       createdMealsContainer.innerHTML += `<div class="one-meal-container">
@@ -560,7 +583,7 @@ const displayMeals = () => {
         <i
           class="fa-solid fa-list"
           id="show-ingredient"
-          data-ingredient=${i}
+          data-overview=${i}
         ></i>
         <p class="meal-name">meal ${i + 1}</p>
         <div class="tools">
@@ -572,8 +595,9 @@ const displayMeals = () => {
           ></i>
         </div>
       </div>
-      <div class="meal-overview"></div>
+      
     </div>
+    <div class="meal-overview"></div>
     <div class="total-meal-macros">
       <div class="macros-info">
         <span>cal.</span>
@@ -594,20 +618,130 @@ const displayMeals = () => {
     </div>
   </div>`;
     }
+
+    // ===========total macros per meal and total macros per diet ==========
     totalDietMacros.classList.add("display-flex");
     submitDietBtn.classList.remove("display-none");
     totalDietCalFunction();
     totalDietCarbsFunction();
     totalDietFatFunction();
     totalDietProtFunction();
+
+    // ==============================delete meals  =================
+    const deleteMealBtns = document.querySelectorAll("#delete-meal");
+    deleteMealBtns.forEach((btn) => {
+      let MealIndex = btn.dataset.delete;
+      btn.addEventListener("click", () => {
+        Diet.meals.splice(MealIndex, 1);
+        displayMeals();
+      });
+    });
+
+    // ========================edit meals ============================
+
+    const editMealBtns = document.querySelectorAll("#edit-meal-icon");
+    editMealBtns.forEach((editBtn) => {
+      editBtn.addEventListener("click", () => {
+        let mealIndex = editBtn.dataset.edit;
+        localStorage.setItem("mealIndex", JSON.stringify(mealIndex));
+        selectedIngredientsArray = Diet.meals[mealIndex].ingredients;
+
+        displayChosenIngredients();
+        changeSelectedToTrue();
+        totalDietMacros.classList.remove("display-flex");
+        submitDietBtn.classList.add("display-none");
+        createdMealsContainer.classList.remove("display-flex");
+        submitMealBtn.classList.remove("display-flex");
+        editMealBtn.classList.add("display-flex");
+      });
+    });
+
+    // =============meal overview ============================
+    const oneMeal = document.querySelectorAll(".one-meal-container");
+    oneMeal.forEach((meal) => {
+      const toggleOverview = meal.querySelector("#show-ingredient");
+      const overviewContainer = meal.querySelector(".meal-overview");
+
+      toggleOverview.addEventListener("click", () => {
+        const mealIndex = toggleOverview.dataset.overview;
+        overviewContainer.innerHTML = ``;
+        oneMeal.forEach((subMeal) => {
+          if (subMeal === meal) {
+            subMeal.classList.toggle("show-ingredients");
+            const ingredients = Diet.meals[mealIndex].ingredients;
+
+            for (let e = 0; e < ingredients.length; e++) {
+              let ingredient = ingredients[e];
+              overviewContainer.innerHTML += `<div class="one-ingredient-overview-container"> 
+<div class="ingredient-info">
+<h2 class="name">${ingredient.name}</h2>
+<div class="info-input-container">
+<div class = "portion-overview"
+<p>${ingredient.portion} ${ingredient.type}</p>
+</div>
+</div>
+</div>
+<div class="ingredient-macros">
+<div class="macros-info">
+<span>cal.</span>
+<p class="cal-value">${ingredient.calories}</p>
+</div>
+<div class="macros-info">
+<span>carbs</span>
+<p class="carbs-value">${ingredient.carbs} g</p>
+</div>
+<div class="macros-info">
+<span>prot</span>
+<p class="prot-value">${ingredient.proteine}g</p>
+</div>
+<div class="macros-info">
+<span>fat</span>
+<p class="fat-value">${ingredient.fat}g</p>
+</div>
+</div>
+</div>`;
+            }
+          } else {
+            subMeal.classList.remove("show-ingredients");
+          }
+        });
+      });
+    });
   }
 };
 
+const editMealFunction = () => {
+  const mealIndex = JSON.parse(localStorage.getItem("mealIndex"));
+  submitDietBtn.classList.add("display-flex");
+  editMealBtn.classList.remove("display-flex");
+
+  let meal = Diet.meals[mealIndex];
+
+  meal.calories = totalIngredientsCal.textContent;
+  meal.carbs = totalIngredientsCarbs.textContent;
+  meal.proteine = totalIngredientsProt.textContent;
+  meal.fat = totalIngredientsFat.textContent;
+  meal.ingredients = selectedIngredientsArray;
+  console.log(meal);
+  localStorage.removeItem("mealIndex");
+  selectedIngredientsArray = [];
+
+  for (let i = 0; i < ingredientsArray.length; i++) {
+    if (ingredientsArray[i].selected === true) {
+      ingredientsArray[i].selected = false;
+    }
+  }
+  displayChosenIngredients();
+  displayIngredientsArray(ingredientsArray);
+  displayMeals();
+};
+
+// ========================total Diet calc function =============
 const totalDietCarbsFunction = () => {
   const meals = Diet.meals;
   const total = meals.reduce((sum, meal) => {
     let carbs = meal.carbs.slice(0, meal.carbs.length - 1);
-    let currentCarbs = parseInt(carbs);
+    let currentCarbs = parseFloat(carbs);
     return currentCarbs + sum;
   }, 0);
   totalDietCarbs.textContent = `${total}g`;
@@ -616,7 +750,7 @@ const totalDietProtFunction = () => {
   const meals = Diet.meals;
   const total = meals.reduce((sum, meal) => {
     let prot = meal.proteine.slice(0, meal.proteine.length - 1);
-    let currentProt = parseInt(prot);
+    let currentProt = parseFloat(prot);
     return currentProt + sum;
   }, 0);
   totalDietProt.textContent = `${total}g`;
@@ -625,7 +759,7 @@ const totalDietFatFunction = () => {
   const meals = Diet.meals;
   const total = meals.reduce((sum, meal) => {
     let fat = meal.fat.slice(0, meal.fat.length - 1);
-    let currentFat = parseInt(fat);
+    let currentFat = parseFloat(fat);
     return currentFat + sum;
   }, 0);
   totalDietFat.textContent = `${total}g`;
@@ -633,8 +767,24 @@ const totalDietFatFunction = () => {
 const totalDietCalFunction = () => {
   const meals = Diet.meals;
   const total = meals.reduce((sum, meal) => {
-    let currentCalories = parseInt(meal.calories);
+    let currentCalories = parseFloat(meal.calories);
     return currentCalories + sum;
   }, 0);
   totalDietCal.textContent = total;
+};
+
+// ====================set conditions for displaying  if rest day is true then manage stuff======
+
+const changeSelectedToTrue = () => {
+  for (let i = 0; i < selectedIngredientsArray.length; i++) {
+    const index = ingredientsArray.findIndex((Element) => {
+      return Element.name === selectedIngredientsArray[i].name;
+    });
+
+    if (index !== -1) {
+      ingredientsArray[index].selected = true;
+    } else {
+      console.log("false");
+    }
+  }
 };
