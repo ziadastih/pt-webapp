@@ -19,12 +19,14 @@ createNewProgramBtn.addEventListener("click", () => {
   window.location =
     "http://192.168.1.195:3000/createWorkout/createWorkout.html";
 });
+console.log(performance.now());
 
 // ================fetch workouts ===================
 const getWorkouts = async () => {
   try {
     // ============getting the data ===============
-    const { data } = await axios.get("/api/v1/workoutProgram");
+    const { data } = await axios.get("/api/v1/workoutProgram/?count=10");
+    console.log(performance.now());
     //  =========if length is === 0 means no workouts we want to display the create item =============
     const length = data.workoutprograms.length;
 

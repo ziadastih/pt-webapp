@@ -3,9 +3,14 @@ const { StatusCodes } = require("http-status-codes");
 
 // ===============get all workouts =================
 const getAllWorkoutPrograms = async (req, res) => {
+  const count = req.query.count;
+
   const workoutprograms = await WorkoutProgram.find({
     createdBy: req.coach.coachId,
-  });
+  })
+    .lean()
+    .limit(10);
+
   res.status(StatusCodes.OK).json({ workoutprograms });
 };
 

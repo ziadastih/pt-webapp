@@ -1,2119 +1,4031 @@
 [
   {
+    "name": "Jad's plan",
     "createdBy": "632c945f1ba5f0bcfc9be699",
-    "name": "push/pull",
     "weeks": [
       {
         "days": [
           {
+            "name": "monday",
             "workouts": [
               {
                 "name": "legs",
-                "type": "am",
                 "exercises": [
                   {
-                    "name": "squats",
-                    "reps": "15-12-10-8",
-                    "sets": "4",
-                    "tempo": "-",
-                    "rest": "120s"
+                    "name": "Seated Alternating Hammer Curls",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "https://www.youtube.com/embed/AFWRIzDA5zI",
+                    "note": "",
+                    "rep": "10-15",
+                    "set": "4",
+                    "tempo": "",
+                    "chain": true,
+                    "type": "",
+                    "rest": "60"
                   },
                   {
-                    "name": "leg press",
-                    "reps": "8-10",
-                    "sets": "2",
-                    "tempo": "2-1-1-0",
-                    "rest": "120s"
+                    "name": "Rotating Alternate Incline Bicep Curls",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "https://www.youtube.com/embed/KM5Y9GBTcyU",
+                    "note": "",
+                    "rep": "12",
+                    "set": "3",
+                    "tempo": "",
+                    "chain": false,
+                    "type": "",
+                    "rest": "90"
                   },
                   {
-                    "name": "sumo leg press",
-                    "reps": "10-15",
-                    "sets": "2",
-                    "tempo": "rp on 2nd",
-                    "rest": "120s"
-                  },
-                  {
-                    "name": "bulgarian lunges",
-                    "reps": "8",
-                    "sets": "2",
-                    "tempo": "-",
-                    "rest": "60s"
-                  },
-                  {
-                    "name": "leg extension",
-                    "reps": "8-10",
-                    "sets": "2",
-                    "tempo": "-",
-                    "rest": "60s"
-                  },
-                  {
-                    "name": "leg curls",
-                    "reps": "15-30",
-                    "sets": "2",
-                    "tempo": "-",
-                    "rest": "60s"
-                  },
-                  {
-                    "name": "standing calf raises",
-                    "reps": "100",
-                    "sets": "1",
-                    "tempo": "-",
-                    "rest": "120s"
+                    "name": "Alternating Deltoid Raise",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "video url",
+                    "note": "",
+                    "rep": "",
+                    "set": "",
+                    "tempo": "",
+                    "chain": false,
+                    "type": "rest-pause",
+                    "rest": ""
                   }
                 ]
-              },
+              }
+            ]
+          },
+          {
+            "name": "tuesday",
+            "workouts": [
               {
                 "name": "push",
-                "type": "pm",
                 "exercises": [
                   {
-                    "name": "incline dumble press",
-                    "reps": "8-12",
-                    "sets": "4",
-                    "tempo": "2-1-1-0",
-                    "rest": "120s"
+                    "name": "Seated Alternating Hammer Curls",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "https://www.youtube.com/embed/AFWRIzDA5zI",
+                    "note": "",
+                    "rep": "",
+                    "set": "",
+                    "tempo": "",
+                    "chain": true,
+                    "type": "",
+                    "rest": ""
                   },
                   {
-                    "name": "low to high cable fly",
-                    "reps": "12",
-                    "sets": "3",
-                    "tempo": "-",
-                    "rest": "60-90s"
+                    "name": "Rotating Alternate Incline Bicep Curls",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "https://www.youtube.com/embed/KM5Y9GBTcyU",
+                    "note": "",
+                    "rep": "",
+                    "set": "",
+                    "tempo": "",
+                    "chain": false,
+                    "type": "rest-pause",
+                    "rest": ""
                   },
                   {
-                    "name": "bench press",
-                    "reps": "8",
-                    "sets": "3",
-                    "tempo": "2-1-1-0",
-                    "rest": "120s"
-                  },
-                  {
-                    "name": "pec dec fly",
-                    "reps": "12",
-                    "sets": "3",
-                    "tempo": "-",
-                    "rest": "120s"
-                  },
-                  {
-                    "name": "lateral raises",
-                    "reps": "20",
-                    "sets": "5",
-                    "tempo": "-",
-                    "rest": "30s"
-                  },
-                  {
-                    "name": "one arm overhead triceps cable extention",
-                    "reps": "10-15",
-                    "sets": "2",
-                    "tempo": "-",
-                    "rest": "60s"
-                  },
-                  {
-                    "name": "straight bar triceps pushdown",
-                    "reps": "10-15",
-                    "sets": "2",
-                    "tempo": "-",
-                    "rest": "60s"
+                    "name": "Alternating Deltoid Raise",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "video url",
+                    "note": "",
+                    "rep": "",
+                    "set": "",
+                    "tempo": "",
+                    "chain": false,
+                    "type": "dropset",
+                    "rest": ""
                   }
                 ]
               }
             ]
           },
           {
+            "name": "wednesday",
             "workouts": [
               {
-                "name": "legs",
-                "type": "am",
+                "name": "pull",
                 "exercises": [
                   {
-                    "name": "squats",
-                    "reps": "15-12-10-8",
-                    "sets": "4",
-                    "tempo": "-",
-                    "rest": "120s"
+                    "name": "Seated Alternating Hammer Curls",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "https://www.youtube.com/embed/AFWRIzDA5zI",
+                    "note": "",
+                    "rep": "",
+                    "set": "",
+                    "tempo": "",
+                    "chain": true,
+                    "type": "",
+                    "rest": ""
                   },
                   {
-                    "name": "leg press",
-                    "reps": "8-10",
-                    "sets": "2",
-                    "tempo": "2-1-1-0",
-                    "rest": "120s"
+                    "name": "Rotating Alternate Incline Bicep Curls",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "https://www.youtube.com/embed/KM5Y9GBTcyU",
+                    "note": "",
+                    "rep": "",
+                    "set": "",
+                    "tempo": "",
+                    "chain": true,
+                    "type": "rest-pause",
+                    "rest": ""
                   },
                   {
-                    "name": "sumo leg press",
-                    "reps": "10-15",
-                    "sets": "2",
-                    "tempo": "rp on 2nd",
-                    "rest": "120s"
-                  },
-                  {
-                    "name": "bulgarian lunges",
-                    "reps": "8",
-                    "sets": "2",
-                    "tempo": "-",
-                    "rest": "60s"
-                  },
-                  {
-                    "name": "leg extension",
-                    "reps": "8-10",
-                    "sets": "2",
-                    "tempo": "-",
-                    "rest": "60s"
-                  },
-                  {
-                    "name": "leg curls",
-                    "reps": "15-30",
-                    "sets": "2",
-                    "tempo": "-",
-                    "rest": "60s"
-                  },
-                  {
-                    "name": "standing calf raises",
-                    "reps": "100",
-                    "sets": "1",
-                    "tempo": "-",
-                    "rest": "120s"
-                  }
-                ]
-              },
-              {
-                "name": "push",
-                "type": "pm",
-                "exercises": [
-                  {
-                    "name": "incline dumble press",
-                    "reps": "8-12",
-                    "sets": "4",
-                    "tempo": "2-1-1-0",
-                    "rest": "120s"
-                  },
-                  {
-                    "name": "low to high cable fly",
-                    "reps": "12",
-                    "sets": "3",
-                    "tempo": "-",
-                    "rest": "60-90s"
-                  },
-                  {
-                    "name": "bench press",
-                    "reps": "8",
-                    "sets": "3",
-                    "tempo": "2-1-1-0",
-                    "rest": "120s"
-                  },
-                  {
-                    "name": "pec dec fly",
-                    "reps": "12",
-                    "sets": "3",
-                    "tempo": "-",
-                    "rest": "120s"
-                  },
-                  {
-                    "name": "lateral raises",
-                    "reps": "20",
-                    "sets": "5",
-                    "tempo": "-",
-                    "rest": "30s"
-                  },
-                  {
-                    "name": "one arm overhead triceps cable extention",
-                    "reps": "10-15",
-                    "sets": "2",
-                    "tempo": "-",
-                    "rest": "60s"
-                  },
-                  {
-                    "name": "straight bar triceps pushdown",
-                    "reps": "10-15",
-                    "sets": "2",
-                    "tempo": "-",
-                    "rest": "60s"
+                    "name": "Alternating Deltoid Raise",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "video url",
+                    "note": "",
+                    "rep": "",
+                    "set": "",
+                    "tempo": "",
+                    "chain": false,
+                    "type": "",
+                    "rest": ""
                   }
                 ]
               }
             ]
           },
           {
+            "name": "thursday",
             "workouts": [
               {
-                "name": "legs",
-                "type": "am",
-                "exercises": [
-                  {
-                    "name": "squats",
-                    "reps": "15-12-10-8",
-                    "sets": "4",
-                    "tempo": "-",
-                    "rest": "120s"
-                  },
-                  {
-                    "name": "leg press",
-                    "reps": "8-10",
-                    "sets": "2",
-                    "tempo": "2-1-1-0",
-                    "rest": "120s"
-                  },
-                  {
-                    "name": "sumo leg press",
-                    "reps": "10-15",
-                    "sets": "2",
-                    "tempo": "rp on 2nd",
-                    "rest": "120s"
-                  },
-                  {
-                    "name": "bulgarian lunges",
-                    "reps": "8",
-                    "sets": "2",
-                    "tempo": "-",
-                    "rest": "60s"
-                  },
-                  {
-                    "name": "leg extension",
-                    "reps": "8-10",
-                    "sets": "2",
-                    "tempo": "-",
-                    "rest": "60s"
-                  },
-                  {
-                    "name": "leg curls",
-                    "reps": "15-30",
-                    "sets": "2",
-                    "tempo": "-",
-                    "rest": "60s"
-                  },
-                  {
-                    "name": "standing calf raises",
-                    "reps": "100",
-                    "sets": "1",
-                    "tempo": "-",
-                    "rest": "120s"
-                  }
-                ]
+                "name": "rest day"
               }
             ]
           },
           {
-            "workouts": [
-              {
-                "name": "legs",
-                "type": "am",
-                "exercises": [
-                  {
-                    "name": "squats",
-                    "reps": "15-12-10-8",
-                    "sets": "4",
-                    "tempo": "-",
-                    "rest": "120s"
-                  },
-                  {
-                    "name": "leg press",
-                    "reps": "8-10",
-                    "sets": "2",
-                    "tempo": "2-1-1-0",
-                    "rest": "120s"
-                  },
-                  {
-                    "name": "sumo leg press",
-                    "reps": "10-15",
-                    "sets": "2",
-                    "tempo": "rp on 2nd",
-                    "rest": "120s"
-                  },
-                  {
-                    "name": "bulgarian lunges",
-                    "reps": "8",
-                    "sets": "2",
-                    "tempo": "-",
-                    "rest": "60s"
-                  },
-                  {
-                    "name": "leg extension",
-                    "reps": "8-10",
-                    "sets": "2",
-                    "tempo": "-",
-                    "rest": "60s"
-                  },
-                  {
-                    "name": "leg curls",
-                    "reps": "15-30",
-                    "sets": "2",
-                    "tempo": "-",
-                    "rest": "60s"
-                  },
-                  {
-                    "name": "standing calf raises",
-                    "reps": "100",
-                    "sets": "1",
-                    "tempo": "-",
-                    "rest": "120s"
-                  }
-                ]
-              }
-            ]
+            "name": "friday",
+            "workouts": []
           },
           {
-            "workouts": [
-              {
-                "name": "legs",
-                "type": "am",
-                "exercises": [
-                  {
-                    "name": "squats",
-                    "reps": "15-12-10-8",
-                    "sets": "4",
-                    "tempo": "-",
-                    "rest": "120s"
-                  },
-                  {
-                    "name": "leg press",
-                    "reps": "8-10",
-                    "sets": "2",
-                    "tempo": "2-1-1-0",
-                    "rest": "120s"
-                  },
-                  {
-                    "name": "sumo leg press",
-                    "reps": "10-15",
-                    "sets": "2",
-                    "tempo": "rp on 2nd",
-                    "rest": "120s"
-                  },
-                  {
-                    "name": "bulgarian lunges",
-                    "reps": "8",
-                    "sets": "2",
-                    "tempo": "-",
-                    "rest": "60s"
-                  },
-                  {
-                    "name": "leg extension",
-                    "reps": "8-10",
-                    "sets": "2",
-                    "tempo": "-",
-                    "rest": "60s"
-                  },
-                  {
-                    "name": "leg curls",
-                    "reps": "15-30",
-                    "sets": "2",
-                    "tempo": "-",
-                    "rest": "60s"
-                  },
-                  {
-                    "name": "standing calf raises",
-                    "reps": "100",
-                    "sets": "1",
-                    "tempo": "-",
-                    "rest": "120s"
-                  }
-                ]
-              }
-            ]
+            "name": "saturday",
+            "workouts": []
           },
           {
-            "workouts": [
-              {
-                "name": "legs",
-                "type": "am",
-                "exercises": [
-                  {
-                    "name": "squats",
-                    "reps": "15-12-10-8",
-                    "sets": "4",
-                    "tempo": "-",
-                    "rest": "120s"
-                  },
-                  {
-                    "name": "leg press",
-                    "reps": "8-10",
-                    "sets": "2",
-                    "tempo": "2-1-1-0",
-                    "rest": "120s"
-                  },
-                  {
-                    "name": "sumo leg press",
-                    "reps": "10-15",
-                    "sets": "2",
-                    "tempo": "rp on 2nd",
-                    "rest": "120s"
-                  },
-                  {
-                    "name": "bulgarian lunges",
-                    "reps": "8",
-                    "sets": "2",
-                    "tempo": "-",
-                    "rest": "60s"
-                  },
-                  {
-                    "name": "leg extension",
-                    "reps": "8-10",
-                    "sets": "2",
-                    "tempo": "-",
-                    "rest": "60s"
-                  },
-                  {
-                    "name": "leg curls",
-                    "reps": "15-30",
-                    "sets": "2",
-                    "tempo": "-",
-                    "rest": "60s"
-                  },
-                  {
-                    "name": "standing calf raises",
-                    "reps": "100",
-                    "sets": "1",
-                    "tempo": "-",
-                    "rest": "120s"
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "workouts": [
-              {
-                "name": "legs",
-                "type": "am",
-                "exercises": [
-                  {
-                    "name": "squats",
-                    "reps": "15-12-10-8",
-                    "sets": "4",
-                    "tempo": "-",
-                    "rest": "120s"
-                  },
-                  {
-                    "name": "leg press",
-                    "reps": "8-10",
-                    "sets": "2",
-                    "tempo": "2-1-1-0",
-                    "rest": "120s"
-                  },
-                  {
-                    "name": "sumo leg press",
-                    "reps": "10-15",
-                    "sets": "2",
-                    "tempo": "rp on 2nd",
-                    "rest": "120s"
-                  },
-                  {
-                    "name": "bulgarian lunges",
-                    "reps": "8",
-                    "sets": "2",
-                    "tempo": "-",
-                    "rest": "60s"
-                  },
-                  {
-                    "name": "leg extension",
-                    "reps": "8-10",
-                    "sets": "2",
-                    "tempo": "-",
-                    "rest": "60s"
-                  },
-                  {
-                    "name": "leg curls",
-                    "reps": "15-30",
-                    "sets": "2",
-                    "tempo": "-",
-                    "rest": "60s"
-                  },
-                  {
-                    "name": "standing calf raises",
-                    "reps": "100",
-                    "sets": "1",
-                    "tempo": "-",
-                    "rest": "120s"
-                  }
-                ]
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "days": [
-          {
-            "workouts": [
-              {
-                "name": "legs",
-                "type": "am",
-                "exercises": [
-                  {
-                    "name": "squats",
-                    "reps": "15-12-10-8",
-                    "sets": "4",
-                    "tempo": "-",
-                    "rest": "120s"
-                  },
-                  {
-                    "name": "leg press",
-                    "reps": "8-10",
-                    "sets": "2",
-                    "tempo": "2-1-1-0",
-                    "rest": "120s"
-                  },
-                  {
-                    "name": "sumo leg press",
-                    "reps": "10-15",
-                    "sets": "2",
-                    "tempo": "rp on 2nd",
-                    "rest": "120s"
-                  },
-                  {
-                    "name": "bulgarian lunges",
-                    "reps": "8",
-                    "sets": "2",
-                    "tempo": "-",
-                    "rest": "60s"
-                  },
-                  {
-                    "name": "leg extension",
-                    "reps": "8-10",
-                    "sets": "2",
-                    "tempo": "-",
-                    "rest": "60s"
-                  },
-                  {
-                    "name": "leg curls",
-                    "reps": "15-30",
-                    "sets": "2",
-                    "tempo": "-",
-                    "rest": "60s"
-                  },
-                  {
-                    "name": "standing calf raises",
-                    "reps": "100",
-                    "sets": "1",
-                    "tempo": "-",
-                    "rest": "120s"
-                  }
-                ]
-              },
-              {
-                "name": "push",
-                "type": "pm",
-                "exercises": [
-                  {
-                    "name": "incline dumble press",
-                    "reps": "8-12",
-                    "sets": "4",
-                    "tempo": "2-1-1-0",
-                    "rest": "120s"
-                  },
-                  {
-                    "name": "low to high cable fly",
-                    "reps": "12",
-                    "sets": "3",
-                    "tempo": "-",
-                    "rest": "60-90s"
-                  },
-                  {
-                    "name": "bench press",
-                    "reps": "8",
-                    "sets": "3",
-                    "tempo": "2-1-1-0",
-                    "rest": "120s"
-                  },
-                  {
-                    "name": "pec dec fly",
-                    "reps": "12",
-                    "sets": "3",
-                    "tempo": "-",
-                    "rest": "120s"
-                  },
-                  {
-                    "name": "lateral raises",
-                    "reps": "20",
-                    "sets": "5",
-                    "tempo": "-",
-                    "rest": "30s"
-                  },
-                  {
-                    "name": "one arm overhead triceps cable extention",
-                    "reps": "10-15",
-                    "sets": "2",
-                    "tempo": "-",
-                    "rest": "60s"
-                  },
-                  {
-                    "name": "straight bar triceps pushdown",
-                    "reps": "10-15",
-                    "sets": "2",
-                    "tempo": "-",
-                    "rest": "60s"
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "workouts": [
-              {
-                "name": "legs",
-                "type": "am",
-                "exercises": [
-                  {
-                    "name": "squats",
-                    "reps": "15-12-10-8",
-                    "sets": "4",
-                    "tempo": "-",
-                    "rest": "120s"
-                  },
-                  {
-                    "name": "leg press",
-                    "reps": "8-10",
-                    "sets": "2",
-                    "tempo": "2-1-1-0",
-                    "rest": "120s"
-                  },
-                  {
-                    "name": "sumo leg press",
-                    "reps": "10-15",
-                    "sets": "2",
-                    "tempo": "rp on 2nd",
-                    "rest": "120s"
-                  },
-                  {
-                    "name": "bulgarian lunges",
-                    "reps": "8",
-                    "sets": "2",
-                    "tempo": "-",
-                    "rest": "60s"
-                  },
-                  {
-                    "name": "leg extension",
-                    "reps": "8-10",
-                    "sets": "2",
-                    "tempo": "-",
-                    "rest": "60s"
-                  },
-                  {
-                    "name": "leg curls",
-                    "reps": "15-30",
-                    "sets": "2",
-                    "tempo": "-",
-                    "rest": "60s"
-                  },
-                  {
-                    "name": "standing calf raises",
-                    "reps": "100",
-                    "sets": "1",
-                    "tempo": "-",
-                    "rest": "120s"
-                  }
-                ]
-              },
-              {
-                "name": "push",
-                "type": "pm",
-                "exercises": [
-                  {
-                    "name": "incline dumble press",
-                    "reps": "8-12",
-                    "sets": "4",
-                    "tempo": "2-1-1-0",
-                    "rest": "120s"
-                  },
-                  {
-                    "name": "low to high cable fly",
-                    "reps": "12",
-                    "sets": "3",
-                    "tempo": "-",
-                    "rest": "60-90s"
-                  },
-                  {
-                    "name": "bench press",
-                    "reps": "8",
-                    "sets": "3",
-                    "tempo": "2-1-1-0",
-                    "rest": "120s"
-                  },
-                  {
-                    "name": "pec dec fly",
-                    "reps": "12",
-                    "sets": "3",
-                    "tempo": "-",
-                    "rest": "120s"
-                  },
-                  {
-                    "name": "lateral raises",
-                    "reps": "20",
-                    "sets": "5",
-                    "tempo": "-",
-                    "rest": "30s"
-                  },
-                  {
-                    "name": "one arm overhead triceps cable extention",
-                    "reps": "10-15",
-                    "sets": "2",
-                    "tempo": "-",
-                    "rest": "60s"
-                  },
-                  {
-                    "name": "straight bar triceps pushdown",
-                    "reps": "10-15",
-                    "sets": "2",
-                    "tempo": "-",
-                    "rest": "60s"
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "workouts": [
-              {
-                "name": "legs",
-                "type": "am",
-                "exercises": [
-                  {
-                    "name": "squats",
-                    "reps": "15-12-10-8",
-                    "sets": "4",
-                    "tempo": "-",
-                    "rest": "120s"
-                  },
-                  {
-                    "name": "leg press",
-                    "reps": "8-10",
-                    "sets": "2",
-                    "tempo": "2-1-1-0",
-                    "rest": "120s"
-                  },
-                  {
-                    "name": "sumo leg press",
-                    "reps": "10-15",
-                    "sets": "2",
-                    "tempo": "rp on 2nd",
-                    "rest": "120s"
-                  },
-                  {
-                    "name": "bulgarian lunges",
-                    "reps": "8",
-                    "sets": "2",
-                    "tempo": "-",
-                    "rest": "60s"
-                  },
-                  {
-                    "name": "leg extension",
-                    "reps": "8-10",
-                    "sets": "2",
-                    "tempo": "-",
-                    "rest": "60s"
-                  },
-                  {
-                    "name": "leg curls",
-                    "reps": "15-30",
-                    "sets": "2",
-                    "tempo": "-",
-                    "rest": "60s"
-                  },
-                  {
-                    "name": "standing calf raises",
-                    "reps": "100",
-                    "sets": "1",
-                    "tempo": "-",
-                    "rest": "120s"
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "workouts": [
-              {
-                "name": "legs",
-                "type": "am",
-                "exercises": [
-                  {
-                    "name": "squats",
-                    "reps": "15-12-10-8",
-                    "sets": "4",
-                    "tempo": "-",
-                    "rest": "120s"
-                  },
-                  {
-                    "name": "leg press",
-                    "reps": "8-10",
-                    "sets": "2",
-                    "tempo": "2-1-1-0",
-                    "rest": "120s"
-                  },
-                  {
-                    "name": "sumo leg press",
-                    "reps": "10-15",
-                    "sets": "2",
-                    "tempo": "rp on 2nd",
-                    "rest": "120s"
-                  },
-                  {
-                    "name": "bulgarian lunges",
-                    "reps": "8",
-                    "sets": "2",
-                    "tempo": "-",
-                    "rest": "60s"
-                  },
-                  {
-                    "name": "leg extension",
-                    "reps": "8-10",
-                    "sets": "2",
-                    "tempo": "-",
-                    "rest": "60s"
-                  },
-                  {
-                    "name": "leg curls",
-                    "reps": "15-30",
-                    "sets": "2",
-                    "tempo": "-",
-                    "rest": "60s"
-                  },
-                  {
-                    "name": "standing calf raises",
-                    "reps": "100",
-                    "sets": "1",
-                    "tempo": "-",
-                    "rest": "120s"
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "workouts": [
-              {
-                "name": "legs",
-                "type": "am",
-                "exercises": [
-                  {
-                    "name": "squats",
-                    "reps": "15-12-10-8",
-                    "sets": "4",
-                    "tempo": "-",
-                    "rest": "120s"
-                  },
-                  {
-                    "name": "leg press",
-                    "reps": "8-10",
-                    "sets": "2",
-                    "tempo": "2-1-1-0",
-                    "rest": "120s"
-                  },
-                  {
-                    "name": "sumo leg press",
-                    "reps": "10-15",
-                    "sets": "2",
-                    "tempo": "rp on 2nd",
-                    "rest": "120s"
-                  },
-                  {
-                    "name": "bulgarian lunges",
-                    "reps": "8",
-                    "sets": "2",
-                    "tempo": "-",
-                    "rest": "60s"
-                  },
-                  {
-                    "name": "leg extension",
-                    "reps": "8-10",
-                    "sets": "2",
-                    "tempo": "-",
-                    "rest": "60s"
-                  },
-                  {
-                    "name": "leg curls",
-                    "reps": "15-30",
-                    "sets": "2",
-                    "tempo": "-",
-                    "rest": "60s"
-                  },
-                  {
-                    "name": "standing calf raises",
-                    "reps": "100",
-                    "sets": "1",
-                    "tempo": "-",
-                    "rest": "120s"
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "workouts": [
-              {
-                "name": "legs",
-                "type": "am",
-                "exercises": [
-                  {
-                    "name": "squats",
-                    "reps": "15-12-10-8",
-                    "sets": "4",
-                    "tempo": "-",
-                    "rest": "120s"
-                  },
-                  {
-                    "name": "leg press",
-                    "reps": "8-10",
-                    "sets": "2",
-                    "tempo": "2-1-1-0",
-                    "rest": "120s"
-                  },
-                  {
-                    "name": "sumo leg press",
-                    "reps": "10-15",
-                    "sets": "2",
-                    "tempo": "rp on 2nd",
-                    "rest": "120s"
-                  },
-                  {
-                    "name": "bulgarian lunges",
-                    "reps": "8",
-                    "sets": "2",
-                    "tempo": "-",
-                    "rest": "60s"
-                  },
-                  {
-                    "name": "leg extension",
-                    "reps": "8-10",
-                    "sets": "2",
-                    "tempo": "-",
-                    "rest": "60s"
-                  },
-                  {
-                    "name": "leg curls",
-                    "reps": "15-30",
-                    "sets": "2",
-                    "tempo": "-",
-                    "rest": "60s"
-                  },
-                  {
-                    "name": "standing calf raises",
-                    "reps": "100",
-                    "sets": "1",
-                    "tempo": "-",
-                    "rest": "120s"
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "workouts": [
-              {
-                "name": "legs",
-                "type": "am",
-                "exercises": [
-                  {
-                    "name": "squats",
-                    "reps": "15-12-10-8",
-                    "sets": "4",
-                    "tempo": "-",
-                    "rest": "120s"
-                  },
-                  {
-                    "name": "leg press",
-                    "reps": "8-10",
-                    "sets": "2",
-                    "tempo": "2-1-1-0",
-                    "rest": "120s"
-                  },
-                  {
-                    "name": "sumo leg press",
-                    "reps": "10-15",
-                    "sets": "2",
-                    "tempo": "rp on 2nd",
-                    "rest": "120s"
-                  },
-                  {
-                    "name": "bulgarian lunges",
-                    "reps": "8",
-                    "sets": "2",
-                    "tempo": "-",
-                    "rest": "60s"
-                  },
-                  {
-                    "name": "leg extension",
-                    "reps": "8-10",
-                    "sets": "2",
-                    "tempo": "-",
-                    "rest": "60s"
-                  },
-                  {
-                    "name": "leg curls",
-                    "reps": "15-30",
-                    "sets": "2",
-                    "tempo": "-",
-                    "rest": "60s"
-                  },
-                  {
-                    "name": "standing calf raises",
-                    "reps": "100",
-                    "sets": "1",
-                    "tempo": "-",
-                    "rest": "120s"
-                  }
-                ]
-              }
-            ]
+            "name": "sunday",
+            "workouts": []
           }
         ]
       }
     ]
   },
   {
+    "name": "tanios's plan",
     "createdBy": "632c945f1ba5f0bcfc9be699",
-    "name": "push/pull",
     "weeks": [
       {
         "days": [
           {
+            "name": "monday",
             "workouts": [
               {
                 "name": "legs",
-                "type": "am",
                 "exercises": [
                   {
-                    "name": "squats",
-                    "reps": "15-12-10-8",
-                    "sets": "4",
-                    "tempo": "-",
-                    "rest": "120s"
+                    "name": "Seated Alternating Hammer Curls",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "https://www.youtube.com/embed/AFWRIzDA5zI",
+                    "note": "",
+                    "rep": "10-15",
+                    "set": "4",
+                    "tempo": "",
+                    "chain": true,
+                    "type": "",
+                    "rest": "60"
                   },
                   {
-                    "name": "leg press",
-                    "reps": "8-10",
-                    "sets": "2",
-                    "tempo": "2-1-1-0",
-                    "rest": "120s"
+                    "name": "Rotating Alternate Incline Bicep Curls",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "https://www.youtube.com/embed/KM5Y9GBTcyU",
+                    "note": "",
+                    "rep": "12",
+                    "set": "3",
+                    "tempo": "",
+                    "chain": false,
+                    "type": "",
+                    "rest": "90"
                   },
                   {
-                    "name": "sumo leg press",
-                    "reps": "10-15",
-                    "sets": "2",
-                    "tempo": "rp on 2nd",
-                    "rest": "120s"
-                  },
-                  {
-                    "name": "bulgarian lunges",
-                    "reps": "8",
-                    "sets": "2",
-                    "tempo": "-",
-                    "rest": "60s"
-                  },
-                  {
-                    "name": "leg extension",
-                    "reps": "8-10",
-                    "sets": "2",
-                    "tempo": "-",
-                    "rest": "60s"
-                  },
-                  {
-                    "name": "leg curls",
-                    "reps": "15-30",
-                    "sets": "2",
-                    "tempo": "-",
-                    "rest": "60s"
-                  },
-                  {
-                    "name": "standing calf raises",
-                    "reps": "100",
-                    "sets": "1",
-                    "tempo": "-",
-                    "rest": "120s"
+                    "name": "Alternating Deltoid Raise",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "video url",
+                    "note": "",
+                    "rep": "",
+                    "set": "",
+                    "tempo": "",
+                    "chain": false,
+                    "type": "rest-pause",
+                    "rest": ""
                   }
                 ]
-              },
+              }
+            ]
+          },
+          {
+            "name": "tuesday",
+            "workouts": [
               {
                 "name": "push",
-                "type": "pm",
                 "exercises": [
                   {
-                    "name": "incline dumble press",
-                    "reps": "8-12",
-                    "sets": "4",
-                    "tempo": "2-1-1-0",
-                    "rest": "120s"
+                    "name": "Seated Alternating Hammer Curls",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "https://www.youtube.com/embed/AFWRIzDA5zI",
+                    "note": "",
+                    "rep": "",
+                    "set": "",
+                    "tempo": "",
+                    "chain": true,
+                    "type": "",
+                    "rest": ""
                   },
                   {
-                    "name": "low to high cable fly",
-                    "reps": "12",
-                    "sets": "3",
-                    "tempo": "-",
-                    "rest": "60-90s"
+                    "name": "Rotating Alternate Incline Bicep Curls",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "https://www.youtube.com/embed/KM5Y9GBTcyU",
+                    "note": "",
+                    "rep": "",
+                    "set": "",
+                    "tempo": "",
+                    "chain": false,
+                    "type": "rest-pause",
+                    "rest": ""
                   },
                   {
-                    "name": "bench press",
-                    "reps": "8",
-                    "sets": "3",
-                    "tempo": "2-1-1-0",
-                    "rest": "120s"
-                  },
-                  {
-                    "name": "pec dec fly",
-                    "reps": "12",
-                    "sets": "3",
-                    "tempo": "-",
-                    "rest": "120s"
-                  },
-                  {
-                    "name": "lateral raises",
-                    "reps": "20",
-                    "sets": "5",
-                    "tempo": "-",
-                    "rest": "30s"
-                  },
-                  {
-                    "name": "one arm overhead triceps cable extention",
-                    "reps": "10-15",
-                    "sets": "2",
-                    "tempo": "-",
-                    "rest": "60s"
-                  },
-                  {
-                    "name": "straight bar triceps pushdown",
-                    "reps": "10-15",
-                    "sets": "2",
-                    "tempo": "-",
-                    "rest": "60s"
+                    "name": "Alternating Deltoid Raise",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "video url",
+                    "note": "",
+                    "rep": "",
+                    "set": "",
+                    "tempo": "",
+                    "chain": false,
+                    "type": "dropset",
+                    "rest": ""
                   }
                 ]
               }
             ]
           },
           {
+            "name": "wednesday",
             "workouts": [
               {
-                "name": "legs",
-                "type": "am",
+                "name": "pull",
                 "exercises": [
                   {
-                    "name": "squats",
-                    "reps": "15-12-10-8",
-                    "sets": "4",
-                    "tempo": "-",
-                    "rest": "120s"
+                    "name": "Seated Alternating Hammer Curls",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "https://www.youtube.com/embed/AFWRIzDA5zI",
+                    "note": "",
+                    "rep": "",
+                    "set": "",
+                    "tempo": "",
+                    "chain": true,
+                    "type": "",
+                    "rest": ""
                   },
                   {
-                    "name": "leg press",
-                    "reps": "8-10",
-                    "sets": "2",
-                    "tempo": "2-1-1-0",
-                    "rest": "120s"
+                    "name": "Rotating Alternate Incline Bicep Curls",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "https://www.youtube.com/embed/KM5Y9GBTcyU",
+                    "note": "",
+                    "rep": "",
+                    "set": "",
+                    "tempo": "",
+                    "chain": true,
+                    "type": "rest-pause",
+                    "rest": ""
                   },
                   {
-                    "name": "sumo leg press",
-                    "reps": "10-15",
-                    "sets": "2",
-                    "tempo": "rp on 2nd",
-                    "rest": "120s"
-                  },
-                  {
-                    "name": "bulgarian lunges",
-                    "reps": "8",
-                    "sets": "2",
-                    "tempo": "-",
-                    "rest": "60s"
-                  },
-                  {
-                    "name": "leg extension",
-                    "reps": "8-10",
-                    "sets": "2",
-                    "tempo": "-",
-                    "rest": "60s"
-                  },
-                  {
-                    "name": "leg curls",
-                    "reps": "15-30",
-                    "sets": "2",
-                    "tempo": "-",
-                    "rest": "60s"
-                  },
-                  {
-                    "name": "standing calf raises",
-                    "reps": "100",
-                    "sets": "1",
-                    "tempo": "-",
-                    "rest": "120s"
-                  }
-                ]
-              },
-              {
-                "name": "push",
-                "type": "pm",
-                "exercises": [
-                  {
-                    "name": "incline dumble press",
-                    "reps": "8-12",
-                    "sets": "4",
-                    "tempo": "2-1-1-0",
-                    "rest": "120s"
-                  },
-                  {
-                    "name": "low to high cable fly",
-                    "reps": "12",
-                    "sets": "3",
-                    "tempo": "-",
-                    "rest": "60-90s"
-                  },
-                  {
-                    "name": "bench press",
-                    "reps": "8",
-                    "sets": "3",
-                    "tempo": "2-1-1-0",
-                    "rest": "120s"
-                  },
-                  {
-                    "name": "pec dec fly",
-                    "reps": "12",
-                    "sets": "3",
-                    "tempo": "-",
-                    "rest": "120s"
-                  },
-                  {
-                    "name": "lateral raises",
-                    "reps": "20",
-                    "sets": "5",
-                    "tempo": "-",
-                    "rest": "30s"
-                  },
-                  {
-                    "name": "one arm overhead triceps cable extention",
-                    "reps": "10-15",
-                    "sets": "2",
-                    "tempo": "-",
-                    "rest": "60s"
-                  },
-                  {
-                    "name": "straight bar triceps pushdown",
-                    "reps": "10-15",
-                    "sets": "2",
-                    "tempo": "-",
-                    "rest": "60s"
+                    "name": "Alternating Deltoid Raise",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "video url",
+                    "note": "",
+                    "rep": "",
+                    "set": "",
+                    "tempo": "",
+                    "chain": false,
+                    "type": "",
+                    "rest": ""
                   }
                 ]
               }
             ]
           },
           {
+            "name": "thursday",
             "workouts": [
               {
-                "name": "legs",
-                "type": "am",
-                "exercises": [
-                  {
-                    "name": "squats",
-                    "reps": "15-12-10-8",
-                    "sets": "4",
-                    "tempo": "-",
-                    "rest": "120s"
-                  },
-                  {
-                    "name": "leg press",
-                    "reps": "8-10",
-                    "sets": "2",
-                    "tempo": "2-1-1-0",
-                    "rest": "120s"
-                  },
-                  {
-                    "name": "sumo leg press",
-                    "reps": "10-15",
-                    "sets": "2",
-                    "tempo": "rp on 2nd",
-                    "rest": "120s"
-                  },
-                  {
-                    "name": "bulgarian lunges",
-                    "reps": "8",
-                    "sets": "2",
-                    "tempo": "-",
-                    "rest": "60s"
-                  },
-                  {
-                    "name": "leg extension",
-                    "reps": "8-10",
-                    "sets": "2",
-                    "tempo": "-",
-                    "rest": "60s"
-                  },
-                  {
-                    "name": "leg curls",
-                    "reps": "15-30",
-                    "sets": "2",
-                    "tempo": "-",
-                    "rest": "60s"
-                  },
-                  {
-                    "name": "standing calf raises",
-                    "reps": "100",
-                    "sets": "1",
-                    "tempo": "-",
-                    "rest": "120s"
-                  }
-                ]
+                "name": "rest day"
               }
             ]
           },
           {
-            "workouts": [
-              {
-                "name": "legs",
-                "type": "am",
-                "exercises": [
-                  {
-                    "name": "squats",
-                    "reps": "15-12-10-8",
-                    "sets": "4",
-                    "tempo": "-",
-                    "rest": "120s"
-                  },
-                  {
-                    "name": "leg press",
-                    "reps": "8-10",
-                    "sets": "2",
-                    "tempo": "2-1-1-0",
-                    "rest": "120s"
-                  },
-                  {
-                    "name": "sumo leg press",
-                    "reps": "10-15",
-                    "sets": "2",
-                    "tempo": "rp on 2nd",
-                    "rest": "120s"
-                  },
-                  {
-                    "name": "bulgarian lunges",
-                    "reps": "8",
-                    "sets": "2",
-                    "tempo": "-",
-                    "rest": "60s"
-                  },
-                  {
-                    "name": "leg extension",
-                    "reps": "8-10",
-                    "sets": "2",
-                    "tempo": "-",
-                    "rest": "60s"
-                  },
-                  {
-                    "name": "leg curls",
-                    "reps": "15-30",
-                    "sets": "2",
-                    "tempo": "-",
-                    "rest": "60s"
-                  },
-                  {
-                    "name": "standing calf raises",
-                    "reps": "100",
-                    "sets": "1",
-                    "tempo": "-",
-                    "rest": "120s"
-                  }
-                ]
-              }
-            ]
+            "name": "friday",
+            "workouts": []
           },
           {
-            "workouts": [
-              {
-                "name": "legs",
-                "type": "am",
-                "exercises": [
-                  {
-                    "name": "squats",
-                    "reps": "15-12-10-8",
-                    "sets": "4",
-                    "tempo": "-",
-                    "rest": "120s"
-                  },
-                  {
-                    "name": "leg press",
-                    "reps": "8-10",
-                    "sets": "2",
-                    "tempo": "2-1-1-0",
-                    "rest": "120s"
-                  },
-                  {
-                    "name": "sumo leg press",
-                    "reps": "10-15",
-                    "sets": "2",
-                    "tempo": "rp on 2nd",
-                    "rest": "120s"
-                  },
-                  {
-                    "name": "bulgarian lunges",
-                    "reps": "8",
-                    "sets": "2",
-                    "tempo": "-",
-                    "rest": "60s"
-                  },
-                  {
-                    "name": "leg extension",
-                    "reps": "8-10",
-                    "sets": "2",
-                    "tempo": "-",
-                    "rest": "60s"
-                  },
-                  {
-                    "name": "leg curls",
-                    "reps": "15-30",
-                    "sets": "2",
-                    "tempo": "-",
-                    "rest": "60s"
-                  },
-                  {
-                    "name": "standing calf raises",
-                    "reps": "100",
-                    "sets": "1",
-                    "tempo": "-",
-                    "rest": "120s"
-                  }
-                ]
-              }
-            ]
+            "name": "saturday",
+            "workouts": []
           },
           {
-            "workouts": [
-              {
-                "name": "legs",
-                "type": "am",
-                "exercises": [
-                  {
-                    "name": "squats",
-                    "reps": "15-12-10-8",
-                    "sets": "4",
-                    "tempo": "-",
-                    "rest": "120s"
-                  },
-                  {
-                    "name": "leg press",
-                    "reps": "8-10",
-                    "sets": "2",
-                    "tempo": "2-1-1-0",
-                    "rest": "120s"
-                  },
-                  {
-                    "name": "sumo leg press",
-                    "reps": "10-15",
-                    "sets": "2",
-                    "tempo": "rp on 2nd",
-                    "rest": "120s"
-                  },
-                  {
-                    "name": "bulgarian lunges",
-                    "reps": "8",
-                    "sets": "2",
-                    "tempo": "-",
-                    "rest": "60s"
-                  },
-                  {
-                    "name": "leg extension",
-                    "reps": "8-10",
-                    "sets": "2",
-                    "tempo": "-",
-                    "rest": "60s"
-                  },
-                  {
-                    "name": "leg curls",
-                    "reps": "15-30",
-                    "sets": "2",
-                    "tempo": "-",
-                    "rest": "60s"
-                  },
-                  {
-                    "name": "standing calf raises",
-                    "reps": "100",
-                    "sets": "1",
-                    "tempo": "-",
-                    "rest": "120s"
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "workouts": [
-              {
-                "name": "legs",
-                "type": "am",
-                "exercises": [
-                  {
-                    "name": "squats",
-                    "reps": "15-12-10-8",
-                    "sets": "4",
-                    "tempo": "-",
-                    "rest": "120s"
-                  },
-                  {
-                    "name": "leg press",
-                    "reps": "8-10",
-                    "sets": "2",
-                    "tempo": "2-1-1-0",
-                    "rest": "120s"
-                  },
-                  {
-                    "name": "sumo leg press",
-                    "reps": "10-15",
-                    "sets": "2",
-                    "tempo": "rp on 2nd",
-                    "rest": "120s"
-                  },
-                  {
-                    "name": "bulgarian lunges",
-                    "reps": "8",
-                    "sets": "2",
-                    "tempo": "-",
-                    "rest": "60s"
-                  },
-                  {
-                    "name": "leg extension",
-                    "reps": "8-10",
-                    "sets": "2",
-                    "tempo": "-",
-                    "rest": "60s"
-                  },
-                  {
-                    "name": "leg curls",
-                    "reps": "15-30",
-                    "sets": "2",
-                    "tempo": "-",
-                    "rest": "60s"
-                  },
-                  {
-                    "name": "standing calf raises",
-                    "reps": "100",
-                    "sets": "1",
-                    "tempo": "-",
-                    "rest": "120s"
-                  }
-                ]
-              }
-            ]
+            "name": "sunday",
+            "workouts": []
           }
         ]
-      },
+      }
+    ]
+  },
+  {
+    "name": "split/bros plan",
+    "createdBy": "632c945f1ba5f0bcfc9be699",
+    "weeks": [
       {
         "days": [
           {
+            "name": "monday",
             "workouts": [
               {
                 "name": "legs",
-                "type": "am",
                 "exercises": [
                   {
-                    "name": "squats",
-                    "reps": "15-12-10-8",
-                    "sets": "4",
-                    "tempo": "-",
-                    "rest": "120s"
+                    "name": "Seated Alternating Hammer Curls",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "https://www.youtube.com/embed/AFWRIzDA5zI",
+                    "note": "",
+                    "rep": "10-15",
+                    "set": "4",
+                    "tempo": "",
+                    "chain": true,
+                    "type": "",
+                    "rest": "60"
                   },
                   {
-                    "name": "leg press",
-                    "reps": "8-10",
-                    "sets": "2",
-                    "tempo": "2-1-1-0",
-                    "rest": "120s"
+                    "name": "Rotating Alternate Incline Bicep Curls",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "https://www.youtube.com/embed/KM5Y9GBTcyU",
+                    "note": "",
+                    "rep": "12",
+                    "set": "3",
+                    "tempo": "",
+                    "chain": false,
+                    "type": "",
+                    "rest": "90"
                   },
                   {
-                    "name": "sumo leg press",
-                    "reps": "10-15",
-                    "sets": "2",
-                    "tempo": "rp on 2nd",
-                    "rest": "120s"
-                  },
-                  {
-                    "name": "bulgarian lunges",
-                    "reps": "8",
-                    "sets": "2",
-                    "tempo": "-",
-                    "rest": "60s"
-                  },
-                  {
-                    "name": "leg extension",
-                    "reps": "8-10",
-                    "sets": "2",
-                    "tempo": "-",
-                    "rest": "60s"
-                  },
-                  {
-                    "name": "leg curls",
-                    "reps": "15-30",
-                    "sets": "2",
-                    "tempo": "-",
-                    "rest": "60s"
-                  },
-                  {
-                    "name": "standing calf raises",
-                    "reps": "100",
-                    "sets": "1",
-                    "tempo": "-",
-                    "rest": "120s"
+                    "name": "Alternating Deltoid Raise",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "video url",
+                    "note": "",
+                    "rep": "",
+                    "set": "",
+                    "tempo": "",
+                    "chain": false,
+                    "type": "rest-pause",
+                    "rest": ""
                   }
                 ]
-              },
+              }
+            ]
+          },
+          {
+            "name": "tuesday",
+            "workouts": [
               {
                 "name": "push",
-                "type": "pm",
                 "exercises": [
                   {
-                    "name": "incline dumble press",
-                    "reps": "8-12",
-                    "sets": "4",
-                    "tempo": "2-1-1-0",
-                    "rest": "120s"
+                    "name": "Seated Alternating Hammer Curls",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "https://www.youtube.com/embed/AFWRIzDA5zI",
+                    "note": "",
+                    "rep": "",
+                    "set": "",
+                    "tempo": "",
+                    "chain": true,
+                    "type": "",
+                    "rest": ""
                   },
                   {
-                    "name": "low to high cable fly",
-                    "reps": "12",
-                    "sets": "3",
-                    "tempo": "-",
-                    "rest": "60-90s"
+                    "name": "Rotating Alternate Incline Bicep Curls",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "https://www.youtube.com/embed/KM5Y9GBTcyU",
+                    "note": "",
+                    "rep": "",
+                    "set": "",
+                    "tempo": "",
+                    "chain": false,
+                    "type": "rest-pause",
+                    "rest": ""
                   },
                   {
-                    "name": "bench press",
-                    "reps": "8",
-                    "sets": "3",
-                    "tempo": "2-1-1-0",
-                    "rest": "120s"
-                  },
-                  {
-                    "name": "pec dec fly",
-                    "reps": "12",
-                    "sets": "3",
-                    "tempo": "-",
-                    "rest": "120s"
-                  },
-                  {
-                    "name": "lateral raises",
-                    "reps": "20",
-                    "sets": "5",
-                    "tempo": "-",
-                    "rest": "30s"
-                  },
-                  {
-                    "name": "one arm overhead triceps cable extention",
-                    "reps": "10-15",
-                    "sets": "2",
-                    "tempo": "-",
-                    "rest": "60s"
-                  },
-                  {
-                    "name": "straight bar triceps pushdown",
-                    "reps": "10-15",
-                    "sets": "2",
-                    "tempo": "-",
-                    "rest": "60s"
+                    "name": "Alternating Deltoid Raise",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "video url",
+                    "note": "",
+                    "rep": "",
+                    "set": "",
+                    "tempo": "",
+                    "chain": false,
+                    "type": "dropset",
+                    "rest": ""
                   }
                 ]
               }
             ]
           },
           {
+            "name": "wednesday",
+            "workouts": [
+              {
+                "name": "pull",
+                "exercises": [
+                  {
+                    "name": "Seated Alternating Hammer Curls",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "https://www.youtube.com/embed/AFWRIzDA5zI",
+                    "note": "",
+                    "rep": "",
+                    "set": "",
+                    "tempo": "",
+                    "chain": true,
+                    "type": "",
+                    "rest": ""
+                  },
+                  {
+                    "name": "Rotating Alternate Incline Bicep Curls",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "https://www.youtube.com/embed/KM5Y9GBTcyU",
+                    "note": "",
+                    "rep": "",
+                    "set": "",
+                    "tempo": "",
+                    "chain": true,
+                    "type": "rest-pause",
+                    "rest": ""
+                  },
+                  {
+                    "name": "Alternating Deltoid Raise",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "video url",
+                    "note": "",
+                    "rep": "",
+                    "set": "",
+                    "tempo": "",
+                    "chain": false,
+                    "type": "",
+                    "rest": ""
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "thursday",
+            "workouts": [
+              {
+                "name": "rest day"
+              }
+            ]
+          },
+          {
+            "name": "friday",
+            "workouts": []
+          },
+          {
+            "name": "saturday",
+            "workouts": []
+          },
+          {
+            "name": "sunday",
+            "workouts": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "hamo's plan",
+    "createdBy": "632c945f1ba5f0bcfc9be699",
+    "weeks": [
+      {
+        "days": [
+          {
+            "name": "monday",
             "workouts": [
               {
                 "name": "legs",
-                "type": "am",
                 "exercises": [
                   {
-                    "name": "squats",
-                    "reps": "15-12-10-8",
-                    "sets": "4",
-                    "tempo": "-",
-                    "rest": "120s"
+                    "name": "Seated Alternating Hammer Curls",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "https://www.youtube.com/embed/AFWRIzDA5zI",
+                    "note": "",
+                    "rep": "10-15",
+                    "set": "4",
+                    "tempo": "",
+                    "chain": true,
+                    "type": "",
+                    "rest": "60"
                   },
                   {
-                    "name": "leg press",
-                    "reps": "8-10",
-                    "sets": "2",
-                    "tempo": "2-1-1-0",
-                    "rest": "120s"
+                    "name": "Rotating Alternate Incline Bicep Curls",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "https://www.youtube.com/embed/KM5Y9GBTcyU",
+                    "note": "",
+                    "rep": "12",
+                    "set": "3",
+                    "tempo": "",
+                    "chain": false,
+                    "type": "",
+                    "rest": "90"
                   },
                   {
-                    "name": "sumo leg press",
-                    "reps": "10-15",
-                    "sets": "2",
-                    "tempo": "rp on 2nd",
-                    "rest": "120s"
-                  },
-                  {
-                    "name": "bulgarian lunges",
-                    "reps": "8",
-                    "sets": "2",
-                    "tempo": "-",
-                    "rest": "60s"
-                  },
-                  {
-                    "name": "leg extension",
-                    "reps": "8-10",
-                    "sets": "2",
-                    "tempo": "-",
-                    "rest": "60s"
-                  },
-                  {
-                    "name": "leg curls",
-                    "reps": "15-30",
-                    "sets": "2",
-                    "tempo": "-",
-                    "rest": "60s"
-                  },
-                  {
-                    "name": "standing calf raises",
-                    "reps": "100",
-                    "sets": "1",
-                    "tempo": "-",
-                    "rest": "120s"
+                    "name": "Alternating Deltoid Raise",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "video url",
+                    "note": "",
+                    "rep": "",
+                    "set": "",
+                    "tempo": "",
+                    "chain": false,
+                    "type": "rest-pause",
+                    "rest": ""
                   }
                 ]
-              },
+              }
+            ]
+          },
+          {
+            "name": "tuesday",
+            "workouts": [
               {
                 "name": "push",
-                "type": "pm",
                 "exercises": [
                   {
-                    "name": "incline dumble press",
-                    "reps": "8-12",
-                    "sets": "4",
-                    "tempo": "2-1-1-0",
-                    "rest": "120s"
+                    "name": "Seated Alternating Hammer Curls",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "https://www.youtube.com/embed/AFWRIzDA5zI",
+                    "note": "",
+                    "rep": "",
+                    "set": "",
+                    "tempo": "",
+                    "chain": true,
+                    "type": "",
+                    "rest": ""
                   },
                   {
-                    "name": "low to high cable fly",
-                    "reps": "12",
-                    "sets": "3",
-                    "tempo": "-",
-                    "rest": "60-90s"
+                    "name": "Rotating Alternate Incline Bicep Curls",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "https://www.youtube.com/embed/KM5Y9GBTcyU",
+                    "note": "",
+                    "rep": "",
+                    "set": "",
+                    "tempo": "",
+                    "chain": false,
+                    "type": "rest-pause",
+                    "rest": ""
                   },
                   {
-                    "name": "bench press",
-                    "reps": "8",
-                    "sets": "3",
-                    "tempo": "2-1-1-0",
-                    "rest": "120s"
-                  },
-                  {
-                    "name": "pec dec fly",
-                    "reps": "12",
-                    "sets": "3",
-                    "tempo": "-",
-                    "rest": "120s"
-                  },
-                  {
-                    "name": "lateral raises",
-                    "reps": "20",
-                    "sets": "5",
-                    "tempo": "-",
-                    "rest": "30s"
-                  },
-                  {
-                    "name": "one arm overhead triceps cable extention",
-                    "reps": "10-15",
-                    "sets": "2",
-                    "tempo": "-",
-                    "rest": "60s"
-                  },
-                  {
-                    "name": "straight bar triceps pushdown",
-                    "reps": "10-15",
-                    "sets": "2",
-                    "tempo": "-",
-                    "rest": "60s"
+                    "name": "Alternating Deltoid Raise",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "video url",
+                    "note": "",
+                    "rep": "",
+                    "set": "",
+                    "tempo": "",
+                    "chain": false,
+                    "type": "dropset",
+                    "rest": ""
                   }
                 ]
               }
             ]
           },
           {
+            "name": "wednesday",
             "workouts": [
               {
-                "name": "legs",
-                "type": "am",
+                "name": "pull",
                 "exercises": [
                   {
-                    "name": "squats",
-                    "reps": "15-12-10-8",
-                    "sets": "4",
-                    "tempo": "-",
-                    "rest": "120s"
+                    "name": "Seated Alternating Hammer Curls",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "https://www.youtube.com/embed/AFWRIzDA5zI",
+                    "note": "",
+                    "rep": "",
+                    "set": "",
+                    "tempo": "",
+                    "chain": true,
+                    "type": "",
+                    "rest": ""
                   },
                   {
-                    "name": "leg press",
-                    "reps": "8-10",
-                    "sets": "2",
-                    "tempo": "2-1-1-0",
-                    "rest": "120s"
+                    "name": "Rotating Alternate Incline Bicep Curls",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "https://www.youtube.com/embed/KM5Y9GBTcyU",
+                    "note": "",
+                    "rep": "",
+                    "set": "",
+                    "tempo": "",
+                    "chain": true,
+                    "type": "rest-pause",
+                    "rest": ""
                   },
                   {
-                    "name": "sumo leg press",
-                    "reps": "10-15",
-                    "sets": "2",
-                    "tempo": "rp on 2nd",
-                    "rest": "120s"
-                  },
-                  {
-                    "name": "bulgarian lunges",
-                    "reps": "8",
-                    "sets": "2",
-                    "tempo": "-",
-                    "rest": "60s"
-                  },
-                  {
-                    "name": "leg extension",
-                    "reps": "8-10",
-                    "sets": "2",
-                    "tempo": "-",
-                    "rest": "60s"
-                  },
-                  {
-                    "name": "leg curls",
-                    "reps": "15-30",
-                    "sets": "2",
-                    "tempo": "-",
-                    "rest": "60s"
-                  },
-                  {
-                    "name": "standing calf raises",
-                    "reps": "100",
-                    "sets": "1",
-                    "tempo": "-",
-                    "rest": "120s"
+                    "name": "Alternating Deltoid Raise",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "video url",
+                    "note": "",
+                    "rep": "",
+                    "set": "",
+                    "tempo": "",
+                    "chain": false,
+                    "type": "",
+                    "rest": ""
                   }
                 ]
               }
             ]
           },
           {
+            "name": "thursday",
+            "workouts": [
+              {
+                "name": "rest day"
+              }
+            ]
+          },
+          {
+            "name": "friday",
+            "workouts": []
+          },
+          {
+            "name": "saturday",
+            "workouts": []
+          },
+          {
+            "name": "sunday",
+            "workouts": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Hiit plan",
+    "createdBy": "632c945f1ba5f0bcfc9be699",
+    "weeks": [
+      {
+        "days": [
+          {
+            "name": "monday",
             "workouts": [
               {
                 "name": "legs",
-                "type": "am",
                 "exercises": [
                   {
-                    "name": "squats",
-                    "reps": "15-12-10-8",
-                    "sets": "4",
-                    "tempo": "-",
-                    "rest": "120s"
+                    "name": "Seated Alternating Hammer Curls",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "https://www.youtube.com/embed/AFWRIzDA5zI",
+                    "note": "",
+                    "rep": "10-15",
+                    "set": "4",
+                    "tempo": "",
+                    "chain": true,
+                    "type": "",
+                    "rest": "60"
                   },
                   {
-                    "name": "leg press",
-                    "reps": "8-10",
-                    "sets": "2",
-                    "tempo": "2-1-1-0",
-                    "rest": "120s"
+                    "name": "Rotating Alternate Incline Bicep Curls",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "https://www.youtube.com/embed/KM5Y9GBTcyU",
+                    "note": "",
+                    "rep": "12",
+                    "set": "3",
+                    "tempo": "",
+                    "chain": false,
+                    "type": "",
+                    "rest": "90"
                   },
                   {
-                    "name": "sumo leg press",
-                    "reps": "10-15",
-                    "sets": "2",
-                    "tempo": "rp on 2nd",
-                    "rest": "120s"
-                  },
-                  {
-                    "name": "bulgarian lunges",
-                    "reps": "8",
-                    "sets": "2",
-                    "tempo": "-",
-                    "rest": "60s"
-                  },
-                  {
-                    "name": "leg extension",
-                    "reps": "8-10",
-                    "sets": "2",
-                    "tempo": "-",
-                    "rest": "60s"
-                  },
-                  {
-                    "name": "leg curls",
-                    "reps": "15-30",
-                    "sets": "2",
-                    "tempo": "-",
-                    "rest": "60s"
-                  },
-                  {
-                    "name": "standing calf raises",
-                    "reps": "100",
-                    "sets": "1",
-                    "tempo": "-",
-                    "rest": "120s"
+                    "name": "Alternating Deltoid Raise",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "video url",
+                    "note": "",
+                    "rep": "",
+                    "set": "",
+                    "tempo": "",
+                    "chain": false,
+                    "type": "rest-pause",
+                    "rest": ""
                   }
                 ]
               }
             ]
           },
           {
+            "name": "tuesday",
             "workouts": [
               {
-                "name": "legs",
-                "type": "am",
+                "name": "push",
                 "exercises": [
                   {
-                    "name": "squats",
-                    "reps": "15-12-10-8",
-                    "sets": "4",
-                    "tempo": "-",
-                    "rest": "120s"
+                    "name": "Seated Alternating Hammer Curls",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "https://www.youtube.com/embed/AFWRIzDA5zI",
+                    "note": "",
+                    "rep": "",
+                    "set": "",
+                    "tempo": "",
+                    "chain": true,
+                    "type": "",
+                    "rest": ""
                   },
                   {
-                    "name": "leg press",
-                    "reps": "8-10",
-                    "sets": "2",
-                    "tempo": "2-1-1-0",
-                    "rest": "120s"
+                    "name": "Rotating Alternate Incline Bicep Curls",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "https://www.youtube.com/embed/KM5Y9GBTcyU",
+                    "note": "",
+                    "rep": "",
+                    "set": "",
+                    "tempo": "",
+                    "chain": false,
+                    "type": "rest-pause",
+                    "rest": ""
                   },
                   {
-                    "name": "sumo leg press",
-                    "reps": "10-15",
-                    "sets": "2",
-                    "tempo": "rp on 2nd",
-                    "rest": "120s"
-                  },
-                  {
-                    "name": "bulgarian lunges",
-                    "reps": "8",
-                    "sets": "2",
-                    "tempo": "-",
-                    "rest": "60s"
-                  },
-                  {
-                    "name": "leg extension",
-                    "reps": "8-10",
-                    "sets": "2",
-                    "tempo": "-",
-                    "rest": "60s"
-                  },
-                  {
-                    "name": "leg curls",
-                    "reps": "15-30",
-                    "sets": "2",
-                    "tempo": "-",
-                    "rest": "60s"
-                  },
-                  {
-                    "name": "standing calf raises",
-                    "reps": "100",
-                    "sets": "1",
-                    "tempo": "-",
-                    "rest": "120s"
+                    "name": "Alternating Deltoid Raise",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "video url",
+                    "note": "",
+                    "rep": "",
+                    "set": "",
+                    "tempo": "",
+                    "chain": false,
+                    "type": "dropset",
+                    "rest": ""
                   }
                 ]
               }
             ]
           },
           {
+            "name": "wednesday",
             "workouts": [
               {
-                "name": "legs",
-                "type": "am",
+                "name": "pull",
                 "exercises": [
                   {
-                    "name": "squats",
-                    "reps": "15-12-10-8",
-                    "sets": "4",
-                    "tempo": "-",
-                    "rest": "120s"
+                    "name": "Seated Alternating Hammer Curls",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "https://www.youtube.com/embed/AFWRIzDA5zI",
+                    "note": "",
+                    "rep": "",
+                    "set": "",
+                    "tempo": "",
+                    "chain": true,
+                    "type": "",
+                    "rest": ""
                   },
                   {
-                    "name": "leg press",
-                    "reps": "8-10",
-                    "sets": "2",
-                    "tempo": "2-1-1-0",
-                    "rest": "120s"
+                    "name": "Rotating Alternate Incline Bicep Curls",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "https://www.youtube.com/embed/KM5Y9GBTcyU",
+                    "note": "",
+                    "rep": "",
+                    "set": "",
+                    "tempo": "",
+                    "chain": true,
+                    "type": "rest-pause",
+                    "rest": ""
                   },
                   {
-                    "name": "sumo leg press",
-                    "reps": "10-15",
-                    "sets": "2",
-                    "tempo": "rp on 2nd",
-                    "rest": "120s"
-                  },
-                  {
-                    "name": "bulgarian lunges",
-                    "reps": "8",
-                    "sets": "2",
-                    "tempo": "-",
-                    "rest": "60s"
-                  },
-                  {
-                    "name": "leg extension",
-                    "reps": "8-10",
-                    "sets": "2",
-                    "tempo": "-",
-                    "rest": "60s"
-                  },
-                  {
-                    "name": "leg curls",
-                    "reps": "15-30",
-                    "sets": "2",
-                    "tempo": "-",
-                    "rest": "60s"
-                  },
-                  {
-                    "name": "standing calf raises",
-                    "reps": "100",
-                    "sets": "1",
-                    "tempo": "-",
-                    "rest": "120s"
+                    "name": "Alternating Deltoid Raise",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "video url",
+                    "note": "",
+                    "rep": "",
+                    "set": "",
+                    "tempo": "",
+                    "chain": false,
+                    "type": "",
+                    "rest": ""
                   }
                 ]
               }
             ]
           },
           {
+            "name": "thursday",
+            "workouts": [
+              {
+                "name": "rest day"
+              }
+            ]
+          },
+          {
+            "name": "friday",
+            "workouts": []
+          },
+          {
+            "name": "saturday",
+            "workouts": []
+          },
+          {
+            "name": "sunday",
+            "workouts": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "endurance plan",
+    "createdBy": "632c945f1ba5f0bcfc9be699",
+    "weeks": [
+      {
+        "days": [
+          {
+            "name": "monday",
             "workouts": [
               {
                 "name": "legs",
-                "type": "am",
                 "exercises": [
                   {
-                    "name": "squats",
-                    "reps": "15-12-10-8",
-                    "sets": "4",
-                    "tempo": "-",
-                    "rest": "120s"
+                    "name": "Seated Alternating Hammer Curls",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "https://www.youtube.com/embed/AFWRIzDA5zI",
+                    "note": "",
+                    "rep": "10-15",
+                    "set": "4",
+                    "tempo": "",
+                    "chain": true,
+                    "type": "",
+                    "rest": "60"
                   },
                   {
-                    "name": "leg press",
-                    "reps": "8-10",
-                    "sets": "2",
-                    "tempo": "2-1-1-0",
-                    "rest": "120s"
+                    "name": "Rotating Alternate Incline Bicep Curls",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "https://www.youtube.com/embed/KM5Y9GBTcyU",
+                    "note": "",
+                    "rep": "12",
+                    "set": "3",
+                    "tempo": "",
+                    "chain": false,
+                    "type": "",
+                    "rest": "90"
                   },
                   {
-                    "name": "sumo leg press",
-                    "reps": "10-15",
-                    "sets": "2",
-                    "tempo": "rp on 2nd",
-                    "rest": "120s"
-                  },
-                  {
-                    "name": "bulgarian lunges",
-                    "reps": "8",
-                    "sets": "2",
-                    "tempo": "-",
-                    "rest": "60s"
-                  },
-                  {
-                    "name": "leg extension",
-                    "reps": "8-10",
-                    "sets": "2",
-                    "tempo": "-",
-                    "rest": "60s"
-                  },
-                  {
-                    "name": "leg curls",
-                    "reps": "15-30",
-                    "sets": "2",
-                    "tempo": "-",
-                    "rest": "60s"
-                  },
-                  {
-                    "name": "standing calf raises",
-                    "reps": "100",
-                    "sets": "1",
-                    "tempo": "-",
-                    "rest": "120s"
+                    "name": "Alternating Deltoid Raise",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "video url",
+                    "note": "",
+                    "rep": "",
+                    "set": "",
+                    "tempo": "",
+                    "chain": false,
+                    "type": "rest-pause",
+                    "rest": ""
                   }
                 ]
               }
             ]
+          },
+          {
+            "name": "tuesday",
+            "workouts": [
+              {
+                "name": "push",
+                "exercises": [
+                  {
+                    "name": "Seated Alternating Hammer Curls",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "https://www.youtube.com/embed/AFWRIzDA5zI",
+                    "note": "",
+                    "rep": "",
+                    "set": "",
+                    "tempo": "",
+                    "chain": true,
+                    "type": "",
+                    "rest": ""
+                  },
+                  {
+                    "name": "Rotating Alternate Incline Bicep Curls",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "https://www.youtube.com/embed/KM5Y9GBTcyU",
+                    "note": "",
+                    "rep": "",
+                    "set": "",
+                    "tempo": "",
+                    "chain": false,
+                    "type": "rest-pause",
+                    "rest": ""
+                  },
+                  {
+                    "name": "Alternating Deltoid Raise",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "video url",
+                    "note": "",
+                    "rep": "",
+                    "set": "",
+                    "tempo": "",
+                    "chain": false,
+                    "type": "dropset",
+                    "rest": ""
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "wednesday",
+            "workouts": [
+              {
+                "name": "pull",
+                "exercises": [
+                  {
+                    "name": "Seated Alternating Hammer Curls",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "https://www.youtube.com/embed/AFWRIzDA5zI",
+                    "note": "",
+                    "rep": "",
+                    "set": "",
+                    "tempo": "",
+                    "chain": true,
+                    "type": "",
+                    "rest": ""
+                  },
+                  {
+                    "name": "Rotating Alternate Incline Bicep Curls",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "https://www.youtube.com/embed/KM5Y9GBTcyU",
+                    "note": "",
+                    "rep": "",
+                    "set": "",
+                    "tempo": "",
+                    "chain": true,
+                    "type": "rest-pause",
+                    "rest": ""
+                  },
+                  {
+                    "name": "Alternating Deltoid Raise",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "video url",
+                    "note": "",
+                    "rep": "",
+                    "set": "",
+                    "tempo": "",
+                    "chain": false,
+                    "type": "",
+                    "rest": ""
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "thursday",
+            "workouts": [
+              {
+                "name": "rest day"
+              }
+            ]
+          },
+          {
+            "name": "friday",
+            "workouts": []
+          },
+          {
+            "name": "saturday",
+            "workouts": []
+          },
+          {
+            "name": "sunday",
+            "workouts": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "cbd's plan",
+    "createdBy": "632c945f1ba5f0bcfc9be699",
+    "weeks": [
+      {
+        "days": [
+          {
+            "name": "monday",
+            "workouts": [
+              {
+                "name": "legs",
+                "exercises": [
+                  {
+                    "name": "Seated Alternating Hammer Curls",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "https://www.youtube.com/embed/AFWRIzDA5zI",
+                    "note": "",
+                    "rep": "10-15",
+                    "set": "4",
+                    "tempo": "",
+                    "chain": true,
+                    "type": "",
+                    "rest": "60"
+                  },
+                  {
+                    "name": "Rotating Alternate Incline Bicep Curls",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "https://www.youtube.com/embed/KM5Y9GBTcyU",
+                    "note": "",
+                    "rep": "12",
+                    "set": "3",
+                    "tempo": "",
+                    "chain": false,
+                    "type": "",
+                    "rest": "90"
+                  },
+                  {
+                    "name": "Alternating Deltoid Raise",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "video url",
+                    "note": "",
+                    "rep": "",
+                    "set": "",
+                    "tempo": "",
+                    "chain": false,
+                    "type": "rest-pause",
+                    "rest": ""
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "tuesday",
+            "workouts": [
+              {
+                "name": "push",
+                "exercises": [
+                  {
+                    "name": "Seated Alternating Hammer Curls",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "https://www.youtube.com/embed/AFWRIzDA5zI",
+                    "note": "",
+                    "rep": "",
+                    "set": "",
+                    "tempo": "",
+                    "chain": true,
+                    "type": "",
+                    "rest": ""
+                  },
+                  {
+                    "name": "Rotating Alternate Incline Bicep Curls",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "https://www.youtube.com/embed/KM5Y9GBTcyU",
+                    "note": "",
+                    "rep": "",
+                    "set": "",
+                    "tempo": "",
+                    "chain": false,
+                    "type": "rest-pause",
+                    "rest": ""
+                  },
+                  {
+                    "name": "Alternating Deltoid Raise",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "video url",
+                    "note": "",
+                    "rep": "",
+                    "set": "",
+                    "tempo": "",
+                    "chain": false,
+                    "type": "dropset",
+                    "rest": ""
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "wednesday",
+            "workouts": [
+              {
+                "name": "pull",
+                "exercises": [
+                  {
+                    "name": "Seated Alternating Hammer Curls",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "https://www.youtube.com/embed/AFWRIzDA5zI",
+                    "note": "",
+                    "rep": "",
+                    "set": "",
+                    "tempo": "",
+                    "chain": true,
+                    "type": "",
+                    "rest": ""
+                  },
+                  {
+                    "name": "Rotating Alternate Incline Bicep Curls",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "https://www.youtube.com/embed/KM5Y9GBTcyU",
+                    "note": "",
+                    "rep": "",
+                    "set": "",
+                    "tempo": "",
+                    "chain": true,
+                    "type": "rest-pause",
+                    "rest": ""
+                  },
+                  {
+                    "name": "Alternating Deltoid Raise",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "video url",
+                    "note": "",
+                    "rep": "",
+                    "set": "",
+                    "tempo": "",
+                    "chain": false,
+                    "type": "",
+                    "rest": ""
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "thursday",
+            "workouts": [
+              {
+                "name": "rest day"
+              }
+            ]
+          },
+          {
+            "name": "friday",
+            "workouts": []
+          },
+          {
+            "name": "saturday",
+            "workouts": []
+          },
+          {
+            "name": "sunday",
+            "workouts": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "joseph's plan",
+    "createdBy": "632c945f1ba5f0bcfc9be699",
+    "weeks": [
+      {
+        "days": [
+          {
+            "name": "monday",
+            "workouts": [
+              {
+                "name": "legs",
+                "exercises": [
+                  {
+                    "name": "Seated Alternating Hammer Curls",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "https://www.youtube.com/embed/AFWRIzDA5zI",
+                    "note": "",
+                    "rep": "10-15",
+                    "set": "4",
+                    "tempo": "",
+                    "chain": true,
+                    "type": "",
+                    "rest": "60"
+                  },
+                  {
+                    "name": "Rotating Alternate Incline Bicep Curls",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "https://www.youtube.com/embed/KM5Y9GBTcyU",
+                    "note": "",
+                    "rep": "12",
+                    "set": "3",
+                    "tempo": "",
+                    "chain": false,
+                    "type": "",
+                    "rest": "90"
+                  },
+                  {
+                    "name": "Alternating Deltoid Raise",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "video url",
+                    "note": "",
+                    "rep": "",
+                    "set": "",
+                    "tempo": "",
+                    "chain": false,
+                    "type": "rest-pause",
+                    "rest": ""
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "tuesday",
+            "workouts": [
+              {
+                "name": "push",
+                "exercises": [
+                  {
+                    "name": "Seated Alternating Hammer Curls",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "https://www.youtube.com/embed/AFWRIzDA5zI",
+                    "note": "",
+                    "rep": "",
+                    "set": "",
+                    "tempo": "",
+                    "chain": true,
+                    "type": "",
+                    "rest": ""
+                  },
+                  {
+                    "name": "Rotating Alternate Incline Bicep Curls",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "https://www.youtube.com/embed/KM5Y9GBTcyU",
+                    "note": "",
+                    "rep": "",
+                    "set": "",
+                    "tempo": "",
+                    "chain": false,
+                    "type": "rest-pause",
+                    "rest": ""
+                  },
+                  {
+                    "name": "Alternating Deltoid Raise",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "video url",
+                    "note": "",
+                    "rep": "",
+                    "set": "",
+                    "tempo": "",
+                    "chain": false,
+                    "type": "dropset",
+                    "rest": ""
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "wednesday",
+            "workouts": [
+              {
+                "name": "pull",
+                "exercises": [
+                  {
+                    "name": "Seated Alternating Hammer Curls",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "https://www.youtube.com/embed/AFWRIzDA5zI",
+                    "note": "",
+                    "rep": "",
+                    "set": "",
+                    "tempo": "",
+                    "chain": true,
+                    "type": "",
+                    "rest": ""
+                  },
+                  {
+                    "name": "Rotating Alternate Incline Bicep Curls",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "https://www.youtube.com/embed/KM5Y9GBTcyU",
+                    "note": "",
+                    "rep": "",
+                    "set": "",
+                    "tempo": "",
+                    "chain": true,
+                    "type": "rest-pause",
+                    "rest": ""
+                  },
+                  {
+                    "name": "Alternating Deltoid Raise",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "video url",
+                    "note": "",
+                    "rep": "",
+                    "set": "",
+                    "tempo": "",
+                    "chain": false,
+                    "type": "",
+                    "rest": ""
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "thursday",
+            "workouts": [
+              {
+                "name": "rest day"
+              }
+            ]
+          },
+          {
+            "name": "friday",
+            "workouts": []
+          },
+          {
+            "name": "saturday",
+            "workouts": []
+          },
+          {
+            "name": "sunday",
+            "workouts": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "rony's plan",
+    "createdBy": "632c945f1ba5f0bcfc9be699",
+    "weeks": [
+      {
+        "days": [
+          {
+            "name": "monday",
+            "workouts": [
+              {
+                "name": "legs",
+                "exercises": [
+                  {
+                    "name": "Seated Alternating Hammer Curls",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "https://www.youtube.com/embed/AFWRIzDA5zI",
+                    "note": "",
+                    "rep": "10-15",
+                    "set": "4",
+                    "tempo": "",
+                    "chain": true,
+                    "type": "",
+                    "rest": "60"
+                  },
+                  {
+                    "name": "Rotating Alternate Incline Bicep Curls",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "https://www.youtube.com/embed/KM5Y9GBTcyU",
+                    "note": "",
+                    "rep": "12",
+                    "set": "3",
+                    "tempo": "",
+                    "chain": false,
+                    "type": "",
+                    "rest": "90"
+                  },
+                  {
+                    "name": "Alternating Deltoid Raise",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "video url",
+                    "note": "",
+                    "rep": "",
+                    "set": "",
+                    "tempo": "",
+                    "chain": false,
+                    "type": "rest-pause",
+                    "rest": ""
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "tuesday",
+            "workouts": [
+              {
+                "name": "push",
+                "exercises": [
+                  {
+                    "name": "Seated Alternating Hammer Curls",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "https://www.youtube.com/embed/AFWRIzDA5zI",
+                    "note": "",
+                    "rep": "",
+                    "set": "",
+                    "tempo": "",
+                    "chain": true,
+                    "type": "",
+                    "rest": ""
+                  },
+                  {
+                    "name": "Rotating Alternate Incline Bicep Curls",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "https://www.youtube.com/embed/KM5Y9GBTcyU",
+                    "note": "",
+                    "rep": "",
+                    "set": "",
+                    "tempo": "",
+                    "chain": false,
+                    "type": "rest-pause",
+                    "rest": ""
+                  },
+                  {
+                    "name": "Alternating Deltoid Raise",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "video url",
+                    "note": "",
+                    "rep": "",
+                    "set": "",
+                    "tempo": "",
+                    "chain": false,
+                    "type": "dropset",
+                    "rest": ""
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "wednesday",
+            "workouts": [
+              {
+                "name": "pull",
+                "exercises": [
+                  {
+                    "name": "Seated Alternating Hammer Curls",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "https://www.youtube.com/embed/AFWRIzDA5zI",
+                    "note": "",
+                    "rep": "",
+                    "set": "",
+                    "tempo": "",
+                    "chain": true,
+                    "type": "",
+                    "rest": ""
+                  },
+                  {
+                    "name": "Rotating Alternate Incline Bicep Curls",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "https://www.youtube.com/embed/KM5Y9GBTcyU",
+                    "note": "",
+                    "rep": "",
+                    "set": "",
+                    "tempo": "",
+                    "chain": true,
+                    "type": "rest-pause",
+                    "rest": ""
+                  },
+                  {
+                    "name": "Alternating Deltoid Raise",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "video url",
+                    "note": "",
+                    "rep": "",
+                    "set": "",
+                    "tempo": "",
+                    "chain": false,
+                    "type": "",
+                    "rest": ""
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "thursday",
+            "workouts": [
+              {
+                "name": "rest day"
+              }
+            ]
+          },
+          {
+            "name": "friday",
+            "workouts": []
+          },
+          {
+            "name": "saturday",
+            "workouts": []
+          },
+          {
+            "name": "sunday",
+            "workouts": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "karake's plan",
+    "createdBy": "632c945f1ba5f0bcfc9be699",
+    "weeks": [
+      {
+        "days": [
+          {
+            "name": "monday",
+            "workouts": [
+              {
+                "name": "legs",
+                "exercises": [
+                  {
+                    "name": "Seated Alternating Hammer Curls",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "https://www.youtube.com/embed/AFWRIzDA5zI",
+                    "note": "",
+                    "rep": "10-15",
+                    "set": "4",
+                    "tempo": "",
+                    "chain": true,
+                    "type": "",
+                    "rest": "60"
+                  },
+                  {
+                    "name": "Rotating Alternate Incline Bicep Curls",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "https://www.youtube.com/embed/KM5Y9GBTcyU",
+                    "note": "",
+                    "rep": "12",
+                    "set": "3",
+                    "tempo": "",
+                    "chain": false,
+                    "type": "",
+                    "rest": "90"
+                  },
+                  {
+                    "name": "Alternating Deltoid Raise",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "video url",
+                    "note": "",
+                    "rep": "",
+                    "set": "",
+                    "tempo": "",
+                    "chain": false,
+                    "type": "rest-pause",
+                    "rest": ""
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "tuesday",
+            "workouts": [
+              {
+                "name": "push",
+                "exercises": [
+                  {
+                    "name": "Seated Alternating Hammer Curls",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "https://www.youtube.com/embed/AFWRIzDA5zI",
+                    "note": "",
+                    "rep": "",
+                    "set": "",
+                    "tempo": "",
+                    "chain": true,
+                    "type": "",
+                    "rest": ""
+                  },
+                  {
+                    "name": "Rotating Alternate Incline Bicep Curls",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "https://www.youtube.com/embed/KM5Y9GBTcyU",
+                    "note": "",
+                    "rep": "",
+                    "set": "",
+                    "tempo": "",
+                    "chain": false,
+                    "type": "rest-pause",
+                    "rest": ""
+                  },
+                  {
+                    "name": "Alternating Deltoid Raise",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "video url",
+                    "note": "",
+                    "rep": "",
+                    "set": "",
+                    "tempo": "",
+                    "chain": false,
+                    "type": "dropset",
+                    "rest": ""
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "wednesday",
+            "workouts": [
+              {
+                "name": "pull",
+                "exercises": [
+                  {
+                    "name": "Seated Alternating Hammer Curls",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "https://www.youtube.com/embed/AFWRIzDA5zI",
+                    "note": "",
+                    "rep": "",
+                    "set": "",
+                    "tempo": "",
+                    "chain": true,
+                    "type": "",
+                    "rest": ""
+                  },
+                  {
+                    "name": "Rotating Alternate Incline Bicep Curls",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "https://www.youtube.com/embed/KM5Y9GBTcyU",
+                    "note": "",
+                    "rep": "",
+                    "set": "",
+                    "tempo": "",
+                    "chain": true,
+                    "type": "rest-pause",
+                    "rest": ""
+                  },
+                  {
+                    "name": "Alternating Deltoid Raise",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "video url",
+                    "note": "",
+                    "rep": "",
+                    "set": "",
+                    "tempo": "",
+                    "chain": false,
+                    "type": "",
+                    "rest": ""
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "thursday",
+            "workouts": [
+              {
+                "name": "rest day"
+              }
+            ]
+          },
+          {
+            "name": "friday",
+            "workouts": []
+          },
+          {
+            "name": "saturday",
+            "workouts": []
+          },
+          {
+            "name": "sunday",
+            "workouts": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "steven's plan",
+    "createdBy": "632c945f1ba5f0bcfc9be699",
+    "weeks": [
+      {
+        "days": [
+          {
+            "name": "monday",
+            "workouts": [
+              {
+                "name": "legs",
+                "exercises": [
+                  {
+                    "name": "Seated Alternating Hammer Curls",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "https://www.youtube.com/embed/AFWRIzDA5zI",
+                    "note": "",
+                    "rep": "10-15",
+                    "set": "4",
+                    "tempo": "",
+                    "chain": true,
+                    "type": "",
+                    "rest": "60"
+                  },
+                  {
+                    "name": "Rotating Alternate Incline Bicep Curls",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "https://www.youtube.com/embed/KM5Y9GBTcyU",
+                    "note": "",
+                    "rep": "12",
+                    "set": "3",
+                    "tempo": "",
+                    "chain": false,
+                    "type": "",
+                    "rest": "90"
+                  },
+                  {
+                    "name": "Alternating Deltoid Raise",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "video url",
+                    "note": "",
+                    "rep": "",
+                    "set": "",
+                    "tempo": "",
+                    "chain": false,
+                    "type": "rest-pause",
+                    "rest": ""
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "tuesday",
+            "workouts": [
+              {
+                "name": "push",
+                "exercises": [
+                  {
+                    "name": "Seated Alternating Hammer Curls",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "https://www.youtube.com/embed/AFWRIzDA5zI",
+                    "note": "",
+                    "rep": "",
+                    "set": "",
+                    "tempo": "",
+                    "chain": true,
+                    "type": "",
+                    "rest": ""
+                  },
+                  {
+                    "name": "Rotating Alternate Incline Bicep Curls",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "https://www.youtube.com/embed/KM5Y9GBTcyU",
+                    "note": "",
+                    "rep": "",
+                    "set": "",
+                    "tempo": "",
+                    "chain": false,
+                    "type": "rest-pause",
+                    "rest": ""
+                  },
+                  {
+                    "name": "Alternating Deltoid Raise",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "video url",
+                    "note": "",
+                    "rep": "",
+                    "set": "",
+                    "tempo": "",
+                    "chain": false,
+                    "type": "dropset",
+                    "rest": ""
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "wednesday",
+            "workouts": [
+              {
+                "name": "pull",
+                "exercises": [
+                  {
+                    "name": "Seated Alternating Hammer Curls",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "https://www.youtube.com/embed/AFWRIzDA5zI",
+                    "note": "",
+                    "rep": "",
+                    "set": "",
+                    "tempo": "",
+                    "chain": true,
+                    "type": "",
+                    "rest": ""
+                  },
+                  {
+                    "name": "Rotating Alternate Incline Bicep Curls",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "https://www.youtube.com/embed/KM5Y9GBTcyU",
+                    "note": "",
+                    "rep": "",
+                    "set": "",
+                    "tempo": "",
+                    "chain": true,
+                    "type": "rest-pause",
+                    "rest": ""
+                  },
+                  {
+                    "name": "Alternating Deltoid Raise",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "video url",
+                    "note": "",
+                    "rep": "",
+                    "set": "",
+                    "tempo": "",
+                    "chain": false,
+                    "type": "",
+                    "rest": ""
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "thursday",
+            "workouts": [
+              {
+                "name": "rest day"
+              }
+            ]
+          },
+          {
+            "name": "friday",
+            "workouts": []
+          },
+          {
+            "name": "saturday",
+            "workouts": []
+          },
+          {
+            "name": "sunday",
+            "workouts": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "gilbert's plan",
+    "createdBy": "632c945f1ba5f0bcfc9be699",
+    "weeks": [
+      {
+        "days": [
+          {
+            "name": "monday",
+            "workouts": [
+              {
+                "name": "legs",
+                "exercises": [
+                  {
+                    "name": "Seated Alternating Hammer Curls",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "https://www.youtube.com/embed/AFWRIzDA5zI",
+                    "note": "",
+                    "rep": "10-15",
+                    "set": "4",
+                    "tempo": "",
+                    "chain": true,
+                    "type": "",
+                    "rest": "60"
+                  },
+                  {
+                    "name": "Rotating Alternate Incline Bicep Curls",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "https://www.youtube.com/embed/KM5Y9GBTcyU",
+                    "note": "",
+                    "rep": "12",
+                    "set": "3",
+                    "tempo": "",
+                    "chain": false,
+                    "type": "",
+                    "rest": "90"
+                  },
+                  {
+                    "name": "Alternating Deltoid Raise",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "video url",
+                    "note": "",
+                    "rep": "",
+                    "set": "",
+                    "tempo": "",
+                    "chain": false,
+                    "type": "rest-pause",
+                    "rest": ""
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "tuesday",
+            "workouts": [
+              {
+                "name": "push",
+                "exercises": [
+                  {
+                    "name": "Seated Alternating Hammer Curls",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "https://www.youtube.com/embed/AFWRIzDA5zI",
+                    "note": "",
+                    "rep": "",
+                    "set": "",
+                    "tempo": "",
+                    "chain": true,
+                    "type": "",
+                    "rest": ""
+                  },
+                  {
+                    "name": "Rotating Alternate Incline Bicep Curls",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "https://www.youtube.com/embed/KM5Y9GBTcyU",
+                    "note": "",
+                    "rep": "",
+                    "set": "",
+                    "tempo": "",
+                    "chain": false,
+                    "type": "rest-pause",
+                    "rest": ""
+                  },
+                  {
+                    "name": "Alternating Deltoid Raise",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "video url",
+                    "note": "",
+                    "rep": "",
+                    "set": "",
+                    "tempo": "",
+                    "chain": false,
+                    "type": "dropset",
+                    "rest": ""
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "wednesday",
+            "workouts": [
+              {
+                "name": "pull",
+                "exercises": [
+                  {
+                    "name": "Seated Alternating Hammer Curls",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "https://www.youtube.com/embed/AFWRIzDA5zI",
+                    "note": "",
+                    "rep": "",
+                    "set": "",
+                    "tempo": "",
+                    "chain": true,
+                    "type": "",
+                    "rest": ""
+                  },
+                  {
+                    "name": "Rotating Alternate Incline Bicep Curls",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "https://www.youtube.com/embed/KM5Y9GBTcyU",
+                    "note": "",
+                    "rep": "",
+                    "set": "",
+                    "tempo": "",
+                    "chain": true,
+                    "type": "rest-pause",
+                    "rest": ""
+                  },
+                  {
+                    "name": "Alternating Deltoid Raise",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "video url",
+                    "note": "",
+                    "rep": "",
+                    "set": "",
+                    "tempo": "",
+                    "chain": false,
+                    "type": "",
+                    "rest": ""
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "thursday",
+            "workouts": [
+              {
+                "name": "rest day"
+              }
+            ]
+          },
+          {
+            "name": "friday",
+            "workouts": []
+          },
+          {
+            "name": "saturday",
+            "workouts": []
+          },
+          {
+            "name": "sunday",
+            "workouts": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "pierre's plan",
+    "createdBy": "632c945f1ba5f0bcfc9be699",
+    "weeks": [
+      {
+        "days": [
+          {
+            "name": "monday",
+            "workouts": [
+              {
+                "name": "legs",
+                "exercises": [
+                  {
+                    "name": "Seated Alternating Hammer Curls",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "https://www.youtube.com/embed/AFWRIzDA5zI",
+                    "note": "",
+                    "rep": "10-15",
+                    "set": "4",
+                    "tempo": "",
+                    "chain": true,
+                    "type": "",
+                    "rest": "60"
+                  },
+                  {
+                    "name": "Rotating Alternate Incline Bicep Curls",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "https://www.youtube.com/embed/KM5Y9GBTcyU",
+                    "note": "",
+                    "rep": "12",
+                    "set": "3",
+                    "tempo": "",
+                    "chain": false,
+                    "type": "",
+                    "rest": "90"
+                  },
+                  {
+                    "name": "Alternating Deltoid Raise",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "video url",
+                    "note": "",
+                    "rep": "",
+                    "set": "",
+                    "tempo": "",
+                    "chain": false,
+                    "type": "rest-pause",
+                    "rest": ""
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "tuesday",
+            "workouts": [
+              {
+                "name": "push",
+                "exercises": [
+                  {
+                    "name": "Seated Alternating Hammer Curls",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "https://www.youtube.com/embed/AFWRIzDA5zI",
+                    "note": "",
+                    "rep": "",
+                    "set": "",
+                    "tempo": "",
+                    "chain": true,
+                    "type": "",
+                    "rest": ""
+                  },
+                  {
+                    "name": "Rotating Alternate Incline Bicep Curls",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "https://www.youtube.com/embed/KM5Y9GBTcyU",
+                    "note": "",
+                    "rep": "",
+                    "set": "",
+                    "tempo": "",
+                    "chain": false,
+                    "type": "rest-pause",
+                    "rest": ""
+                  },
+                  {
+                    "name": "Alternating Deltoid Raise",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "video url",
+                    "note": "",
+                    "rep": "",
+                    "set": "",
+                    "tempo": "",
+                    "chain": false,
+                    "type": "dropset",
+                    "rest": ""
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "wednesday",
+            "workouts": [
+              {
+                "name": "pull",
+                "exercises": [
+                  {
+                    "name": "Seated Alternating Hammer Curls",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "https://www.youtube.com/embed/AFWRIzDA5zI",
+                    "note": "",
+                    "rep": "",
+                    "set": "",
+                    "tempo": "",
+                    "chain": true,
+                    "type": "",
+                    "rest": ""
+                  },
+                  {
+                    "name": "Rotating Alternate Incline Bicep Curls",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "https://www.youtube.com/embed/KM5Y9GBTcyU",
+                    "note": "",
+                    "rep": "",
+                    "set": "",
+                    "tempo": "",
+                    "chain": true,
+                    "type": "rest-pause",
+                    "rest": ""
+                  },
+                  {
+                    "name": "Alternating Deltoid Raise",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "video url",
+                    "note": "",
+                    "rep": "",
+                    "set": "",
+                    "tempo": "",
+                    "chain": false,
+                    "type": "",
+                    "rest": ""
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "thursday",
+            "workouts": [
+              {
+                "name": "rest day"
+              }
+            ]
+          },
+          {
+            "name": "friday",
+            "workouts": []
+          },
+          {
+            "name": "saturday",
+            "workouts": []
+          },
+          {
+            "name": "sunday",
+            "workouts": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Jawad's plan",
+    "createdBy": "632c945f1ba5f0bcfc9be699",
+    "weeks": [
+      {
+        "days": [
+          {
+            "name": "monday",
+            "workouts": [
+              {
+                "name": "legs",
+                "exercises": [
+                  {
+                    "name": "Seated Alternating Hammer Curls",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "https://www.youtube.com/embed/AFWRIzDA5zI",
+                    "note": "",
+                    "rep": "10-15",
+                    "set": "4",
+                    "tempo": "",
+                    "chain": true,
+                    "type": "",
+                    "rest": "60"
+                  },
+                  {
+                    "name": "Rotating Alternate Incline Bicep Curls",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "https://www.youtube.com/embed/KM5Y9GBTcyU",
+                    "note": "",
+                    "rep": "12",
+                    "set": "3",
+                    "tempo": "",
+                    "chain": false,
+                    "type": "",
+                    "rest": "90"
+                  },
+                  {
+                    "name": "Alternating Deltoid Raise",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "video url",
+                    "note": "",
+                    "rep": "",
+                    "set": "",
+                    "tempo": "",
+                    "chain": false,
+                    "type": "rest-pause",
+                    "rest": ""
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "tuesday",
+            "workouts": [
+              {
+                "name": "push",
+                "exercises": [
+                  {
+                    "name": "Seated Alternating Hammer Curls",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "https://www.youtube.com/embed/AFWRIzDA5zI",
+                    "note": "",
+                    "rep": "",
+                    "set": "",
+                    "tempo": "",
+                    "chain": true,
+                    "type": "",
+                    "rest": ""
+                  },
+                  {
+                    "name": "Rotating Alternate Incline Bicep Curls",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "https://www.youtube.com/embed/KM5Y9GBTcyU",
+                    "note": "",
+                    "rep": "",
+                    "set": "",
+                    "tempo": "",
+                    "chain": false,
+                    "type": "rest-pause",
+                    "rest": ""
+                  },
+                  {
+                    "name": "Alternating Deltoid Raise",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "video url",
+                    "note": "",
+                    "rep": "",
+                    "set": "",
+                    "tempo": "",
+                    "chain": false,
+                    "type": "dropset",
+                    "rest": ""
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "wednesday",
+            "workouts": [
+              {
+                "name": "pull",
+                "exercises": [
+                  {
+                    "name": "Seated Alternating Hammer Curls",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "https://www.youtube.com/embed/AFWRIzDA5zI",
+                    "note": "",
+                    "rep": "",
+                    "set": "",
+                    "tempo": "",
+                    "chain": true,
+                    "type": "",
+                    "rest": ""
+                  },
+                  {
+                    "name": "Rotating Alternate Incline Bicep Curls",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "https://www.youtube.com/embed/KM5Y9GBTcyU",
+                    "note": "",
+                    "rep": "",
+                    "set": "",
+                    "tempo": "",
+                    "chain": true,
+                    "type": "rest-pause",
+                    "rest": ""
+                  },
+                  {
+                    "name": "Alternating Deltoid Raise",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "video url",
+                    "note": "",
+                    "rep": "",
+                    "set": "",
+                    "tempo": "",
+                    "chain": false,
+                    "type": "",
+                    "rest": ""
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "thursday",
+            "workouts": [
+              {
+                "name": "rest day"
+              }
+            ]
+          },
+          {
+            "name": "friday",
+            "workouts": []
+          },
+          {
+            "name": "saturday",
+            "workouts": []
+          },
+          {
+            "name": "sunday",
+            "workouts": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Jad's plan",
+    "createdBy": "632c945f1ba5f0bcfc9be699",
+    "weeks": [
+      {
+        "days": [
+          {
+            "name": "monday",
+            "workouts": [
+              {
+                "name": "legs",
+                "exercises": [
+                  {
+                    "name": "Seated Alternating Hammer Curls",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "https://www.youtube.com/embed/AFWRIzDA5zI",
+                    "note": "",
+                    "rep": "10-15",
+                    "set": "4",
+                    "tempo": "",
+                    "chain": true,
+                    "type": "",
+                    "rest": "60"
+                  },
+                  {
+                    "name": "Rotating Alternate Incline Bicep Curls",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "https://www.youtube.com/embed/KM5Y9GBTcyU",
+                    "note": "",
+                    "rep": "12",
+                    "set": "3",
+                    "tempo": "",
+                    "chain": false,
+                    "type": "",
+                    "rest": "90"
+                  },
+                  {
+                    "name": "Alternating Deltoid Raise",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "video url",
+                    "note": "",
+                    "rep": "",
+                    "set": "",
+                    "tempo": "",
+                    "chain": false,
+                    "type": "rest-pause",
+                    "rest": ""
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "tuesday",
+            "workouts": [
+              {
+                "name": "push",
+                "exercises": [
+                  {
+                    "name": "Seated Alternating Hammer Curls",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "https://www.youtube.com/embed/AFWRIzDA5zI",
+                    "note": "",
+                    "rep": "",
+                    "set": "",
+                    "tempo": "",
+                    "chain": true,
+                    "type": "",
+                    "rest": ""
+                  },
+                  {
+                    "name": "Rotating Alternate Incline Bicep Curls",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "https://www.youtube.com/embed/KM5Y9GBTcyU",
+                    "note": "",
+                    "rep": "",
+                    "set": "",
+                    "tempo": "",
+                    "chain": false,
+                    "type": "rest-pause",
+                    "rest": ""
+                  },
+                  {
+                    "name": "Alternating Deltoid Raise",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "video url",
+                    "note": "",
+                    "rep": "",
+                    "set": "",
+                    "tempo": "",
+                    "chain": false,
+                    "type": "dropset",
+                    "rest": ""
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "wednesday",
+            "workouts": [
+              {
+                "name": "pull",
+                "exercises": [
+                  {
+                    "name": "Seated Alternating Hammer Curls",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "https://www.youtube.com/embed/AFWRIzDA5zI",
+                    "note": "",
+                    "rep": "",
+                    "set": "",
+                    "tempo": "",
+                    "chain": true,
+                    "type": "",
+                    "rest": ""
+                  },
+                  {
+                    "name": "Rotating Alternate Incline Bicep Curls",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "https://www.youtube.com/embed/KM5Y9GBTcyU",
+                    "note": "",
+                    "rep": "",
+                    "set": "",
+                    "tempo": "",
+                    "chain": true,
+                    "type": "rest-pause",
+                    "rest": ""
+                  },
+                  {
+                    "name": "Alternating Deltoid Raise",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "video url",
+                    "note": "",
+                    "rep": "",
+                    "set": "",
+                    "tempo": "",
+                    "chain": false,
+                    "type": "",
+                    "rest": ""
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "thursday",
+            "workouts": [
+              {
+                "name": "rest day"
+              }
+            ]
+          },
+          {
+            "name": "friday",
+            "workouts": []
+          },
+          {
+            "name": "saturday",
+            "workouts": []
+          },
+          {
+            "name": "sunday",
+            "workouts": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "elie's plan",
+    "createdBy": "632c945f1ba5f0bcfc9be699",
+    "weeks": [
+      {
+        "days": [
+          {
+            "name": "monday",
+            "workouts": [
+              {
+                "name": "legs",
+                "exercises": [
+                  {
+                    "name": "Seated Alternating Hammer Curls",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "https://www.youtube.com/embed/AFWRIzDA5zI",
+                    "note": "",
+                    "rep": "10-15",
+                    "set": "4",
+                    "tempo": "",
+                    "chain": true,
+                    "type": "",
+                    "rest": "60"
+                  },
+                  {
+                    "name": "Rotating Alternate Incline Bicep Curls",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "https://www.youtube.com/embed/KM5Y9GBTcyU",
+                    "note": "",
+                    "rep": "12",
+                    "set": "3",
+                    "tempo": "",
+                    "chain": false,
+                    "type": "",
+                    "rest": "90"
+                  },
+                  {
+                    "name": "Alternating Deltoid Raise",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "video url",
+                    "note": "",
+                    "rep": "",
+                    "set": "",
+                    "tempo": "",
+                    "chain": false,
+                    "type": "rest-pause",
+                    "rest": ""
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "tuesday",
+            "workouts": [
+              {
+                "name": "push",
+                "exercises": [
+                  {
+                    "name": "Seated Alternating Hammer Curls",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "https://www.youtube.com/embed/AFWRIzDA5zI",
+                    "note": "",
+                    "rep": "",
+                    "set": "",
+                    "tempo": "",
+                    "chain": true,
+                    "type": "",
+                    "rest": ""
+                  },
+                  {
+                    "name": "Rotating Alternate Incline Bicep Curls",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "https://www.youtube.com/embed/KM5Y9GBTcyU",
+                    "note": "",
+                    "rep": "",
+                    "set": "",
+                    "tempo": "",
+                    "chain": false,
+                    "type": "rest-pause",
+                    "rest": ""
+                  },
+                  {
+                    "name": "Alternating Deltoid Raise",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "video url",
+                    "note": "",
+                    "rep": "",
+                    "set": "",
+                    "tempo": "",
+                    "chain": false,
+                    "type": "dropset",
+                    "rest": ""
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "wednesday",
+            "workouts": [
+              {
+                "name": "pull",
+                "exercises": [
+                  {
+                    "name": "Seated Alternating Hammer Curls",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "https://www.youtube.com/embed/AFWRIzDA5zI",
+                    "note": "",
+                    "rep": "",
+                    "set": "",
+                    "tempo": "",
+                    "chain": true,
+                    "type": "",
+                    "rest": ""
+                  },
+                  {
+                    "name": "Rotating Alternate Incline Bicep Curls",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "https://www.youtube.com/embed/KM5Y9GBTcyU",
+                    "note": "",
+                    "rep": "",
+                    "set": "",
+                    "tempo": "",
+                    "chain": true,
+                    "type": "rest-pause",
+                    "rest": ""
+                  },
+                  {
+                    "name": "Alternating Deltoid Raise",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "video url",
+                    "note": "",
+                    "rep": "",
+                    "set": "",
+                    "tempo": "",
+                    "chain": false,
+                    "type": "",
+                    "rest": ""
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "thursday",
+            "workouts": [
+              {
+                "name": "rest day"
+              }
+            ]
+          },
+          {
+            "name": "friday",
+            "workouts": []
+          },
+          {
+            "name": "saturday",
+            "workouts": []
+          },
+          {
+            "name": "sunday",
+            "workouts": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Jad's plan",
+    "createdBy": "632c945f1ba5f0bcfc9be699",
+    "weeks": [
+      {
+        "days": [
+          {
+            "name": "monday",
+            "workouts": [
+              {
+                "name": "legs",
+                "exercises": [
+                  {
+                    "name": "Seated Alternating Hammer Curls",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "https://www.youtube.com/embed/AFWRIzDA5zI",
+                    "note": "",
+                    "rep": "10-15",
+                    "set": "4",
+                    "tempo": "",
+                    "chain": true,
+                    "type": "",
+                    "rest": "60"
+                  },
+                  {
+                    "name": "Rotating Alternate Incline Bicep Curls",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "https://www.youtube.com/embed/KM5Y9GBTcyU",
+                    "note": "",
+                    "rep": "12",
+                    "set": "3",
+                    "tempo": "",
+                    "chain": false,
+                    "type": "",
+                    "rest": "90"
+                  },
+                  {
+                    "name": "Alternating Deltoid Raise",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "video url",
+                    "note": "",
+                    "rep": "",
+                    "set": "",
+                    "tempo": "",
+                    "chain": false,
+                    "type": "rest-pause",
+                    "rest": ""
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "tuesday",
+            "workouts": [
+              {
+                "name": "push",
+                "exercises": [
+                  {
+                    "name": "Seated Alternating Hammer Curls",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "https://www.youtube.com/embed/AFWRIzDA5zI",
+                    "note": "",
+                    "rep": "",
+                    "set": "",
+                    "tempo": "",
+                    "chain": true,
+                    "type": "",
+                    "rest": ""
+                  },
+                  {
+                    "name": "Rotating Alternate Incline Bicep Curls",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "https://www.youtube.com/embed/KM5Y9GBTcyU",
+                    "note": "",
+                    "rep": "",
+                    "set": "",
+                    "tempo": "",
+                    "chain": false,
+                    "type": "rest-pause",
+                    "rest": ""
+                  },
+                  {
+                    "name": "Alternating Deltoid Raise",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "video url",
+                    "note": "",
+                    "rep": "",
+                    "set": "",
+                    "tempo": "",
+                    "chain": false,
+                    "type": "dropset",
+                    "rest": ""
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "wednesday",
+            "workouts": [
+              {
+                "name": "pull",
+                "exercises": [
+                  {
+                    "name": "Seated Alternating Hammer Curls",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "https://www.youtube.com/embed/AFWRIzDA5zI",
+                    "note": "",
+                    "rep": "",
+                    "set": "",
+                    "tempo": "",
+                    "chain": true,
+                    "type": "",
+                    "rest": ""
+                  },
+                  {
+                    "name": "Rotating Alternate Incline Bicep Curls",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "https://www.youtube.com/embed/KM5Y9GBTcyU",
+                    "note": "",
+                    "rep": "",
+                    "set": "",
+                    "tempo": "",
+                    "chain": true,
+                    "type": "rest-pause",
+                    "rest": ""
+                  },
+                  {
+                    "name": "Alternating Deltoid Raise",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "video url",
+                    "note": "",
+                    "rep": "",
+                    "set": "",
+                    "tempo": "",
+                    "chain": false,
+                    "type": "",
+                    "rest": ""
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "thursday",
+            "workouts": [
+              {
+                "name": "rest day"
+              }
+            ]
+          },
+          {
+            "name": "friday",
+            "workouts": []
+          },
+          {
+            "name": "saturday",
+            "workouts": []
+          },
+          {
+            "name": "sunday",
+            "workouts": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "push/pull plan",
+    "createdBy": "632c945f1ba5f0bcfc9be699",
+    "weeks": [
+      {
+        "days": [
+          {
+            "name": "monday",
+            "workouts": [
+              {
+                "name": "legs",
+                "exercises": [
+                  {
+                    "name": "Seated Alternating Hammer Curls",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "https://www.youtube.com/embed/AFWRIzDA5zI",
+                    "note": "",
+                    "rep": "10-15",
+                    "set": "4",
+                    "tempo": "",
+                    "chain": true,
+                    "type": "",
+                    "rest": "60"
+                  },
+                  {
+                    "name": "Rotating Alternate Incline Bicep Curls",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "https://www.youtube.com/embed/KM5Y9GBTcyU",
+                    "note": "",
+                    "rep": "12",
+                    "set": "3",
+                    "tempo": "",
+                    "chain": false,
+                    "type": "",
+                    "rest": "90"
+                  },
+                  {
+                    "name": "Alternating Deltoid Raise",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "video url",
+                    "note": "",
+                    "rep": "",
+                    "set": "",
+                    "tempo": "",
+                    "chain": false,
+                    "type": "rest-pause",
+                    "rest": ""
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "tuesday",
+            "workouts": [
+              {
+                "name": "push",
+                "exercises": [
+                  {
+                    "name": "Seated Alternating Hammer Curls",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "https://www.youtube.com/embed/AFWRIzDA5zI",
+                    "note": "",
+                    "rep": "",
+                    "set": "",
+                    "tempo": "",
+                    "chain": true,
+                    "type": "",
+                    "rest": ""
+                  },
+                  {
+                    "name": "Rotating Alternate Incline Bicep Curls",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "https://www.youtube.com/embed/KM5Y9GBTcyU",
+                    "note": "",
+                    "rep": "",
+                    "set": "",
+                    "tempo": "",
+                    "chain": false,
+                    "type": "rest-pause",
+                    "rest": ""
+                  },
+                  {
+                    "name": "Alternating Deltoid Raise",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "video url",
+                    "note": "",
+                    "rep": "",
+                    "set": "",
+                    "tempo": "",
+                    "chain": false,
+                    "type": "dropset",
+                    "rest": ""
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "wednesday",
+            "workouts": [
+              {
+                "name": "pull",
+                "exercises": [
+                  {
+                    "name": "Seated Alternating Hammer Curls",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "https://www.youtube.com/embed/AFWRIzDA5zI",
+                    "note": "",
+                    "rep": "",
+                    "set": "",
+                    "tempo": "",
+                    "chain": true,
+                    "type": "",
+                    "rest": ""
+                  },
+                  {
+                    "name": "Rotating Alternate Incline Bicep Curls",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "https://www.youtube.com/embed/KM5Y9GBTcyU",
+                    "note": "",
+                    "rep": "",
+                    "set": "",
+                    "tempo": "",
+                    "chain": true,
+                    "type": "rest-pause",
+                    "rest": ""
+                  },
+                  {
+                    "name": "Alternating Deltoid Raise",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "video url",
+                    "note": "",
+                    "rep": "",
+                    "set": "",
+                    "tempo": "",
+                    "chain": false,
+                    "type": "",
+                    "rest": ""
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "thursday",
+            "workouts": [
+              {
+                "name": "rest day"
+              }
+            ]
+          },
+          {
+            "name": "friday",
+            "workouts": []
+          },
+          {
+            "name": "saturday",
+            "workouts": []
+          },
+          {
+            "name": "sunday",
+            "workouts": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "diana's plan",
+    "createdBy": "632c945f1ba5f0bcfc9be699",
+    "weeks": [
+      {
+        "days": [
+          {
+            "name": "monday",
+            "workouts": [
+              {
+                "name": "legs",
+                "exercises": [
+                  {
+                    "name": "Seated Alternating Hammer Curls",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "https://www.youtube.com/embed/AFWRIzDA5zI",
+                    "note": "",
+                    "rep": "10-15",
+                    "set": "4",
+                    "tempo": "",
+                    "chain": true,
+                    "type": "",
+                    "rest": "60"
+                  },
+                  {
+                    "name": "Rotating Alternate Incline Bicep Curls",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "https://www.youtube.com/embed/KM5Y9GBTcyU",
+                    "note": "",
+                    "rep": "12",
+                    "set": "3",
+                    "tempo": "",
+                    "chain": false,
+                    "type": "",
+                    "rest": "90"
+                  },
+                  {
+                    "name": "Alternating Deltoid Raise",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "video url",
+                    "note": "",
+                    "rep": "",
+                    "set": "",
+                    "tempo": "",
+                    "chain": false,
+                    "type": "rest-pause",
+                    "rest": ""
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "tuesday",
+            "workouts": [
+              {
+                "name": "push",
+                "exercises": [
+                  {
+                    "name": "Seated Alternating Hammer Curls",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "https://www.youtube.com/embed/AFWRIzDA5zI",
+                    "note": "",
+                    "rep": "",
+                    "set": "",
+                    "tempo": "",
+                    "chain": true,
+                    "type": "",
+                    "rest": ""
+                  },
+                  {
+                    "name": "Rotating Alternate Incline Bicep Curls",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "https://www.youtube.com/embed/KM5Y9GBTcyU",
+                    "note": "",
+                    "rep": "",
+                    "set": "",
+                    "tempo": "",
+                    "chain": false,
+                    "type": "rest-pause",
+                    "rest": ""
+                  },
+                  {
+                    "name": "Alternating Deltoid Raise",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "video url",
+                    "note": "",
+                    "rep": "",
+                    "set": "",
+                    "tempo": "",
+                    "chain": false,
+                    "type": "dropset",
+                    "rest": ""
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "wednesday",
+            "workouts": [
+              {
+                "name": "pull",
+                "exercises": [
+                  {
+                    "name": "Seated Alternating Hammer Curls",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "https://www.youtube.com/embed/AFWRIzDA5zI",
+                    "note": "",
+                    "rep": "",
+                    "set": "",
+                    "tempo": "",
+                    "chain": true,
+                    "type": "",
+                    "rest": ""
+                  },
+                  {
+                    "name": "Rotating Alternate Incline Bicep Curls",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "https://www.youtube.com/embed/KM5Y9GBTcyU",
+                    "note": "",
+                    "rep": "",
+                    "set": "",
+                    "tempo": "",
+                    "chain": true,
+                    "type": "rest-pause",
+                    "rest": ""
+                  },
+                  {
+                    "name": "Alternating Deltoid Raise",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "video url",
+                    "note": "",
+                    "rep": "",
+                    "set": "",
+                    "tempo": "",
+                    "chain": false,
+                    "type": "",
+                    "rest": ""
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "thursday",
+            "workouts": [
+              {
+                "name": "rest day"
+              }
+            ]
+          },
+          {
+            "name": "friday",
+            "workouts": []
+          },
+          {
+            "name": "saturday",
+            "workouts": []
+          },
+          {
+            "name": "sunday",
+            "workouts": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "andi's plan",
+    "createdBy": "632c945f1ba5f0bcfc9be699",
+    "weeks": [
+      {
+        "days": [
+          {
+            "name": "monday",
+            "workouts": [
+              {
+                "name": "legs",
+                "exercises": [
+                  {
+                    "name": "Seated Alternating Hammer Curls",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "https://www.youtube.com/embed/AFWRIzDA5zI",
+                    "note": "",
+                    "rep": "10-15",
+                    "set": "4",
+                    "tempo": "",
+                    "chain": true,
+                    "type": "",
+                    "rest": "60"
+                  },
+                  {
+                    "name": "Rotating Alternate Incline Bicep Curls",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "https://www.youtube.com/embed/KM5Y9GBTcyU",
+                    "note": "",
+                    "rep": "12",
+                    "set": "3",
+                    "tempo": "",
+                    "chain": false,
+                    "type": "",
+                    "rest": "90"
+                  },
+                  {
+                    "name": "Alternating Deltoid Raise",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "video url",
+                    "note": "",
+                    "rep": "",
+                    "set": "",
+                    "tempo": "",
+                    "chain": false,
+                    "type": "rest-pause",
+                    "rest": ""
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "tuesday",
+            "workouts": [
+              {
+                "name": "push",
+                "exercises": [
+                  {
+                    "name": "Seated Alternating Hammer Curls",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "https://www.youtube.com/embed/AFWRIzDA5zI",
+                    "note": "",
+                    "rep": "",
+                    "set": "",
+                    "tempo": "",
+                    "chain": true,
+                    "type": "",
+                    "rest": ""
+                  },
+                  {
+                    "name": "Rotating Alternate Incline Bicep Curls",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "https://www.youtube.com/embed/KM5Y9GBTcyU",
+                    "note": "",
+                    "rep": "",
+                    "set": "",
+                    "tempo": "",
+                    "chain": false,
+                    "type": "rest-pause",
+                    "rest": ""
+                  },
+                  {
+                    "name": "Alternating Deltoid Raise",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "video url",
+                    "note": "",
+                    "rep": "",
+                    "set": "",
+                    "tempo": "",
+                    "chain": false,
+                    "type": "dropset",
+                    "rest": ""
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "wednesday",
+            "workouts": [
+              {
+                "name": "pull",
+                "exercises": [
+                  {
+                    "name": "Seated Alternating Hammer Curls",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "https://www.youtube.com/embed/AFWRIzDA5zI",
+                    "note": "",
+                    "rep": "",
+                    "set": "",
+                    "tempo": "",
+                    "chain": true,
+                    "type": "",
+                    "rest": ""
+                  },
+                  {
+                    "name": "Rotating Alternate Incline Bicep Curls",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "https://www.youtube.com/embed/KM5Y9GBTcyU",
+                    "note": "",
+                    "rep": "",
+                    "set": "",
+                    "tempo": "",
+                    "chain": true,
+                    "type": "rest-pause",
+                    "rest": ""
+                  },
+                  {
+                    "name": "Alternating Deltoid Raise",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "video url",
+                    "note": "",
+                    "rep": "",
+                    "set": "",
+                    "tempo": "",
+                    "chain": false,
+                    "type": "",
+                    "rest": ""
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "thursday",
+            "workouts": [
+              {
+                "name": "rest day"
+              }
+            ]
+          },
+          {
+            "name": "friday",
+            "workouts": []
+          },
+          {
+            "name": "saturday",
+            "workouts": []
+          },
+          {
+            "name": "sunday",
+            "workouts": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "charbel's plan",
+    "createdBy": "632c945f1ba5f0bcfc9be699",
+    "weeks": [
+      {
+        "days": [
+          {
+            "name": "monday",
+            "workouts": [
+              {
+                "name": "legs",
+                "exercises": [
+                  {
+                    "name": "Seated Alternating Hammer Curls",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "https://www.youtube.com/embed/AFWRIzDA5zI",
+                    "note": "",
+                    "rep": "10-15",
+                    "set": "4",
+                    "tempo": "",
+                    "chain": true,
+                    "type": "",
+                    "rest": "60"
+                  },
+                  {
+                    "name": "Rotating Alternate Incline Bicep Curls",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "https://www.youtube.com/embed/KM5Y9GBTcyU",
+                    "note": "",
+                    "rep": "12",
+                    "set": "3",
+                    "tempo": "",
+                    "chain": false,
+                    "type": "",
+                    "rest": "90"
+                  },
+                  {
+                    "name": "Alternating Deltoid Raise",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "video url",
+                    "note": "",
+                    "rep": "",
+                    "set": "",
+                    "tempo": "",
+                    "chain": false,
+                    "type": "rest-pause",
+                    "rest": ""
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "tuesday",
+            "workouts": [
+              {
+                "name": "push",
+                "exercises": [
+                  {
+                    "name": "Seated Alternating Hammer Curls",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "https://www.youtube.com/embed/AFWRIzDA5zI",
+                    "note": "",
+                    "rep": "",
+                    "set": "",
+                    "tempo": "",
+                    "chain": true,
+                    "type": "",
+                    "rest": ""
+                  },
+                  {
+                    "name": "Rotating Alternate Incline Bicep Curls",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "https://www.youtube.com/embed/KM5Y9GBTcyU",
+                    "note": "",
+                    "rep": "",
+                    "set": "",
+                    "tempo": "",
+                    "chain": false,
+                    "type": "rest-pause",
+                    "rest": ""
+                  },
+                  {
+                    "name": "Alternating Deltoid Raise",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "video url",
+                    "note": "",
+                    "rep": "",
+                    "set": "",
+                    "tempo": "",
+                    "chain": false,
+                    "type": "dropset",
+                    "rest": ""
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "wednesday",
+            "workouts": [
+              {
+                "name": "pull",
+                "exercises": [
+                  {
+                    "name": "Seated Alternating Hammer Curls",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "https://www.youtube.com/embed/AFWRIzDA5zI",
+                    "note": "",
+                    "rep": "",
+                    "set": "",
+                    "tempo": "",
+                    "chain": true,
+                    "type": "",
+                    "rest": ""
+                  },
+                  {
+                    "name": "Rotating Alternate Incline Bicep Curls",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "https://www.youtube.com/embed/KM5Y9GBTcyU",
+                    "note": "",
+                    "rep": "",
+                    "set": "",
+                    "tempo": "",
+                    "chain": true,
+                    "type": "rest-pause",
+                    "rest": ""
+                  },
+                  {
+                    "name": "Alternating Deltoid Raise",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "video url",
+                    "note": "",
+                    "rep": "",
+                    "set": "",
+                    "tempo": "",
+                    "chain": false,
+                    "type": "",
+                    "rest": ""
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "thursday",
+            "workouts": [
+              {
+                "name": "rest day"
+              }
+            ]
+          },
+          {
+            "name": "friday",
+            "workouts": []
+          },
+          {
+            "name": "saturday",
+            "workouts": []
+          },
+          {
+            "name": "sunday",
+            "workouts": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "toni's plan",
+    "createdBy": "632c945f1ba5f0bcfc9be699",
+    "weeks": [
+      {
+        "days": [
+          {
+            "name": "monday",
+            "workouts": [
+              {
+                "name": "legs",
+                "exercises": [
+                  {
+                    "name": "Seated Alternating Hammer Curls",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "https://www.youtube.com/embed/AFWRIzDA5zI",
+                    "note": "",
+                    "rep": "10-15",
+                    "set": "4",
+                    "tempo": "",
+                    "chain": true,
+                    "type": "",
+                    "rest": "60"
+                  },
+                  {
+                    "name": "Rotating Alternate Incline Bicep Curls",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "https://www.youtube.com/embed/KM5Y9GBTcyU",
+                    "note": "",
+                    "rep": "12",
+                    "set": "3",
+                    "tempo": "",
+                    "chain": false,
+                    "type": "",
+                    "rest": "90"
+                  },
+                  {
+                    "name": "Alternating Deltoid Raise",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "video url",
+                    "note": "",
+                    "rep": "",
+                    "set": "",
+                    "tempo": "",
+                    "chain": false,
+                    "type": "rest-pause",
+                    "rest": ""
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "tuesday",
+            "workouts": [
+              {
+                "name": "push",
+                "exercises": [
+                  {
+                    "name": "Seated Alternating Hammer Curls",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "https://www.youtube.com/embed/AFWRIzDA5zI",
+                    "note": "",
+                    "rep": "",
+                    "set": "",
+                    "tempo": "",
+                    "chain": true,
+                    "type": "",
+                    "rest": ""
+                  },
+                  {
+                    "name": "Rotating Alternate Incline Bicep Curls",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "https://www.youtube.com/embed/KM5Y9GBTcyU",
+                    "note": "",
+                    "rep": "",
+                    "set": "",
+                    "tempo": "",
+                    "chain": false,
+                    "type": "rest-pause",
+                    "rest": ""
+                  },
+                  {
+                    "name": "Alternating Deltoid Raise",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "video url",
+                    "note": "",
+                    "rep": "",
+                    "set": "",
+                    "tempo": "",
+                    "chain": false,
+                    "type": "dropset",
+                    "rest": ""
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "wednesday",
+            "workouts": [
+              {
+                "name": "pull",
+                "exercises": [
+                  {
+                    "name": "Seated Alternating Hammer Curls",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "https://www.youtube.com/embed/AFWRIzDA5zI",
+                    "note": "",
+                    "rep": "",
+                    "set": "",
+                    "tempo": "",
+                    "chain": true,
+                    "type": "",
+                    "rest": ""
+                  },
+                  {
+                    "name": "Rotating Alternate Incline Bicep Curls",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "https://www.youtube.com/embed/KM5Y9GBTcyU",
+                    "note": "",
+                    "rep": "",
+                    "set": "",
+                    "tempo": "",
+                    "chain": true,
+                    "type": "rest-pause",
+                    "rest": ""
+                  },
+                  {
+                    "name": "Alternating Deltoid Raise",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "video url",
+                    "note": "",
+                    "rep": "",
+                    "set": "",
+                    "tempo": "",
+                    "chain": false,
+                    "type": "",
+                    "rest": ""
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "thursday",
+            "workouts": [
+              {
+                "name": "rest day"
+              }
+            ]
+          },
+          {
+            "name": "friday",
+            "workouts": []
+          },
+          {
+            "name": "saturday",
+            "workouts": []
+          },
+          {
+            "name": "sunday",
+            "workouts": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "rami's plan",
+    "createdBy": "632c945f1ba5f0bcfc9be699",
+    "weeks": [
+      {
+        "days": [
+          {
+            "name": "monday",
+            "workouts": [
+              {
+                "name": "legs",
+                "exercises": [
+                  {
+                    "name": "Seated Alternating Hammer Curls",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "https://www.youtube.com/embed/AFWRIzDA5zI",
+                    "note": "",
+                    "rep": "10-15",
+                    "set": "4",
+                    "tempo": "",
+                    "chain": true,
+                    "type": "",
+                    "rest": "60"
+                  },
+                  {
+                    "name": "Rotating Alternate Incline Bicep Curls",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "https://www.youtube.com/embed/KM5Y9GBTcyU",
+                    "note": "",
+                    "rep": "12",
+                    "set": "3",
+                    "tempo": "",
+                    "chain": false,
+                    "type": "",
+                    "rest": "90"
+                  },
+                  {
+                    "name": "Alternating Deltoid Raise",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "video url",
+                    "note": "",
+                    "rep": "",
+                    "set": "",
+                    "tempo": "",
+                    "chain": false,
+                    "type": "rest-pause",
+                    "rest": ""
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "tuesday",
+            "workouts": [
+              {
+                "name": "push",
+                "exercises": [
+                  {
+                    "name": "Seated Alternating Hammer Curls",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "https://www.youtube.com/embed/AFWRIzDA5zI",
+                    "note": "",
+                    "rep": "",
+                    "set": "",
+                    "tempo": "",
+                    "chain": true,
+                    "type": "",
+                    "rest": ""
+                  },
+                  {
+                    "name": "Rotating Alternate Incline Bicep Curls",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "https://www.youtube.com/embed/KM5Y9GBTcyU",
+                    "note": "",
+                    "rep": "",
+                    "set": "",
+                    "tempo": "",
+                    "chain": false,
+                    "type": "rest-pause",
+                    "rest": ""
+                  },
+                  {
+                    "name": "Alternating Deltoid Raise",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "video url",
+                    "note": "",
+                    "rep": "",
+                    "set": "",
+                    "tempo": "",
+                    "chain": false,
+                    "type": "dropset",
+                    "rest": ""
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "wednesday",
+            "workouts": [
+              {
+                "name": "pull",
+                "exercises": [
+                  {
+                    "name": "Seated Alternating Hammer Curls",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "https://www.youtube.com/embed/AFWRIzDA5zI",
+                    "note": "",
+                    "rep": "",
+                    "set": "",
+                    "tempo": "",
+                    "chain": true,
+                    "type": "",
+                    "rest": ""
+                  },
+                  {
+                    "name": "Rotating Alternate Incline Bicep Curls",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "https://www.youtube.com/embed/KM5Y9GBTcyU",
+                    "note": "",
+                    "rep": "",
+                    "set": "",
+                    "tempo": "",
+                    "chain": true,
+                    "type": "rest-pause",
+                    "rest": ""
+                  },
+                  {
+                    "name": "Alternating Deltoid Raise",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "video url",
+                    "note": "",
+                    "rep": "",
+                    "set": "",
+                    "tempo": "",
+                    "chain": false,
+                    "type": "",
+                    "rest": ""
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "thursday",
+            "workouts": [
+              {
+                "name": "rest day"
+              }
+            ]
+          },
+          {
+            "name": "friday",
+            "workouts": []
+          },
+          {
+            "name": "saturday",
+            "workouts": []
+          },
+          {
+            "name": "sunday",
+            "workouts": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "zeina's plan",
+    "createdBy": "632c945f1ba5f0bcfc9be699",
+    "weeks": [
+      {
+        "days": [
+          {
+            "name": "monday",
+            "workouts": [
+              {
+                "name": "legs",
+                "exercises": [
+                  {
+                    "name": "Seated Alternating Hammer Curls",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "https://www.youtube.com/embed/AFWRIzDA5zI",
+                    "note": "",
+                    "rep": "10-15",
+                    "set": "4",
+                    "tempo": "",
+                    "chain": true,
+                    "type": "",
+                    "rest": "60"
+                  },
+                  {
+                    "name": "Rotating Alternate Incline Bicep Curls",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "https://www.youtube.com/embed/KM5Y9GBTcyU",
+                    "note": "",
+                    "rep": "12",
+                    "set": "3",
+                    "tempo": "",
+                    "chain": false,
+                    "type": "",
+                    "rest": "90"
+                  },
+                  {
+                    "name": "Alternating Deltoid Raise",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "video url",
+                    "note": "",
+                    "rep": "",
+                    "set": "",
+                    "tempo": "",
+                    "chain": false,
+                    "type": "rest-pause",
+                    "rest": ""
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "tuesday",
+            "workouts": [
+              {
+                "name": "push",
+                "exercises": [
+                  {
+                    "name": "Seated Alternating Hammer Curls",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "https://www.youtube.com/embed/AFWRIzDA5zI",
+                    "note": "",
+                    "rep": "",
+                    "set": "",
+                    "tempo": "",
+                    "chain": true,
+                    "type": "",
+                    "rest": ""
+                  },
+                  {
+                    "name": "Rotating Alternate Incline Bicep Curls",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "https://www.youtube.com/embed/KM5Y9GBTcyU",
+                    "note": "",
+                    "rep": "",
+                    "set": "",
+                    "tempo": "",
+                    "chain": false,
+                    "type": "rest-pause",
+                    "rest": ""
+                  },
+                  {
+                    "name": "Alternating Deltoid Raise",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "video url",
+                    "note": "",
+                    "rep": "",
+                    "set": "",
+                    "tempo": "",
+                    "chain": false,
+                    "type": "dropset",
+                    "rest": ""
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "wednesday",
+            "workouts": [
+              {
+                "name": "pull",
+                "exercises": [
+                  {
+                    "name": "Seated Alternating Hammer Curls",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "https://www.youtube.com/embed/AFWRIzDA5zI",
+                    "note": "",
+                    "rep": "",
+                    "set": "",
+                    "tempo": "",
+                    "chain": true,
+                    "type": "",
+                    "rest": ""
+                  },
+                  {
+                    "name": "Rotating Alternate Incline Bicep Curls",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "https://www.youtube.com/embed/KM5Y9GBTcyU",
+                    "note": "",
+                    "rep": "",
+                    "set": "",
+                    "tempo": "",
+                    "chain": true,
+                    "type": "rest-pause",
+                    "rest": ""
+                  },
+                  {
+                    "name": "Alternating Deltoid Raise",
+                    "img": "../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg",
+                    "video": "video url",
+                    "note": "",
+                    "rep": "",
+                    "set": "",
+                    "tempo": "",
+                    "chain": false,
+                    "type": "",
+                    "rest": ""
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "thursday",
+            "workouts": [
+              {
+                "name": "rest day"
+              }
+            ]
+          },
+          {
+            "name": "friday",
+            "workouts": []
+          },
+          {
+            "name": "saturday",
+            "workouts": []
+          },
+          {
+            "name": "sunday",
+            "workouts": []
           }
         ]
       }

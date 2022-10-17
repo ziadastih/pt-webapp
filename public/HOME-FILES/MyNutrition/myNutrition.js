@@ -1,5 +1,7 @@
 const btnContainer = document.querySelector(".btn-container");
-
+const dietsGridContainer = document.querySelector(
+  ".nutrition-programs-grid-container"
+);
 // ================GET WORKOUT FUNCTION , INCLUDE DISPLAYING ALL, LIVE SEARCH , DELETE FUNCTION =============================
 
 const getDiet = async () => {
@@ -47,3 +49,31 @@ logoutBtn.addEventListener("click", async () => {
     console.log(error);
   }
 });
+
+// ==============display all programs
+const displayAllPrograms = (Diets) => {
+  for (let i = 0; i < Diets.length; i++) {
+    dietsGridContainer.innerHTML += `<div class="one-diet-container">
+ 
+  <div class="diet">
+  <i class="fa-solid fa-list" id="show-overview" data-overview=${i}></i>
+ <p>${Diets[i].name}</p>
+    <div class="tools">
+      <i class="fa-regular fa-pen-to-square" id="edit-diet" data-edit=${Diets[i]._id}></i>
+      <i class=" fa-solid fa-trash" id="delete-diet" data-delete=${Diets[i]._id}></i>
+    </div>
+  </div>
+  
+  <div class="overview-container">
+  <div class="date-stats">
+  <p class="created-at">created at: 22/10/2022</p>
+  <p class="updated-at">updated at: 22/11/2022</p>
+
+</div>
+
+</div>
+<div class="created-workouts"></div>
+</div>`;
+  }
+};
+console.log(performance.now());
