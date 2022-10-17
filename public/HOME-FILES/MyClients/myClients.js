@@ -9,7 +9,7 @@ const searchCLientInput = document.getElementById("search-client-input");
 const getClients = async () => {
   try {
     // ============getting the data ===============
-    const { data } = await axios.get("/api/v1/client");
+    const { data } = await axios.get("/api/v1/client/?count=30");
     //  =========if length is === 0 means no clients we want to display the create item =============
     const length = data.clientsInfo.length;
     if (length === 0) {
@@ -17,81 +17,27 @@ const getClients = async () => {
     }
     //getting the array which is client =================
     let client = data.clientsInfo;
-    clientsGridContainer.innerHTML = "";
-    for (let i = 0; i < length; i++) {
-      clientsGridContainer.innerHTML += ` <div class="client" data-id = ${client[i].clientId}}>
-        <p class="client-full-name">${client[i].clientFirstName} ${client[i].clientLastName}</p>
-        <div class="tools">
-          <i class="fa-solid fa-trash" id="delete-client" data-delete = ${client[i].clientId}></i>
-          <i class="fa-solid fa-user-pen" id="manage-client" data-manage= ${client[i].clientId}></i>
-        </div>
-      </div> `;
-    }
 
-    // =================client full name adjustement========
-    const clientFullName = document.querySelectorAll(".client-full-name");
-    clientFullName.forEach((fullName) => {
-      const OriginalName = fullName.textContent;
-      if (OriginalName.length > 14) {
-        const restrictedFullName = `${OriginalName.slice(0, 14)}...`;
-        fullName.textContent = restrictedFullName;
-      }
-    });
-
-    // =============delete client ====================
-    const deleteClient = document.querySelectorAll("#delete-client");
-
-    deleteClient.forEach((deleteBtn) => {
-      deleteBtn.addEventListener("click", (e) => {
-        let clientId = e.target.dataset.delete;
-        let clientName =
-          e.target.parentElement.previousElementSibling.textContent;
-
-        deleteVerificationContainer.classList.add("open-container");
-        deleteVerificationContainer.innerHTML = ` 
-        <div class="delete-verification-box">
-        <h3>Are you sure you want to delete <span>${clientName}</span> ?</h3>
-        <div class="yes-no-container">
-          <button class="yes-btn" data-delete =${clientId}>yes</button>
-          <button class="no-btn"> no </button>
-        </div>
-        </div>`;
-
-        const noBtn = document.querySelector(".no-btn");
-        noBtn.addEventListener("click", () => {
-          deleteVerificationContainer.classList.remove("open-container");
-        });
-        const yesBtn = document.querySelector(".yes-btn");
-        yesBtn.addEventListener("click", async (e) => {
-          let id = e.target.dataset.delete;
-          await axios.delete(`/api/v1/client/${id}`);
-          deleteVerificationContainer.classList.remove("open-container");
-
-          getClients();
-        });
-      });
-    });
+    displayClients(client);
 
     // =========================live search =======================
-    const clientContainers = document.querySelectorAll(".client");
-    const liveSearch = () => {
-      let inputCharacter = searchCLientInput.value.toUpperCase();
 
-      clientContainers.forEach((client) => {
-        // ============show all item when input is empty again
-        if (searchCLientInput === "") {
-          client.classList.remove("display-none");
-        }
-        // ==========search by charachter, display the ones that match,remove the ones that doesnt match================
-        if (client.textContent.toUpperCase().includes(inputCharacter)) {
-          client.classList.remove("display-none");
-        } else if (!client.textContent.toUpperCase().includes(inputCharacter)) {
-          client.classList.add("display-none");
-        }
-      });
+    const liveSearch = async () => {
+      let inputCharacter = searchCLientInput.value;
+      const { data } = await axios.get(
+        `/api/v1/client/?name=${inputCharacter}`
+      );
+
+      let client = data.clientsInfo;
+      console.log(client);
+      displayClients(client);
     };
-    searchCLientInput.addEventListener("input", () => {
-      liveSearch();
+    searchCLientInput.addEventListener("input", async () => {
+      if (searchCLientInput.value.length === 0) {
+        getClients();
+      } else {
+        await liveSearch();
+      }
     });
   } catch (error) {
     console.log(error);
@@ -230,3 +176,60 @@ function validateEmail(emailValue) {
   let res = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
   return res.test(emailValue);
 }
+
+const displayClients = (client) => {
+  clientsGridContainer.innerHTML = "";
+  for (let i = 0; i < client.length; i++) {
+    clientsGridContainer.innerHTML += ` <div class="client" data-id = ${client[i].clientId}}>
+      <p class="client-full-name">${client[i].clientFirstName} ${client[i].clientLastName}</p>
+      <div class="tools">
+        <i class="fa-solid fa-trash" id="delete-client" data-delete = ${client[i].clientId}></i>
+        <i class="fa-solid fa-user-pen" id="manage-client" data-manage= ${client[i].clientId}></i>
+      </div>
+    </div> `;
+  }
+
+  // =================client full name adjustement========
+  const clientFullName = document.querySelectorAll(".client-full-name");
+  clientFullName.forEach((fullName) => {
+    const OriginalName = fullName.textContent;
+    if (OriginalName.length > 14) {
+      const restrictedFullName = `${OriginalName.slice(0, 14)}...`;
+      fullName.textContent = restrictedFullName;
+    }
+  });
+
+  // =============delete client ====================
+  const deleteClient = document.querySelectorAll("#delete-client");
+
+  deleteClient.forEach((deleteBtn) => {
+    deleteBtn.addEventListener("click", (e) => {
+      let clientId = e.target.dataset.delete;
+      let clientName =
+        e.target.parentElement.previousElementSibling.textContent;
+
+      deleteVerificationContainer.classList.add("open-container");
+      deleteVerificationContainer.innerHTML = ` 
+      <div class="delete-verification-box">
+      <h3>Are you sure you want to delete <span>${clientName}</span> ?</h3>
+      <div class="yes-no-container">
+        <button class="yes-btn" data-delete =${clientId}>yes</button>
+        <button class="no-btn"> no </button>
+      </div>
+      </div>`;
+
+      const noBtn = document.querySelector(".no-btn");
+      noBtn.addEventListener("click", () => {
+        deleteVerificationContainer.classList.remove("open-container");
+      });
+      const yesBtn = document.querySelector(".yes-btn");
+      yesBtn.addEventListener("click", async (e) => {
+        let id = e.target.dataset.delete;
+        await axios.delete(`/api/v1/client/${id}`);
+        deleteVerificationContainer.classList.remove("open-container");
+
+        getClients();
+      });
+    });
+  });
+};

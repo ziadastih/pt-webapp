@@ -2,14 +2,14 @@ require("dotenv").config();
 
 const connectDB = require("./connectDb/connect");
 const workouts = require("./models/workoutProgramSchema");
-
+const clients = require("./models/clientsModel");
 const wokroutplans = require("./workouts.json");
-
+const clientsPop = require("./client.json");
 const start = async () => {
   try {
     await connectDB(process.env.PT_URI);
-    await workouts.deleteMany();
-    await workouts.create(wokroutplans);
+    await clients.deleteMany();
+    await clients.create(clientsPop);
     console.log("Success!!!!");
     process.exit(0);
   } catch (error) {

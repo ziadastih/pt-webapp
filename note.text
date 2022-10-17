@@ -66,3 +66,23 @@
             </div>
           </div>
         </div>
+
+
+        =============live search
+
+
+
+         programContainers.forEach((program) => {
+        // ============show all item when input is empty again
+        if (searchWorkoutInput === "") {
+          program.classList.remove("display-none");
+        }
+        // ==========search by charachter, display the ones that match,remove the ones that doesnt match================
+        if (program.textContent.toUpperCase().includes(inputCharacter)) {
+          program.classList.remove("display-none");
+        } else if (
+          !program.textContent.toUpperCase().includes(inputCharacter)
+        ) {
+          program.classList.add("display-none");
+        }
+      });

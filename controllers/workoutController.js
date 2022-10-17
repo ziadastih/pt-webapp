@@ -3,15 +3,35 @@ const { StatusCodes } = require("http-status-codes");
 
 // ===============get all workouts =================
 const getAllWorkoutPrograms = async (req, res) => {
-  const count = req.query.count;
+  const { name, count, length } = req.query;
+  const queryObject = {};
+  if (length) {
+    const workoutprograms = await WorkoutProgram.find({
+      createdBy: req.coach.coachId,
+    });
+    let number = workoutprograms.length;
 
-  const workoutprograms = await WorkoutProgram.find({
-    createdBy: req.coach.coachId,
-  })
-    .lean()
-    .limit(10);
+    res.status(StatusCodes.OK).json({ number });
+  }
 
-  res.status(StatusCodes.OK).json({ workoutprograms });
+  if (name) {
+    queryObject.name = { $regex: name, $options: "i" };
+    queryObject.createdBy = req.coach.coachId;
+
+    const workoutprograms = await WorkoutProgram.find(queryObject).lean();
+
+    res.status(StatusCodes.OK).json({ workoutprograms });
+  }
+
+  if (count) {
+    const workoutprograms = await WorkoutProgram.find({
+      createdBy: req.coach.coachId,
+    })
+      .lean()
+
+      .limit(count);
+    res.status(StatusCodes.OK).json({ workoutprograms });
+  }
 };
 
 // ============get one specific workout ==================

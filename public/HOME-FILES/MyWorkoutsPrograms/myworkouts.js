@@ -36,72 +36,25 @@ const getWorkouts = async () => {
     let workoutPrograms = data.workoutprograms;
 
     displayProgramInfo(workoutPrograms);
-    // =============delete client ====================
-    const deleteWorkout = document.querySelectorAll("#delete-workout");
 
-    deleteWorkout.forEach((deleteBtn) => {
-      deleteBtn.addEventListener("click", (e) => {
-        let workoutId = e.target.dataset.delete;
-        let workoutName =
-          e.target.parentElement.previousElementSibling.textContent;
-
-        deleteVerificationContainer.classList.add("open-container");
-        deleteVerificationContainer.innerHTML = ` 
-        <div class="delete-verification-box">
-        <h3>Are you sure you want to delete <span>${workoutName}</span> ?</h3>
-        <div class="yes-no-container">
-          <button class="yes-btn" data-delete =${workoutId}>yes</button>
-          <button class="no-btn"> no </button>
-        </div>
-        </div>`;
-
-        const noBtn = document.querySelector(".no-btn");
-        noBtn.addEventListener("click", () => {
-          deleteVerificationContainer.classList.remove("open-container");
-        });
-        const yesBtn = document.querySelector(".yes-btn");
-        yesBtn.addEventListener("click", async (e) => {
-          let id = e.target.dataset.delete;
-
-          await axios.delete(`/api/v1/workoutProgram/${id}`);
-          deleteVerificationContainer.classList.remove("open-container");
-
-          getWorkouts();
-        });
-      });
-    });
-
-    const editWorkoutBtns = document.querySelectorAll("#edit-workout");
-    editWorkoutBtns.forEach((editBtn) => {
-      editBtn.addEventListener("click", () => {
-        let workoutId = editBtn.dataset.edit;
-        localStorage.setItem("wo", workoutId);
-        window.location =
-          "http://192.168.1.195:3000/editWorkout/editWorkout.html";
-      });
-    });
     // ===========================live search =======================
-    const programContainers = document.querySelectorAll(".program");
-    const liveSearch = () => {
-      let inputCharacter = searchWorkoutInput.value.toUpperCase();
 
-      programContainers.forEach((program) => {
-        // ============show all item when input is empty again
-        if (searchWorkoutInput === "") {
-          program.classList.remove("display-none");
-        }
-        // ==========search by charachter, display the ones that match,remove the ones that doesnt match================
-        if (program.textContent.toUpperCase().includes(inputCharacter)) {
-          program.classList.remove("display-none");
-        } else if (
-          !program.textContent.toUpperCase().includes(inputCharacter)
-        ) {
-          program.classList.add("display-none");
-        }
-      });
+    const liveSearch = async () => {
+      let inputCharacter = searchWorkoutInput.value;
+      const { data } = await axios.get(
+        `/api/v1/workoutProgram/?name=${inputCharacter}`
+      );
+
+      let workoutPrograms = data.workoutprograms;
+
+      displayProgramInfo(workoutPrograms);
     };
-    searchWorkoutInput.addEventListener("input", () => {
-      liveSearch();
+    searchWorkoutInput.addEventListener("input", async () => {
+      if (searchWorkoutInput.value.length === 0) {
+        getWorkouts();
+      } else {
+        await liveSearch();
+      }
     });
   } catch (error) {
     console.log(error);
@@ -189,6 +142,49 @@ const displayAllPrograms = (programPlan) => {
 <div class="created-workouts"></div>
 </div>`;
   }
+  const deleteWorkout = document.querySelectorAll("#delete-workout");
+
+  deleteWorkout.forEach((deleteBtn) => {
+    deleteBtn.addEventListener("click", (e) => {
+      let workoutId = e.target.dataset.delete;
+      let workoutName =
+        e.target.parentElement.previousElementSibling.textContent;
+
+      deleteVerificationContainer.classList.add("open-container");
+      deleteVerificationContainer.innerHTML = ` 
+      <div class="delete-verification-box">
+      <h3>Are you sure you want to delete <span>${workoutName}</span> ?</h3>
+      <div class="yes-no-container">
+        <button class="yes-btn" data-delete =${workoutId}>yes</button>
+        <button class="no-btn"> no </button>
+      </div>
+      </div>`;
+
+      const noBtn = document.querySelector(".no-btn");
+      noBtn.addEventListener("click", () => {
+        deleteVerificationContainer.classList.remove("open-container");
+      });
+      const yesBtn = document.querySelector(".yes-btn");
+      yesBtn.addEventListener("click", async (e) => {
+        let id = e.target.dataset.delete;
+
+        await axios.delete(`/api/v1/workoutProgram/${id}`);
+        deleteVerificationContainer.classList.remove("open-container");
+
+        getWorkouts();
+      });
+    });
+  });
+
+  const editWorkoutBtns = document.querySelectorAll("#edit-workout");
+  editWorkoutBtns.forEach((editBtn) => {
+    editBtn.addEventListener("click", () => {
+      let workoutId = editBtn.dataset.edit;
+      localStorage.setItem("wo", workoutId);
+      window.location =
+        "http://192.168.1.195:3000/editWorkout/editWorkout.html";
+    });
+  });
 };
 
 // =======================display time stamps =========================

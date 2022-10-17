@@ -29,9 +29,9 @@ const dietNumberStat = document.querySelector(".diet-number");
 
 const getWorkoutPrograms = async () => {
   try {
-    const { data } = await axios.get("/api/v1/workoutProgram");
-    console.log(data);
-    workoutProgramNumberStat.textContent = data.workoutprograms.length;
+    const { data } = await axios.get("/api/v1/workoutProgram?length=1");
+
+    workoutProgramNumberStat.textContent = data.number;
   } catch (error) {
     console.log(error);
   }
@@ -40,9 +40,9 @@ getWorkoutPrograms();
 
 const getClients = async () => {
   try {
-    const { data } = await axios.get("/api/v1/client");
+    const { data } = await axios.get("/api/v1/client?length=1");
 
-    clientNumberStat.textContent = data.clientsInfo.length;
+    clientNumberStat.textContent = data.number;
   } catch (error) {
     console.log(error);
   }
@@ -51,8 +51,8 @@ getClients();
 
 const getDiets = async () => {
   try {
-    const { data } = await axios.get("/api/v1/diet");
-    dietNumberStat.textContent = data.diets.length;
+    const { data } = await axios.get("/api/v1/diet?length=1");
+    dietNumberStat.textContent = data.number;
   } catch (error) {
     console.log(error);
   }

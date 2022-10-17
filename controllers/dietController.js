@@ -3,8 +3,33 @@ const { StatusCodes } = require("http-status-codes");
 
 // ==================get all diets ===================
 const getAllDiets = async (req, res) => {
-  const diets = await Diet.find({ createdBy: req.coach.coachId });
-  res.status(StatusCodes.OK).json({ diets });
+  const { name, count, length } = req.query;
+  const queryObject = {};
+  if (length) {
+    const diet = await Diet.find({
+      createdBy: req.coach.coachId,
+    });
+    let number = diet.length;
+
+    res.status(StatusCodes.OK).json({ number });
+  }
+
+  if (name) {
+    queryObject.name = { $regex: name, $options: "i" };
+    queryObject.createdBy = req.coach.coachId;
+
+    const diet = await Diet.find(queryObject).lean();
+
+    res.status(StatusCodes.OK).json({ diet });
+  }
+
+  if (count) {
+    const diets = await Diet.find({ createdBy: req.coach.coachId })
+      .lean()
+
+      .limit(count);
+    res.status(StatusCodes.OK).json({ diets });
+  }
 };
 
 // ================create diet ===================

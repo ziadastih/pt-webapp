@@ -2,20 +2,50 @@ const Client = require("../models/clientsModel");
 const { StatusCodes } = require("http-status-codes");
 const { BadRequestError, NotFoundError } = require("../errors");
 
-// =================get all clients ============
+// =================get all clients with certain query === ============
 const getallClients = async (req, res) => {
-  const clients = await Client.find({ createdBy: req.coach.coachId });
-  const clientsInfo = clients.map((obj) => {
-    return {
-      clientFirstName: obj.firstName,
-      clientLastName: obj.lastName,
-      clientId: obj._id,
-    };
-  });
+  const { name, count, length } = req.query;
+  const queryObject = {};
+  if (length) {
+    const client = await Client.find({
+      createdBy: req.coach.coachId,
+    });
+    let number = client.length;
 
-  res.status(StatusCodes.OK).json({
-    clientsInfo,
-  });
+    res.status(StatusCodes.OK).json({ number });
+  }
+
+  if (name) {
+    queryObject.firstName = { $regex: name, $options: "i" };
+
+    queryObject.createdBy = req.coach.coachId;
+
+    const clients = await Client.find(queryObject).lean();
+
+    const clientsInfo = clients.map((obj) => {
+      return {
+        clientFirstName: obj.firstName,
+        clientLastName: obj.lastName,
+        clientId: obj._id,
+      };
+    });
+    res.status(StatusCodes.OK).json({ clientsInfo });
+  }
+
+  if (count) {
+    const clients = await Client.find({ createdBy: req.coach.coachId });
+    const clientsInfo = clients.map((obj) => {
+      return {
+        clientFirstName: obj.firstName,
+        clientLastName: obj.lastName,
+        clientId: obj._id,
+      };
+    });
+
+    res.status(StatusCodes.OK).json({
+      clientsInfo,
+    });
+  }
 };
 
 // ===============get one client ============
