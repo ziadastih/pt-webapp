@@ -96,7 +96,19 @@ input[type="search"]::-webkit-search-results-decoration {
   font-family: var(--fontSansSerif);
   color: var(--mainColor);
 }
-
+.gif {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-image: url(../images/pre-loader-2.gif);
+  background-position: center;
+  background-size: contain;
+  width: 100px;
+  height: 100px;
+  z-index: 999;
+}
 /* ==================END OF GLOBAL CLASSES ========================  */
 
 body {

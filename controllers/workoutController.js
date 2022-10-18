@@ -3,16 +3,8 @@ const { StatusCodes } = require("http-status-codes");
 
 // ===============get all workouts =================
 const getAllWorkoutPrograms = async (req, res) => {
-  const { name, page, length } = req.query;
+  const { name, page } = req.query;
   const queryObject = {};
-  if (length) {
-    const workoutprograms = await WorkoutProgram.find({
-      createdBy: req.coach.coachId,
-    });
-    let number = workoutprograms.length;
-
-    res.status(StatusCodes.OK).json({ number });
-  }
 
   if (name) {
     queryObject.name = { $regex: name, $options: "i" };

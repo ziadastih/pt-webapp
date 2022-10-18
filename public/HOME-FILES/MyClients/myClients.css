@@ -119,6 +119,7 @@ input[type="search"]::-webkit-search-results-decoration {
   background-size: contain;
   width: 100px;
   height: 100px;
+  z-index: 999;
 }
 /* ==================END OF GLOBAL CLASSES ========================  */
 
@@ -373,7 +374,7 @@ body {
   justify-content: center;
   flex-direction: column;
 
-  z-index: 100;
+  z-index: 40;
 }
 .overlay {
   position: absolute;

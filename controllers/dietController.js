@@ -3,16 +3,8 @@ const { StatusCodes } = require("http-status-codes");
 
 // ==================get all diets ===================
 const getAllDiets = async (req, res) => {
-  const { name, count, length } = req.query;
+  const { name, count } = req.query;
   const queryObject = {};
-  if (length) {
-    const diet = await Diet.find({
-      createdBy: req.coach.coachId,
-    });
-    let number = diet.length;
-
-    res.status(StatusCodes.OK).json({ number });
-  }
 
   if (name) {
     queryObject.name = { $regex: name, $options: "i" };

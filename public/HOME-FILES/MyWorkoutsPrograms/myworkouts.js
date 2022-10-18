@@ -170,10 +170,18 @@ const displayAllPrograms = (programPlan) => {
       const yesBtn = document.querySelector(".yes-btn");
       yesBtn.addEventListener("click", async (e) => {
         let id = e.target.dataset.delete;
-
+        preLoader.classList.remove("display-none");
         await axios.delete(`/api/v1/workoutProgram/${id}`);
-        deleteVerificationContainer.classList.remove("open-container");
 
+        const { data } = await axios.get("/api/v1/dataLength");
+
+        let workoutLength = data.dataLength[0].workoutLength - 1;
+        await axios.patch("/api/v1/dataLength", {
+          workoutLength: workoutLength,
+        });
+        deleteVerificationContainer.classList.remove("open-container");
+        preLoader.classList.add("display-none");
+        searchWorkoutInput.value = "";
         getWorkouts();
       });
     });

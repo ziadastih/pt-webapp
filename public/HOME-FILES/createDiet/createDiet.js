@@ -127,6 +127,7 @@ const ingredientsArray = [
 ];
 let selectedIngredientsArray = [];
 // ============== program selectors and the overlay ================================================
+const preLoader = document.querySelector(".gif");
 const overlay = document.querySelector(".overlay");
 const createDietNameContainer = document.querySelector(".create-diet-name");
 const dietNameInput = document.querySelector("#diet-input-name");
@@ -204,11 +205,18 @@ backBtn.addEventListener("click", () => {
   window.location = "http://192.168.1.195:3000/MyNutrition/myNutrition.html";
 });
 submitDietBtn.addEventListener("click", async () => {
+  preLoader.classList.add("display-flex");
   const diet = await axios.post("/api/v1/diet", {
     name: Diet.name,
     meals: Diet.meals,
   });
+  const { data } = await axios.get("/api/v1/dataLength");
 
+  let dietLength = data.dataLength[0].dietLength + 1;
+  await axios.patch("/api/v1/dataLength", {
+    dietLength: dietLength,
+  });
+  preLoader.classList.remove("display-flex");
   window.onbeforeunload = null;
   window.location = "http://192.168.1.195:3000/MyNutrition/myNutrition.html";
 });

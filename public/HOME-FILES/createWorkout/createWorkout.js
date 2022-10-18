@@ -143,6 +143,7 @@ const program = {
 };
 
 // ============== program selectors and the overlay ================================================
+const preLoader = document.querySelector(".gif");
 const overlay = document.querySelector(".overlay");
 const createProgramNameContainer = document.querySelector(
   ".create-program-name"
@@ -245,11 +246,18 @@ editProgramNameBtn.addEventListener("click", () => {
 });
 
 submitProgram.addEventListener("click", async () => {
-  console.log(program);
+  preLoader.classList.add("display-flex");
   const Program = await axios.post("/api/v1/workoutProgram", {
     name: program.name,
     weeks: program.weeks,
   });
+  const { data } = await axios.get("/api/v1/dataLength");
+
+  let workoutLength = data.dataLength[0].workoutLength + 1;
+  await axios.patch("/api/v1/dataLength", {
+    workoutLength: workoutLength,
+  });
+  preLoader.classList.remove("display-flex");
   window.onbeforeunload = null;
   window.location =
     "http://192.168.1.195:3000/MyWorkoutsPrograms/myWorkouts.html";

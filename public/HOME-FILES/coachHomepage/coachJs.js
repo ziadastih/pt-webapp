@@ -30,13 +30,22 @@ const dietNumberStat = document.querySelector(".diet-number");
 const getDataLength = async () => {
   try {
     const { data } = await axios.get("/api/v1/dataLength");
-    let workoutLength = data.dataLength[0].workoutLength;
-    let dietLength = data.dataLength[0].dietLength;
-    let clientLength = data.dataLength[0].clientLength;
-    console.log(performance.now());
-    workoutProgramNumberStat.textContent = workoutLength;
-    clientNumberStat.textContent = clientLength;
-    dietNumberStat.textContent = dietLength;
+
+    if (data.dataLength.length === 0) {
+      const data = axios.post("/api/v1/dataLength", {});
+
+      workoutProgramNumberStat.textContent = 0;
+      clientNumberStat.textContent = 0;
+      dietNumberStat.textContent = 0;
+    } else {
+      let workoutLength = data.dataLength[0].workoutLength;
+      let dietLength = data.dataLength[0].dietLength;
+      let clientLength = data.dataLength[0].clientLength;
+      console.log(performance.now());
+      workoutProgramNumberStat.textContent = workoutLength;
+      clientNumberStat.textContent = clientLength;
+      dietNumberStat.textContent = dietLength;
+    }
   } catch (error) {
     console.log(error);
   }

@@ -123,6 +123,11 @@ registerBtn.addEventListener("click", async (e) => {
       email,
       password,
     });
+    const { data } = await axios.get("/api/v1/dataLength");
+
+    let clientLength = data.dataLength[0].clientLength + 1;
+    await axios.patch("/api/v1/dataLength", { clientLength: clientLength });
+
     getClients();
     registerFirstName.value = "";
     registerLastName.value = "";
@@ -157,7 +162,7 @@ const logoutBtn = document.getElementById("user-logout-nav-btn");
 logoutBtn.addEventListener("click", async () => {
   try {
     await axios.post("/api/v1/auth/logout");
-    localStorage.removeItem("ref");
+    localStorage.clear();
     window.location = "http://192.168.1.195:3000/";
   } catch (error) {
     console.log(error);
@@ -232,9 +237,13 @@ const displayClients = (client) => {
         let id = e.target.dataset.delete;
         preLoader.classList.remove("display-none");
         await axios.delete(`/api/v1/client/${id}`);
+        const { data } = await axios.get("/api/v1/dataLength");
+
+        let clientLength = data.dataLength[0].clientLength - 1;
+        await axios.patch("/api/v1/dataLength", { clientLength: clientLength });
         preLoader.classList.add("display-none");
         deleteVerificationContainer.classList.remove("open-container");
-
+        searchCLientInput.value = "";
         getClients();
       });
     });
