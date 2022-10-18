@@ -3,6 +3,7 @@ const clientsGridContainer = document.querySelector(".clients-grid-container");
 const deleteVerificationContainer = document.querySelector(
   ".delete-verification-section"
 );
+const preLoader = document.querySelector(".gif");
 const searchCLientInput = document.getElementById("search-client-input");
 // ===============getClients when page open and display them =======
 console.log(performance.now());
@@ -10,6 +11,7 @@ const getClients = async () => {
   try {
     // ============getting the data ===============
     const { data } = await axios.get("/api/v1/client/?count=30");
+    preLoader.classList.add("display-none");
     console.log(performance.now());
     //  =========if length is === 0 means no clients we want to display the create item =============
     const length = data.clientsInfo.length;
@@ -25,10 +27,11 @@ const getClients = async () => {
 
     const liveSearch = async () => {
       let inputCharacter = searchCLientInput.value;
+      preLoader.classList.remove("display-none");
       const { data } = await axios.get(
         `/api/v1/client/?name=${inputCharacter}`
       );
-
+      preLoader.classList.add("display-none");
       let client = data.clientsInfo;
       console.log(client);
       displayClients(client);
@@ -227,7 +230,9 @@ const displayClients = (client) => {
       const yesBtn = document.querySelector(".yes-btn");
       yesBtn.addEventListener("click", async (e) => {
         let id = e.target.dataset.delete;
+        preLoader.classList.remove("display-none");
         await axios.delete(`/api/v1/client/${id}`);
+        preLoader.classList.add("display-none");
         deleteVerificationContainer.classList.remove("open-container");
 
         getClients();

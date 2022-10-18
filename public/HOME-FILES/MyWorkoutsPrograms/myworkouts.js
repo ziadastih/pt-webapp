@@ -9,6 +9,7 @@ const deleteVerificationContainer = document.querySelector(
 const searchWorkoutInput = document.getElementById("search-workout-input");
 const goToCreateProgram = document.getElementById("go-to-create-program");
 const createNewProgramBtn = document.querySelector(".create-workout-btn");
+const preLoader = document.querySelector(".gif");
 // ================GET WORKOUT FUNCTION , INCLUDE DISPLAYING ALL, LIVE SEARCH , DELETE FUNCTION =============================
 
 goToCreateProgram.addEventListener("click", () => {
@@ -26,6 +27,7 @@ const getWorkouts = async () => {
   try {
     // ============getting the data ===============
     const { data } = await axios.get("/api/v1/workoutProgram/?count=10");
+    preLoader.classList.add("display-none");
     console.log(performance.now());
     //  =========if length is === 0 means no workouts we want to display the create item =============
     const length = data.workoutprograms.length;
@@ -41,10 +43,11 @@ const getWorkouts = async () => {
 
     const liveSearch = async () => {
       let inputCharacter = searchWorkoutInput.value;
+      preLoader.classList.remove("display-none");
       const { data } = await axios.get(
         `/api/v1/workoutProgram/?name=${inputCharacter}`
       );
-
+      preLoader.classList.add("display-none");
       let workoutPrograms = data.workoutprograms;
 
       displayProgramInfo(workoutPrograms);
