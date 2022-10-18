@@ -5,11 +5,12 @@ const deleteVerificationContainer = document.querySelector(
 );
 const searchCLientInput = document.getElementById("search-client-input");
 // ===============getClients when page open and display them =======
-
+console.log(performance.now());
 const getClients = async () => {
   try {
     // ============getting the data ===============
     const { data } = await axios.get("/api/v1/client/?count=30");
+    console.log(performance.now());
     //  =========if length is === 0 means no clients we want to display the create item =============
     const length = data.clientsInfo.length;
     if (length === 0) {
@@ -181,6 +182,7 @@ const displayClients = (client) => {
   clientsGridContainer.innerHTML = "";
   for (let i = 0; i < client.length; i++) {
     clientsGridContainer.innerHTML += ` <div class="client" data-id = ${client[i].clientId}}>
+    <span></span>
       <p class="client-full-name">${client[i].clientFirstName} ${client[i].clientLastName}</p>
       <div class="tools">
         <i class="fa-solid fa-trash" id="delete-client" data-delete = ${client[i].clientId}></i>

@@ -118,5 +118,357 @@
     "password": "$2a$10$wyJTfiWW.te5FkbvqN5uEO3MoxDVy6d8eSEP4pLAuxg6C6wtAf5H",
     "role": "client",
     "createdBy": "632c945f1ba5f0bcfc9be699"
+  },
+  {
+    "firstName": "elie",
+    "lastName": "feghali",
+    "email": "jadastih17@hotmail.com",
+    "password": "$2a$10$wyJTfiWW.te5FkbvqN5uEO3MoxDVy6d8eSEP4pLAuxg6C6wtAf5H",
+    "role": "client",
+    "createdBy": "632c945f1ba5f0bcfc9be699"
+  },
+  {
+    "firstName": "pierre",
+    "lastName": "haber",
+    "email": "jadastih18@hotmail.com",
+    "password": "$2a$10$wyJTfiWW.te5FkbvqN5uEO3MoxDVy6d8eSEP4pLAuxg6C6wtAf5H",
+    "role": "client",
+    "createdBy": "632c945f1ba5f0bcfc9be699"
+  },
+  {
+    "firstName": "micho",
+    "lastName": "haber",
+    "email": "jadastih19@hotmail.com",
+    "password": "$2a$10$wyJTfiWW.te5FkbvqN5uEO3MoxDVy6d8eSEP4pLAuxg6C6wtAf5H",
+    "role": "client",
+    "createdBy": "632c945f1ba5f0bcfc9be699"
+  },
+  {
+    "firstName": "nathalie",
+    "lastName": "haber",
+    "email": "jadastih20@hotmail.com",
+    "password": "$2a$10$wyJTfiWW.te5FkbvqN5uEO3MoxDVy6d8eSEP4pLAuxg6C6wtAf5H",
+    "role": "client",
+    "createdBy": "632c945f1ba5f0bcfc9be699"
+  },
+  {
+    "firstName": "paul",
+    "lastName": "louthian",
+    "email": "jadastih21@hotmail.com",
+    "password": "$2a$10$wyJTfiWW.te5FkbvqN5uEO3MoxDVy6d8eSEP4pLAuxg6C6wtAf5H",
+    "role": "client",
+    "createdBy": "632c945f1ba5f0bcfc9be699"
+  },
+  {
+    "firstName": "carlos",
+    "lastName": "bou daher",
+    "email": "jadastih22@hotmail.com",
+    "password": "$2a$10$wyJTfiWW.te5FkbvqN5uEO3MoxDVy6d8eSEP4pLAuxg6C6wtAf5H",
+    "role": "client",
+    "createdBy": "632c945f1ba5f0bcfc9be699"
+  },
+  {
+    "firstName": "arthur",
+    "lastName": "louthian",
+    "email": "jadastih23@hotmail.com",
+    "password": "$2a$10$wyJTfiWW.te5FkbvqN5uEO3MoxDVy6d8eSEP4pLAuxg6C6wtAf5H",
+    "role": "client",
+    "createdBy": "632c945f1ba5f0bcfc9be699"
+  },
+  {
+    "firstName": "lynn",
+    "lastName": "louthian",
+    "email": "jadastih24@hotmail.com",
+    "password": "$2a$10$wyJTfiWW.te5FkbvqN5uEO3MoxDVy6d8eSEP4pLAuxg6C6wtAf5H",
+    "role": "client",
+    "createdBy": "632c945f1ba5f0bcfc9be699"
+  },
+  {
+    "firstName": "charbel",
+    "lastName": "fadel",
+    "email": "jadastih25@hotmail.com",
+    "password": "$2a$10$wyJTfiWW.te5FkbvqN5uEO3MoxDVy6d8eSEP4pLAuxg6C6wtAf5H",
+    "role": "client",
+    "createdBy": "632c945f1ba5f0bcfc9be699"
+  },
+  {
+    "firstName": "gilbert",
+    "lastName": "achkar",
+    "email": "jadastih26@hotmail.com",
+    "password": "$2a$10$wyJTfiWW.te5FkbvqN5uEO3MoxDVy6d8eSEP4pLAuxg6C6wtAf5H",
+    "role": "client",
+    "createdBy": "632c945f1ba5f0bcfc9be699"
+  },
+  {
+    "firstName": "gergis",
+    "lastName": "achkar",
+    "email": "jadastih27@hotmail.com",
+    "password": "$2a$10$wyJTfiWW.te5FkbvqN5uEO3MoxDVy6d8eSEP4pLAuxg6C6wtAf5H",
+    "role": "client",
+    "createdBy": "632c945f1ba5f0bcfc9be699"
+  },
+  {
+    "firstName": "elie",
+    "lastName": "yammine",
+    "email": "jadastih28@hotmail.com",
+    "password": "$2a$10$wyJTfiWW.te5FkbvqN5uEO3MoxDVy6d8eSEP4pLAuxg6C6wtAf5H",
+    "role": "client",
+    "createdBy": "632c945f1ba5f0bcfc9be699"
+  },
+  {
+    "firstName": "amine",
+    "lastName": "fadel",
+    "email": "jadastih29@hotmail.com",
+    "password": "$2a$10$wyJTfiWW.te5FkbvqN5uEO3MoxDVy6d8eSEP4pLAuxg6C6wtAf5H",
+    "role": "client",
+    "createdBy": "632c945f1ba5f0bcfc9be699"
+  },
+  {
+    "firstName": "amine",
+    "lastName": "wehbe",
+    "email": "jadastih30@hotmail.com",
+    "password": "$2a$10$wyJTfiWW.te5FkbvqN5uEO3MoxDVy6d8eSEP4pLAuxg6C6wtAf5H",
+    "role": "client",
+    "createdBy": "632c945f1ba5f0bcfc9be699"
+  },
+  {
+    "firstName": "rayan",
+    "lastName": "wehbe",
+    "email": "jadastih31@hotmail.com",
+    "password": "$2a$10$wyJTfiWW.te5FkbvqN5uEO3MoxDVy6d8eSEP4pLAuxg6C6wtAf5H",
+    "role": "client",
+    "createdBy": "632c945f1ba5f0bcfc9be699"
+  },
+  {
+    "firstName": "jihad",
+    "lastName": "al hajj",
+    "email": "jadastih32@hotmail.com",
+    "password": "$2a$10$wyJTfiWW.te5FkbvqN5uEO3MoxDVy6d8eSEP4pLAuxg6C6wtAf5H",
+    "role": "client",
+    "createdBy": "632c945f1ba5f0bcfc9be699"
+  },
+  {
+    "firstName": "bassam",
+    "lastName": "habchy",
+    "email": "jadastih33@hotmail.com",
+    "password": "$2a$10$wyJTfiWW.te5FkbvqN5uEO3MoxDVy6d8eSEP4pLAuxg6C6wtAf5H",
+    "role": "client",
+    "createdBy": "632c945f1ba5f0bcfc9be699"
+  },
+  {
+    "firstName": "hadi",
+    "lastName": "habchi",
+    "email": "jadastih34@hotmail.com",
+    "password": "$2a$10$wyJTfiWW.te5FkbvqN5uEO3MoxDVy6d8eSEP4pLAuxg6C6wtAf5H",
+    "role": "client",
+    "createdBy": "632c945f1ba5f0bcfc9be699"
+  },
+  {
+    "firstName": "wissam",
+    "lastName": "habchi",
+    "email": "jadastih35@hotmail.com",
+    "password": "$2a$10$wyJTfiWW.te5FkbvqN5uEO3MoxDVy6d8eSEP4pLAuxg6C6wtAf5H",
+    "role": "client",
+    "createdBy": "632c945f1ba5f0bcfc9be699"
+  },
+  {
+    "firstName": "georges",
+    "lastName": "bou harb",
+    "email": "jadastih36@hotmail.com",
+    "password": "$2a$10$wyJTfiWW.te5FkbvqN5uEO3MoxDVy6d8eSEP4pLAuxg6C6wtAf5H",
+    "role": "client",
+    "createdBy": "632c945f1ba5f0bcfc9be699"
+  },
+  {
+    "firstName": "diana",
+    "lastName": "bou daher",
+    "email": "jadastih37@hotmail.com",
+    "password": "$2a$10$wyJTfiWW.te5FkbvqN5uEO3MoxDVy6d8eSEP4pLAuxg6C6wtAf5H",
+    "role": "client",
+    "createdBy": "632c945f1ba5f0bcfc9be699"
+  },
+  {
+    "firstName": "maroun",
+    "lastName": "fadel",
+    "email": "jadastih38@hotmail.com",
+    "password": "$2a$10$wyJTfiWW.te5FkbvqN5uEO3MoxDVy6d8eSEP4pLAuxg6C6wtAf5H",
+    "role": "client",
+    "createdBy": "632c945f1ba5f0bcfc9be699"
+  },
+  {
+    "firstName": "elie",
+    "lastName": "fadel",
+    "email": "jadastih39@hotmail.com",
+    "password": "$2a$10$wyJTfiWW.te5FkbvqN5uEO3MoxDVy6d8eSEP4pLAuxg6C6wtAf5H",
+    "role": "client",
+    "createdBy": "632c945f1ba5f0bcfc9be699"
+  },
+  {
+    "firstName": "carlos",
+    "lastName": "fadel",
+    "email": "jadastih40@hotmail.com",
+    "password": "$2a$10$wyJTfiWW.te5FkbvqN5uEO3MoxDVy6d8eSEP4pLAuxg6C6wtAf5H",
+    "role": "client",
+    "createdBy": "632c945f1ba5f0bcfc9be699"
+  },
+  {
+    "firstName": "ziad",
+    "lastName": "bourji",
+    "email": "jadastih41@hotmail.com",
+    "password": "$2a$10$wyJTfiWW.te5FkbvqN5uEO3MoxDVy6d8eSEP4pLAuxg6C6wtAf5H",
+    "role": "client",
+    "createdBy": "632c945f1ba5f0bcfc9be699"
+  },
+  {
+    "firstName": "marwan",
+    "lastName": "khoury",
+    "email": "jadastih42@hotmail.com",
+    "password": "$2a$10$wyJTfiWW.te5FkbvqN5uEO3MoxDVy6d8eSEP4pLAuxg6C6wtAf5H",
+    "role": "client",
+    "createdBy": "632c945f1ba5f0bcfc9be699"
+  },
+  {
+    "firstName": "tony",
+    "lastName": "antoun",
+    "email": "jadastih43@hotmail.com",
+    "password": "$2a$10$wyJTfiWW.te5FkbvqN5uEO3MoxDVy6d8eSEP4pLAuxg6C6wtAf5H",
+    "role": "client",
+    "createdBy": "632c945f1ba5f0bcfc9be699"
+  },
+  {
+    "firstName": "wael",
+    "lastName": "gharzouz",
+    "email": "jadastih44@hotmail.com",
+    "password": "$2a$10$wyJTfiWW.te5FkbvqN5uEO3MoxDVy6d8eSEP4pLAuxg6C6wtAf5H",
+    "role": "client",
+    "createdBy": "632c945f1ba5f0bcfc9be699"
+  },
+  {
+    "firstName": "elie",
+    "lastName": "gharzouz",
+    "email": "jadastih45@hotmail.com",
+    "password": "$2a$10$wyJTfiWW.te5FkbvqN5uEO3MoxDVy6d8eSEP4pLAuxg6C6wtAf5H",
+    "role": "client",
+    "createdBy": "632c945f1ba5f0bcfc9be699"
+  },
+  {
+    "firstName": "alain",
+    "lastName": "astih",
+    "email": "jadastih46@hotmail.com",
+    "password": "$2a$10$wyJTfiWW.te5FkbvqN5uEO3MoxDVy6d8eSEP4pLAuxg6C6wtAf5H",
+    "role": "client",
+    "createdBy": "632c945f1ba5f0bcfc9be699"
+  },
+  {
+    "firstName": "paul",
+    "lastName": "fadel",
+    "email": "jadastih47@hotmail.com",
+    "password": "$2a$10$wyJTfiWW.te5FkbvqN5uEO3MoxDVy6d8eSEP4pLAuxg6C6wtAf5H",
+    "role": "client",
+    "createdBy": "632c945f1ba5f0bcfc9be699"
+  },
+  {
+    "firstName": "peter",
+    "lastName": "fadel",
+    "email": "jadastih48@hotmail.com",
+    "password": "$2a$10$wyJTfiWW.te5FkbvqN5uEO3MoxDVy6d8eSEP4pLAuxg6C6wtAf5H",
+    "role": "client",
+    "createdBy": "632c945f1ba5f0bcfc9be699"
+  },
+  {
+    "firstName": "peter",
+    "lastName": "nabhan",
+    "email": "jadastih49@hotmail.com",
+    "password": "$2a$10$wyJTfiWW.te5FkbvqN5uEO3MoxDVy6d8eSEP4pLAuxg6C6wtAf5H",
+    "role": "client",
+    "createdBy": "632c945f1ba5f0bcfc9be699"
+  },
+  {
+    "firstName": "charbel",
+    "lastName": "nabhan",
+    "email": "jadastih50@hotmail.com",
+    "password": "$2a$10$wyJTfiWW.te5FkbvqN5uEO3MoxDVy6d8eSEP4pLAuxg6C6wtAf5H",
+    "role": "client",
+    "createdBy": "632c945f1ba5f0bcfc9be699"
+  },
+  {
+    "firstName": "paul",
+    "lastName": "nabhan",
+    "email": "jadastih51@hotmail.com",
+    "password": "$2a$10$wyJTfiWW.te5FkbvqN5uEO3MoxDVy6d8eSEP4pLAuxg6C6wtAf5H",
+    "role": "client",
+    "createdBy": "632c945f1ba5f0bcfc9be699"
+  },
+  {
+    "firstName": "lewis",
+    "lastName": "nabhan",
+    "email": "jadastih52@hotmail.com",
+    "password": "$2a$10$wyJTfiWW.te5FkbvqN5uEO3MoxDVy6d8eSEP4pLAuxg6C6wtAf5H",
+    "role": "client",
+    "createdBy": "632c945f1ba5f0bcfc9be699"
+  },
+  {
+    "firstName": "abdo",
+    "lastName": "sfeir",
+    "email": "jadastih53@hotmail.com",
+    "password": "$2a$10$wyJTfiWW.te5FkbvqN5uEO3MoxDVy6d8eSEP4pLAuxg6C6wtAf5H",
+    "role": "client",
+    "createdBy": "632c945f1ba5f0bcfc9be699"
+  },
+  {
+    "firstName": "amjad",
+    "lastName": "hommous",
+    "email": "jadastih54@hotmail.com",
+    "password": "$2a$10$wyJTfiWW.te5FkbvqN5uEO3MoxDVy6d8eSEP4pLAuxg6C6wtAf5H",
+    "role": "client",
+    "createdBy": "632c945f1ba5f0bcfc9be699"
+  },
+  {
+    "firstName": "omar",
+    "lastName": "akkary",
+    "email": "jadastih55@hotmail.com",
+    "password": "$2a$10$wyJTfiWW.te5FkbvqN5uEO3MoxDVy6d8eSEP4pLAuxg6C6wtAf5H",
+    "role": "client",
+    "createdBy": "632c945f1ba5f0bcfc9be699"
+  },
+  {
+    "firstName": "elias",
+    "lastName": "chlela",
+    "email": "jadastih56@hotmail.com",
+    "password": "$2a$10$wyJTfiWW.te5FkbvqN5uEO3MoxDVy6d8eSEP4pLAuxg6C6wtAf5H",
+    "role": "client",
+    "createdBy": "632c945f1ba5f0bcfc9be699"
+  },
+  {
+    "firstName": "rami",
+    "lastName": "hamad",
+    "email": "jadastih57@hotmail.com",
+    "password": "$2a$10$wyJTfiWW.te5FkbvqN5uEO3MoxDVy6d8eSEP4pLAuxg6C6wtAf5H",
+    "role": "client",
+    "createdBy": "632c945f1ba5f0bcfc9be699"
+  },
+  {
+    "firstName": "elias",
+    "lastName": "assaad",
+    "email": "jadastih58@hotmail.com",
+    "password": "$2a$10$wyJTfiWW.te5FkbvqN5uEO3MoxDVy6d8eSEP4pLAuxg6C6wtAf5H",
+    "role": "client",
+    "createdBy": "632c945f1ba5f0bcfc9be699"
+  },
+  {
+    "firstName": "chris",
+    "lastName": "saliba",
+    "email": "jadastih59@hotmail.com",
+    "password": "$2a$10$wyJTfiWW.te5FkbvqN5uEO3MoxDVy6d8eSEP4pLAuxg6C6wtAf5H",
+    "role": "client",
+    "createdBy": "632c945f1ba5f0bcfc9be699"
+  },
+  {
+    "firstName": "elie",
+    "lastName": "chalhoub",
+    "email": "jadastih60@hotmail.com",
+    "password": "$2a$10$wyJTfiWW.te5FkbvqN5uEO3MoxDVy6d8eSEP4pLAuxg6C6wtAf5H",
+    "role": "client",
+    "createdBy": "632c945f1ba5f0bcfc9be699"
   }
 ]

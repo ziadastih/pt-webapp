@@ -211,7 +211,7 @@ body {
 .clients-grid-container {
   margin-top: 60px;
   display: grid;
-  grid-template-columns: repeat(2, auto);
+  grid-template-columns: repeat(1, auto);
   align-items: center;
   justify-content: center;
   gap: 30px;
@@ -219,8 +219,9 @@ body {
   width: 100vw;
   margin-bottom: 20vh;
 }
+
 .client {
-  width: 150px;
+  width: 80vw;
   min-height: 40px;
   background-color: var(--whiteSmoke);
   border-radius: 3px;
@@ -230,10 +231,16 @@ body {
   align-items: center;
   justify-content: space-between;
   font-family: var(--fontSansSerif);
-  font-size: 12px;
+  font-size: 15px;
   text-transform: capitalize;
 }
-
+.client span {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: var(--eyeComfort);
+  margin-left: 20px;
+}
 .client p {
   margin-left: 10px;
   text-align: center;
@@ -242,8 +249,8 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
-  color: var(--eyeComfort);
+  gap: 30px;
+  color: var(--mainOrange);
   margin-right: 10px;
   cursor: pointer;
 }
