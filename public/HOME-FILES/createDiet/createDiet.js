@@ -147,9 +147,6 @@ const ingredientsContainer = document.querySelector(
 );
 const ingredientsList = document.querySelector(".ingredients-list-container");
 const addIngredientsBtn = document.querySelector("#add-ingredients");
-const toggleNewIngredientContainer = document.querySelector(
-  "#toggle-new-ingredient-name"
-);
 
 const searchInput = document.querySelector(".search-input");
 const chosenIngredientsContainer = document.querySelector(
@@ -157,6 +154,24 @@ const chosenIngredientsContainer = document.querySelector(
 );
 const submitMealBtn = document.querySelector(".submit-meal-btn");
 const editMealBtn = document.querySelector(".edit-meal-btn");
+
+// ============create new ingredient ==================
+const toggleNewIngredientContainer = document.querySelector(
+  "#toggle-new-ingredient-name"
+);
+const newIngredientContainer = document.querySelector(
+  ".new-ingredient-name-container"
+);
+const newIngredientCal = document.querySelector("#new-cal");
+const newIngredientCarbs = document.querySelector("#new-carbs");
+const newIngredientProt = document.querySelector("#new-prot");
+const newIngredientFat = document.querySelector("#new-fat");
+const ingredientNameAlert = document.querySelector(
+  ".create-ingredient-name-alert"
+);
+const ingredientTypeBtns = document.querySelectorAll(".type-btn");
+const ingredientNameInput = document.querySelector("#new-ingredient-name");
+const submitNewIngredient = document.querySelector("#submit-new-ingredient");
 // ===============total ingredients Container and macros selectors==============
 const totalIngredientsMacros = document.querySelector(
   ".total-ingredients-macros"
@@ -246,6 +261,64 @@ addIngredientsBtn.addEventListener("click", () => {
   }
   totalDietMacros.classList.remove("display-flex");
   submitDietBtn.classList.add("display-none");
+});
+
+toggleNewIngredientContainer.addEventListener("click", () => {
+  ingredientsContainer.classList.remove("display-flex");
+  newIngredientContainer.classList.add("display-flex");
+  overlay.classList.remove("display-none");
+});
+
+ingredientTypeBtns.forEach((ingredientBtn) => {
+  ingredientBtn.addEventListener("click", () => {
+    console.log("hello");
+    ingredientTypeBtns.forEach((subBtn) => {
+      if (subBtn === ingredientBtn) {
+        subBtn.classList.add("selected-type");
+      } else {
+        subBtn.classList.remove("selected-type");
+      }
+    });
+  });
+});
+
+submitNewIngredient.addEventListener("click", () => {
+  if (ingredientNameInput.value.length === 0) {
+    showAlert(ingredientNameAlert);
+    console.log(ingredientTypeBtns);
+  } else {
+    ingredientTypeBtns.forEach((btn) => {
+      if (btn.classList.contains("selected-type")) {
+        let type = btn.dataset.type;
+
+        let portion = parseInt(btn.dataset.portion);
+
+        ingredientsArray.push({
+          name: ingredientNameInput.value,
+          type: type,
+          calories: parseFloat(newIngredientCal.value) || 0,
+          proteine: parseFloat(newIngredientProt.value) || 0,
+          carbs: parseFloat(newIngredientCarbs.value) || 0,
+          fat: parseFloat(newIngredientFat.value) || 0,
+          portion: portion,
+          new: true,
+        });
+        selectedIngredientsArray.push({
+          name: ingredientNameInput.value,
+          type: type,
+          calories: parseFloat(newIngredientCal.value) || 0,
+          proteine: parseFloat(newIngredientProt.value) || 0,
+          carbs: parseFloat(newIngredientCarbs.value) || 0,
+          fat: parseFloat(newIngredientFat.value) || 0,
+          portion: portion,
+        });
+        ingredientsContainer.classList.add("display-flex");
+        newIngredientContainer.classList.remove("display-flex");
+        overlay.classList.remove("display-none");
+        console.log(ingredientsArray);
+      }
+    });
+  }
 });
 
 submitMealBtn.addEventListener("click", () => {
@@ -409,6 +482,14 @@ const displayChosenIngredients = () => {
     btn.addEventListener("click", () => {
       let name = btn.dataset.delete;
 
+      const indexInIngredientsArray = ingredientsArray.findIndex((Element) => {
+        return Element.name === name && Element.new === true;
+      });
+
+      if (indexInIngredientsArray !== -1) {
+        ingredientsArray.splice(indexInIngredientsArray, 1);
+      }
+
       const indexInSelectedArray = selectedIngredientsArray.findIndex(
         (Element) => {
           return Element.name === name;
@@ -469,40 +550,34 @@ const displayChosenIngredients = () => {
           sumOfTotalIngredientsProt();
         }
 
-        if (ingredient.type === "g") {
-          ingredient.calories =
-            (portionInput.value * originalIngredient.calories) / 100;
-          ingredient.carbs =
-            (portionInput.value * originalIngredient.carbs) / 100;
-          ingredient.fat = (portionInput.value * originalIngredient.fat) / 100;
-          ingredient.proteine =
-            (portionInput.value * originalIngredient.proteine) / 100;
-          ingredient.portion = portionInput.value;
-          calValue.textContent = ingredient.calories;
-          protValue.textContent = `${ingredient.proteine}g`;
-          fatValue.textContent = `${ingredient.fat}g`;
-          carbsValue.textContent = `${ingredient.carbs}g`;
-          sumOfTotalIngredientsCal();
-          sumOfTotalIngredientsCarbs();
-          sumOfTotalIngredientsFat();
-          sumOfTotalIngredientsProt();
-        } else {
-          ingredient.calories =
-            portionInput.value * originalIngredient.calories;
-          ingredient.carbs = portionInput.value * originalIngredient.carbs;
-          ingredient.fat = portionInput.value * originalIngredient.fat;
-          ingredient.proteine =
-            portionInput.value * originalIngredient.proteine;
-          ingredient.portion = portionInput.value;
-          calValue.textContent = ingredient.calories;
-          protValue.textContent = `${ingredient.proteine}g`;
-          fatValue.textContent = `${ingredient.fat}g`;
-          carbsValue.textContent = `${ingredient.carbs}g`;
-          sumOfTotalIngredientsCal();
-          sumOfTotalIngredientsCarbs();
-          sumOfTotalIngredientsFat();
-          sumOfTotalIngredientsProt();
-        }
+        ingredient.calories =
+          (portionInput.value * originalIngredient.calories) /
+          originalIngredient.portion;
+
+        ingredient.carbs =
+          (portionInput.value * originalIngredient.carbs) /
+          originalIngredient.portion;
+
+        ingredient.fat =
+          (portionInput.value * originalIngredient.fat) /
+          originalIngredient.portion;
+
+        ingredient.proteine =
+          (portionInput.value * originalIngredient.proteine) /
+          originalIngredient.portion;
+        let roundedFatValue = Math.round(ingredient.fat * 100) / 100;
+        let roundedProtValue = Math.round(ingredient.proteine * 100) / 100;
+        let roundedCalValue = Math.round(ingredient.calories * 100) / 100;
+        let roundedCarbsValue = Math.round(ingredient.carbs * 100) / 100;
+        ingredient.portion = portionInput.value;
+        calValue.textContent = roundedCalValue;
+        protValue.textContent = `${roundedProtValue}g`;
+        fatValue.textContent = `${roundedFatValue}g`;
+        carbsValue.textContent = `${roundedCarbsValue}g`;
+        sumOfTotalIngredientsCal();
+        sumOfTotalIngredientsCarbs();
+        sumOfTotalIngredientsFat();
+        sumOfTotalIngredientsProt();
       }
     });
   });
@@ -514,17 +589,19 @@ const sumOfTotalIngredientsCal = () => {
     return ingredient.calories + currentSum;
   }, 0);
 
-  totalIngredientsCal.textContent = total;
-};
+  const TotalNum = Math.round(total * 100) / 100;
 
+  totalIngredientsCal.textContent = TotalNum;
+};
 // ==============sumOfToTalIngredientsCarbs ===========
 
 const sumOfTotalIngredientsCarbs = () => {
   const total = selectedIngredientsArray.reduce((currentSum, ingredient) => {
     return ingredient.carbs + currentSum;
   }, 0);
+  const TotalNum = Math.round(total * 100) / 100;
 
-  totalIngredientsCarbs.textContent = `${total}g`;
+  totalIngredientsCarbs.textContent = `${TotalNum}g`;
 };
 
 // ============sumOfTotalIngredientsProt =============
@@ -533,8 +610,9 @@ const sumOfTotalIngredientsProt = () => {
   const total = selectedIngredientsArray.reduce((currentSum, ingredient) => {
     return ingredient.proteine + currentSum;
   }, 0);
+  const TotalNum = Math.round(total * 100) / 100;
 
-  totalIngredientsProt.textContent = `${total}g`;
+  totalIngredientsProt.textContent = `${TotalNum}g`;
 };
 
 // =============sumTotalIngredientfat ==========
@@ -543,8 +621,9 @@ const sumOfTotalIngredientsFat = () => {
   const total = selectedIngredientsArray.reduce((currentSum, ingredient) => {
     return ingredient.fat + currentSum;
   }, 0);
+  const TotalNum = Math.round(total * 100) / 100;
 
-  totalIngredientsFat.textContent = `${total}g`;
+  totalIngredientsFat.textContent = `${TotalNum}g`;
 };
 
 const submitMealFunction = () => {
@@ -740,29 +819,32 @@ const editMealFunction = () => {
 const totalDietCarbsFunction = () => {
   const meals = Diet.meals;
   const total = meals.reduce((sum, meal) => {
-    let carbs = meal.carbs.slice(0, meal.carbs.length - 1);
-    let currentCarbs = parseFloat(carbs);
-    return currentCarbs + sum;
+    let carbs = parseFloat(meal.carbs);
+
+    return carbs + sum;
   }, 0);
-  totalDietCarbs.textContent = `${total}g`;
+  let randomTotal = Math.round(total * 100) / 100;
+  totalDietCarbs.textContent = `${randomTotal}g`;
 };
 const totalDietProtFunction = () => {
   const meals = Diet.meals;
   const total = meals.reduce((sum, meal) => {
-    let prot = meal.proteine.slice(0, meal.proteine.length - 1);
-    let currentProt = parseFloat(prot);
-    return currentProt + sum;
+    let prot = parseFloat(meal.proteine);
+
+    return prot + sum;
   }, 0);
-  totalDietProt.textContent = `${total}g`;
+  let randomTotal = Math.round(total * 100) / 100;
+  totalDietProt.textContent = `${randomTotal}g`;
 };
 const totalDietFatFunction = () => {
   const meals = Diet.meals;
   const total = meals.reduce((sum, meal) => {
-    let fat = meal.fat.slice(0, meal.fat.length - 1);
-    let currentFat = parseFloat(fat);
-    return currentFat + sum;
+    let fat = parseFloat(meal.fat);
+
+    return fat + sum;
   }, 0);
-  totalDietFat.textContent = `${total}g`;
+  let randomTotal = Math.round(total * 100) / 100;
+  totalDietFat.textContent = `${randomTotal}g`;
 };
 const totalDietCalFunction = () => {
   const meals = Diet.meals;
@@ -770,7 +852,8 @@ const totalDietCalFunction = () => {
     let currentCalories = parseFloat(meal.calories);
     return currentCalories + sum;
   }, 0);
-  totalDietCal.textContent = total;
+  let randomTotal = Math.round(total * 100) / 100;
+  totalDietCal.textContent = randomTotal;
 };
 
 // ====================set conditions for displaying  if rest day is true then manage stuff======
