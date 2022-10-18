@@ -3,7 +3,7 @@ const { StatusCodes } = require("http-status-codes");
 
 // ===============get all workouts =================
 const getAllWorkoutPrograms = async (req, res) => {
-  const { name, count, length } = req.query;
+  const { name, page, length } = req.query;
   const queryObject = {};
   if (length) {
     const workoutprograms = await WorkoutProgram.find({
@@ -23,13 +23,15 @@ const getAllWorkoutPrograms = async (req, res) => {
     res.status(StatusCodes.OK).json({ workoutprograms });
   }
 
-  if (count) {
+  if (page) {
+    const page = req.query.page || 0;
+    const WorkoutsPerRequest = 10;
     const workoutprograms = await WorkoutProgram.find({
       createdBy: req.coach.coachId,
     })
-      .lean()
+      .skip(page * WorkoutsPerRequest)
+      .limit(WorkoutsPerRequest);
 
-      .limit(count);
     res.status(StatusCodes.OK).json({ workoutprograms });
   }
 };

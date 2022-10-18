@@ -19,6 +19,7 @@ const ptClientRoute = require("./routes/ptClientRoute");
 const workoutProgramRoute = require("./routes/workoutProgramRoute");
 const dietRoute = require("./routes/dietRoute");
 const coachRouter = require("./routes/coachRoute");
+const lengthRouter = require("./routes/dataLengthRoutes");
 // ===============import connectdb ===========
 const connectDB = require("./connectDb/connect");
 
@@ -62,6 +63,8 @@ server.use("/api/v1/coach", authCoach, coachRouter);
 server.use("/api/v1/client", authCoach, ptClientRoute);
 server.use("/api/v1/workoutProgram", authCoach, workoutProgramRoute);
 server.use("/api/v1/diet", authCoach, dietRoute);
+server.use("/api/v1/dataLength", authCoach, lengthRouter);
+
 // ================= error handler =================== ================
 server.use(notFoundMiddleware);
 server.use(errorHandlerMiddleware);

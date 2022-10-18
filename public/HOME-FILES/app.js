@@ -102,6 +102,7 @@ registerBtn.addEventListener("click", async (e) => {
       email,
       password,
     });
+
     registerFirstName.value = "";
     registerLastName.value = "";
     registerEmail.value = "";

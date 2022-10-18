@@ -26,7 +26,7 @@ console.log(performance.now());
 const getWorkouts = async () => {
   try {
     // ============getting the data ===============
-    const { data } = await axios.get("/api/v1/workoutProgram/?count=10");
+    const { data } = await axios.get("/api/v1/workoutProgram/?page=0");
     preLoader.classList.add("display-none");
     console.log(performance.now());
     //  =========if length is === 0 means no workouts we want to display the create item =============

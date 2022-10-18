@@ -27,37 +27,21 @@ const clientNumberStat = document.querySelector(".client-number");
 const workoutProgramNumberStat = document.querySelector(".workout-number");
 const dietNumberStat = document.querySelector(".diet-number");
 
-const getWorkoutPrograms = async () => {
+const getDataLength = async () => {
   try {
-    const { data } = await axios.get("/api/v1/workoutProgram?length=1");
-
-    workoutProgramNumberStat.textContent = data.number;
+    const { data } = await axios.get("/api/v1/dataLength");
+    let workoutLength = data.dataLength[0].workoutLength;
+    let dietLength = data.dataLength[0].dietLength;
+    let clientLength = data.dataLength[0].clientLength;
+    console.log(performance.now());
+    workoutProgramNumberStat.textContent = workoutLength;
+    clientNumberStat.textContent = clientLength;
+    dietNumberStat.textContent = dietLength;
   } catch (error) {
     console.log(error);
   }
 };
-getWorkoutPrograms();
-
-const getClients = async () => {
-  try {
-    const { data } = await axios.get("/api/v1/client?length=1");
-
-    clientNumberStat.textContent = data.number;
-  } catch (error) {
-    console.log(error);
-  }
-};
-getClients();
-
-const getDiets = async () => {
-  try {
-    const { data } = await axios.get("/api/v1/diet?length=1");
-    dietNumberStat.textContent = data.number;
-  } catch (error) {
-    console.log(error);
-  }
-};
-getDiets();
+getDataLength();
 
 // ====MY CLIENTS EVENT LISTENER ===============
 const myClientsBtn = document.querySelector(".access-clients");
@@ -94,7 +78,7 @@ const logoutBtn = document.getElementById("user-logout-nav-btn");
 logoutBtn.addEventListener("click", async () => {
   try {
     await axios.post("/api/v1/auth/logout");
-    localStorage.removeItem("ref");
+    localStorage.clear();
     window.location = "http://192.168.1.195:3000/";
   } catch (error) {
     console.log(error);
