@@ -17,10 +17,12 @@ const getAllWorkoutPrograms = async (req, res) => {
 
   if (page) {
     const page = req.query.page || 0;
-    const WorkoutsPerRequest = 10;
+    const WorkoutsPerRequest = 20;
     const workoutprograms = await WorkoutProgram.find({
       createdBy: req.coach.coachId,
     })
+      .collation({ locale: "en", strength: 1 })
+      .sort({ name: 1 })
       .skip(page * WorkoutsPerRequest)
       .limit(WorkoutsPerRequest);
 

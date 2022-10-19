@@ -7,11 +7,16 @@ const deleteVerificationContainer = document.querySelector(
   ".delete-verification-section"
 );
 const searchWorkoutInput = document.getElementById("search-workout-input");
+const searchWorkoutIcon = document.getElementById("search-icon-btn");
 const goToCreateProgram = document.getElementById("go-to-create-program");
 const createNewProgramBtn = document.querySelector(".create-workout-btn");
 const preLoader = document.querySelector(".gif");
+const fetchMore = document.querySelector(".fetch-more");
 // ================GET WORKOUT FUNCTION , INCLUDE DISPLAYING ALL, LIVE SEARCH , DELETE FUNCTION =============================
 
+localStorage.removeItem("wo");
+let wLength = JSON.parse(localStorage.getItem("wL"));
+let workoutPrograms = [];
 goToCreateProgram.addEventListener("click", () => {
   window.location =
     "http://192.168.1.195:3000/createWorkout/createWorkout.html";
@@ -20,44 +25,37 @@ createNewProgramBtn.addEventListener("click", () => {
   window.location =
     "http://192.168.1.195:3000/createWorkout/createWorkout.html";
 });
-console.log(performance.now());
-
+let page = 0;
 // ================fetch workouts ===================
 const getWorkouts = async () => {
+  page = 0;
   try {
     // ============getting the data ===============
-    const { data } = await axios.get("/api/v1/workoutProgram/?page=0");
+    const { data } = await axios.get(`/api/v1/workoutProgram/?page=${page}`);
     preLoader.classList.add("display-none");
-    console.log(performance.now());
+
     //  =========if length is === 0 means no workouts we want to display the create item =============
     const length = data.workoutprograms.length;
 
     if (length === 0) {
       btnContainer.classList.add("open-container");
     }
-    let workoutPrograms = data.workoutprograms;
+
+    workoutPrograms = data.workoutprograms;
 
     displayProgramInfo(workoutPrograms);
 
     // ===========================live search =======================
 
-    const liveSearch = async () => {
-      let inputCharacter = searchWorkoutInput.value;
-      preLoader.classList.remove("display-none");
-      const { data } = await axios.get(
-        `/api/v1/workoutProgram/?name=${inputCharacter}`
-      );
-      preLoader.classList.add("display-none");
-      let workoutPrograms = data.workoutprograms;
-
-      displayProgramInfo(workoutPrograms);
-    };
-    searchWorkoutInput.addEventListener("input", async () => {
-      if (searchWorkoutInput.value.length === 0) {
-        getWorkouts();
-      } else {
-        await liveSearch();
+    searchWorkoutIcon.addEventListener("click", async () => {
+      if (searchWorkoutInput.value.length > 0) {
+        searchFunction();
       }
+      searchWorkoutInput.addEventListener("input", async () => {
+        if (searchWorkoutInput.value.length > 0) {
+          getWorkouts();
+        }
+      });
     });
   } catch (error) {
     console.log(error);
@@ -65,9 +63,35 @@ const getWorkouts = async () => {
 };
 getWorkouts();
 
+fetchMore.addEventListener("click", async () => {
+  preLoader.classList.remove("display-none");
+
+  page = page + 1;
+  const { data } = await axios.get(`/api/v1/workoutProgram/?page=${page}`);
+
+  let fetchedPrograms = data.workoutprograms;
+  await fetchedPrograms.forEach((program) => {
+    workoutPrograms.push(program);
+  });
+
+  preLoader.classList.add("display-none");
+
+  displayProgramInfo(workoutPrograms);
+});
+
 // ===============display Programs  function with all the show and hide logic ====================
 
 const displayProgramInfo = (programPlan) => {
+  let length = programPlan.length;
+  if (searchWorkoutInput.value.length > 0) {
+    fetchMore.classList.remove("show-opacity");
+  } else {
+    if (length === wLength) {
+      fetchMore.classList.remove("show-opacity");
+    } else {
+      fetchMore.classList.add("show-opacity");
+    }
+  }
   programGridContainer.innerHTML = "";
   displayAllPrograms(programPlan);
 
@@ -81,7 +105,7 @@ const displayProgramInfo = (programPlan) => {
       let index = e.target.dataset.overview;
 
       programContainer.forEach(function (subProgam) {
-        // =====opening container and displaying the timestamps and week  on click
+        // =====opening container and displaying the timestamps and days  on click
         if (subProgam === program) {
           const createdAt = programPlan[index].createdAt.slice(0, 10);
           const updatedAt = programPlan[index].updatedAt.slice(0, 10);
@@ -113,7 +137,7 @@ const logoutBtn = document.getElementById("user-logout-nav-btn");
 logoutBtn.addEventListener("click", async () => {
   try {
     await axios.post("/api/v1/auth/logout");
-    localStorage.removeItem("ref");
+    localStorage.clear();
     window.location = "http://192.168.1.195:3000/";
   } catch (error) {
     console.log(error);
@@ -122,7 +146,11 @@ logoutBtn.addEventListener("click", async () => {
 
 // ==============display all programs
 const displayAllPrograms = (programPlan) => {
+  programGridContainer.innerHTML = "";
   for (let i = 0; i < programPlan.length; i++) {
+    if (programPlan[i].name.length > 13) {
+      programPlan[i].name = `${programPlan[i].name.slice(0, 13)}..`;
+    }
     programGridContainer.innerHTML += `<div class="program-container">
  
   <div class="program">
@@ -130,7 +158,7 @@ const displayAllPrograms = (programPlan) => {
  <p>${programPlan[i].name}</p>
     <div class="tools">
       <i class="fa-regular fa-pen-to-square" id="edit-workout" data-edit=${programPlan[i]._id}></i>
-      <i class=" fa-solid fa-trash" id="delete-workout" data-delete=${programPlan[i]._id}></i>
+      <i class=" fa-solid fa-trash" id="delete-workout" data-index=${i} data-delete=${programPlan[i]._id}></i>
     </div>
   </div>
   
@@ -150,6 +178,7 @@ const displayAllPrograms = (programPlan) => {
   deleteWorkout.forEach((deleteBtn) => {
     deleteBtn.addEventListener("click", (e) => {
       let workoutId = e.target.dataset.delete;
+      let workoutIndex = e.target.dataset.index;
       let workoutName =
         e.target.parentElement.previousElementSibling.textContent;
 
@@ -158,7 +187,7 @@ const displayAllPrograms = (programPlan) => {
       <div class="delete-verification-box">
       <h3>Are you sure you want to delete <span>${workoutName}</span> ?</h3>
       <div class="yes-no-container">
-        <button class="yes-btn" data-delete =${workoutId}>yes</button>
+        <button class="yes-btn" data-delete =${workoutId} data-index=${workoutIndex}>yes</button>
         <button class="no-btn"> no </button>
       </div>
       </div>`;
@@ -167,9 +196,13 @@ const displayAllPrograms = (programPlan) => {
       noBtn.addEventListener("click", () => {
         deleteVerificationContainer.classList.remove("open-container");
       });
+
+      // ===confirmation for delete program ====================
       const yesBtn = document.querySelector(".yes-btn");
       yesBtn.addEventListener("click", async (e) => {
         let id = e.target.dataset.delete;
+        let index = e.target.dataset.index;
+
         preLoader.classList.remove("display-none");
         await axios.delete(`/api/v1/workoutProgram/${id}`);
 
@@ -179,10 +212,14 @@ const displayAllPrograms = (programPlan) => {
         await axios.patch("/api/v1/dataLength", {
           workoutLength: workoutLength,
         });
+        programPlan.splice(index, 1);
+
         deleteVerificationContainer.classList.remove("open-container");
         preLoader.classList.add("display-none");
-        searchWorkoutInput.value = "";
-        getWorkouts();
+        wLength = wLength - 1;
+        localStorage.setItem("wL", JSON.stringify(wLength));
+
+        displayProgramInfo(programPlan);
       });
     });
   });
@@ -236,6 +273,8 @@ const displayOverview = (program, createdAt, updatedAt, daysArr) => {
     });
   });
 };
+
+// ===============display workouts  ===========================
 
 const displayWorkouts = (program, daysArr, index) => {
   const createdWorkoutsContainer = program.querySelector(".created-workouts");
@@ -589,3 +628,17 @@ const chosenDsSuperset = (exercise, i, oneWorkout) => {
 </div>`;
 };
 // ================end of chosen exercises ===============
+
+// =======================search function =====================
+const searchFunction = async () => {
+  let inputCharacter = searchWorkoutInput.value;
+  preLoader.classList.remove("display-none");
+  const { data } = await axios.get(
+    `/api/v1/workoutProgram/?name=${inputCharacter}`
+  );
+  preLoader.classList.add("display-none");
+
+  workoutPrograms = data.workoutprograms;
+
+  displayProgramInfo(workoutPrograms);
+};

@@ -143,6 +143,18 @@ input[type="search"]::-webkit-search-results-decoration {
   height: 100px;
   z-index: 999;
 }
+.show-more {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 15vh;
+  font-size: 20px;
+  color: var(--mainColor);
+}
+.fetch-more {
+  opacity: 0;
+}
 /* ==================END OF GLOBAL CLASSES ========================  */
 
 body {
@@ -252,7 +264,7 @@ body {
   justify-content: center;
   gap: 30px;
   width: 100vw;
-  margin-bottom: 20vh;
+  margin-bottom: 30px;
 }
 .program-container {
   display: flex;

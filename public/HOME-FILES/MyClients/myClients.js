@@ -6,13 +6,14 @@ const deleteVerificationContainer = document.querySelector(
 const preLoader = document.querySelector(".gif");
 const searchCLientInput = document.getElementById("search-client-input");
 // ===============getClients when page open and display them =======
-console.log(performance.now());
+localStorage.removeItem("cref");
+
 const getClients = async () => {
   try {
     // ============getting the data ===============
     const { data } = await axios.get("/api/v1/client/?count=30");
     preLoader.classList.add("display-none");
-    console.log(performance.now());
+
     //  =========if length is === 0 means no clients we want to display the create item =============
     const length = data.clientsInfo.length;
     if (length === 0) {
@@ -33,7 +34,7 @@ const getClients = async () => {
       );
       preLoader.classList.add("display-none");
       let client = data.clientsInfo;
-      console.log(client);
+
       displayClients(client);
     };
     searchCLientInput.addEventListener("input", async () => {
@@ -117,6 +118,7 @@ registerBtn.addEventListener("click", async (e) => {
     showAlert(registerPasswordAlert);
   }
   try {
+    preLoader.classList.remove("display-none");
     const { client } = await axios.post("/api/v1/client", {
       firstName,
       lastName,
@@ -127,16 +129,14 @@ registerBtn.addEventListener("click", async (e) => {
 
     let clientLength = data.dataLength[0].clientLength + 1;
     await axios.patch("/api/v1/dataLength", { clientLength: clientLength });
-
+    preLoader.classList.add("display-none");
     getClients();
     registerFirstName.value = "";
     registerLastName.value = "";
     registerEmail.value = "";
     registerPassword.value = "";
     btnContainer.classList.add("display-none");
-    setTimeout(() => {
-      registerContainer.classList.remove("open-container");
-    }, 500);
+    registerContainer.classList.remove("open-container");
   } catch (error) {
     console.log(error);
   }

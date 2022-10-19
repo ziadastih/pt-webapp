@@ -41,7 +41,7 @@ const getDataLength = async () => {
       let workoutLength = data.dataLength[0].workoutLength;
       let dietLength = data.dataLength[0].dietLength;
       let clientLength = data.dataLength[0].clientLength;
-      console.log(performance.now());
+
       workoutProgramNumberStat.textContent = workoutLength;
       clientNumberStat.textContent = clientLength;
       dietNumberStat.textContent = dietLength;
@@ -63,6 +63,7 @@ myClientsBtn.addEventListener("click", () => {
 const myWorkoutsBtn = document.querySelector(".access-workouts");
 
 myWorkoutsBtn.addEventListener("click", () => {
+  localStorage.setItem("wL", workoutProgramNumberStat.textContent);
   window.location =
     "http://192.168.1.195:3000/MyWorkoutsPrograms/myWorkouts.html";
 });
