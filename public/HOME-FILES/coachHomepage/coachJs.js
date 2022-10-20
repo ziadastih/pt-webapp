@@ -72,6 +72,7 @@ myWorkoutsBtn.addEventListener("click", () => {
 const myNutritionBtn = document.querySelector(".access-diet");
 
 myNutritionBtn.addEventListener("click", () => {
+  localStorage.setItem("dL", dietNumberStat.textContent);
   window.location = "http://192.168.1.195:3000/MyNutrition/myNutrition.html";
 });
 // =======================Wallet event listener =======

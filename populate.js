@@ -5,11 +5,13 @@ const workouts = require("./models/workoutProgramSchema");
 const clients = require("./models/clientsModel");
 const wokroutplans = require("./workouts.json");
 const clientsPop = require("./client.json");
+const dietPlans = require("./diet.json");
+const diets = require("./models/dietSchema");
 const start = async () => {
   try {
     await connectDB(process.env.PT_URI);
-    await clients.deleteMany();
-    await clients.create(clientsPop);
+    await diets.deleteMany();
+    await diets.create(dietPlans);
     console.log("Success!!!!");
     process.exit(0);
   } catch (error) {

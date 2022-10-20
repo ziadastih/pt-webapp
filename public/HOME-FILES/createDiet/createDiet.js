@@ -8,7 +8,7 @@ const ingredientsArray = [
     name: "almonds",
     type: "pcs",
     calories: 100,
-    proteine: 40,
+    protein: 40,
     carbs: 40,
     fat: 10,
     portion: 1,
@@ -18,7 +18,7 @@ const ingredientsArray = [
     name: "apple",
     type: "pcs",
     calories: 100,
-    proteine: 0,
+    protein: 0,
     carbs: 50,
     fat: 0,
     portion: 1,
@@ -28,7 +28,7 @@ const ingredientsArray = [
     name: "banana",
     type: "pcs",
     calories: 100,
-    proteine: 0,
+    protein: 0,
     carbs: 25,
     fat: 0,
     portion: 1,
@@ -38,7 +38,7 @@ const ingredientsArray = [
     name: "rice",
     type: "g",
     calories: 200,
-    proteine: 0,
+    protein: 0,
     carbs: 50,
     fat: 1.2,
     portion: 100,
@@ -48,7 +48,7 @@ const ingredientsArray = [
     name: "pasta",
     type: "g",
     calories: 100,
-    proteine: 0,
+    protein: 0,
     carbs: 50,
     fat: 0,
     portion: 100,
@@ -58,7 +58,7 @@ const ingredientsArray = [
     name: "chicken breast",
     type: "g",
     calories: 200,
-    proteine: 33,
+    protein: 33,
     carbs: 50,
     fat: 0,
     portion: 100,
@@ -68,7 +68,7 @@ const ingredientsArray = [
     name: "chicken wings",
     type: "g",
     calories: 420,
-    proteine: 0,
+    protein: 0,
     carbs: 50,
     fat: 30,
     portion: 100,
@@ -78,7 +78,7 @@ const ingredientsArray = [
     name: "fish",
     type: "g",
     calories: 300,
-    proteine: 30,
+    protein: 30,
     carbs: 50,
     fat: 22,
     portion: 100,
@@ -88,7 +88,7 @@ const ingredientsArray = [
     name: "meat",
     type: "g",
     calories: 100,
-    proteine: 0,
+    protein: 0,
     carbs: 50,
     fat: 20,
     portion: 100,
@@ -98,7 +98,7 @@ const ingredientsArray = [
     name: "low fat yoghurt",
     type: "cup",
     calories: 180,
-    proteine: 5.2,
+    protein: 5.2,
     carbs: 50,
     fat: 23,
     portion: 1,
@@ -108,7 +108,7 @@ const ingredientsArray = [
     name: "rice cake",
     type: "pcs",
     calories: 50,
-    proteine: 0,
+    protein: 0,
     carbs: 50,
     fat: 0,
     portion: 1,
@@ -118,7 +118,7 @@ const ingredientsArray = [
     name: "peanut butter",
     type: "g",
     calories: 130,
-    proteine: 0,
+    protein: 0,
     carbs: 50,
     fat: 0,
     portion: 100,
@@ -305,7 +305,7 @@ submitNewIngredient.addEventListener("click", () => {
           name: ingredientNameInput.value,
           type: type,
           calories: parseFloat(newIngredientCal.value) || 0,
-          proteine: parseFloat(newIngredientProt.value) || 0,
+          protein: parseFloat(newIngredientProt.value) || 0,
           carbs: parseFloat(newIngredientCarbs.value) || 0,
           fat: parseFloat(newIngredientFat.value) || 0,
           portion: portion,
@@ -315,7 +315,7 @@ submitNewIngredient.addEventListener("click", () => {
           name: ingredientNameInput.value,
           type: type,
           calories: parseFloat(newIngredientCal.value) || 0,
-          proteine: parseFloat(newIngredientProt.value) || 0,
+          protein: parseFloat(newIngredientProt.value) || 0,
           carbs: parseFloat(newIngredientCarbs.value) || 0,
           fat: parseFloat(newIngredientFat.value) || 0,
           portion: portion,
@@ -323,7 +323,6 @@ submitNewIngredient.addEventListener("click", () => {
         ingredientsContainer.classList.add("display-flex");
         newIngredientContainer.classList.remove("display-flex");
         overlay.classList.remove("display-none");
-        console.log(ingredientsArray);
       }
     });
   }
@@ -372,7 +371,7 @@ const displayIngredientsArray = (arr) => {
           name: arr[ingredientIndex].name,
           type: arr[ingredientIndex].type,
           calories: arr[ingredientIndex].calories,
-          proteine: arr[ingredientIndex].proteine,
+          protein: arr[ingredientIndex].protein,
           carbs: arr[ingredientIndex].carbs,
           fat: arr[ingredientIndex].fat,
           portion: arr[ingredientIndex].portion,
@@ -469,7 +468,7 @@ const displayChosenIngredients = () => {
 </div>
 <div class="macros-info">
   <span>prot</span>
-  <p class="prot-value">${ingredient.proteine}g</p>
+  <p class="prot-value">${ingredient.protein}g</p>
 </div>
 <div class="macros-info">
   <span>fat</span>
@@ -550,7 +549,7 @@ const displayChosenIngredients = () => {
           ingredient.calories = 0;
           ingredient.carbs = 0;
           ingredient.fat = 0;
-          ingredient.proteine = 0;
+          ingredient.protein = 0;
           ingredient.portion = 0;
           sumOfTotalIngredientsCal();
           sumOfTotalIngredientsCarbs();
@@ -570,11 +569,11 @@ const displayChosenIngredients = () => {
           (portionInput.value * originalIngredient.fat) /
           originalIngredient.portion;
 
-        ingredient.proteine =
-          (portionInput.value * originalIngredient.proteine) /
+        ingredient.protein =
+          (portionInput.value * originalIngredient.protein) /
           originalIngredient.portion;
         let roundedFatValue = Math.round(ingredient.fat * 100) / 100;
-        let roundedProtValue = Math.round(ingredient.proteine * 100) / 100;
+        let roundedProtValue = Math.round(ingredient.protein * 100) / 100;
         let roundedCalValue = Math.round(ingredient.calories * 100) / 100;
         let roundedCarbsValue = Math.round(ingredient.carbs * 100) / 100;
         ingredient.portion = portionInput.value;
@@ -616,7 +615,7 @@ const sumOfTotalIngredientsCarbs = () => {
 
 const sumOfTotalIngredientsProt = () => {
   const total = selectedIngredientsArray.reduce((currentSum, ingredient) => {
-    return ingredient.proteine + currentSum;
+    return ingredient.protein + currentSum;
   }, 0);
   const TotalNum = Math.round(total * 100) / 100;
 
@@ -638,7 +637,7 @@ const submitMealFunction = () => {
   Diet.meals.push({
     calories: totalIngredientsCal.textContent,
     carbs: totalIngredientsCarbs.textContent,
-    proteine: totalIngredientsProt.textContent,
+    protein: totalIngredientsProt.textContent,
     fat: totalIngredientsFat.textContent,
     ingredients: selectedIngredientsArray,
   });
@@ -696,7 +695,7 @@ const displayMeals = () => {
       </div>
       <div class="macros-info">
         <span>prot</span>
-        <p class="total-meal-prot">${meal.proteine}</p>
+        <p class="total-meal-prot">${meal.protein}</p>
       </div>
       <div class="macros-info">
         <span>fat</span>
@@ -779,7 +778,7 @@ const displayMeals = () => {
 </div>
 <div class="macros-info">
 <span>prot</span>
-<p class="prot-value">${ingredient.proteine}g</p>
+<p class="prot-value">${ingredient.protein}g</p>
 </div>
 <div class="macros-info">
 <span>fat</span>
@@ -806,7 +805,7 @@ const editMealFunction = () => {
 
   meal.calories = totalIngredientsCal.textContent;
   meal.carbs = totalIngredientsCarbs.textContent;
-  meal.proteine = totalIngredientsProt.textContent;
+  meal.protein = totalIngredientsProt.textContent;
   meal.fat = totalIngredientsFat.textContent;
   meal.ingredients = selectedIngredientsArray;
   console.log(meal);
@@ -837,7 +836,7 @@ const totalDietCarbsFunction = () => {
 const totalDietProtFunction = () => {
   const meals = Diet.meals;
   const total = meals.reduce((sum, meal) => {
-    let prot = parseFloat(meal.proteine);
+    let prot = parseFloat(meal.protein);
 
     return prot + sum;
   }, 0);

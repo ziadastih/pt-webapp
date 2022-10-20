@@ -2,6 +2,7 @@ const Coach = require("../models/ptschema");
 const Client = require("../models/clientsModel");
 const { StatusCodes } = require("http-status-codes");
 const jwt = require("jsonwebtoken");
+
 const { UnauthenticatedError, BadRequestError } = require("../errors");
 
 const register = async (req, res) => {
@@ -32,7 +33,7 @@ const login = async (req, res) => {
 
     // ========set token inside our http cookie to make it safe =============
     res.cookie("token", token, {
-      maxAge: "3600000",
+      maxAge: "86400000",
       httpOnly: true,
     });
 

@@ -69,7 +69,7 @@ input[type="search"]::-webkit-search-results-decoration {
   text-transform: capitalize;
   font-size: 10px;
   font-family: var(--fontSansSerif);
-  color: var(--SecondaryColor);
+  color: var(--mainColor);
 }
 #toggle-password {
   position: absolute;
@@ -106,6 +106,30 @@ input[type="search"]::-webkit-search-results-decoration {
 .global-nav p a {
   color: white;
   text-decoration: none;
+}
+.gif {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-image: url(../images/pre-loader-2.gif);
+  background-position: center;
+  background-size: contain;
+  width: 100px;
+  height: 100px;
+  z-index: 999;
+}
+.show-more {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 15vh;
+  font-size: 20px;
+  color: var(--mainColor);
+}
+.fetch-more {
+  opacity: 0;
 }
 /* ==================END OF GLOBAL CLASSES ========================  */
 
@@ -177,9 +201,9 @@ body {
   color: var(--mainColor);
   cursor: pointer;
 }
-/* ============THE HEADER AND THE BTN WHEN THERE IS NO CLIENTS ==== */
+/* ============THE HEADER AND THE BTN WHEN THERE IS NO diets ==== */
 .btn-container {
-  display: flex;
+  display: none;
   height: 40vh;
 
   align-items: center;
@@ -209,6 +233,100 @@ body {
 
 /* END OF PROGRAM CONTAINER ==================== */
 
+/* ================= diet programs grid container ============= */
+.nutrition-programs-grid-container {
+  margin-top: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100vw;
+}
+/* =========meal styling that will be dealt with in js ========== */
+.one-diet-container {
+  margin-bottom: 20px;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.diet {
+  width: 80vw;
+  height: 50px;
+  background-color: var(--mainColor);
+
+  border-radius: 3px;
+
+  font-family: var(--fontSansSerif);
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-transform: capitalize;
+  margin-bottom: 10px;
+}
+.diet span {
+  color: var(--whiteSmoke);
+  opacity: 0.5;
+  margin-left: 20px;
+  font-size: 10px;
+}
+.diet p {
+  text-align: center;
+  color: var(--whiteSmoke);
+  font-weight: 500;
+  letter-spacing: 1.2px;
+}
+
+.tools {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  color: var(--mainOrange);
+  width: 70px;
+
+  cursor: pointer;
+  margin-right: 20px;
+}
+.tools i {
+  color: var(--mainOrange);
+}
+
+/* ==============meal macros container ================ */
+
+.total-diet-macros {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 10px;
+  border-radius: 5px;
+  width: 80vw;
+  background-color: var(--whiteSmoke);
+
+  height: 80px;
+  padding: 5px;
+  font-family: var(--fontSansSerif);
+  color: var(--mainColor);
+}
+
+.total-macros span {
+  color: var(--whiteSmoke);
+  opacity: 0.5;
+  font-size: 10px;
+}
+.macros-info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10px;
+}
+.macros-info span {
+  opacity: 0.5;
+  font-size: 10px;
+}
 /* ==============delete verification box =========== */
 .delete-verification-section {
   position: fixed;
@@ -220,7 +338,7 @@ body {
   justify-content: center;
   flex-direction: column;
 
-  z-index: 100;
+  z-index: 40;
 }
 .overlay {
   position: absolute;
@@ -309,7 +427,9 @@ body {
   background-color: white;
   color: var(--mainColor);
 }
-
+.show-opacity {
+  opacity: 1;
+}
 .role-alert {
   border: 1px solid var(--alert);
 }

@@ -3,7 +3,7 @@ const { StatusCodes } = require("http-status-codes");
 
 // ==================get all diets ===================
 const getAllDiets = async (req, res) => {
-  const { name, count } = req.query;
+  const { name, page } = req.query;
   const queryObject = {};
 
   if (name) {
@@ -15,11 +15,15 @@ const getAllDiets = async (req, res) => {
     res.status(StatusCodes.OK).json({ diet });
   }
 
-  if (count) {
+  if (page) {
+    const page = req.query.page || 0;
+    const dietsPerRequest = 50;
     const diets = await Diet.find({ createdBy: req.coach.coachId })
-      .lean()
+      .collation({ locale: "en", strength: 1 })
+      .sort({ name: 1 })
+      .skip(page * dietsPerRequest)
+      .limit(dietsPerRequest);
 
-      .limit(count);
     res.status(StatusCodes.OK).json({ diets });
   }
 };

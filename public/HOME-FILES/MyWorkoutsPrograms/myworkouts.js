@@ -46,23 +46,25 @@ const getWorkouts = async () => {
     displayProgramInfo(workoutPrograms);
 
     // ===========================live search =======================
-
-    searchWorkoutIcon.addEventListener("click", async () => {
-      if (searchWorkoutInput.value.length > 0) {
-        searchFunction();
-      }
-      searchWorkoutInput.addEventListener("input", async () => {
-        if (searchWorkoutInput.value.length > 0) {
-          getWorkouts();
-        }
-      });
-    });
   } catch (error) {
     console.log(error);
   }
 };
 getWorkouts();
 
+// =================search click event ==========
+searchWorkoutIcon.addEventListener("click", async () => {
+  if (searchWorkoutInput.value.length > 0) {
+    searchFunction();
+  }
+  searchWorkoutInput.addEventListener("input", async () => {
+    if (searchWorkoutInput.value.length > 0) {
+      getWorkouts();
+    }
+  });
+});
+
+// ===============fetch more workouts 20 at a time and push them to the original array
 fetchMore.addEventListener("click", async () => {
   preLoader.classList.remove("display-none");
 
@@ -636,6 +638,7 @@ const searchFunction = async () => {
   const { data } = await axios.get(
     `/api/v1/workoutProgram/?name=${inputCharacter}`
   );
+
   preLoader.classList.add("display-none");
 
   workoutPrograms = data.workoutprograms;
