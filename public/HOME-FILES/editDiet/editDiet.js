@@ -126,17 +126,18 @@ const ingredientsArray = [
   },
 ];
 let selectedIngredientsArray = [];
+let localId = localStorage.getItem("di");
 // ============== program selectors and the overlay ================================================
 const preLoader = document.querySelector(".gif");
 const overlay = document.querySelector(".overlay");
 const createDietNameContainer = document.querySelector(".create-diet-name");
 const dietNameInput = document.querySelector("#diet-input-name");
 const editDietNameBtn = document.querySelector(".edit-diet-name");
-const createDietNameBtn = document.querySelector(".add-diet-name");
+
 const dietName = document.querySelector(".diet-name-header");
 const editDietNameIcon = document.querySelector(".edit-diet-name-icon");
 const nameInputAlert = document.querySelector(".create-diet-name-alert");
-const submitDietBtn = document.querySelector("#submit-diet");
+const editDietBtn = document.querySelector("#edit-diet");
 const closeBtn = document.querySelectorAll("#close-btn");
 
 // ===================ingredients container that hold our data names and images and checkbox ===========
@@ -196,6 +197,16 @@ const totalDietFat = document.querySelector(".total-diet-fat");
 
 // ============================refreshing page alert =====================
 
+const getDiet = async () => {
+  const { data } = await axios.get(`/api/v1/diet/${localId}`);
+  Diet.name = data.diet.name;
+  Diet.meals = data.diet.meals;
+  dietName.textContent = Diet.name;
+  overlay.classList.add("display-none");
+  displayMeals();
+};
+getDiet();
+
 window.onbeforeunload = () => {
   return "are you sure you want to leave page";
 };
@@ -204,9 +215,9 @@ const backBtn = document.querySelector(".back-btn");
 backBtn.addEventListener("click", () => {
   window.location = "http://192.168.1.195:3000/MyNutrition/myNutrition.html";
 });
-submitDietBtn.addEventListener("click", async () => {
+editDietBtn.addEventListener("click", async () => {
   preLoader.classList.add("display-flex");
-  const diet = await axios.post("/api/v1/diet", {
+  const diet = await axios.patch(`/api/v1/diet/${localId}`, {
     name: Diet.name,
     meals: Diet.meals,
     macros: {
@@ -216,28 +227,17 @@ submitDietBtn.addEventListener("click", async () => {
       fat: totalDietFat.textContent,
     },
   });
-  const { data } = await axios.get("/api/v1/dataLength");
 
-  let dietLength = data.dataLength[0].dietLength + 1;
-  await axios.patch("/api/v1/dataLength", {
-    dietLength: dietLength,
-  });
   preLoader.classList.remove("display-flex");
   window.onbeforeunload = null;
   window.location = "http://192.168.1.195:3000/MyNutrition/myNutrition.html";
 });
 // ===============event listener for adding program/ edit icon / and edit program name =============
-createDietNameBtn.addEventListener("click", () => {
-  addDietName();
-});
 
 editDietNameIcon.addEventListener("click", () => {
-  createDietNameContainer.classList.remove("display-none");
+  createDietNameContainer.classList.add("display-flex");
   overlay.classList.remove("display-none");
   dietNameInput.value = dietName.textContent;
-  editDietNameIcon.classList.remove("show-opacity");
-  createDietNameBtn.classList.add("display-none");
-  editDietNameBtn.classList.add("display-flex");
 });
 
 editDietNameBtn.addEventListener("click", () => {
@@ -274,7 +274,7 @@ addIngredientsBtn.addEventListener("click", () => {
     submitMealBtn.classList.add("display-flex");
   }
   totalDietMacros.classList.remove("display-flex");
-  submitDietBtn.classList.add("display-none");
+  editDietBtn.classList.add("display-none");
 });
 
 toggleNewIngredientContainer.addEventListener("click", () => {
@@ -285,7 +285,6 @@ toggleNewIngredientContainer.addEventListener("click", () => {
 
 ingredientTypeBtns.forEach((ingredientBtn) => {
   ingredientBtn.addEventListener("click", () => {
-    console.log("hello");
     ingredientTypeBtns.forEach((subBtn) => {
       if (subBtn === ingredientBtn) {
         subBtn.classList.add("selected-type");
@@ -347,21 +346,21 @@ const displayIngredientsArray = (arr) => {
   for (let i = 0; i < arr.length; i++) {
     if (arr[i].selected === false) {
       ingredientsList.innerHTML += `<div class="ingredient-content">
-      <span class="check-box" data-ingredient =${i}
+        <span class="check-box" data-ingredient =${i}
+          ><i class="fa-solid fa-check" id="check-icon"></i
+        ></span>
+  
+        <p class="ingredient-name">${arr[i].name}</p>
+        <span class="calories-stats">${arr[i].calories} cal</span>
+      </div>`;
+    } else {
+      ingredientsList.innerHTML += `<div class="ingredient-content">
+      <span class="check-box change-check-box-background" data-ingredient =${i}
         ><i class="fa-solid fa-check" id="check-icon"></i
       ></span>
-
       <p class="ingredient-name">${arr[i].name}</p>
       <span class="calories-stats">${arr[i].calories} cal</span>
     </div>`;
-    } else {
-      ingredientsList.innerHTML += `<div class="ingredient-content">
-    <span class="check-box change-check-box-background" data-ingredient =${i}
-      ><i class="fa-solid fa-check" id="check-icon"></i
-    ></span>
-    <p class="ingredient-name">${arr[i].name}</p>
-    <span class="calories-stats">${arr[i].calories} cal</span>
-  </div>`;
     }
   }
   // ===================managing the checkbox and pushing or removing the exercises to selected exercises array
@@ -410,11 +409,10 @@ const addDietName = () => {
     showAlert(nameInputAlert);
   } else {
     dietName.textContent = dietNameInput.value;
-    editDietNameIcon.classList.add("show-opacity");
+
     overlay.classList.add("display-none");
-    createDietNameContainer.classList.add("display-none");
+    createDietNameContainer.classList.remove("display-flex");
     Diet.name = dietNameInput.value;
-    submitDietBtn.classList.add("display-none");
   }
 };
 
@@ -446,7 +444,7 @@ const displayChosenIngredients = () => {
     submitMealBtn.classList.remove("display-flex");
     if (!editMealBtn.classList.contains("display-flex")) {
       totalDietMacros.classList.add("display-flex");
-      submitDietBtn.classList.remove("display-none");
+      editDietBtn.classList.remove("display-none");
       createdMealsContainer.classList.add("display-flex");
     }
   } else {
@@ -455,33 +453,33 @@ const displayChosenIngredients = () => {
       let ingredient = selectedIngredientsArray[i];
 
       chosenIngredientsContainer.innerHTML += `<div class="one-ingredient-container"> 
-    <div class="ingredient-info">
-<h2 class="name">${ingredient.name}</h2>
-<div class="info-input-container">
-  <input type="number" id="ingredient-portion" data-input=${i} placeholder="0" value=${ingredient.portion}  />
-  <p>${ingredient.type}</p>
-  <i class="fa-solid fa-trash" id="delete-ingredient" data-delete = "${ingredient.name}"></i>
-</div>
-</div>
-<div class="ingredient-macros">
-<div class="macros-info">
-  <span>cal.</span>
-  <p class="cal-value">${ingredient.calories}</p>
-</div>
-<div class="macros-info">
-  <span>carbs</span>
-  <p class="carbs-value">${ingredient.carbs} g</p>
-</div>
-<div class="macros-info">
-  <span>prot</span>
-  <p class="prot-value">${ingredient.protein}g</p>
-</div>
-<div class="macros-info">
-  <span>fat</span>
-  <p class="fat-value">${ingredient.fat}g</p>
-</div>
-</div>
-</div>`;
+      <div class="ingredient-info">
+  <h2 class="name">${ingredient.name}</h2>
+  <div class="info-input-container">
+    <input type="number" id="ingredient-portion" data-input=${i} placeholder="0" value=${ingredient.portion}  />
+    <p>${ingredient.type}</p>
+    <i class="fa-solid fa-trash" id="delete-ingredient" data-delete = "${ingredient.name}"></i>
+  </div>
+  </div>
+  <div class="ingredient-macros">
+  <div class="macros-info">
+    <span>cal.</span>
+    <p class="cal-value">${ingredient.calories}</p>
+  </div>
+  <div class="macros-info">
+    <span>carbs</span>
+    <p class="carbs-value">${ingredient.carbs} g</p>
+  </div>
+  <div class="macros-info">
+    <span>prot</span>
+    <p class="prot-value">${ingredient.protein}g</p>
+  </div>
+  <div class="macros-info">
+    <span>fat</span>
+    <p class="fat-value">${ingredient.fat}g</p>
+  </div>
+  </div>
+  </div>`;
     }
   }
   sumOfTotalIngredientsCal();
@@ -647,6 +645,7 @@ const submitMealFunction = () => {
     fat: totalIngredientsFat.textContent,
     ingredients: selectedIngredientsArray,
   });
+  console.log(Diet);
   selectedIngredientsArray = [];
   for (let i = 0; i < ingredientsArray.length; i++) {
     ingredientsArray[i].selected = false;
@@ -664,56 +663,56 @@ const displayMeals = () => {
   if (Diet.meals.length === 0) {
     createdMealsContainer.classList.remove("display-flex");
     totalDietMacros.classList.remove("display-flex");
-    submitDietBtn.classList.add("display-none");
+    editDietBtn.classList.add("display-none");
   } else {
     createdMealsContainer.classList.add("display-flex");
     for (let i = 0; i < Diet.meals.length; i++) {
       let meal = Diet.meals[i];
       createdMealsContainer.innerHTML += `<div class="one-meal-container">
-    <div class="one-meal">
-      <div class="meal-info">
-        <i
-          class="fa-solid fa-list"
-          id="show-ingredient"
-          data-overview=${i}
-        ></i>
-        <p class="meal-name">meal ${i + 1}</p>
-        <div class="tools">
-          <i class="fa-solid fa-trash" id="delete-meal" data-delete=${i}></i>
+      <div class="one-meal">
+        <div class="meal-info">
           <i
-            class="fa-regular fa-pen-to-square"
-            id="edit-meal-icon"
-            data-edit=${i}
+            class="fa-solid fa-list"
+            id="show-ingredient"
+            data-overview=${i}
           ></i>
+          <p class="meal-name">meal ${i + 1}</p>
+          <div class="tools">
+            <i class="fa-solid fa-trash" id="delete-meal" data-delete=${i}></i>
+            <i
+              class="fa-regular fa-pen-to-square"
+              id="edit-meal-icon"
+              data-edit=${i}
+            ></i>
+          </div>
+        </div>
+        
+      </div>
+      <div class="meal-overview"></div>
+      <div class="total-meal-macros">
+        <div class="macros-info">
+          <span>cal.</span>
+          <p class="total-meal-cal">${meal.calories}</p>
+        </div>
+        <div class="macros-info">
+          <span>carbs</span>
+          <p class="total-meal-carbs">${meal.carbs}</p>
+        </div>
+        <div class="macros-info">
+          <span>prot</span>
+          <p class="total-meal-prot">${meal.protein}</p>
+        </div>
+        <div class="macros-info">
+          <span>fat</span>
+          <p class="total-meal-fat">${meal.fat}</p>
         </div>
       </div>
-      
-    </div>
-    <div class="meal-overview"></div>
-    <div class="total-meal-macros">
-      <div class="macros-info">
-        <span>cal.</span>
-        <p class="total-meal-cal">${meal.calories}</p>
-      </div>
-      <div class="macros-info">
-        <span>carbs</span>
-        <p class="total-meal-carbs">${meal.carbs}</p>
-      </div>
-      <div class="macros-info">
-        <span>prot</span>
-        <p class="total-meal-prot">${meal.protein}</p>
-      </div>
-      <div class="macros-info">
-        <span>fat</span>
-        <p class="total-meal-fat">${meal.fat}</p>
-      </div>
-    </div>
-  </div>`;
+    </div>`;
     }
 
     // ===========total macros per meal and total macros per diet ==========
     totalDietMacros.classList.add("display-flex");
-    submitDietBtn.classList.remove("display-none");
+    editDietBtn.classList.remove("display-none");
     totalDietCalFunction();
     totalDietCarbsFunction();
     totalDietFatFunction();
@@ -741,7 +740,7 @@ const displayMeals = () => {
         displayChosenIngredients();
         changeSelectedToTrue();
         totalDietMacros.classList.remove("display-flex");
-        submitDietBtn.classList.add("display-none");
+        editDietBtn.classList.add("display-none");
         createdMealsContainer.classList.remove("display-flex");
         submitMealBtn.classList.remove("display-flex");
         editMealBtn.classList.add("display-flex");
@@ -765,33 +764,33 @@ const displayMeals = () => {
             for (let e = 0; e < ingredients.length; e++) {
               let ingredient = ingredients[e];
               overviewContainer.innerHTML += `<div class="one-ingredient-overview-container"> 
-<div class="ingredient-info">
-<h2 class="name">${ingredient.name}</h2>
-<div class="info-input-container">
-<div class = "portion-overview"
-<p>${ingredient.portion} ${ingredient.type}</p>
-</div>
-</div>
-</div>
-<div class="ingredient-macros">
-<div class="macros-info">
-<span>cal.</span>
-<p class="cal-value">${ingredient.calories}</p>
-</div>
-<div class="macros-info">
-<span>carbs</span>
-<p class="carbs-value">${ingredient.carbs} g</p>
-</div>
-<div class="macros-info">
-<span>prot</span>
-<p class="prot-value">${ingredient.protein}g</p>
-</div>
-<div class="macros-info">
-<span>fat</span>
-<p class="fat-value">${ingredient.fat}g</p>
-</div>
-</div>
-</div>`;
+  <div class="ingredient-info">
+  <h2 class="name">${ingredient.name}</h2>
+  <div class="info-input-container">
+  <div class = "portion-overview"
+  <p>${ingredient.portion} ${ingredient.type}</p>
+  </div>
+  </div>
+  </div>
+  <div class="ingredient-macros">
+  <div class="macros-info">
+  <span>cal.</span>
+  <p class="cal-value">${ingredient.calories}</p>
+  </div>
+  <div class="macros-info">
+  <span>carbs</span>
+  <p class="carbs-value">${ingredient.carbs} g</p>
+  </div>
+  <div class="macros-info">
+  <span>prot</span>
+  <p class="prot-value">${ingredient.protein}g</p>
+  </div>
+  <div class="macros-info">
+  <span>fat</span>
+  <p class="fat-value">${ingredient.fat}g</p>
+  </div>
+  </div>
+  </div>`;
             }
           } else {
             subMeal.classList.remove("show-ingredients");
@@ -804,7 +803,7 @@ const displayMeals = () => {
 
 const editMealFunction = () => {
   const mealIndex = JSON.parse(localStorage.getItem("mealIndex"));
-  submitDietBtn.classList.add("display-flex");
+  editDietBtn.classList.remove("display-none");
   editMealBtn.classList.remove("display-flex");
 
   let meal = Diet.meals[mealIndex];

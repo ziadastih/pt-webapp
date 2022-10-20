@@ -12,7 +12,7 @@ const searchDietIcon = document.getElementById("search-icon-btn");
 // ================GET WORKOUT FUNCTION , INCLUDE DISPLAYING ALL, LIVE SEARCH , DELETE FUNCTION =============================
 
 let page = 0;
-localStorage.removeItem("nu");
+localStorage.removeItem("di");
 let dLength = JSON.parse(localStorage.getItem("dL"));
 let dietsArr = [];
 console.log(performance.now());
@@ -98,8 +98,7 @@ logoutBtn.addEventListener("click", async () => {
 // ==============display all programs
 const displayAllPrograms = (Diets) => {
   let length = Diets.length;
-  console.log(length);
-  console.log(dLength);
+
   if (searchDietInput.value.length > 0) {
     fetchMore.classList.remove("show-opacity");
   } else {
@@ -136,19 +135,19 @@ const displayAllPrograms = (Diets) => {
     <div class="total-diet-macros">
       <div class="macros-info">
         <span>cal.</span>
-        <p class="total-diet-cal">${diet.meals[0].calories}</p>
+        <p class="total-diet-cal">${diet.macros.calories}</p>
       </div>
       <div class="macros-info">
         <span>carbs</span>
-        <p class="total-diet-carbs">${diet.meals[0].carbs}</p>
+        <p class="total-diet-carbs">${diet.macros.carbs}</p>
       </div>
       <div class="macros-info">
         <span>prot</span>
-        <p class="total-diet-prot">${diet.meals[0].protein}</p>
+        <p class="total-diet-prot">${diet.macros.protein}</p>
       </div>
       <div class="macros-info">
         <span>fat</span>
-        <p class="total-diet-fat">${diet.meals[0].fat}</p>
+        <p class="total-diet-fat">${diet.macros.fat}</p>
       </div>
     </div>
   </div>`;

@@ -2,12 +2,14 @@
   {
     "name": "high carbs",
     "createdBy": "632c945f1ba5f0bcfc9be699",
+    "macros": {
+      "calories": "300",
+      "carbs": "115g",
+      "protein": "40g",
+      "fat": "10g"
+    },
     "meals": [
       {
-        "calories": "300",
-        "carbs": "115g",
-        "protein": "40g",
-        "fat": "10g",
         "ingredients": [
           {
             "name": "almonds",

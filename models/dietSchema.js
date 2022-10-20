@@ -1,3 +1,4 @@
+const { array } = require("joi");
 const mongoose = require("mongoose");
 
 const dietSchema = new mongoose.Schema(
@@ -15,6 +16,9 @@ const dietSchema = new mongoose.Schema(
     createdFor: {
       type: mongoose.Types.ObjectId,
       ref: "client",
+    },
+    macros: {
+      type: Object,
     },
     meals: {
       type: Array,
