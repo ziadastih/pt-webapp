@@ -52,7 +52,7 @@ const login = async (req, res) => {
     const isPasswordCorrect = await client.comparePassword(password);
     // if client not found means invalid credentials
     // =compare password / if password doesnt match throw error invalid credentials==========
-    if (!client || !isPasswordCorrect) {
+    if (!client || !isPasswordCorrect || client.enabled === false) {
       throw new UnauthenticatedError("invalid credential");
     }
 
@@ -89,7 +89,6 @@ const getCoach = async (req, res) => {
     coach: {
       coachFirstName: coach.firstName,
       coachLastName: coach.lastName,
-      coachImg: coach.coachImg,
     },
   });
 };

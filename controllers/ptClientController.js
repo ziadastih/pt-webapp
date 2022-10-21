@@ -63,7 +63,16 @@ const getoneClient = async (req, res) => {
   if (!client) {
     throw new NotFoundError(`no client with id ${clientId}`);
   }
-  res.status(StatusCodes.OK).json({ client });
+  res.status(StatusCodes.OK).json({
+    client: {
+      clientFirstName: client.firstName,
+      clientLastName: client.lastName,
+      createdAt: client.createdAt,
+      enabled: client.enabled,
+      email: client.email,
+      number: client.number,
+    },
+  });
 };
 // ================== create new client =============
 const createNewClient = async (req, res) => {

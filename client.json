@@ -5,7 +5,8 @@
     "email": "jadastih@hotmail.com",
     "password": "$2a$10$wyJTfiWW.te5FkbvqN5uEO3MoxDVy6d8eSEP4pLAuxg6C6wtAf5H",
     "role": "client",
-    "createdBy": "632c945f1ba5f0bcfc9be699"
+    "createdBy": "632c945f1ba5f0bcfc9be699",
+    "enabled": true
   },
   {
     "firstName": "ziad",
@@ -13,7 +14,8 @@
     "email": "jadastih12@hotmail.com",
     "password": "$2a$10$wyJTfiWW.te5FkbvqN5uEO3MoxDVy6d8eSEP4pLAuxg6C6wtAf5H",
     "role": "client",
-    "createdBy": "632c945f1ba5f0bcfc9be699"
+    "createdBy": "632c945f1ba5f0bcfc9be699",
+    "enabled": true
   },
   {
     "firstName": "zeina",
@@ -21,7 +23,8 @@
     "email": "jadastih1@hotmail.com",
     "password": "$2a$10$wyJTfiWW.te5FkbvqN5uEO3MoxDVy6d8eSEP4pLAuxg6C6wtAf5H",
     "role": "client",
-    "createdBy": "632c945f1ba5f0bcfc9be699"
+    "createdBy": "632c945f1ba5f0bcfc9be699",
+    "enabled": true
   },
   {
     "firstName": "charbel",
@@ -29,7 +32,8 @@
     "email": "jadastih3@hotmail.com",
     "password": "$2a$10$wyJTfiWW.te5FkbvqN5uEO3MoxDVy6d8eSEP4pLAuxg6C6wtAf5H",
     "role": "client",
-    "createdBy": "632c945f1ba5f0bcfc9be699"
+    "createdBy": "632c945f1ba5f0bcfc9be699",
+    "enabled": true
   },
   {
     "firstName": "andi",
@@ -37,7 +41,8 @@
     "email": "jadastih5@hotmail.com",
     "password": "$2a$10$wyJTfiWW.te5FkbvqN5uEO3MoxDVy6d8eSEP4pLAuxg6C6wtAf5H",
     "role": "client",
-    "createdBy": "632c945f1ba5f0bcfc9be699"
+    "createdBy": "632c945f1ba5f0bcfc9be699",
+    "enabled": true
   },
   {
     "firstName": "charbel",
@@ -45,7 +50,8 @@
     "email": "jadastih6@hotmail.com",
     "password": "$2a$10$wyJTfiWW.te5FkbvqN5uEO3MoxDVy6d8eSEP4pLAuxg6C6wtAf5H",
     "role": "client",
-    "createdBy": "632c945f1ba5f0bcfc9be699"
+    "createdBy": "632c945f1ba5f0bcfc9be699",
+    "enabled": true
   },
   {
     "firstName": "elie",
@@ -53,7 +59,8 @@
     "email": "jadastih7@hotmail.com",
     "password": "$2a$10$wyJTfiWW.te5FkbvqN5uEO3MoxDVy6d8eSEP4pLAuxg6C6wtAf5H",
     "role": "client",
-    "createdBy": "632c945f1ba5f0bcfc9be699"
+    "createdBy": "632c945f1ba5f0bcfc9be699",
+    "enabled": true
   },
   {
     "firstName": "toni",
@@ -61,7 +68,8 @@
     "email": "jadastih8@hotmail.com",
     "password": "$2a$10$wyJTfiWW.te5FkbvqN5uEO3MoxDVy6d8eSEP4pLAuxg6C6wtAf5H",
     "role": "client",
-    "createdBy": "632c945f1ba5f0bcfc9be699"
+    "createdBy": "632c945f1ba5f0bcfc9be699",
+    "enabled": true
   },
   {
     "firstName": "tanios",
@@ -69,7 +77,8 @@
     "email": "jadastih9@hotmail.com",
     "password": "$2a$10$wyJTfiWW.te5FkbvqN5uEO3MoxDVy6d8eSEP4pLAuxg6C6wtAf5H",
     "role": "client",
-    "createdBy": "632c945f1ba5f0bcfc9be699"
+    "createdBy": "632c945f1ba5f0bcfc9be699",
+    "enabled": true
   },
   {
     "firstName": "tony",
@@ -77,7 +86,8 @@
     "email": "jadastih10@hotmail.com",
     "password": "$2a$10$wyJTfiWW.te5FkbvqN5uEO3MoxDVy6d8eSEP4pLAuxg6C6wtAf5H",
     "role": "client",
-    "createdBy": "632c945f1ba5f0bcfc9be699"
+    "createdBy": "632c945f1ba5f0bcfc9be699",
+    "enabled": true
   },
   {
     "firstName": "roy",
@@ -85,7 +95,8 @@
     "email": "jadastih11@hotmail.com",
     "password": "$2a$10$wyJTfiWW.te5FkbvqN5uEO3MoxDVy6d8eSEP4pLAuxg6C6wtAf5H",
     "role": "client",
-    "createdBy": "632c945f1ba5f0bcfc9be699"
+    "createdBy": "632c945f1ba5f0bcfc9be699",
+    "enabled": true
   },
   {
     "firstName": "rony",
@@ -93,7 +104,8 @@
     "email": "jadastih13@hotmail.com",
     "password": "$2a$10$wyJTfiWW.te5FkbvqN5uEO3MoxDVy6d8eSEP4pLAuxg6C6wtAf5H",
     "role": "client",
-    "createdBy": "632c945f1ba5f0bcfc9be699"
+    "createdBy": "632c945f1ba5f0bcfc9be699",
+    "enabled": true
   },
   {
     "firstName": "jad",
@@ -101,7 +113,8 @@
     "email": "jadastih14@hotmail.com",
     "password": "$2a$10$wyJTfiWW.te5FkbvqN5uEO3MoxDVy6d8eSEP4pLAuxg6C6wtAf5H",
     "role": "client",
-    "createdBy": "632c945f1ba5f0bcfc9be699"
+    "createdBy": "632c945f1ba5f0bcfc9be699",
+    "enabled": true
   },
   {
     "firstName": "joseph",
@@ -109,7 +122,8 @@
     "email": "jadastih15@hotmail.com",
     "password": "$2a$10$wyJTfiWW.te5FkbvqN5uEO3MoxDVy6d8eSEP4pLAuxg6C6wtAf5H",
     "role": "client",
-    "createdBy": "632c945f1ba5f0bcfc9be699"
+    "createdBy": "632c945f1ba5f0bcfc9be699",
+    "enabled": true
   },
   {
     "firstName": "pierre",
@@ -117,7 +131,8 @@
     "email": "jadastih16@hotmail.com",
     "password": "$2a$10$wyJTfiWW.te5FkbvqN5uEO3MoxDVy6d8eSEP4pLAuxg6C6wtAf5H",
     "role": "client",
-    "createdBy": "632c945f1ba5f0bcfc9be699"
+    "createdBy": "632c945f1ba5f0bcfc9be699",
+    "enabled": true
   },
   {
     "firstName": "elie",
@@ -125,7 +140,8 @@
     "email": "jadastih17@hotmail.com",
     "password": "$2a$10$wyJTfiWW.te5FkbvqN5uEO3MoxDVy6d8eSEP4pLAuxg6C6wtAf5H",
     "role": "client",
-    "createdBy": "632c945f1ba5f0bcfc9be699"
+    "createdBy": "632c945f1ba5f0bcfc9be699",
+    "enabled": true
   },
   {
     "firstName": "pierre",
@@ -133,7 +149,8 @@
     "email": "jadastih18@hotmail.com",
     "password": "$2a$10$wyJTfiWW.te5FkbvqN5uEO3MoxDVy6d8eSEP4pLAuxg6C6wtAf5H",
     "role": "client",
-    "createdBy": "632c945f1ba5f0bcfc9be699"
+    "createdBy": "632c945f1ba5f0bcfc9be699",
+    "enabled": true
   },
   {
     "firstName": "micho",
@@ -141,7 +158,8 @@
     "email": "jadastih19@hotmail.com",
     "password": "$2a$10$wyJTfiWW.te5FkbvqN5uEO3MoxDVy6d8eSEP4pLAuxg6C6wtAf5H",
     "role": "client",
-    "createdBy": "632c945f1ba5f0bcfc9be699"
+    "createdBy": "632c945f1ba5f0bcfc9be699",
+    "enabled": true
   },
   {
     "firstName": "nathalie",
@@ -149,7 +167,8 @@
     "email": "jadastih20@hotmail.com",
     "password": "$2a$10$wyJTfiWW.te5FkbvqN5uEO3MoxDVy6d8eSEP4pLAuxg6C6wtAf5H",
     "role": "client",
-    "createdBy": "632c945f1ba5f0bcfc9be699"
+    "createdBy": "632c945f1ba5f0bcfc9be699",
+    "enabled": true
   },
   {
     "firstName": "paul",
@@ -157,7 +176,8 @@
     "email": "jadastih21@hotmail.com",
     "password": "$2a$10$wyJTfiWW.te5FkbvqN5uEO3MoxDVy6d8eSEP4pLAuxg6C6wtAf5H",
     "role": "client",
-    "createdBy": "632c945f1ba5f0bcfc9be699"
+    "createdBy": "632c945f1ba5f0bcfc9be699",
+    "enabled": true
   },
   {
     "firstName": "carlos",
@@ -165,7 +185,8 @@
     "email": "jadastih22@hotmail.com",
     "password": "$2a$10$wyJTfiWW.te5FkbvqN5uEO3MoxDVy6d8eSEP4pLAuxg6C6wtAf5H",
     "role": "client",
-    "createdBy": "632c945f1ba5f0bcfc9be699"
+    "createdBy": "632c945f1ba5f0bcfc9be699",
+    "enabled": true
   },
   {
     "firstName": "arthur",
@@ -173,7 +194,8 @@
     "email": "jadastih23@hotmail.com",
     "password": "$2a$10$wyJTfiWW.te5FkbvqN5uEO3MoxDVy6d8eSEP4pLAuxg6C6wtAf5H",
     "role": "client",
-    "createdBy": "632c945f1ba5f0bcfc9be699"
+    "createdBy": "632c945f1ba5f0bcfc9be699",
+    "enabled": true
   },
   {
     "firstName": "lynn",
@@ -181,7 +203,8 @@
     "email": "jadastih24@hotmail.com",
     "password": "$2a$10$wyJTfiWW.te5FkbvqN5uEO3MoxDVy6d8eSEP4pLAuxg6C6wtAf5H",
     "role": "client",
-    "createdBy": "632c945f1ba5f0bcfc9be699"
+    "createdBy": "632c945f1ba5f0bcfc9be699",
+    "enabled": true
   },
   {
     "firstName": "charbel",
@@ -189,7 +212,8 @@
     "email": "jadastih25@hotmail.com",
     "password": "$2a$10$wyJTfiWW.te5FkbvqN5uEO3MoxDVy6d8eSEP4pLAuxg6C6wtAf5H",
     "role": "client",
-    "createdBy": "632c945f1ba5f0bcfc9be699"
+    "createdBy": "632c945f1ba5f0bcfc9be699",
+    "enabled": true
   },
   {
     "firstName": "gilbert",
@@ -197,7 +221,8 @@
     "email": "jadastih26@hotmail.com",
     "password": "$2a$10$wyJTfiWW.te5FkbvqN5uEO3MoxDVy6d8eSEP4pLAuxg6C6wtAf5H",
     "role": "client",
-    "createdBy": "632c945f1ba5f0bcfc9be699"
+    "createdBy": "632c945f1ba5f0bcfc9be699",
+    "enabled": true
   },
   {
     "firstName": "gergis",
@@ -205,7 +230,8 @@
     "email": "jadastih27@hotmail.com",
     "password": "$2a$10$wyJTfiWW.te5FkbvqN5uEO3MoxDVy6d8eSEP4pLAuxg6C6wtAf5H",
     "role": "client",
-    "createdBy": "632c945f1ba5f0bcfc9be699"
+    "createdBy": "632c945f1ba5f0bcfc9be699",
+    "enabled": true
   },
   {
     "firstName": "elie",
@@ -213,7 +239,8 @@
     "email": "jadastih28@hotmail.com",
     "password": "$2a$10$wyJTfiWW.te5FkbvqN5uEO3MoxDVy6d8eSEP4pLAuxg6C6wtAf5H",
     "role": "client",
-    "createdBy": "632c945f1ba5f0bcfc9be699"
+    "createdBy": "632c945f1ba5f0bcfc9be699",
+    "enabled": true
   },
   {
     "firstName": "amine",
@@ -221,7 +248,8 @@
     "email": "jadastih29@hotmail.com",
     "password": "$2a$10$wyJTfiWW.te5FkbvqN5uEO3MoxDVy6d8eSEP4pLAuxg6C6wtAf5H",
     "role": "client",
-    "createdBy": "632c945f1ba5f0bcfc9be699"
+    "createdBy": "632c945f1ba5f0bcfc9be699",
+    "enabled": true
   },
   {
     "firstName": "amine",
@@ -229,7 +257,8 @@
     "email": "jadastih30@hotmail.com",
     "password": "$2a$10$wyJTfiWW.te5FkbvqN5uEO3MoxDVy6d8eSEP4pLAuxg6C6wtAf5H",
     "role": "client",
-    "createdBy": "632c945f1ba5f0bcfc9be699"
+    "createdBy": "632c945f1ba5f0bcfc9be699",
+    "enabled": true
   },
   {
     "firstName": "rayan",
@@ -237,7 +266,8 @@
     "email": "jadastih31@hotmail.com",
     "password": "$2a$10$wyJTfiWW.te5FkbvqN5uEO3MoxDVy6d8eSEP4pLAuxg6C6wtAf5H",
     "role": "client",
-    "createdBy": "632c945f1ba5f0bcfc9be699"
+    "createdBy": "632c945f1ba5f0bcfc9be699",
+    "enabled": true
   },
   {
     "firstName": "jihad",
@@ -245,7 +275,8 @@
     "email": "jadastih32@hotmail.com",
     "password": "$2a$10$wyJTfiWW.te5FkbvqN5uEO3MoxDVy6d8eSEP4pLAuxg6C6wtAf5H",
     "role": "client",
-    "createdBy": "632c945f1ba5f0bcfc9be699"
+    "createdBy": "632c945f1ba5f0bcfc9be699",
+    "enabled": true
   },
   {
     "firstName": "bassam",
@@ -253,7 +284,8 @@
     "email": "jadastih33@hotmail.com",
     "password": "$2a$10$wyJTfiWW.te5FkbvqN5uEO3MoxDVy6d8eSEP4pLAuxg6C6wtAf5H",
     "role": "client",
-    "createdBy": "632c945f1ba5f0bcfc9be699"
+    "createdBy": "632c945f1ba5f0bcfc9be699",
+    "enabled": true
   },
   {
     "firstName": "hadi",
@@ -261,7 +293,8 @@
     "email": "jadastih34@hotmail.com",
     "password": "$2a$10$wyJTfiWW.te5FkbvqN5uEO3MoxDVy6d8eSEP4pLAuxg6C6wtAf5H",
     "role": "client",
-    "createdBy": "632c945f1ba5f0bcfc9be699"
+    "createdBy": "632c945f1ba5f0bcfc9be699",
+    "enabled": true
   },
   {
     "firstName": "wissam",
@@ -269,7 +302,8 @@
     "email": "jadastih35@hotmail.com",
     "password": "$2a$10$wyJTfiWW.te5FkbvqN5uEO3MoxDVy6d8eSEP4pLAuxg6C6wtAf5H",
     "role": "client",
-    "createdBy": "632c945f1ba5f0bcfc9be699"
+    "createdBy": "632c945f1ba5f0bcfc9be699",
+    "enabled": true
   },
   {
     "firstName": "georges",
@@ -277,7 +311,8 @@
     "email": "jadastih36@hotmail.com",
     "password": "$2a$10$wyJTfiWW.te5FkbvqN5uEO3MoxDVy6d8eSEP4pLAuxg6C6wtAf5H",
     "role": "client",
-    "createdBy": "632c945f1ba5f0bcfc9be699"
+    "createdBy": "632c945f1ba5f0bcfc9be699",
+    "enabled": true
   },
   {
     "firstName": "diana",
@@ -285,7 +320,8 @@
     "email": "jadastih37@hotmail.com",
     "password": "$2a$10$wyJTfiWW.te5FkbvqN5uEO3MoxDVy6d8eSEP4pLAuxg6C6wtAf5H",
     "role": "client",
-    "createdBy": "632c945f1ba5f0bcfc9be699"
+    "createdBy": "632c945f1ba5f0bcfc9be699",
+    "enabled": true
   },
   {
     "firstName": "maroun",
@@ -293,7 +329,8 @@
     "email": "jadastih38@hotmail.com",
     "password": "$2a$10$wyJTfiWW.te5FkbvqN5uEO3MoxDVy6d8eSEP4pLAuxg6C6wtAf5H",
     "role": "client",
-    "createdBy": "632c945f1ba5f0bcfc9be699"
+    "createdBy": "632c945f1ba5f0bcfc9be699",
+    "enabled": true
   },
   {
     "firstName": "elie",
@@ -301,7 +338,8 @@
     "email": "jadastih39@hotmail.com",
     "password": "$2a$10$wyJTfiWW.te5FkbvqN5uEO3MoxDVy6d8eSEP4pLAuxg6C6wtAf5H",
     "role": "client",
-    "createdBy": "632c945f1ba5f0bcfc9be699"
+    "createdBy": "632c945f1ba5f0bcfc9be699",
+    "enabled": true
   },
   {
     "firstName": "carlos",
@@ -309,7 +347,8 @@
     "email": "jadastih40@hotmail.com",
     "password": "$2a$10$wyJTfiWW.te5FkbvqN5uEO3MoxDVy6d8eSEP4pLAuxg6C6wtAf5H",
     "role": "client",
-    "createdBy": "632c945f1ba5f0bcfc9be699"
+    "createdBy": "632c945f1ba5f0bcfc9be699",
+    "enabled": true
   },
   {
     "firstName": "ziad",
@@ -317,7 +356,8 @@
     "email": "jadastih41@hotmail.com",
     "password": "$2a$10$wyJTfiWW.te5FkbvqN5uEO3MoxDVy6d8eSEP4pLAuxg6C6wtAf5H",
     "role": "client",
-    "createdBy": "632c945f1ba5f0bcfc9be699"
+    "createdBy": "632c945f1ba5f0bcfc9be699",
+    "enabled": true
   },
   {
     "firstName": "marwan",
@@ -325,7 +365,8 @@
     "email": "jadastih42@hotmail.com",
     "password": "$2a$10$wyJTfiWW.te5FkbvqN5uEO3MoxDVy6d8eSEP4pLAuxg6C6wtAf5H",
     "role": "client",
-    "createdBy": "632c945f1ba5f0bcfc9be699"
+    "createdBy": "632c945f1ba5f0bcfc9be699",
+    "enabled": true
   },
   {
     "firstName": "tony",
@@ -333,7 +374,8 @@
     "email": "jadastih43@hotmail.com",
     "password": "$2a$10$wyJTfiWW.te5FkbvqN5uEO3MoxDVy6d8eSEP4pLAuxg6C6wtAf5H",
     "role": "client",
-    "createdBy": "632c945f1ba5f0bcfc9be699"
+    "createdBy": "632c945f1ba5f0bcfc9be699",
+    "enabled": true
   },
   {
     "firstName": "wael",
@@ -341,7 +383,8 @@
     "email": "jadastih44@hotmail.com",
     "password": "$2a$10$wyJTfiWW.te5FkbvqN5uEO3MoxDVy6d8eSEP4pLAuxg6C6wtAf5H",
     "role": "client",
-    "createdBy": "632c945f1ba5f0bcfc9be699"
+    "createdBy": "632c945f1ba5f0bcfc9be699",
+    "enabled": true
   },
   {
     "firstName": "elie",
@@ -349,7 +392,8 @@
     "email": "jadastih45@hotmail.com",
     "password": "$2a$10$wyJTfiWW.te5FkbvqN5uEO3MoxDVy6d8eSEP4pLAuxg6C6wtAf5H",
     "role": "client",
-    "createdBy": "632c945f1ba5f0bcfc9be699"
+    "createdBy": "632c945f1ba5f0bcfc9be699",
+    "enabled": true
   },
   {
     "firstName": "alain",
@@ -357,7 +401,8 @@
     "email": "jadastih46@hotmail.com",
     "password": "$2a$10$wyJTfiWW.te5FkbvqN5uEO3MoxDVy6d8eSEP4pLAuxg6C6wtAf5H",
     "role": "client",
-    "createdBy": "632c945f1ba5f0bcfc9be699"
+    "createdBy": "632c945f1ba5f0bcfc9be699",
+    "enabled": false
   },
   {
     "firstName": "paul",
@@ -365,7 +410,8 @@
     "email": "jadastih47@hotmail.com",
     "password": "$2a$10$wyJTfiWW.te5FkbvqN5uEO3MoxDVy6d8eSEP4pLAuxg6C6wtAf5H",
     "role": "client",
-    "createdBy": "632c945f1ba5f0bcfc9be699"
+    "createdBy": "632c945f1ba5f0bcfc9be699",
+    "enabled": false
   },
   {
     "firstName": "peter",
@@ -373,7 +419,8 @@
     "email": "jadastih48@hotmail.com",
     "password": "$2a$10$wyJTfiWW.te5FkbvqN5uEO3MoxDVy6d8eSEP4pLAuxg6C6wtAf5H",
     "role": "client",
-    "createdBy": "632c945f1ba5f0bcfc9be699"
+    "createdBy": "632c945f1ba5f0bcfc9be699",
+    "enabled": true
   },
   {
     "firstName": "peter",
@@ -381,7 +428,8 @@
     "email": "jadastih49@hotmail.com",
     "password": "$2a$10$wyJTfiWW.te5FkbvqN5uEO3MoxDVy6d8eSEP4pLAuxg6C6wtAf5H",
     "role": "client",
-    "createdBy": "632c945f1ba5f0bcfc9be699"
+    "createdBy": "632c945f1ba5f0bcfc9be699",
+    "enabled": true
   },
   {
     "firstName": "charbel",
@@ -389,7 +437,8 @@
     "email": "jadastih50@hotmail.com",
     "password": "$2a$10$wyJTfiWW.te5FkbvqN5uEO3MoxDVy6d8eSEP4pLAuxg6C6wtAf5H",
     "role": "client",
-    "createdBy": "632c945f1ba5f0bcfc9be699"
+    "createdBy": "632c945f1ba5f0bcfc9be699",
+    "enabled": true
   },
   {
     "firstName": "paul",
@@ -397,7 +446,8 @@
     "email": "jadastih51@hotmail.com",
     "password": "$2a$10$wyJTfiWW.te5FkbvqN5uEO3MoxDVy6d8eSEP4pLAuxg6C6wtAf5H",
     "role": "client",
-    "createdBy": "632c945f1ba5f0bcfc9be699"
+    "createdBy": "632c945f1ba5f0bcfc9be699",
+    "enabled": true
   },
   {
     "firstName": "lewis",
@@ -405,7 +455,8 @@
     "email": "jadastih52@hotmail.com",
     "password": "$2a$10$wyJTfiWW.te5FkbvqN5uEO3MoxDVy6d8eSEP4pLAuxg6C6wtAf5H",
     "role": "client",
-    "createdBy": "632c945f1ba5f0bcfc9be699"
+    "createdBy": "632c945f1ba5f0bcfc9be699",
+    "enabled": true
   },
   {
     "firstName": "abdo",
@@ -413,7 +464,8 @@
     "email": "jadastih53@hotmail.com",
     "password": "$2a$10$wyJTfiWW.te5FkbvqN5uEO3MoxDVy6d8eSEP4pLAuxg6C6wtAf5H",
     "role": "client",
-    "createdBy": "632c945f1ba5f0bcfc9be699"
+    "createdBy": "632c945f1ba5f0bcfc9be699",
+    "enabled": true
   },
   {
     "firstName": "amjad",
@@ -421,7 +473,8 @@
     "email": "jadastih54@hotmail.com",
     "password": "$2a$10$wyJTfiWW.te5FkbvqN5uEO3MoxDVy6d8eSEP4pLAuxg6C6wtAf5H",
     "role": "client",
-    "createdBy": "632c945f1ba5f0bcfc9be699"
+    "createdBy": "632c945f1ba5f0bcfc9be699",
+    "enabled": true
   },
   {
     "firstName": "omar",
@@ -429,7 +482,8 @@
     "email": "jadastih55@hotmail.com",
     "password": "$2a$10$wyJTfiWW.te5FkbvqN5uEO3MoxDVy6d8eSEP4pLAuxg6C6wtAf5H",
     "role": "client",
-    "createdBy": "632c945f1ba5f0bcfc9be699"
+    "createdBy": "632c945f1ba5f0bcfc9be699",
+    "enabled": true
   },
   {
     "firstName": "elias",
@@ -437,7 +491,8 @@
     "email": "jadastih56@hotmail.com",
     "password": "$2a$10$wyJTfiWW.te5FkbvqN5uEO3MoxDVy6d8eSEP4pLAuxg6C6wtAf5H",
     "role": "client",
-    "createdBy": "632c945f1ba5f0bcfc9be699"
+    "createdBy": "632c945f1ba5f0bcfc9be699",
+    "enabled": true
   },
   {
     "firstName": "rami",
@@ -445,7 +500,8 @@
     "email": "jadastih57@hotmail.com",
     "password": "$2a$10$wyJTfiWW.te5FkbvqN5uEO3MoxDVy6d8eSEP4pLAuxg6C6wtAf5H",
     "role": "client",
-    "createdBy": "632c945f1ba5f0bcfc9be699"
+    "createdBy": "632c945f1ba5f0bcfc9be699",
+    "enabled": true
   },
   {
     "firstName": "elias",
@@ -453,7 +509,8 @@
     "email": "jadastih58@hotmail.com",
     "password": "$2a$10$wyJTfiWW.te5FkbvqN5uEO3MoxDVy6d8eSEP4pLAuxg6C6wtAf5H",
     "role": "client",
-    "createdBy": "632c945f1ba5f0bcfc9be699"
+    "createdBy": "632c945f1ba5f0bcfc9be699",
+    "enabled": true
   },
   {
     "firstName": "chris",
@@ -461,7 +518,8 @@
     "email": "jadastih59@hotmail.com",
     "password": "$2a$10$wyJTfiWW.te5FkbvqN5uEO3MoxDVy6d8eSEP4pLAuxg6C6wtAf5H",
     "role": "client",
-    "createdBy": "632c945f1ba5f0bcfc9be699"
+    "createdBy": "632c945f1ba5f0bcfc9be699",
+    "enabled": true
   },
   {
     "firstName": "elie",
@@ -469,6 +527,7 @@
     "email": "jadastih60@hotmail.com",
     "password": "$2a$10$wyJTfiWW.te5FkbvqN5uEO3MoxDVy6d8eSEP4pLAuxg6C6wtAf5H",
     "role": "client",
-    "createdBy": "632c945f1ba5f0bcfc9be699"
+    "createdBy": "632c945f1ba5f0bcfc9be699",
+    "enabled": false
   }
 ]

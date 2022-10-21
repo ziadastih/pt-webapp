@@ -248,4 +248,15 @@ const displayClients = (client) => {
       });
     });
   });
+
+  const manageClientBtns = document.querySelectorAll("#manage-client");
+  manageClientBtns.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      let clientId = btn.dataset.manage;
+
+      localStorage.setItem("cref", clientId);
+      window.location =
+        "http://192.168.1.195:3000/manageClient/manageClient.html";
+    });
+  });
 };
