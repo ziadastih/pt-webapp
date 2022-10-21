@@ -130,6 +130,7 @@ input[type="search"]::-webkit-search-results-decoration {
 }
 .fetch-more {
   opacity: 0;
+  display: none;
 }
 /* ==================END OF GLOBAL CLASSES ========================  */
 
@@ -241,6 +242,15 @@ body {
   justify-content: center;
   flex-direction: column;
   width: 100vw;
+}
+.nutrition-programs-grid-container h2 {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: var(--fontSansSerif);
+  color: var(--mainColor);
+  font-size: 20px;
 }
 /* =========meal styling that will be dealt with in js ========== */
 .one-diet-container {

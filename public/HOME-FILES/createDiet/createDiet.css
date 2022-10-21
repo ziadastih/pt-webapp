@@ -250,7 +250,7 @@ body {
   justify-content: space-between;
   width: 70vw;
 }
-/* ===================chosen ingrediients container =========================== */
+/* ===================chosen ingredients container =========================== */
 .chosen-ingredients-container {
   display: flex;
   justify-content: center;
@@ -356,7 +356,7 @@ body {
 }
 /* =================end of chosen ingredient  styling  ==================== */
 
-/* =================== created ingredients container ======= */
+/* =================== created meals container ======= */
 .created-meals-container {
   margin-top: 20px;
   display: none;
@@ -481,7 +481,7 @@ body {
   opacity: 0.5;
   font-size: 10px;
 }
-/* ===================overall container of the exercises , width 100vw so we center all in center but same time flex start from top  */
+/* ===================overall container of the ingredients , width 100vw so we center all in center but same time flex start from top  */
 .add-ingredients-container {
   width: 100vw;
   height: 60vh;
@@ -503,7 +503,7 @@ body {
   background-color: var(--whiteSmoke);
   border-radius: 5px;
 }
-/* ===================add exercises header , has the title of the container and the close btn  */
+/* ===================add ingredient header , has the title of the container and the close btn  */
 .add-ingredients-header {
   display: flex;
   align-items: center;
@@ -540,7 +540,7 @@ body {
   margin-top: 20px;
 }
 
-/* ===============exercise container ================= */
+/* ===============ingredients list container ================= */
 
 .ingredients-list-container {
   display: flex;
@@ -598,7 +598,7 @@ body {
   transition: 200ms ease-in;
 }
 
-/* ----------exercises  btn container flex align center ===== */
+/* ----------ingredients  btn container flex align center ===== */
 .ingredients-btn-container {
   display: flex;
   align-items: center;

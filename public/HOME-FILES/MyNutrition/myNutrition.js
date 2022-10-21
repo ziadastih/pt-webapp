@@ -22,6 +22,7 @@ const getDiet = async () => {
     // ============getting the data ===============
     const { data } = await axios.get(`/api/v1/diet?page=${page}`);
     preLoader.classList.add("display-none");
+    console.log(data);
     console.log(performance.now());
     //  =========if length is === 0 means no workouts we want to display the create item =============
     const length = data.diets.length;
@@ -98,7 +99,7 @@ logoutBtn.addEventListener("click", async () => {
 // ==============display all programs
 const displayAllPrograms = (Diets) => {
   let length = Diets.length;
-
+  fetchMore.classList.add("open-container");
   if (searchDietInput.value.length > 0) {
     fetchMore.classList.remove("show-opacity");
   } else {
@@ -224,6 +225,10 @@ const searchFunction = async () => {
   preLoader.classList.add("display-none");
 
   dietsArr = data.diet;
-
-  displayAllPrograms(dietsArr);
+  if (dietsArr.length === 0) {
+    dietsGridContainer.innerHTML = `<h2>Sorry! No Diet matches your search</h2>`;
+    fetchMore.classList.remove("open-container");
+  } else {
+    displayAllPrograms(dietsArr);
+  }
 };

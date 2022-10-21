@@ -203,6 +203,7 @@ const getDiet = async () => {
   Diet.meals = data.diet.meals;
   dietName.textContent = Diet.name;
   overlay.classList.add("display-none");
+  CheckForCreatedIngredient();
   displayMeals();
 };
 getDiet();
@@ -813,7 +814,7 @@ const editMealFunction = () => {
   meal.protein = totalIngredientsProt.textContent;
   meal.fat = totalIngredientsFat.textContent;
   meal.ingredients = selectedIngredientsArray;
-  console.log(meal);
+
   localStorage.removeItem("mealIndex");
   selectedIngredientsArray = [];
 
@@ -882,4 +883,27 @@ const changeSelectedToTrue = () => {
       console.log("false");
     }
   }
+};
+
+const CheckForCreatedIngredient = () => {
+  Diet.meals.forEach((meal) => {
+    meal.ingredients.forEach((ingredient) => {
+      const index = ingredientsArray.findIndex((Element) => {
+        return Element.name === ingredient.name;
+      });
+      if (index == -1) {
+        ingredientsArray.push({
+          name: ingredient.name,
+          type: ingredient.type,
+          calories: parseFloat(ingredient.calories),
+          protein: parseFloat(ingredient.protein),
+          carbs: parseFloat(ingredient.carbs),
+          fat: parseFloat(ingredient.fat),
+          portion: parseFloat(ingredient.portion),
+          new: true,
+        });
+      }
+      console.log(ingredientsArray);
+    });
+  });
 };

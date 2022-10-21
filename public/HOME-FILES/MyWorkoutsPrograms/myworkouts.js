@@ -44,8 +44,6 @@ const getWorkouts = async () => {
     workoutPrograms = data.workoutprograms;
 
     displayProgramInfo(workoutPrograms);
-
-    // ===========================live search =======================
   } catch (error) {
     console.log(error);
   }
@@ -85,6 +83,8 @@ fetchMore.addEventListener("click", async () => {
 
 const displayProgramInfo = (programPlan) => {
   let length = programPlan.length;
+  fetchMore.classList.add("open-container");
+
   if (searchWorkoutInput.value.length > 0) {
     fetchMore.classList.remove("show-opacity");
   } else {
@@ -146,7 +146,7 @@ logoutBtn.addEventListener("click", async () => {
   }
 });
 
-// ==============display all programs
+// ==============display all programs/ if name > 13 add ...
 const displayAllPrograms = (programPlan) => {
   programGridContainer.innerHTML = "";
   for (let i = 0; i < programPlan.length; i++) {
@@ -175,6 +175,7 @@ const displayAllPrograms = (programPlan) => {
 <div class="created-workouts"></div>
 </div>`;
   }
+  // ===========delete program ==============
   const deleteWorkout = document.querySelectorAll("#delete-workout");
 
   deleteWorkout.forEach((deleteBtn) => {
@@ -226,6 +227,7 @@ const displayAllPrograms = (programPlan) => {
     });
   });
 
+  // ====got to edit page and set the wo id in the localstorage ===
   const editWorkoutBtns = document.querySelectorAll("#edit-workout");
   editWorkoutBtns.forEach((editBtn) => {
     editBtn.addEventListener("click", () => {
@@ -642,6 +644,10 @@ const searchFunction = async () => {
   preLoader.classList.add("display-none");
 
   workoutPrograms = data.workoutprograms;
-
-  displayProgramInfo(workoutPrograms);
+  if (workoutPrograms.length === 0) {
+    programGridContainer.innerHTML = `<h2>Sorry! No Programs matches your search</h2>`;
+    fetchMore.classList.remove("open-container");
+  } else {
+    displayProgramInfo(workoutPrograms);
+  }
 };

@@ -19,8 +19,7 @@ const getAllDiets = async (req, res) => {
     const page = req.query.page || 0;
     const dietsPerRequest = 50;
     const diets = await Diet.find({ createdBy: req.coach.coachId })
-      .collation({ locale: "en", strength: 1 })
-      .sort({ name: 1 })
+      .sort("-createdAt")
       .skip(page * dietsPerRequest)
       .limit(dietsPerRequest);
 

@@ -199,11 +199,17 @@ const totalDietFat = document.querySelector(".total-diet-fat");
 window.onbeforeunload = () => {
   return "are you sure you want to leave page";
 };
+
+// ===============back btn  =================
+
 const backBtn = document.querySelector(".back-btn");
 
 backBtn.addEventListener("click", () => {
   window.location = "http://192.168.1.195:3000/MyNutrition/myNutrition.html";
 });
+
+// =============submit diet event listener ===========
+
 submitDietBtn.addEventListener("click", async () => {
   preLoader.classList.add("display-flex");
   const diet = await axios.post("/api/v1/diet", {
@@ -222,10 +228,12 @@ submitDietBtn.addEventListener("click", async () => {
   await axios.patch("/api/v1/dataLength", {
     dietLength: dietLength,
   });
+  localStorage.setItem("dL", JSON.stringify(dietLength));
   preLoader.classList.remove("display-flex");
   window.onbeforeunload = null;
   window.location = "http://192.168.1.195:3000/MyNutrition/myNutrition.html";
 });
+
 // ===============event listener for adding program/ edit icon / and edit program name =============
 createDietNameBtn.addEventListener("click", () => {
   addDietName();
@@ -253,7 +261,7 @@ closeBtn.forEach((btn) => {
     overlay.classList.add("display-none");
   });
 });
-
+// ========search input event listener ===========
 searchInput.addEventListener("input", () => {
   liveSearch();
 });
@@ -334,6 +342,8 @@ submitNewIngredient.addEventListener("click", () => {
   }
 });
 
+// ===============submit meal and edit meals event listener ===
+
 submitMealBtn.addEventListener("click", () => {
   submitMealFunction();
 });
@@ -364,7 +374,7 @@ const displayIngredientsArray = (arr) => {
   </div>`;
     }
   }
-  // ===================managing the checkbox and pushing or removing the exercises to selected exercises array
+  // ===================managing the checkbox and pushing or removing the ingredients to selectedIngredientsArray
   const checkbox = document.querySelectorAll(".check-box");
   checkbox.forEach((box) => {
     box.addEventListener("click", (e) => {
@@ -418,7 +428,7 @@ const addDietName = () => {
   }
 };
 
-// ===================live search for exercises  ====================
+// ===================live search for ingredients  ====================
 
 const liveSearch = () => {
   const ingredientContent = document.querySelectorAll(".ingredient-content");
@@ -484,6 +494,8 @@ const displayChosenIngredients = () => {
 </div>`;
     }
   }
+  // =========sum for ingredients live updated ========
+
   sumOfTotalIngredientsCal();
   sumOfTotalIngredientsCarbs();
   sumOfTotalIngredientsFat();
@@ -638,6 +650,7 @@ const sumOfTotalIngredientsFat = () => {
 
   totalIngredientsFat.textContent = `${TotalNum}g`;
 };
+// ===========submit meal function ===============
 
 const submitMealFunction = () => {
   Diet.meals.push({
@@ -657,7 +670,7 @@ const submitMealFunction = () => {
   displayIngredientsArray(ingredientsArray);
   displayMeals();
 };
-
+// =============display meals ==================
 const displayMeals = () => {
   createdMealsContainer.innerHTML = "";
 

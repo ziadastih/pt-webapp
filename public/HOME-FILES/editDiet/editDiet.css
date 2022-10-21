@@ -475,7 +475,7 @@ body {
   opacity: 0.5;
   font-size: 10px;
 }
-/* ===================overall container of the exercises , width 100vw so we center all in center but same time flex start from top  */
+/* ===================overall container of the ingredients , width 100vw so we center all in center but same time flex start from top  */
 .add-ingredients-container {
   width: 100vw;
   height: 60vh;
@@ -497,7 +497,7 @@ body {
   background-color: var(--whiteSmoke);
   border-radius: 5px;
 }
-/* ===================add exercises header , has the title of the container and the close btn  */
+/* ===================add ingrediet header , has the title of the container and the close btn  */
 .add-ingredients-header {
   display: flex;
   align-items: center;
@@ -534,7 +534,7 @@ body {
   margin-top: 20px;
 }
 
-/* ===============exercise container ================= */
+/* ===============ingredient list container ================= */
 
 .ingredients-list-container {
   display: flex;
@@ -592,7 +592,7 @@ body {
   transition: 200ms ease-in;
 }
 
-/* ----------exercises  btn container flex align center ===== */
+/* ----------ingredient  btn container flex align center ===== */
 .ingredients-btn-container {
   display: flex;
   align-items: center;

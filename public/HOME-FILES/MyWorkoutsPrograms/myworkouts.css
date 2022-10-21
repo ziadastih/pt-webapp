@@ -154,6 +154,7 @@ input[type="search"]::-webkit-search-results-decoration {
 }
 .fetch-more {
   opacity: 0;
+  display: none;
 }
 /* ==================END OF GLOBAL CLASSES ========================  */
 

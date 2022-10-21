@@ -21,8 +21,8 @@ const getAllWorkoutPrograms = async (req, res) => {
     const workoutprograms = await WorkoutProgram.find({
       createdBy: req.coach.coachId,
     })
-      .collation({ locale: "en", strength: 1 })
-      .sort({ name: 1 })
+
+      .sort("-createdAt")
       .skip(page * WorkoutsPerRequest)
       .limit(WorkoutsPerRequest);
 

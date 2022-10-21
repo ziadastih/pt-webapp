@@ -11,7 +11,7 @@ const start = async () => {
   try {
     await connectDB(process.env.PT_URI);
     await diets.deleteMany();
-    // await diets.create(dietPlans);
+    await diets.create(dietPlans);
     console.log("Success!!!!");
     process.exit(0);
   } catch (error) {

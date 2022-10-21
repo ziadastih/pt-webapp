@@ -245,6 +245,7 @@ editProgramNameBtn.addEventListener("click", () => {
   addProgramName();
 });
 
+// =============submit program event ===============
 submitProgram.addEventListener("click", async () => {
   preLoader.classList.add("display-flex");
   const Program = await axios.post("/api/v1/workoutProgram", {
@@ -257,6 +258,7 @@ submitProgram.addEventListener("click", async () => {
   await axios.patch("/api/v1/dataLength", {
     workoutLength: workoutLength,
   });
+  localStorage.setItem("wL", JSON.stringify(workoutLength));
   preLoader.classList.remove("display-flex");
   window.onbeforeunload = null;
   window.location =
@@ -968,7 +970,7 @@ const displayWorkouts = (index) => {
       if (workouts[i].name === "rest day") {
         toggleWorkoutNameContainer.classList.add("display-none");
         createdWorkoutsContainer.innerHTML = ` <div class="one-workout">
-  <i class="fa-solid fa-list" id="show-exercises" data-execises="0"></i>
+ <span></span>
   <p class="workout-name">rest day</p>
   <div class="tools">
     <i
@@ -983,7 +985,7 @@ const displayWorkouts = (index) => {
       } else {
         toggleWorkoutNameContainer.classList.remove("display-none");
         createdWorkoutsContainer.innerHTML += ` <div class="one-workout">
-    <i class="fa-solid fa-list" id="show-exercises" data-execises=${i}></i>
+        <span></span>
     <p class="workout-name">${workouts[i].name}</p>
     <div class="tools">
       <i
