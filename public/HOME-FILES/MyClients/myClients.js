@@ -114,16 +114,16 @@ registerBtn.addEventListener("click", async (e) => {
   if (!validateEmail(email)) {
     showAlert(registeremailAlert);
   }
-  if (password.length < 6) {
-    showAlert(registerPasswordAlert);
-  }
+  // if (password.length < 6) {
+  //   showAlert(registerPasswordAlert);
+  // }
   try {
     preLoader.classList.remove("display-none");
     const { client } = await axios.post("/api/v1/client", {
       firstName,
       lastName,
       email,
-      password,
+      // password,
     });
     const { data } = await axios.get("/api/v1/dataLength");
 

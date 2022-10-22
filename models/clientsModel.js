@@ -1,6 +1,9 @@
 const mongoose = require("mongoose");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
+const sgMail = require("@sendgrid/mail");
+require("dotenv").config();
+sgMail.setApiKey(process.env.Email_Api);
 const clientSchema = new mongoose.Schema(
   {
     firstName: {
@@ -26,7 +29,7 @@ const clientSchema = new mongoose.Schema(
     },
     password: {
       type: String,
-      required: [true, "Please provide password"],
+
       minlength: 6,
     },
     role: {
@@ -47,9 +50,36 @@ const clientSchema = new mongoose.Schema(
 );
 
 clientSchema.pre("save", async function () {
-  if (!this.isModified("password")) return;
+  // if (!this.isModified("password")) return;
+  let chars = `qwertyuiopasdfghjklzxcvbnmAQWERTYUIOPSDFGHJKLZXCVBNM1234567890!@#$%^&*()_+`;
+
+  let randomPass = ``;
+  let lengthOfPass = 12;
+  for (let i = 0; i < lengthOfPass; i++) {
+    randomPass += chars.charAt(Math.floor(Math.random() * chars.length));
+  }
+
+  const msg = {
+    to: this.email,
+    from: "ziadastih12@gmail.com",
+
+    template_id: process.env.template_id,
+
+    dynamic_template_data: {
+      clientName: this.firstName[0].toUpperCase() + this.firstName.substring(1),
+      clientPassword: randomPass,
+      year: new Date().getFullYear(),
+    },
+  };
+  sgMail.send(msg, (err, info) => {
+    if (err) {
+      console.log(err);
+    } else {
+      console.log("success");
+    }
+  });
   const salt = await bcrypt.genSalt(10);
-  this.password = await bcrypt.hash(this.password, salt);
+  this.password = await bcrypt.hash(randomPass, salt);
 });
 
 clientSchema.methods.createJWT = function () {

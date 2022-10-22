@@ -1,4 +1,5 @@
 const Client = require("../models/clientsModel");
+
 const { StatusCodes } = require("http-status-codes");
 const { BadRequestError, NotFoundError } = require("../errors");
 
@@ -80,7 +81,7 @@ const createNewClient = async (req, res) => {
   req.body.createdBy = req.coach.coachId;
   const client = await Client.create({ ...req.body });
   const token = client.createJWT();
-  res.status(StatusCodes.CREATED).json({ client, token });
+  res.status(StatusCodes.CREATED).json({ client });
 };
 
 // =============update client ===============

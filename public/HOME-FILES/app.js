@@ -129,25 +129,45 @@ loginBtn.addEventListener("click", async (e) => {
   const email = loginEmail.value;
   const password = loginPassword.value;
   const role = await e.target.dataset.login;
+  if (role === "coach") {
+    try {
+      const data = await axios.post("/api/v1/auth/login", {
+        email,
+        password,
+        role,
+      });
+      window.location =
+        "http://192.168.1.195:3000/coachHomepage/coachHomepage.html";
+      const ref = data.data.coach.coachId;
 
-  try {
-    const data = await axios.post("/api/v1/auth/login", {
-      email,
-      password,
-      role,
-    });
-    window.location =
-      "http://192.168.1.195:3000/coachHomepage/coachHomepage.html";
-    const ref = data.data.coach.coachId;
+      localStorage.setItem("ref", ref);
 
-    localStorage.setItem("ref", ref);
-    // ============removing homesection and getting the coach homapage =================
-  } catch (error) {
-    showAlert(loginEmailAlert);
-    showAlert(loginPasswordAlert);
-    roleBtn.forEach((btn) => {
-      btn.classList.add("role-alert");
-    });
+      // ============removing homesection and getting the coach homapage =================
+    } catch (error) {
+      showAlert(loginEmailAlert);
+      showAlert(loginPasswordAlert);
+      roleBtn.forEach((btn) => {
+        btn.classList.add("role-alert");
+      });
+    }
+  } else if (role === "client") {
+    try {
+      const data = await axios.post("/api/v1/auth/login", {
+        email,
+        password,
+        role,
+      });
+
+      console.log(data);
+
+      // ============removing homesection and getting the coach homapage =================
+    } catch (error) {
+      showAlert(loginEmailAlert);
+      showAlert(loginPasswordAlert);
+      roleBtn.forEach((btn) => {
+        btn.classList.add("role-alert");
+      });
+    }
   }
 });
 

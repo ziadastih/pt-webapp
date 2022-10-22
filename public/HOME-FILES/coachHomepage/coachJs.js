@@ -20,7 +20,6 @@ const getCoach = async () => {
 };
 
 getCoach();
-
 // ==============get overall stats to put the numbers ==============================
 
 const clientNumberStat = document.querySelector(".client-number");

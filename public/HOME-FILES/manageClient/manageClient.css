@@ -219,6 +219,7 @@ body {
 }
 .info-container p {
   position: relative;
+  font-size: 15px;
 }
 .info-container p::before {
   content: "";

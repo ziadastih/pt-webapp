@@ -26,7 +26,7 @@ const getClient = async () => {
     clientName.innerHTML = `${firstName} ${lastName}`;
     createdAt.innerHTML = `created at: ${created}`;
     clientName.classList.add("opacity-one");
-
+    clientWhatsappBtn.href = "https://wa.me/96170608758";
     if (enabled === true) {
       disableBtn.textContent = "disable";
     } else {
