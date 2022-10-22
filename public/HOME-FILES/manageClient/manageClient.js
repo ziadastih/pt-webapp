@@ -1,6 +1,5 @@
 // ==================get id from local storage ================
 const coachId = localStorage.getItem("ref");
-const clientId = localStorage.getItem("cref");
 
 // ===============coach name and displaying the general coach info ========
 const clientName = document.querySelector(".client-name");
@@ -8,8 +7,9 @@ const clientProfile = document.querySelector(".profile-pic");
 const createdAt = document.querySelector(".created-at");
 const disableBtn = document.querySelector(".disable-btn");
 const clientEmailBtn = document.querySelector("#email-icon");
-const clientWhatsappBtn = document.querySelector("#whatsapp-icon");
+
 const getClient = async () => {
+  let clientId = localStorage.getItem("cref");
   try {
     const {
       data: { client },
@@ -38,6 +38,13 @@ const getClient = async () => {
 };
 
 getClient();
+
+// ==============back btn ============================
+const backBtn = document.querySelector(".back-btn");
+
+backBtn.addEventListener("click", () => {
+  window.location = "http://192.168.1.195:3000/MyClients/MyClients.html";
+});
 
 // ==========disable btn  =====================
 disableBtn.addEventListener("click", async () => {

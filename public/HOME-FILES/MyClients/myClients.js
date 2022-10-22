@@ -87,14 +87,12 @@ const registerContainer = document.querySelector(".register-container");
 const registerFirstName = document.getElementById("register-first-name");
 const registerLastName = document.getElementById("register-last-name");
 const registerEmail = document.getElementById("register-email");
-const registerPassword = document.getElementById("register-password");
+const registerNumber = document.getElementById("register-number");
 
 // ============== REGISTER alert handling classes ===============================
 const registerFirstNameAlert = document.querySelector(".register-first-alert");
 const registerLastNameAlert = document.querySelector(".register-last-alert");
-const registerPasswordAlert = document.querySelector(
-  ".register-password-alert"
-);
+const registerNumberAlert = document.querySelector(".register-number-alert");
 const registeremailAlert = document.querySelector(".register-email-alert");
 
 // =========== connecting register btn and info to backend ======
@@ -104,7 +102,7 @@ registerBtn.addEventListener("click", async (e) => {
   const firstName = registerFirstName.value;
   const lastName = registerLastName.value;
   const email = registerEmail.value;
-  const password = registerPassword.value;
+  const number = registerNumber.value;
   if (firstName.length < 3) {
     showAlert(registerFirstNameAlert);
   }
@@ -114,16 +112,16 @@ registerBtn.addEventListener("click", async (e) => {
   if (!validateEmail(email)) {
     showAlert(registeremailAlert);
   }
-  // if (password.length < 6) {
-  //   showAlert(registerPasswordAlert);
-  // }
+  if (number.length < 1) {
+    showAlert(registerPasswordAlert);
+  }
   try {
     preLoader.classList.remove("display-none");
     const { client } = await axios.post("/api/v1/client", {
       firstName,
       lastName,
       email,
-      // password,
+      number,
     });
     const { data } = await axios.get("/api/v1/dataLength");
 
@@ -134,24 +132,11 @@ registerBtn.addEventListener("click", async (e) => {
     registerFirstName.value = "";
     registerLastName.value = "";
     registerEmail.value = "";
-    registerPassword.value = "";
+    registerNumber.value = "";
     btnContainer.classList.add("display-none");
     registerContainer.classList.remove("open-container");
   } catch (error) {
     console.log(error);
-  }
-});
-
-// ==========eye toggle for password hide/show case ====
-const togglePassword = document.querySelector("#toggle-password");
-const password = document.querySelector("#register-password");
-
-togglePassword.addEventListener("click", () => {
-  const type = password.getAttribute("type");
-  if (type === "password") {
-    password.setAttribute("type", "text");
-  } else {
-    password.setAttribute("type", "password");
   }
 });
 
@@ -253,7 +238,7 @@ const displayClients = (client) => {
   manageClientBtns.forEach((btn) => {
     btn.addEventListener("click", () => {
       let clientId = btn.dataset.manage;
-
+      console.log(clientId);
       localStorage.setItem("cref", clientId);
       window.location =
         "http://192.168.1.195:3000/manageClient/manageClient.html";
