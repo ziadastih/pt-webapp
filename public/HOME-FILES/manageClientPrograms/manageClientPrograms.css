@@ -64,6 +64,7 @@ input[type="search"]::-webkit-search-results-decoration {
   margin-top: 30px;
   margin-bottom: 30px;
   cursor: pointer;
+  text-transform: capitalize;
 }
 .full-btn {
   margin-top: 20px;
@@ -143,19 +144,7 @@ input[type="search"]::-webkit-search-results-decoration {
   height: 100px;
   z-index: 999;
 }
-.show-more {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 15vh;
-  font-size: 20px;
-  color: var(--mainColor);
-}
-.fetch-more {
-  opacity: 0;
-  display: none;
-}
+
 /* ==================END OF GLOBAL CLASSES ========================  */
 
 body {
@@ -172,6 +161,14 @@ body {
   justify-content: space-between;
   background-color: var(--mainColor);
 }
+.header-container h3 {
+  font-family: var(--fontSansSerif);
+  font-size: 24px;
+  font-weight: 400;
+  color: var(--whiteSmoke);
+  text-transform: capitalize;
+  letter-spacing: 1.2px;
+}
 .header-container img {
   margin-left: 30px;
   cursor: pointer;
@@ -179,83 +176,63 @@ body {
 .header-container i {
   margin-right: 30px;
   color: white;
-  font-size: 30px;
+  font-size: 20px;
   cursor: pointer;
 }
-/* ==================MY CLIENTS HEADER WITH THE SPAN LINE ======= */
-.my-workouts-title {
-  width: 100vw;
-  margin-top: 20px;
+
+.tools-box-btns {
+  position: absolute;
+  right: 25px;
+  width: 160px;
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
+  background-color: var(--whiteSmoke);
+  color: var(--mainColor);
+  border-radius: 5px;
+  transform: translateY(-200%);
+  margin-top: -10px;
+  z-index: 30;
+  font-size: 15px;
+  transition: 300ms ease-in;
+}
 
+.tool {
+  width: 160px;
+  height: 40px;
+  border-bottom: 1px solid var(--mainColor);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
   flex-direction: column;
 }
-.my-workouts-title h3 {
-  font-family: var(--fontSansSerif);
-  font-size: 32px;
-  font-weight: 400;
-  color: var(--mainColor);
+.tools-box-btns p {
   text-transform: capitalize;
 }
-.my-workouts-title span {
-  margin-top: 5px;
-  width: 100px;
-  height: 1px;
-  background-color: var(--mainColor);
-  opacity: 0.5;
-}
-/* ==============THE SEARCH INPUT WITH THE SEARCH ICON ======== */
-.search-workout-container {
-  width: 100vw;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 30px;
-}
-#search-workout-input {
-  width: 50vw;
-  background-color: transparent;
-  border: 1px solid var(--mainColor);
-}
-
-.search-workout-container i {
-  position: absolute;
-  margin-left: 140px;
-  color: var(--mainColor);
-  cursor: pointer;
+.set-as-current-toggle {
+  border-bottom: none;
 }
 /* ============THE HEADER AND THE BTN WHEN THERE IS NO CLIENTS ==== */
 .btn-container {
-  display: none;
-  height: 40vh;
-
+  display: flex;
+  margin-bottom: 10vh;
   align-items: center;
-  justify-content: center;
-  flex-direction: column;
+  justify-content: space-around;
+  opacity: 1;
   transition: 300ms ease-in;
 }
-.btn-container h3 {
-  font-family: var(--fontSansSerif);
-  font-style: normal;
-  font-weight: 400;
-  font-size: 32px;
-  line-height: 41px;
-  letter-spacing: 0.02em;
-  color: var(--mainColor);
-  margin-bottom: 20px;
-  text-transform: capitalize;
-}
-.btn-container button {
-  font-weight: 400;
-  text-transform: capitalize;
-  margin-top: 0;
-  color: white;
+.create-workout-btn {
   background-color: var(--mainColor);
-  letter-spacing: 1.2px;
+  color: var(--whiteSmoke);
+  font-weight: 400;
 }
-
+.add-workout-btn {
+  font-weight: 400;
+  background-color: transparent;
+  border: 1px solid var(--mainColor);
+}
 /* ====================workouts grid container ============= */
 .workouts-programs-grid-container {
   margin-top: 60px;

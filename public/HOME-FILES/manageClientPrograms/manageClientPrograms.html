@@ -32,33 +32,25 @@
     <!-- ============class header the back btn and the add btn ===== -->
     <div class="header-container">
       <img src="../images/Arrow 2.svg" class="back-btn" alt="" />
-      <i class="fa-light fa-plus" id="go-to-create-program"></i>
+      <h3>programs</h3>
+      <i class="fa-solid fa-toolbox" id="tool-box"> </i>
+    </div>
+    <div class="tools-box-btns">
+      <div class="tool" id="toggle-add-workout-btn"><p>add</p></div>
+      <div class="tool" id="create-workout-btn"><p>create</p></div>
+      <div class="tool history-toggle"><p>history</p></div>
+      <div class="tool set-as-current-toggle"><p>set current</p></div>
     </div>
     <!-- ===============program title ==================== -->
-    <div class="my-workouts-title">
-      <h3>my workouts</h3>
-      <span></span>
-    </div>
-    <!-- ==============search input ===================== -->
-    <div class="search-workout-container">
-      <input
-        type="search"
-        placeholder="search for Workout"
-        id="search-workout-input"
-      />
-      <i class="fa-solid fa-magnifying-glass" id="search-icon-btn"></i>
-    </div>
 
     <!-- ===============create btn contianer with it header  -->
     <div class="btn-container">
-      <h3>create new Workout</h3>
       <button class="create-workout-btn btn">create</button>
+      <button class="add-workout-btn btn">add</button>
     </div>
     <!-- ==============the grid program container where we display our workouts  -->
     <div class="workouts-programs-grid-container"></div>
-    <div class="show-more">
-      <i class="fa-regular fa-square-caret-down fetch-more"></i>
-    </div>
+
     <!-- =============delete verification box ======== -->
     <div class="delete-verification-section">
       <div class="overlay"></div>

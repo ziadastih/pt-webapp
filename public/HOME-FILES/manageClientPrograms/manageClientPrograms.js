@@ -6,40 +6,33 @@ const programGridContainer = document.querySelector(
 const deleteVerificationContainer = document.querySelector(
   ".delete-verification-section"
 );
-const searchWorkoutInput = document.getElementById("search-workout-input");
-const searchWorkoutIcon = document.getElementById("search-icon-btn");
-const goToCreateProgram = document.getElementById("go-to-create-program");
+
 const createNewProgramBtn = document.querySelector(".create-workout-btn");
 const preLoader = document.querySelector(".gif");
-const fetchMore = document.querySelector(".fetch-more");
+
 // ================GET WORKOUT FUNCTION , INCLUDE DISPLAYING ALL, LIVE SEARCH , DELETE FUNCTION =============================
 
 localStorage.removeItem("wo");
+let clientId = localStorage.getItem("cref");
 let wLength = JSON.parse(localStorage.getItem("wL"));
 let workoutPrograms = [];
-goToCreateProgram.addEventListener("click", () => {
-  window.location =
-    "http://192.168.1.195:3000/createWorkout/createWorkout.html";
-});
+
 createNewProgramBtn.addEventListener("click", () => {
   window.location =
     "http://192.168.1.195:3000/createWorkout/createWorkout.html";
 });
-let page = 0;
+
 // ================fetch workouts ===================
 const getWorkouts = async () => {
-  page = 0;
   try {
     // ============getting the data ===============
-    const { data } = await axios.get(`/api/v1/workoutProgram/?page=${page}`);
+    const { data } = await axios.get(
+      `/api/v1/workoutProgram?createdFor=${clientId}`
+    );
     preLoader.classList.add("display-none");
-
+    btnContainer.classList.add("show-opacity");
     //  =========if length is === 0 means no workouts we want to display the create item =============
     const length = data.workoutprograms.length;
-
-    if (length === 0) {
-      btnContainer.classList.add("open-container");
-    }
 
     workoutPrograms = data.workoutprograms;
 
@@ -62,38 +55,9 @@ searchWorkoutIcon.addEventListener("click", async () => {
   });
 });
 
-// ===============fetch more workouts 20 at a time and push them to the original array
-fetchMore.addEventListener("click", async () => {
-  preLoader.classList.remove("display-none");
-
-  page = page + 1;
-  const { data } = await axios.get(`/api/v1/workoutProgram/?page=${page}`);
-
-  let fetchedPrograms = data.workoutprograms;
-  await fetchedPrograms.forEach((program) => {
-    workoutPrograms.push(program);
-  });
-
-  preLoader.classList.add("display-none");
-
-  displayProgramInfo(workoutPrograms);
-});
-
 // ===============display Programs  function with all the show and hide logic ====================
 
 const displayProgramInfo = (programPlan) => {
-  let length = programPlan.length;
-  fetchMore.classList.add("open-container");
-
-  if (searchWorkoutInput.value.length > 0) {
-    fetchMore.classList.remove("show-opacity");
-  } else {
-    if (length === wLength) {
-      fetchMore.classList.remove("show-opacity");
-    } else {
-      fetchMore.classList.add("show-opacity");
-    }
-  }
   programGridContainer.innerHTML = "";
   displayAllPrograms(programPlan);
 
@@ -129,8 +93,7 @@ const displayProgramInfo = (programPlan) => {
 const backBtn = document.querySelector(".back-btn");
 
 backBtn.addEventListener("click", () => {
-  window.location =
-    "http://192.168.1.195:3000/coachHomepage/coachHomepage.html";
+  window.location = "http://192.168.1.195:3000/manageClient/manageClient.html";
 });
 // ================logout user ===================
 
@@ -632,22 +595,3 @@ const chosenDsSuperset = (exercise, i, oneWorkout) => {
 </div>`;
 };
 // ================end of chosen exercises ===============
-
-// =======================search function =====================
-const searchFunction = async () => {
-  let inputCharacter = searchWorkoutInput.value;
-  preLoader.classList.remove("display-none");
-  const { data } = await axios.get(
-    `/api/v1/workoutProgram/?name=${inputCharacter}`
-  );
-
-  preLoader.classList.add("display-none");
-
-  workoutPrograms = data.workoutprograms;
-  if (workoutPrograms.length === 0) {
-    programGridContainer.innerHTML = `<h2>Sorry! No Programs matches your search</h2>`;
-    fetchMore.classList.remove("open-container");
-  } else {
-    displayProgramInfo(workoutPrograms);
-  }
-};
