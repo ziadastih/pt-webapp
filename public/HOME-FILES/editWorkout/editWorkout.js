@@ -965,7 +965,7 @@ const displayWorkouts = (index) => {
       if (workouts[i].name === "rest day") {
         toggleWorkoutNameContainer.classList.add("display-none");
         createdWorkoutsContainer.innerHTML = ` <div class="one-workout">
-        <span></span>
+        <i class="fa-solid fa-dumbbell"></i>
     <p class="workout-name">rest day</p>
     <div class="tools">
       <i
@@ -980,7 +980,7 @@ const displayWorkouts = (index) => {
       } else {
         toggleWorkoutNameContainer.classList.remove("display-none");
         createdWorkoutsContainer.innerHTML += ` <div class="one-workout">
-        <span></span>
+        <i class="fa-solid fa-dumbbell"></i>
       <p class="workout-name">${workouts[i].name}</p>
       <div class="tools">
         <i
@@ -1131,7 +1131,7 @@ const setAsRestDayFunction = () => {
       createdWorkoutsContainer.classList.remove("display-none");
       editProgram.classList.remove("display-none");
       createdWorkoutsContainer.innerHTML = ` <div class="one-workout">
-        <i class="fa-solid fa-list" id="show-exercises" data-execises="0"></i>
+      <i class="fa-solid fa-dumbbell"></i>
         <p class="workout-name">rest day</p>
         <div class="tools">
           <i

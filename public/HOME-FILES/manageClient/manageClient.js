@@ -1,20 +1,19 @@
 // ==================get id from local storage ================
 const coachId = localStorage.getItem("ref");
-
+const clientId = localStorage.getItem("cref");
 // ===============coach name and displaying the general coach info ========
 const clientName = document.querySelector(".client-name");
 const clientProfile = document.querySelector(".profile-pic");
 const createdAt = document.querySelector(".created-at");
 const disableBtn = document.querySelector(".disable-btn");
 const clientEmailBtn = document.querySelector("#email-icon");
-
+const clientWhatsappBtn = document.querySelector(".whatsapp-icon");
 const getClient = async () => {
-  let clientId = localStorage.getItem("cref");
   try {
     const {
       data: { client },
     } = await axios.get(`/api/v1/client/${clientId}`);
-    console.log(client);
+
     const firstName = client.clientFirstName;
     const lastName = client.clientLastName;
     const created = client.createdAt.slice(0, 10);
@@ -26,7 +25,7 @@ const getClient = async () => {
     clientName.innerHTML = `${firstName} ${lastName}`;
     createdAt.innerHTML = `created at: ${created}`;
     clientName.classList.add("opacity-one");
-    clientWhatsappBtn.href = "https://wa.me/96170608758";
+
     if (enabled === true) {
       disableBtn.textContent = "disable";
     } else {
@@ -53,11 +52,13 @@ disableBtn.addEventListener("click", async () => {
     const { data } = await axios.patch(`/api/v1/client/${clientId}`, {
       enabled: false,
     });
+    console.log(data);
   } else {
     disableBtn.textContent = "disable";
     const { data } = await axios.patch(`/api/v1/client/${clientId}`, {
       enabled: true,
     });
+    console.log(data);
   }
 });
 

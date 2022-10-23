@@ -312,11 +312,8 @@ body {
   text-transform: capitalize;
   margin-bottom: 20px;
 }
-.one-workout span {
-  width: 5px;
-  height: 5px;
-  border-radius: 50%;
-  background-color: var(--eyeComfort);
+.one-workout i {
+  color: var(--eyeComfort);
   margin-left: 20px;
 }
 .one-workout p {
@@ -331,8 +328,8 @@ body {
   align-items: center;
   justify-content: flex-end;
   color: var(--mainOrange);
-  width: 100px;
-  gap: 30px;
+
+  gap: 10px;
   cursor: pointer;
   margin-right: 20px;
 }

@@ -55,12 +55,13 @@ const getallClients = async (req, res) => {
 const getoneClient = async (req, res) => {
   const {
     coach: { coachId },
-    params: { clientId },
+    params: { id: clientId },
   } = req;
   const client = await Client.findOne({
     createdBy: coachId,
-    _Id: clientId,
+    _id: clientId,
   });
+
   if (!client) {
     throw new NotFoundError(`no client with id ${clientId}`);
   }
@@ -93,7 +94,7 @@ const updateClient = async (req, res) => {
 
   const client = await Client.findOneAndUpdate(
     {
-      _Id: clientId,
+      _id: clientId,
       createdBy: coachId,
     },
     req.body,

@@ -7,7 +7,6 @@ const preLoader = document.querySelector(".gif");
 const searchCLientInput = document.getElementById("search-client-input");
 // ===============getClients when page open and display them =======
 localStorage.removeItem("cref");
-
 const getClients = async () => {
   try {
     // ============getting the data ===============
@@ -175,7 +174,7 @@ const displayClients = (client) => {
   clientsGridContainer.innerHTML = "";
   for (let i = 0; i < client.length; i++) {
     clientsGridContainer.innerHTML += ` <div class="client" data-id = ${client[i].clientId}}>
-    <span></span>
+    <i class="fa-solid fa-user"></i>
       <p class="client-full-name">${client[i].clientFirstName} ${client[i].clientLastName}</p>
       <div class="tools">
         <i class="fa-solid fa-trash" id="delete-client" data-delete = ${client[i].clientId}></i>
@@ -220,6 +219,7 @@ const displayClients = (client) => {
       const yesBtn = document.querySelector(".yes-btn");
       yesBtn.addEventListener("click", async (e) => {
         let id = e.target.dataset.delete;
+
         preLoader.classList.remove("display-none");
         await axios.delete(`/api/v1/client/${id}`);
         const { data } = await axios.get("/api/v1/dataLength");
@@ -238,7 +238,7 @@ const displayClients = (client) => {
   manageClientBtns.forEach((btn) => {
     btn.addEventListener("click", () => {
       let clientId = btn.dataset.manage;
-      console.log(clientId);
+
       localStorage.setItem("cref", clientId);
       window.location =
         "http://192.168.1.195:3000/manageClient/manageClient.html";
