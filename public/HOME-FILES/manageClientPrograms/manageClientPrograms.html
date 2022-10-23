@@ -24,16 +24,45 @@
       href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="coachSetting.css" />
+    <link rel="stylesheet" href="manageClientPrograms.css" />
     <title>My Clients</title>
   </head>
   <body>
+    <div class="gif"></div>
     <!-- ============class header the back btn and the add btn ===== -->
     <div class="header-container">
       <img src="../images/Arrow 2.svg" class="back-btn" alt="" />
-      <i class="fa-light fa-plus open-workout-form-btn"></i>
+      <i class="fa-light fa-plus" id="go-to-create-program"></i>
+    </div>
+    <!-- ===============program title ==================== -->
+    <div class="my-workouts-title">
+      <h3>my workouts</h3>
+      <span></span>
+    </div>
+    <!-- ==============search input ===================== -->
+    <div class="search-workout-container">
+      <input
+        type="search"
+        placeholder="search for Workout"
+        id="search-workout-input"
+      />
+      <i class="fa-solid fa-magnifying-glass" id="search-icon-btn"></i>
     </div>
 
+    <!-- ===============create btn contianer with it header  -->
+    <div class="btn-container">
+      <h3>create new Workout</h3>
+      <button class="create-workout-btn btn">create</button>
+    </div>
+    <!-- ==============the grid program container where we display our workouts  -->
+    <div class="workouts-programs-grid-container"></div>
+    <div class="show-more">
+      <i class="fa-regular fa-square-caret-down fetch-more"></i>
+    </div>
+    <!-- =============delete verification box ======== -->
+    <div class="delete-verification-section">
+      <div class="overlay"></div>
+    </div>
     <!-- =================== coach nav bar ============================== -->
     <nav class="global-nav coach-nav-bar">
       <p id="user-home-nav-btn">
@@ -46,6 +75,6 @@
       <p id="user-logout-nav-btn">logout</p>
     </nav>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script src="coachSetting.js"></script>
+    <script src="manageClientPrograms.js"></script>
   </body>
 </html>

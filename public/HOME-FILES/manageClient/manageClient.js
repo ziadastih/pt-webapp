@@ -7,13 +7,13 @@ const clientProfile = document.querySelector(".profile-pic");
 const createdAt = document.querySelector(".created-at");
 const disableBtn = document.querySelector(".disable-btn");
 const clientEmailBtn = document.querySelector("#email-icon");
-const clientWhatsappBtn = document.querySelector(".whatsapp-icon");
+const clientWhatsappBtn = document.querySelector("#whatsapp-icon");
 const getClient = async () => {
   try {
     const {
       data: { client },
     } = await axios.get(`/api/v1/client/${clientId}`);
-
+    console.log(client);
     const firstName = client.clientFirstName;
     const lastName = client.clientLastName;
     const created = client.createdAt.slice(0, 10);
@@ -30,6 +30,14 @@ const getClient = async () => {
       disableBtn.textContent = "disable";
     } else {
       disableBtn.textContent = "enable";
+    }
+
+    clientEmailBtn.href = `mailto:${email}`;
+
+    if (clientNumber) {
+      clientWhatsappBtn.href = `https://wa.me/${clientNumber}`;
+    } else {
+      console.log(clientWhatsappBtn, clientNumber);
     }
   } catch (error) {
     console.log(error);
