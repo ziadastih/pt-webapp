@@ -156,7 +156,7 @@ const displayAllPrograms = (programPlan) => {
     programGridContainer.innerHTML += `<div class="program-container">
  
   <div class="program">
-  <i class="fa-solid fa-list" id="show-program" data-overview=${i}></i>
+  <i class="fa-solid fa-angle-up" id="show-program" data-overview=${i}></i>
  <p>${programPlan[i].name}</p>
     <div class="tools">
       <i class="fa-regular fa-pen-to-square" id="edit-workout" data-edit=${programPlan[i]._id}></i>
@@ -296,7 +296,7 @@ const displayWorkouts = (program, daysArr, index) => {
       } else {
         createdWorkoutsContainer.innerHTML += `<div class='workout-info-container'> 
         <div class="one-workout">
-        <i class="fa-solid fa-list" id="show-exercises" data-exercises="0"></i>
+        <i class="fa-solid fa-angle-up" id="show-exercises" data-exercises="0"></i>
         <p class="workout-name">${workouts[i].name}</p>
     <span class="workout-length">${workouts[i].exercises.length} ex</span>
         

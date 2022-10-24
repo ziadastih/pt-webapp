@@ -303,7 +303,9 @@ body {
   cursor: pointer;
   transition: 300ms ease-in;
 }
-
+#show-program {
+  transition: 100ms ease-in;
+}
 .tools {
   display: flex;
   align-items: center;
@@ -448,7 +450,9 @@ body {
 }
 /* ========================end of workout overview section ======= */
 /* ==============start of chosen exercises section ========== */
-
+#show-exrecises {
+  transition: 100ms ease-in;
+}
 .exercises-container {
   margin-top: 20px;
   width: 100vw;
@@ -676,6 +680,10 @@ body {
 .open-container .overview-container {
   display: flex;
 }
+.open-container #show-program {
+  transform: rotate(180deg);
+}
+
 .open-container .created-workouts {
   display: flex;
 }
@@ -683,7 +691,9 @@ body {
 .show-info .exercises-container {
   display: grid;
 }
-
+.show-info #show-exercises {
+  transform: rotate(180deg);
+}
 .name-alert .show-alert {
   display: block;
 }

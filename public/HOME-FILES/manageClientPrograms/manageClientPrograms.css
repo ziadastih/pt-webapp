@@ -189,6 +189,7 @@ body {
   opacity: 1;
   transition: 300ms ease-in;
 }
+
 .create-workout-btn {
   background-color: var(--mainColor);
   color: var(--whiteSmoke);
@@ -201,14 +202,13 @@ body {
 }
 /* ====================workouts grid container ============= */
 .workouts-programs-grid-container {
-  margin-top: 60px;
+  margin-top: 20px;
   display: grid;
   grid-template-columns: repeat(1, auto);
   align-items: flex-start;
   justify-content: center;
   gap: 30px;
   width: 100vw;
-  margin-bottom: 30px;
 }
 .program-container {
   display: flex;
@@ -216,6 +216,33 @@ body {
   justify-content: center;
   flex-direction: column;
   width: 80vw;
+  position: relative;
+}
+/* .current-stars-container {
+  display: none;
+} */
+
+#filled-star {
+  position: absolute;
+  top: -10px;
+  left: -5px;
+
+  color: var(--mainColor);
+}
+#empty-star {
+  position: absolute;
+  top: -10px;
+  left: -5px;
+
+  color: var(--eyeComfort);
+  z-index: 1;
+}
+#none-current {
+  position: absolute;
+  top: -10px;
+  left: -5px;
+
+  color: var(--mainColor);
 }
 /* =========workout styling that will be dealt with in js ========== */
 .program {
@@ -231,6 +258,7 @@ body {
   align-items: center;
   justify-content: space-between;
   text-transform: capitalize;
+  overflow: hidden;
 }
 
 .program p {
@@ -246,7 +274,9 @@ body {
   cursor: pointer;
   transition: 300ms ease-in;
 }
-
+#show-program {
+  transition: 100ms ease-in;
+}
 .tools {
   display: flex;
   align-items: center;
@@ -277,6 +307,7 @@ body {
   width: 100vw;
 
   z-index: 1;
+
   transition: 300ms ease-in;
 }
 
@@ -344,6 +375,8 @@ body {
   justify-content: center;
   flex-direction: column;
   width: 100vw;
+
+  transition: 300ms ease-in;
 }
 .workout-info-container {
   width: 100vw;
@@ -391,7 +424,9 @@ body {
 }
 /* ========================end of workout overview section ======= */
 /* ==============start of chosen exercises section ========== */
-
+#show-exercises {
+  transition: 100ms ease-in;
+}
 .exercises-container {
   margin-top: 20px;
   width: 100vw;
@@ -622,11 +657,15 @@ body {
 .open-container .created-workouts {
   display: flex;
 }
-
+.open-container #show-program {
+  transform: rotate(180deg);
+}
 .show-info .exercises-container {
   display: grid;
 }
-
+.show-info #show-exercises {
+  transform: rotate(180deg);
+}
 .name-alert .show-alert {
   display: block;
 }

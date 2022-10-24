@@ -258,27 +258,17 @@ editProgramNameBtn.addEventListener("click", () => {
 
 editProgram.addEventListener("click", async () => {
   let clientId = localStorage.getItem("cref");
+
+  let programIndex = localStorage.getItem("wo");
+  const Program = await axios.patch(`/api/v1/workoutProgram/${programIndex}`, {
+    name: program.name,
+    weeks: program.weeks,
+  });
   if (!clientId) {
-    let programIndex = localStorage.getItem("wo");
-    const Program = await axios.patch(
-      `/api/v1/workoutProgram/${programIndex}`,
-      {
-        name: program.name,
-        weeks: program.weeks,
-      }
-    );
     window.onbeforeunload = null;
     window.location =
       "http://192.168.1.195:3000/MyWorkoutsPrograms/myWorkouts.html";
   } else {
-    let programIndex = localStorage.getItem("wo");
-    const Program = await axios.patch(
-      `/api/v1/workoutProgram/${programIndex}?clientId=${clientId}`,
-      {
-        name: program.name,
-        weeks: program.weeks,
-      }
-    );
     window.onbeforeunload = null;
     window.location =
       "http://192.168.1.195:3000/manageClientPrograms/manageClientPrograms.html";

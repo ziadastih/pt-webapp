@@ -31,13 +31,14 @@ const getWorkouts = async () => {
     const { data } = await axios.get(
       `/api/v1/workoutProgram?createdFor=${clientId}`
     );
+
     preLoader.classList.add("display-none");
     btnContainer.classList.add("show-opacity");
     //  =========if length is === 0 means no workouts we want to display the create item =============
     const length = data.workoutprograms.length;
 
     workoutPrograms = data.workoutprograms;
-
+    console.log(workoutPrograms);
     displayProgramInfo(workoutPrograms);
   } catch (error) {
     console.log(error);
@@ -102,32 +103,107 @@ logoutBtn.addEventListener("click", async () => {
 // ==============display all programs/ if name > 13 add ...
 const displayAllPrograms = (programPlan) => {
   programGridContainer.innerHTML = "";
-  for (let i = 0; i < programPlan.length; i++) {
-    if (programPlan[i].name.length > 13) {
-      programPlan[i].name = `${programPlan[i].name.slice(0, 13)}..`;
+
+  const filterCurrent = programPlan.filter((Element) => {
+    return Element.current === true;
+  });
+  for (i = 0; i < filterCurrent.length; i++) {
+    if (filterCurrent[i].name.length > 13) {
+      filterCurrent[i].name = `${filterCurrent[i].name.slice(0, 13)}..`;
     }
     programGridContainer.innerHTML += `<div class="program-container">
- 
-  <div class="program">
-  <i class="fa-solid fa-list" id="show-program" data-overview=${i}></i>
- <p>${programPlan[i].name}</p>
-    <div class="tools">
-      <i class="fa-regular fa-pen-to-square" id="edit-workout" data-edit=${programPlan[i]._id}></i>
-      <i class=" fa-solid fa-trash" id="delete-workout" data-index=${i} data-delete=${programPlan[i]._id}></i>
+      <div class="current-stars-container" data-current=${filterCurrent[i]._id}>
+      <i class="fa-solid fa-star" id="filled-star"></i>
+      <i class="fa-regular fa-star" id="empty-star"></i>
+      </div>
+      <i class="fa-regular fa-star" id="none-current" data-current=${filterCurrent[i]._id}></i>
+      
+      <div class="program">
+      <i class="fa-solid fa-angle-up" id="show-program" data-overview=${i}></i>
+     <p>${filterCurrent[i].name}</p>
+        <div class="tools">
+          <i class="fa-regular fa-pen-to-square" id="edit-workout" data-edit=${filterCurrent[i]._id}></i>
+          <i class=" fa-solid fa-trash" id="delete-workout" data-index=${i} data-delete=${filterCurrent[i]._id}></i>
+        </div>
+      </div>
+      
+      <div class="overview-container">
+      <div class="date-stats">
+      <p class="created-at">created at: 22/10/2022</p>
+      <p class="updated-at">updated at: 22/11/2022</p>
+    
     </div>
-  </div>
-  
-  <div class="overview-container">
-  <div class="date-stats">
-  <p class="created-at">created at: 22/10/2022</p>
-  <p class="updated-at">updated at: 22/11/2022</p>
-
-</div>
-
-</div>
-<div class="created-workouts"></div>
-</div>`;
+    
+    </div>
+    <div class="created-workouts"></div>
+    </div>`;
   }
+  // ==============filter None current to always display after the current
+  const filterNoneCurrent = programPlan.filter((Element) => {
+    return Element.current === false;
+  });
+  for (i = 0; i < filterNoneCurrent.length; i++) {
+    if (filterNoneCurrent[i].name.length > 13) {
+      filterNoneCurrent[i].name = `${filterNoneCurrent[i].name.slice(0, 13)}..`;
+    }
+    programGridContainer.innerHTML += `<div class="program-container">
+      <div class="current-stars-container display-none" data-current=${filterNoneCurrent[i]._id}>
+      <i class="fa-solid fa-star" id="filled-star"></i>
+      <i class="fa-regular fa-star" id="empty-star"></i>
+      </div>
+      <i class="fa-regular fa-star" id="none-current" data-current=${filterNoneCurrent[i]._id}></i>
+      
+      <div class="program">
+      <i class="fa-solid fa-angle-up" id="show-program" data-overview=${i}></i>
+     <p>${filterNoneCurrent[i].name}</p>
+        <div class="tools">
+          <i class="fa-regular fa-pen-to-square" id="edit-workout" data-edit=${filterNoneCurrent[i]._id}></i>
+          <i class=" fa-solid fa-trash" id="delete-workout" data-index=${i} data-delete=${filterNoneCurrent[i]._id}></i>
+        </div>
+      </div>
+      
+      <div class="overview-container">
+      <div class="date-stats">
+      <p class="created-at">created at: 22/10/2022</p>
+      <p class="updated-at">updated at: 22/11/2022</p>
+    
+    </div>
+    
+    </div>
+    <div class="created-workouts"></div>
+    </div>`;
+  }
+
+  // ==============set as current  =====================
+  const currenStarsContainer = document.querySelectorAll(
+    ".current-stars-container"
+  );
+  const noneCurrentBtns = document.querySelectorAll("#none-current");
+  currenStarsContainer.forEach((btn) => {
+    btn.addEventListener("click", async () => {
+      let workoutId = btn.dataset.current;
+
+      preLoader.classList.remove("display-none");
+      const program = await axios.patch(`/api/v1/workoutProgram/${workoutId}`, {
+        current: false,
+      });
+      preLoader.classList.add("display-none");
+      btn.classList.add("display-none");
+    });
+  });
+
+  noneCurrentBtns.forEach((btn) => {
+    btn.addEventListener("click", async () => {
+      let workoutId = btn.dataset.current;
+      preLoader.classList.remove("display-none");
+      const program = await axios.patch(`/api/v1/workoutProgram/${workoutId}`, {
+        current: true,
+      });
+      preLoader.classList.add("display-none");
+      let hightlightedStar = btn.previousElementSibling;
+      hightlightedStar.classList.remove("display-none");
+    });
+  });
   // ===========delete program ==============
   const deleteWorkout = document.querySelectorAll("#delete-workout");
 
@@ -249,7 +325,7 @@ const displayWorkouts = (program, daysArr, index) => {
       } else {
         createdWorkoutsContainer.innerHTML += `<div class='workout-info-container'> 
         <div class="one-workout">
-        <i class="fa-solid fa-list" id="show-exercises" data-exercises="0"></i>
+        <i class="fa-solid fa-angle-up" id="show-exercises"data-exercises="0"></i>
         <p class="workout-name">${workouts[i].name}</p>
     <span class="workout-length">${workouts[i].exercises.length} ex</span>
         
