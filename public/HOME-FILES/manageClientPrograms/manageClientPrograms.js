@@ -9,7 +9,7 @@ const deleteVerificationContainer = document.querySelector(
 
 const createNewProgramBtns = document.querySelectorAll("#create-workout-btn");
 const preLoader = document.querySelector(".gif");
-
+const addExistingProgram = document.querySelector("#add-workout-btn");
 // ================GET WORKOUT FUNCTION , INCLUDE DISPLAYING ALL, LIVE SEARCH , DELETE FUNCTION =============================
 
 localStorage.removeItem("wo");
@@ -22,6 +22,13 @@ createNewProgramBtns.forEach((btn) => {
     window.location =
       "http://192.168.1.195:3000/createWorkout/createWorkout.html";
   });
+});
+
+addExistingProgram.addEventListener("click", async () => {
+  console.log(performance.now());
+  const { data } = await axios.get(`/api/v1/workoutProgram?addFor=1`);
+  console.log(performance.now());
+  console.log(data);
 });
 
 // ================fetch workouts ===================
@@ -38,7 +45,7 @@ const getWorkouts = async () => {
     const length = data.workoutprograms.length;
 
     workoutPrograms = data.workoutprograms;
-    console.log(workoutPrograms);
+
     displayProgramInfo(workoutPrograms);
   } catch (error) {
     console.log(error);
@@ -113,10 +120,10 @@ const displayAllPrograms = (programPlan) => {
     }
     programGridContainer.innerHTML += `<div class="program-container">
       <div class="current-stars-container" data-current=${filterCurrent[i]._id}>
-      <i class="fa-solid fa-star" id="filled-star"></i>
-      <i class="fa-regular fa-star" id="empty-star"></i>
+      <i class="fa-solid fa-dumbbell" id="filled-star"></i>
+     
       </div>
-      <i class="fa-regular fa-star" id="none-current" data-current=${filterCurrent[i]._id}></i>
+      <i class="fa-solid fa-dumbbell" id="none-current" data-current=${filterCurrent[i]._id}></i>
       
       <div class="program">
       <i class="fa-solid fa-angle-up" id="show-program" data-overview=${i}></i>
@@ -148,10 +155,10 @@ const displayAllPrograms = (programPlan) => {
     }
     programGridContainer.innerHTML += `<div class="program-container">
       <div class="current-stars-container display-none" data-current=${filterNoneCurrent[i]._id}>
-      <i class="fa-solid fa-star" id="filled-star"></i>
-      <i class="fa-regular fa-star" id="empty-star"></i>
+      <i class="fa-solid fa-dumbbell" id="filled-star"></i>
+    
       </div>
-      <i class="fa-regular fa-star" id="none-current" data-current=${filterNoneCurrent[i]._id}></i>
+      <i class="fa-solid fa-dumbbell" id="none-current" data-current=${filterNoneCurrent[i]._id}></i>
       
       <div class="program">
       <i class="fa-solid fa-angle-up" id="show-program" data-overview=${i}></i>
@@ -175,11 +182,12 @@ const displayAllPrograms = (programPlan) => {
   }
 
   // ==============set as current  =====================
-  const currenStarsContainer = document.querySelectorAll(
+  const currentStarsContainer = document.querySelectorAll(
     ".current-stars-container"
   );
   const noneCurrentBtns = document.querySelectorAll("#none-current");
-  currenStarsContainer.forEach((btn) => {
+
+  currentStarsContainer.forEach((btn) => {
     btn.addEventListener("click", async () => {
       let workoutId = btn.dataset.current;
 
@@ -187,6 +195,7 @@ const displayAllPrograms = (programPlan) => {
       const program = await axios.patch(`/api/v1/workoutProgram/${workoutId}`, {
         current: false,
       });
+
       preLoader.classList.add("display-none");
       btn.classList.add("display-none");
     });
@@ -195,10 +204,12 @@ const displayAllPrograms = (programPlan) => {
   noneCurrentBtns.forEach((btn) => {
     btn.addEventListener("click", async () => {
       let workoutId = btn.dataset.current;
+
       preLoader.classList.remove("display-none");
       const program = await axios.patch(`/api/v1/workoutProgram/${workoutId}`, {
         current: true,
       });
+
       preLoader.classList.add("display-none");
       let hightlightedStar = btn.previousElementSibling;
       hightlightedStar.classList.remove("display-none");

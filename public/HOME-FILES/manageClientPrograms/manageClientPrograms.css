@@ -218,32 +218,24 @@ body {
   width: 80vw;
   position: relative;
 }
-/* .current-stars-container {
-  display: none;
-} */
 
 #filled-star {
   position: absolute;
-  top: -10px;
-  left: -5px;
+  top: -5px;
+  left: -10px;
 
   color: var(--mainColor);
+  z-index: 20;
 }
-#empty-star {
-  position: absolute;
-  top: -10px;
-  left: -5px;
 
-  color: var(--eyeComfort);
-  z-index: 1;
-}
 #none-current {
   position: absolute;
-  top: -10px;
-  left: -5px;
-
+  top: -5px;
+  left: -10px;
   color: var(--mainColor);
+  opacity: 0.4;
 }
+
 /* =========workout styling that will be dealt with in js ========== */
 .program {
   width: 80vw;
@@ -270,7 +262,7 @@ body {
 .program i {
   font-size: 15px;
   margin-left: 20px;
-  color: var(--eyeComfort);
+  color: var(--mainOrange);
   cursor: pointer;
   transition: 300ms ease-in;
 }
