@@ -17,6 +17,10 @@ const dietSchema = new mongoose.Schema(
       type: mongoose.Types.ObjectId,
       ref: "client",
     },
+
+    current: {
+      type: Boolean,
+    },
     macros: {
       type: Object,
     },

@@ -1,3 +1,4 @@
+const { boolean } = require("joi");
 const mongoose = require("mongoose");
 
 const workoutProgramSchema = new mongoose.Schema(
@@ -12,7 +13,13 @@ const workoutProgramSchema = new mongoose.Schema(
       ref: "coach",
       required: [true, "please provide coach"],
     },
-
+    createdFor: {
+      type: mongoose.Types.ObjectId,
+      ref: "client",
+    },
+    current: {
+      type: Boolean,
+    },
     weeks: {
       type: Array,
       required: [true, "please provide a plan"],

@@ -33,22 +33,25 @@
     <!-- ============class header the back btn and the add btn ===== -->
     <div class="header-container">
       <img src="../images/Arrow 2.svg" class="back-btn" alt="" />
-      <i class="fa-light fa-plus open-client-form-btn"></i>
+      <h3>clients</h3>
+      <i class="fa-solid fa-users-line"></i>
     </div>
     <!-- ===============client title ==================== -->
-    <div class="my-clients-title">
-      <h3>my clients</h3>
-      <span></span>
+    <div class="plus-btn-fixed">
+      <i class="fa-light fa-plus open-client-form-btn"></i>
     </div>
     <!-- ==============search input ===================== -->
     <div class="search-client-container">
+      <div class="search-icon-container">
+        <i class="fa-solid fa-magnifying-glass" id="search-icon-btn"></i>
+      </div>
       <input
         type="text"
+        class="search-client-input"
         placeholder="search for client"
         id="search-client-input"
         autocomplete="off"
       />
-      <i class="fa-solid fa-magnifying-glass" id="search-icon-btn"></i>
     </div>
 
     <!-- ===============create btn contianer with it header  -->
@@ -77,7 +80,7 @@
           data-close="register-container"
         ></i>
       </div>
-      <h3>let's get started!</h3>
+      <h3>create client</h3>
       <span class="line"></span>
       <div class="form-container">
         <div class="input-container">

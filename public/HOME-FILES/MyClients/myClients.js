@@ -5,6 +5,7 @@ const deleteVerificationContainer = document.querySelector(
 );
 const preLoader = document.querySelector(".gif");
 const searchCLientInput = document.getElementById("search-client-input");
+const searchIcon = document.querySelector(".search-icon-container");
 // ===============getClients when page open and display them =======
 localStorage.removeItem("cref");
 const getClients = async () => {
@@ -56,7 +57,9 @@ openClientForms.forEach((openClientForm) => {
     registerContainer.classList.add("open-container");
   });
 });
-
+searchIcon.addEventListener("click", () => {
+  searchCLientInput.classList.toggle("translate-input");
+});
 // =============close btns for each container so we save lines of code
 const closeBtns = document.querySelectorAll("#close-btn");
 const closeContainer = () => {

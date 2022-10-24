@@ -3,7 +3,7 @@ const { StatusCodes } = require("http-status-codes");
 
 // ===============get all workouts =================
 const getAllWorkoutPrograms = async (req, res) => {
-  const { name, page } = req.query;
+  const { name, page, createdFor } = req.query;
   const queryObject = {};
 
   if (name) {
@@ -28,6 +28,15 @@ const getAllWorkoutPrograms = async (req, res) => {
 
     res.status(StatusCodes.OK).json({ workoutprograms });
   }
+  if (createdFor) {
+    queryObject.createdBy = req.coach.coachId;
+    queryObject.createdFor = createdFor;
+    const workoutprograms = await WorkoutProgram.find(queryObject)
+      .sort("-createdAt")
+      .lean();
+
+    res.status(StatusCodes.OK).json({ workoutprograms });
+  }
 };
 
 // ============get one specific workout ==================
@@ -48,12 +57,31 @@ const getOneWorkoutProgram = async (req, res) => {
 // ===============create workout ========================
 const createWorkoutProgram = async (req, res) => {
   req.body.createdBy = req.coach.coachId;
+
   const workoutProgram = await WorkoutProgram.create({ ...req.body });
   res.status(StatusCodes.CREATED).json({ workoutProgram });
 };
 
 // =============update workout =======================
 const updateWorkoutProgram = async (req, res) => {
+  const { clientId } = req.query;
+  const queryObject = {};
+
+  if (clientId) {
+    queryObject._id = req.params;
+    queryObject.createdBy = req.coach.coachId;
+    queryObject.createdFor = clientId;
+    const workoutProgram = await WorkoutProgram.findOneAndUpdate(
+      {
+        queryObject,
+      },
+      req.body,
+      { new: true, runValidators: true }
+    );
+
+    res.status(StatusCodes.OK).json({ workoutProgram });
+  }
+
   const {
     coach: { coachId },
     params: { id: workoutProgramId },

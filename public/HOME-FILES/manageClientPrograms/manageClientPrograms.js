@@ -7,7 +7,7 @@ const deleteVerificationContainer = document.querySelector(
   ".delete-verification-section"
 );
 
-const createNewProgramBtn = document.querySelector(".create-workout-btn");
+const createNewProgramBtns = document.querySelectorAll("#create-workout-btn");
 const preLoader = document.querySelector(".gif");
 
 // ================GET WORKOUT FUNCTION , INCLUDE DISPLAYING ALL, LIVE SEARCH , DELETE FUNCTION =============================
@@ -17,9 +17,11 @@ let clientId = localStorage.getItem("cref");
 let wLength = JSON.parse(localStorage.getItem("wL"));
 let workoutPrograms = [];
 
-createNewProgramBtn.addEventListener("click", () => {
-  window.location =
-    "http://192.168.1.195:3000/createWorkout/createWorkout.html";
+createNewProgramBtns.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    window.location =
+      "http://192.168.1.195:3000/createWorkout/createWorkout.html";
+  });
 });
 
 // ================fetch workouts ===================
@@ -42,18 +44,6 @@ const getWorkouts = async () => {
   }
 };
 getWorkouts();
-
-// =================search click event ==========
-searchWorkoutIcon.addEventListener("click", async () => {
-  if (searchWorkoutInput.value.length > 0) {
-    searchFunction();
-  }
-  searchWorkoutInput.addEventListener("input", async () => {
-    if (searchWorkoutInput.value.length > 0) {
-      getWorkouts();
-    }
-  });
-});
 
 // ===============display Programs  function with all the show and hide logic ====================
 

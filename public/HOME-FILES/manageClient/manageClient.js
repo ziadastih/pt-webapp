@@ -71,12 +71,11 @@ disableBtn.addEventListener("click", async () => {
 });
 
 // =================== programs event listener ==========
-const myWorkoutsBtn = document.querySelector(".access-workouts");
+const clientProgramsBtn = document.querySelector(".access-workouts");
 
-myWorkoutsBtn.addEventListener("click", () => {
-  localStorage.setItem("wL", workoutProgramNumberStat.textContent);
+clientProgramsBtn.addEventListener("click", () => {
   window.location =
-    "http://192.168.1.195:3000/MyWorkoutsPrograms/myWorkouts.html";
+    "http://192.168.1.195:3000/manageClientPrograms/manageClientPrograms.html";
 });
 
 // =======================nutrition event listener =======

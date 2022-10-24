@@ -223,8 +223,14 @@ window.onbeforeunload = () => {
 const backBtn = document.querySelector(".back-btn");
 
 backBtn.addEventListener("click", () => {
-  window.location =
-    "http://192.168.1.195:3000/MyWorkoutsPrograms/myWorkouts.html";
+  let clientId = localStorage.getItem("cref");
+  if (clientId) {
+    window.location =
+      "http://192.168.1.195:3000/manageClientPrograms/manageClientPrograms.html";
+  } else {
+    window.location =
+      "http://192.168.1.195:3000/MyWorkoutsPrograms/myWorkouts.html";
+  }
 });
 // ===============event listener for adding program/ edit icon / and edit program name =============
 
@@ -251,14 +257,32 @@ editProgramNameBtn.addEventListener("click", () => {
 });
 
 editProgram.addEventListener("click", async () => {
-  let programIndex = localStorage.getItem("wo");
-  const Program = await axios.patch(`/api/v1/workoutProgram/${programIndex}`, {
-    name: program.name,
-    weeks: program.weeks,
-  });
-  window.onbeforeunload = null;
-  window.location =
-    "http://192.168.1.195:3000/MyWorkoutsPrograms/myWorkouts.html";
+  let clientId = localStorage.getItem("cref");
+  if (!clientId) {
+    let programIndex = localStorage.getItem("wo");
+    const Program = await axios.patch(
+      `/api/v1/workoutProgram/${programIndex}`,
+      {
+        name: program.name,
+        weeks: program.weeks,
+      }
+    );
+    window.onbeforeunload = null;
+    window.location =
+      "http://192.168.1.195:3000/MyWorkoutsPrograms/myWorkouts.html";
+  } else {
+    let programIndex = localStorage.getItem("wo");
+    const Program = await axios.patch(
+      `/api/v1/workoutProgram/${programIndex}?clientId=${clientId}`,
+      {
+        name: program.name,
+        weeks: program.weeks,
+      }
+    );
+    window.onbeforeunload = null;
+    window.location =
+      "http://192.168.1.195:3000/manageClientPrograms/manageClientPrograms.html";
+  }
 });
 
 daysBtn.forEach((day) => {

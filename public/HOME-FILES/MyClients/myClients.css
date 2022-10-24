@@ -137,6 +137,14 @@ body {
   justify-content: space-between;
   background-color: var(--mainColor);
 }
+.header-container h3 {
+  font-family: var(--fontSansSerif);
+  font-size: 24px;
+  font-weight: 400;
+  color: var(--whiteSmoke);
+  text-transform: capitalize;
+  letter-spacing: 1.2px;
+}
 .header-container img {
   margin-left: 30px;
   cursor: pointer;
@@ -144,52 +152,57 @@ body {
 .header-container i {
   margin-right: 30px;
   color: white;
-  font-size: 30px;
+  font-size: 20px;
   cursor: pointer;
 }
-/* ==================MY CLIENTS HEADER WITH THE SPAN LINE ======= */
-.my-clients-title {
-  width: 100vw;
-  margin-top: 20px;
+.plus-btn-fixed {
+  position: fixed;
+  background-color: var(--mainColor);
+  width: 50px;
+  height: 50px;
   display: flex;
   align-items: center;
   justify-content: center;
-
-  flex-direction: column;
-}
-.my-clients-title h3 {
-  font-family: var(--fontSansSerif);
-  font-size: 32px;
-  font-weight: 400;
-  color: var(--mainColor);
-  text-transform: capitalize;
-}
-.my-clients-title span {
-  margin-top: 5px;
-  width: 100px;
-  height: 1px;
-  background-color: var(--mainColor);
-  opacity: 0.5;
+  color: var(--whiteSmoke);
+  font-size: 30px;
+  bottom: 10vh;
+  z-index: 999;
+  left: 10px;
+  border-radius: 50%;
 }
 /* ==============THE SEARCH INPUT WITH THE SEARCH ICON ======== */
 .search-client-container {
-  width: 100vw;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  bottom: 17vh;
+  left: 10px;
+  z-index: 40;
+}
+.search-client-input {
+  width: 50vw;
+  height: 40px;
+  background-color: var(--mainColor);
+  color: var(--whiteSmoke);
+  transform: translateX(-200%);
+  transition: 300ms ease-in;
+}
+.search-client-input::placeholder {
+  color: whitesmoke;
+}
+.search-icon-container {
+  background-color: var(--mainColor);
+  width: 50px;
+  height: 50px;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 30px;
-}
-#search-client-input {
-  width: 50vw;
-  background-color: transparent;
-  border: 1px solid var(--mainColor);
-}
+  color: var(--whiteSmoke);
+  font-size: 15px;
 
-.search-client-container i {
-  position: absolute;
-  margin-left: 140px;
-  color: var(--mainColor);
-  cursor: pointer;
+  margin-right: 10px;
+  border-radius: 50%;
 }
 /* ============THE HEADER AND THE BTN WHEN THERE IS NO CLIENTS ==== */
 .btn-container {
@@ -224,22 +237,22 @@ body {
 /* ==========CLIENTS GERID CONTAINER AND IT COMPONENTS ======= */
 
 .clients-grid-container {
-  margin-top: 60px;
+  /* margin-top: 60px; */
   display: grid;
   grid-template-columns: repeat(1, auto);
   align-items: center;
   justify-content: center;
-  gap: 25px;
 
   width: 100vw;
-  margin-bottom: 20vh;
+  margin-bottom: 9vh;
 }
 
 .client {
-  width: 80vw;
-  min-height: 40px;
+  width: 100vw;
+  min-height: 60px;
   background-color: var(--whiteSmoke);
-  border-radius: 3px;
+  border-bottom: 1px solid var(--eyeComfort);
+
   color: var(--mainColor);
   font-weight: 500;
   display: flex;
@@ -249,21 +262,20 @@ body {
   font-size: 15px;
   text-transform: capitalize;
 }
+.client p {
+  font-size: 18px;
+}
 .client i {
   color: var(--eyeComfort);
-  margin-left: 20px;
+  margin-left: 30px;
 }
-.client p {
-  margin-left: 10px;
-  text-align: center;
-}
+
 .tools {
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  gap: 10px;
 
-  margin-right: 20px;
+  margin-right: 30px;
   cursor: pointer;
 }
 .tools i {
@@ -271,13 +283,13 @@ body {
 }
 
 .block-container {
-  position: absolute;
+  position: fixed;
   top: 50%;
   left: 50%;
 
   background-color: var(--mainColor);
   width: 80vw;
-  z-index: 20;
+  z-index: 50;
   display: none;
   align-items: center;
   justify-content: center;
@@ -384,7 +396,7 @@ body {
   opacity: 0.4;
 }
 .delete-verification-box {
-  background-color: whitesmoke;
+  background-color: var(--mainColor);
   height: 200px;
   width: 80vw;
   border-radius: 10px;
@@ -399,7 +411,7 @@ body {
   font-family: var(--fontSansSerif);
   font-weight: 400;
   font-size: 15px;
-  color: var(--mainColor);
+  color: var(--whiteSmoke);
   margin-bottom: 30px;
   width: 60vw;
   text-align: center;
@@ -425,8 +437,8 @@ body {
   justify-content: center;
   font-family: var(--fontSansSerif);
   font-size: 15px;
-  background-color: var(--mainColor);
-  color: whitesmoke;
+  background-color: var(--whiteSmoke);
+  color: var(--mainColor);
   font-weight: 400;
   border: none;
   cursor: pointer;
@@ -464,7 +476,7 @@ body {
   display: none;
 }
 
-.translate-page {
+.translate-input {
   transform: translateX(0);
 }
 

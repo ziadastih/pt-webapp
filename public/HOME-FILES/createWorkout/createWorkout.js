@@ -224,8 +224,14 @@ window.onbeforeunload = () => {
 const backBtn = document.querySelector(".back-btn");
 
 backBtn.addEventListener("click", () => {
-  window.location =
-    "http://192.168.1.195:3000/MyWorkoutsPrograms/myWorkouts.html";
+  let clientId = localStorage.getItem("cref");
+  if (clientId) {
+    window.location =
+      "http://192.168.1.195:3000/manageClientPrograms/manageClientPrograms.html";
+  } else {
+    window.location =
+      "http://192.168.1.195:3000/MyWorkoutsPrograms/myWorkouts.html";
+  }
 });
 // ===============event listener for adding program/ edit icon / and edit program name =============
 createProgramNameBtn.addEventListener("click", () => {
@@ -247,22 +253,45 @@ editProgramNameBtn.addEventListener("click", () => {
 
 // =============submit program event ===============
 submitProgram.addEventListener("click", async () => {
-  preLoader.classList.add("display-flex");
-  const Program = await axios.post("/api/v1/workoutProgram", {
-    name: program.name,
-    weeks: program.weeks,
-  });
-  const { data } = await axios.get("/api/v1/dataLength");
+  let clientId = localStorage.getItem("cref");
+  if (clientId) {
+    preLoader.classList.add("display-flex");
+    const Program = await axios.post("/api/v1/workoutProgram", {
+      name: program.name,
+      weeks: program.weeks,
+      createdFor: clientId,
+      current: true,
+    });
+    const { data } = await axios.get("/api/v1/dataLength");
 
-  let workoutLength = data.dataLength[0].workoutLength + 1;
-  await axios.patch("/api/v1/dataLength", {
-    workoutLength: workoutLength,
-  });
-  localStorage.setItem("wL", JSON.stringify(workoutLength));
-  preLoader.classList.remove("display-flex");
-  window.onbeforeunload = null;
-  window.location =
-    "http://192.168.1.195:3000/MyWorkoutsPrograms/myWorkouts.html";
+    let workoutLength = data.dataLength[0].workoutLength + 1;
+    await axios.patch("/api/v1/dataLength", {
+      workoutLength: workoutLength,
+    });
+    localStorage.setItem("wL", JSON.stringify(workoutLength));
+    preLoader.classList.remove("display-flex");
+    window.onbeforeunload = null;
+
+    window.location =
+      "http://192.168.1.195:3000/manageClientPrograms/manageClientPrograms.html";
+  } else {
+    preLoader.classList.add("display-flex");
+    const Program = await axios.post("/api/v1/workoutProgram", {
+      name: program.name,
+      weeks: program.weeks,
+    });
+    const { data } = await axios.get("/api/v1/dataLength");
+
+    let workoutLength = data.dataLength[0].workoutLength + 1;
+    await axios.patch("/api/v1/dataLength", {
+      workoutLength: workoutLength,
+    });
+    localStorage.setItem("wL", JSON.stringify(workoutLength));
+    preLoader.classList.remove("display-flex");
+    window.onbeforeunload = null;
+    window.location =
+      "http://192.168.1.195:3000/MyWorkoutsPrograms/myWorkouts.html";
+  }
 });
 
 daysBtn.forEach((day) => {
