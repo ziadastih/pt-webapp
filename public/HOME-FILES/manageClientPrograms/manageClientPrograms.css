@@ -144,7 +144,19 @@ input[type="search"]::-webkit-search-results-decoration {
   height: 100px;
   z-index: 999;
 }
+.overlay {
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  position: fixed;
+  display: none;
+  background-color: var(--bodyBackgroud);
 
+  opacity: 0.8;
+  height: 100vh;
+  width: 100vw;
+  z-index: 3;
+}
 /* ==================END OF GLOBAL CLASSES ========================  */
 
 body {
@@ -225,7 +237,7 @@ body {
   left: -10px;
 
   color: var(--mainColor);
-  z-index: 20;
+  z-index: 2;
 }
 
 #none-current {
@@ -559,6 +571,124 @@ body {
 
 /* END OF PROGRAM CONTAINER ==================== */
 
+/* ===================overall container of the exercises , width 100vw so we center all in center but same time flex start from top  */
+.add-program-container {
+  width: 100vw;
+  height: 60vh;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  display: none;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  z-index: 100;
+}
+/* ==============the sub container which has all the content */
+.add-program-content {
+  width: 80vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: var(--whiteSmoke);
+  border-radius: 5px;
+}
+/* ===================add exercises header , has the title of the container and the close btn  */
+.add-program-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 70vw;
+  color: var(--mainColor);
+  font-family: var(--fontSansSerif);
+  font-weight: 500;
+  text-transform: capitalize;
+  font-size: 15px;
+
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+.program-input-container i {
+  position: absolute;
+  font-size: 10px;
+  margin-left: -30px;
+  margin-top: 15px;
+  color: var(--mainColor);
+}
+
+.search-input {
+  width: 70vw;
+  background-color: transparent;
+  border: 1px solid var(--mainColor);
+}
+
+.program-split-line {
+  width: 70vw;
+  background-color: var(--bodyBackgroud);
+  height: 1px;
+  margin-top: 20px;
+}
+
+/* ===============exercise container ================= */
+
+.program-list-container {
+  display: flex;
+  align-items: center;
+  width: 100vw;
+  height: 300px;
+  justify-content: flex-start;
+  flex-direction: column;
+  margin-top: 20px;
+  overflow-y: scroll;
+  position: relative;
+  gap: 20px;
+}
+
+.program-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  width: 70vw;
+  height: 40px;
+  font-family: var(--fontSansSerif);
+  color: var(--mainColor);
+  font-size: 12px;
+  margin-bottom: 20px;
+  gap: 10px;
+}
+.program-name {
+  display: flex;
+  align-items: center;
+  text-transform: capitalize;
+
+  text-align: start;
+
+  word-wrap: break-word;
+
+  height: 40px;
+}
+.check-box {
+  width: 10px;
+  height: 10px;
+  border: 1px solid var(--mainColor);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 8px;
+  color: var(--whiteSmoke);
+  transition: 200ms ease-in;
+}
+.check-icon {
+  opacity: 0;
+  transition: 200ms ease-in;
+}
+
 /* ==============delete verification box =========== */
 .delete-verification-section {
   position: fixed;
@@ -572,13 +702,7 @@ body {
 
   z-index: 40;
 }
-.overlay {
-  position: absolute;
-  height: 100vh;
-  width: 100vw;
-  background-color: var(--mainColor);
-  opacity: 0.4;
-}
+
 .delete-verification-box {
   background-color: whitesmoke;
   height: 200px;
@@ -687,4 +811,7 @@ body {
 }
 .translate-container {
   transform: translateY(0);
+}
+.change-check-box-background {
+  background-color: var(--mainColor);
 }

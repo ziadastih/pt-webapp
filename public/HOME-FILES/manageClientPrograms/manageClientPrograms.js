@@ -1,3 +1,5 @@
+let selectedPrograms = [];
+
 // ==============select verification container and input container =========================
 const btnContainer = document.querySelector(".btn-container");
 const programGridContainer = document.querySelector(
@@ -10,6 +12,11 @@ const deleteVerificationContainer = document.querySelector(
 const createNewProgramBtns = document.querySelectorAll("#create-workout-btn");
 const preLoader = document.querySelector(".gif");
 const addExistingProgram = document.querySelector("#add-workout-btn");
+const programListContainer = document.querySelector(".program-list-container");
+const closeBtn = document.querySelector("#close-btn");
+const addProgramContainer = document.querySelector(".add-program-container");
+const confirmProgramBtn = document.querySelector("#confirm-program");
+const overlay = document.querySelector(".overlay");
 // ================GET WORKOUT FUNCTION , INCLUDE DISPLAYING ALL, LIVE SEARCH , DELETE FUNCTION =============================
 
 localStorage.removeItem("wo");
@@ -25,10 +32,42 @@ createNewProgramBtns.forEach((btn) => {
 });
 
 addExistingProgram.addEventListener("click", async () => {
+  addProgramContainer.classList.add("open-container");
   console.log(performance.now());
+  preLoader.classList.remove("display-none");
+  overlay.classList.add("open-container");
   const { data } = await axios.get(`/api/v1/workoutProgram?addFor=1`);
-  console.log(performance.now());
-  console.log(data);
+  preLoader.classList.add("display-none");
+  displayProgramsArray(data.workoutprograms);
+});
+confirmProgramBtn.addEventListener("click", async () => {
+  preLoader.classList.remove("display-none");
+  for (let i = 0; i < selectedPrograms.length; i++) {
+    selectedPrograms[i].createdFor = clientId;
+    selectedPrograms[i].current = true;
+
+    delete selectedPrograms[i]["_id"];
+    const program = await axios.post(
+      "/api/v1/workoutprogram",
+      selectedPrograms[i]
+    );
+    const { data } = await axios.get("/api/v1/dataLength");
+
+    let workoutLength = data.dataLength[0].workoutLength + 1;
+    await axios.patch("/api/v1/dataLength", {
+      workoutLength: workoutLength,
+    });
+    localStorage.setItem("wL", JSON.stringify(workoutLength));
+  }
+  selectedPrograms = [];
+  preLoader.classList.remove("display-none");
+  overlay.classList.remove("open-container");
+  addProgramContainer.classList.remove("open-container");
+  getWorkouts();
+});
+closeBtn.addEventListener("click", () => {
+  addProgramContainer.classList.remove("open-container");
+  overlay.classList.remove("open-container");
 });
 
 // ================fetch workouts ===================
@@ -41,6 +80,7 @@ const getWorkouts = async () => {
 
     preLoader.classList.add("display-none");
     btnContainer.classList.add("show-opacity");
+
     //  =========if length is === 0 means no workouts we want to display the create item =============
     const length = data.workoutprograms.length;
 
@@ -220,6 +260,7 @@ const displayAllPrograms = (programPlan) => {
 
   deleteWorkout.forEach((deleteBtn) => {
     deleteBtn.addEventListener("click", (e) => {
+      overlay.classList.add("open-container");
       let workoutId = e.target.dataset.delete;
       let workoutIndex = e.target.dataset.index;
       let workoutName =
@@ -238,6 +279,7 @@ const displayAllPrograms = (programPlan) => {
       const noBtn = document.querySelector(".no-btn");
       noBtn.addEventListener("click", () => {
         deleteVerificationContainer.classList.remove("open-container");
+        overlay.classList.remove("open-container");
       });
 
       // ===confirmation for delete program ====================
@@ -256,7 +298,7 @@ const displayAllPrograms = (programPlan) => {
           workoutLength: workoutLength,
         });
         programPlan.splice(index, 1);
-
+        overlay.classList.remove("open-container");
         deleteVerificationContainer.classList.remove("open-container");
         preLoader.classList.add("display-none");
         wLength = wLength - 1;
@@ -672,3 +714,37 @@ const chosenDsSuperset = (exercise, i, oneWorkout) => {
 </div>`;
 };
 // ================end of chosen exercises ===============
+
+const displayProgramsArray = (arr) => {
+  programListContainer.innerHTML = "";
+  for (let i = 0; i < arr.length; i++) {
+    const createdAt = arr[i].createdAt.slice(0, 10);
+    programListContainer.innerHTML += `<div class="program-content">
+    <span class="check-box" data-program =${i}
+      ><i class="fa-solid fa-check" id="check-icon"></i
+    ></span>
+   
+    <p class="program-name">${arr[i].name}</p>
+    <p>${createdAt}</p>
+  </div>`;
+  }
+  // ===================managing the checkbox and pushing or removing the exercises to selected exercises array
+  const checkbox = document.querySelectorAll(".check-box");
+  checkbox.forEach((box) => {
+    box.addEventListener("click", (e) => {
+      let programIndex = box.dataset.program;
+      const index = selectedPrograms.findIndex((Element) => {
+        return Element._id === arr[programIndex]._id;
+      });
+      if (index !== -1) {
+        selectedPrograms.splice(index, 1);
+        console.log(selectedPrograms);
+      } else {
+        selectedPrograms.push(arr[programIndex]);
+        console.log(selectedPrograms);
+      }
+
+      box.classList.toggle("change-check-box-background");
+    });
+  });
+};

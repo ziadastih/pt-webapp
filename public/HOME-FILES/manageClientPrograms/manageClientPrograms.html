@@ -29,6 +29,7 @@
   </head>
   <body>
     <div class="gif"></div>
+    <div class="overlay"></div>
     <!-- ============class header the back btn and the add btn ===== -->
     <div class="header-container">
       <img src="../images/Arrow 2.svg" class="back-btn" alt="" />
@@ -46,10 +47,36 @@
       </button>
       <button class="add-workout-btn btn" id="add-workout-btn">add</button>
     </div>
-    <!-- =============delete verification box ======== -->
-    <div class="delete-verification-section">
-      <div class="overlay"></div>
+    <!-- =====================add exercices container ================= -->
+    <div class="add-program-container">
+      <div class="add-program-content">
+        <div class="add-program-header">
+          <h2>add program</h2>
+          <i
+            class="fa-solid fa-xmark"
+            id="close-btn"
+            data-close="add-program-container"
+          ></i>
+        </div>
+
+        <div class="program-input-container">
+          <input
+            type="search"
+            placeholder="search for program"
+            class="search-input"
+          />
+          <i class="fa-solid fa-magnifying-glass" id="search-icon-btn"></i>
+        </div>
+        <span class="program-split-line"></span>
+
+        <div class="program-list-container"></div>
+        <span class="program-split-line"></span>
+
+        <button class="full-btn" id="confirm-program">confirm</button>
+      </div>
     </div>
+    <!-- =============delete verification box ======== -->
+    <div class="delete-verification-section"></div>
     <!-- =================== coach nav bar ============================== -->
     <nav class="global-nav coach-nav-bar">
       <p id="user-home-nav-btn">
