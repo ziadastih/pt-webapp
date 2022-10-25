@@ -7,6 +7,7 @@ const { BadRequestError, NotFoundError } = require("../errors");
 const getallClients = async (req, res) => {
   const { name, count, length } = req.query;
   const queryObject = {};
+
   if (length) {
     const client = await Client.find({
       createdBy: req.coach.coachId,

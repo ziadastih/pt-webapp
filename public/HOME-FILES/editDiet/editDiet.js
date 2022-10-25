@@ -214,9 +214,17 @@ window.onbeforeunload = () => {
 const backBtn = document.querySelector(".back-btn");
 
 backBtn.addEventListener("click", () => {
-  window.location = "http://192.168.1.195:3000/MyNutrition/myNutrition.html";
+  let clientId = localStorage.getItem("cref");
+  if (clientId) {
+    window.location =
+      "http://192.168.1.195:3000/manageClientNutrition/manageClientNutrition.html";
+  } else {
+    window.location = "http://192.168.1.195:3000/MyNutrition/myNutrition.html";
+  }
 });
 editDietBtn.addEventListener("click", async () => {
+  let clientId = localStorage.getItem("cref");
+
   preLoader.classList.add("display-flex");
   const diet = await axios.patch(`/api/v1/diet/${localId}`, {
     name: Diet.name,
@@ -230,8 +238,14 @@ editDietBtn.addEventListener("click", async () => {
   });
 
   preLoader.classList.remove("display-flex");
-  window.onbeforeunload = null;
-  window.location = "http://192.168.1.195:3000/MyNutrition/myNutrition.html";
+  if (clientId) {
+    window.onbeforeunload = null;
+    window.location =
+      "http://192.168.1.195:3000/manageClientNutrition/manageClientNutrition.html";
+  } else {
+    window.onbeforeunload = null;
+    window.location = "http://192.168.1.195:3000/MyNutrition/myNutrition.html";
+  }
 });
 // ===============event listener for adding program/ edit icon / and edit program name =============
 

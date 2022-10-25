@@ -3,8 +3,24 @@ const { StatusCodes } = require("http-status-codes");
 
 // ==================get all diets ===================
 const getAllDiets = async (req, res) => {
-  const { name, page } = req.query;
+  const { name, page, addFor, createdFor } = req.query;
   const queryObject = {};
+
+  if (addFor) {
+    const diets = await Diet.find({
+      createdBy: req.coach.coachId,
+      createdFor: null,
+    });
+    res.status(StatusCodes.OK).json({ diets });
+  }
+  if (createdFor) {
+    queryObject.createdBy = req.coach.coachId;
+    queryObject.createdFor = createdFor;
+    const diets = await Diet.find(queryObject)
+    .lean();
+
+    res.status(StatusCodes.OK).json({ diets });
+  }
 
   if (name) {
     queryObject.name = { $regex: name, $options: "i" };

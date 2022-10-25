@@ -205,33 +205,67 @@ window.onbeforeunload = () => {
 const backBtn = document.querySelector(".back-btn");
 
 backBtn.addEventListener("click", () => {
-  window.location = "http://192.168.1.195:3000/MyNutrition/myNutrition.html";
+  let clientId = localStorage.getItem("cref");
+  if (clientId) {
+    window.location =
+      "http://192.168.1.195:3000/manageClientNutrition/manageClientNutrition.html";
+  } else {
+    window.location = "http://192.168.1.195:3000/MyNutrition/myNutrition.html";
+  }
 });
 
 // =============submit diet event listener ===========
 
 submitDietBtn.addEventListener("click", async () => {
-  preLoader.classList.add("display-flex");
-  const diet = await axios.post("/api/v1/diet", {
-    name: Diet.name,
-    meals: Diet.meals,
-    macros: {
-      calories: totalDietCal.textContent,
-      protein: totalDietProt.textContent,
-      carbs: totalDietCarbs.textContent,
-      fat: totalDietFat.textContent,
-    },
-  });
-  const { data } = await axios.get("/api/v1/dataLength");
+  let clientId = localStorage.getItem("cref");
+  if (clientId) {
+    preLoader.classList.add("display-flex");
+    const diet = await axios.post("/api/v1/diet", {
+      name: Diet.name,
+      meals: Diet.meals,
+      macros: {
+        calories: totalDietCal.textContent,
+        protein: totalDietProt.textContent,
+        carbs: totalDietCarbs.textContent,
+        fat: totalDietFat.textContent,
+      },
+      createdFor: clientId,
+      current: true,
+    });
+    const { data } = await axios.get("/api/v1/dataLength");
 
-  let dietLength = data.dataLength[0].dietLength + 1;
-  await axios.patch("/api/v1/dataLength", {
-    dietLength: dietLength,
-  });
-  localStorage.setItem("dL", JSON.stringify(dietLength));
-  preLoader.classList.remove("display-flex");
-  window.onbeforeunload = null;
-  window.location = "http://192.168.1.195:3000/MyNutrition/myNutrition.html";
+    let dietLength = data.dataLength[0].dietLength + 1;
+    await axios.patch("/api/v1/dataLength", {
+      dietLength: dietLength,
+    });
+    localStorage.setItem("dL", JSON.stringify(dietLength));
+    preLoader.classList.remove("display-flex");
+    window.onbeforeunload = null;
+    window.location =
+      "http://192.168.1.195:3000/manageClientNutrition/manageClientNutrition.html";
+  } else {
+    preLoader.classList.add("display-flex");
+    const diet = await axios.post("/api/v1/diet", {
+      name: Diet.name,
+      meals: Diet.meals,
+      macros: {
+        calories: totalDietCal.textContent,
+        protein: totalDietProt.textContent,
+        carbs: totalDietCarbs.textContent,
+        fat: totalDietFat.textContent,
+      },
+    });
+    const { data } = await axios.get("/api/v1/dataLength");
+
+    let dietLength = data.dataLength[0].dietLength + 1;
+    await axios.patch("/api/v1/dataLength", {
+      dietLength: dietLength,
+    });
+    localStorage.setItem("dL", JSON.stringify(dietLength));
+    preLoader.classList.remove("display-flex");
+    window.onbeforeunload = null;
+    window.location = "http://192.168.1.195:3000/MyNutrition/myNutrition.html";
+  }
 });
 
 // ===============event listener for adding program/ edit icon / and edit program name =============

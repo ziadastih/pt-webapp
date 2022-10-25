@@ -24,45 +24,56 @@
       href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="myNutrition.css" />
+    <link rel="stylesheet" href="manageClientNutrition.css" />
     <title>My Clients</title>
   </head>
   <body>
     <div class="gif"></div>
+    <div class="overlay"></div>
     <!-- ============class header the back btn and the add btn ===== -->
     <div class="header-container">
       <img src="../images/Arrow 2.svg" class="back-btn" alt="" />
-      <i class="fa-light fa-plus create-nutrition-btn"></i>
-    </div>
-    <!-- ===============program title ==================== -->
-    <div class="my-nutrition-title">
       <h3>nutrition</h3>
-      <span></span>
-    </div>
-    <!-- ==============search input ===================== -->
-    <div class="search-nutrition-container">
-      <input
-        type="search"
-        placeholder="search for diet"
-        id="search-nutrition-input"
-      />
-      <i class="fa-solid fa-magnifying-glass" id="search-icon-btn"></i>
+      <i class="fa-solid fa-bowl-food"></i>
     </div>
 
-    <!-- ===============create btn contianer with it header  -->
-    <div class="btn-container">
-      <h3>create new Diet</h3>
-      <button class="create-nutrition-btn btn">create</button>
-    </div>
     <!-- ==============the grid program container where we display our workouts  -->
     <div class="nutrition-programs-grid-container"></div>
-    <div class="show-more">
-      <i class="fa-regular fa-square-caret-down fetch-more"></i>
+    <!-- ===============create btn contianer with it header  -->
+    <div class="btn-container">
+      <button class="create-diet-btn btn" id="create-diet-btn">create</button>
+      <button class="add-diet-btn btn" id="add-diet-btn">add</button>
+    </div>
+    <!-- =====================add program container ================= -->
+    <div class="add-diet-container">
+      <div class="add-diet-content">
+        <div class="add-diet-header">
+          <h2>add diet</h2>
+          <i
+            class="fa-solid fa-xmark"
+            id="close-btn"
+            data-close="add-diet-container"
+          ></i>
+        </div>
+
+        <div class="diet-input-container">
+          <input
+            type="search"
+            placeholder="search for diet"
+            class="search-input"
+          />
+          <i class="fa-solid fa-magnifying-glass" id="search-icon-btn"></i>
+        </div>
+        <span class="diet-split-line"></span>
+
+        <div class="diet-list-container"></div>
+        <span class="diet-split-line"></span>
+
+        <button class="full-btn" id="confirm-diet">confirm</button>
+      </div>
     </div>
     <!-- =============delete verification box ======== -->
-    <div class="delete-verification-section">
-      <div class="overlay"></div>
-    </div>
+    <div class="delete-verification-section"></div>
     <!-- =================== coach nav bar ============================== -->
     <nav class="global-nav coach-nav-bar">
       <p id="user-home-nav-btn">
@@ -75,6 +86,6 @@
       <p id="user-logout-nav-btn">logout</p>
     </nav>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script src="myNutrition.js"></script>
+    <script src="manageClientNutrition.js"></script>
   </body>
 </html>

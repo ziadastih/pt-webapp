@@ -1,5 +1,3 @@
-let selectedPrograms = [];
-
 // ==============select verification container and input container =========================
 const btnContainer = document.querySelector(".btn-container");
 const programGridContainer = document.querySelector(
@@ -17,12 +15,14 @@ const closeBtn = document.querySelector("#close-btn");
 const addProgramContainer = document.querySelector(".add-program-container");
 const confirmProgramBtn = document.querySelector("#confirm-program");
 const overlay = document.querySelector(".overlay");
+const searchInput = document.querySelector(".search-input");
 // ================GET WORKOUT FUNCTION , INCLUDE DISPLAYING ALL, LIVE SEARCH , DELETE FUNCTION =============================
 
 localStorage.removeItem("wo");
 let clientId = localStorage.getItem("cref");
 let wLength = JSON.parse(localStorage.getItem("wL"));
 let workoutPrograms = [];
+let selectedPrograms = [];
 
 createNewProgramBtns.forEach((btn) => {
   btn.addEventListener("click", () => {
@@ -68,6 +68,10 @@ confirmProgramBtn.addEventListener("click", async () => {
 closeBtn.addEventListener("click", () => {
   addProgramContainer.classList.remove("open-container");
   overlay.classList.remove("open-container");
+});
+// =====================search input ==============
+searchInput.addEventListener("input", () => {
+  liveSearch();
 });
 
 // ================fetch workouts ===================
@@ -160,10 +164,10 @@ const displayAllPrograms = (programPlan) => {
     }
     programGridContainer.innerHTML += `<div class="program-container">
       <div class="current-stars-container" data-current=${filterCurrent[i]._id}>
-      <i class="fa-solid fa-dumbbell" id="filled-star"></i>
+      <i class="fa-solid fa-dumbbell" id="filled-dumbbell"></i>
      
       </div>
-      <i class="fa-solid fa-dumbbell" id="none-current" data-current=${filterCurrent[i]._id}></i>
+     
       
       <div class="program">
       <i class="fa-solid fa-angle-up" id="show-program" data-overview=${i}></i>
@@ -194,11 +198,11 @@ const displayAllPrograms = (programPlan) => {
       filterNoneCurrent[i].name = `${filterNoneCurrent[i].name.slice(0, 13)}..`;
     }
     programGridContainer.innerHTML += `<div class="program-container">
-      <div class="current-stars-container display-none" data-current=${filterNoneCurrent[i]._id}>
-      <i class="fa-solid fa-dumbbell" id="filled-star"></i>
+      <div class="current-stars-container not-current" data-current=${filterNoneCurrent[i]._id}>
+      <i class="fa-solid fa-dumbbell" id="filled-dumbbell"></i>
     
       </div>
-      <i class="fa-solid fa-dumbbell" id="none-current" data-current=${filterNoneCurrent[i]._id}></i>
+      
       
       <div class="program">
       <i class="fa-solid fa-angle-up" id="show-program" data-overview=${i}></i>
@@ -225,36 +229,37 @@ const displayAllPrograms = (programPlan) => {
   const currentStarsContainer = document.querySelectorAll(
     ".current-stars-container"
   );
-  const noneCurrentBtns = document.querySelectorAll("#none-current");
 
   currentStarsContainer.forEach((btn) => {
     btn.addEventListener("click", async () => {
+      console.log(btn);
       let workoutId = btn.dataset.current;
+      if (btn.classList.contains("not-current")) {
+        preLoader.classList.remove("display-none");
 
-      preLoader.classList.remove("display-none");
-      const program = await axios.patch(`/api/v1/workoutProgram/${workoutId}`, {
-        current: false,
-      });
+        const program = await axios.patch(
+          `/api/v1/workoutProgram/${workoutId}`,
+          {
+            current: true,
+          }
+        );
+        btn.classList.remove("not-current");
+        preLoader.classList.add("display-none");
+      } else {
+        preLoader.classList.remove("display-none");
 
-      preLoader.classList.add("display-none");
-      btn.classList.add("display-none");
+        const program = await axios.patch(
+          `/api/v1/workoutProgram/${workoutId}`,
+          {
+            current: false,
+          }
+        );
+        btn.classList.add("not-current");
+        preLoader.classList.add("display-none");
+      }
     });
   });
 
-  noneCurrentBtns.forEach((btn) => {
-    btn.addEventListener("click", async () => {
-      let workoutId = btn.dataset.current;
-
-      preLoader.classList.remove("display-none");
-      const program = await axios.patch(`/api/v1/workoutProgram/${workoutId}`, {
-        current: true,
-      });
-
-      preLoader.classList.add("display-none");
-      let hightlightedStar = btn.previousElementSibling;
-      hightlightedStar.classList.remove("display-none");
-    });
-  });
   // ===========delete program ==============
   const deleteWorkout = document.querySelectorAll("#delete-workout");
 
@@ -304,7 +309,7 @@ const displayAllPrograms = (programPlan) => {
         wLength = wLength - 1;
         localStorage.setItem("wL", JSON.stringify(wLength));
 
-        displayProgramInfo(programPlan);
+        getWorkouts();
       });
     });
   });
@@ -746,5 +751,25 @@ const displayProgramsArray = (arr) => {
 
       box.classList.toggle("change-check-box-background");
     });
+  });
+};
+
+// =============live search for diets  ==================
+
+const liveSearch = () => {
+  const programContent = document.querySelectorAll(".program-content");
+  let inputCharacter = searchInput.value.toUpperCase();
+
+  programContent.forEach((program) => {
+    // ============show all item when input is empty again
+    if (searchInput === "") {
+      program.classList.remove("display-none");
+    }
+    // ==========search by charachter, display the ones that match,remove the ones that doesnt match================
+    if (program.textContent.toUpperCase().includes(inputCharacter)) {
+      program.classList.remove("display-none");
+    } else if (!program.textContent.toUpperCase().includes(inputCharacter)) {
+      program.classList.add("display-none");
+    }
   });
 };
