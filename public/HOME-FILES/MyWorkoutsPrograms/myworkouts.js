@@ -12,6 +12,7 @@ const goToCreateProgram = document.getElementById("go-to-create-program");
 const createNewProgramBtn = document.querySelector(".create-workout-btn");
 const preLoader = document.querySelector(".gif");
 const fetchMore = document.querySelector(".fetch-more");
+const overlay = document.querySelector(".overlay");
 // ================GET WORKOUT FUNCTION , INCLUDE DISPLAYING ALL, LIVE SEARCH , DELETE FUNCTION =============================
 
 localStorage.removeItem("wo");
@@ -184,7 +185,7 @@ const displayAllPrograms = (programPlan) => {
       let workoutIndex = e.target.dataset.index;
       let workoutName =
         e.target.parentElement.previousElementSibling.textContent;
-
+      overlay.classList.add("open-container");
       deleteVerificationContainer.classList.add("open-container");
       deleteVerificationContainer.innerHTML = ` 
       <div class="delete-verification-box">
@@ -197,6 +198,7 @@ const displayAllPrograms = (programPlan) => {
 
       const noBtn = document.querySelector(".no-btn");
       noBtn.addEventListener("click", () => {
+        overlay.classList.remove("open-container");
         deleteVerificationContainer.classList.remove("open-container");
       });
 
@@ -216,7 +218,7 @@ const displayAllPrograms = (programPlan) => {
           workoutLength: workoutLength,
         });
         programPlan.splice(index, 1);
-
+        overlay.classList.remove("open-container");
         deleteVerificationContainer.classList.remove("open-container");
         preLoader.classList.add("display-none");
         wLength = wLength - 1;

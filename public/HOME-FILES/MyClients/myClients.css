@@ -121,6 +121,19 @@ input[type="search"]::-webkit-search-results-decoration {
   height: 100px;
   z-index: 999;
 }
+.overlay {
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  position: fixed;
+  display: none;
+  background-color: var(--bodyBackgroud);
+
+  opacity: 0.8;
+  height: 100vh;
+  width: 100vw;
+  z-index: 30;
+}
 /* ==================END OF GLOBAL CLASSES ========================  */
 
 body {
@@ -166,7 +179,7 @@ body {
   color: var(--whiteSmoke);
   font-size: 30px;
   bottom: 10vh;
-  z-index: 999;
+  z-index: 20;
   left: 10px;
   border-radius: 50%;
 }
@@ -178,7 +191,7 @@ body {
   justify-content: space-between;
   bottom: 17vh;
   left: 10px;
-  z-index: 40;
+  z-index: 20;
 }
 .search-client-input {
   width: 50vw;
@@ -388,13 +401,7 @@ body {
 
   z-index: 40;
 }
-.overlay {
-  position: absolute;
-  height: 100vh;
-  width: 100vw;
-  background-color: var(--mainColor);
-  opacity: 0.4;
-}
+
 .delete-verification-box {
   background-color: var(--mainColor);
   height: 200px;

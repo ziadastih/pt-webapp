@@ -10,8 +10,8 @@ const diets = require("./models/dietSchema");
 const start = async () => {
   try {
     await connectDB(process.env.PT_URI);
-    await clients.deleteMany();
-    await clients.create(clientsPop);
+    await diets.deleteMany();
+    await diets.create(dietPlans);
     console.log("Success!!!!");
     process.exit(0);
   } catch (error) {

@@ -3,6 +3,7 @@ const clientsGridContainer = document.querySelector(".clients-grid-container");
 const deleteVerificationContainer = document.querySelector(
   ".delete-verification-section"
 );
+const overlay = document.querySelector(".overlay");
 const preLoader = document.querySelector(".gif");
 const searchCLientInput = document.getElementById("search-client-input");
 const searchIcon = document.querySelector(".search-icon-container");
@@ -54,6 +55,7 @@ getClients();
 const openClientForms = document.querySelectorAll(".open-client-form-btn");
 openClientForms.forEach((openClientForm) => {
   openClientForm.addEventListener("click", () => {
+    overlay.classList.add("open-container");
     registerContainer.classList.add("open-container");
   });
 });
@@ -67,6 +69,7 @@ const closeContainer = () => {
     closeBtn.addEventListener("click", (e) => {
       let id = e.target.dataset.close;
       let container = document.querySelector(`.${id}`);
+      overlay.classList.remove("open-container");
       container.classList.remove("open-container");
     });
   });
@@ -135,6 +138,7 @@ registerBtn.addEventListener("click", async (e) => {
     registerLastName.value = "";
     registerEmail.value = "";
     registerNumber.value = "";
+    overlay.classList.remove("open-container");
     btnContainer.classList.add("display-none");
     registerContainer.classList.remove("open-container");
   } catch (error) {
@@ -201,6 +205,7 @@ const displayClients = (client) => {
 
   deleteClient.forEach((deleteBtn) => {
     deleteBtn.addEventListener("click", (e) => {
+      overlay.classList.add("open-container");
       let clientId = e.target.dataset.delete;
       let clientName =
         e.target.parentElement.previousElementSibling.textContent;
@@ -217,6 +222,7 @@ const displayClients = (client) => {
 
       const noBtn = document.querySelector(".no-btn");
       noBtn.addEventListener("click", () => {
+        overlay.classList.remove("open-container");
         deleteVerificationContainer.classList.remove("open-container");
       });
       const yesBtn = document.querySelector(".yes-btn");
@@ -230,6 +236,7 @@ const displayClients = (client) => {
         let clientLength = data.dataLength[0].clientLength - 1;
         await axios.patch("/api/v1/dataLength", { clientLength: clientLength });
         preLoader.classList.add("display-none");
+        overlay.classList.remove("open-container");
         deleteVerificationContainer.classList.remove("open-container");
         searchCLientInput.value = "";
         getClients();

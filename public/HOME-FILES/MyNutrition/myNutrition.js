@@ -7,6 +7,7 @@ const fetchMore = document.querySelector(".fetch-more");
 const deleteVerificationContainer = document.querySelector(
   ".delete-verification-section"
 );
+const overlay = document.querySelector(".overlay");
 const searchDietInput = document.getElementById("search-nutrition-input");
 const searchDietIcon = document.getElementById("search-icon-btn");
 // ================GET WORKOUT FUNCTION , INCLUDE DISPLAYING ALL, LIVE SEARCH , DELETE FUNCTION =============================
@@ -161,7 +162,7 @@ const displayAllPrograms = (Diets) => {
       let dietId = e.target.dataset.delete;
       let dietIndex = e.target.dataset.index;
       let dietName = e.target.parentElement.previousElementSibling.textContent;
-
+      overlay.classList.add("open-container");
       deleteVerificationContainer.classList.add("open-container");
       deleteVerificationContainer.innerHTML = ` 
       <div class="delete-verification-box">
@@ -174,6 +175,7 @@ const displayAllPrograms = (Diets) => {
 
       const noBtn = document.querySelector(".no-btn");
       noBtn.addEventListener("click", () => {
+        overlay.classList.remove("open-container");
         deleteVerificationContainer.classList.remove("open-container");
       });
 
@@ -193,7 +195,7 @@ const displayAllPrograms = (Diets) => {
           dietLength: dietLength,
         });
         dietsArr.splice(index, 1);
-
+        overlay.classList.remove("open-container");
         deleteVerificationContainer.classList.remove("open-container");
         preLoader.classList.add("display-none");
         dLength = dLength - 1;
