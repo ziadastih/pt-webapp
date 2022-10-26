@@ -248,7 +248,7 @@ editProgramNameIcon.addEventListener("click", () => {
 });
 
 editProgramNameBtn.addEventListener("click", () => {
-  addProgramName();
+  editProgramNameFunc();
 });
 
 // =============submit program event ===============
@@ -490,6 +490,18 @@ const addProgramName = () => {
     createProgramNameContainer.classList.add("display-none");
     program.name = programNameInput.value;
     submitProgram.classList.add("display-none");
+  }
+};
+
+const editProgramNameFunc = () => {
+  if (programNameInput.value.length === 0) {
+    showAlert(nameInputAlert);
+  } else {
+    programName.textContent = programNameInput.value;
+    editProgramNameIcon.classList.add("show-opacity");
+    overlay.classList.add("display-none");
+    createProgramNameContainer.classList.add("display-none");
+    program.name = programNameInput.value;
   }
 };
 
@@ -1023,7 +1035,7 @@ const displayWorkouts = (index) => {
         data-delete=${i}
       ></i>
       <i
-        class="fa-solid fa-user-pen"
+        class="fa-regular fa-pen-to-square"
         id="edit-workout"
         data-edit=${i}
       ></i>

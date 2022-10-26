@@ -241,15 +241,10 @@ body {
   flex-direction: column;
   margin-top: 50px;
 }
-
-.main-container-btns {
-  margin-top: 50px;
-  display: none;
-  /* flex-direction: column; */
-  align-items: center;
-  justify-content: space-between;
-  width: 70vw;
+.main-container button {
+  margin-bottom: 0;
 }
+
 /* ===================chosen ingredients container =========================== */
 .chosen-ingredients-container {
   display: flex;
@@ -647,6 +642,9 @@ body {
   align-items: center;
   justify-content: space-around;
   margin-top: 10px;
+}
+.create-ingredients-btn-container button {
+  margin-top: 0;
 }
 
 /* ============= js ========================== */

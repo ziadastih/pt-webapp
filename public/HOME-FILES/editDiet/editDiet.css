@@ -236,13 +236,8 @@ body {
   margin-top: 50px;
 }
 
-.main-container-btns {
-  margin-top: 50px;
-  display: none;
-  /* flex-direction: column; */
-  align-items: center;
-  justify-content: space-between;
-  width: 70vw;
+.main-container button {
+  margin-top: 0;
 }
 /* ===================chosen ingrediients container =========================== */
 .chosen-ingredients-container {
@@ -641,6 +636,9 @@ body {
   align-items: center;
   justify-content: space-around;
   margin-top: 10px;
+}
+.create-ingredients-btn-container button {
+  margin-top: 0;
 }
 
 /* ============= js ========================== */

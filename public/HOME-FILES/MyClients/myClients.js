@@ -184,8 +184,8 @@ const displayClients = (client) => {
     <i class="fa-solid fa-user"></i>
       <p class="client-full-name">${client[i].clientFirstName} ${client[i].clientLastName}</p>
       <div class="tools">
-        <i class="fa-solid fa-trash" id="delete-client" data-delete = ${client[i].clientId}></i>
         <i class="fa-solid fa-user-pen" id="manage-client" data-manage= ${client[i].clientId}></i>
+        <i class="fa-solid fa-trash" id="delete-client" data-delete = ${client[i].clientId}></i>
       </div>
     </div> `;
   }

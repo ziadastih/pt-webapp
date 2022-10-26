@@ -305,7 +305,7 @@ body {
 .tools {
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
   color: var(--mainOrange);
   width: 70px;
 

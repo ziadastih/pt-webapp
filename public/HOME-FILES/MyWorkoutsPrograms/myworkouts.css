@@ -148,7 +148,7 @@ input[type="search"]::-webkit-search-results-decoration {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 15vh;
+  margin-bottom: 12vh;
   font-size: 20px;
   color: var(--mainColor);
 }
@@ -221,23 +221,37 @@ body {
 
 /* ==============THE SEARCH INPUT WITH THE SEARCH ICON ======== */
 .search-workout-container {
-  width: 100vw;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  bottom: 10vh;
+  left: 70px;
+  z-index: 20;
+}
+.search-workout-input {
+  width: 50vw;
+  height: 40px;
+  background-color: var(--mainColor);
+  color: var(--whiteSmoke);
+  transform: translateX(-200%);
+  transition: 300ms ease-in;
+}
+.search-workout-input::placeholder {
+  color: whitesmoke;
+}
+.search-icon-container {
+  background-color: var(--mainColor);
+  width: 50px;
+  height: 50px;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 30px;
-}
-#search-workout-input {
-  width: 50vw;
-  background-color: transparent;
-  border: 1px solid var(--mainColor);
-}
+  color: var(--whiteSmoke);
+  font-size: 15px;
 
-.search-workout-container i {
-  position: absolute;
-  margin-left: 140px;
-  color: var(--mainColor);
-  cursor: pointer;
+  margin-right: 10px;
+  border-radius: 50%;
 }
 /* ============THE HEADER AND THE BTN WHEN THERE IS NO CLIENTS ==== */
 .btn-container {
@@ -271,14 +285,24 @@ body {
 
 /* ====================workouts grid container ============= */
 .workouts-programs-grid-container {
-  margin-top: 60px;
   display: grid;
   grid-template-columns: repeat(1, auto);
   align-items: flex-start;
   justify-content: center;
-  gap: 30px;
+
   width: 100vw;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
+}
+.workouts-programs-grid-container h2 {
+  font-family: var(--fontSansSerif);
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+  color: var(--mainColor);
+  font-size: 18px;
+  margin-top: 20px;
 }
 .program-container {
   display: flex;
@@ -289,10 +313,10 @@ body {
 }
 /* =========workout styling that will be dealt with in js ========== */
 .program {
-  width: 80vw;
-  height: 50px;
+  width: 100vw;
+  height: 80px;
   background-color: var(--whiteSmoke);
-
+  border-bottom: 1px solid var(--bodyBackgroud);
   border-radius: 3px;
 
   font-family: var(--fontSansSerif);
@@ -312,7 +336,7 @@ body {
 .program i {
   font-size: 15px;
   margin-left: 20px;
-  color: var(--eyeComfort);
+  color: var(--mainOrange);
   cursor: pointer;
   transition: 300ms ease-in;
 }
@@ -460,6 +484,7 @@ body {
   font-family: var(--fontSansSerif);
   color: var(--mainColor);
   font-weight: 400;
+  margin-bottom: 20px;
 }
 /* ========================end of workout overview section ======= */
 /* ==============start of chosen exercises section ========== */
@@ -727,4 +752,7 @@ body {
 }
 .show-opacity {
   opacity: 1;
+}
+.translate-input {
+  transform: translateX(0);
 }

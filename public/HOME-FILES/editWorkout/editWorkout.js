@@ -236,8 +236,9 @@ backBtn.addEventListener("click", () => {
 
 const getWorkout = async () => {
   let workoutId = localStorage.getItem("wo");
+  overlay.classList.add("display-flex");
   const { data } = await axios.get(`/api/v1/workoutProgram/${workoutId}`);
-  //   program.name = data.data.workoutprograms.name;
+  overlay.classList.remove("display-flex");
   const fetchedProgram = data.workoutProgram;
   program.name = fetchedProgram.name;
   programName.textContent = fetchedProgram.name;
@@ -253,7 +254,7 @@ editProgramNameIcon.addEventListener("click", () => {
 });
 
 editProgramNameBtn.addEventListener("click", () => {
-  addProgramName();
+  editProgramNameFunc();
 });
 
 editProgram.addEventListener("click", async () => {
@@ -472,7 +473,17 @@ const addProgramName = () => {
     program.name = programNameInput.value;
   }
 };
+const editProgramNameFunc = () => {
+  if (programNameInput.value.length === 0) {
+    showAlert(nameInputAlert);
+  } else {
+    programName.textContent = programNameInput.value;
 
+    overlay.classList.remove("display-flex");
+    createProgramNameContainer.classList.remove("display-flex");
+    program.name = programNameInput.value;
+  }
+};
 // ======================= adding the workout name to the main container , opening the exercise multi choices and closing the rest and showing the overlay as well
 
 const setupWorkoutName = () => {
@@ -1003,7 +1014,7 @@ const displayWorkouts = (index) => {
           data-delete=${i}
         ></i>
         <i
-          class="fa-solid fa-user-pen"
+          class="fa-regular fa-pen-to-square"
           id="edit-workout"
           data-edit=${i}
         ></i>

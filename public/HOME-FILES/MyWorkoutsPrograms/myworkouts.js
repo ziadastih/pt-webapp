@@ -52,17 +52,24 @@ const getWorkouts = async () => {
 getWorkouts();
 
 // =================search click event ==========
-searchWorkoutIcon.addEventListener("click", async () => {
-  if (searchWorkoutInput.value.length > 0) {
-    searchFunction();
-  }
-  searchWorkoutInput.addEventListener("input", async () => {
-    if (searchWorkoutInput.value.length > 0) {
-      getWorkouts();
-    }
-  });
+// searchWorkoutIcon.addEventListener("click", async () => {
+//   if (searchWorkoutInput.value.length > 0) {
+//     searchFunction();
+//   }
+//   searchWorkoutInput.addEventListener("input", async () => {
+//     if (searchWorkoutInput.value.length > 0) {
+//       getWorkouts();
+//     }
+//   });
+// });
+
+searchWorkoutIcon.addEventListener("click", () => {
+  searchWorkoutInput.classList.toggle("translate-input");
 });
 
+searchWorkoutInput.addEventListener("search", () => {
+  searchFunction();
+});
 // ===============fetch more workouts 20 at a time and push them to the original array
 fetchMore.addEventListener("click", async () => {
   preLoader.classList.remove("display-none");
@@ -652,4 +659,10 @@ const searchFunction = async () => {
   } else {
     displayProgramInfo(workoutPrograms);
   }
+
+  searchWorkoutInput.addEventListener("input", () => {
+    if (searchWorkoutInput.value.length === 0) {
+      getWorkouts();
+    }
+  });
 };
