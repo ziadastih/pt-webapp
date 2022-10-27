@@ -144,18 +144,19 @@ input[type="search"]::-webkit-search-results-decoration {
   z-index: 999;
 }
 .show-more {
-  width: 100%;
+  width: 100vw;
+  height: 80px;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 12vh;
+  margin-bottom: 9vh;
   font-size: 20px;
-  color: var(--mainColor);
+  color: var(--bodyBackgroud);
 }
 .fetch-more {
   opacity: 0;
-  display: none;
 }
+
 .overlay {
   top: 0;
   left: 0;
@@ -223,11 +224,12 @@ body {
 .search-workout-container {
   position: fixed;
   display: flex;
+
   align-items: center;
   justify-content: space-between;
   bottom: 10vh;
   left: 70px;
-  z-index: 20;
+  z-index: 4;
 }
 .search-workout-input {
   width: 50vw;
@@ -236,6 +238,7 @@ body {
   color: var(--whiteSmoke);
   transform: translateX(-200%);
   transition: 300ms ease-in;
+  z-index: 40;
 }
 .search-workout-input::placeholder {
   color: whitesmoke;
@@ -291,7 +294,6 @@ body {
   justify-content: center;
 
   width: 100vw;
-  margin-bottom: 20px;
 }
 .workouts-programs-grid-container h2 {
   font-family: var(--fontSansSerif);
@@ -741,6 +743,9 @@ body {
 
 .display-none {
   display: none;
+}
+.display-flex {
+  display: flex;
 }
 
 .chosen-day {

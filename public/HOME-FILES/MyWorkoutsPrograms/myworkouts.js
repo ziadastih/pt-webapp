@@ -51,18 +51,6 @@ const getWorkouts = async () => {
 };
 getWorkouts();
 
-// =================search click event ==========
-// searchWorkoutIcon.addEventListener("click", async () => {
-//   if (searchWorkoutInput.value.length > 0) {
-//     searchFunction();
-//   }
-//   searchWorkoutInput.addEventListener("input", async () => {
-//     if (searchWorkoutInput.value.length > 0) {
-//       getWorkouts();
-//     }
-//   });
-// });
-
 searchWorkoutIcon.addEventListener("click", () => {
   searchWorkoutInput.classList.toggle("translate-input");
 });
@@ -70,36 +58,22 @@ searchWorkoutIcon.addEventListener("click", () => {
 searchWorkoutInput.addEventListener("search", () => {
   searchFunction();
 });
-// ===============fetch more workouts 20 at a time and push them to the original array
-fetchMore.addEventListener("click", async () => {
-  preLoader.classList.remove("display-none");
-
-  page = page + 1;
-  const { data } = await axios.get(`/api/v1/workoutProgram/?page=${page}`);
-
-  let fetchedPrograms = data.workoutprograms;
-  await fetchedPrograms.forEach((program) => {
-    workoutPrograms.push(program);
-  });
-
-  preLoader.classList.add("display-none");
-
-  displayProgramInfo(workoutPrograms);
-});
 
 // ===============display Programs  function with all the show and hide logic ====================
 
 const displayProgramInfo = (programPlan) => {
   let length = programPlan.length;
-  fetchMore.classList.add("open-container");
+  fetchMore.classList.add("diplay-flex");
 
   if (searchWorkoutInput.value.length > 0) {
-    fetchMore.classList.remove("show-opacity");
+    fetchMore.classList.remove("display-flex");
   } else {
     if (length === wLength) {
       fetchMore.classList.remove("show-opacity");
+      observer.unobserve(fetchMore);
     } else {
       fetchMore.classList.add("show-opacity");
+      observer.observe(fetchMore);
     }
   }
   programGridContainer.innerHTML = "";
@@ -655,7 +629,7 @@ const searchFunction = async () => {
   workoutPrograms = data.workoutprograms;
   if (workoutPrograms.length === 0) {
     programGridContainer.innerHTML = `<h2>Sorry! No Programs matches your search</h2>`;
-    fetchMore.classList.remove("open-container");
+    fetchMore.classList.remove("display-flex");
   } else {
     displayProgramInfo(workoutPrograms);
   }
@@ -666,3 +640,24 @@ const searchFunction = async () => {
     }
   });
 };
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(async (entry) => {
+    if (entry.isIntersecting) {
+      preLoader.classList.remove("display-none");
+
+      page = page + 1;
+      const { data } = await axios.get(`/api/v1/workoutProgram/?page=${page}`);
+
+      let fetchedPrograms = data.workoutprograms;
+      await fetchedPrograms.forEach((program) => {
+        workoutPrograms.push(program);
+      });
+
+      preLoader.classList.add("display-none");
+
+      displayProgramInfo(workoutPrograms);
+      console.log(workoutPrograms.length);
+    }
+  });
+});
