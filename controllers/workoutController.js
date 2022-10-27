@@ -36,11 +36,11 @@ const getAllWorkoutPrograms = async (req, res) => {
     res.status(StatusCodes.OK).json({ workoutprograms });
   }
   if (createdFor) {
-    queryObject.createdBy = req.coach.coachId;
     queryObject.createdFor = createdFor;
+    queryObject.createdBy = req.coach.coachId;
+
     const workoutprograms = await WorkoutProgram.find(queryObject)
-      .sort("current")
-      .lean();
+    .lean();
 
     res.status(StatusCodes.OK).json({ workoutprograms });
   }

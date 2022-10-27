@@ -130,6 +130,7 @@ const displayAllPrograms = (Diets) => {
       filterCurrent[i].name = `${filterCurrent[i].name.slice(0, 13)}..`;
     }
     let diet = filterCurrent[i];
+
     dietsGridContainer.innerHTML += `<div class="one-diet-container">
    
     <div class="current-diet-icon" data-current=${diet._id}> 
@@ -182,7 +183,7 @@ const displayAllPrograms = (Diets) => {
   });
   for (i = 0; i < filterNoneCurrent.length; i++) {
     if (filterNoneCurrent[i].name.length > 13) {
-      filterNoneCurrent[i].name = `${filterCurrent[i].name.slice(0, 13)}..`;
+      filterNoneCurrent[i].name = `${filterNoneCurrent[i].name.slice(0, 13)}..`;
     }
     let diet = filterNoneCurrent[i];
     dietsGridContainer.innerHTML += `<div class="one-diet-container">

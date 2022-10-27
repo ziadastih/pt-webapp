@@ -194,7 +194,7 @@ body {
   z-index: 20;
 }
 .search-client-input {
-  width: 50vw;
+  width: 40vw;
   height: 40px;
   background-color: var(--mainColor);
   color: var(--whiteSmoke);

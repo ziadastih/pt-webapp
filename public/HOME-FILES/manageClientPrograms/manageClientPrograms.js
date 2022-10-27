@@ -89,7 +89,7 @@ const getWorkouts = async () => {
     const length = data.workoutprograms.length;
 
     workoutPrograms = data.workoutprograms;
-
+    console.log(workoutPrograms);
     displayProgramInfo(workoutPrograms);
   } catch (error) {
     console.log(error);
@@ -162,6 +162,10 @@ const displayAllPrograms = (programPlan) => {
     if (filterCurrent[i].name.length > 13) {
       filterCurrent[i].name = `${filterCurrent[i].name.slice(0, 13)}..`;
     }
+    let indexInOriginal = programPlan.findIndex((Element) => {
+      return Element._id === filterCurrent[i]._id;
+    });
+
     programGridContainer.innerHTML += `<div class="program-container">
       <div class="current-stars-container" data-current=${filterCurrent[i]._id}>
       <i class="fa-solid fa-dumbbell" id="filled-dumbbell"></i>
@@ -170,7 +174,7 @@ const displayAllPrograms = (programPlan) => {
      
       
       <div class="program">
-      <i class="fa-solid fa-angle-up" id="show-program" data-overview=${i}></i>
+      <i class="fa-solid fa-angle-up" id="show-program" data-overview=${indexInOriginal}></i>
      <p>${filterCurrent[i].name}</p>
         <div class="tools">
           <i class="fa-regular fa-pen-to-square" id="edit-workout" data-edit=${filterCurrent[i]._id}></i>
@@ -197,6 +201,9 @@ const displayAllPrograms = (programPlan) => {
     if (filterNoneCurrent[i].name.length > 13) {
       filterNoneCurrent[i].name = `${filterNoneCurrent[i].name.slice(0, 13)}..`;
     }
+    let indexInOriginal = programPlan.findIndex((Element) => {
+      return Element._id === filterNoneCurrent[i]._id;
+    });
     programGridContainer.innerHTML += `<div class="program-container">
       <div class="current-stars-container not-current" data-current=${filterNoneCurrent[i]._id}>
       <i class="fa-solid fa-dumbbell" id="filled-dumbbell"></i>
@@ -205,7 +212,7 @@ const displayAllPrograms = (programPlan) => {
       
       
       <div class="program">
-      <i class="fa-solid fa-angle-up" id="show-program" data-overview=${i}></i>
+      <i class="fa-solid fa-angle-up" id="show-program" data-overview=${indexInOriginal}></i>
      <p>${filterNoneCurrent[i].name}</p>
         <div class="tools">
           <i class="fa-regular fa-pen-to-square" id="edit-workout" data-edit=${filterNoneCurrent[i]._id}></i>
@@ -243,6 +250,7 @@ const displayAllPrograms = (programPlan) => {
             current: true,
           }
         );
+        console.log(program);
         btn.classList.remove("not-current");
         preLoader.classList.add("display-none");
       } else {
@@ -254,6 +262,7 @@ const displayAllPrograms = (programPlan) => {
             current: false,
           }
         );
+        console.log(program);
         btn.classList.add("not-current");
         preLoader.classList.add("display-none");
       }

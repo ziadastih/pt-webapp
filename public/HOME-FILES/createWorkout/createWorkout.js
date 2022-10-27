@@ -262,6 +262,7 @@ submitProgram.addEventListener("click", async () => {
       createdFor: clientId,
       current: true,
     });
+    console.log(program);
     const { data } = await axios.get("/api/v1/dataLength");
 
     let workoutLength = data.dataLength[0].workoutLength + 1;
