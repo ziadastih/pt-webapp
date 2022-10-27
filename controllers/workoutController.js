@@ -25,7 +25,7 @@ const getAllWorkoutPrograms = async (req, res) => {
 
   if (page) {
     const page = req.query.page || 0;
-    const WorkoutsPerRequest = 20;
+    const WorkoutsPerRequest = 10;
     const workoutprograms = await WorkoutProgram.find({
       createdBy: req.coach.coachId,
     })
@@ -39,8 +39,7 @@ const getAllWorkoutPrograms = async (req, res) => {
     queryObject.createdFor = createdFor;
     queryObject.createdBy = req.coach.coachId;
 
-    const workoutprograms = await WorkoutProgram.find(queryObject)
-    .lean();
+    const workoutprograms = await WorkoutProgram.find(queryObject).lean();
 
     res.status(StatusCodes.OK).json({ workoutprograms });
   }

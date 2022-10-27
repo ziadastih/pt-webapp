@@ -10,11 +10,14 @@
 
   /* =========main color ============ */
   --mainColor: #0e535f;
-  --SecondaryColor: #1d4147;
+
   --alert: #fc8f3a;
   --eyeComfort: #81bcc9;
 
-  --secondEyeOption: #5d97a4;
+  --bodyBackgroud: #e5eaef;
+  --mainOrange: #fead47;
+
+  --whiteSmoke: whitesmoke;
 }
 
 /* ===========global ================ */
@@ -109,7 +112,7 @@ input[type="search"]::-webkit-search-results-decoration {
 /* ==================END OF GLOBAL CLASSES ========================  */
 
 body {
-  background-color: var(--eyeComfort);
+  background-color: var(--bodyBackgroud);
   overflow-x: hidden;
 }
 
@@ -122,6 +125,14 @@ body {
   justify-content: space-between;
   background-color: var(--mainColor);
 }
+.header-container h3 {
+  font-family: var(--fontSansSerif);
+  font-size: 24px;
+  font-weight: 400;
+  color: var(--whiteSmoke);
+  text-transform: capitalize;
+  letter-spacing: 1.2px;
+}
 .header-container img {
   margin-left: 30px;
   cursor: pointer;
@@ -129,8 +140,44 @@ body {
 .header-container i {
   margin-right: 30px;
   color: white;
-  font-size: 30px;
+  font-size: 20px;
   cursor: pointer;
+}
+
+/* ==============access boxes =============== */
+.settings-btns {
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: var(--whiteSmoke);
+}
+/* ================= GIVEN SPECIFIC HEIGHT WAS CALCULATED DEPEND THE NAV HEIGHT AND OUR PROFILE PICTURE CONTAINER  */
+.access-box {
+  height: 11.75vh;
+  width: 100vw;
+  border-bottom: 1px solid var(--mainColor);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+
+  color: var(--mainColor);
+}
+.access-box i {
+  font-size: 24px;
+  margin-left: 40px;
+}
+.access-box img {
+  margin-right: 40px;
+}
+.access-box p {
+  font-family: var(--fontSansSerif);
+  font-size: 15px;
+  text-transform: capitalize;
+  letter-spacing: 1.2px;
+  font-weight: 400;
 }
 
 /* ============user nav bar ======================== */

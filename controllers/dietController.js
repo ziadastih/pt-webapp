@@ -32,7 +32,7 @@ const getAllDiets = async (req, res) => {
 
   if (page) {
     const page = req.query.page || 0;
-    const dietsPerRequest = 20;
+    const dietsPerRequest = 10;
     const diets = await Diet.find({ createdBy: req.coach.coachId })
       .sort("-createdAt")
       .skip(page * dietsPerRequest)
