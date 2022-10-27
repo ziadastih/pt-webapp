@@ -50,6 +50,14 @@ searchDietIcon.addEventListener("click", async () => {
   });
 });
 
+searchDietIcon.addEventListener("click", () => {
+  searchDietInput.classList.toggle("translate-input");
+});
+
+searchDietInput.addEventListener("search", () => {
+  searchFunction();
+});
+
 // ================fetch more =================
 fetchMore.addEventListener("click", async () => {
   preLoader.classList.remove("display-none");
@@ -106,8 +114,10 @@ const displayAllPrograms = (Diets) => {
   } else {
     if (length === dLength) {
       fetchMore.classList.remove("show-opacity");
+      observer.unobserve(fetchMore);
     } else {
       fetchMore.classList.add("show-opacity");
+      observer.observe(fetchMore);
     }
   }
   dietsGridContainer.innerHTML = "";
@@ -200,8 +210,11 @@ const displayAllPrograms = (Diets) => {
         preLoader.classList.add("display-none");
         dLength = dLength - 1;
         localStorage.setItem("dL", JSON.stringify(dLength));
-
-        displayAllPrograms(dietsArr);
+        if (searchDietInput.value.length > 0) {
+          displayAllPrograms(dietsArr);
+        } else {
+          getDiet();
+        }
       });
     });
   });
@@ -217,10 +230,10 @@ const displayAllPrograms = (Diets) => {
   });
 };
 
-// ================search function ===============
+// =======================search function =====================
 const searchFunction = async () => {
   let inputCharacter = searchDietInput.value;
-  console.log(inputCharacter);
+
   preLoader.classList.remove("display-none");
   const { data } = await axios.get(`/api/v1/diet?name=${inputCharacter}`);
 
@@ -233,4 +246,29 @@ const searchFunction = async () => {
   } else {
     displayAllPrograms(dietsArr);
   }
+  searchDietInput.addEventListener("input", () => {
+    if (searchDietInput.value.length === 0) {
+      getDiet();
+    }
+  });
 };
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(async (entry) => {
+    if (entry.isIntersecting) {
+      preLoader.classList.remove("display-none");
+
+      page = page + 1;
+      const { data } = await axios.get(`/api/v1/diet/?page=${page}`);
+
+      let fetchedPrograms = data.diets;
+      await fetchedPrograms.forEach((program) => {
+        dietsArr.push(program);
+      });
+
+      preLoader.classList.add("display-none");
+
+      displayAllPrograms(dietsArr);
+    }
+  });
+});

@@ -16,8 +16,7 @@ const getAllDiets = async (req, res) => {
   if (createdFor) {
     queryObject.createdBy = req.coach.coachId;
     queryObject.createdFor = createdFor;
-    const diets = await Diet.find(queryObject)
-    .lean();
+    const diets = await Diet.find(queryObject).lean();
 
     res.status(StatusCodes.OK).json({ diets });
   }
@@ -33,7 +32,7 @@ const getAllDiets = async (req, res) => {
 
   if (page) {
     const page = req.query.page || 0;
-    const dietsPerRequest = 50;
+    const dietsPerRequest = 20;
     const diets = await Diet.find({ createdBy: req.coach.coachId })
       .sort("-createdAt")
       .skip(page * dietsPerRequest)

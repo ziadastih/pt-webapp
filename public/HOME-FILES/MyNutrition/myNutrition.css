@@ -120,13 +120,14 @@ input[type="search"]::-webkit-search-results-decoration {
   z-index: 999;
 }
 .show-more {
-  width: 100%;
+  width: 100vw;
+  height: 80px;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 15vh;
+  margin-bottom: 9vh;
   font-size: 20px;
-  color: var(--mainColor);
+  color: var(--bodyBackgroud);
 }
 .fetch-more {
   opacity: 0;
@@ -197,24 +198,41 @@ body {
 
 /* ==============THE SEARCH INPUT WITH THE SEARCH ICON ======== */
 .search-nutrition-container {
-  width: 100vw;
+  position: fixed;
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+  bottom: 10vh;
+  left: 70px;
+  z-index: 4;
+}
+.search-nutrition-input {
+  width: 50vw;
+  height: 40px;
+  background-color: var(--mainColor);
+  color: var(--whiteSmoke);
+  transform: translateX(-200%);
+  transition: 300ms ease-in;
+  z-index: 40;
+}
+.search-nutrition-input::placeholder {
+  color: whitesmoke;
+}
+.search-icon-container {
+  background-color: var(--mainColor);
+  width: 50px;
+  height: 50px;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 30px;
-}
-#search-nutrition-input {
-  width: 50vw;
-  background-color: transparent;
-  border: 1px solid var(--mainColor);
+  color: var(--whiteSmoke);
+  font-size: 15px;
+
+  margin-right: 10px;
+  border-radius: 50%;
 }
 
-.search-nutrition-container i {
-  position: absolute;
-  margin-left: 140px;
-  color: var(--mainColor);
-  cursor: pointer;
-}
 /* ============THE HEADER AND THE BTN WHEN THERE IS NO diets ==== */
 .btn-container {
   display: none;
@@ -454,10 +472,13 @@ body {
   display: none;
 }
 
-.translate-page {
-  transform: translateX(0);
+.display-flex {
+  display: flex;
 }
 
 .remove-border {
   border: none;
+}
+.translate-input {
+  transform: translateX(0);
 }

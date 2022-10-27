@@ -29,7 +29,6 @@ const getAllWorkoutPrograms = async (req, res) => {
     const workoutprograms = await WorkoutProgram.find({
       createdBy: req.coach.coachId,
     })
-
       .sort("-createdAt")
       .skip(page * WorkoutsPerRequest)
       .limit(WorkoutsPerRequest);

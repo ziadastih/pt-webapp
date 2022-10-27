@@ -204,8 +204,11 @@ const displayAllPrograms = (programPlan) => {
         preLoader.classList.add("display-none");
         wLength = wLength - 1;
         localStorage.setItem("wL", JSON.stringify(wLength));
-
-        displayProgramInfo(programPlan);
+        if (searchWorkoutInput.value.length > 0) {
+          displayProgramInfo(programPlan);
+        } else {
+          getWorkouts();
+        }
       });
     });
   });
@@ -657,7 +660,6 @@ const observer = new IntersectionObserver((entries) => {
       preLoader.classList.add("display-none");
 
       displayProgramInfo(workoutPrograms);
-      console.log(workoutPrograms.length);
     }
   });
 });
