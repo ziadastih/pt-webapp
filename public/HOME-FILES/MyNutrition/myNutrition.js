@@ -23,8 +23,7 @@ const getDiet = async () => {
     // ============getting the data ===============
     const { data } = await axios.get(`/api/v1/diet?page=${page}`);
     preLoader.classList.add("display-none");
-    console.log(data);
-    console.log(performance.now());
+
     //  =========if length is === 0 means no workouts we want to display the create item =============
     const length = data.diets.length;
 
@@ -58,22 +57,6 @@ searchDietInput.addEventListener("search", () => {
   searchFunction();
 });
 
-// ================fetch more =================
-fetchMore.addEventListener("click", async () => {
-  preLoader.classList.remove("display-none");
-
-  page = page + 1;
-  const { data } = await axios.get(`/api/v1/diet/?page=${page}`);
-
-  let fetchedPrograms = data.diets;
-  await fetchedPrograms.forEach((program) => {
-    dietsArr.push(program);
-  });
-
-  preLoader.classList.add("display-none");
-
-  displayAllPrograms(dietsArr);
-});
 // ================naigate to create diet page ========
 
 const goToCreateDietBtns = document.querySelectorAll(".create-nutrition-btn");

@@ -706,8 +706,8 @@ const displayChosenExercises = () => {
 // ==============chosen exercises if conditions  =========
 const standardChosen = (exercise, i) => {
   chosenExercisesContainer.innerHTML += `<div class="one-exercise-container">
-    <span class ='left-span'></span>
-    <span class ='right-span'></span>
+    <span class ='left-span'><i class="fa-solid fa-square-check"></i></span>
+    
     <div class="container-top-section">
       <div class="exercise-general-info">
         <img
@@ -740,7 +740,7 @@ const standardChosen = (exercise, i) => {
         <input type="text" id="tempo-input" data-input =${i} placeholder="0-0-0-0" value="${exercise.tempo}" />
       </div>
       <div class="button-type-container">
-        <button class="full-btn" id="chain" data-chain = ${i}>chain</button>
+        <button class="full-btn" id="chain" data-chain = ${i}>groupset</button>
         <button class="full-btn" id="rest-pause" data-type=${i}>rest-pause</button>
         <button class="full-btn" id="dropset" data-type=${i}>dropset</button>
       </div>
@@ -750,8 +750,8 @@ const standardChosen = (exercise, i) => {
 
 const chosenSuperset = (exercise, i) => {
   chosenExercisesContainer.innerHTML += `<div class="one-exercise-container">
-    <span class ='left-span show-opacity'></span>
-    <span class ='right-span show-opacity'></span>
+    <span class ='left-span show-opacity'><i class="fa-solid fa-square-check"></i></span>
+    
     <div class="container-top-section">
       <div class="exercise-general-info">
         <img
@@ -784,7 +784,7 @@ const chosenSuperset = (exercise, i) => {
         <input type="text" id="tempo-input" data-input =${i} placeholder="0-0-0-0" value="${exercise.tempo}" />
       </div>
       <div class="button-type-container">
-        <button class="full-btn selected-type" id="chain" data-chain = ${i}>chain</button>
+        <button class="full-btn selected-type" id="chain" data-chain = ${i}>groupset</button>
         <button class="full-btn" id="rest-pause" data-type=${i}>rest-pause</button>
         <button class="full-btn" id="dropset" data-type=${i}>dropset</button>
       </div>
@@ -794,8 +794,8 @@ const chosenSuperset = (exercise, i) => {
 
 const chosenTypeRestPause = (exercise, i) => {
   chosenExercisesContainer.innerHTML += `<div class="one-exercise-container">
-    <span class ='left-span'></span>
-    <span class ='right-span'></span>
+    <span class ='left-span'><i class="fa-solid fa-square-check"></i></span>
+   
     <div class="container-top-section">
       <div class="exercise-general-info">
         <img
@@ -828,7 +828,7 @@ const chosenTypeRestPause = (exercise, i) => {
         <input type="text" id="tempo-input" data-input =${i} placeholder="0-0-0-0" value="${exercise.tempo}" />
       </div>
       <div class="button-type-container">
-        <button class="full-btn" id="chain" data-chain = ${i}>chain</button>
+        <button class="full-btn" id="chain" data-chain = ${i}>groupset</button>
         <button class="full-btn selected-type" id="rest-pause" data-type=${i}>rest-pause</button>
         <button class="full-btn" id="dropset" data-type=${i}>dropset</button>
       </div>
@@ -838,8 +838,8 @@ const chosenTypeRestPause = (exercise, i) => {
 
 const chosenTypeDropset = (exercise, i) => {
   chosenExercisesContainer.innerHTML += `<div class="one-exercise-container">
-    <span class ='left-span'></span>
-    <span class ='right-span'></span>
+    <span class ='left-span'><i class="fa-solid fa-square-check"></i></span>
+   
     <div class="container-top-section">
       <div class="exercise-general-info">
         <img
@@ -872,7 +872,7 @@ const chosenTypeDropset = (exercise, i) => {
         <input type="text" id="tempo-input" data-input =${i} placeholder="0-0-0-0" value="${exercise.tempo}" />
       </div>
       <div class="button-type-container">
-        <button class="full-btn" id="chain" data-chain = ${i}>chain</button>
+        <button class="full-btn" id="chain" data-chain = ${i}>groupset</button>
         <button class="full-btn" id="rest-pause" data-type=${i}>rest-pause</button>
         <button class="full-btn selected-type" id="dropset" data-type=${i}>dropset</button>
       </div>
@@ -882,8 +882,8 @@ const chosenTypeDropset = (exercise, i) => {
 
 const chosenRpSuperset = (exercise, i) => {
   chosenExercisesContainer.innerHTML += `<div class="one-exercise-container">
-    <span class ='left-span show-opacity'></span>
-    <span class ='right-span show-opacity'></span>
+    <span class ='left-span show-opacity'><i class="fa-solid fa-square-check"></i></span>
+  
     <div class="container-top-section">
       <div class="exercise-general-info">
         <img
@@ -916,7 +916,7 @@ const chosenRpSuperset = (exercise, i) => {
         <input type="text" id="tempo-input" data-input =${i} placeholder="0-0-0-0" value="${exercise.tempo}" />
       </div>
       <div class="button-type-container">
-        <button class="full-btn selected-type" id="chain" data-chain = ${i}>chain</button>
+        <button class="full-btn selected-type" id="chain" data-chain = ${i}>groupset</button>
         <button class="full-btn selected-type" id="rest-pause" data-type=${i}>rest-pause</button>
         <button class="full-btn" id="dropset" data-type=${i}>dropset</button>
       </div>
@@ -926,8 +926,8 @@ const chosenRpSuperset = (exercise, i) => {
 
 const chosenDsSuperset = (exercise, i) => {
   chosenExercisesContainer.innerHTML += `<div class="one-exercise-container">
-    <span class ='left-span show-opacity'></span>
-    <span class ='right-span show-opacity'></span>
+    <span class ='left-span show-opacity'><i class="fa-solid fa-square-check"></i></span>
+    
     <div class="container-top-section">
       <div class="exercise-general-info">
         <img
@@ -960,7 +960,7 @@ const chosenDsSuperset = (exercise, i) => {
         <input type="text" id="tempo-input" data-input =${i} placeholder="0-0-0-0" value="${exercise.tempo}" />
       </div>
       <div class="button-type-container">
-        <button class="full-btn selected-type" id="chain" data-chain = ${i}>chain</button>
+        <button class="full-btn selected-type" id="chain" data-chain = ${i}>groupset</button>
         <button class="full-btn" id="rest-pause" data-type=${i}>rest-pause</button>
         <button class="full-btn selected-type" id="dropset" data-type=${i}>dropset</button>
       </div>

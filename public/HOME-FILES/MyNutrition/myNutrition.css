@@ -281,7 +281,7 @@ body {
   align-items: center;
   font-family: var(--fontSansSerif);
   color: var(--mainColor);
-  font-size: 20px;
+  font-size: 18px;
 }
 /* =========meal styling that will be dealt with in js ========== */
 .one-diet-container {

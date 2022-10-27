@@ -365,8 +365,8 @@ const displayChosenExercises = (oneWorkout, selectedExercisesArray) => {
 const standardChosen = (exercise, i, oneWorkout) => {
   const exContainer = oneWorkout.querySelector(".exercises-container");
   exContainer.innerHTML += `<div class="one-exercise-container">
-  <span class ='left-span'></span>
-  <span class ='right-span'></span>
+  <span class ='left-span'><i class="fa-solid fa-square-check"></i></span>
+  
   <div class="container-top-section">
     <div class="exercise-general-info">
       <img
@@ -407,8 +407,8 @@ const standardChosen = (exercise, i, oneWorkout) => {
 const chosenSuperset = (exercise, i, oneWorkout) => {
   const exContainer = oneWorkout.querySelector(".exercises-container");
   exContainer.innerHTML += `<div class="one-exercise-container">
-  <span class ='left-span show-opacity'></span>
-  <span class ='right-span show-opacity'></span>
+  <span class ='left-span show-opacity'><i class="fa-solid fa-square-check"></i></span>
+  
   <div class="container-top-section">
     <div class="exercise-general-info">
       <img
@@ -439,7 +439,7 @@ const chosenSuperset = (exercise, i, oneWorkout) => {
       <div id="tempo-input">${exercise.tempo || "-"}</div>
     </div>
     <div class="button-type-container">
-      <button class="full-btn" id="chain" data-chain = ${i}>chain</button>
+      <button class="outline-btn" id="chain" data-chain = ${i}>groupset</button>
      
     </div>
   </div>
@@ -449,8 +449,8 @@ const chosenSuperset = (exercise, i, oneWorkout) => {
 const chosenTypeRestPause = (exercise, i, oneWorkout) => {
   const exContainer = oneWorkout.querySelector(".exercises-container");
   exContainer.innerHTML += `<div class="one-exercise-container">
-  <span class ='left-span'></span>
-  <span class ='right-span'></span>
+  <span class ='left-span'><i class="fa-solid fa-square-check"></i></span>
+ 
   <div class="container-top-section">
     <div class="exercise-general-info">
       <img
@@ -482,7 +482,7 @@ const chosenTypeRestPause = (exercise, i, oneWorkout) => {
     </div>
     <div class="button-type-container">
       
-      <button class="full-btn" id="rest-pause" data-type=${i}>rest-pause</button>
+      <button class="outline-btn" id="rest-pause" data-type=${i}>rest-pause</button>
     
     </div>
   </div>
@@ -492,8 +492,8 @@ const chosenTypeRestPause = (exercise, i, oneWorkout) => {
 const chosenTypeDropset = (exercise, i, oneWorkout) => {
   const exContainer = oneWorkout.querySelector(".exercises-container");
   exContainer.innerHTML += `<div class="one-exercise-container">
-  <span class ='left-span'></span>
-  <span class ='right-span'></span>
+  <span class ='left-span'><i class="fa-solid fa-square-check"></i></span>
+ 
   <div class="container-top-section">
     <div class="exercise-general-info">
       <img
@@ -526,7 +526,7 @@ const chosenTypeDropset = (exercise, i, oneWorkout) => {
     <div class="button-type-container">
       
       
-      <button class="full-btn" id="dropset" data-type=${i}>dropset</button>
+      <button class="outline-btn" id="dropset" data-type=${i}>dropset</button>
     </div>
   </div>
 </div>`;
@@ -535,8 +535,8 @@ const chosenTypeDropset = (exercise, i, oneWorkout) => {
 const chosenRpSuperset = (exercise, i, oneWorkout) => {
   const exContainer = oneWorkout.querySelector(".exercises-container");
   exContainer.innerHTML += `<div class="one-exercise-container">
-  <span class ='left-span show-opacity'></span>
-  <span class ='right-span show-opacity'></span>
+  <span class ='left-span show-opacity'><i class="fa-solid fa-square-check"></i></span>
+  
   <div class="container-top-section">
     <div class="exercise-general-info">
       <img
@@ -567,8 +567,8 @@ const chosenRpSuperset = (exercise, i, oneWorkout) => {
       <div id="tempo-input">${exercise.tempo || "-"}</div>
     </div>
     <div class="button-type-container">
-      <button class="full-btn" id="chain" data-chain = ${i}>chain</button>
-      <button class="full-btn" id="rest-pause" data-type=${i}>rest-pause</button>
+      <button class="outline-btn" id="chain" data-chain = ${i}>groupset</button>
+      <button class="outline-btn" id="rest-pause" data-type=${i}>rest-pause</button>
     
     </div>
   </div>
@@ -578,8 +578,8 @@ const chosenRpSuperset = (exercise, i, oneWorkout) => {
 const chosenDsSuperset = (exercise, i, oneWorkout) => {
   const exContainer = oneWorkout.querySelector(".exercises-container");
   exContainer.innerHTML += `<div class="one-exercise-container">
-  <span class ='left-span show-opacity'></span>
-  <span class ='right-span show-opacity'></span>
+  <span class ='left-span show-opacity'><i class="fa-solid fa-square-check"></i></span>
+  
   <div class="container-top-section">
     <div class="exercise-general-info">
       <img
@@ -610,9 +610,9 @@ const chosenDsSuperset = (exercise, i, oneWorkout) => {
       <div id="tempo-input">${exercise.tempo || "-"}</div>
     </div>
     <div class="button-type-container">
-      <button class="full-btn" id="chain" data-chain = ${i}>chain</button>
+      <button class="outline-btn" id="chain" data-chain = ${i}>groupset</button>
     
-      <button class="full-btn" id="dropset" data-type=${i}>dropset</button>
+      <button class="outline-btn" id="dropset" data-type=${i}>dropset</button>
     </div>
   </div>
 </div>`;
