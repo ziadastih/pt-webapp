@@ -89,6 +89,7 @@ const getCoach = async (req, res) => {
     coach: {
       coachFirstName: coach.firstName,
       coachLastName: coach.lastName,
+      email: coach.email,
     },
   });
 };

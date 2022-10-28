@@ -34,16 +34,17 @@
       <h3>settings</h3>
       <i class="fa-solid fa-gear"></i>
     </div>
-
+    <div class="overlay"></div>
+    <div class="gif"></div>
     <div class="settings-btns">
-      <div class="access-box">
+      <div class="access-box toggle-profile-info">
         <span></span>
-        <p>profile info</p>
+        <p>account info</p>
         <img src="../images/accessCoachArrow.svg" alt="" />
       </div>
-      <div class="access-box">
+      <div class="access-box toggle-change-password">
         <span></span>
-        <p>email & password</p>
+        <p>change password</p>
         <img src="../images/accessCoachArrow.svg" alt="" />
       </div>
       <div class="access-box payment-btn">
@@ -58,6 +59,86 @@
       </div>
     </div>
 
+    <!-- ====================profile-info container ============== -->
+
+    <div class="account-info-container block-container">
+      <i
+        class="fa-solid fa-close"
+        id="close-btn"
+        data-close="account-info-container"
+      ></i>
+      <h3>account info</h3>
+
+      <div class="form-container">
+        <div class="input-container">
+          <div class="name-alert">
+            <p>first name:</p>
+            <p class="alert first-name-alert">please provide first name!</p>
+          </div>
+          <input type="text" id="first-name" placeholder="first name" />
+        </div>
+        <div class="input-container">
+          <div class="name-alert">
+            <p>Last name:</p>
+            <p class="alert last-name-alert">please provide Last Name!</p>
+          </div>
+          <input type="text" id="last-name" placeholder="Last name" />
+        </div>
+        <div class="input-container">
+          <div class="name-alert">
+            <p>email:</p>
+            <p class="alert email-alert">please provide an email!</p>
+          </div>
+          <input type="text" id="email" placeholder="email address" />
+        </div>
+
+        <button class="change-account-info btn">change</button>
+      </div>
+    </div>
+
+    <!-- ================change password container ============ -->
+    <div class="block-container change-password-container">
+      <i
+        class="fa-solid fa-close"
+        id="close-btn"
+        data-close="change-password-container"
+      ></i>
+      <h3>password</h3>
+      <div class="input-container">
+        <div class="name-alert">
+          <p>current password:</p>
+          <p class="alert current-password-alert">
+            please provide current password!
+          </p>
+        </div>
+        <input
+          type="text"
+          id="current-password"
+          placeholder="current password"
+        />
+      </div>
+      <div class="input-container">
+        <div class="name-alert">
+          <p>new password:</p>
+          <p class="alert new-password-alert">please provide new password!</p>
+        </div>
+        <input type="text" id="new-password" placeholder="new password" />
+      </div>
+      <div class="input-container">
+        <div class="name-alert">
+          <p>confirm password:</p>
+          <p class="alert confirm-password-alert">
+            please confirm new password!
+          </p>
+        </div>
+        <input
+          type="text"
+          id="confirm-password"
+          placeholder="confirm password"
+        />
+      </div>
+      <button class="change-password btn">change</button>
+    </div>
     <!-- =================== coach nav bar ============================== -->
     <nav class="global-nav coach-nav-bar">
       <p id="user-home-nav-btn">
