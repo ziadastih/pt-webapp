@@ -323,6 +323,7 @@ body {
   transform: translateX(0);
 }
 
-.remove-border {
-  border: none;
+.red-border {
+  outline-style: auto;
+  outline-color: red;
 }

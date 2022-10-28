@@ -95,6 +95,44 @@ changeAccountInfoBtn.addEventListener("click", async () => {
     console.log(error);
   }
 });
+
+confirmPasswordInput.addEventListener("input", () => {
+  if (confirmPasswordInput.value !== newPasswordInput.value) {
+    confirmPasswordInput.classList.add("red-border");
+  } else {
+    confirmPasswordInput.classList.remove("red-border");
+  }
+});
+
+changePasswordBtn.addEventListener("click", async () => {
+  let currentPassword = currentPasswordInput.value;
+  let password = newPasswordInput.value;
+  let confirmPassword = confirmPasswordInput.value;
+  if (currentPassword.length < 6) {
+    showAlert(currentPasswordAlert);
+  }
+  if (confirmPassword.length < 6) {
+    showAlert(confirmPasswordAlert);
+  }
+  if (password.length < 6) {
+    showAlert(newPasswordAlert);
+  }
+  if (password !== confirmPassword) {
+    showAlert(confirmPasswordAlert);
+  }
+
+  try {
+    const { coach } = await axios.patch(`/api/v1/coach/${coachId}`, {
+      currentPassword,
+      password,
+    });
+    const logout = await axios.post("/api/v1/auth/logout");
+    localStorage.clear();
+    window.location = "http://192.168.1.195:3000/";
+  } catch (error) {
+    console.log(error);
+  }
+});
 // ================logout user ===================
 
 const logoutBtn = document.querySelectorAll("#user-logout-nav-btn");

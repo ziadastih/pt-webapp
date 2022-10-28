@@ -2,7 +2,7 @@ const Coach = require("../models/ptschema");
 const Client = require("../models/clientsModel");
 const { StatusCodes } = require("http-status-codes");
 const jwt = require("jsonwebtoken");
-
+const bcrypt = require("bcryptjs");
 const { UnauthenticatedError, BadRequestError } = require("../errors");
 
 const register = async (req, res) => {
@@ -93,22 +93,56 @@ const getCoach = async (req, res) => {
     },
   });
 };
+
+// ==================update======================
+
 const updateCoach = async (req, res) => {
   const { id: coachId } = req.params;
-  const coach = await Coach.findOneAndUpdate(
-    {
-      _id: coachId,
-    },
-    req.body,
-    {
-      new: true,
-      runValidators: true,
+
+  if (req.body.currentPassword) {
+    const coach = await Coach.findOne({ _id: coachId });
+    const isPasswordCorrect = await coach.comparePassword(
+      req.body.currentPassword
+    );
+
+    if (!isPasswordCorrect) {
+      throw new UnauthenticatedError("invalid credential");
     }
-  );
-  if (!coach) {
-    throw new NotFoundError(`no coach with id ${coachId}`);
+    let password = req.body.password;
+    coach.password = password;
+    const salt = await bcrypt.genSalt(10);
+    password = await bcrypt.hash(password, salt);
+
+    await coach.save();
+    res.status(StatusCodes.OK).json({
+      coach: {
+        coachFirstName: coach.firstName,
+        coachLastName: coach.lastName,
+        email: coach.email,
+      },
+    });
+  } else {
+    const coach = await Coach.findOneAndUpdate(
+      {
+        _id: coachId,
+      },
+      req.body,
+      {
+        new: true,
+        runValidators: true,
+      }
+    );
+    if (!coach) {
+      throw new NotFoundError(`no coach with id ${coachId}`);
+    }
+    res.status(StatusCodes.OK).json({
+      coach: {
+        coachFirstName: coach.firstName,
+        coachLastName: coach.lastName,
+        email: coach.email,
+      },
+    });
   }
-  res.status(StatusCodes.OK).json({ coach });
 };
 // ===========logout function setting the token age to 0 ==============
 
