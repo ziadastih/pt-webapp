@@ -61,7 +61,6 @@ const getoneClient = async (req, res) => {
     params: { id: clientId },
   } = req;
   const client = await Client.findOne({
-    createdBy: coachId,
     _id: clientId,
   });
 
@@ -72,6 +71,7 @@ const getoneClient = async (req, res) => {
     client: {
       clientFirstName: client.firstName,
       clientLastName: client.lastName,
+      createdAt: client.createdAt,
       createdBy: client.createdBy,
       enabled: client.enabled,
       email: client.email,
@@ -83,7 +83,7 @@ const getoneClient = async (req, res) => {
 const createNewClient = async (req, res) => {
   // ===we refer the created by directly to the coach.coachId
   req.body.createdBy = req.coach.coachId;
-  console.log(req.body.password);
+
   const msg = {
     to: req.body.email,
     from: "ziadastih12@gmail.com",

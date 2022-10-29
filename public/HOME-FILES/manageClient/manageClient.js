@@ -8,12 +8,14 @@ const createdAt = document.querySelector(".created-at");
 const disableBtn = document.querySelector(".disable-btn");
 const clientEmailBtn = document.querySelector("#email-icon");
 const clientWhatsappBtn = document.querySelector("#whatsapp-icon");
+
+// =========================fetch client  ====================
 const getClient = async () => {
   try {
     const {
       data: { client },
     } = await axios.get(`/api/v1/client/${clientId}`);
-    console.log(client);
+
     const firstName = client.clientFirstName;
     const lastName = client.clientLastName;
     const created = client.createdAt.slice(0, 10);
@@ -37,7 +39,7 @@ const getClient = async () => {
     if (clientNumber) {
       clientWhatsappBtn.href = `https://wa.me/${clientNumber}`;
     } else {
-      console.log(clientWhatsappBtn, clientNumber);
+      console.log("no number");
     }
   } catch (error) {
     console.log(error);

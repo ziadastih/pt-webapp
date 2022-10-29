@@ -180,10 +180,11 @@ body {
 
   font-weight: 400;
   text-transform: capitalize;
-  transition: 300ms ease-in;
 }
 .client-name {
   position: relative;
+  opacity: 0;
+  transition: 300ms ease-in;
 }
 .client-name::before {
   position: absolute;
@@ -221,10 +222,15 @@ body {
 .coached-by-container {
   align-items: flex-start;
 }
+.coach-name {
+  opacity: 0;
+  transition: 300ms ease-in;
+}
 .info-container p {
   position: relative;
   font-size: 15px;
   letter-spacing: 1.2px;
+  opacity: 0.5;
 }
 .info-container p::before {
   content: "";
@@ -236,7 +242,8 @@ body {
   background-color: var(--mainOrange);
 }
 .info-container span {
-  font-size: 15px;
+  font-size: 18px;
+
   letter-spacing: 1.2px;
 }
 .info-container i {
@@ -289,7 +296,7 @@ body {
   opacity: 0.8;
 }
 /* ===============js classes ====================== */
-.opacity-one {
+.show-opacity {
   opacity: 1;
 }
 

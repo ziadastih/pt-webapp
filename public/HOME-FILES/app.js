@@ -137,7 +137,7 @@ loginBtn.addEventListener("click", async (e) => {
   const email = loginEmail.value;
   const password = loginPassword.value;
   const role = await e.target.dataset.login;
-  console.log(role);
+
   if (role === "coach") {
     try {
       const data = await axios.post("/api/v1/auth/login", {
@@ -146,7 +146,7 @@ loginBtn.addEventListener("click", async (e) => {
         role,
       });
       const ref = data.data.coach.coachId;
-
+      localStorage.setItem("ref", ref);
       window.location =
         "http://192.168.1.195:3000/coachHomepage/coachHomepage.html";
 
@@ -166,7 +166,7 @@ loginBtn.addEventListener("click", async (e) => {
         password,
         role,
       });
-      console.log(data.client.clientId);
+
       let cref = data.client.clientId;
       localStorage.setItem("cref", cref);
       window.location =
