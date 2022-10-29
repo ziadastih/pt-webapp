@@ -29,6 +29,9 @@ const coachSchema = new mongoose.Schema({
     required: [true, "Please provide password"],
     minlength: 6,
   },
+  number: {
+    type: Number,
+  },
   role: {
     type: String,
     default: "coach",

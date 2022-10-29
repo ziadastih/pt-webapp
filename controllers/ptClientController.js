@@ -1,5 +1,7 @@
 const Client = require("../models/clientsModel");
-
+const sgMail = require("@sendgrid/mail");
+require("dotenv").config();
+sgMail.setApiKey(process.env.Email_Api);
 const { StatusCodes } = require("http-status-codes");
 const { BadRequestError, NotFoundError } = require("../errors");
 
@@ -70,7 +72,7 @@ const getoneClient = async (req, res) => {
     client: {
       clientFirstName: client.firstName,
       clientLastName: client.lastName,
-      createdAt: client.createdAt,
+      createdBy: client.createdBy,
       enabled: client.enabled,
       email: client.email,
       number: client.number,
@@ -81,7 +83,31 @@ const getoneClient = async (req, res) => {
 const createNewClient = async (req, res) => {
   // ===we refer the created by directly to the coach.coachId
   req.body.createdBy = req.coach.coachId;
+  console.log(req.body.password);
+  const msg = {
+    to: req.body.email,
+    from: "ziadastih12@gmail.com",
+
+    template_id: process.env.template_id,
+
+    dynamic_template_data: {
+      clientName:
+        req.body.firstName[0].toUpperCase() + req.body.firstName.substring(1),
+      clientPassword: req.body.password,
+      year: new Date().getFullYear(),
+    },
+  };
+  sgMail.send(msg, (err, info) => {
+    if (err) {
+      console.log(err);
+    } else {
+      console.log("success");
+    }
+  });
+  // ============create random password  ===========================
+
   const client = await Client.create({ ...req.body });
+
   const token = client.createJWT();
   res.status(StatusCodes.CREATED).json({ client });
 };

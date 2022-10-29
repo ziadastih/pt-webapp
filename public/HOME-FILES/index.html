@@ -29,6 +29,7 @@
     <title>pt web</title>
   </head>
   <body>
+    <div class="box-overlay"></div>
     <main class="main-app-container">
       <!-- ============homepage section ============== -->
       <section class="homepage-section">
@@ -64,7 +65,7 @@
           ></i>
         </div>
         <h3>let's get started!</h3>
-        <span class="line"></span>
+
         <div class="form-container">
           <div class="input-container">
             <div class="name-alert">
@@ -103,6 +104,20 @@
           </div>
           <div class="input-container">
             <div class="name-alert">
+              <p>number:</p>
+              <p class="alert register-number-alert">
+                please provide a phone number!
+              </p>
+            </div>
+            <input
+              type="number"
+              class="password"
+              id="register-number"
+              placeholder="+xxx xx xxx xxx "
+            />
+          </div>
+          <div class="input-container">
+            <div class="name-alert">
               <p>password:</p>
               <p class="alert register-password-alert">
                 please provide a password!
@@ -131,7 +146,7 @@
           ></i>
         </div>
         <h3>login here</h3>
-        <span class="line"></span>
+
         <div class="form-container">
           <div class="role-container">
             <p class="title">Please select your Role:</p>

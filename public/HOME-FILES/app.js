@@ -8,7 +8,7 @@ const registerContainer = document.querySelector(".register-container");
 const loginContainer = document.querySelector(".login-container");
 const homePageSection = document.querySelector(".homepage-section");
 const navBar = document.querySelector(".nav-bar");
-
+const boxOverlay = document.querySelector(".box-overlay");
 // ============user sections coach/client ========================
 const coachHomepage = document.querySelector(".coach-section");
 const coachNavBar = document.querySelector(".coach-nav-bar");
@@ -22,11 +22,13 @@ globalHomeBtn.addEventListener("click", () => {
 // ===============get started btn  ==================
 getStartedBtn.addEventListener("click", () => {
   registerContainer.classList.add("open-container");
+  boxOverlay.classList.add("open-container");
 });
 // ===============login-nav-btn  ==================
 loginNavBtn.addEventListener("click", () => {
   registerContainer.classList.remove("open-container");
   loginContainer.classList.add("open-container");
+  boxOverlay.classList.add("open-container");
 });
 
 // ==============END OF GLOBAL NAVIGATION ====================
@@ -39,6 +41,7 @@ closeBtns.forEach((closeBtn) => {
     let id = e.target.dataset.close;
     let container = document.querySelector(`.${id}`);
     container.classList.remove("open-container");
+    boxOverlay.classList.remove("open-container");
   });
 });
 
@@ -66,7 +69,7 @@ const registerFirstName = document.getElementById("register-first-name");
 const registerLastName = document.getElementById("register-last-name");
 const registerEmail = document.getElementById("register-email");
 const registerPassword = document.getElementById("register-password");
-
+const registerNumber = document.getElementById("register-number");
 // ============== REGISTER alert handling classes ===============================
 const registerFirstNameAlert = document.querySelector(".register-first-alert");
 const registerLastNameAlert = document.querySelector(".register-last-alert");
@@ -74,7 +77,7 @@ const registerPasswordAlert = document.querySelector(
   ".register-password-alert"
 );
 const registeremailAlert = document.querySelector(".register-email-alert");
-
+const registerNumberAlert = document.querySelector(".register-number-alert");
 // =========== connecting register btn and info to backend ======
 
 registerBtn.addEventListener("click", async (e) => {
@@ -83,23 +86,28 @@ registerBtn.addEventListener("click", async (e) => {
   const lastName = registerLastName.value;
   const email = registerEmail.value;
   const password = registerPassword.value;
+  const number = registerNumber.value;
   if (firstName.length < 3) {
-    showAlert(registerFirstNameAlert);
+    return showAlert(registerFirstNameAlert);
   }
   if (lastName.length < 3) {
-    showAlert(registerLastNameAlert);
+    return showAlert(registerLastNameAlert);
   }
   if (!validateEmail(email)) {
-    showAlert(registeremailAlert);
+    return showAlert(registeremailAlert);
   }
   if (password.length < 6) {
-    showAlert(registerPasswordAlert);
+    return showAlert(registerPasswordAlert);
+  }
+  if (!number) {
+    return showAlert(registerNumberAlert);
   }
   try {
     const { coach } = await axios.post("/api/v1/auth/register", {
       firstName,
       lastName,
       email,
+      number,
       password,
     });
 
@@ -129,6 +137,7 @@ loginBtn.addEventListener("click", async (e) => {
   const email = loginEmail.value;
   const password = loginPassword.value;
   const role = await e.target.dataset.login;
+  console.log(role);
   if (role === "coach") {
     try {
       const data = await axios.post("/api/v1/auth/login", {
@@ -136,14 +145,14 @@ loginBtn.addEventListener("click", async (e) => {
         password,
         role,
       });
-      window.location =
-        "http://192.168.1.195:3000/coachHomepage/coachHomepage.html";
       const ref = data.data.coach.coachId;
 
-      localStorage.setItem("ref", ref);
+      window.location =
+        "http://192.168.1.195:3000/coachHomepage/coachHomepage.html";
 
       // ============removing homesection and getting the coach homapage =================
     } catch (error) {
+      console.log(error);
       showAlert(loginEmailAlert);
       showAlert(loginPasswordAlert);
       roleBtn.forEach((btn) => {
@@ -152,16 +161,20 @@ loginBtn.addEventListener("click", async (e) => {
     }
   } else if (role === "client") {
     try {
-      const data = await axios.post("/api/v1/auth/login", {
+      const { data } = await axios.post("/api/v1/auth/login", {
         email,
         password,
         role,
       });
-
-      console.log(data);
+      console.log(data.client.clientId);
+      let cref = data.client.clientId;
+      localStorage.setItem("cref", cref);
+      window.location =
+        "http://192.168.1.195:3000/clientHomepage/clientHomepage.html";
 
       // ============removing homesection and getting the coach homapage =================
     } catch (error) {
+      console.log(error);
       showAlert(loginEmailAlert);
       showAlert(loginPasswordAlert);
       roleBtn.forEach((btn) => {

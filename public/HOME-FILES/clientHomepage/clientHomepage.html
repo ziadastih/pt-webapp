@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="clientHomepage.css" />
+    <title>logo</title>
+  </head>
+  <body>
+    <!-- ====================coach section =============================== -->
+    <section class="client-section">
+      <!-- ==============coach profile section =============== -->
+      <div class="client-general-stats-container">
+        <!-- ==========logo section=================== -->
+        <div class="logo-notification">
+          <p>logo</p>
+          <i class="fa-regular fa-bell"></i>
+        </div>
+        <!-- =======profile picture input field =========== -->
+        <div class="profile-picture-container">
+          <div class="default-profile-container">
+            <h2 class="profile-pic"></h2>
+          </div>
+        </div>
+        <!-- ============client name =============== -->
+        <div class="client-name-container">
+          <p class="client-name">username</p>
+        </div>
+        <div class="general-buttons-container">
+          <div class="info-container coached-by-container">
+            <p>coached by:</p>
+            <span class="coach-name">charbel abou daher</span>
+          </div>
+          <div class="info-container">
+            <a href="#" id="email-icon"
+              ><i class="fa-regular fa-envelope"></i
+            ></a>
+            <a href="#" id="whatsapp-icon"
+              ><i class="fa-brands fa-whatsapp"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+      <!-- =========coach access box section where he can navigate  ================= -->
+      <div class="client-access-section">
+        <!-- ============MY-CLIENTS SECTION -->
+        <div class="access-box access-workouts">
+          <i class="fa-solid fa-dumbbell"></i>
+          <p>programs</p>
+          <img src="../images/accessCoachArrow.svg" alt="" />
+        </div>
+        <!-- =========Workouts ========= -->
+        <div class="access-box access-diet">
+          <i class="fa-solid fa-bowl-food"></i>
+          <p>nutrition</p>
+          <img src="../images/accessCoachArrow.svg" alt="" />
+        </div>
+        <!-- ==============diet ================ -->
+        <div class="access-box access-logBook">
+          <i class="fa-regular fa-clipboard"></i>
+          <p>logBook</p>
+          <img src="../images/accessCoachArrow.svg" alt="" />
+        </div>
+        <div class="access-box access-checkIn">
+          <i class="fa-solid fa-user-check"></i>
+          <p>check in</p>
+          <img src="../images/accessCoachArrow.svg" alt="" />
+        </div>
+      </div>
+      <!-- =================== coach nav bar ============================== -->
+      <nav class="global-nav coach-nav-bar">
+        <p id="user-home-nav-btn">
+          <a href="../clientHomepage/clientHomepage.html">home</a>
+        </p>
+        <p id="user-settings-nav-btn">
+          <a href="../clientSettings/clientSettings.html">settings</a>
+        </p>
+        <p id="contact-us-nav-btn">contact us</p>
+        <p id="user-logout-nav-btn">logout</p>
+      </nav>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="clientHomepage.js"></script>
+  </body>
+</html>

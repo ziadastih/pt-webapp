@@ -49,7 +49,9 @@ const login = async (req, res) => {
   } else if (role === "client") {
     // ============now searching in database for email of the client
     const client = await Client.findOne({ email });
+
     const isPasswordCorrect = await client.comparePassword(password);
+
     // if client not found means invalid credentials
     // =compare password / if password doesnt match throw error invalid credentials==========
     if (!client || !isPasswordCorrect || client.enabled === false) {
@@ -90,6 +92,7 @@ const getCoach = async (req, res) => {
       coachFirstName: coach.firstName,
       coachLastName: coach.lastName,
       email: coach.email,
+      number: coach.number,
     },
   });
 };

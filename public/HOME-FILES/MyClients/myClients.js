@@ -108,6 +108,7 @@ registerBtn.addEventListener("click", async (e) => {
   const lastName = registerLastName.value;
   const email = registerEmail.value;
   const number = registerNumber.value;
+
   if (firstName.length < 3) {
     showAlert(registerFirstNameAlert);
   }
@@ -120,6 +121,15 @@ registerBtn.addEventListener("click", async (e) => {
   if (number.length < 1) {
     showAlert(registerPasswordAlert);
   }
+
+  let chars = `qwertyuiopasdfghjklzxcvbnmAQWERTYUIOPSDFGHJKLZXCVBNM1234567890!@#$%^&*()_+`;
+
+  let password = ``;
+  let lengthOfPass = 12;
+  for (let i = 0; i < lengthOfPass; i++) {
+    password += chars.charAt(Math.floor(Math.random() * chars.length));
+  }
+  console.log(password);
   try {
     preLoader.classList.remove("display-none");
     const { client } = await axios.post("/api/v1/client", {
@@ -127,6 +137,7 @@ registerBtn.addEventListener("click", async (e) => {
       lastName,
       email,
       number,
+      password,
     });
     const { data } = await axios.get("/api/v1/dataLength");
 

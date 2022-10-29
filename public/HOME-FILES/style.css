@@ -10,8 +10,14 @@
 
   /* =========main color ============ */
   --mainColor: #0e535f;
-  --SecondaryColor: #1d4147;
+
   --alert: #fc8f3a;
+  --eyeComfort: #81bcc9;
+
+  --bodyBackgroud: #e5eaef;
+  --mainOrange: #fead47;
+
+  --whiteSmoke: whitesmoke;
 }
 
 /* ===========global ================ */
@@ -77,6 +83,19 @@ input {
 .global-nav p {
   cursor: pointer;
   transition: 300ms ease-in;
+}
+.box-overlay {
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  position: fixed;
+  display: none;
+  background-color: var(--bodyBackgroud);
+
+  opacity: 0.8;
+  height: 100vh;
+  width: 100vw;
+  z-index: 50;
 }
 /* ==================END OF GLOBAL CLASSES ========================  */
 /* ============================BODY START =========================== */
@@ -199,10 +218,10 @@ body {
   position: absolute;
   top: 50%;
   left: 50%;
-
+  transform: translate(-50%, -50%);
   background-color: var(--mainColor);
   width: 80vw;
-  z-index: 20;
+  z-index: 50;
   display: none;
   align-items: center;
   justify-content: center;
@@ -249,15 +268,19 @@ body {
   font-weight: 400;
   font-size: 32px;
   text-transform: capitalize;
-  margin-bottom: 10px;
+  margin-bottom: 30px;
   margin-top: 30px;
+  position: relative;
 }
-.block-container span {
-  width: 100px;
+.block-container h3::before {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100%;
   height: 1px;
   background-color: white;
   opacity: 0.5;
-  margin-bottom: 30px;
 }
 
 /* ==========input name and alert ============ */
@@ -284,13 +307,8 @@ body {
   font-weight: 400;
 }
 
-.register-container {
-  transform: translate(-50%, -60%);
-}
 /* ==============login container ================= */
-.login-container {
-  transform: translate(-50%, -50%);
-}
+
 .role-container {
   display: flex;
   align-items: center;
