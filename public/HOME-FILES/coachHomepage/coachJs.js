@@ -55,6 +55,8 @@ getDataLength();
 const myClientsBtn = document.querySelector(".access-clients");
 
 myClientsBtn.addEventListener("click", () => {
+  localStorage.setItem("wL", workoutProgramNumberStat.textContent);
+  localStorage.setItem("dL", dietNumberStat.textContent);
   window.location = "http://192.168.1.195:3000/MyClients/myClients.html";
 });
 

@@ -23,7 +23,8 @@ let clientId = localStorage.getItem("cref");
 let wLength = JSON.parse(localStorage.getItem("wL"));
 let workoutPrograms = [];
 let selectedPrograms = [];
-
+let existingProgramsArr = [];
+let page = 0;
 createNewProgramBtns.forEach((btn) => {
   btn.addEventListener("click", () => {
     window.location =
@@ -32,13 +33,7 @@ createNewProgramBtns.forEach((btn) => {
 });
 
 addExistingProgram.addEventListener("click", async () => {
-  addProgramContainer.classList.add("open-container");
-  console.log(performance.now());
-  preLoader.classList.remove("display-none");
-  overlay.classList.add("open-container");
-  const { data } = await axios.get(`/api/v1/workoutProgram?addFor=1`);
-  preLoader.classList.add("display-none");
-  displayProgramsArray(data.workoutprograms);
+  getExistingPrograms();
 });
 confirmProgramBtn.addEventListener("click", async () => {
   preLoader.classList.remove("display-none");
@@ -59,6 +54,7 @@ confirmProgramBtn.addEventListener("click", async () => {
     });
     localStorage.setItem("wL", JSON.stringify(workoutLength));
   }
+  existingProgramsArr = [];
   selectedPrograms = [];
   preLoader.classList.remove("display-none");
   overlay.classList.remove("open-container");
@@ -68,6 +64,8 @@ confirmProgramBtn.addEventListener("click", async () => {
 closeBtn.addEventListener("click", () => {
   addProgramContainer.classList.remove("open-container");
   overlay.classList.remove("open-container");
+  existingProgramsArr = [];
+  programListContainer.innerHTML = "";
 });
 // =====================search input ==============
 searchInput.addEventListener("input", () => {
@@ -89,7 +87,7 @@ const getWorkouts = async () => {
     const length = data.workoutprograms.length;
 
     workoutPrograms = data.workoutprograms;
-    console.log(workoutPrograms);
+
     displayProgramInfo(workoutPrograms);
   } catch (error) {
     console.log(error);
@@ -315,8 +313,8 @@ const displayAllPrograms = (programPlan) => {
         overlay.classList.remove("open-container");
         deleteVerificationContainer.classList.remove("open-container");
         preLoader.classList.add("display-none");
-        wLength = wLength - 1;
-        localStorage.setItem("wL", JSON.stringify(wLength));
+
+        localStorage.setItem("wL", JSON.stringify(workoutLength));
 
         getWorkouts();
       });
@@ -730,10 +728,22 @@ const chosenDsSuperset = (exercise, i, oneWorkout) => {
 // ================end of chosen exercises ===============
 
 const displayProgramsArray = (arr) => {
+  let length = arr.length;
+  wLength = JSON.parse(localStorage.getItem("wL"));
   programListContainer.innerHTML = "";
   for (let i = 0; i < arr.length; i++) {
     const createdAt = arr[i].createdAt.slice(0, 10);
-    programListContainer.innerHTML += `<div class="program-content">
+    if (arr[i].selected === true) {
+      programListContainer.innerHTML += `<div class="program-content">
+      <span class="check-box change-check-box-background" data-program =${i}
+        ><i class="fa-solid fa-check" id="check-icon"></i
+      ></span>
+     
+      <p class="program-name">${arr[i].name}</p>
+      <p>${createdAt}</p>
+    </div>`;
+    } else {
+      programListContainer.innerHTML += `<div class="program-content">
     <span class="check-box" data-program =${i}
       ><i class="fa-solid fa-check" id="check-icon"></i
     ></span>
@@ -741,9 +751,20 @@ const displayProgramsArray = (arr) => {
     <p class="program-name">${arr[i].name}</p>
     <p>${createdAt}</p>
   </div>`;
+    }
+  }
+
+  // ============appending child to observe it and fetch more  ========
+  if (length !== wLength) {
+    let span = document.createElement("span");
+    span.classList.add("fetch-more");
+
+    programListContainer.append(span);
+    observer.observe(span);
   }
   // ===================managing the checkbox and pushing or removing the exercises to selected exercises array
   const checkbox = document.querySelectorAll(".check-box");
+
   checkbox.forEach((box) => {
     box.addEventListener("click", (e) => {
       let programIndex = box.dataset.program;
@@ -752,10 +773,10 @@ const displayProgramsArray = (arr) => {
       });
       if (index !== -1) {
         selectedPrograms.splice(index, 1);
-        console.log(selectedPrograms);
+        arr[programIndex].selected = false;
       } else {
         selectedPrograms.push(arr[programIndex]);
-        console.log(selectedPrograms);
+        arr[programIndex].selected = true;
       }
 
       box.classList.toggle("change-check-box-background");
@@ -781,4 +802,39 @@ const liveSearch = () => {
       program.classList.add("display-none");
     }
   });
+};
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(async (entry) => {
+    if (entry.isIntersecting) {
+      preLoader.classList.remove("display-none");
+
+      page = page + 1;
+      const { data } = await axios.get(`/api/v1/workoutProgram/?page=${page}`);
+
+      let fetchedPrograms = data.workoutprograms;
+      await fetchedPrograms.forEach((program) => {
+        existingProgramsArr.push(program);
+      });
+
+      preLoader.classList.add("display-none");
+
+      displayProgramsArray(existingProgramsArr);
+    }
+  });
+});
+
+const getExistingPrograms = async () => {
+  page = 0;
+
+  addProgramContainer.classList.add("open-container");
+
+  preLoader.classList.remove("display-none");
+  overlay.classList.add("open-container");
+  const { data } = await axios.get(`/api/v1/workoutProgram?page=${page}`);
+  preLoader.classList.add("display-none");
+
+  existingProgramsArr = data.workoutprograms;
+
+  displayProgramsArray(existingProgramsArr);
 };

@@ -19,11 +19,12 @@ const searchInput = document.querySelector(".search-input");
 // ================GET WORKOUT FUNCTION , INCLUDE DISPLAYING ALL, LIVE SEARCH , DELETE FUNCTION =============================
 
 let clientId = localStorage.getItem("cref");
-localStorage.removeItem("di");
+
 let dLength = JSON.parse(localStorage.getItem("dL"));
 let dietsArr = [];
 let selectedDiets = [];
-
+let page = 0;
+let existingDietsArr = [];
 // ========got to create new diet page ================
 
 createNewDietBtns.forEach((btn) => {
@@ -35,13 +36,7 @@ createNewDietBtns.forEach((btn) => {
 // =========toggle existing Diets  ============
 
 addExistingDiet.addEventListener("click", async () => {
-  addDietContainer.classList.add("open-container");
-
-  preLoader.classList.remove("display-none");
-  overlay.classList.add("open-container");
-  const { data } = await axios.get(`/api/v1/diet?addFor=1`);
-  preLoader.classList.add("display-none");
-  displayDietsArray(data.diets);
+  getExistingDiets();
 });
 
 // =========confirm diet btn ===============
@@ -79,6 +74,8 @@ closeBtn.addEventListener("click", () => {
   addDietContainer.classList.remove("open-container");
   overlay.classList.remove("open-container");
   selectedDiets = [];
+  existingDietsArr = [];
+  dietListContainer.innerHTML = ``;
 });
 
 // ================back btn =====================
@@ -304,8 +301,8 @@ const displayAllPrograms = (Diets) => {
         overlay.classList.remove("open-container");
         deleteVerificationContainer.classList.remove("open-container");
         preLoader.classList.add("display-none");
-        dLength = dLength - 1;
-        localStorage.setItem("dL", JSON.stringify(dLength));
+
+        localStorage.setItem("dL", JSON.stringify(dietLength));
 
         getDiets();
       });
@@ -326,10 +323,24 @@ const displayAllPrograms = (Diets) => {
 // ==========display overall diets ============
 
 const displayDietsArray = (arr) => {
+  let length = arr.length;
+  dLength = JSON.parse(localStorage.getItem("dL"));
+  console.log(length);
   dietListContainer.innerHTML = "";
+
   for (let i = 0; i < arr.length; i++) {
     const createdAt = arr[i].createdAt.slice(0, 10);
-    dietListContainer.innerHTML += `<div class="diet-content">
+    if (arr[i].selected === true) {
+      dietListContainer.innerHTML += `<div class="diet-content">
+      <span class="check-box change-check-box-background" data-diet =${i}
+        ><i class="fa-solid fa-check" id="check-icon"></i
+      ></span>
+     
+      <p class="diet-name">${arr[i].name}</p>
+      <p>${createdAt}</p>
+    </div>`;
+    } else {
+      dietListContainer.innerHTML += `<div class="diet-content">
     <span class="check-box" data-diet =${i}
       ><i class="fa-solid fa-check" id="check-icon"></i
     ></span>
@@ -337,6 +348,14 @@ const displayDietsArray = (arr) => {
     <p class="diet-name">${arr[i].name}</p>
     <p>${createdAt}</p>
   </div>`;
+    }
+  }
+  if (length !== dLength) {
+    let span = document.createElement("span");
+    span.classList.add("fetch-more");
+
+    dietListContainer.append(span);
+    observer.observe(span);
   }
   // ===================managing the checkbox and pushing or removing the exercises to selected exercises array
   const checkbox = document.querySelectorAll(".check-box");
@@ -348,10 +367,10 @@ const displayDietsArray = (arr) => {
       });
       if (index !== -1) {
         selectedDiets.splice(index, 1);
-        console.log(selectedDiets);
+        arr[programIndex].selected = false;
       } else {
         selectedDiets.push(arr[programIndex]);
-        console.log(selectedDiets);
+        arr[programIndex].selected = true;
       }
 
       box.classList.toggle("change-check-box-background");
@@ -377,4 +396,38 @@ const liveSearch = () => {
       diet.classList.add("display-none");
     }
   });
+};
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(async (entry) => {
+    if (entry.isIntersecting) {
+      preLoader.classList.remove("display-none");
+
+      page = page + 1;
+      const { data } = await axios.get(`/api/v1/diet/?page=${page}`);
+
+      let fetchedPrograms = data.diets;
+      await fetchedPrograms.forEach((program) => {
+        existingDietsArr.push(program);
+      });
+
+      preLoader.classList.add("display-none");
+
+      displayDietsArray(existingDietsArr);
+    }
+  });
+});
+
+const getExistingDiets = async () => {
+  page = 0;
+
+  addDietContainer.classList.add("open-container");
+
+  preLoader.classList.remove("display-none");
+  overlay.classList.add("open-container");
+  const { data } = await axios.get(`/api/v1/diet?page=${page}`);
+  preLoader.classList.add("display-none");
+
+  existingDietsArr = data.diets;
+  displayDietsArray(existingDietsArr);
 };
