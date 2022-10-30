@@ -2,6 +2,7 @@ const Client = require("../models/clientsModel");
 const sgMail = require("@sendgrid/mail");
 require("dotenv").config();
 sgMail.setApiKey(process.env.Email_Api);
+const bcrypt = require("bcryptjs");
 const { StatusCodes } = require("http-status-codes");
 const { BadRequestError, NotFoundError } = require("../errors");
 
@@ -109,29 +110,105 @@ const createNewClient = async (req, res) => {
   const client = await Client.create({ ...req.body });
 
   const token = client.createJWT();
-  res.status(StatusCodes.CREATED).json({ client });
+  res.status(StatusCodes.CREATED).json({
+    client: {
+      clientFirstName: client.firstName,
+      clientLastName: client.lastName,
+      createdAt: client.createdAt,
+      createdBy: client.createdBy,
+      enabled: client.enabled,
+      email: client.email,
+      number: client.number,
+    },
+  });
 };
 
 // =============update client ===============
 const updateClient = async (req, res) => {
-  const {
-    coach: { coachId },
-    params: { id: clientId },
-  } = req;
+  if (req.body.enabled) {
+    const {
+      coach: { coachId },
+      params: { id: clientId },
+    } = req;
 
-  const client = await Client.findOneAndUpdate(
-    {
-      _id: clientId,
-      createdBy: coachId,
-    },
-    req.body,
-    { new: true, runValidators: true }
-  );
+    const client = await Client.findOneAndUpdate(
+      {
+        _id: clientId,
+        createdBy: coachId,
+      },
+      req.body,
+      { new: true, runValidators: true }
+    );
 
-  if (!client) {
-    throw new NotFoundError(`client not fount with id ${clientId} `);
+    if (!client) {
+      throw new NotFoundError(`client not fount with id ${clientId} `);
+    }
+    res.status(StatusCodes.OK).json({
+      client: {
+        clientFirstName: client.firstName,
+        clientLastName: client.lastName,
+        createdAt: client.createdAt,
+        createdBy: client.createdBy,
+        enabled: client.enabled,
+        email: client.email,
+        number: client.number,
+      },
+    });
+  } else if (req.body.password) {
+    const { id: clientId } = req.params;
+
+    const client = await Client.findOne({ _id: clientId });
+
+    const isPasswordCorrect = await client.comparePassword(
+      req.body.currentPassword
+    );
+
+    if (!isPasswordCorrect) {
+      throw new UnauthenticatedError("invalid credential");
+    }
+    let password = req.body.password;
+    client.password = password;
+    const salt = await bcrypt.genSalt(10);
+    password = await bcrypt.hash(password, salt);
+
+    await client.save();
+    res.status(StatusCodes.OK).json({
+      client: {
+        clientFirstName: client.firstName,
+        clientLastName: client.lastName,
+        createdAt: client.createdAt,
+        createdBy: client.createdBy,
+        enabled: client.enabled,
+        email: client.email,
+        number: client.number,
+      },
+    });
+  } else {
+    const { id: clientId } = req.params;
+
+    const client = await Client.findOneAndUpdate(
+      {
+        _id: clientId,
+      },
+      req.body,
+      { new: true, runValidators: true }
+    );
+
+    if (!client) {
+      throw new NotFoundError(`client not fount with id ${clientId} `);
+    }
+    res.status(StatusCodes.OK).json({
+      client: {
+        clientFirstName: client.firstName,
+        clientLastName: client.lastName,
+        createdAt: client.createdAt,
+        createdBy: client.createdBy,
+        enabled: client.enabled,
+        email: client.email,
+        number: client.number,
+      },
+    });
   }
-  res.status(StatusCodes.OK).json({ client });
 };
 
 // ================ delete client ==============

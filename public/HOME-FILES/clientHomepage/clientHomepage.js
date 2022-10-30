@@ -2,19 +2,22 @@
 
 const clientId = localStorage.getItem("cref");
 
-// ===============coach name and displaying the general coach info ========
+// ===============client name and displaying the general coach info ========
 const clientName = document.querySelector(".client-name");
 const clientProfile = document.querySelector(".profile-pic");
 const clientNameContainer = document.querySelector(".client-name-container");
 const coachName = document.querySelector(".coach-name");
 const coachEmailBtn = document.querySelector("#email-icon");
 const coachWhatsappBtn = document.querySelector("#whatsapp-icon");
+
+// ==============get client and get coached by function ==============
+
 const getClient = async () => {
   try {
     const {
       data: { client },
     } = await axios.get(`/api/v1/client/${clientId}`);
-    console.log(client);
+
     const clientFirstName = client.clientFirstName;
     const clientLastName = client.clientLastName;
     const coachId = client.createdBy;
@@ -55,4 +58,16 @@ logoutBtn.addEventListener("click", async () => {
   } catch (error) {
     console.log(error);
   }
+});
+
+// ===================client access boxes  ============
+const accessProgramsBtn = document.querySelector(".access-workouts");
+const accessNutritionBtn = document.querySelector(".access-diet");
+
+accessProgramsBtn.addEventListener("click", () => {
+  window.location = `http://192.168.1.195:3000/clientProgram/clientProgram.html`;
+});
+
+accessNutritionBtn.addEventListener("click", () => {
+  window.location = `http://192.168.1.195:3000/clientNutrition/clientNutrition.html`;
 });

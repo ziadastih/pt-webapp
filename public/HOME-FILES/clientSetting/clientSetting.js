@@ -3,7 +3,7 @@ const backBtn = document.querySelector(".back-btn");
 
 backBtn.addEventListener("click", () => {
   window.location =
-    "http://192.168.1.195:3000/coachHomepage/coachHomepage.html";
+    "http://192.168.1.195:3000/clientHomepage/clientHomepage.html";
 });
 
 // =====================toggle btns ================
@@ -18,7 +18,7 @@ const changePasswordContainer = document.querySelector(
 );
 const overlay = document.querySelector(".overlay");
 const closeBtn = document.querySelectorAll("#close-btn");
-const coachId = localStorage.getItem("ref");
+const clientId = localStorage.getItem("cref");
 const preloader = document.querySelector(".gif");
 // ====================inputs  ==================
 const firstNameInput = document.getElementById("first-name");
@@ -45,13 +45,13 @@ const changePasswordBtn = document.querySelector(".change-password");
 toggleProfileInfo.addEventListener("click", async () => {
   preloader.classList.add("display-flex");
   const {
-    data: { coach },
-  } = await axios.get(`/api/v1/coach/${coachId}`);
+    data: { client },
+  } = await axios.get(`/api/v1/client/${clientId}`);
   preloader.classList.remove("display-flex");
-  firstNameInput.value = coach.coachFirstName;
-  lastNameInput.value = coach.coachLastName;
-  emailInput.value = coach.email;
-  numberInput.value = coach.number;
+  firstNameInput.value = client.clientFirstName;
+  lastNameInput.value = client.clientLastName;
+  emailInput.value = client.email;
+  numberInput.value = client.number;
   accountInfoContainer.classList.add("display-flex");
   overlay.classList.add("display-flex");
 });
@@ -91,7 +91,7 @@ changeAccountInfoBtn.addEventListener("click", async () => {
   }
 
   try {
-    const { coach } = await axios.patch(`/api/v1/coach/${coachId}`, {
+    const { client } = await axios.patch(`/api/v1/client/${clientId}`, {
       firstName,
       lastName,
       email,
@@ -130,7 +130,7 @@ changePasswordBtn.addEventListener("click", async () => {
   }
 
   try {
-    const { coach } = await axios.patch(`/api/v1/coach/${coachId}`, {
+    const { client } = await axios.patch(`/api/v1/client/${clientId}`, {
       currentPassword,
       password,
     });

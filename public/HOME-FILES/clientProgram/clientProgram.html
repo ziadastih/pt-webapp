@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="clientProgram.css" />
+    <title>My Clients</title>
+  </head>
+  <body>
+    <div class="gif"></div>
+    <div class="overlay"></div>
+    <!-- ============class header the back btn and the add btn ===== -->
+    <div class="header-container">
+      <img src="../images/Arrow 2.svg" class="back-btn" alt="" />
+      <h3>programs</h3>
+      <i class="fa-solid fa-dumbbell"></i>
+    </div>
+
+    <!-- ==============the grid program container where we display our workouts  -->
+
+    <div class="workouts-programs-grid-container"></div>
+    <!-- ===============create btn contianer with it header  -->
+    <div class="btn-container">
+      <button class="create-workout-btn btn" id="create-workout-btn">
+        create
+      </button>
+      <button class="add-workout-btn btn" id="add-workout-btn">add</button>
+    </div>
+    <!-- =====================add program container ================= -->
+    <div class="add-program-container">
+      <div class="add-program-content">
+        <div class="add-program-header">
+          <h2>add program</h2>
+          <i
+            class="fa-solid fa-xmark"
+            id="close-btn"
+            data-close="add-program-container"
+          ></i>
+        </div>
+
+        <div class="program-input-container">
+          <input
+            type="search"
+            placeholder="search for program"
+            class="search-input"
+          />
+          <i class="fa-solid fa-magnifying-glass" id="search-icon-btn"></i>
+        </div>
+        <span class="program-split-line"></span>
+
+        <div class="program-list-container"></div>
+        <span class="program-split-line"></span>
+
+        <button class="full-btn" id="confirm-program">confirm</button>
+      </div>
+    </div>
+    <!-- =============delete verification box ======== -->
+    <div class="delete-verification-section"></div>
+    <!-- =================== coach nav bar ============================== -->
+    <nav class="global-nav coach-nav-bar">
+      <p id="user-home-nav-btn">
+        <a href="../coachHomepage/coachHomepage.html">home</a>
+      </p>
+      <p id="user-settings-nav-btn">
+        <a href="../coachSettings/coachSettings.html">settings</a>
+      </p>
+      <p id="contact-us-nav-btn">contact us</p>
+      <p id="user-logout-nav-btn">logout</p>
+    </nav>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="clientProgram.js"></script>
+  </body>
+</html>

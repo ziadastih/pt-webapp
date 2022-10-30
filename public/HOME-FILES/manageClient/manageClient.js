@@ -62,13 +62,11 @@ disableBtn.addEventListener("click", async () => {
     const { data } = await axios.patch(`/api/v1/client/${clientId}`, {
       enabled: false,
     });
-    console.log(data);
   } else {
     disableBtn.textContent = "disable";
     const { data } = await axios.patch(`/api/v1/client/${clientId}`, {
       enabled: true,
     });
-    console.log(data);
   }
 });
 
