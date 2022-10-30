@@ -402,7 +402,13 @@ body {
   position: relative;
   gap: 20px;
 }
-
+.diet-list-container h2 {
+  font-family: var(--fontSansSerif);
+  color: var(--mainColor);
+  font-size: 12px;
+  width: 150px;
+  text-align: center;
+}
 .diet-content {
   display: flex;
   align-items: center;

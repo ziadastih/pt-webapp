@@ -33,6 +33,8 @@ createNewProgramBtns.forEach((btn) => {
 });
 
 addExistingProgram.addEventListener("click", async () => {
+  addProgramContainer.classList.add("open-container");
+  overlay.classList.add("open-container");
   getExistingPrograms();
 });
 confirmProgramBtn.addEventListener("click", async () => {
@@ -66,10 +68,11 @@ closeBtn.addEventListener("click", () => {
   overlay.classList.remove("open-container");
   existingProgramsArr = [];
   programListContainer.innerHTML = "";
+  searchInput.value = "";
 });
 // =====================search input ==============
-searchInput.addEventListener("input", () => {
-  liveSearch();
+searchInput.addEventListener("search", () => {
+  searchFunction();
 });
 
 // ================fetch workouts ===================
@@ -755,7 +758,8 @@ const displayProgramsArray = (arr) => {
   }
 
   // ============appending child to observe it and fetch more  ========
-  if (length !== wLength) {
+
+  if (length !== wLength && searchInput.value.length === 0) {
     let span = document.createElement("span");
     span.classList.add("fetch-more");
 
@@ -786,24 +790,6 @@ const displayProgramsArray = (arr) => {
 
 // =============live search for diets  ==================
 
-const liveSearch = () => {
-  const programContent = document.querySelectorAll(".program-content");
-  let inputCharacter = searchInput.value.toUpperCase();
-
-  programContent.forEach((program) => {
-    // ============show all item when input is empty again
-    if (searchInput === "") {
-      program.classList.remove("display-none");
-    }
-    // ==========search by charachter, display the ones that match,remove the ones that doesnt match================
-    if (program.textContent.toUpperCase().includes(inputCharacter)) {
-      program.classList.remove("display-none");
-    } else if (!program.textContent.toUpperCase().includes(inputCharacter)) {
-      program.classList.add("display-none");
-    }
-  });
-};
-
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(async (entry) => {
     if (entry.isIntersecting) {
@@ -827,14 +813,35 @@ const observer = new IntersectionObserver((entries) => {
 const getExistingPrograms = async () => {
   page = 0;
 
-  addProgramContainer.classList.add("open-container");
-
   preLoader.classList.remove("display-none");
-  overlay.classList.add("open-container");
+
   const { data } = await axios.get(`/api/v1/workoutProgram?page=${page}`);
   preLoader.classList.add("display-none");
 
   existingProgramsArr = data.workoutprograms;
 
   displayProgramsArray(existingProgramsArr);
+};
+
+const searchFunction = async () => {
+  let inputCharacter = searchInput.value;
+  preLoader.classList.remove("display-none");
+  const { data } = await axios.get(
+    `/api/v1/workoutProgram/?name=${inputCharacter}`
+  );
+
+  preLoader.classList.add("display-none");
+
+  existingProgramsArr = data.workoutprograms;
+  if (existingProgramsArr.length === 0) {
+    programListContainer.innerHTML = `<h2>Sorry! No Programs matches your search</h2>`;
+  } else {
+    displayProgramsArray(existingProgramsArr);
+  }
+
+  searchInput.addEventListener("input", () => {
+    if (searchInput.value.length === 0) {
+      getExistingPrograms();
+    }
+  });
 };

@@ -65,8 +65,8 @@ confirmDietBtn.addEventListener("click", async () => {
 });
 
 // ==================search input =================
-searchInput.addEventListener("input", () => {
-  liveSearch();
+searchInput.addEventListener("search", () => {
+  searchFunction();
 });
 // ===============close btn =======================
 
@@ -76,6 +76,7 @@ closeBtn.addEventListener("click", () => {
   selectedDiets = [];
   existingDietsArr = [];
   dietListContainer.innerHTML = ``;
+  searchInput.value = "";
 });
 
 // ================back btn =====================
@@ -350,7 +351,7 @@ const displayDietsArray = (arr) => {
   </div>`;
     }
   }
-  if (length !== dLength) {
+  if (length !== dLength && searchInput.value.length === 0) {
     let span = document.createElement("span");
     span.classList.add("fetch-more");
 
@@ -375,26 +376,6 @@ const displayDietsArray = (arr) => {
 
       box.classList.toggle("change-check-box-background");
     });
-  });
-};
-
-// =============live search for diets  ==================
-
-const liveSearch = () => {
-  const dietContent = document.querySelectorAll(".diet-content");
-  let inputCharacter = searchInput.value.toUpperCase();
-
-  dietContent.forEach((diet) => {
-    // ============show all item when input is empty again
-    if (searchInput === "") {
-      diet.classList.remove("display-none");
-    }
-    // ==========search by charachter, display the ones that match,remove the ones that doesnt match================
-    if (diet.textContent.toUpperCase().includes(inputCharacter)) {
-      diet.classList.remove("display-none");
-    } else if (!diet.textContent.toUpperCase().includes(inputCharacter)) {
-      diet.classList.add("display-none");
-    }
   });
 };
 
@@ -430,4 +411,25 @@ const getExistingDiets = async () => {
 
   existingDietsArr = data.diets;
   displayDietsArray(existingDietsArr);
+};
+
+const searchFunction = async () => {
+  let inputCharacter = searchInput.value;
+  preLoader.classList.remove("display-none");
+  const { data } = await axios.get(`/api/v1/diet/?name=${inputCharacter}`);
+
+  preLoader.classList.add("display-none");
+
+  existingDietsArr = data.diet;
+  if (existingDietsArr.length === 0) {
+    dietListContainer.innerHTML = `<h2>Sorry! No Programs matches your search</h2>`;
+  } else {
+    displayDietsArray(existingDietsArr);
+  }
+
+  searchInput.addEventListener("input", () => {
+    if (searchInput.value.length === 0) {
+      getExistingDiets();
+    }
+  });
 };
