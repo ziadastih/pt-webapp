@@ -192,26 +192,24 @@ body {
   cursor: pointer;
 }
 
-/* ============THE HEADER AND THE BTN WHEN THERE IS NO CLIENTS ==== */
 .btn-container {
+  display: grid;
+  grid-template-columns: repeat(2, 50vw);
+  width: 100vw;
+  height: 50px;
+  background-color: var(--whiteSmoke);
+  font-size: 15px;
+  font-family: var(--fontSansSerif);
+  color: var(--mainColor);
+  text-transform: capitalize;
+  letter-spacing: 1.2px;
+}
+.grid {
   display: flex;
-  margin-bottom: 10vh;
   align-items: center;
-  justify-content: space-around;
-  opacity: 1;
-  transition: 300ms ease-in;
+  justify-content: center;
 }
 
-.create-workout-btn {
-  background-color: var(--mainColor);
-  color: var(--whiteSmoke);
-  font-weight: 400;
-}
-.add-workout-btn {
-  font-weight: 400;
-  background-color: transparent;
-  border: 1px solid var(--mainColor);
-}
 /* ====================workouts grid container ============= */
 .workouts-programs-grid-container {
   margin-top: 20px;
@@ -221,6 +219,7 @@ body {
   justify-content: center;
   gap: 30px;
   width: 100vw;
+  margin-bottom: 10vh;
 }
 .program-container {
   display: flex;
@@ -229,18 +228,6 @@ body {
   flex-direction: column;
   width: 80vw;
   position: relative;
-}
-
-#filled-dumbbell {
-  position: absolute;
-  top: -5px;
-  left: -10px;
-
-  color: var(--mainColor);
-}
-
-.not-current {
-  opacity: 0.4;
 }
 
 /* =========workout styling that will be dealt with in js ========== */
@@ -269,25 +256,15 @@ body {
 .program i {
   font-size: 15px;
   margin-left: 20px;
-  color: var(--mainOrange);
+  color: var(--eyeComfort);
   cursor: pointer;
   transition: 300ms ease-in;
 }
-#show-program {
-  transition: 100ms ease-in;
-}
-.tools {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--mainOrange);
-  width: 100px;
-  gap: 10px;
-  cursor: pointer;
+#dumbbell-icon {
   margin-right: 20px;
 }
-.tools i {
-  color: var(--mainOrange);
+#show-program {
+  transition: 100ms ease-in;
 }
 
 /* ===================overview container ==================== */
@@ -311,35 +288,6 @@ body {
 }
 
 /* ============date inside the overview container ========== */
-.date-stats {
-  width: 80vw;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background-color: var(--mainColor);
-  height: 50px;
-}
-.date-stats p {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--eyeComfort);
-  font-family: var(--fontSansSerif);
-  font-size: 10px;
-  text-transform: capitalize;
-  gap: 5px;
-}
-.date-stats p span {
-  color: var(--whiteSmoke);
-  font-weight: 400;
-  font-size: 12px;
-}
-.created-at {
-  margin-left: 20px;
-}
-.updated-at {
-  margin-right: 20px;
-}
 
 .box-arrow {
   cursor: pointer;
@@ -349,7 +297,7 @@ body {
   display: grid;
 
   grid-template-columns: repeat(7, auto);
-  margin-top: 30px;
+
   place-content: center;
   gap: 10px;
   width: 100vw;
@@ -489,10 +437,10 @@ body {
 .exercise-tools {
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
-  gap: 20px;
+  justify-content: space-between;
+  gap: 35px;
 
-  font-size: 12px;
+  font-size: 15px;
 }
 
 /* ==============exercises input container  ============== */
@@ -554,191 +502,34 @@ body {
 .button-type-container button {
   margin-bottom: 0;
 }
-
-/* END OF PROGRAM CONTAINER ==================== */
-
-/* ===================overall container of the programs , width 100vw so we center all in center but same time flex start from top  */
-.add-program-container {
-  width: 100vw;
-  height: 60vh;
+.iframe-container {
+  width: 80vw;
+  height: 500px;
+  z-index: 40;
+  border-radius: 5px;
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-
-  display: none;
-  align-items: center;
-  justify-content: flex-start;
-  flex-direction: column;
-  z-index: 100;
-}
-/* ==============the sub container which has all the content */
-.add-program-content {
-  width: 80vw;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  background-color: var(--whiteSmoke);
-  border-radius: 5px;
-}
-/* ===================add exercises header , has the title of the container and the close btn  */
-.add-program-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 70vw;
-  color: var(--mainColor);
-  font-family: var(--fontSansSerif);
-  font-weight: 500;
-  text-transform: capitalize;
-  font-size: 15px;
-
-  margin-bottom: 20px;
-  margin-top: 20px;
-}
-
-.program-input-container i {
-  position: absolute;
-  font-size: 10px;
-  margin-left: -30px;
-  margin-top: 15px;
-  color: var(--mainColor);
-}
-
-.search-input {
-  width: 70vw;
-  background-color: transparent;
-  border: 1px solid var(--mainColor);
-}
-
-.program-split-line {
-  width: 70vw;
-  background-color: var(--bodyBackgroud);
-  height: 1px;
-  margin-top: 20px;
-}
-
-/* ===============exercise container ================= */
-
-.program-list-container {
-  display: flex;
-  align-items: center;
-  width: 100vw;
-  height: 300px;
-  justify-content: flex-start;
-  flex-direction: column;
-  margin-top: 20px;
-  overflow-y: scroll;
-  position: relative;
-  gap: 20px;
-}
-
-.program-content {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
-  width: 70vw;
-  height: 40px;
-  font-family: var(--fontSansSerif);
-  color: var(--mainColor);
-  font-size: 12px;
-  margin-bottom: 20px;
-  gap: 10px;
-}
-.program-name {
-  display: flex;
-  align-items: center;
-  text-transform: capitalize;
-
-  text-align: start;
-
-  word-wrap: break-word;
-
-  height: 40px;
-}
-.check-box {
-  width: 10px;
-  height: 10px;
-  border: 1px solid var(--mainColor);
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 8px;
-  color: var(--whiteSmoke);
-  transition: 200ms ease-in;
-}
-.check-icon {
-  opacity: 0;
-  transition: 200ms ease-in;
-}
-
-/* ==============delete verification box =========== */
-.delete-verification-section {
-  position: fixed;
-  top: 0;
-  height: 100vh;
-  width: 100vw;
-  display: none;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-
-  z-index: 40;
-}
-
-.delete-verification-box {
   background-color: whitesmoke;
-  height: 200px;
-  width: 80vw;
-  border-radius: 10px;
-  display: flex;
+  display: none;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   flex-direction: column;
-  z-index: 200;
-  z-index: 102;
+  overflow: hidden;
+  gap: 30px;
 }
-.delete-verification-box h3 {
-  font-family: var(--fontSansSerif);
-  font-weight: 400;
-  font-size: 15px;
-  color: var(--mainColor);
-  margin-bottom: 30px;
-  width: 60vw;
-  text-align: center;
+.iframe-container button {
+  width: 50vw;
+  font-size: 20px;
 }
-.delete-verification-box span {
-  text-transform: capitalize;
+.iframe {
+  width: 80vw;
+  height: 400px;
+  margin-top: 0;
+}
+/* END OF PROGRAM CONTAINER ==================== */
 
-  color: var(--alert);
-}
-.yes-no-container {
-  display: flex;
-  width: 100vw;
-  align-items: center;
-  justify-content: center;
-  gap: 20px;
-}
-.yes-no-container button {
-  width: 100px;
-  height: 40px;
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: var(--fontSansSerif);
-  font-size: 15px;
-  background-color: var(--mainColor);
-  color: whitesmoke;
-  font-weight: 400;
-  border: none;
-  cursor: pointer;
-  text-transform: capitalize;
-}
-/* ============user nav bar ======================== */
 .coach-nav-bar {
   transition: 300ms ease-in;
 }
@@ -800,4 +591,8 @@ body {
 }
 .change-check-box-background {
   background-color: var(--mainColor);
+}
+.selected-btn {
+  background-color: var(--eyeComfort);
+  color: var(--whiteSmoke);
 }

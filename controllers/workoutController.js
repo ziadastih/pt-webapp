@@ -29,7 +29,6 @@ const getAllWorkoutPrograms = async (req, res) => {
   }
   if (createdFor) {
     queryObject.createdFor = createdFor;
-    queryObject.createdBy = req.coach.coachId;
 
     const workoutprograms = await WorkoutProgram.find(queryObject).lean();
 

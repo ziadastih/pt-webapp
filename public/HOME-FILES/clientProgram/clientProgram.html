@@ -36,47 +36,29 @@
       <h3>programs</h3>
       <i class="fa-solid fa-dumbbell"></i>
     </div>
+    <!-- ===============btn container  =============-->
+    <div class="btn-container">
+      <div class="grid selected-btn" id="current-btn">current program</div>
+      <div class="grid" id="history-btn">programs history</div>
+    </div>
 
     <!-- ==============the grid program container where we display our workouts  -->
 
     <div class="workouts-programs-grid-container"></div>
     <!-- ===============create btn contianer with it header  -->
-    <div class="btn-container">
-      <button class="create-workout-btn btn" id="create-workout-btn">
-        create
+    <div class="iframe-container">
+      <iframe
+        src=""
+        class="iframe"
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+      ></iframe>
+      <button class="outline-btn" id="close-btn" data-close="iframe-container">
+        close
       </button>
-      <button class="add-workout-btn btn" id="add-workout-btn">add</button>
     </div>
-    <!-- =====================add program container ================= -->
-    <div class="add-program-container">
-      <div class="add-program-content">
-        <div class="add-program-header">
-          <h2>add program</h2>
-          <i
-            class="fa-solid fa-xmark"
-            id="close-btn"
-            data-close="add-program-container"
-          ></i>
-        </div>
-
-        <div class="program-input-container">
-          <input
-            type="search"
-            placeholder="search for program"
-            class="search-input"
-          />
-          <i class="fa-solid fa-magnifying-glass" id="search-icon-btn"></i>
-        </div>
-        <span class="program-split-line"></span>
-
-        <div class="program-list-container"></div>
-        <span class="program-split-line"></span>
-
-        <button class="full-btn" id="confirm-program">confirm</button>
-      </div>
-    </div>
-    <!-- =============delete verification box ======== -->
-    <div class="delete-verification-section"></div>
     <!-- =================== coach nav bar ============================== -->
     <nav class="global-nav coach-nav-bar">
       <p id="user-home-nav-btn">
