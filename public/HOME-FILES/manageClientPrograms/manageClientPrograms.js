@@ -11,11 +11,13 @@ const createNewProgramBtns = document.querySelectorAll("#create-workout-btn");
 const preLoader = document.querySelector(".gif");
 const addExistingProgram = document.querySelector("#add-workout-btn");
 const programListContainer = document.querySelector(".program-list-container");
-const closeBtn = document.querySelector("#close-btn");
+const closeBtn = document.querySelectorAll("#close-btn");
 const addProgramContainer = document.querySelector(".add-program-container");
 const confirmProgramBtn = document.querySelector("#confirm-program");
 const overlay = document.querySelector(".overlay");
 const searchInput = document.querySelector(".search-input");
+const iframeContainer = document.querySelector(".iframe-container");
+const iframe = document.querySelector(".iframe");
 // ================GET WORKOUT FUNCTION , INCLUDE DISPLAYING ALL, LIVE SEARCH , DELETE FUNCTION =============================
 
 localStorage.removeItem("wo");
@@ -63,13 +65,20 @@ confirmProgramBtn.addEventListener("click", async () => {
   addProgramContainer.classList.remove("open-container");
   getWorkouts();
 });
-closeBtn.addEventListener("click", () => {
-  addProgramContainer.classList.remove("open-container");
-  overlay.classList.remove("open-container");
-  existingProgramsArr = [];
-  programListContainer.innerHTML = "";
-  searchInput.value = "";
+
+closeBtn.forEach((btn) => {
+  btn.addEventListener("click", (e) => {
+    let id = e.target.dataset.close;
+    let container = document.querySelector(`.${id}`);
+    container.classList.remove("open-container");
+    overlay.classList.remove("open-container");
+    existingProgramsArr = [];
+    programListContainer.innerHTML = "";
+    searchInput.value = "";
+    iframe.src = "";
+  });
 });
+
 // =====================search input ==============
 searchInput.addEventListener("search", () => {
   searchFunction();
@@ -453,281 +462,115 @@ const chosenDay = (program, daysArr) => {
 const displayChosenExercises = (oneWorkout, selectedExercisesArray) => {
   const exContainer = oneWorkout.querySelector(".exercises-container");
   exContainer.innerHTML = "";
-  // =================conditions for displaying items  ==================
-  for (let i = 0; i < selectedExercisesArray.length; i++) {
-    let exercise = selectedExercisesArray[i];
-    if (exercise.type === "" && exercise.chain === false) {
-      standardChosen(exercise, i, oneWorkout);
-    } else if (exercise.type === "rest-pause" && exercise.chain === true) {
-      chosenRpSuperset(exercise, i, oneWorkout);
-    } else if (exercise.type === "dropset" && exercise.chain === true) {
-      chosenDsSuperset(exercise, i, oneWorkout);
-    } else if (exercise.chain === true) {
-      chosenSuperset(exercise, i, oneWorkout);
-    } else if (exercise.type === "rest-pause") {
-      chosenTypeRestPause(exercise, i, oneWorkout);
-    } else if (exercise.type === "dropset") {
-      chosenTypeDropset(exercise, i, oneWorkout);
+
+  let displayExercices = selectedExercisesArray.map((element) => {
+    return `<div class="one-exercise-container">
+    <span class ='left-span' id='chain' data-chain=${
+      element.chain
+    }><i class="fa-solid fa-square-check"></i></span>
+    
+    <div class="container-top-section">
+      <div class="exercise-general-info">
+        <img
+          src=${element.img}
+          alt=""
+        />
+        <p class="chosen-exercise-name">${element.name}</p>
+      </div>
+      <div class="exercise-tools">
+      
+      <p class="note-info">${element.note}</p>
+      <i class="fa-regular fa-eye" id="toggle-video" data-video = ${
+        element.video
+      }></i>
+      </div>
+    </div>
+    <div class="exercise-stats-container">
+      <div class="input-container">
+        <p>set:</p>
+        <div id="sets-input">${element.set || "-"} </div>
+        
+      </div>
+      <div class="input-container">
+        <p>rep:</p>
+        <div id="reps-input">${element.rep || "-"}</div>
+      </div>
+      <div class="input-container">
+        <p>rest:</p>
+        <div id="rest-input">${element.rest || "-"} </div>
+      </div>
+      <div class="input-container">
+        <p>tempo:</p>
+        <div id="tempo-input">${element.tempo || "-"}</div>
+      </div>
+      <div class="button-type-container">
+      <button class="outline-btn" id="dropset" data-type=${
+        element.type
+      }>dropset</button>
+      <button class="outline-btn" id="chain" data-chain = ${
+        element.chain
+      }>groupset</button>
+      <button class="outline-btn" id="rest-pause" data-type=${
+        element.type
+      }>rest-pause</button>
+      </div>
+    </div>
+  </div>`;
+  });
+  exContainer.innerHTML = displayExercices.join("");
+
+  btnLoop("dropset");
+  btnLoop("rest-pause");
+  groupsetLoop("chain");
+
+  const noteInfo = document.querySelectorAll(".note-info");
+  noteInfo.forEach((note) => {
+    if (note.textContent.length === 0) {
+      note.classList.add("display-none");
     }
-  }
+  });
+
+  const toggleVideoBtns = document.querySelectorAll("#toggle-video");
+
+  toggleVideoBtns.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      let Url = btn.dataset.video;
+
+      if (Url === "none") {
+        console.log("no video");
+      } else {
+        overlay.classList.add("open-container");
+        iframeContainer.classList.add("open-container");
+        iframe.src = Url;
+      }
+    });
+  });
 };
 
-// ==============chosen exercises if conditions  =========
-const standardChosen = (exercise, i, oneWorkout) => {
-  const exContainer = oneWorkout.querySelector(".exercises-container");
-  exContainer.innerHTML += `<div class="one-exercise-container">
-  <span class ='left-span'><i class="fa-solid fa-square-check"></i></span>
- 
-  <div class="container-top-section">
-    <div class="exercise-general-info">
-      <img
-        src=${exercise.img}
-        alt=""
-      />
-      <p class="chosen-exercise-name">${exercise.name}</p>
-    </div>
-    <div class="exercise-tools">
-      
-    </div>
-  </div>
-  <div class="exercise-stats-container">
-    <div class="input-container">
-      <p>set:</p>
-      <div id="sets-input">${exercise.set || "-"} </div>
-      
-    </div>
-    <div class="input-container">
-      <p>rep:</p>
-      <div id="reps-input">${exercise.rep || "-"}</div>
-    </div>
-    <div class="input-container">
-      <p>rest:</p>
-      <div id="rest-input">${exercise.rest || "-"} </div>
-    </div>
-    <div class="input-container">
-      <p>tempo:</p>
-      <div id="tempo-input">${exercise.tempo || "-"}</div>
-    </div>
-    <div class="button-type-container">
-     
-    </div>
-  </div>
-</div>`;
+// ================end of chosen exercises ===============
+
+const btnLoop = (elementType) => {
+  const element = document.querySelectorAll(`#${elementType}`);
+  element.forEach((btn) => {
+    let type = btn.dataset.type;
+
+    if (type !== elementType) {
+      btn.classList.add("display-none");
+    }
+  });
 };
 
-const chosenSuperset = (exercise, i, oneWorkout) => {
-  const exContainer = oneWorkout.querySelector(".exercises-container");
-  exContainer.innerHTML += `<div class="one-exercise-container">
-  <span class ='left-span show-opacity'><i class="fa-solid fa-square-check"></i></span>
+const groupsetLoop = (elementChain) => {
+  const groupset = document.querySelectorAll(`#${elementChain}`);
+  groupset.forEach((btn) => {
+    let chain = btn.dataset.chain;
 
-  <div class="container-top-section">
-    <div class="exercise-general-info">
-      <img
-        src=${exercise.img}
-        alt=""
-      />
-      <p class="chosen-exercise-name">${exercise.name}</p>
-    </div>
-    <div class="exercise-tools">
-     
-    </div>
-  </div>
-  <div class="exercise-stats-container">
-    <div class="input-container">
-      <p>set:</p>
-      <div id="sets-input">${exercise.set || "-"} </div>
-    </div>
-    <div class="input-container">
-      <p>rep:</p>
-      <div id="reps-input">${exercise.rep || "-"}</div>
-    </div>
-    <div class="input-container">
-      <p>rest:</p>
-      <div id="rest-input">${exercise.rest || "-"} </div>
-    </div>
-    <div class="input-container">
-      <p>tempo:</p>
-      <div id="tempo-input">${exercise.tempo || "-"}</div>
-    </div>
-    <div class="button-type-container">
-      <button class="outline-btn" id="chain" data-chain = ${i}>groupset</button>
-     
-    </div>
-  </div>
-</div>`;
+    if (chain !== "true") {
+      btn.classList.add("display-none");
+    }
+  });
 };
 
-const chosenTypeRestPause = (exercise, i, oneWorkout) => {
-  const exContainer = oneWorkout.querySelector(".exercises-container");
-  exContainer.innerHTML += `<div class="one-exercise-container">
-  <span class ='left-span'><i class="fa-solid fa-square-check"></i></span>
- 
-  <div class="container-top-section">
-    <div class="exercise-general-info">
-      <img
-        src=${exercise.img}
-        alt=""
-      />
-      <p class="chosen-exercise-name">${exercise.name}</p>
-    </div>
-    <div class="exercise-tools">
-     
-    </div>
-  </div>
-  <div class="exercise-stats-container">
-    <div class="input-container">
-      <p>set:</p>
-      <div id="sets-input">${exercise.set || "-"} </div>
-    </div>
-    <div class="input-container">
-      <p>rep:</p>
-      <div id="reps-input">${exercise.rep || "-"}</div>
-    </div>
-    <div class="input-container">
-      <p>rest:</p>
-      <div id="rest-input">${exercise.rest || "-"} </div>
-    </div>
-    <div class="input-container">
-      <p>tempo:</p>
-      <div id="tempo-input">${exercise.tempo || "-"}</div>
-    </div>
-    <div class="button-type-container">
-      
-      <button class="outline-btn" id="rest-pause" data-type=${i}>rest-pause</button>
-    
-    </div>
-  </div>
-</div>`;
-};
-
-const chosenTypeDropset = (exercise, i, oneWorkout) => {
-  const exContainer = oneWorkout.querySelector(".exercises-container");
-  exContainer.innerHTML += `<div class="one-exercise-container">
-  <span class ='left-span'><i class="fa-solid fa-square-check"></i></span>
- 
-  <div class="container-top-section">
-    <div class="exercise-general-info">
-      <img
-        src=${exercise.img}
-        alt=""
-      />
-      <p class="chosen-exercise-name">${exercise.name}</p>
-    </div>
-    <div class="exercise-tools">
-   
-    </div>
-  </div>
-  <div class="exercise-stats-container">
-    <div class="input-container">
-      <p>set:</p>
-      <div id="sets-input">${exercise.set || "-"} </div>
-    </div>
-    <div class="input-container">
-      <p>rep:</p>
-      <div id="reps-input">${exercise.rep || "-"}</div>
-    </div>
-    <div class="input-container">
-      <p>rest:</p>
-      <div id="rest-input">${exercise.rest || "-"} </div>
-    </div>
-    <div class="input-container">
-      <p>tempo:</p>
-      <div id="tempo-input">${exercise.tempo || "-"}</div>
-    </div>
-    <div class="button-type-container">
-      
-      
-      <button class="outline-btn" id="dropset" data-type=${i}>dropset</button>
-    </div>
-  </div>
-</div>`;
-};
-
-const chosenRpSuperset = (exercise, i, oneWorkout) => {
-  const exContainer = oneWorkout.querySelector(".exercises-container");
-  exContainer.innerHTML += `<div class="one-exercise-container">
-  <span class ='left-span show-opacity'><i class="fa-solid fa-square-check"></i></span>
- 
-  <div class="container-top-section">
-    <div class="exercise-general-info">
-      <img
-        src=${exercise.img}
-        alt=""
-      />
-      <p class="chosen-exercise-name">${exercise.name}</p>
-    </div>
-    <div class="exercise-tools">
-     
-    </div>
-  </div>
-  <div class="exercise-stats-container">
-    <div class="input-container">
-      <p>set:</p>
-      <div id="sets-input">${exercise.set || "-"} </div>
-    </div>
-    <div class="input-container">
-      <p>rep:</p>
-      <div id="reps-input">${exercise.rep || "-"}</div>
-    </div>
-    <div class="input-container">
-      <p>rest:</p>
-      <div id="rest-input">${exercise.rest || "-"} </div>
-    </div>
-    <div class="input-container">
-      <p>tempo:</p>
-      <div id="tempo-input">${exercise.tempo || "-"}</div>
-    </div>
-    <div class="button-type-container">
-      <button class="outline-btn" id="chain" data-chain = ${i}>groupset</button>
-      <button class="outline-btn" id="rest-pause" data-type=${i}>rest-pause</button>
-    
-    </div>
-  </div>
-</div>`;
-};
-
-const chosenDsSuperset = (exercise, i, oneWorkout) => {
-  const exContainer = oneWorkout.querySelector(".exercises-container");
-  exContainer.innerHTML += `<div class="one-exercise-container">
-  <span class ='left-span show-opacity'><i class="fa-solid fa-square-check"></i></span>
-  
-  <div class="container-top-section">
-    <div class="exercise-general-info">
-      <img
-        src=${exercise.img}
-        alt=""
-      />
-      <p class="chosen-exercise-name">${exercise.name}</p>
-    </div>
-    <div class="exercise-tools">
-      
-    </div>
-  </div>
-  <div class="exercise-stats-container">
-    <div class="input-container">
-      <p>set:</p>
-      <div id="sets-input">${exercise.set || "-"} </div>
-    </div>
-    <div class="input-container">
-      <p>rep:</p>
-      <div id="reps-input">${exercise.rep || "-"}</div>
-    </div>
-    <div class="input-container">
-      <p>rest:</p>
-      <div id="rest-input">${exercise.rest || "-"} </div>
-    </div>
-    <div class="input-container">
-      <p>tempo:</p>
-      <div id="tempo-input">${exercise.tempo || "-"}</div>
-    </div>
-    <div class="button-type-container">
-      <button class="outline-btn" id="chain" data-chain = ${i}>groupset</button>
-    
-      <button class="outline-btn" id="dropset" data-type=${i}>dropset</button>
-    </div>
-  </div>
-</div>`;
-};
 // ================end of chosen exercises ===============
 
 const displayProgramsArray = (arr) => {

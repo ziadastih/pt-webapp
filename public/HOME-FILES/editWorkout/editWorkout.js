@@ -526,23 +526,54 @@ const liveSearch = () => {
 
 const displayChosenExercises = () => {
   chosenExercisesContainer.innerHTML = "";
-  // =================conditions for displaying items  ==================
-  for (let i = 0; i < selectedExercisesArray.length; i++) {
-    let exercise = selectedExercisesArray[i];
-    if (exercise.type === "" && exercise.chain === false) {
-      standardChosen(exercise, i);
-    } else if (exercise.type === "rest-pause" && exercise.chain === true) {
-      chosenRpSuperset(exercise, i);
-    } else if (exercise.type === "dropset" && exercise.chain === true) {
-      chosenDsSuperset(exercise, i);
-    } else if (exercise.chain === true) {
-      chosenSuperset(exercise, i);
-    } else if (exercise.type === "rest-pause") {
-      chosenTypeRestPause(exercise, i);
-    } else if (exercise.type === "dropset") {
-      chosenTypeDropset(exercise, i);
-    }
-  }
+  let displayExercices = selectedExercisesArray.map((exercise, index) => {
+    return `<div class="one-exercise-container">
+  <span class ='left-span'><i class="fa-solid fa-square-check"></i></span>
+  
+  <div class="container-top-section">
+    <div class="exercise-general-info">
+      <img
+        src=${exercise.img}
+        alt=""
+      />
+      <p class="chosen-exercise-name">${exercise.name}</p>
+    </div>
+    <div class="exercise-tools">
+      <i class="fa-solid fa-note-sticky" id="note" data-note=${index}></i>
+      <i class="fa-regular fa-eye" id="toggle-video" data-video = ${exercise.video}></i>
+      <i class="fa-solid fa-trash" id="delete-exercise" data-delete = "${exercise.name}"></i>
+    </div>
+  </div>
+  <div class="exercise-stats-container">
+    <div class="input-container">
+      <p>set:</p>
+      <input type="text" id="sets-input" data-input =${index} placeholder="0" value="${exercise.set}" />
+    </div>
+    <div class="input-container">
+      <p>rep:</p>
+      <input type="text" id="reps-input" data-input =${index} placeholder="0 - 0" value="${exercise.rep}" />
+    </div>
+    <div class="input-container">
+      <p>rest:</p>
+      <input type="text" id="rest-input" data-input =${index} placeholder="0" value="${exercise.rest}" />
+    </div>
+    <div class="input-container">
+      <p>tempo:</p>
+      <input type="text" id="tempo-input" data-input =${index} placeholder="0-0-0-0" value="${exercise.tempo}" />
+    </div>
+    <div class="button-type-container">
+      <button class="full-btn" id="chain" data-chain = ${index} data-condition=${exercise.chain}>groupset</button>
+      <button class="full-btn" id="rest-pause" data-type=${index} data-condition=${exercise.type}>rest-pause</button>
+      <button class="full-btn" id="dropset" data-type=${index} data-condition=${exercise.type}>dropset</button>
+    </div>
+  </div>
+</div>`;
+  });
+  chosenExercisesContainer.innerHTML = displayExercices.join("");
+
+  btnLoop("dropset");
+  btnLoop("rest-pause");
+  groupsetLoop("chain");
 
   // =============================set inputs  ================
   const setInputs = document.querySelectorAll("#sets-input");
@@ -703,270 +734,31 @@ const displayChosenExercises = () => {
   });
 };
 
-// ==============chosen exercises if conditions  =========
-const standardChosen = (exercise, i) => {
-  chosenExercisesContainer.innerHTML += `<div class="one-exercise-container">
-    <span class ='left-span'><i class="fa-solid fa-square-check"></i></span>
-    
-    <div class="container-top-section">
-      <div class="exercise-general-info">
-        <img
-          src=${exercise.img}
-          alt=""
-        />
-        <p class="chosen-exercise-name">${exercise.name}</p>
-      </div>
-      <div class="exercise-tools">
-        <i class="fa-solid fa-note-sticky" id="note" data-note=${i}></i>
-        <i class="fa-regular fa-eye" id="toggle-video" data-video = ${exercise.video}></i>
-        <i class="fa-solid fa-trash" id="delete-exercise" data-delete = "${exercise.name}"></i>
-      </div>
-    </div>
-    <div class="exercise-stats-container">
-      <div class="input-container">
-        <p>set:</p>
-        <input type="text" id="sets-input" data-input =${i} placeholder="0" value="${exercise.set}" />
-      </div>
-      <div class="input-container">
-        <p>rep:</p>
-        <input type="text" id="reps-input" data-input =${i} placeholder="0 - 0" value="${exercise.rep}" />
-      </div>
-      <div class="input-container">
-        <p>rest:</p>
-        <input type="text" id="rest-input" data-input =${i} placeholder="0" value="${exercise.rest}" />
-      </div>
-      <div class="input-container">
-        <p>tempo:</p>
-        <input type="text" id="tempo-input" data-input =${i} placeholder="0-0-0-0" value="${exercise.tempo}" />
-      </div>
-      <div class="button-type-container">
-        <button class="full-btn" id="chain" data-chain = ${i}>groupset</button>
-        <button class="full-btn" id="rest-pause" data-type=${i}>rest-pause</button>
-        <button class="full-btn" id="dropset" data-type=${i}>dropset</button>
-      </div>
-    </div>
-  </div>`;
+const btnLoop = (elementType) => {
+  const element = document.querySelectorAll(`#${elementType}`);
+  element.forEach((btn) => {
+    let type = btn.dataset.condition;
+
+    if (type === elementType) {
+      btn.classList.add("selected-type");
+    }
+  });
 };
 
-const chosenSuperset = (exercise, i) => {
-  chosenExercisesContainer.innerHTML += `<div class="one-exercise-container">
-    <span class ='left-span show-opacity'><i class="fa-solid fa-square-check"></i></span>
-    
-    <div class="container-top-section">
-      <div class="exercise-general-info">
-        <img
-          src=${exercise.img}
-          alt=""
-        />
-        <p class="chosen-exercise-name">${exercise.name}</p>
-      </div>
-      <div class="exercise-tools">
-        <i class="fa-solid fa-note-sticky" id="note" data-note=${i}></i>
-        <i class="fa-regular fa-eye" id="toggle-video" data-video = ${exercise.video}></i>
-        <i class="fa-solid fa-trash" id="delete-exercise" data-delete = "${exercise.name}"></i>
-      </div>
-    </div>
-    <div class="exercise-stats-container">
-      <div class="input-container">
-        <p>set:</p>
-        <input type="text" id="sets-input" data-input =${i} placeholder="0" value="${exercise.set}" />
-      </div>
-      <div class="input-container">
-        <p>rep:</p>
-        <input type="text" id="reps-input" data-input =${i} placeholder="0 - 0" value="${exercise.rep}" />
-      </div>
-      <div class="input-container">
-        <p>rest:</p>
-        <input type="text" id="rest-input" data-input =${i} placeholder="0" value="${exercise.rest}" />
-      </div>
-      <div class="input-container">
-        <p>tempo:</p>
-        <input type="text" id="tempo-input" data-input =${i} placeholder="0-0-0-0" value="${exercise.tempo}" />
-      </div>
-      <div class="button-type-container">
-        <button class="full-btn selected-type" id="chain" data-chain = ${i}>groupset</button>
-        <button class="full-btn" id="rest-pause" data-type=${i}>rest-pause</button>
-        <button class="full-btn" id="dropset" data-type=${i}>dropset</button>
-      </div>
-    </div>
-  </div>`;
+const groupsetLoop = (elementChain) => {
+  const groupset = document.querySelectorAll(`#${elementChain}`);
+  groupset.forEach((btn) => {
+    let chain = btn.dataset.condition;
+
+    if (chain === "true") {
+      btn.classList.add("selected-type");
+      let span =
+        btn.parentElement.parentElement.parentElement.firstElementChild;
+      span.classList.add("show-opacity");
+    }
+  });
 };
 
-const chosenTypeRestPause = (exercise, i) => {
-  chosenExercisesContainer.innerHTML += `<div class="one-exercise-container">
-    <span class ='left-span'><i class="fa-solid fa-square-check"></i></span>
-   
-    <div class="container-top-section">
-      <div class="exercise-general-info">
-        <img
-          src=${exercise.img}
-          alt=""
-        />
-        <p class="chosen-exercise-name">${exercise.name}</p>
-      </div>
-      <div class="exercise-tools">
-        <i class="fa-solid fa-note-sticky" id="note" data-note=${i}></i>
-        <i class="fa-regular fa-eye" id="toggle-video" data-video = ${exercise.video}></i>
-        <i class="fa-solid fa-trash" id="delete-exercise" data-delete = "${exercise.name}"></i>
-      </div>
-    </div>
-    <div class="exercise-stats-container">
-      <div class="input-container">
-        <p>set:</p>
-        <input type="text" id="sets-input" data-input =${i} placeholder="0" value="${exercise.set}" />
-      </div>
-      <div class="input-container">
-        <p>rep:</p>
-        <input type="text" id="reps-input" data-input =${i} placeholder="0 - 0" value="${exercise.rep}" />
-      </div>
-      <div class="input-container">
-        <p>rest:</p>
-        <input type="text" id="rest-input" data-input =${i} placeholder="0" value="${exercise.rest}" />
-      </div>
-      <div class="input-container">
-        <p>tempo:</p>
-        <input type="text" id="tempo-input" data-input =${i} placeholder="0-0-0-0" value="${exercise.tempo}" />
-      </div>
-      <div class="button-type-container">
-        <button class="full-btn" id="chain" data-chain = ${i}>groupset</button>
-        <button class="full-btn selected-type" id="rest-pause" data-type=${i}>rest-pause</button>
-        <button class="full-btn" id="dropset" data-type=${i}>dropset</button>
-      </div>
-    </div>
-  </div>`;
-};
-
-const chosenTypeDropset = (exercise, i) => {
-  chosenExercisesContainer.innerHTML += `<div class="one-exercise-container">
-    <span class ='left-span'><i class="fa-solid fa-square-check"></i></span>
-   
-    <div class="container-top-section">
-      <div class="exercise-general-info">
-        <img
-          src=${exercise.img}
-          alt=""
-        />
-        <p class="chosen-exercise-name">${exercise.name}</p>
-      </div>
-      <div class="exercise-tools">
-        <i class="fa-solid fa-note-sticky" id="note" data-note=${i}></i>
-        <i class="fa-regular fa-eye" id="toggle-video" data-video = ${exercise.video}></i>
-        <i class="fa-solid fa-trash" id="delete-exercise" data-delete = "${exercise.name}"></i>
-      </div>
-    </div>
-    <div class="exercise-stats-container">
-      <div class="input-container">
-        <p>set:</p>
-        <input type="text" id="sets-input" data-input =${i} placeholder="0" value="${exercise.set}" />
-      </div>
-      <div class="input-container">
-        <p>rep:</p>
-        <input type="text" id="reps-input" data-input =${i} placeholder="0 - 0" value="${exercise.rep}" />
-      </div>
-      <div class="input-container">
-        <p>rest:</p>
-        <input type="text" id="rest-input" data-input =${i} placeholder="0" value="${exercise.rest}" />
-      </div>
-      <div class="input-container">
-        <p>tempo:</p>
-        <input type="text" id="tempo-input" data-input =${i} placeholder="0-0-0-0" value="${exercise.tempo}" />
-      </div>
-      <div class="button-type-container">
-        <button class="full-btn" id="chain" data-chain = ${i}>groupset</button>
-        <button class="full-btn" id="rest-pause" data-type=${i}>rest-pause</button>
-        <button class="full-btn selected-type" id="dropset" data-type=${i}>dropset</button>
-      </div>
-    </div>
-  </div>`;
-};
-
-const chosenRpSuperset = (exercise, i) => {
-  chosenExercisesContainer.innerHTML += `<div class="one-exercise-container">
-    <span class ='left-span show-opacity'><i class="fa-solid fa-square-check"></i></span>
-  
-    <div class="container-top-section">
-      <div class="exercise-general-info">
-        <img
-          src=${exercise.img}
-          alt=""
-        />
-        <p class="chosen-exercise-name">${exercise.name}</p>
-      </div>
-      <div class="exercise-tools">
-        <i class="fa-solid fa-note-sticky" id="note" data-note=${i}></i>
-        <i class="fa-regular fa-eye" id="toggle-video" data-video = ${exercise.video}></i>
-        <i class="fa-solid fa-trash" id="delete-exercise" data-delete = "${exercise.name}"></i>
-      </div>
-    </div>
-    <div class="exercise-stats-container">
-      <div class="input-container">
-        <p>set:</p>
-        <input type="text" id="sets-input" data-input =${i} placeholder="0" value="${exercise.set}" />
-      </div>
-      <div class="input-container">
-        <p>rep:</p>
-        <input type="text" id="reps-input" data-input =${i} placeholder="0 - 0" value="${exercise.rep}" />
-      </div>
-      <div class="input-container">
-        <p>rest:</p>
-        <input type="text" id="rest-input" data-input =${i} placeholder="0" value="${exercise.rest}" />
-      </div>
-      <div class="input-container">
-        <p>tempo:</p>
-        <input type="text" id="tempo-input" data-input =${i} placeholder="0-0-0-0" value="${exercise.tempo}" />
-      </div>
-      <div class="button-type-container">
-        <button class="full-btn selected-type" id="chain" data-chain = ${i}>groupset</button>
-        <button class="full-btn selected-type" id="rest-pause" data-type=${i}>rest-pause</button>
-        <button class="full-btn" id="dropset" data-type=${i}>dropset</button>
-      </div>
-    </div>
-  </div>`;
-};
-
-const chosenDsSuperset = (exercise, i) => {
-  chosenExercisesContainer.innerHTML += `<div class="one-exercise-container">
-    <span class ='left-span show-opacity'><i class="fa-solid fa-square-check"></i></span>
-    
-    <div class="container-top-section">
-      <div class="exercise-general-info">
-        <img
-          src=${exercise.img}
-          alt=""
-        />
-        <p class="chosen-exercise-name">${exercise.name}</p>
-      </div>
-      <div class="exercise-tools">
-        <i class="fa-solid fa-note-sticky" id="note" data-note=${i}></i>
-        <i class="fa-regular fa-eye" id="toggle-video" data-video = ${exercise.video}></i>
-        <i class="fa-solid fa-trash" id="delete-exercise" data-delete = "${exercise.name}"></i>
-      </div>
-    </div>
-    <div class="exercise-stats-container">
-      <div class="input-container">
-        <p>set:</p>
-        <input type="text" id="sets-input" data-input =${i} placeholder="0" value="${exercise.set}" />
-      </div>
-      <div class="input-container">
-        <p>rep:</p>
-        <input type="text" id="reps-input" data-input =${i} placeholder="0 - 0" value="${exercise.rep}" />
-      </div>
-      <div class="input-container">
-        <p>rest:</p>
-        <input type="text" id="rest-input" data-input =${i} placeholder="0" value="${exercise.rest}" />
-      </div>
-      <div class="input-container">
-        <p>tempo:</p>
-        <input type="text" id="tempo-input" data-input =${i} placeholder="0-0-0-0" value="${exercise.tempo}" />
-      </div>
-      <div class="button-type-container">
-        <button class="full-btn selected-type" id="chain" data-chain = ${i}>groupset</button>
-        <button class="full-btn" id="rest-pause" data-type=${i}>rest-pause</button>
-        <button class="full-btn selected-type" id="dropset" data-type=${i}>dropset</button>
-      </div>
-    </div>
-  </div>`;
-};
 // ================end of chosen exercises ===============
 
 // ==================display workouts  ==================

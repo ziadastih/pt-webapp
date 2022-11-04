@@ -667,4 +667,5 @@ body {
 
 .selected-type {
   background-color: var(--eyeComfort);
+  opacity: 1;
 }
