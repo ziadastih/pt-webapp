@@ -14,7 +14,6 @@ const getAllDiets = async (req, res) => {
     res.status(StatusCodes.OK).json({ diets });
   }
   if (createdFor) {
-    queryObject.createdBy = req.coach.coachId;
     queryObject.createdFor = createdFor;
     const diets = await Diet.find(queryObject).lean();
 

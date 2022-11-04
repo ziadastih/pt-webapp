@@ -191,35 +191,32 @@ body {
   font-size: 20px;
   cursor: pointer;
 }
-
-/* ============THE HEADER AND THE BTN WHEN THERE IS NO CLIENTS ==== */
 .btn-container {
+  display: grid;
+  grid-template-columns: repeat(2, 50vw);
+  width: 100vw;
+  height: 50px;
+  background-color: var(--whiteSmoke);
+  font-size: 15px;
+  font-family: var(--fontSansSerif);
+  color: var(--mainColor);
+  text-transform: capitalize;
+  letter-spacing: 1.2px;
+}
+.grid {
   display: flex;
-  margin-bottom: 10vh;
   align-items: center;
-  justify-content: space-around;
+  justify-content: center;
 }
-
-.create-diet-btn {
-  background-color: var(--mainColor);
-  color: var(--whiteSmoke);
-  font-weight: 400;
-}
-.add-diet-btn {
-  font-weight: 400;
-  background-color: transparent;
-  border: 1px solid var(--mainColor);
-}
-
-/* ============displaying programs in grid ============= */
-/* ================= diet programs grid container ============= */
+/* ========================== nutrition grid container ====== */
 .nutrition-programs-grid-container {
-  margin-top: 50px;
+  margin-top: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   width: 100vw;
+  margin-bottom: 15vh;
 }
 .nutrition-programs-grid-container h2 {
   width: 100vw;
@@ -228,17 +225,16 @@ body {
   align-items: center;
   font-family: var(--fontSansSerif);
   color: var(--mainColor);
-  font-size: 20px;
+  font-size: 18px;
 }
 /* =========meal styling that will be dealt with in js ========== */
 .one-diet-container {
-  margin-bottom: 40px;
+  margin-bottom: 20px;
   width: 100vw;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  position: relative;
 }
 
 .diet {
@@ -254,8 +250,9 @@ body {
   align-items: center;
   justify-content: space-between;
   text-transform: capitalize;
-
-  position: relative;
+}
+.diet i {
+  color: var(--eyeComfort);
 }
 .diet span {
   color: var(--whiteSmoke);
@@ -270,30 +267,176 @@ body {
   letter-spacing: 1.2px;
 }
 
-.tools {
+/* ================created meals  ===================== */
+
+.created-meals-container {
+  margin-top: 20px;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100vw;
+}
+/* =========meal styling that will be dealt with in js ========== */
+.one-meal-container {
+  margin-bottom: 20px;
+  width: 100vw;
   display: flex;
   align-items: center;
-  justify-content: space-around;
-  color: var(--mainOrange);
-  width: 70px;
+  justify-content: center;
+  flex-direction: column;
+}
+.one-meal {
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+}
 
-  cursor: pointer;
-  margin-right: 20px;
+.meal-info {
+  width: 80vw;
+  height: 50px;
+  background-color: var(--whiteSmoke);
+
+  border-radius: 3px;
+
+  font-family: var(--fontSansSerif);
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-transform: capitalize;
+  margin-bottom: 10px;
 }
-.tools i {
-  color: var(--mainOrange);
+.one-meal i {
+  color: var(--eyeComfort);
+  margin-left: 20px;
 }
-#filled-fork {
-  position: absolute;
-  left: 10vw;
-  top: -25px;
+.one-meal p {
+  text-align: center;
   color: var(--mainColor);
-  z-index: 2;
-  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+}
+.one-meal span {
+  margin-right: 30px;
+  color: var(--mainColor);
+  opacity: 0.5;
+  font-size: 8px;
+}
+.meal-overview {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.one-ingredient-overview-container {
+  width: 80vw;
+  background-color: var(--whiteSmoke);
+
+  margin-bottom: 10px;
+  padding: 5px;
+  border-radius: 5px 0px 5px 5px;
+  position: relative;
+}
+.portion-overview {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--mainColor);
+  color: whitesmoke;
+  font-size: 15px;
+  min-width: 70px;
+  height: 40px;
+  border-radius: 5px;
+}
+.chosen-ingredients-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.one-ingredient-container {
+  width: 80vw;
+  background-color: var(--whiteSmoke);
+  margin-bottom: 10px;
+  padding: 5px;
+  border-radius: 5px 0px 5px 5px;
+  position: relative;
+}
+.ingredient-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 80vw;
+  margin-top: 10px;
+  font-family: var(--fontSansSerif);
+  color: var(--mainColor);
+  font-weight: 500;
+}
+.ingredient-info h2 {
+  font-size: 15px;
+  text-transform: capitalize;
+  margin-left: 20px;
+}
+.ingredient-info input {
+  background-color: transparent;
+  border: 1px solid var(--mainColor);
+  width: 50px;
 }
 
-/* ==============meal macros container ================ */
+.info-input-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-right: 30px;
+}
+.info-input-container p {
+  font-size: 10px;
+  opacity: 0.5;
+}
 
+.ingredient-macros {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: 20px;
+  width: 60vw;
+  font-family: var(--fontSansSerif);
+  color: var(--mainColor);
+}
+.macros-info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10px;
+}
+.macros-info span {
+  opacity: 0.5;
+  font-size: 10px;
+}
+/* ==============meal macros container ================ */
+.total-meal-macros {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 10px;
+
+  width: 80vw;
+  background-color: var(--mainColor);
+  border-radius: 5px;
+  height: 80px;
+  padding: 5px;
+  font-family: var(--fontSansSerif);
+  color: var(--whiteSmoke);
+}
+
+/* ========================total diet macros =============== */
 .total-diet-macros {
   display: flex;
   justify-content: space-around;
@@ -326,187 +469,6 @@ body {
   font-size: 10px;
 }
 
-/* =========overall programs list ================ */
-.add-diet-container {
-  width: 100vw;
-  height: 60vh;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-
-  display: none;
-  align-items: center;
-  justify-content: flex-start;
-  flex-direction: column;
-  z-index: 100;
-}
-/* ==============the sub container which has all the content */
-.add-diet-content {
-  width: 80vw;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  background-color: var(--whiteSmoke);
-  border-radius: 5px;
-}
-/* ===================add exercises header , has the title of the container and the close btn  */
-.add-diet-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 70vw;
-  color: var(--mainColor);
-  font-family: var(--fontSansSerif);
-  font-weight: 500;
-  text-transform: capitalize;
-  font-size: 15px;
-
-  margin-bottom: 20px;
-  margin-top: 20px;
-}
-
-.diet-input-container i {
-  position: absolute;
-  font-size: 10px;
-  margin-left: -30px;
-  margin-top: 15px;
-  color: var(--mainColor);
-}
-
-.search-input {
-  width: 70vw;
-  background-color: transparent;
-  border: 1px solid var(--mainColor);
-}
-
-.diet-split-line {
-  width: 70vw;
-  background-color: var(--bodyBackgroud);
-  height: 1px;
-  margin-top: 20px;
-}
-
-/* ===============exercise container ================= */
-
-.diet-list-container {
-  display: flex;
-  align-items: center;
-  width: 100vw;
-  height: 300px;
-  justify-content: flex-start;
-  flex-direction: column;
-  margin-top: 20px;
-  overflow-y: scroll;
-  position: relative;
-  gap: 20px;
-}
-
-.diet-content {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
-  width: 70vw;
-  height: 40px;
-  font-family: var(--fontSansSerif);
-  color: var(--mainColor);
-  font-size: 12px;
-  margin-bottom: 20px;
-  gap: 10px;
-}
-.diet-name {
-  display: flex;
-  align-items: center;
-  text-transform: capitalize;
-
-  text-align: start;
-
-  word-wrap: break-word;
-
-  height: 40px;
-}
-.check-box {
-  width: 10px;
-  height: 10px;
-  border: 1px solid var(--mainColor);
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 8px;
-  color: var(--whiteSmoke);
-  transition: 200ms ease-in;
-}
-.check-icon {
-  opacity: 0;
-  transition: 200ms ease-in;
-}
-
-/* ==============delete verification box =========== */
-.delete-verification-section {
-  position: fixed;
-  top: 0;
-  height: 100vh;
-  width: 100vw;
-  display: none;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-
-  z-index: 40;
-}
-
-.delete-verification-box {
-  background-color: whitesmoke;
-  height: 200px;
-  width: 80vw;
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  z-index: 200;
-  z-index: 102;
-}
-.delete-verification-box h3 {
-  font-family: var(--fontSansSerif);
-  font-weight: 400;
-  font-size: 15px;
-  color: var(--mainColor);
-  margin-bottom: 30px;
-  width: 60vw;
-  text-align: center;
-}
-.delete-verification-box span {
-  text-transform: capitalize;
-
-  color: var(--alert);
-}
-.yes-no-container {
-  display: flex;
-  width: 100vw;
-  align-items: center;
-  justify-content: center;
-  gap: 20px;
-}
-.yes-no-container button {
-  width: 100px;
-  height: 40px;
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: var(--fontSansSerif);
-  font-size: 15px;
-  background-color: var(--mainColor);
-  color: whitesmoke;
-  font-weight: 400;
-  border: none;
-  cursor: pointer;
-  text-transform: capitalize;
-}
 /* ============user nav bar ======================== */
 .coach-nav-bar {
   transition: 300ms ease-in;
@@ -526,6 +488,9 @@ body {
 }
 .open-container .overview-container {
   display: flex;
+}
+.show-ingredients #show-ingredient {
+  transform: rotate(180deg);
 }
 .show-info .exercise-container {
   display: flex;
@@ -561,4 +526,11 @@ body {
 }
 .change-check-box-background {
   background-color: var(--mainColor);
+}
+.selected-btn {
+  background-color: var(--eyeComfort);
+  color: var(--whiteSmoke);
+}
+.show-ingredients .meal-overview {
+  display: flex;
 }

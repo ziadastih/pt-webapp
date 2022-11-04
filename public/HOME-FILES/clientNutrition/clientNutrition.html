@@ -36,44 +36,12 @@
       <h3>nutrition</h3>
       <i class="fa-solid fa-bowl-food"></i>
     </div>
-
-    <!-- ==============the grid program container where we display our workouts  -->
-    <div class="nutrition-programs-grid-container"></div>
-    <!-- ===============create btn contianer with it header  -->
     <div class="btn-container">
-      <button class="create-diet-btn btn" id="create-diet-btn">create</button>
-      <button class="add-diet-btn btn" id="add-diet-btn">add</button>
+      <div class="grid selected-btn" id="current-btn">current diet</div>
+      <div class="grid" id="history-btn">nutrition history</div>
     </div>
-    <!-- =====================add program container ================= -->
-    <div class="add-diet-container">
-      <div class="add-diet-content">
-        <div class="add-diet-header">
-          <h2>add diet</h2>
-          <i
-            class="fa-solid fa-xmark"
-            id="close-btn"
-            data-close="add-diet-container"
-          ></i>
-        </div>
+    <div class="nutrition-programs-grid-container"></div>
 
-        <div class="diet-input-container">
-          <input
-            type="search"
-            placeholder="search for diet"
-            class="search-input"
-          />
-          <i class="fa-solid fa-magnifying-glass" id="search-icon-btn"></i>
-        </div>
-        <span class="diet-split-line"></span>
-
-        <div class="diet-list-container"></div>
-        <span class="diet-split-line"></span>
-
-        <button class="full-btn" id="confirm-diet">confirm</button>
-      </div>
-    </div>
-    <!-- =============delete verification box ======== -->
-    <div class="delete-verification-section"></div>
     <!-- =================== coach nav bar ============================== -->
     <nav class="global-nav coach-nav-bar">
       <p id="user-home-nav-btn">
