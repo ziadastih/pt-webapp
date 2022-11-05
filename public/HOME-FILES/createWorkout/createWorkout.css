@@ -660,11 +660,6 @@ body {
   display: flex;
 }
 
-.border-radius-top {
-  border-radius: 5px 5px 0px 0px;
-  margin-bottom: 0px;
-}
-
 .selected-type {
   background-color: var(--eyeComfort);
   opacity: 1;

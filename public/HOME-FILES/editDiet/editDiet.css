@@ -649,10 +649,6 @@ body {
 .display-none {
   display: none;
 }
-.chosen-day {
-  background-color: var(--whiteSmoke);
-  color: var(--eyeComfort);
-}
 
 .show-opacity {
   opacity: 1;
@@ -663,11 +659,6 @@ body {
 
 .name-alert .display-flex {
   display: flex;
-}
-
-.border-radius-top {
-  border-radius: 5px 5px 0px 0px;
-  margin-bottom: 0px;
 }
 
 .selected-type {

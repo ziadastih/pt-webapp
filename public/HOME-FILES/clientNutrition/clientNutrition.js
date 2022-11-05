@@ -123,7 +123,7 @@ const displayMeals = (Diet) => {
   </div>
   <div class="macros-info">
   <span>carbs</span>
-  <p class="carbs-value">${ingredient.carbs} g</p>
+  <p class="carbs-value">${ingredient.carbs}g</p>
   </div>
   <div class="macros-info">
   <span>prot</span>
@@ -179,8 +179,6 @@ const displayAllPrograms = (Diets) => {
       </div>
     </div>`;
   }
-
-  // ==================edit diets btn ========================
 };
 // ==============================logout and back btn ==================
 const logoutBtn = document.getElementById("user-logout-nav-btn");

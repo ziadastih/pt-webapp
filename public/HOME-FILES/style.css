@@ -374,11 +374,3 @@ body {
 .display-none {
   display: none;
 }
-
-.translate-page {
-  transform: translateX(0);
-}
-
-.remove-border {
-  border: none;
-}

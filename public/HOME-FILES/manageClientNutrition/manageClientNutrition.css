@@ -527,41 +527,15 @@ body {
 .open-container {
   display: flex;
 }
-.rotate-arrow {
-  transform: rotate(180deg);
-}
-.open-container .overview-container {
-  display: flex;
-}
-.show-info .exercise-container {
-  display: flex;
-}
-.name-alert .show-alert {
-  display: block;
-}
 
-.selected-role {
-  background-color: white;
-  color: var(--mainColor);
-}
 .show-opacity {
   opacity: 1;
-}
-.role-alert {
-  border: 1px solid var(--alert);
 }
 
 .display-none {
   display: none;
 }
 
-.translate-page {
-  transform: translateX(0);
-}
-
-.remove-border {
-  border: none;
-}
 .not-current {
   opacity: 0.4;
 }

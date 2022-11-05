@@ -470,15 +470,6 @@ body {
   display: block;
 }
 
-.selected-role {
-  background-color: white;
-  color: var(--mainColor);
-}
-
-.role-alert {
-  border: 1px solid var(--alert);
-}
-
 .display-none {
   display: none;
 }

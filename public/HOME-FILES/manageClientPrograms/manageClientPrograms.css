@@ -814,18 +814,6 @@ body {
 .show-info #show-exercises {
   transform: rotate(180deg);
 }
-.name-alert .show-alert {
-  display: block;
-}
-
-.selected-role {
-  background-color: white;
-  color: var(--mainColor);
-}
-
-.role-alert {
-  border: 1px solid var(--alert);
-}
 
 .display-none {
   display: none;
@@ -835,15 +823,11 @@ body {
   background-color: var(--whiteSmoke);
   color: var(--eyeComfort);
 }
-.selected-type {
-  background-color: var(--eyeComfort);
-}
+
 .show-opacity {
   opacity: 1;
 }
-.translate-container {
-  transform: translateY(0);
-}
+
 .change-check-box-background {
   background-color: var(--mainColor);
 }
