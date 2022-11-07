@@ -32,6 +32,7 @@ const getallClients = async (req, res) => {
         clientFirstName: obj.firstName,
         clientLastName: obj.lastName,
         clientId: obj._id,
+        createdAt: obj.createdAt,
       };
     });
     res.status(StatusCodes.OK).json({ clientsInfo });
@@ -44,6 +45,7 @@ const getallClients = async (req, res) => {
         clientFirstName: obj.firstName,
         clientLastName: obj.lastName,
         clientId: obj._id,
+        createdAt: obj.createdAt,
       };
     });
 

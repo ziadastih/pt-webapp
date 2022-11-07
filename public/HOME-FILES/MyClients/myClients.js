@@ -6,7 +6,7 @@ const deleteVerificationContainer = document.querySelector(
 const overlay = document.querySelector(".overlay");
 const preLoader = document.querySelector(".gif");
 const searchCLientInput = document.getElementById("search-client-input");
-const searchIcon = document.querySelector(".search-icon-container");
+
 // ===============getClients when page open and display them =======
 localStorage.removeItem("cref");
 const getClients = async () => {
@@ -59,9 +59,7 @@ openClientForms.forEach((openClientForm) => {
     registerContainer.classList.add("open-container");
   });
 });
-searchIcon.addEventListener("click", () => {
-  searchCLientInput.classList.toggle("translate-input");
-});
+
 // =============close btns for each container so we save lines of code
 const closeBtns = document.querySelectorAll("#close-btn");
 const closeContainer = () => {
@@ -77,7 +75,7 @@ const closeContainer = () => {
 closeContainer();
 
 // ==============back btn ============================
-const backBtn = document.querySelector(".back-btn");
+const backBtn = document.querySelector("#back-btn");
 
 backBtn.addEventListener("click", () => {
   window.location =
@@ -159,7 +157,7 @@ registerBtn.addEventListener("click", async (e) => {
 
 // ================logout user ===================
 
-const logoutBtn = document.getElementById("user-logout-nav-btn");
+const logoutBtn = document.getElementById("logout-btn");
 
 logoutBtn.addEventListener("click", async () => {
   try {
@@ -187,17 +185,26 @@ function validateEmail(emailValue) {
   let res = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
   return res.test(emailValue);
 }
-{
-}
+
 const displayClients = (client) => {
   clientsGridContainer.innerHTML = "";
   for (let i = 0; i < client.length; i++) {
-    clientsGridContainer.innerHTML += ` <div class="client" data-id = ${client[i].clientId}}>
- <span></span>
-      <p class="client-full-name">${client[i].clientFirstName} ${client[i].clientLastName}</p>
+    clientsGridContainer.innerHTML += ` <div class="client" data-id = ${
+      client[i].clientId
+    }}>
+ <div class='client-info'>
+      <p class="client-full-name">${client[i].clientFirstName} ${
+      client[i].clientLastName
+    }</p>
+      <span>${client[i].createdAt.slice(0, 10)}</span>
+      </div>
       <div class="tools">
-        <i class="fa-solid fa-user-pen" id="manage-client" data-manage= ${client[i].clientId}></i>
-        <i class="fa-solid fa-trash" id="delete-client" data-delete = ${client[i].clientId}></i>
+        <i class="fa-solid fa-user-pen" id="manage-client" data-manage= ${
+          client[i].clientId
+        }></i>
+        <i class="fa-solid fa-trash" id="delete-client" data-delete = ${
+          client[i].clientId
+        }></i>
       </div>
     </div> `;
   }
