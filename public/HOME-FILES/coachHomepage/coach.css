@@ -6,89 +6,13 @@
 
 :root {
   --fontSansSerif: "PT Sans", sans-serif;
-  --fontSerif: "Playfair Display", serif;
+  --roboto: "Roboto", sans-serif;
 
   /* =========main color ============ */
-  --mainColor: #0e535f;
-
-  --alert: #fc8f3a;
-  --eyeComfort: #81bcc9;
-
-  --bodyBackgroud: #e5eaef;
-  --mainOrange: #fead47;
-
-  --whiteSmoke: whitesmoke;
-}
-
-/* ===========global ================ */
-input {
-  border-radius: 3px;
-  height: 40px;
-  outline-style: none;
-  border: none;
-  padding-left: 10px;
-}
-/* ===========general btn layout ============= */
-.btn {
-  font-family: var(--fontSansSerif);
-  font-weight: 700;
-  font-size: 20px;
-  background-color: white;
-  color: var(--mainColor);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 150px;
-  height: 40px;
-  border-radius: 3px;
-  border: none;
-  margin-top: 30px;
-  margin-bottom: 30px;
-  cursor: pointer;
-}
-
-::placeholder {
-  text-transform: capitalize;
-  font-size: 10px;
-  font-family: var(--fontSansSerif);
-  color: var(--SecondaryColor);
-}
-#toggle-password {
-  position: absolute;
-  margin-top: 15px;
-  font-size: 10px;
-  color: var(--SecondaryColor);
-  margin-left: -20px;
-  cursor: pointer;
-}
-
-.global-nav {
-  position: fixed;
-  width: 100vw;
-  height: 9vh;
-  background-color: var(--mainColor);
-  font-family: var(--fontSansSerif);
-  font-size: 18px;
-  text-transform: capitalize;
-  letter-spacing: 0.02em;
-  bottom: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 30px;
-  z-index: 10;
-  color: white;
-}
-
-.global-nav p {
-  cursor: pointer;
-  transition: 300ms ease-in;
-}
-.global-nav p a {
-  cursor: pointer;
-  transition: 300ms ease-in;
-  color: white;
-  text-decoration: none;
+  --blue: #1c85e8;
+  --mediumGrey: #434544;
+  --darkGrey: #343434;
+  --white: #fefefe;
 }
 
 /* ==================END OF GLOBAL CLASSES ========================  */
@@ -96,186 +20,213 @@ input {
 
 body {
   overflow-x: hidden;
+  background-color: var(--darkGrey);
+  width: 100vw;
+}
+header {
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 10vh;
 }
 
-/* ==============coach section =================== */
-.coach-section {
-  position: absolute;
-  top: 0;
-  width: 100vw;
-  height: 100vh;
-
+.page-header {
   display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: var(--fontSansSerif);
+  color: var(--white);
 
+  text-transform: uppercase;
+  font-weight: 700;
+  width: 80vw;
+}
+.page-header h2 {
+  letter-spacing: 1.2px;
+  font-size: 24px;
+}
+.page-header i {
+  color: var(--blue);
+}
+
+.profile-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  margin-top: 20px;
+}
+
+.profile-container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+
+  gap: 20px;
+  width: 80vw;
+  position: relative;
+}
+.profile-container ::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: var(--mediumGrey);
+}
+.profile-container ::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: var(--mediumGrey);
+}
+.titles {
+  font-family: var(--roboto);
+  color: var(--blue);
+  font-size: 15px;
+  text-transform: capitalize;
+  text-align: start;
+  line-height: 35px;
+  width: 20vw;
+}
+
+.profile-info {
+  display: flex;
+  align-items: flex-start;
   justify-content: flex-start;
   flex-direction: column;
-  transition: 300ms ease-in;
+  width: 60vw;
 }
-
-/* =============COACH PROFILE SECTION STYLE =================== */
-.coach-general-stats-container {
-  height: 45vh;
-  width: 100vw;
-  background-color: var(--mainColor);
-}
-/* ==================LOGO AND NOTIFICATION DISPLAY FLX, ALIGN AND SPACE BETWEEN */
-.logo-notification {
-  width: 90vw;
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-  color: white;
-  margin-top: 20px;
-  margin-bottom: 20px;
-}
-
-.logo-notification p {
+.coach-name {
+  margin-bottom: 15px;
   font-family: var(--fontSansSerif);
+  text-transform: capitalize;
+  color: var(--white);
+  font-size: 24px;
+  font-weight: 500;
+}
+.dashboard-container {
+  display: flex;
+  align-items: center;
+  width: 55vw;
+  justify-content: space-between;
+}
+.stat-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  font-family: var(--roboto);
+  font-size: 15px;
+  text-transform: capitalize;
+}
+.stat-box p {
+  color: var(--white);
+  opacity: 0.5;
+  margin-bottom: 12px;
+}
+.stat-box span {
+  color: var(--white);
+}
+
+main {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+
+  width: 100vw;
+  margin-top: 30px;
+}
+
+.navigation-tools-container {
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  gap: 20px;
+  width: 80vw;
+
+  place-items: center;
+}
+
+.access-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: var(--mediumGrey);
+  border-radius: 15px;
+  width: 160px;
+  height: 160px;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+}
+
+.access-box i {
+  font-size: 30px;
+  color: var(--blue);
+  margin-bottom: 30px;
+}
+
+.access-box p {
+  color: var(--white);
+  text-transform: capitalize;
+  letter-spacing: 1.2px;
   font-size: 20px;
-  font-weight: 700;
-  letter-spacing: 1.5px;
+  font-family: var(--fontSansSerif);
+}
+
+.get-started-container {
+  margin-top: 20px;
+  width: 80vw;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--blue);
+  border-radius: 5px;
+  margin-bottom: 70px;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+}
+
+.get-started-container p {
+  color: var(--white);
+  font-family: var(--roboto);
+  font-size: 20px;
+  font-weight: 600;
   margin-left: 20px;
 }
-
-/* ===================PROFILE PICTURE CONTAINER  ALIGN CENTER  =================================== */
-.profile-picture-container {
-  width: 100vw;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-}
-
-/*=======THE CONTAINER THAT WILL BT HOLDING OUR PICTURE ==================== */
-.default-profile-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  background-color: var(--eyeComfort);
-}
-.default-profile-container h2 {
-  color: var(--mainColor);
-  font-family: var(--fontSansSerif);
-  font-weight: 400;
-  font-size: 40px;
-}
-/* ==============coach name ============================= */
-.coach-name {
-  opacity: 0;
-  margin-top: 10px;
-  width: 100vw;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: var(--fontSansSerif);
-  color: white;
-  font-size: 24px;
-
-  font-weight: 400;
-  text-transform: capitalize;
-  transition: 300ms ease-in;
-}
-/* ==============THE PENTAGON SHAPE AND ICONS CONTAINER DISPLAY FLEX ALIGN CENTER AND SPECIFIC GAP */
-.triple-stats-container {
-  margin-top: 35px;
-  width: 100vw;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 50px;
-}
-
-/* ============THE STATS CONTAINER  FLEX ,COLUMN ALIGNED CENTER ================ */
-.stats {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-}
-/* ============NUMBER AND STAT TITLE FONT FAMILY AND CORRESPONDING COLORS ================ */
-.number {
-  font-family: var(--fontSansSerif);
-  color: whitesmoke;
+.get-started-container i {
+  color: var(--darkGrey);
+  margin-right: 20px;
   font-size: 20px;
-  font-weight: 400;
-}
-.stat-title {
-  font-family: var(--fontSansSerif);
-  text-transform: capitalize;
-  letter-spacing: 1.2px;
-  color: white;
-  opacity: 0.5;
-}
-/* ===========THE PENTAGON DIV WHERE WE WANT TO ADD AN ICON =========== */
-.pentagon-div {
-  position: relative;
-}
-.pentagon-div i {
-  color: var(--mainColor);
-  position: absolute;
-  top: 20px;
-  left: 18px;
 }
 
-.pentagon-diet-div {
-  position: relative;
-}
-.pentagon-diet-div .fa-bowl-food {
-  color: var(--mainColor);
-  position: absolute;
-  top: 20px;
-  left: 20px;
-}
-
-/* ================COACH ACCESS SECTION WHERE HE CAN GO TO CLIENTS/WORKOUTS/NUTRITION/WALLET ======== */
-.coach-access-section {
-  height: 45vh;
+/* ===============nav bar ---------------------- */
+.nav-bar {
+  position: fixed;
+  height: 60px;
   width: 100vw;
-}
-/* ================= GIVEN SPECIFIC HEIGHT WAS CALCULATED DEPEND THE NAV HEIGHT AND OUR PROFILE PICTURE CONTAINER  */
-.access-box {
-  height: 11.75vh;
-  width: 100vw;
-  border-bottom: 1px solid var(--mainColor);
+  background-color: var(--mediumGrey);
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  cursor: pointer;
-
-  color: var(--mainColor);
-}
-.access-box i {
-  font-size: 24px;
-  margin-left: 40px;
-}
-.access-box img {
-  margin-right: 40px;
-}
-.access-box p {
-  font-family: var(--fontSansSerif);
-  font-size: 24px;
-  text-transform: capitalize;
-  letter-spacing: 1.2px;
-  font-weight: 400;
-}
-/* =========REMOVING BORDER FOR THE LAST SECTION======================= */
-.my-wallet {
-  border-bottom: none;
-}
-/* ============user nav bar ======================== */
-.coach-nav-bar {
-  transition: 300ms ease-in;
+  justify-content: space-evenly;
+  bottom: 0;
+  left: 0;
 }
 
-/* ================hover ============== */
-.global-nav p:hover {
-  opacity: 0.8;
+.nav-bar a {
+  text-decoration: none;
+  color: var(--white);
 }
-/* ===============js classes ====================== */
-.opacity-one {
-  opacity: 1;
+.nav-bar i {
+  color: var(--white);
+  font-size: 20px;
+}
+#home-icon i {
+  color: var(--blue);
 }

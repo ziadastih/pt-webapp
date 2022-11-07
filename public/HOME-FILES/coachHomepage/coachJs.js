@@ -3,7 +3,7 @@ const coachId = localStorage.getItem("ref");
 
 // ===============coach name and displaying the general coach info ========
 const coachName = document.querySelector(".coach-name");
-const coachProfile = document.querySelector(".profile-pic");
+
 const getCoach = async () => {
   try {
     const {
@@ -11,7 +11,7 @@ const getCoach = async () => {
     } = await axios.get(`/api/v1/coach/${coachId}`);
     const firstName = coach.coachFirstName;
     const lastName = coach.coachLastName;
-    coachProfile.textContent = `${firstName.slice(0, 1).toUpperCase()}`;
+
     coachName.innerHTML = `${firstName} ${lastName}`;
     coachName.classList.add("opacity-one");
   } catch (error) {
@@ -61,7 +61,7 @@ myClientsBtn.addEventListener("click", () => {
 });
 
 // =================== my workouts event listener ==========
-const myWorkoutsBtn = document.querySelector(".access-workouts");
+const myWorkoutsBtn = document.querySelector(".access-programs");
 
 myWorkoutsBtn.addEventListener("click", () => {
   localStorage.setItem("wL", workoutProgramNumberStat.textContent);
@@ -70,14 +70,14 @@ myWorkoutsBtn.addEventListener("click", () => {
 });
 
 // =======================nutrition event listener =======
-const myNutritionBtn = document.querySelector(".access-diet");
+const myNutritionBtn = document.querySelector(".access-diets");
 
 myNutritionBtn.addEventListener("click", () => {
   localStorage.setItem("dL", dietNumberStat.textContent);
   window.location = "http://192.168.1.195:3000/MyNutrition/myNutrition.html";
 });
 // =======================Wallet event listener =======
-const myWalletBtn = document.querySelector(".access-wallet");
+const myWalletBtn = document.querySelector(".access-activities");
 
 myWalletBtn.addEventListener("click", () => {
   window.location = "http://192.168.1.195:3000/MyWallet/wallet.html";
@@ -85,7 +85,7 @@ myWalletBtn.addEventListener("click", () => {
 
 // ================logout user ===================
 
-const logoutBtn = document.getElementById("user-logout-nav-btn");
+const logoutBtn = document.getElementById("logout-btn");
 
 logoutBtn.addEventListener("click", async () => {
   try {

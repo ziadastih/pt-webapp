@@ -187,12 +187,13 @@ function validateEmail(emailValue) {
   let res = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
   return res.test(emailValue);
 }
-
+{
+}
 const displayClients = (client) => {
   clientsGridContainer.innerHTML = "";
   for (let i = 0; i < client.length; i++) {
     clientsGridContainer.innerHTML += ` <div class="client" data-id = ${client[i].clientId}}>
-    <i class="fa-solid fa-user"></i>
+ <span></span>
       <p class="client-full-name">${client[i].clientFirstName} ${client[i].clientLastName}</p>
       <div class="tools">
         <i class="fa-solid fa-user-pen" id="manage-client" data-manage= ${client[i].clientId}></i>

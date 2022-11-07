@@ -387,8 +387,10 @@ body {
   margin-bottom: 10px;
 }
 .one-meal i {
-  color: var(--eyeComfort);
+  color: var(--mainColor);
   margin-left: 20px;
+  transition: 100ms ease-in;
+  opacity: 0.8;
 }
 .one-meal p {
   text-align: center;
@@ -400,16 +402,16 @@ body {
 .tools {
   display: flex;
   align-items: center;
-  justify-content: flex-end;
-  color: var(--mainOrange);
-  width: 100px;
-  gap: 10px;
+  justify-content: center;
+
+  gap: 30px;
   cursor: pointer;
   margin-right: 20px;
 }
 .tools i {
-  color: var(--mainOrange);
+  margin-left: 0;
 }
+
 .meal-overview {
   display: none;
   justify-content: center;
@@ -435,6 +437,7 @@ body {
   padding: 5px 10px;
   border-radius: 5px;
 }
+
 /* ==============meal macros container ================ */
 .total-meal-macros {
   display: flex;
@@ -667,4 +670,7 @@ body {
 
 .show-ingredients .meal-overview {
   display: flex;
+}
+.show-ingredients #show-ingredient {
+  transform: rotate(90deg);
 }
