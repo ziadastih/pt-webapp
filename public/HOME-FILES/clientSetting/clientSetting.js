@@ -1,5 +1,5 @@
 // ==============back btn ============================
-const backBtn = document.querySelector(".back-btn");
+const backBtn = document.querySelector("#back-btn");
 
 backBtn.addEventListener("click", () => {
   window.location =
@@ -144,7 +144,7 @@ changePasswordBtn.addEventListener("click", async () => {
 });
 // ================logout user ===================
 
-const logoutBtn = document.querySelectorAll("#user-logout-nav-btn");
+const logoutBtn = document.querySelectorAll("#logout-btn");
 
 logoutBtn.forEach((btn) => {
   btn.addEventListener("click", async () => {

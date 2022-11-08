@@ -28,32 +28,31 @@
     <title>My Clients</title>
   </head>
   <body>
-    <!-- ============class header the back btn and the add btn ===== -->
-    <div class="header-container">
-      <img src="../images/Arrow 2.svg" class="back-btn" alt="" />
-      <h3>settings</h3>
-      <i class="fa-solid fa-gear"></i>
-    </div>
+    <header>
+      <div class="page-header">
+        <i class="fa-solid fa-arrow-left-long" id="back-btn"></i>
+        <h2>settings</h2>
+        <i class="fa-solid fa-gear" id="gear-icon"></i>
+      </div>
+    </header>
+
     <div class="overlay"></div>
     <div class="gif"></div>
 
     <!-- ===============settings btn =================== -->
     <div class="settings-btns">
       <div class="access-box toggle-profile-info">
-        <span></span>
         <p>account info</p>
-        <img src="../images/accessCoachArrow.svg" alt="" />
+        <i class="fa-solid fa-chevron-right"></i>
       </div>
       <div class="access-box toggle-change-password">
-        <span></span>
         <p>change password</p>
-        <img src="../images/accessCoachArrow.svg" alt="" />
+        <i class="fa-solid fa-chevron-right"></i>
       </div>
 
-      <div class="access-box logout-btn" id="user-logout-nav-btn">
-        <span></span>
+      <div class="access-box logout-btn" id="logout-btn">
         <p>logout</p>
-        <img src="../images/accessCoachArrow.svg" alt="" />
+        <i class="fa-solid fa-chevron-right"></i>
       </div>
     </div>
 
@@ -143,17 +142,17 @@
       </div>
       <button class="change-password btn">change</button>
     </div>
-    <!-- =================== coach nav bar ============================== -->
-    <nav class="global-nav coach-nav-bar">
-      <p id="user-home-nav-btn">
-        <a href="../clientHomepage/clientHomepage.html">home</a>
-      </p>
-      <p id="user-settings-nav-btn">
-        <a href="../clientSetting/clientSetting.html">settings</a>
-      </p>
-      <p id="contact-us-nav-btn">contact us</p>
-      <p id="user-logout-nav-btn">logout</p>
-    </nav>
+    <div class="nav-bar">
+      <a href="../clientHomepage/clientHomepage.html" id="home-icon"
+        ><i class="fa-solid fa-house"></i
+      ></a>
+      <a href="../clientSetting/clientSetting.html" id="settings-nav-icon">
+        <i class="fa-solid fa-gear"></i
+      ></a>
+      <i class="fa-regular fa-envelope"></i>
+
+      <i class="fa-solid fa-arrow-right-from-bracket" id="logout-btn"></i>
+    </div>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="clientSetting.js"></script>
   </body>
