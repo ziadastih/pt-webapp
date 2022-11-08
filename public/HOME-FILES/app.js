@@ -14,12 +14,6 @@ const coachHomepage = document.querySelector(".coach-section");
 const coachNavBar = document.querySelector(".coach-nav-bar");
 
 // ===========navigation event listener ==========
-// ===============global home navigation =============
-globalHomeBtn.addEventListener("click", () => {
-  loginContainer.classList.remove("open-container");
-  registerContainer.classList.remove("open-container");
-});
-// ===============get started btn  ==================
 getStartedBtn.addEventListener("click", () => {
   registerContainer.classList.add("open-container");
   boxOverlay.classList.add("open-container");
@@ -31,11 +25,8 @@ loginNavBtn.addEventListener("click", () => {
   boxOverlay.classList.add("open-container");
 });
 
-// ==============END OF GLOBAL NAVIGATION ====================
-
 //===========REGISTER / LOGIN LOGIC =======================
 
-// =============close btns for each container so we save lines of code
 closeBtns.forEach((closeBtn) => {
   closeBtn.addEventListener("click", (e) => {
     let id = e.target.dataset.close;
