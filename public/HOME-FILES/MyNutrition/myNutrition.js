@@ -68,7 +68,7 @@ goToCreateDietBtns.forEach((btn) => {
 });
 
 // ==============back btn ============================
-const backBtn = document.querySelector(".back-btn");
+const backBtn = document.querySelector("#back-btn");
 
 backBtn.addEventListener("click", () => {
   window.location =
@@ -76,7 +76,7 @@ backBtn.addEventListener("click", () => {
 });
 // ================logout user ===================
 
-const logoutBtn = document.getElementById("user-logout-nav-btn");
+const logoutBtn = document.getElementById("logout-btn");
 
 logoutBtn.addEventListener("click", async () => {
   try {
@@ -106,12 +106,12 @@ const displayAllPrograms = (Diets) => {
   dietsGridContainer.innerHTML = "";
   for (let i = 0; i < Diets.length; i++) {
     let diet = Diets[i];
-    if (diet.name.length > 13) {
-      diet.name = `${diet.name.slice(0, 13)}..`;
+    if (diet.name.length > 20) {
+      diet.name = `${diet.name.slice(0, 20)}..`;
     }
     dietsGridContainer.innerHTML += `<div class="one-diet-container">
     <div class="diet">
-      <span>${diet.meals.length} m.</span>
+     
       <p>${diet.name}</p>
       <div class="tools">
         <i
@@ -137,7 +137,7 @@ const displayAllPrograms = (Diets) => {
         <p class="total-diet-carbs">${diet.macros.carbs}</p>
       </div>
       <div class="macros-info">
-        <span>prot</span>
+        <span>prot.</span>
         <p class="total-diet-prot">${diet.macros.protein}</p>
       </div>
       <div class="macros-info">
@@ -219,7 +219,7 @@ const searchFunction = async () => {
 
   preLoader.classList.remove("display-none");
   const { data } = await axios.get(`/api/v1/diet?name=${inputCharacter}`);
-
+  observer.unobserve(fetchMore);
   preLoader.classList.add("display-none");
 
   dietsArr = data.diet;

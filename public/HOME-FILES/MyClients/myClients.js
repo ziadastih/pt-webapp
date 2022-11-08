@@ -189,35 +189,24 @@ function validateEmail(emailValue) {
 const displayClients = (client) => {
   clientsGridContainer.innerHTML = "";
   for (let i = 0; i < client.length; i++) {
+    let clientFullName = `${client[i].clientFirstName} ${client[i].clientLastName}`;
     clientsGridContainer.innerHTML += ` <div class="client" data-id = ${
       client[i].clientId
-    }}>
+    }>
  <div class='client-info'>
-      <p class="client-full-name">${client[i].clientFirstName} ${
-      client[i].clientLastName
-    }</p>
+      <p class="client-full-name">${clientFullName}</p>
       <span>${client[i].createdAt.slice(0, 10)}</span>
       </div>
       <div class="tools">
         <i class="fa-solid fa-user-pen" id="manage-client" data-manage= ${
           client[i].clientId
         }></i>
-        <i class="fa-solid fa-trash" id="delete-client" data-delete = ${
-          client[i].clientId
-        }></i>
+        <i class="fa-solid fa-trash" id="delete-client" data-name='${clientFullName}' data-delete = ${
+      client[i].clientId
+    }></i>
       </div>
     </div> `;
   }
-
-  // =================client full name adjustement========
-  const clientFullName = document.querySelectorAll(".client-full-name");
-  clientFullName.forEach((fullName) => {
-    const OriginalName = fullName.textContent;
-    if (OriginalName.length > 14) {
-      const restrictedFullName = `${OriginalName.slice(0, 14)}...`;
-      fullName.textContent = restrictedFullName;
-    }
-  });
 
   // =============delete client ====================
   const deleteClient = document.querySelectorAll("#delete-client");
@@ -226,8 +215,7 @@ const displayClients = (client) => {
     deleteBtn.addEventListener("click", (e) => {
       overlay.classList.add("open-container");
       let clientId = e.target.dataset.delete;
-      let clientName =
-        e.target.parentElement.previousElementSibling.textContent;
+      let clientName = e.target.dataset.name;
 
       deleteVerificationContainer.classList.add("open-container");
       deleteVerificationContainer.innerHTML = ` 

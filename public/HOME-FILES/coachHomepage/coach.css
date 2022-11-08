@@ -154,7 +154,7 @@ main {
   margin-top: 30px;
   display: grid;
   grid-template-columns: repeat(2, auto);
-  gap: 21px;
+  gap: 4vw;
   width: 80vw;
 
   place-items: center;
@@ -167,7 +167,7 @@ main {
   flex-direction: column;
   background-color: var(--mediumGrey);
   border-radius: 15px;
-  width: 150px;
+  width: 38vw;
   height: 160px;
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
 }

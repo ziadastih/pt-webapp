@@ -20,42 +20,42 @@
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="myNutrition.css" />
-    <title>My Clients</title>
+    <title>logo</title>
   </head>
   <body>
     <div class="gif"></div>
     <div class="overlay"></div>
-    <!-- ============class header the back btn and the add btn ===== -->
-    <div class="header-container">
-      <img src="../images/Arrow 2.svg" class="back-btn" alt="" />
-      <h3>nutrition</h3>
-      <i class="fa-solid fa-bowl-food"></i>
-    </div>
-    <div class="plus-btn-fixed">
-      <i class="fa-light fa-plus create-nutrition-btn"></i>
-    </div>
+    <header>
+      <div class="page-header">
+        <i class="fa-solid fa-arrow-left-long" id="back-btn"></i>
+
+        <h2>diets</h2>
+        <i class="fa-solid fa-utensils" id="fork-icon"></i>
+      </div>
+    </header>
+
     <!-- ==============search input ===================== -->
     <div class="search-nutrition-container">
-      <div class="search-icon-container">
-        <i class="fa-solid fa-magnifying-glass" id="search-icon-btn"></i>
-      </div>
       <input
         class="search-nutrition-input"
         type="search"
-        placeholder="search for diet"
+        placeholder="search for diet..."
         id="search-nutrition-input"
       />
+      <i class="fa-solid fa-magnifying-glass" id="search-icon-btn"></i>
     </div>
 
     <!-- ===============create btn contianer with it header  -->
     <div class="btn-container">
       <h3>create new Diet</h3>
-      <button class="create-nutrition-btn btn">create</button>
+      <button class="create-nutrition-btn">create</button>
     </div>
     <!-- ==============the grid program container where we display our workouts  -->
     <div class="nutrition-programs-grid-container"></div>
@@ -64,17 +64,19 @@
     </div>
     <!-- =============delete verification box ======== -->
     <div class="delete-verification-section"></div>
-    <!-- =================== coach nav bar ============================== -->
-    <nav class="global-nav coach-nav-bar">
-      <p id="user-home-nav-btn">
-        <a href="../coachHomepage/coachHomepage.html">home</a>
-      </p>
-      <p id="user-settings-nav-btn">
-        <a href="../coachSettings/coachSettings.html">settings</a>
-      </p>
-      <p id="contact-us-nav-btn">contact us</p>
-      <p id="user-logout-nav-btn">logout</p>
-    </nav>
+
+    <div class="nav-bar">
+      <a href="../coachHomepage/coachHomepage.html" id="home-icon"
+        ><i class="fa-solid fa-house"></i
+      ></a>
+      <a href="../coachSettings/coachSettings.html">
+        <i class="fa-solid fa-gear"></i
+      ></a>
+      <i class="fa-light fa-plus create-nutrition-btn" id="plus-btn"></i>
+      <i class="fa-regular fa-envelope"></i>
+
+      <i class="fa-solid fa-arrow-right-from-bracket" id="logout-btn"></i>
+    </div>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="myNutrition.js"></script>
   </body>

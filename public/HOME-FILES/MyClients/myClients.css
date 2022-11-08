@@ -147,11 +147,10 @@ header {
 }
 .page-header i {
   color: var(--white);
-  rotate: 180deg;
+
   font-size: 20px;
 }
-.page-header p {
-  font-size: 12px;
+#users-icon {
   color: var(--blue);
 }
 /* ==============THE SEARCH INPUT WITH THE SEARCH ICON ======== */
@@ -268,7 +267,6 @@ header {
   gap: 40px;
 
   cursor: pointer;
-  margin-right: 30px;
 }
 .tools i {
   color: var(--blue);
