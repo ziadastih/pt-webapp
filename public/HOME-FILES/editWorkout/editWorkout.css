@@ -6,18 +6,13 @@
 
 :root {
   --fontSansSerif: "PT Sans", sans-serif;
-  --fontSerif: "Playfair Display", serif;
+  --roboto: "Roboto", sans-serif;
 
   /* =========main color ============ */
-  --mainColor: #0e535f;
-
-  --alert: #fc8f3a;
-  --eyeComfort: #81bcc9;
-
-  --bodyBackgroud: #e5eaef;
-  --mainOrange: #fead47;
-
-  --whiteSmoke: whitesmoke;
+  --blue: #1c85e8;
+  --mediumGrey: #434544;
+  --darkGrey: #343434;
+  --white: #fefefe;
 }
 
 /* ===========global ================ */
@@ -27,7 +22,7 @@ input {
   outline-style: none;
   border: none;
   padding-left: 10px;
-  color: var(--mainColor);
+  color: var(--mediumGrey);
 }
 /* clears the ‘X’ from Internet Explorer */
 input[type="search"]::-ms-clear {
@@ -52,8 +47,8 @@ input[type="search"]::-webkit-search-results-decoration {
   font-family: var(--fontSansSerif);
   font-weight: 700;
   font-size: 20px;
-  background-color: var(--whiteSmoke);
-  color: var(--mainColor);
+  background-color: var(--mediumGrey);
+  color: var(--white);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -71,7 +66,7 @@ input[type="search"]::-webkit-search-results-decoration {
   margin-top: 20px;
   margin-bottom: 20px;
   padding: 10px;
-  background-color: var(--mainColor);
+  background-color: var(--blue);
   color: whitesmoke;
   border-radius: 5px;
   border: none;
@@ -83,9 +78,9 @@ input[type="search"]::-webkit-search-results-decoration {
   margin-bottom: 20px;
   padding: 10px;
   background-color: transparent;
-  color: var(--mainColor);
+  color: var(--white);
   border-radius: 5px;
-  border: 1px solid var(--mainColor);
+  border: 1px solid var(--blue);
   text-transform: capitalize;
   cursor: pointer;
 }
@@ -94,13 +89,13 @@ input[type="search"]::-webkit-search-results-decoration {
   text-transform: capitalize;
   font-size: 10px;
   font-family: var(--fontSansSerif);
-  color: var(--mainColor);
+  color: var(--mediumGrey);
 }
 
 /* ==================END OF GLOBAL CLASSES ========================  */
 
 body {
-  background-color: var(--bodyBackgroud);
+  background-color: var(--darkGrey);
   overflow-x: hidden;
   min-height: 100vh;
 }
@@ -111,33 +106,33 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: var(--mainColor);
+  background-color: var(--mediumGrey);
 }
-.header-container img {
+#back-btn {
   margin-left: 30px;
   cursor: pointer;
+  color: var(--white);
 }
 .program-name-header {
-  font-family: var(--fontSerif);
-  color: var(--whiteSmoke);
+  font-family: var(--roboto);
+  color: var(--white);
   text-transform: capitalize;
   font-size: 20px;
 }
 
 .edit-program-name-icon {
   margin-right: 30px;
-  color: white;
+  color: var(--blue);
   font-size: 20px;
   cursor: pointer;
 }
-
 /* ===================create name container input ================ */
 .create-name-container {
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: var(--mainColor);
+  background-color: var(--white);
   width: 80vw;
   z-index: 20;
   display: none;
@@ -155,7 +150,7 @@ body {
   overflow: hidden;
   position: fixed;
   display: none;
-  background-color: var(--bodyBackgroud);
+  background-color: var(--darkGrey);
 
   opacity: 0.8;
   height: 100vh;
@@ -163,7 +158,7 @@ body {
   z-index: 2;
 }
 .create-name-container h2 {
-  color: white;
+  color: var(--blue);
   font-family: var(--fontSansSerif);
   font-weight: 400;
   font-size: 32px;
@@ -174,12 +169,13 @@ body {
 }
 .input-container input {
   width: 60vw;
+  border: 1px solid var(--blue);
 }
 .close-workout-name-container {
   position: absolute;
   top: 10px;
   right: 20px;
-  color: var(--whiteSmoke);
+  color: var(--mediumGrey);
 }
 .name-alert {
   width: 60vw;
@@ -193,13 +189,13 @@ body {
   font-size: 12px;
   font-weight: 700;
   text-transform: capitalize;
-  color: white;
+  color: var(--mediumGrey);
   letter-spacing: 1.2px;
 }
 /* ============alerts for every input ============ */
 .name-alert .alert {
   display: none;
-  color: var(--alert);
+  color: var(--blue);
   font-size: 8px;
   font-weight: 400;
 }
@@ -219,8 +215,8 @@ body {
 }
 
 .day {
-  background-color: var(--mainColor);
-  color: var(--whiteSmoke);
+  background-color: var(--mediumGrey);
+  color: var(--white);
   padding: 10px;
   font-size: 10px;
   font-family: var(--fontSansSerif);
@@ -256,20 +252,31 @@ body {
 .workout-header {
   width: 100vw;
   height: 40px;
-  background-color: var(--eyeComfort);
+
   display: none;
   align-items: center;
   justify-content: center;
   font-family: var(--fontSansSerif);
-  color: var(--whiteSmoke);
+  color: var(--blue);
   gap: 20px;
 
   text-transform: capitalize;
   font-weight: 500;
 }
 .workout-header p {
+  color: var(--white);
   font-size: 24px;
   letter-spacing: 1.1px;
+  position: relative;
+}
+.workout-header p::before {
+  content: "";
+  bottom: -5px;
+  left: 0;
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  background-color: var(--mediumGrey);
 }
 .created-workouts {
   margin-top: 50px;
@@ -283,7 +290,7 @@ body {
 .one-workout {
   width: 80vw;
   height: 50px;
-  background-color: var(--whiteSmoke);
+  background-color: var(--white);
 
   border-radius: 3px;
 
@@ -298,11 +305,11 @@ body {
 .one-workout i {
   margin-left: 20px;
 
-  color: var(--eyeComfort);
+  color: var(--mediumGrey);
 }
 .one-workout p {
   text-align: center;
-  color: var(--mainColor);
+  color: var(--blue);
   font-weight: 700;
   letter-spacing: 1.2px;
 }
@@ -311,14 +318,13 @@ body {
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  color: var(--mainOrange);
 
-  gap: 10px;
+  gap: 30px;
   cursor: pointer;
   margin-right: 20px;
 }
 .tools i {
-  color: var(--mainOrange);
+  margin-left: 0;
 }
 /* =================end of workout styling  ==================== */
 
@@ -335,14 +341,14 @@ body {
   width: 80vw;
   position: relative;
   padding: 10px;
-  background-color: var(--whiteSmoke);
+  background-color: var(--white);
   display: flex;
   align-items: flex-start;
   justify-content: center;
   flex-direction: column;
   font-family: var(--fontSansSerif);
   font-size: 12px;
-  color: var(--mainColor);
+  color: var(--mediumGrey);
 
   text-transform: capitalize;
   margin-bottom: 20px;
@@ -379,7 +385,7 @@ body {
 
   position: absolute;
   bottom: -20px;
-
+  color: var(--blue);
   left: -20px;
   font-size: 15px;
 }
@@ -396,8 +402,8 @@ body {
   font-family: var(--fontSansSerif);
   outline: none;
   padding: 5px;
-  color: var(--mainColor);
-  border: none;
+  border: 1px solid var(--blue);
+  color: var(--mediumGrey);
 }
 .iframe-container {
   width: 80vw;
@@ -408,7 +414,7 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: whitesmoke;
+  background-color: var(--white);
   display: none;
   align-items: center;
   justify-content: flex-start;
@@ -447,7 +453,7 @@ body {
 #rest-input {
   width: 40px;
   background-color: transparent;
-  border: 1px solid var(--mainColor);
+  border: 1px solid var(--blue);
 }
 
 #sets-input::placeholder,
@@ -461,7 +467,7 @@ body {
 #tempo-input {
   width: 80px;
   background-color: transparent;
-  border: 1px solid var(--mainColor);
+  border: 1px solid var(--blue);
 }
 #reps-input::placeholder {
   font-size: 15px;
@@ -481,7 +487,21 @@ body {
   gap: 20px;
   margin-top: 20px;
 }
-/* ===================overall container of the exercises , width 100vw so we center all in center but same time flex start from top  */
+.type-btn {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 10px;
+
+  color: var(--white);
+  border-radius: 5px;
+  border: none;
+  text-transform: capitalize;
+  cursor: pointer;
+  background-color: var(--mediumGrey);
+}
+
+/* ==========chose ex container =========== */
+
 .add-exercises-container {
   width: 100vw;
   height: 60vh;
@@ -493,23 +513,23 @@ body {
   flex-direction: column;
   z-index: 999;
 }
-/* ==============the sub container which has all the content */
+
 .add-exercises-content {
   width: 80vw;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  background-color: var(--whiteSmoke);
+  background-color: var(--white);
   border-radius: 5px;
 }
-/* ===================add exercises header , has the title of the container and the close btn  */
+
 .add-exercises-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: 70vw;
-  color: var(--mainColor);
+  color: var(--blue);
   font-family: var(--fontSansSerif);
   font-weight: 500;
   text-transform: capitalize;
@@ -524,18 +544,19 @@ body {
   font-size: 10px;
   margin-left: -30px;
   margin-top: 15px;
-  color: var(--mainColor);
+  color: var(--mediumGrey);
 }
 
 .search-input {
   width: 70vw;
   background-color: transparent;
-  border: 1px solid var(--mainColor);
+  border: 1px solid var(--mediumGrey);
 }
 
 .exercise-split-line {
   width: 70vw;
-  background-color: var(--bodyBackgroud);
+  background-color: var(--mediumGrey);
+  opacity: 0.3;
   height: 1px;
   margin-top: 20px;
 }
@@ -563,7 +584,7 @@ body {
   width: 70vw;
   height: 40px;
   font-family: var(--fontSansSerif);
-  color: var(--mainColor);
+  color: var(--mediumGrey);
   font-size: 12px;
   margin-bottom: 20px;
   gap: 10px;
@@ -582,13 +603,13 @@ body {
 .check-box {
   width: 10px;
   height: 10px;
-  border: 1px solid var(--mainColor);
+  border: 1px solid var(--blue);
 
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 8px;
-  color: var(--whiteSmoke);
+  color: var(--white);
   transition: 200ms ease-in;
 }
 .check-icon {
@@ -630,15 +651,15 @@ body {
   display: none;
 }
 .chosen-day {
-  background-color: var(--whiteSmoke);
-  color: var(--eyeComfort);
+  background-color: var(--white);
+  color: var(--blue);
 }
 
 .show-opacity {
   opacity: 1;
 }
 .change-check-box-background {
-  background-color: var(--mainColor);
+  background-color: var(--blue);
 }
 
 .name-alert .display-flex {
@@ -646,5 +667,5 @@ body {
 }
 
 .selected-type {
-  background-color: var(--eyeComfort);
+  background-color: var(--blue);
 }

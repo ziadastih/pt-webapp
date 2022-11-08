@@ -220,7 +220,7 @@ const daysBtn = document.querySelectorAll(".day");
 window.onbeforeunload = () => {
   return "are you sure you want to leave page";
 };
-const backBtn = document.querySelector(".back-btn");
+const backBtn = document.querySelector("#back-btn");
 
 backBtn.addEventListener("click", () => {
   let clientId = localStorage.getItem("cref");
@@ -562,9 +562,9 @@ const displayChosenExercises = () => {
       <input type="text" id="tempo-input" data-input =${index} placeholder="0-0-0-0" value="${exercise.tempo}" />
     </div>
     <div class="button-type-container">
-      <button class="full-btn" id="chain" data-chain = ${index} data-condition=${exercise.chain}>groupset</button>
-      <button class="full-btn" id="rest-pause" data-type=${index} data-condition=${exercise.type}>rest-pause</button>
-      <button class="full-btn" id="dropset" data-type=${index} data-condition=${exercise.type}>dropset</button>
+      <button class="type-btn" id="chain" data-chain = ${index} data-condition=${exercise.chain}>groupset</button>
+      <button class="type-btn" id="rest-pause" data-type=${index} data-condition=${exercise.type}>rest-pause</button>
+      <button class="type-btn" id="dropset" data-type=${index} data-condition=${exercise.type}>dropset</button>
     </div>
   </div>
 </div>`;
