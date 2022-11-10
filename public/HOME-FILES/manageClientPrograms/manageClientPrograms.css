@@ -6,18 +6,13 @@
 
 :root {
   --fontSansSerif: "PT Sans", sans-serif;
-  --fontSerif: "Playfair Display", serif;
+  --roboto: "Roboto", sans-serif;
 
   /* =========main color ============ */
-  --mainColor: #0e535f;
-
-  --alert: #fc8f3a;
-  --eyeComfort: #81bcc9;
-
-  --bodyBackgroud: #e5eaef;
-  --mainOrange: #fead47;
-
-  --whiteSmoke: whitesmoke;
+  --blue: #1c85e8;
+  --mediumGrey: #434544;
+  --darkGrey: #343434;
+  --white: #fefefe;
 }
 
 /* ===========global ================ */
@@ -47,13 +42,12 @@ input[type="search"]::-webkit-search-results-button,
 input[type="search"]::-webkit-search-results-decoration {
   display: none;
 }
-/* ===========general btn layout ============= */
 .btn {
   font-family: var(--fontSansSerif);
   font-weight: 700;
   font-size: 20px;
-  background-color: white;
-  color: var(--mainColor);
+  background-color: var(--blue);
+  color: var(--white);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -61,8 +55,7 @@ input[type="search"]::-webkit-search-results-decoration {
   height: 40px;
   border-radius: 3px;
   border: none;
-  margin-top: 30px;
-  margin-bottom: 30px;
+  margin-top: 10px;
   cursor: pointer;
   text-transform: capitalize;
 }
@@ -70,8 +63,8 @@ input[type="search"]::-webkit-search-results-decoration {
   margin-top: 20px;
   margin-bottom: 20px;
   padding: 10px;
-  background-color: var(--mainColor);
-  color: whitesmoke;
+  background-color: var(--blue);
+  color: var(--white);
   border-radius: 5px;
   border: none;
   text-transform: capitalize;
@@ -82,9 +75,9 @@ input[type="search"]::-webkit-search-results-decoration {
   margin-bottom: 20px;
   padding: 10px;
   background-color: transparent;
-  color: var(--mainColor);
+  color: var(--white);
   border-radius: 5px;
-  border: 1px solid var(--mainColor);
+  border: 1px solid var(--blue);
   text-transform: capitalize;
   cursor: pointer;
 }
@@ -93,45 +86,29 @@ input[type="search"]::-webkit-search-results-decoration {
   text-transform: capitalize;
   font-size: 10px;
   font-family: var(--fontSansSerif);
-  color: var(--mainColor);
+  color: var(--mediumGrey);
 }
-
-#toggle-password {
-  position: absolute;
-  margin-top: 15px;
-  font-size: 10px;
-  color: var(--SecondaryColor);
-  margin-left: -20px;
-  cursor: pointer;
-}
-
-.global-nav {
+.nav-bar {
   position: fixed;
-
+  height: 60px;
   width: 100vw;
-  height: 9vh;
-  background-color: var(--mainColor);
-  font-family: var(--fontSansSerif);
-  font-size: 18px;
-  text-transform: capitalize;
-  letter-spacing: 0.02em;
-  bottom: 0;
+  background-color: var(--mediumGrey);
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 30px;
-  z-index: 10;
-  color: white;
+  justify-content: space-evenly;
+  bottom: 0;
+  left: 0;
 }
 
-.global-nav p {
-  cursor: pointer;
-  transition: 300ms ease-in;
-}
-.global-nav p a {
-  color: white;
+.nav-bar a {
   text-decoration: none;
+  color: var(--white);
 }
+.nav-bar i {
+  color: var(--white);
+  font-size: 20px;
+}
+
 .gif {
   position: fixed;
   top: 50%;
@@ -150,7 +127,7 @@ input[type="search"]::-webkit-search-results-decoration {
   overflow: hidden;
   position: fixed;
   display: none;
-  background-color: var(--bodyBackgroud);
+  background-color: var(--darkGrey);
 
   opacity: 0.8;
   height: 100vh;
@@ -160,36 +137,42 @@ input[type="search"]::-webkit-search-results-decoration {
 /* ==================END OF GLOBAL CLASSES ========================  */
 
 body {
-  background-color: var(--bodyBackgroud);
+  background-color: var(--darkGrey);
   overflow-x: hidden;
 }
 
-/* ==============header CONTAINER CONTAINS THE BACK BTN AND THE PLUS BTN */
-.header-container {
+header {
   width: 100vw;
-  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 10vh;
+  background-color: var(--mediumGrey);
+}
+
+.page-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: var(--mainColor);
-}
-.header-container h3 {
-  font-family: var(--fontSansSerif);
-  font-size: 24px;
-  font-weight: 400;
-  color: var(--whiteSmoke);
+  font-family: var(--roboto);
+  color: var(--white);
+
   text-transform: capitalize;
+  font-weight: 400;
+  width: 80vw;
+}
+.page-header h2 {
   letter-spacing: 1.2px;
-}
-.header-container img {
-  margin-left: 30px;
-  cursor: pointer;
-}
-.header-container i {
-  margin-right: 30px;
-  color: white;
   font-size: 20px;
-  cursor: pointer;
+}
+.page-header i {
+  color: var(--white);
+
+  font-size: 20px;
+}
+
+#dumbbell-icon {
+  color: var(--blue);
 }
 
 /* ============THE HEADER AND THE BTN WHEN THERE IS NO CLIENTS ==== */
@@ -203,23 +186,24 @@ body {
 }
 
 .create-workout-btn {
-  background-color: var(--mainColor);
-  color: var(--whiteSmoke);
+  background-color: var(--blue);
+  color: var(--white);
   font-weight: 400;
 }
 .add-workout-btn {
   font-weight: 400;
   background-color: transparent;
-  border: 1px solid var(--mainColor);
+  border: 1px solid var(--blue);
 }
 /* ====================workouts grid container ============= */
 .workouts-programs-grid-container {
-  margin-top: 20px;
+  margin-top: 40px;
+  margin-bottom: 20px;
   display: grid;
   grid-template-columns: repeat(1, auto);
   align-items: flex-start;
   justify-content: center;
-  gap: 30px;
+  gap: 50px;
   width: 100vw;
 }
 .program-container {
@@ -229,14 +213,14 @@ body {
   flex-direction: column;
   width: 80vw;
   position: relative;
+  border-bottom: 1px solid var(--mediumGrey);
 }
 
 #filled-dumbbell {
   position: absolute;
-  top: -5px;
-  left: -10px;
-
-  color: var(--mainColor);
+  top: -25px;
+  left: 0px;
+  color: var(--blue);
 }
 
 .not-current {
@@ -247,10 +231,8 @@ body {
 .program {
   width: 80vw;
   height: 50px;
-  background-color: var(--whiteSmoke);
-
+  background-color: var(--white);
   border-radius: 3px;
-
   font-family: var(--fontSansSerif);
   font-weight: 400;
   display: flex;
@@ -262,14 +244,14 @@ body {
 
 .program p {
   text-align: center;
-  color: var(--mainColor);
+  color: var(--blue);
   font-weight: 700;
   letter-spacing: 1.2px;
 }
 .program i {
   font-size: 15px;
   margin-left: 20px;
-  color: var(--mainOrange);
+  color: var(--mediumGrey);
   cursor: pointer;
   transition: 300ms ease-in;
 }
@@ -280,14 +262,12 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--mainOrange);
-  width: 100px;
-  gap: 10px;
+  gap: 30px;
   cursor: pointer;
   margin-right: 20px;
 }
 .tools i {
-  color: var(--mainOrange);
+  margin-left: 0;
 }
 
 /* ===================overview container ==================== */
@@ -295,18 +275,13 @@ body {
 .overview-container {
   display: none;
   border: none;
-
   margin-top: 20px;
-
   align-items: center;
   justify-content: center;
   flex-direction: column;
   background-color: transparent;
-
   width: 100vw;
-
   z-index: 1;
-
   transition: 300ms ease-in;
 }
 
@@ -316,29 +291,32 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: var(--mainColor);
-  height: 50px;
 }
 .date-stats p {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--eyeComfort);
+  position: relative;
+  color: var(--white);
   font-family: var(--fontSansSerif);
   font-size: 10px;
   text-transform: capitalize;
   gap: 5px;
 }
+.date-stats p::after {
+  position: absolute;
+  content: "";
+  bottom: -5px;
+  left: 0px;
+  height: 1px;
+  width: 100%;
+  background-color: var(--white);
+  opacity: 0.3;
+}
 .date-stats p span {
-  color: var(--whiteSmoke);
+  color: var(--blue);
   font-weight: 400;
   font-size: 12px;
-}
-.created-at {
-  margin-left: 20px;
-}
-.updated-at {
-  margin-right: 20px;
 }
 
 .box-arrow {
@@ -356,8 +334,8 @@ body {
 }
 
 .day {
-  background-color: var(--mainColor);
-  color: var(--whiteSmoke);
+  background-color: var(--mediumGrey);
+  color: var(--white);
   padding: 10px;
   font-size: 10px;
   font-family: var(--fontSansSerif);
@@ -388,7 +366,7 @@ body {
 .one-workout {
   width: 80vw;
   height: 50px;
-  background-color: var(--whiteSmoke);
+  background-color: var(--white);
 
   border-radius: 3px;
 
@@ -401,24 +379,24 @@ body {
   margin-bottom: 20px;
 }
 .one-workout i {
-  color: var(--eyeComfort);
+  color: var(--mediumGrey);
   margin-left: 20px;
 }
 .one-workout p {
   text-align: center;
-  color: var(--mainColor);
+  color: var(--blue);
   font-weight: 700;
   letter-spacing: 1.2px;
 }
 .one-workout span {
   font-size: 10px;
-  color: var(--mainColor);
+  color: var(--blue);
   margin-right: 20px;
 }
 .created-workouts h2 {
   font-size: 18px;
   font-family: var(--fontSansSerif);
-  color: var(--mainColor);
+  color: var(--white);
   font-weight: 400;
 }
 /* ========================end of workout overview section ======= */
@@ -438,14 +416,14 @@ body {
   width: 80vw;
   position: relative;
   padding: 10px;
-  background-color: var(--whiteSmoke);
+  background-color: var(--white);
   display: flex;
   align-items: flex-start;
   justify-content: center;
   flex-direction: column;
   font-family: var(--fontSansSerif);
   font-size: 12px;
-  color: var(--mainColor);
+  color: var(--mediumGrey);
 
   text-transform: capitalize;
   margin-bottom: 20px;
@@ -480,7 +458,7 @@ body {
 .left-span {
   position: absolute;
   bottom: -20px;
-
+  color: var(--blue);
   left: -20px;
   font-size: 15px;
 }
@@ -510,7 +488,7 @@ body {
   flex-direction: column;
   gap: 10px;
 
-  color: var(--mainColor);
+  color: var(--mediumGrey);
   font-family: var(--fontSansSerif);
 }
 
@@ -521,9 +499,9 @@ body {
   justify-content: center;
   width: 40px;
   height: 40px;
-  color: var(--mainColor);
+  color: var(--mediumGrey);
 
-  border: 1px solid var(--mainColor);
+  border: 1px solid var(--blue);
   border-radius: 5px;
   font-size: 15px;
 }
@@ -535,9 +513,9 @@ body {
   justify-content: center;
   width: 80px;
   height: 40px;
-  color: var(--mainColor);
+  color: var(--mediumGrey);
 
-  border: 1px solid var(--mainColor);
+  border: 1px solid var(--blue);
   border-radius: 5px;
   font-size: 15px;
 }
@@ -561,7 +539,7 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: whitesmoke;
+  background-color: var(--white);
   display: none;
   align-items: center;
   justify-content: flex-start;
@@ -590,9 +568,9 @@ body {
   height: 20px;
   width: 80vw;
   padding: 10px;
-  background-color: var(--mainOrange);
-  color: white;
-  font-family: var(--fontSansSerif);
+  background-color: var(--blue);
+  color: var(--white);
+  font-family: var(--roboto);
   font-size: 10px;
 }
 /* END OF PROGRAM CONTAINER ==================== */
@@ -619,7 +597,7 @@ body {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  background-color: var(--whiteSmoke);
+  background-color: var(--white);
   border-radius: 5px;
 }
 /* ===================add exercises header , has the title of the container and the close btn  */
@@ -628,7 +606,7 @@ body {
   align-items: center;
   justify-content: space-between;
   width: 70vw;
-  color: var(--mainColor);
+  color: var(--blue);
   font-family: var(--fontSansSerif);
   font-weight: 500;
   text-transform: capitalize;
@@ -643,18 +621,19 @@ body {
   font-size: 10px;
   margin-left: -30px;
   margin-top: 15px;
-  color: var(--mainColor);
+  color: var(--mediumGrey);
 }
 
 .search-input {
   width: 70vw;
   background-color: transparent;
-  border: 1px solid var(--mainColor);
+  border: 1px solid var(--mediumGrey);
 }
 
 .program-split-line {
   width: 70vw;
-  background-color: var(--bodyBackgroud);
+  opacity: 0.3;
+  background-color: var(--mediumGrey);
   height: 1px;
   margin-top: 20px;
 }
@@ -675,7 +654,7 @@ body {
 }
 .program-list-container h2 {
   font-family: var(--fontSansSerif);
-  color: var(--mainColor);
+  color: var(--blue);
   font-size: 12px;
   width: 150px;
   text-align: center;
@@ -688,7 +667,7 @@ body {
   width: 70vw;
   height: 40px;
   font-family: var(--fontSansSerif);
-  color: var(--mainColor);
+  color: var(--mediumGrey);
   font-size: 12px;
   margin-bottom: 20px;
   gap: 10px;
@@ -707,13 +686,13 @@ body {
 .check-box {
   width: 10px;
   height: 10px;
-  border: 1px solid var(--mainColor);
+  border: 1px solid var(--mediumGrey);
 
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 8px;
-  color: var(--whiteSmoke);
+  color: var(--white);
   transition: 200ms ease-in;
 }
 .check-icon {
@@ -736,7 +715,7 @@ body {
 }
 
 .delete-verification-box {
-  background-color: whitesmoke;
+  background-color: var(--white);
   height: 200px;
   width: 80vw;
   border-radius: 10px;
@@ -751,7 +730,7 @@ body {
   font-family: var(--fontSansSerif);
   font-weight: 400;
   font-size: 15px;
-  color: var(--mainColor);
+  color: var(--mediumGrey);
   margin-bottom: 30px;
   width: 60vw;
   text-align: center;
@@ -759,7 +738,7 @@ body {
 .delete-verification-box span {
   text-transform: capitalize;
 
-  color: var(--alert);
+  color: var(--blue);
 }
 .yes-no-container {
   display: flex;
@@ -777,21 +756,12 @@ body {
   justify-content: center;
   font-family: var(--fontSansSerif);
   font-size: 15px;
-  background-color: var(--mainColor);
-  color: whitesmoke;
+  background-color: var(--mediumGrey);
+  color: var(--white);
   font-weight: 400;
   border: none;
   cursor: pointer;
   text-transform: capitalize;
-}
-/* ============user nav bar ======================== */
-.coach-nav-bar {
-  transition: 300ms ease-in;
-}
-
-/* =================hover ================ */
-.global-nav p:hover {
-  opacity: 0.8;
 }
 
 /* ===============js classes ====================== */
@@ -820,8 +790,8 @@ body {
 }
 
 .chosen-day {
-  background-color: var(--whiteSmoke);
-  color: var(--eyeComfort);
+  background-color: var(--white);
+  color: var(--blue);
 }
 
 .show-opacity {
@@ -829,5 +799,5 @@ body {
 }
 
 .change-check-box-background {
-  background-color: var(--mainColor);
+  background-color: var(--mediumGrey);
 }

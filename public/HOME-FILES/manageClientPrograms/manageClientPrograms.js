@@ -142,14 +142,14 @@ const displayProgramInfo = (programPlan) => {
 };
 
 // ==============back btn ============================
-const backBtn = document.querySelector(".back-btn");
+const backBtn = document.querySelector("#back-btn");
 
 backBtn.addEventListener("click", () => {
   window.location = "http://192.168.1.195:3000/manageClient/manageClient.html";
 });
 // ================logout user ===================
 
-const logoutBtn = document.getElementById("user-logout-nav-btn");
+const logoutBtn = document.getElementById("logout-btn");
 
 logoutBtn.addEventListener("click", async () => {
   try {
@@ -504,13 +504,13 @@ const displayChosenExercises = (oneWorkout, selectedExercisesArray) => {
         <div id="tempo-input">${element.tempo || "-"}</div>
       </div>
       <div class="button-type-container">
-      <button class="outline-btn" id="dropset" data-type=${
+      <button class="full-btn" id="dropset" data-type=${
         element.type
       }>dropset</button>
-      <button class="outline-btn" id="chain" data-chain = ${
+      <button class="full-btn" id="chain" data-chain = ${
         element.chain
       }>groupset</button>
-      <button class="outline-btn" id="rest-pause" data-type=${
+      <button class="full-btn" id="rest-pause" data-type=${
         element.type
       }>rest-pause</button>
       </div>

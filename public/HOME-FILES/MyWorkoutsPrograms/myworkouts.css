@@ -264,14 +264,13 @@ header {
   justify-content: center;
   flex-direction: column;
   width: 80vw;
+  border-bottom: 1px solid var(--mediumGrey);
 }
 /* =========workout styling that will be dealt with in js ========== */
 .program {
   width: 100vw;
   height: 80px;
-
   border-bottom: 1px solid var(--mediumGrey);
-
   font-family: var(--fontSansSerif);
   font-weight: 400;
   display: flex;
@@ -314,9 +313,7 @@ header {
 .overview-container {
   display: none;
   border: none;
-
   margin-top: 20px;
-
   align-items: center;
   justify-content: center;
   flex-direction: column;
@@ -527,7 +524,7 @@ header {
   flex-direction: column;
   gap: 10px;
 
-  color: var(--mainColor);
+  color: var(--mediumGrey);
   font-family: var(--fontSansSerif);
 }
 
