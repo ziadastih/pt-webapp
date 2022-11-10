@@ -20,8 +20,10 @@
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="myworkouts.css" />
@@ -39,31 +41,29 @@
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
       ></iframe>
-      <button class="outline-btn" id="close-btn" data-close="iframe-container">
+      <button class="full-btn" id="close-btn" data-close="iframe-container">
         close
       </button>
     </div>
-    <!-- ============class header the back btn and the add btn ===== -->
-    <div class="header-container">
-      <img src="../images/Arrow 2.svg" class="back-btn" alt="" />
-      <h3>programs</h3>
-      <i class="fa-solid fa-dumbbell"></i>
-    </div>
-    <div class="plus-btn-fixed">
-      <i class="fa-light fa-plus" id="go-to-create-program"></i>
-    </div>
+
+    <header>
+      <div class="page-header">
+        <i class="fa-solid fa-arrow-left-long" id="back-btn"></i>
+
+        <h2>programs</h2>
+        <i class="fa-solid fa-dumbbell" id="dumbbell-icon"></i>
+      </div>
+    </header>
 
     <!-- ==============search input ===================== -->
     <div class="search-workout-container">
-      <div class="search-icon-container">
-        <i class="fa-solid fa-magnifying-glass" id="search-icon-btn"></i>
-      </div>
       <input
         class="search-workout-input"
         type="search"
-        placeholder="search for program..."
+        placeholder="search program..."
         id="search-workout-input"
       />
+      <i class="fa-solid fa-magnifying-glass" id="search-icon-btn"></i>
     </div>
 
     <!-- ===============create btn contianer with it header  -->
@@ -79,16 +79,18 @@
     <!-- =============delete verification box ======== -->
     <div class="delete-verification-section"></div>
     <!-- =================== coach nav bar ============================== -->
-    <nav class="global-nav coach-nav-bar">
-      <p id="user-home-nav-btn">
-        <a href="../coachHomepage/coachHomepage.html">home</a>
-      </p>
-      <p id="user-settings-nav-btn">
-        <a href="../coachSettings/coachSettings.html">settings</a>
-      </p>
-      <p id="contact-us-nav-btn">contact us</p>
-      <p id="user-logout-nav-btn">logout</p>
-    </nav>
+    <div class="nav-bar">
+      <a href="../coachHomepage/coachHomepage.html" id="home-icon"
+        ><i class="fa-solid fa-house"></i
+      ></a>
+      <a href="../coachSettings/coachSettings.html">
+        <i class="fa-solid fa-gear"></i
+      ></a>
+      <i class="fa-light fa-plus create-workout-btn" id="plus-btn"></i>
+      <i class="fa-regular fa-envelope"></i>
+
+      <i class="fa-solid fa-arrow-right-from-bracket" id="logout-btn"></i>
+    </div>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="myworkouts.js"></script>
   </body>

@@ -6,19 +6,14 @@
 
 :root {
   --fontSansSerif: "PT Sans", sans-serif;
-  --fontSerif: "Playfair Display", serif;
+  --roboto: "Roboto", sans-serif;
 
   /* =========main color ============ */
-  --mainColor: #0e535f;
-
-  --alert: #fc8f3a;
-  --eyeComfort: #81bcc9;
-
-  --mainOrange: #fead47;
-  --bodyBackgroud: #e5eaef;
-  --whiteSmoke: whitesmoke;
+  --blue: #1c85e8;
+  --mediumGrey: #434544;
+  --darkGrey: #343434;
+  --white: #fefefe;
 }
-
 /* ===========global ================ */
 input {
   border-radius: 3px;
@@ -47,88 +42,51 @@ input[type="search"]::-webkit-search-results-decoration {
   display: none;
 }
 /* ===========general btn layout ============= */
-.btn {
+::placeholder {
+  text-transform: capitalize;
+
   font-family: var(--fontSansSerif);
-  font-weight: 700;
-  font-size: 20px;
-  background-color: white;
-  color: var(--mainColor);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 150px;
-  height: 40px;
-  border-radius: 3px;
-  border: none;
-  margin-top: 30px;
-  margin-bottom: 30px;
-  cursor: pointer;
+
+  color: var(--white);
+  font-size: 15px;
+  opacity: 0.8;
 }
+
 .full-btn {
   margin-top: 20px;
   margin-bottom: 20px;
   padding: 10px;
-  background-color: var(--mainColor);
-  color: whitesmoke;
+  background-color: var(--blue);
+  color: var(--white);
   border-radius: 5px;
   border: none;
   text-transform: capitalize;
   cursor: pointer;
 }
-.outline-btn {
-  margin-top: 20px;
-  margin-bottom: 20px;
-  padding: 10px;
-  background-color: transparent;
-  color: var(--mainColor);
-  border-radius: 5px;
-  border: 1px solid var(--mainColor);
-  text-transform: capitalize;
-  cursor: pointer;
-}
-
-::placeholder {
-  text-transform: capitalize;
-  font-size: 10px;
-  font-family: var(--fontSansSerif);
-  color: var(--mainColor);
-}
-
-#toggle-password {
-  position: absolute;
-  margin-top: 15px;
-  font-size: 10px;
-  color: var(--SecondaryColor);
-  margin-left: -20px;
-  cursor: pointer;
-}
-
-.global-nav {
+.nav-bar {
   position: fixed;
-
+  height: 60px;
   width: 100vw;
-  height: 9vh;
-  background-color: var(--mainColor);
-  font-family: var(--fontSansSerif);
-  font-size: 18px;
-  text-transform: capitalize;
-  letter-spacing: 0.02em;
-  bottom: 0;
+  background-color: var(--mediumGrey);
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 30px;
-  z-index: 10;
-  color: white;
+  justify-content: space-evenly;
+  bottom: 0;
+  left: 0;
 }
 
-.global-nav p {
-  cursor: pointer;
-  transition: 300ms ease-in;
-}
-.global-nav p a {
-  color: white;
+.nav-bar a {
   text-decoration: none;
+  color: var(--white);
+}
+.nav-bar i {
+  color: var(--white);
+  font-size: 20px;
+}
+
+#plus-btn {
+  font-size: 50px;
+  color: var(--blue);
 }
 .gif {
   position: fixed;
@@ -150,111 +108,93 @@ input[type="search"]::-webkit-search-results-decoration {
   justify-content: center;
   margin-bottom: 9vh;
   font-size: 20px;
-  color: var(--bodyBackgroud);
+  color: var(--darkGrey);
 }
 .fetch-more {
   opacity: 0;
 }
-
 .overlay {
   top: 0;
   left: 0;
   overflow: hidden;
   position: fixed;
   display: none;
-  background-color: var(--bodyBackgroud);
-
+  background-color: var(--mediumGrey);
   opacity: 0.8;
   height: 100vh;
   width: 100vw;
   z-index: 30;
 }
-.plus-btn-fixed {
-  position: fixed;
-  background-color: var(--mainColor);
-  width: 50px;
-  height: 50px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--whiteSmoke);
-  font-size: 30px;
-  bottom: 10vh;
-  z-index: 20;
-  left: 10px;
-  border-radius: 50%;
-}
 /* ==================END OF GLOBAL CLASSES ========================  */
 
 body {
-  background-color: var(--bodyBackgroud);
+  background-color: var(--darkGrey);
   overflow-x: hidden;
 }
 
-/* ==============header CONTAINER CONTAINS THE BACK BTN AND THE PLUS BTN */
-.header-container {
+/* ================PAGE HEADER ============== */
+header {
   width: 100vw;
-  height: 80px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background-color: var(--mainColor);
-}
-.header-container img {
-  margin-left: 30px;
-  cursor: pointer;
-}
-.header-container i {
-  margin-right: 30px;
-  color: white;
-  font-size: 20px;
-  cursor: pointer;
-}
-.header-container h3 {
-  font-family: var(--fontSansSerif);
-  font-size: 24px;
-  font-weight: 400;
-  color: var(--whiteSmoke);
-  text-transform: capitalize;
-  letter-spacing: 1.2px;
-}
-
-/* ==============THE SEARCH INPUT WITH THE SEARCH ICON ======== */
-.search-workout-container {
-  position: fixed;
-  display: flex;
-
-  align-items: center;
-  justify-content: space-between;
-  bottom: 10vh;
-  left: 70px;
-  z-index: 4;
-}
-.search-workout-input {
-  width: 50vw;
-  height: 40px;
-  background-color: var(--mainColor);
-  color: var(--whiteSmoke);
-  transform: translateX(-200%);
-  transition: 300ms ease-in;
-  z-index: 40;
-}
-.search-workout-input::placeholder {
-  color: whitesmoke;
-}
-.search-icon-container {
-  background-color: var(--mainColor);
-  width: 50px;
-  height: 50px;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--whiteSmoke);
-  font-size: 15px;
-
-  margin-right: 10px;
-  border-radius: 50%;
+  height: 10vh;
+  background-color: var(--mediumGrey);
 }
+
+.page-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: var(--roboto);
+  color: var(--white);
+
+  text-transform: capitalize;
+  font-weight: 400;
+  width: 80vw;
+}
+.page-header h2 {
+  letter-spacing: 1.2px;
+  font-size: 20px;
+}
+.page-header i {
+  color: var(--white);
+
+  font-size: 20px;
+}
+
+#dumbbell-icon {
+  color: var(--blue);
+}
+
+/* ==============search container ---------------- */
+.search-workout-container {
+  width: 100vw;
+  height: 30px;
+
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  justify-self: center;
+  position: relative;
+}
+.search-workout-input {
+  width: 80vw;
+  height: 40px;
+  background-color: var(--mediumGrey);
+  color: var(--white);
+
+  transition: 300ms ease-in;
+}
+
+#search-icon-btn {
+  position: absolute;
+  right: 15vw;
+  color: var(--white);
+  opacity: 0.8;
+}
+
 /* ============THE HEADER AND THE BTN WHEN THERE IS NO CLIENTS ==== */
 .btn-container {
   display: none;
@@ -272,17 +212,30 @@ body {
   font-size: 32px;
   line-height: 41px;
   letter-spacing: 0.02em;
-  color: var(--mainColor);
+  color: var(--white);
   margin-bottom: 20px;
   text-transform: capitalize;
 }
 .btn-container button {
+  font-family: var(--fontSansSerif);
+
+  font-size: 20px;
   font-weight: 400;
   text-transform: capitalize;
-  margin-top: 0;
-  color: white;
-  background-color: var(--mainColor);
+
+  color: var(--white);
+  background-color: var(--blue);
   letter-spacing: 1.2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 150px;
+  height: 40px;
+  border-radius: 3px;
+  border: none;
+
+  margin-bottom: 30px;
+  cursor: pointer;
 }
 
 /* ====================workouts grid container ============= */
@@ -301,7 +254,7 @@ body {
   align-items: center;
   justify-content: center;
   align-self: center;
-  color: var(--mainColor);
+  color: var(--white);
   font-size: 18px;
   margin-top: 20px;
 }
@@ -316,8 +269,8 @@ body {
 .program {
   width: 100vw;
   height: 80px;
-  background-color: var(--whiteSmoke);
-  border-bottom: 1px solid var(--bodyBackgroud);
+
+  border-bottom: 1px solid var(--mediumGrey);
 
   font-family: var(--fontSansSerif);
   font-weight: 400;
@@ -329,14 +282,14 @@ body {
 
 .program p {
   text-align: center;
-  color: var(--mainColor);
+  color: var(--white);
   font-weight: 700;
   letter-spacing: 1.2px;
 }
 .program i {
   font-size: 15px;
   margin-left: 30px;
-  color: var(--mainColor);
+  color: var(--blue);
   cursor: pointer;
   transition: 300ms ease-in;
 }
@@ -349,6 +302,7 @@ body {
   justify-content: center;
   gap: 30px;
   cursor: pointer;
+
   margin-right: 30px;
 }
 .tools i {
@@ -380,29 +334,32 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: var(--mainColor);
-  height: 50px;
 }
 .date-stats p {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--eyeComfort);
+  color: var(--white);
   font-family: var(--fontSansSerif);
   font-size: 10px;
   text-transform: capitalize;
   gap: 5px;
+  position: relative;
+}
+.date-stats p::after {
+  position: absolute;
+  content: "";
+  bottom: -5px;
+  left: 0px;
+  height: 1px;
+  width: 100%;
+  background-color: var(--white);
+  opacity: 0.3;
 }
 .date-stats p span {
-  color: var(--whiteSmoke);
+  color: var(--blue);
   font-weight: 400;
   font-size: 12px;
-}
-.created-at {
-  margin-left: 20px;
-}
-.updated-at {
-  margin-right: 20px;
 }
 
 .box-arrow {
@@ -411,7 +368,6 @@ body {
 /* =====================week container =========================== */
 .days-container {
   display: grid;
-
   grid-template-columns: repeat(7, auto);
   margin-top: 30px;
   place-content: center;
@@ -420,8 +376,8 @@ body {
 }
 
 .day {
-  background-color: var(--mainColor);
-  color: var(--whiteSmoke);
+  background-color: var(--mediumGrey);
+  color: var(--white);
   padding: 10px;
   font-size: 10px;
   font-family: var(--fontSansSerif);
@@ -450,10 +406,8 @@ body {
 .one-workout {
   width: 80vw;
   height: 50px;
-  background-color: var(--whiteSmoke);
-
+  background-color: var(--white);
   border-radius: 3px;
-
   font-family: var(--fontSansSerif);
   font-weight: 400;
   display: flex;
@@ -463,24 +417,25 @@ body {
   margin-bottom: 20px;
 }
 .one-workout i {
-  color: var(--eyeComfort);
+  color: var(--mediumGrey);
   margin-left: 20px;
 }
 .one-workout p {
   text-align: center;
-  color: var(--mainColor);
+  color: var(--blue);
   font-weight: 700;
   letter-spacing: 1.2px;
 }
 .one-workout span {
   font-size: 10px;
-  color: var(--mainColor);
+  color: var(--blue);
+  opacity: 0.5;
   margin-right: 20px;
 }
 .created-workouts h2 {
   font-size: 18px;
   font-family: var(--fontSansSerif);
-  color: var(--mainColor);
+  color: var(--white);
   font-weight: 400;
   margin-bottom: 20px;
 }
@@ -501,15 +456,14 @@ body {
   width: 80vw;
   position: relative;
   padding: 10px;
-  background-color: var(--whiteSmoke);
+  background-color: var(--white);
   display: flex;
   align-items: flex-start;
   justify-content: center;
   flex-direction: column;
   font-family: var(--fontSansSerif);
   font-size: 12px;
-  color: var(--mainColor);
-
+  color: var(--mediumGrey);
   text-transform: capitalize;
   margin-bottom: 20px;
   border-radius: 5px;
@@ -543,11 +497,10 @@ body {
 .left-span {
   position: absolute;
   bottom: -20px;
-
+  color: var(--blue);
   left: -20px;
   font-size: 15px;
 }
-
 .exercise-tools {
   display: flex;
   align-items: center;
@@ -585,9 +538,8 @@ body {
   justify-content: center;
   width: 40px;
   height: 40px;
-  color: var(--mainColor);
-
-  border: 1px solid var(--mainColor);
+  color: var(--mediumGrey);
+  border: 1px solid var(--blue);
   border-radius: 5px;
   font-size: 15px;
 }
@@ -599,9 +551,8 @@ body {
   justify-content: center;
   width: 80px;
   height: 40px;
-  color: var(--mainColor);
-
-  border: 1px solid var(--mainColor);
+  color: var(--mediumGrey);
+  border: 1px solid var(--blue);
   border-radius: 5px;
   font-size: 15px;
 }
@@ -625,7 +576,7 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: whitesmoke;
+  background-color: var(--white);
   display: none;
   align-items: center;
   justify-content: flex-start;
@@ -654,9 +605,9 @@ body {
   height: 20px;
   width: 80vw;
   padding: 10px;
-  background-color: var(--mainOrange);
-  color: white;
-  font-family: var(--fontSansSerif);
+  background-color: var(--blue);
+  color: var(--white);
+  font-family: var(--roboto);
   font-size: 10px;
 }
 /* END OF PROGRAM CONTAINER ==================== */
@@ -676,7 +627,7 @@ body {
 }
 
 .delete-verification-box {
-  background-color: var(--mainColor);
+  background-color: var(--white);
   height: 200px;
   width: 80vw;
   border-radius: 10px;
@@ -691,7 +642,7 @@ body {
   font-family: var(--fontSansSerif);
   font-weight: 400;
   font-size: 15px;
-  color: var(--whiteSmoke);
+  color: var(--mediumGrey);
   margin-bottom: 30px;
   width: 60vw;
   text-align: center;
@@ -699,7 +650,7 @@ body {
 .delete-verification-box span {
   text-transform: capitalize;
 
-  color: var(--alert);
+  color: var(--blue);
 }
 .yes-no-container {
   display: flex;
@@ -717,21 +668,12 @@ body {
   justify-content: center;
   font-family: var(--fontSansSerif);
   font-size: 15px;
-  background-color: var(--whiteSmoke);
-  color: var(--mainColor);
+  background-color: var(--mediumGrey);
+  color: var(--white);
   font-weight: 400;
   border: none;
   cursor: pointer;
   text-transform: capitalize;
-}
-/* ============user nav bar ======================== */
-.coach-nav-bar {
-  transition: 300ms ease-in;
-}
-
-/* =================hover ================ */
-.global-nav p:hover {
-  opacity: 0.8;
 }
 
 /* ===============js classes ====================== */
@@ -756,27 +698,16 @@ body {
 .show-info #show-exercises {
   transform: rotate(180deg);
 }
-.name-alert .show-alert {
-  display: block;
-}
-
 .display-none {
   display: none;
 }
 .display-flex {
   display: flex;
 }
-
 .chosen-day {
-  background-color: var(--whiteSmoke);
-  color: var(--eyeComfort);
-}
-.selected-type {
-  background-color: var(--eyeComfort);
+  background-color: var(--white);
+  color: var(--blue);
 }
 .show-opacity {
   opacity: 1;
-}
-.translate-input {
-  transform: translateX(0);
 }

@@ -46,17 +46,12 @@ input[type="search"]::-webkit-search-results-decoration {
 
 ::placeholder {
   text-transform: capitalize;
-  font-size: 10px;
+
   font-family: var(--fontSansSerif);
-  color: var(--mainColor);
-}
-#toggle-password {
-  position: absolute;
-  margin-top: 15px;
-  font-size: 10px;
-  color: var(--SecondaryColor);
-  margin-left: -20px;
-  cursor: pointer;
+
+  color: var(--white);
+  font-size: 15px;
+  opacity: 0.8;
 }
 
 .nav-bar {
@@ -185,15 +180,10 @@ header {
 
   transition: 300ms ease-in;
 }
-.search-nutrition-input::placeholder {
-  color: var(--white);
-  font-size: 15px;
-  opacity: 0.8;
-}
+
 #search-icon-btn {
   position: absolute;
   right: 15vw;
-
   color: var(--white);
   opacity: 0.8;
 }

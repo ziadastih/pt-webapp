@@ -310,9 +310,7 @@ body {
   width: 80vw;
   height: 50px;
   background-color: var(--white);
-
   border-radius: 3px;
-
   font-family: var(--fontSansSerif);
   font-weight: 400;
   display: flex;
@@ -331,12 +329,10 @@ body {
   font-weight: 700;
   letter-spacing: 1.2px;
 }
-
 .tools {
   display: flex;
   align-items: center;
   justify-content: flex-end;
-
   gap: 30px;
   cursor: pointer;
   margin-right: 20px;
@@ -367,7 +363,6 @@ body {
   font-family: var(--fontSansSerif);
   font-size: 12px;
   color: var(--mediumGrey);
-
   text-transform: capitalize;
   margin-bottom: 20px;
   border-radius: 5px;
@@ -386,7 +381,6 @@ body {
   justify-content: flex-start;
   gap: 10px;
   margin-left: -20px;
-
   width: 55vw;
 }
 .exercise-general-info p {
@@ -400,7 +394,6 @@ body {
 }
 .left-span {
   opacity: 0;
-
   position: absolute;
   bottom: -20px;
   color: var(--blue);
@@ -412,16 +405,13 @@ body {
   align-items: center;
   justify-content: space-evenly;
   gap: 20px;
-
   font-size: 12px;
 }
-
 .note-input {
   font-family: var(--fontSansSerif);
   outline: none;
   padding: 5px;
   color: var(--mediumGrey);
-
   border: 1px solid var(--blue);
 }
 .iframe-container {
@@ -510,7 +500,6 @@ body {
   margin-top: 20px;
   margin-bottom: 20px;
   padding: 10px;
-
   color: var(--white);
   border-radius: 5px;
   border: none;

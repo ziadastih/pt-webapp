@@ -8,8 +8,8 @@ const deleteVerificationContainer = document.querySelector(
 );
 const searchWorkoutInput = document.getElementById("search-workout-input");
 const searchWorkoutIcon = document.getElementById("search-icon-btn");
-const goToCreateProgram = document.getElementById("go-to-create-program");
-const createNewProgramBtn = document.querySelector(".create-workout-btn");
+
+const createNewProgramBtn = document.querySelectorAll(".create-workout-btn");
 const preLoader = document.querySelector(".gif");
 const fetchMore = document.querySelector(".fetch-more");
 const overlay = document.querySelector(".overlay");
@@ -21,13 +21,12 @@ const closeBtn = document.querySelector("#close-btn");
 localStorage.removeItem("wo");
 let wLength = JSON.parse(localStorage.getItem("wL"));
 let workoutPrograms = [];
-goToCreateProgram.addEventListener("click", () => {
-  window.location =
-    "http://192.168.1.195:3000/createWorkout/createWorkout.html";
-});
-createNewProgramBtn.addEventListener("click", () => {
-  window.location =
-    "http://192.168.1.195:3000/createWorkout/createWorkout.html";
+
+createNewProgramBtn.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    window.location =
+      "http://192.168.1.195:3000/createWorkout/createWorkout.html";
+  });
 });
 let page = 0;
 // ================fetch workouts ===================
@@ -77,7 +76,7 @@ const displayProgramInfo = (programPlan) => {
     fetchMore.classList.remove("display-flex");
   } else {
     if (length === wLength) {
-      fetchMore.classList.remove("show-opacity");
+      fetchMore.classList.add("show-opacity");
       observer.unobserve(fetchMore);
     } else {
       fetchMore.classList.add("show-opacity");
@@ -116,7 +115,7 @@ const displayProgramInfo = (programPlan) => {
 };
 
 // ==============back btn ============================
-const backBtn = document.querySelector(".back-btn");
+const backBtn = document.querySelector("#back-btn");
 
 backBtn.addEventListener("click", () => {
   window.location =
@@ -124,7 +123,7 @@ backBtn.addEventListener("click", () => {
 });
 // ================logout user ===================
 
-const logoutBtn = document.getElementById("user-logout-nav-btn");
+const logoutBtn = document.getElementById("logout-btn");
 
 logoutBtn.addEventListener("click", async () => {
   try {
@@ -392,13 +391,13 @@ const displayChosenExercises = (oneWorkout, selectedExercisesArray) => {
         <div id="tempo-input">${element.tempo || "-"}</div>
       </div>
       <div class="button-type-container">
-      <button class="outline-btn" id="dropset" data-type=${
+      <button class="full-btn" id="dropset" data-type=${
         element.type
       }>dropset</button>
-      <button class="outline-btn" id="chain" data-chain = ${
+      <button class="full-btn" id="chain" data-chain = ${
         element.chain
       }>groupset</button>
-      <button class="outline-btn" id="rest-pause" data-type=${
+      <button class="full-btn" id="rest-pause" data-type=${
         element.type
       }>rest-pause</button>
       </div>
@@ -470,7 +469,7 @@ const searchFunction = async () => {
   const { data } = await axios.get(
     `/api/v1/workoutProgram/?name=${inputCharacter}`
   );
-
+  observer.unobserve(fetchMore);
   preLoader.classList.add("display-none");
 
   workoutPrograms = data.workoutprograms;
