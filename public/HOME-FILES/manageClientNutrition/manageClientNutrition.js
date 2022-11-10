@@ -80,14 +80,14 @@ closeBtn.addEventListener("click", () => {
 });
 
 // ================back btn =====================
-const backBtn = document.querySelector(".back-btn");
+const backBtn = document.querySelector("#back-btn");
 
 backBtn.addEventListener("click", () => {
   window.location = "http://192.168.1.195:3000/manageClient/manageClient.html";
 });
 // ================logout user ===================
 
-const logoutBtn = document.getElementById("user-logout-nav-btn");
+const logoutBtn = document.getElementById("logout-btn");
 
 logoutBtn.addEventListener("click", async () => {
   try {
@@ -124,9 +124,6 @@ const displayAllPrograms = (Diets) => {
     return Element.current === true;
   });
   for (i = 0; i < filterCurrent.length; i++) {
-    if (filterCurrent[i].name.length > 13) {
-      filterCurrent[i].name = `${filterCurrent[i].name.slice(0, 13)}..`;
-    }
     let diet = filterCurrent[i];
 
     dietsGridContainer.innerHTML += `<div class="one-diet-container">
@@ -137,7 +134,7 @@ const displayAllPrograms = (Diets) => {
    </div>
     <div class="diet">
     
-      <span>${diet.meals.length} m.</span>
+     
       <p>${diet.name}</p>
       <div class="tools">
         <i
@@ -180,9 +177,6 @@ const displayAllPrograms = (Diets) => {
     return Element.current === false;
   });
   for (i = 0; i < filterNoneCurrent.length; i++) {
-    if (filterNoneCurrent[i].name.length > 13) {
-      filterNoneCurrent[i].name = `${filterNoneCurrent[i].name.slice(0, 13)}..`;
-    }
     let diet = filterNoneCurrent[i];
     dietsGridContainer.innerHTML += `<div class="one-diet-container">
     <div class="current-diet-icon not-current" data-current=${diet._id}> 
@@ -193,7 +187,7 @@ const displayAllPrograms = (Diets) => {
   
   <div class="diet">
     
-    <span>${diet.meals.length} m.</span>
+   
     <p>${diet.name}</p>
     <div class="tools">
       <i
