@@ -21,8 +21,10 @@
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
       rel="stylesheet"
     />
     <title>logo</title>
@@ -30,11 +32,16 @@
   <body>
     <div class="gif"></div>
     <!-- ============class header the back btn and the program name and the edit program name icon ===== -->
+
     <div class="header-container">
-      <img src="../images/Arrow 2.svg" class="back-btn" alt="" />
+      <i class="fa-solid fa-arrow-left-long" id="back-btn"></i>
       <p class="diet-name-header"></p>
-      <i class="fa-regular fa-pen-to-square edit-diet-name-icon"></i>
+      <i
+        class="fa-regular fa-pen-to-square edit-diet-name-icon"
+        id="edit-diet-name-icon"
+      ></i>
     </div>
+
     <!-- =========program name input and create/edit btn for it ==== -->
     <div class="overlay"></div>
     <div class="create-diet-name create-name-container">
@@ -115,7 +122,7 @@
         <span class="ingredients-split-line"></span>
         <div class="ingredients-btn-container">
           <button class="full-btn" id="add-ingredients">add ingredients</button>
-          <button class="outline-btn" id="toggle-new-ingredient-name">
+          <button class="full-btn" id="toggle-new-ingredient-name">
             create new
           </button>
         </div>

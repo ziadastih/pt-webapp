@@ -202,7 +202,7 @@ window.onbeforeunload = () => {
 
 // ===============back btn  =================
 
-const backBtn = document.querySelector(".back-btn");
+const backBtn = document.querySelector("#back-btn");
 
 backBtn.addEventListener("click", () => {
   let clientId = localStorage.getItem("cref");
@@ -514,7 +514,7 @@ const displayChosenIngredients = () => {
 </div>
 <div class="macros-info">
   <span>carbs</span>
-  <p class="carbs-value">${ingredient.carbs} g</p>
+  <p class="carbs-value">${ingredient.carbs}g</p>
 </div>
 <div class="macros-info">
   <span>prot</span>
@@ -724,7 +724,7 @@ const displayMeals = () => {
           id="show-ingredient"
           data-overview=${i}
         ></i>
-        <p class="meal-name">meal ${i + 1}</p>
+        <p class="meal-name">meal</p>
         <div class="tools">
           <i class="fa-solid fa-trash" id="delete-meal" data-delete=${i}></i>
           <i

@@ -211,7 +211,7 @@ getDiet();
 window.onbeforeunload = () => {
   return "are you sure you want to leave page";
 };
-const backBtn = document.querySelector(".back-btn");
+const backBtn = document.querySelector("#back-btn");
 
 backBtn.addEventListener("click", () => {
   let clientId = localStorage.getItem("cref");
