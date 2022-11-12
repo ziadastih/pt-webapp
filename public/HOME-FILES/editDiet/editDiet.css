@@ -579,7 +579,7 @@ body {
   align-items: center;
   justify-content: center;
   font-size: 8px;
-  color: var(--whiteSmoke);
+  color: var(--white);
   transition: 200ms ease-in;
 }
 .check-icon {
@@ -607,12 +607,12 @@ body {
   font-size: 15px;
   border: 1px solid var(--blue);
   background-color: var(--mediumGrey);
-  color: whitesmoke;
+  color: var(--white);
   width: 100px;
   height: 40px;
 }
 .close-new-ingredient {
-  color: white;
+  color: var(--blue);
   position: absolute;
   top: 20px;
   right: 20px;
@@ -628,6 +628,7 @@ body {
 }
 .new-macros input {
   width: 60px;
+  border: 1px solid var(--blue);
 }
 
 .create-ingredients-btn-container {
@@ -654,7 +655,7 @@ body {
   opacity: 1;
 }
 .change-check-box-background {
-  background-color: var(--mainColor);
+  background-color: var(--mediumGrey);
 }
 
 .name-alert .display-flex {
@@ -662,7 +663,7 @@ body {
 }
 
 .selected-type {
-  background-color: var(--eyeComfort);
+  background-color: var(--blue);
 }
 
 .show-ingredients .meal-overview {

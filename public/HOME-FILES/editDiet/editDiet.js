@@ -691,7 +691,7 @@ const displayMeals = () => {
             id="show-ingredient"
             data-overview=${i}
           ></i>
-          <p class="meal-name">meal ${i + 1}</p>
+          <p class="meal-name">meal</p>
           <div class="tools">
             <i class="fa-solid fa-trash" id="delete-meal" data-delete=${i}></i>
             <i
