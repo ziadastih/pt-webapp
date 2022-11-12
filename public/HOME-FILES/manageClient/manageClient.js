@@ -3,8 +3,7 @@ const coachId = localStorage.getItem("ref");
 const clientId = localStorage.getItem("cref");
 // ===============coach name and displaying the general coach info ========
 const clientName = document.querySelector(".client-name");
-const clientProfile = document.querySelector(".profile-pic");
-const createdAt = document.querySelector(".created-at");
+
 const disableBtn = document.querySelector(".disable-btn");
 const clientEmailBtn = document.querySelector("#email-icon");
 const clientWhatsappBtn = document.querySelector("#whatsapp-icon");
@@ -18,14 +17,12 @@ const getClient = async () => {
 
     const firstName = client.clientFirstName;
     const lastName = client.clientLastName;
-    const created = client.createdAt.slice(0, 10);
     const enabled = client.enabled;
     const clientNumber = client.number;
     const email = client.email;
 
-    clientProfile.textContent = `${firstName.slice(0, 1).toUpperCase()}`;
     clientName.innerHTML = `${firstName} ${lastName}`;
-    createdAt.innerHTML = `created at: ${created}`;
+
     clientName.classList.add("opacity-one");
 
     if (enabled === true) {
@@ -49,7 +46,7 @@ const getClient = async () => {
 getClient();
 
 // ==============back btn ============================
-const backBtn = document.querySelector(".back-btn");
+const backBtn = document.querySelector("#back-btn");
 
 backBtn.addEventListener("click", () => {
   window.location = "http://192.168.1.195:3000/MyClients/MyClients.html";
@@ -88,7 +85,7 @@ clientNutritionBtn.addEventListener("click", () => {
 
 // ================logout user ===================
 
-const logoutBtn = document.getElementById("user-logout-nav-btn");
+const logoutBtn = document.getElementById("logout-btn");
 
 logoutBtn.addEventListener("click", async () => {
   try {

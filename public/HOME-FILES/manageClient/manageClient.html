@@ -20,86 +20,72 @@
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="manageClient.css" />
     <title>logo</title>
   </head>
   <body>
-    <!-- ====================coach section =============================== -->
-    <section class="client-section">
-      <!-- ==============coach profile section =============== -->
-      <div class="client-general-stats-container">
-        <!-- ==========logo section=================== -->
-        <div class="logo-notification">
-          <img src="../images/Arrow 2.svg" class="back-btn" alt="" />
-          <i class="fa-regular fa-bell"></i>
-        </div>
-        <!-- =======profile picture input field =========== -->
-        <div class="profile-picture-container">
-          <div class="default-profile-container">
-            <h2 class="profile-pic"></h2>
-          </div>
-        </div>
-        <!-- ============client name =============== -->
-        <div class="client-name-container">
-          <p class="client-name">username</p>
-        </div>
-        <div class="general-buttons-container">
-          <div class="info-container created-at-container">
-            <p class="created-at">created at:</p>
-            <button class="disable-btn btn">disable</button>
-          </div>
-          <div class="info-container">
-            <a href="#" id="email-icon"
-              ><i class="fa-regular fa-envelope"></i
-            ></a>
-            <a href="#" id="whatsapp-icon"
-              ><i class="fa-brands fa-whatsapp"></i
-            ></a>
-          </div>
+    <header>
+      <div class="page-header">
+        <i class="fa-solid fa-arrow-left-long" id="back-btn"></i>
+        <button class="disable-btn btn">disable</button>
+      </div>
+    </header>
+
+    <div class="client-profile-container">
+      <div class="client-profile">
+        <h3 class="client-name">...</h3>
+        <div class="client-contact">
+          <i class="fa-regular fa-envelope" id="email-icon"></i>
+          <i class="fa-brands fa-whatsapp" id="whatsapp-icon"></i>
         </div>
       </div>
-      <!-- =========coach access box section where he can navigate  ================= -->
-      <div class="client-access-section">
+    </div>
+
+    <div class="dashboard-container">
+      <div class="dashboard"></div>
+    </div>
+    <main>
+      <div class="client-navigation-tools">
         <!-- ============MY-CLIENTS SECTION -->
         <div class="access-box access-workouts">
           <i class="fa-solid fa-dumbbell"></i>
           <p>programs</p>
-          <img src="../images/accessCoachArrow.svg" alt="" />
         </div>
         <!-- =========Workouts ========= -->
         <div class="access-box access-diet">
           <i class="fa-solid fa-bowl-food"></i>
           <p>nutrition</p>
-          <img src="../images/accessCoachArrow.svg" alt="" />
         </div>
         <!-- ==============diet ================ -->
         <div class="access-box access-logBook">
           <i class="fa-regular fa-clipboard"></i>
           <p>logBook</p>
-          <img src="../images/accessCoachArrow.svg" alt="" />
         </div>
         <div class="access-box access-checkIn">
           <i class="fa-solid fa-user-check"></i>
           <p>check in</p>
-          <img src="../images/accessCoachArrow.svg" alt="" />
         </div>
       </div>
-      <!-- =================== coach nav bar ============================== -->
-      <nav class="global-nav coach-nav-bar">
-        <p id="user-home-nav-btn">
-          <a href="../coachHomepage/coachHomepage.html">home</a>
-        </p>
-        <p id="user-settings-nav-btn">
-          <a href="../coachSettings/coachSettings.html">settings</a>
-        </p>
-        <p id="contact-us-nav-btn">contact us</p>
-        <p id="user-logout-nav-btn">logout</p>
-      </nav>
-    </section>
+      <!-- ===================  nav bar ============================== -->
+      <div class="nav-bar">
+        <a href="../coachHomepage/coachHomepage.html" id="home-icon"
+          ><i class="fa-solid fa-house"></i
+        ></a>
+        <a href="../coachSettings/coachSettings.html">
+          <i class="fa-solid fa-gear"></i
+        ></a>
+        <i class="fa-regular fa-circle-question"></i>
+        <i class="fa-regular fa-envelope"></i>
+
+        <i class="fa-solid fa-arrow-right-from-bracket" id="logout-btn"></i>
+      </div>
+    </main>
 
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="manageClient.js"></script>
