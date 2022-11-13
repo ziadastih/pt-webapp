@@ -229,7 +229,6 @@ const displayAllPrograms = (Diets) => {
 
   currentDietIcon.forEach((btn) => {
     btn.addEventListener("click", async () => {
-      console.log(btn);
       let dietId = btn.dataset.current;
       if (btn.classList.contains("not-current")) {
         preLoader.classList.remove("display-none");
@@ -237,6 +236,12 @@ const displayAllPrograms = (Diets) => {
         const program = await axios.patch(`/api/v1/diet/${dietId}`, {
           current: true,
         });
+
+        let totalProgeamMacros = program.data.diet.macros;
+        const dailyMacros = await axios.patch(
+          `/api/v1/dailyMacros/${clientId}`,
+          { totalMacros: totalProgeamMacros }
+        );
 
         btn.classList.remove("not-current");
         preLoader.classList.add("display-none");

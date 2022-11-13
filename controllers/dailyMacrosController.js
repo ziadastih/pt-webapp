@@ -18,4 +18,16 @@ const createDailyMacros = async (req, res) => {
   res.status(StatusCodes.OK).json({ dailyMacros });
 };
 
-module.exports = { getOneDailyMacros, createDailyMacros };
+const updateDailyMacros = async (req, res) => {
+  const { id } = req.params;
+  const dailyMacros = await DailyMacros.findOneAndUpdate(
+    {
+      createdFor: id,
+    },
+    req.body,
+    { new: true, runValidators: true }
+  );
+  res.status(StatusCodes.OK).json({ dailyMacros });
+};
+
+module.exports = { getOneDailyMacros, createDailyMacros, updateDailyMacros };

@@ -45,10 +45,19 @@ const getClient = async () => {
 
 getClient();
 
+// =========================selecting the daashboard  =======
+
+const progressCircle = document.querySelector(".circular-progress");
+const totalCalories = document.querySelector(".total-calories");
+const currentCalories = document.querySelector(".current-calories");
+
 const getDailyMacros = async () => {
   try {
     const dailyMacros = await axios.get(`/api/v1/dailyMacros/${clientId}`);
-    console.log(dailyMacros);
+    let maxCalories = dailyMacros.data.dailyMacros.totalMacros.calories;
+    let currentCal = dailyMacros.data.dailyMacros.currentMacros.calories;
+    totalCalories.textContent = `${maxCalories} kcal`;
+    currentCalories.textContent = `${currentCal}`;
   } catch (error) {
     let msg = `no dailyMacros with id ${clientId}`;
     if (msg === error.response.data.msg) {
