@@ -127,7 +127,7 @@ registerBtn.addEventListener("click", async (e) => {
   for (let i = 0; i < lengthOfPass; i++) {
     password += chars.charAt(Math.floor(Math.random() * chars.length));
   }
-  console.log(password);
+
   try {
     preLoader.classList.remove("display-none");
     const { client } = await axios.post("/api/v1/client", {
@@ -137,6 +137,7 @@ registerBtn.addEventListener("click", async (e) => {
       number,
       password,
     });
+
     const { data } = await axios.get("/api/v1/dataLength");
 
     let clientLength = data.dataLength[0].clientLength + 1;

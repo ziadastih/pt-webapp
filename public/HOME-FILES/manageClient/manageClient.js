@@ -45,6 +45,22 @@ const getClient = async () => {
 
 getClient();
 
+const getDailyMacros = async () => {
+  try {
+    const dailyMacros = await axios.get(`/api/v1/dailyMacros/${clientId}`);
+    console.log(dailyMacros);
+  } catch (error) {
+    let msg = `no dailyMacros with id ${clientId}`;
+    if (msg === error.response.data.msg) {
+      const dailyMacros = await axios.post(`/api/v1/dailyMacros`, {
+        createdFor: clientId,
+      });
+    } else {
+      return;
+    }
+  }
+};
+getDailyMacros();
 // ==============back btn ============================
 const backBtn = document.querySelector("#back-btn");
 

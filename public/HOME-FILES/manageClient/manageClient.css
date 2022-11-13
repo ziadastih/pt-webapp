@@ -82,7 +82,10 @@ header {
   color: var(--blue);
   font-size: 20px;
 }
-
+.client-contact a {
+  text-decoration: none;
+  color: var(--blue);
+}
 .dashboard-container {
   margin-top: 30px;
   width: 100vw;

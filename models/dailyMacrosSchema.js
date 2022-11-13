@@ -1,0 +1,17 @@
+const mongoose = require("mongoose");
+
+const dailyMacrosSchema = new mongoose.Schema({
+  createdFor: {
+    type: mongoose.Types.ObjectId,
+  },
+  totalMacros: {
+    type: Object,
+    default: { calories: 0, prot: 0, carbs: 0, fat: 0 },
+  },
+  currentMacros: {
+    type: Object,
+    default: { calories: 0, prot: 0, carbs: 0, fat: 0 },
+  },
+});
+
+module.exports = mongoose.model("DailyMacros", dailyMacrosSchema);

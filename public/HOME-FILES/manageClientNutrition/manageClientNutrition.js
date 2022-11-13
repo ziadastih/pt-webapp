@@ -237,6 +237,7 @@ const displayAllPrograms = (Diets) => {
         const program = await axios.patch(`/api/v1/diet/${dietId}`, {
           current: true,
         });
+
         btn.classList.remove("not-current");
         preLoader.classList.add("display-none");
       } else {
