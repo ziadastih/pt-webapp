@@ -6,7 +6,7 @@ const dailyMacrosSchema = new mongoose.Schema({
   },
   totalMacros: {
     type: Object,
-    default: { calories: 0, prot: 0, carbs: 0, fat: 0 },
+    default: { calories: 0, protein: 0, carbs: 0, fat: 0 },
   },
   currentMacros: {
     type: Object,
