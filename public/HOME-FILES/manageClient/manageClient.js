@@ -56,7 +56,8 @@ const proteinValue = document.querySelector(".protein-value");
 const proteinBar = document.querySelector("#protein-bar");
 const fatValue = document.querySelector(".fat-value");
 const fatBar = document.querySelector("#fat-bar");
-
+const workoutValue = document.querySelector(".workout-value");
+const workoutsBr = document.querySelector("#workout-bar");
 const getDailyMacros = async () => {
   try {
     const dailyMacros = await axios.get(`/api/v1/dailyMacros/${clientId}`);
@@ -67,18 +68,20 @@ const getDailyMacros = async () => {
     let maxProt = parseFloat(dailyMacros.data.dailyMacros.totalMacros.protein);
     let maxCarbs = parseFloat(dailyMacros.data.dailyMacros.totalMacros.carbs);
     let maxFat = parseFloat(dailyMacros.data.dailyMacros.totalMacros.fat);
+    let maxWorkouts = dailyMacros.data.dailyMacros.totalWorkouts;
 
     let currentCal = dailyMacros.data.dailyMacros.currentMacros.calories;
     let currentCarbs = dailyMacros.data.dailyMacros.currentMacros.carbs;
     let currentProt = dailyMacros.data.dailyMacros.currentMacros.prot;
     let currentFat = dailyMacros.data.dailyMacros.currentMacros.fat;
-
+    let currentWorkouts = dailyMacros.data.dailyMacros.currentWorkouts;
     totalCalories.textContent = `${maxCalories} kcal`;
     currentCalories.textContent = `${currentCal}`;
 
     carbsValue.textContent = `${currentCarbs} / ${maxCarbs}g`;
     proteinValue.textContent = `${currentProt} / ${maxProt}g`;
     fatValue.textContent = `${currentFat} / ${maxFat}g`;
+    workoutValue.textContent = `${currentWorkouts} / ${maxWorkouts}`;
     if (maxCalories > 0) {
       let circleDeg = parseFloat((currentCal * 100) / maxCalories) * 3.6;
       progressCircle.style.background = `conic-gradient(var(--blue) ${circleDeg}deg, var(--white) 0deg)`;
@@ -86,10 +89,11 @@ const getDailyMacros = async () => {
     let carbsWidth = ((currentCarbs * 100) / maxCarbs) * 1.5;
     let protWidth = ((currentProt * 100) / maxProt) * 1.5;
     let fatWidth = ((currentFat * 100) / maxFat) * 1.5;
-
+    let workoutWidth = ((currentWorkouts * 100) / maxWorkouts) * 1.5;
     carbsProgressBar.style.width = `${carbsWidth}px`;
     proteinBar.style.width = `${protWidth}px`;
     fatBar.style.width = `${fatWidth}px`;
+    workoutsBr.style.width = `${workoutWidth}px`;
   } catch (error) {
     let msg = `no dailyMacros with id ${clientId}`;
     if (msg === error.response.data.msg) {

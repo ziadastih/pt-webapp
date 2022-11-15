@@ -249,7 +249,6 @@ const displayAllPrograms = (programPlan) => {
 
   currentStarsContainer.forEach((btn) => {
     btn.addEventListener("click", async () => {
-      console.log(btn);
       let workoutId = btn.dataset.current;
       if (btn.classList.contains("not-current")) {
         preLoader.classList.remove("display-none");
@@ -261,6 +260,21 @@ const displayAllPrograms = (programPlan) => {
           }
         );
         console.log(program);
+        let currentDaysArr = program.data.workoutProgram.weeks[0].days;
+        const totalWorkouts = currentDaysArr.reduce((sum, element) => {
+          if (element.workouts[0]?.name === "rest day") {
+            return sum;
+          } else {
+            return sum + element.workouts.length;
+          }
+        }, 0);
+        const updateCurrentData = await axios.patch(
+          `/api/v1/dailyMacros/${clientId}`,
+          {
+            totalWorkouts: totalWorkouts,
+          }
+        );
+
         btn.classList.remove("not-current");
         preLoader.classList.add("display-none");
       } else {
@@ -272,7 +286,7 @@ const displayAllPrograms = (programPlan) => {
             current: false,
           }
         );
-        console.log(program);
+
         btn.classList.add("not-current");
         preLoader.classList.add("display-none");
       }
