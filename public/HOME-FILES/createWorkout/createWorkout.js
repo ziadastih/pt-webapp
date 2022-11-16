@@ -260,7 +260,7 @@ submitProgram.addEventListener("click", async () => {
       name: program.name,
       weeks: program.weeks,
       createdFor: clientId,
-      current: true,
+      current: false,
     });
     console.log(program);
     const { data } = await axios.get("/api/v1/dataLength");

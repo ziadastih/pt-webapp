@@ -43,7 +43,7 @@ confirmProgramBtn.addEventListener("click", async () => {
   preLoader.classList.remove("display-none");
   for (let i = 0; i < selectedPrograms.length; i++) {
     selectedPrograms[i].createdFor = clientId;
-    selectedPrograms[i].current = true;
+    selectedPrograms[i].current = false;
 
     delete selectedPrograms[i]["_id"];
     const program = await axios.post(
@@ -259,7 +259,7 @@ const displayAllPrograms = (programPlan) => {
             current: true,
           }
         );
-        console.log(program);
+
         let currentDaysArr = program.data.workoutProgram.weeks[0].days;
         const totalWorkouts = currentDaysArr.reduce((sum, element) => {
           if (element.workouts[0]?.name === "rest day") {

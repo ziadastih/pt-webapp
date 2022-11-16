@@ -230,7 +230,7 @@ submitDietBtn.addEventListener("click", async () => {
         fat: totalDietFat.textContent,
       },
       createdFor: clientId,
-      current: true,
+      current: false,
     });
     const { data } = await axios.get("/api/v1/dataLength");
 
@@ -693,6 +693,7 @@ const submitMealFunction = () => {
     protein: totalIngredientsProt.textContent,
     fat: totalIngredientsFat.textContent,
     ingredients: selectedIngredientsArray,
+    checked: false,
   });
   selectedIngredientsArray = [];
   for (let i = 0; i < ingredientsArray.length; i++) {

@@ -45,7 +45,7 @@ confirmDietBtn.addEventListener("click", async () => {
   preLoader.classList.remove("display-none");
   for (let i = 0; i < selectedDiets.length; i++) {
     selectedDiets[i].createdFor = clientId;
-    selectedDiets[i].current = true;
+    selectedDiets[i].current = false;
 
     delete selectedDiets[i]["_id"];
     const program = await axios.post("/api/v1/diet", selectedDiets[i]);

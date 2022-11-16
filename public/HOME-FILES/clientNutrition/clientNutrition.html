@@ -20,8 +20,10 @@
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="clientNutrition.css" />
@@ -30,29 +32,64 @@
   <body>
     <div class="gif"></div>
     <div class="overlay"></div>
-    <!-- ============class header the back btn and the add btn ===== -->
-    <div class="header-container">
-      <img src="../images/Arrow 2.svg" class="back-btn" alt="" />
-      <h3>nutrition</h3>
-      <i class="fa-solid fa-bowl-food"></i>
-    </div>
-    <div class="btn-container">
-      <div class="grid selected-btn" id="current-btn">current diet</div>
-      <div class="grid" id="history-btn">nutrition history</div>
-    </div>
-    <div class="nutrition-programs-grid-container"></div>
+    <header>
+      <div class="page-header">
+        <i class="fa-solid fa-arrow-left-long" id="back-btn"></i>
 
-    <!-- =================== coach nav bar ============================== -->
-    <nav class="global-nav coach-nav-bar">
-      <p id="user-home-nav-btn">
-        <a href="../clientHomepage/clientHomepage.html">home</a>
-      </p>
-      <p id="user-settings-nav-btn">
-        <a href="../clientSetting/clientSetting.html">settings</a>
-      </p>
-      <p id="contact-us-nav-btn">contact us</p>
-      <p id="user-logout-nav-btn">logout</p>
-    </nav>
+        <h2>diets</h2>
+        <i class="fa-solid fa-utensils" id="fork-icon"></i>
+      </div>
+    </header>
+
+    <div class="meals-navigation-container">
+      <div class="meals-navigation">
+        <span>meals</span>
+        <div class="meals-arrows-container">
+          <i class="fa-solid fa-chevron-left" id="prev-btn"></i>
+          <p class="meal-number">...</p>
+          <i class="fa-solid fa-chevron-right" id="next-btn"></i>
+        </div>
+        <div class="circle"><i class="fa-solid fa-check"></i></div>
+      </div>
+    </div>
+
+    <div class="meal-container"></div>
+    <h4 class="diet-macros-header">diet macros</h4>
+    <div class="current-diet-macros">
+      <div class="macros-info">
+        <span>cal.</span>
+        <p class="current-diet-cal"></p>
+      </div>
+      <div class="macros-info">
+        <span>carbs</span>
+        <p class="current-diet-carbs"></p>
+      </div>
+      <div class="macros-info">
+        <span>prot</span>
+        <p class="current-diet-prot"></p>
+      </div>
+      <div class="macros-info">
+        <span>fat</span>
+        <p class="current-diet-fat"></p>
+      </div>
+    </div>
+
+    <!-- ====================nav bar  ================== -->
+
+    <div class="nav-bar">
+      <a href="../clientHomepage/clientHomepage.html" id="home-icon"
+        ><i class="fa-solid fa-house"></i
+      ></a>
+      <i class="fa-solid fa-clock"></i>
+      <a href="../clientSetting/clientSetting.html">
+        <i class="fa-solid fa-gear"></i
+      ></a>
+
+      <i class="fa-regular fa-envelope"></i>
+
+      <i class="fa-solid fa-arrow-right-from-bracket" id="logout-btn"></i>
+    </div>
+
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="clientNutrition.js"></script>
   </body>

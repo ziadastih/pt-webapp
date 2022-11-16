@@ -659,6 +659,7 @@ const submitMealFunction = () => {
     protein: totalIngredientsProt.textContent,
     fat: totalIngredientsFat.textContent,
     ingredients: selectedIngredientsArray,
+    checked: false,
   });
   console.log(Diet);
   selectedIngredientsArray = [];

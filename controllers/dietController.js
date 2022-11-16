@@ -3,13 +3,13 @@ const { StatusCodes } = require("http-status-codes");
 
 // ==================get all diets ===================
 const getAllDiets = async (req, res) => {
-  const { name, page, addFor, createdFor } = req.query;
+  const { name, page, current, createdFor } = req.query;
   const queryObject = {};
 
-  if (addFor) {
+  if (current) {
     const diets = await Diet.find({
-      createdBy: req.coach.coachId,
-      createdFor: null,
+      createdFor: current,
+      current: true,
     });
     res.status(StatusCodes.OK).json({ diets });
   }
