@@ -41,6 +41,9 @@ header {
   font-weight: 700;
   width: 80vw;
 }
+.page-header img {
+  width: 40px;
+}
 .page-header h2 {
   letter-spacing: 1.2px;
   font-size: 24px;
