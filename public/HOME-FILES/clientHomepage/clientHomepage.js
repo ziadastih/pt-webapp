@@ -33,8 +33,6 @@ const getClient = async () => {
 
     if (coachNumber) {
       coachWhatsappBtn.href = `https://wa.me/${coachNumber}`;
-    } else {
-      console.log("no number");
     }
   } catch (error) {
     console.log(error);
@@ -58,7 +56,7 @@ const workoutsBr = document.querySelector("#workout-bar");
 const getDailyMacros = async () => {
   try {
     const dailyMacros = await axios.get(`/api/v1/dailyMacros/${clientId}`);
-    console.log(dailyMacros);
+
     let maxCalories = parseFloat(
       dailyMacros.data.dailyMacros.totalMacros.calories
     );

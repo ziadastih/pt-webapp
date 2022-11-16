@@ -47,9 +47,16 @@ header {
   color: var(--white);
   font-family: var(--fontSansSerif);
   text-transform: capitalize;
+  position: relative;
 }
-.page-header i {
-  color: var(--blue);
+.page-header h2::after {
+  position: absolute;
+  content: "";
+  bottom: -5px;
+  left: 0;
+  background-color: var(--mediumGrey);
+  width: 100%;
+  height: 1px;
 }
 
 .client-profile-container {
@@ -60,19 +67,20 @@ header {
 }
 
 .client-profile {
-  margin-top: 30px;
+  margin-top: 0px;
   width: 80vw;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  border: 1px solid var(--mediumGrey);
+  padding: 10px;
+  border-radius: 10px;
 }
 
-.client-name {
+.client-profile h4 {
   font-family: var(--roboto);
-  font-size: 20px;
+  font-size: 15px;
   color: var(--white);
-  font-weight: 500;
-  text-transform: capitalize;
 }
 .client-contact {
   display: flex;
@@ -87,7 +95,7 @@ header {
   color: var(--blue);
 }
 .dashboard-container {
-  margin-top: 30px;
+  margin-top: 20px;
   width: 100vw;
   display: flex;
   align-items: center;
@@ -308,4 +316,8 @@ main {
 .nav-bar i {
   color: var(--white);
   font-size: 20px;
+}
+
+#home-icon i {
+  color: var(--blue);
 }
