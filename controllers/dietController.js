@@ -63,18 +63,32 @@ const getOneDiet = async (req, res) => {
 // =============update diet ========================
 
 const updateDiet = async (req, res) => {
-  const {
-    coach: { coachId },
-    params: { id: dietId },
-  } = req;
+  const { update } = req.query;
 
-  const diet = await Diet.findOneAndUpdate(
-    { createdBy: coachId, _id: dietId },
-    req.body,
-    { new: true, runValidators: true }
-  );
+  if (update) {
+    const {
+      params: { id: dietId },
+    } = req;
+    const diet = await Diet.findOneAndUpdate({ _id: dietId }, req.body, {
+      new: true,
+      runValidators: true,
+    });
 
-  res.status(StatusCodes.OK).json({ diet });
+    res.status(StatusCodes.OK).json({ diet });
+  } else {
+    const {
+      coach: { coachId },
+      params: { id: dietId },
+    } = req;
+
+    const diet = await Diet.findOneAndUpdate(
+      { createdBy: coachId, _id: dietId },
+      req.body,
+      { new: true, runValidators: true }
+    );
+
+    res.status(StatusCodes.OK).json({ diet });
+  }
 };
 
 const deleteDiet = async (req, res) => {
