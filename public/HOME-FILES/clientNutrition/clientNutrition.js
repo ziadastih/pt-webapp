@@ -22,7 +22,7 @@ const getCurrentDiet = async () => {
   currentDietProt.textContent = data.diets[0].macros.protein;
   currentDietFat.textContent = data.diets[0].macros.fat;
   mealsArr = data.diets[0].meals;
-  console.log(mealsArr);
+
   mealNumber.textContent = `${number + 1} `;
   displayCurrentMeal(mealsArr[0]);
   const { data: dailyMacros } = await axios.get(
@@ -128,9 +128,13 @@ const getCurrentDiet = async () => {
       number = i;
       if (i === 0) {
         prevBtn.classList.add("remove-opacity");
+      } else {
+        prevBtn.classList.remove("remove-opacity");
       }
       if (i === mealsArr.length - 1) {
         nextBtn.classList.add("remove-opacity");
+      } else {
+        nextBtn.classList.remove("remove-opacity");
       }
       mealNumber.textContent = `${i + 1}`;
       return;
@@ -206,6 +210,68 @@ const displayCurrentMeal = (meal) => {
 </div>
 </div>
 </div>`;
+};
+
+const showHistory = document.querySelector("#show-history");
+const historyContainer = document.querySelector(".history-container");
+const closeHistory = document.querySelector("#close-history");
+const dietsGridContainer = document.querySelector(".nutrition-grid-container");
+showHistory.addEventListener("click", async () => {
+  historyContainer.classList.add("translate-page");
+
+  try {
+    preLoader.classList.remove("display-none");
+    // ============getting the data ===============
+    const { data } = await axios.get(`/api/v1/diet?createdFor=${clientId}`);
+
+    preLoader.classList.add("display-none");
+
+    dietsArr = data.diets;
+
+    displayAllPrograms(dietsArr);
+  } catch (error) {
+    console.log(error);
+  }
+});
+closeHistory.addEventListener("click", () => {
+  historyContainer.classList.remove("translate-page");
+});
+
+// ===================display programs  =====================
+const displayAllPrograms = (Diets) => {
+  dietsGridContainer.innerHTML = "";
+  if (Diets.length === 0) {
+    dietsGridContainer.innerHTML = `<h2>no diets found in your history</h2>`;
+  }
+  for (let i = 0; i < Diets.length; i++) {
+    let diet = Diets[i];
+
+    dietsGridContainer.innerHTML += `<div class="one-diet-container">
+    <div class="diet">
+     
+      <p>${diet.name}</p>
+    <span>${diet.createdAt.slice(0, 10)}</span>
+    </div>
+    <div class="total-diet-macros">
+      <div class="macros-info">
+        <span>cal.</span>
+        <p class="total-diet-cal">${diet.macros.calories}</p>
+      </div>
+      <div class="macros-info">
+        <span>carbs</span>
+        <p class="total-diet-carbs">${diet.macros.carbs}</p>
+      </div>
+      <div class="macros-info">
+        <span>prot.</span>
+        <p class="total-diet-prot">${diet.macros.protein}</p>
+      </div>
+      <div class="macros-info">
+        <span>fat</span>
+        <p class="total-diet-fat">${diet.macros.fat}</p>
+      </div>
+    </div>
+  </div>`;
+  }
 };
 
 // ==============back btn ============================

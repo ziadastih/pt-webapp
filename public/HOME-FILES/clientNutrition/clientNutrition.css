@@ -247,6 +247,105 @@ header {
   color: var(--mediumGrey);
   position: relative;
 }
+
+/* =====================history-container ================ */
+.history-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--darkGrey);
+  z-index: 100;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  transition: 300ms ease-in;
+  transform: translateX(100%);
+}
+.history-header-container {
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--mediumGrey);
+  height: 10vh;
+}
+/* ================= diet programs grid container ============= */
+.nutrition-grid-container {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100vw;
+}
+.nutrition-grid-container h2 {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: var(--fontSansSerif);
+  color: var(--white);
+  font-size: 18px;
+}
+/* =========meal styling that will be dealt with in js ========== */
+.one-diet-container {
+  margin-bottom: 20px;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.diet {
+  width: 80vw;
+  height: 50px;
+  background-color: var(--white);
+  color: var(--mediumGrey);
+  border-radius: 3px 3px 0px 0px;
+
+  font-family: var(--roboto);
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-transform: capitalize;
+}
+
+.diet p {
+  text-align: center;
+
+  font-weight: 500;
+  letter-spacing: 1.2px;
+  margin-left: 20px;
+}
+
+.diet span {
+  margin-right: 20px;
+  font-size: 12px;
+  opacity: 0.5;
+  color: var(--blue);
+}
+
+/* ==============meal macros container ================ */
+
+.total-diet-macros {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  border-radius: 0px 0px 3px 3px;
+  width: 80vw;
+  background-color: var(--white);
+
+  height: 80px;
+  padding: 5px;
+  font-family: var(--roboto);
+  color: var(--mediumGrey);
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+}
+
 /* ======================nav bar  =================== */
 .nav-bar {
   position: fixed;
@@ -280,4 +379,8 @@ header {
 
 .display-none {
   display: none;
+}
+
+.translate-page {
+  transform: translateX(0);
 }
