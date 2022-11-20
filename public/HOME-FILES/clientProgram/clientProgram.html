@@ -20,8 +20,10 @@
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="clientProgram.css" />
@@ -30,46 +32,45 @@
   <body>
     <div class="gif"></div>
     <div class="overlay"></div>
-    <!-- ============class header the back btn and the add btn ===== -->
-    <div class="header-container">
-      <img src="../images/Arrow 2.svg" class="back-btn" alt="" />
-      <h3>programs</h3>
-      <i class="fa-solid fa-dumbbell"></i>
-    </div>
-    <!-- ===============btn container  =============-->
-    <div class="btn-container">
-      <div class="grid selected-btn" id="current-btn">current program</div>
-      <div class="grid" id="history-btn">programs history</div>
+    <header>
+      <div class="page-header">
+        <i class="fa-solid fa-arrow-left-long" id="back-btn"></i>
+
+        <h2>programs</h2>
+        <i class="fa-solid fa-dumbbell" id="dumbbell-icon"></i>
+      </div>
+    </header>
+
+    <div class="days-navigation-container">
+      <div class="days-navigation">
+        <span>days</span>
+        <div class="days-arrows-container">
+          <i class="fa-solid fa-chevron-left" id="prev-btn"></i>
+          <p class="day-value">...</p>
+          <i class="fa-solid fa-chevron-right" id="next-btn"></i>
+        </div>
+        <span class="workouts-length">2 wo</span>
+      </div>
     </div>
 
-    <!-- ==============the grid program container where we display our workouts  -->
+    <div class="created-workouts"></div>
 
-    <div class="workouts-programs-grid-container"></div>
-    <!-- ===============create btn contianer with it header  -->
-    <div class="iframe-container">
-      <iframe
-        src=""
-        class="iframe"
-        title="YouTube video player"
-        frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-      ></iframe>
-      <button class="outline-btn" id="close-btn" data-close="iframe-container">
-        close
-      </button>
+    <!-- ====================nav bar  ================== -->
+
+    <div class="nav-bar">
+      <a href="../clientHomepage/clientHomepage.html" id="home-icon"
+        ><i class="fa-solid fa-house"></i
+      ></a>
+      <i class="fa-solid fa-clock" id="show-history"></i>
+      <a href="../clientSetting/clientSetting.html">
+        <i class="fa-solid fa-gear"></i
+      ></a>
+
+      <i class="fa-regular fa-envelope"></i>
+
+      <i class="fa-solid fa-arrow-right-from-bracket" id="logout-btn"></i>
     </div>
-    <!-- =================== coach nav bar ============================== -->
-    <nav class="global-nav coach-nav-bar">
-      <p id="user-home-nav-btn">
-        <a href="../clientHomepage/clientHomepage.html">home</a>
-      </p>
-      <p id="user-settings-nav-btn">
-        <a href="../clientSetting/clientSetting.html">settings</a>
-      </p>
-      <p id="contact-us-nav-btn">contact us</p>
-      <p id="user-logout-nav-btn">logout</p>
-    </nav>
+
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="clientProgram.js"></script>
   </body>

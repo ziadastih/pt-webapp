@@ -875,6 +875,7 @@ const submitWorkoutFunction = () => {
       workouts.push({
         name: workoutName,
         exercises: selectedExercisesArray,
+        checked: false,
       });
 
       selectedExercisesArray = [];

@@ -262,7 +262,7 @@ submitProgram.addEventListener("click", async () => {
       createdFor: clientId,
       current: false,
     });
-    console.log(program);
+
     const { data } = await axios.get("/api/v1/dataLength");
 
     let workoutLength = data.dataLength[0].workoutLength + 1;
@@ -899,6 +899,7 @@ const submitWorkoutFunction = () => {
 
       workouts.push({
         name: workoutName,
+        checked: false,
         exercises: selectedExercisesArray,
       });
 
@@ -945,7 +946,7 @@ const editWorkoutFunction = () => {
 
       workout.name = workoutName;
       [workout.exercises] = [selectedExercisesArray];
-      console.log(workout);
+
       localStorage.removeItem("workoutIndex");
       selectedExercisesArray = [];
 

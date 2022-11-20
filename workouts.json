@@ -10,6 +10,7 @@
             "workouts": [
               {
                 "name": "legs",
+                "checked": false,
                 "exercises": [
                   {
                     "name": "Seated Alternating Hammer Curls",
@@ -53,9 +54,11 @@
           },
           {
             "name": "tuesday",
+
             "workouts": [
               {
                 "name": "push",
+                "checked": false,
                 "exercises": [
                   {
                     "name": "Seated Alternating Hammer Curls",
@@ -102,6 +105,7 @@
             "workouts": [
               {
                 "name": "pull",
+                "checked": false,
                 "exercises": [
                   {
                     "name": "Seated Alternating Hammer Curls",
@@ -177,6 +181,7 @@
             "name": "monday",
             "workouts": [
               {
+                "checked": false,
                 "name": "legs",
                 "exercises": [
                   {
@@ -223,6 +228,7 @@
             "name": "tuesday",
             "workouts": [
               {
+                "checked": false,
                 "name": "push",
                 "exercises": [
                   {
@@ -269,6 +275,7 @@
             "name": "wednesday",
             "workouts": [
               {
+                "checked": false,
                 "name": "pull",
                 "exercises": [
                   {
@@ -337,6 +344,7 @@
   },
   {
     "name": "split/bros plan",
+
     "createdBy": "632c945f1ba5f0bcfc9be699",
     "weeks": [
       {
