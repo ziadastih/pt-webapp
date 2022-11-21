@@ -32,6 +32,22 @@
   <body>
     <div class="gif"></div>
     <div class="overlay"></div>
+    <div class="iframe-container">
+      <iframe
+        src=""
+        class="iframe"
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+      ></iframe>
+      <button class="full-btn" id="close-btn" data-close="iframe-container">
+        close
+      </button>
+    </div>
+
+    <!-- ======================header ====================== -->
+
     <header>
       <div class="page-header">
         <i class="fa-solid fa-arrow-left-long" id="back-btn"></i>
@@ -54,7 +70,29 @@
     </div>
 
     <div class="created-workouts"></div>
+    <div class="start-workout-container">
+      <div class="start-workout-header">
+        <div class="page-header">
+          <i class="fa-solid fa-arrow-left-long" id="back-to-main"></i>
+          <h2 class="workout-name">...</h2>
+          <p class="start-btn">start</p>
+          <p class="finish-btn">finish</p>
+        </div>
+      </div>
+      <div class="exercises-container"></div>
+    </div>
 
+    <!-- ===============workout-confirmation =============== -->
+    <div class="workout-confirmation">
+      <h3>
+        Are you sure you want to start
+        <span class="workout-name">push</span> workout?
+      </h3>
+      <div class="confirmation-btn-container">
+        <button class="yes-btn">yes</button>
+        <button class="no-btn">no</button>
+      </div>
+    </div>
     <!-- ====================nav bar  ================== -->
 
     <div class="nav-bar">
