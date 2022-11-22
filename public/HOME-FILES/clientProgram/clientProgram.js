@@ -10,6 +10,8 @@ const daysArr = [
   "sunday",
 ];
 let program = [];
+let logBook = [];
+
 const createdWorkoutsContainer = document.querySelector(".created-workouts");
 const dayValue = document.querySelector(".day-value");
 const workoutLength = document.querySelector(".workouts-length");
@@ -25,7 +27,12 @@ const exContainer = document.querySelector(".exercises-container");
 const startWorkoutContainer = document.querySelector(
   ".start-workout-container"
 );
+const logSetContainer = document.querySelector(".log-set-container");
+const submitBtn = document.querySelector("#submit-btn");
+const cancelBtn = document.querySelector("#cancel-btn");
 const backToMainBtn = document.querySelector("#back-to-main");
+const weightInput = document.getElementById("log-weight");
+const repsInput = document.getElementById("log-reps");
 // ============================get current workout ================
 const getWorkout = async () => {
   const { data } = await axios.get(
@@ -178,6 +185,11 @@ const displayChosenExercises = (workout) => {
     </div>
   </div>`;
   });
+
+  let logBook = selectedExercisesArray.map((element) => {
+    return { name: element.name, logSets: [] };
+  });
+
   exContainer.innerHTML = displayExercices.join("");
 
   btnLoop("dropset");
@@ -195,7 +207,32 @@ const displayChosenExercises = (workout) => {
 
   toggleLogContainer.forEach((btn) => {
     btn.addEventListener("click", () => {
-      console.log(btn.dataset.id);
+      let exerciseIndex = btn.dataset.id;
+      console.log(exerciseIndex);
+      logSetContainer.classList.add("display-flex");
+      overlay.classList.remove("display-none");
+      submitBtn.removeAttribute("data-id");
+      submitBtn.setAttribute("data-id", exerciseIndex);
+      console.log(submitBtn);
+      cancelBtn.addEventListener("click", () => {
+        overlay.classList.add("display-none");
+        logSetContainer.classList.remove("display-flex");
+      });
+
+      submitBtn.addEventListener("click", () => {
+        let weightValue = weightInput.value;
+        let repsValue = repsInput.value;
+        let logBookIndex = submitBtn.dataset.id;
+        logBook[logBookIndex].logSets.push({
+          weight: weightValue,
+          reps: repsValue,
+        });
+        weightInput.value = "";
+        repsInput.value = "";
+        logSetContainer.classList.remove("display-flex");
+        overlay.classList.add("display-none");
+        console.log(logBook);
+      });
     });
   });
 

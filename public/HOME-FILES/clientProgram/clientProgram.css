@@ -410,7 +410,7 @@ header {
   text-transform: capitalize;
 
   color: var(--mediumGrey);
-  border-bottom: 1px solid var(--mediumGrey);
+  border-bottom: 1px solid var(--blue);
 }
 .box-title {
   width: 40vw;
@@ -420,7 +420,7 @@ header {
   padding: 10px;
 }
 .weight-title {
-  border-right: 1px solid var(--mediumGrey);
+  border-right: 1px solid var(--blue);
 }
 
 .inputs-table {
@@ -447,7 +447,7 @@ header {
   font-family: var(--roboto);
 }
 #weight-input {
-  border-right: 1px solid var(--mediumGrey);
+  border-right: 1px solid var(--blue);
 }
 
 .log-set-btns-container {
@@ -471,7 +471,7 @@ header {
   text-transform: capitalize;
 }
 #cancel-btn {
-  border-right: 1px solid var(--mediumGrey);
+  border-right: 1px solid var(--blue);
 }
 /* ======================nav bar  =================== */
 .nav-bar {
