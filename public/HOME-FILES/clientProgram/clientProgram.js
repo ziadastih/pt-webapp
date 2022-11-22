@@ -12,6 +12,7 @@ const daysArr = [
 let program = [];
 const createdWorkoutsContainer = document.querySelector(".created-workouts");
 const dayValue = document.querySelector(".day-value");
+const workoutLength = document.querySelector(".workouts-length");
 const prevBtn = document.getElementById("prev-btn");
 const nextBtn = document.getElementById("next-btn");
 const iframeContainer = document.querySelector(".iframe-container");
@@ -24,6 +25,7 @@ const exContainer = document.querySelector(".exercises-container");
 const startWorkoutContainer = document.querySelector(
   ".start-workout-container"
 );
+const backToMainBtn = document.querySelector("#back-to-main");
 // ============================get current workout ================
 const getWorkout = async () => {
   const { data } = await axios.get(
@@ -79,6 +81,7 @@ const displayWorkouts = (number) => {
     nextBtn.classList.remove("remove-opacity");
     prevBtn.classList.remove("remove-opacity");
   }
+  workoutLength.textContent = `${workouts.length} wo`;
   createdWorkoutsContainer.innerHTML = "";
 
   for (let i = 0; i < workouts.length; i++) {
@@ -120,7 +123,7 @@ const displayChosenExercises = (workout) => {
 
   exContainer.innerHTML = "";
 
-  let displayExercices = selectedExercisesArray.map((element) => {
+  let displayExercices = selectedExercisesArray.map((element, index) => {
     return `<div class="one-exercise-container">
     <span class ='left-span' id='chain' data-chain=${
       element.chain
@@ -137,6 +140,7 @@ const displayChosenExercises = (workout) => {
       <div class="exercise-tools">
       
       <p class="note-info">${element.note}</p>
+      <i class="fa-solid fa-book" id="toggle-log-container" data-id =${index}></i>
       <i class="fa-regular fa-eye" id="toggle-video" data-video = ${
         element.video
       }></i>
@@ -187,6 +191,14 @@ const displayChosenExercises = (workout) => {
     }
   });
 
+  const toggleLogContainer = document.querySelectorAll("#toggle-log-container");
+
+  toggleLogContainer.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      console.log(btn.dataset.id);
+    });
+  });
+
   const toggleVideoBtns = document.querySelectorAll("#toggle-video");
 
   toggleVideoBtns.forEach((btn) => {
@@ -227,6 +239,17 @@ const groupsetLoop = (elementChain) => {
     }
   });
 };
+
+// =================secondary  functions  ========================
+
+closeBtn.addEventListener("click", () => {
+  iframeContainer.classList.remove("display-flex");
+  overlay.classList.add("display-none");
+});
+
+backToMainBtn.addEventListener("click", () => {
+  startWorkoutContainer.classList.remove("translate-page");
+});
 
 // ==============back btn ============================
 const backBtn = document.querySelector("#back-btn");

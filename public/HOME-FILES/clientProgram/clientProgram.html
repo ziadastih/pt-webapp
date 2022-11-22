@@ -65,7 +65,7 @@
           <p class="day-value">...</p>
           <i class="fa-solid fa-chevron-right" id="next-btn"></i>
         </div>
-        <span class="workouts-length">2 wo</span>
+        <span class="workouts-length">...</span>
       </div>
     </div>
 
@@ -82,17 +82,26 @@
       <div class="exercises-container"></div>
     </div>
 
-    <!-- ===============workout-confirmation =============== -->
-    <div class="workout-confirmation">
-      <h3>
-        Are you sure you want to start
-        <span class="workout-name">push</span> workout?
-      </h3>
-      <div class="confirmation-btn-container">
-        <button class="yes-btn">yes</button>
-        <button class="no-btn">no</button>
+    <div class="log-set-container">
+      <div class="titles-table">
+        <div class="box-title weight-title">weight</div>
+        <div class="box-title">reps</div>
+      </div>
+      <div class="inputs-table">
+        <input
+          type="number"
+          name="weights"
+          placeholder="log weight"
+          id="weight-input"
+        />
+        <input type="number" name="reps" placeholder="log reps" id="log-reps" />
+      </div>
+      <div class="log-set-btns-container">
+        <button class="log-set-btn" id="cancel-btn">cancel</button>
+        <button class="log-set-btn" id="submit-btn">submit</button>
       </div>
     </div>
+
     <!-- ====================nav bar  ================== -->
 
     <div class="nav-bar">

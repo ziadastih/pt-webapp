@@ -197,6 +197,7 @@ header {
   background-color: var(--darkGrey);
   overflow-y: scroll;
   transform: translateX(-100%);
+  transition: 200ms ease-in;
 }
 
 .start-workout-header {
@@ -274,8 +275,8 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  gap: 20px;
-
+  gap: 40px;
+  color: var(--blue);
   font-size: 12px;
 }
 
@@ -381,62 +382,97 @@ header {
   font-size: 10px;
 }
 
-/* ======================workout confirmation ============ */
-.workout-confirmation {
-  position: absolute;
+/* ======================log set container =========== */
+.log-set-container {
+  width: 80vw;
+
+  display: none;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: var(--white);
-  height: 200px;
-  width: 80vw;
   border-radius: 10px;
-  display: none;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
   z-index: 200;
+  overflow: hidden;
 }
 
-.workout-confirmation h3 {
+.titles-table {
+  width: 80vw;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   font-family: var(--fontSansSerif);
-  font-weight: 400;
-  font-size: 15px;
+  text-transform: capitalize;
+
   color: var(--mediumGrey);
-  margin-bottom: 30px;
-  width: 60vw;
-  text-align: center;
+  border-bottom: 1px solid var(--mediumGrey);
 }
-.workout-confirmation span {
-  text-transform: capitalize;
-
-  color: var(--blue);
-}
-
-.confirmation-btn-container {
-  display: flex;
-  width: 100vw;
-  align-items: center;
-  justify-content: center;
-  gap: 20px;
-}
-.confirmation-btn-container button {
-  width: 100px;
-  height: 40px;
-  border-radius: 10px;
+.box-title {
+  width: 40vw;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: var(--fontSansSerif);
-  font-size: 15px;
-  background-color: var(--mediumGrey);
-  color: var(--white);
-  font-weight: 400;
+  padding: 10px;
+}
+.weight-title {
+  border-right: 1px solid var(--mediumGrey);
+}
+
+.inputs-table {
+  width: 80vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.inputs-table input {
+  width: 40vw;
   border: none;
-  cursor: pointer;
-  text-transform: capitalize;
+  height: 40px;
+  outline: none;
+  font-family: var(--roboto);
+  color: var(--mediumGrey);
+  padding-left: 10px;
 }
 
+::placeholder {
+  font-size: 12px;
+
+  text-transform: capitalize;
+  font-family: var(--roboto);
+}
+#weight-input {
+  border-right: 1px solid var(--mediumGrey);
+}
+
+.log-set-btns-container {
+  width: 80vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.log-set-btn {
+  width: 40vw;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--blue);
+  color: var(--white);
+  font-family: var(--roboto);
+  font-size: 18px;
+  border: none;
+  text-transform: capitalize;
+}
+#cancel-btn {
+  border-right: 1px solid var(--mediumGrey);
+}
 /* ======================nav bar  =================== */
 .nav-bar {
   position: fixed;
